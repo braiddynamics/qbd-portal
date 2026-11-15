@@ -1,4 +1,6 @@
 import sys
+import collections
+import math
 import random
 import numpy as np
 import networkx as nx
@@ -47,60 +49,102 @@ def generate_bethe_fragment(N):
     return G, levels
 
 def find_all_3_cycles(G):
-    """Identifies all directed 3-cycles (triangles) in G."""
-    cycles = set()
+    """Identifies all unique directed 3-cycles (u -> v -> w -> u) in G."""
+    cycles = []
     for u in G.nodes():
         for v in G.successors(u):
+            if v <= u:
+                continue
             for w in G.successors(v):
-                if G.has_edge(w, u):
-                    canonical = tuple(sorted([u, v, w]))
-                    cycles.add(canonical)
-    return list(cycles)
+                if w > u and G.has_edge(w, u):
+                    cycles.append((u, v, w))
+    return cycles
+
+def is_permissible_puc(G, u, v, w):
+    """Enforces Parent-Uniqueness Condition PUC(G; u, v, w) for 2-path v -> w -> u."""
+    if G.has_edge(v, u):
+        return False
+    for x in G.successors(v):
+        if x != w and G.has_edge(x, u):
+            return False
+    return True
+
+def pre_check_aec(G, u, v, H_new):
+    """Bounded-horizon Acyclicity Evaluation Check (L_cut = floor(log2 N) + 3)."""
+    N = G.number_of_nodes()
+    L_cut = max(1, int(math.floor(math.log2(N))) + 3) if N > 1 else 1
+    queue = collections.deque([(v, -1, 0)])
+    min_h = {v: -1}
+    while queue:
+        curr, prev_h, depth = queue.popleft()
+        if depth >= L_cut:
+            continue
+        for succ in G.successors(curr):
+            edge_h = G[curr][succ].get('H', 0)
+            if edge_h > prev_h:
+                if succ == u and edge_h < H_new:
+                    return False
+                if edge_h < min_h.get(succ, 10**9):
+                    min_h[succ] = edge_h
+                    queue.append((succ, edge_h, depth + 1))
+    return True
 
 def execute_scheduler_tick(G, mu, lam):
     """
     Executes one discrete parallel tick under Universal Constructor U.
-    Evaluates candidate 2-paths for chord addition and candidate edges for catalytic deletion.
+    Evaluates candidate 2-paths under PUC and AEC with symmetric reciprocal filtering,
+    and directed 3-cycle edges for catalytic deletion (scar immunity preserved).
     """
     G_next = G.copy()
     all_cycles = find_all_3_cycles(G)
-    
+
     node_stress = {n: 0 for n in G.nodes()}
     for u, v, w in all_cycles:
         node_stress[u] += 1
         node_stress[v] += 1
         node_stress[w] += 1
-        
-    candidate_additions = []
-    for u in G.nodes():
-        for w in G.successors(u):
-            for v in G.successors(w):
-                if u != v and not G.has_edge(v, u) and not G.has_edge(u, v):
-                    s_add = node_stress[u] + node_stress[w] + node_stress[v]
-                    p_acc = np.exp(-mu * s_add)
-                    candidate_additions.append((v, u, p_acc))
-                    
-    candidate_deletions = []
-    for u, v in G.edges():
-        s_edge = node_stress[u] + node_stress[v]
-        if s_edge > 0:
-            q_del = min(1.0, 0.5 * (1.0 + lam * s_edge) * np.exp(-mu * s_edge))
-            candidate_deletions.append((u, v, q_del))
-        else:
-            candidate_deletions.append((u, v, 0.05))
-            
-    accepted_adds = [chord for chord in candidate_additions if random.random() < chord[2]]
-    accepted_dels = [edge for edge in candidate_deletions if random.random() < edge[2]]
-    
-    for v, u, _ in accepted_adds:
-        preds = list(G_next.predecessors(v))
-        max_h = max([G_next.edges[p, v].get('H', 0) for p in preds] + [0])
-        G_next.add_edge(v, u, H=max_h + 1)
-        
-    for u, v, _ in accepted_dels:
+
+    legal_additions = []
+    for v in G.nodes():
+        for w in G.successors(v):
+            for u in G.successors(w):
+                if v == u or G.has_edge(u, v):
+                    continue
+                if not is_permissible_puc(G, u, v, w):
+                    continue
+                H_new = max((G.edges[p, u].get('H', 0) for p in G.predecessors(u)), default=0) + 1
+                if not pre_check_aec(G, u, v, H_new):
+                    continue
+                legal_additions.append(((u, v), H_new, (v, w, u)))
+
+    accepted_adds = []
+    for (u, v), H_new, (nv, nw, nu) in legal_additions:
+        s_add = node_stress[nv] + node_stress[nw] + node_stress[nu]
+        p_acc = np.exp(-mu * s_add)
+        if random.random() < p_acc:
+            accepted_adds.append(((u, v), H_new))
+
+    accepted_dels = []
+    for u, v, w in all_cycles:
+        s_del = max(0, node_stress[u] + node_stress[v] + node_stress[w] - 1)
+        q_del = min(1.0, 0.5 * (1.0 + lam * s_del) * np.exp(-mu * s_del))
+        if random.random() < q_del:
+            chosen = random.choice([(u, v), (v, w), (w, u)])
+            accepted_dels.append(chosen)
+
+    add_edges = {edge for edge, _ in accepted_adds}
+    filtered_adds = [
+        ((u, v), H_new)
+        for (u, v), H_new in accepted_adds
+        if u != v and (v, u) not in add_edges
+    ]
+    for (u, v), H_new in filtered_adds:
+        G_next.add_edge(u, v, H=H_new)
+
+    for u, v in accepted_dels:
         if G_next.has_edge(u, v):
             G_next.remove_edge(u, v)
-            
+
     return G_next
 
 def measure_km_cumulants(Omega_list=[50, 100, 200, 400], rho_target=0.06, trials=1200):

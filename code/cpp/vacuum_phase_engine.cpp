@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdint>
 #include <vector>
 #include <string>
 #include <cmath>
@@ -180,18 +181,26 @@ struct BFSState {
 
 struct TraversalScratchpad {
     std::vector<int> min_h_reached;
+    std::vector<uint32_t> visit_epoch;
+    uint32_t cur_epoch = 0;
     std::vector<BFSState> queue_buffer;
 };
 
 bool pre_check_aec(const DiGraph& G, int u, int v, int H_new, int L_cut, TraversalScratchpad& scratch) {
     if (static_cast<int>(scratch.min_h_reached.size()) < G.n) {
-        scratch.min_h_reached.resize(G.n, 1e9);
-    } else {
-        std::fill(scratch.min_h_reached.begin(), scratch.min_h_reached.begin() + G.n, 1e9);
+        scratch.min_h_reached.resize(G.n, 1000000000);
+        scratch.visit_epoch.resize(G.n, 0);
     }
+    ++scratch.cur_epoch;
+    if (scratch.cur_epoch == 0) {
+        std::fill(scratch.visit_epoch.begin(), scratch.visit_epoch.end(), 0);
+        scratch.cur_epoch = 1;
+    }
+    const uint32_t epoch = scratch.cur_epoch;
 
     scratch.queue_buffer.clear();
     scratch.queue_buffer.push_back({v, -1, 0});
+    scratch.visit_epoch[v] = epoch;
     scratch.min_h_reached[v] = -1;
 
     size_t q_head = 0;
@@ -207,7 +216,9 @@ bool pre_check_aec(const DiGraph& G, int u, int v, int H_new, int L_cut, Travers
                 if (succ == u && edge_h < H_new) {
                     return false; // Closed acausal monotone loop detected
                 }
-                if (edge_h < scratch.min_h_reached[succ]) {
+                int best_h = (scratch.visit_epoch[succ] == epoch) ? scratch.min_h_reached[succ] : 1000000000;
+                if (edge_h < best_h) {
+                    scratch.visit_epoch[succ] = epoch;
                     scratch.min_h_reached[succ] = edge_h;
                     scratch.queue_buffer.push_back({succ, edge_h, depth + 1});
                 }
@@ -304,11 +315,13 @@ bool execute_parallel_tick(DiGraph& G, double mu, double lam, int L_cut, Travers
     std::set<std::pair<int, int>> a_edge_set;
     for (const auto& item : A) a_edge_set.insert(item.first);
 
+    size_t added_count = 0;
     for (const auto& [edge, h_new] : A) {
         int u = edge.first;
         int v = edge.second;
         if (u != v && !a_edge_set.contains({v, u})) {
             G.add_edge(u, v, h_new);
+            ++added_count;
         }
     }
 
@@ -319,14 +332,20 @@ bool execute_parallel_tick(DiGraph& G, double mu, double lam, int L_cut, Travers
     }
 
     // Homeostatic Equilibrium Check (Physical Stasis: Delta t_phys == 0)
-    if (A.empty() && D.empty()) {
-        return false; // Net flux is zero; halts logical execution at homeostatic equilibrium
+    if (added_count == 0 && D.empty()) {
+        return false; // Net post-filter flux is zero; halts logical execution at homeostatic equilibrium
     }
 
     return true;
 }
 
-std::pair<int, int> evolve_graph_to_equilibrium(DiGraph& G, double mu, double lam, int max_steps, TraversalScratchpad& scratch, std::mt19937_64& rng, int quiet_ticks_threshold = 1) {
+struct EvolveOutcome {
+    int n3_final;
+    int steps;
+    bool halted_quiet;
+};
+
+EvolveOutcome evolve_graph_to_equilibrium(DiGraph& G, double mu, double lam, int max_steps, TraversalScratchpad& scratch, std::mt19937_64& rng, int quiet_ticks_threshold = 1) {
     int L_cut = std::max(1, static_cast<int>(std::floor(std::log2(G.n))) + 3);
     std::uniform_real_distribution<double> dist(0.0, 1.0);
 
@@ -337,14 +356,14 @@ std::pair<int, int> evolve_graph_to_equilibrium(DiGraph& G, double mu, double la
             quiet_count++;
             if (quiet_count >= quiet_ticks_threshold) {
                 auto final_cycles = find_all_3_cycles(G);
-                return {static_cast<int>(final_cycles.size()), step + 1};
+                return {static_cast<int>(final_cycles.size()), step + 1, true};
             }
         } else {
             quiet_count = 0;
         }
     }
     auto final_cycles = find_all_3_cycles(G);
-    return {static_cast<int>(final_cycles.size()), max_steps};
+    return {static_cast<int>(final_cycles.size()), max_steps, false};
 }
 
 // ============================================================================
@@ -356,14 +375,22 @@ struct TrajectoryResult {
     int steps;
     double rho3_final;
     bool survived;
+    bool halted_quiet;
 };
 
 struct EnsembleStats {
     int N;
     int total_runs;
     int survivors;
+    int quiet_arrests;
+    int horizon_censored;
+    int extinct_runs;
     double p_surv;
     double p_surv_stderr;
+    double p_quiet_arrest;
+    double p_horizon_censored;
+    double avg_steps_quiet_arrest;
+    double avg_steps_extinct;
     double mean_n3;
     double std_n3;
     double median_n3;
@@ -393,6 +420,8 @@ EnsembleStats compute_ensemble_stats(int N, const std::vector<TrajectoryResult>&
     std::vector<double> n3_qsd_vals;
     std::vector<double> rho_qsd_vals;
     std::vector<double> step_vals;
+    std::vector<double> quiet_arrest_steps;
+    std::vector<double> extinct_steps;
 
     for (const auto& r : results) {
         n3_vals.push_back(r.n3_final);
@@ -402,11 +431,22 @@ EnsembleStats compute_ensemble_stats(int N, const std::vector<TrajectoryResult>&
             stats.survivors++;
             n3_qsd_vals.push_back(r.n3_final);
             rho_qsd_vals.push_back(r.rho3_final);
+            if (r.halted_quiet) {
+                stats.quiet_arrests++;
+                quiet_arrest_steps.push_back(r.steps);
+            } else {
+                stats.horizon_censored++;
+            }
+        } else {
+            stats.extinct_runs++;
+            extinct_steps.push_back(r.steps);
         }
     }
 
     stats.p_surv = static_cast<double>(stats.survivors) / stats.total_runs;
     stats.p_surv_stderr = std::sqrt(stats.p_surv * (1.0 - stats.p_surv) / stats.total_runs);
+    stats.p_quiet_arrest = static_cast<double>(stats.quiet_arrests) / stats.total_runs;
+    stats.p_horizon_censored = static_cast<double>(stats.horizon_censored) / stats.total_runs;
 
     auto compute_mean = [](const std::vector<double>& v) {
         if (v.empty()) return 0.0;
@@ -457,6 +497,8 @@ EnsembleStats compute_ensemble_stats(int N, const std::vector<TrajectoryResult>&
     stats.median_rho3_qsd = compute_median(rho_qsd_vals);
 
     stats.avg_steps = compute_mean(step_vals);
+    stats.avg_steps_quiet_arrest = compute_mean(quiet_arrest_steps);
+    stats.avg_steps_extinct = compute_mean(extinct_steps);
 
     return stats;
 }
@@ -479,7 +521,9 @@ std::vector<TrajectoryResult> run_ensemble(int N, int runs, int max_steps, doubl
 
         futures.push_back(std::async(std::launch::async, [&, start_idx, end_idx, t]() {
             TraversalScratchpad scratch;
-            scratch.min_h_reached.assign(N, 1e9);
+            scratch.min_h_reached.assign(N, 1000000000);
+            scratch.visit_epoch.assign(N, 0);
+            scratch.cur_epoch = 0;
 
             for (int i = start_idx; i < end_idx; ++i) {
                 uint64_t seed = base_seed + i;
@@ -488,16 +532,17 @@ std::vector<TrajectoryResult> run_ensemble(int N, int runs, int max_steps, doubl
                 DiGraph G = generate_bethe_fragment(N);
                 inject_seed_defect(G);
 
-                auto [n3_final, steps] = evolve_graph_to_equilibrium(G, mu, lam, max_steps, scratch, rng, quiet_ticks);
-                double rho3 = static_cast<double>(n3_final) / N;
-                bool survived = (n3_final > 0);
+                auto outcome = evolve_graph_to_equilibrium(G, mu, lam, max_steps, scratch, rng, quiet_ticks);
+                double rho3 = static_cast<double>(outcome.n3_final) / N;
+                bool survived = (outcome.n3_final > 0);
 
                 all_results[i] = TrajectoryResult{
                     .seed = static_cast<int>(seed),
-                    .n3_final = n3_final,
-                    .steps = steps,
+                    .n3_final = outcome.n3_final,
+                    .steps = outcome.steps,
                     .rho3_final = rho3,
-                    .survived = survived
+                    .survived = survived,
+                    .halted_quiet = outcome.halted_quiet
                 };
             }
         }));
@@ -613,6 +658,14 @@ int main(int argc, char* argv[]) {
     std::cout << "--------------------------------------------------------------------------------\n";
     std::cout << std::left << std::setw(32) << "Survival Fraction (p_surv):" << std::fixed << std::setprecision(4)
               << stats.p_surv << " +/- " << stats.p_surv_stderr << " (" << stats.survivors << " / " << stats.total_runs << ")\n";
+    std::cout << std::left << std::setw(32) << "  Quiet-Tick Arrest (tau_K):" << std::fixed << std::setprecision(4)
+              << stats.p_quiet_arrest << " (" << stats.quiet_arrests << " / " << stats.total_runs
+              << ", mean steps: " << std::setprecision(2) << stats.avg_steps_quiet_arrest << ")\n";
+    std::cout << std::left << std::setw(32) << "  T_max Horizon Censored:" << std::fixed << std::setprecision(4)
+              << stats.p_horizon_censored << " (" << stats.horizon_censored << " / " << stats.total_runs << ")\n";
+    std::cout << std::left << std::setw(32) << "  Absorbing Extinction (N3=0):" << std::fixed << std::setprecision(4)
+              << (static_cast<double>(stats.extinct_runs) / stats.total_runs) << " (" << stats.extinct_runs << " / " << stats.total_runs
+              << ", mean steps: " << std::setprecision(2) << stats.avg_steps_extinct << ")\n";
     std::cout << std::left << std::setw(32) << "Mean 3-Cycle Count <N3>:" << std::fixed << std::setprecision(4)
               << stats.mean_n3 << " +/- " << stats.std_n3 << " (Median: " << stats.median_n3 << ")\n";
     std::cout << std::left << std::setw(32) << "Mean Cycle Density <rho>:" << std::fixed << std::setprecision(4)
@@ -636,9 +689,11 @@ int main(int argc, char* argv[]) {
         if (out.is_open()) {
             out << "# QBD Vacuum Phase C++20 Simulation Data\n";
             out << "# N=" << N << " runs=" << runs << " mu=" << mu << " lambda=" << lam << " seed=" << seed << "\n";
-            out << "seed,n3_final,steps,rho3_final,survived\n";
+            out << "seed,n3_final,steps,rho3_final,survived,halted_quiet,exit_reason\n";
             for (const auto& r : results) {
-                out << r.seed << "," << r.n3_final << "," << r.steps << "," << std::fixed << std::setprecision(6) << r.rho3_final << "," << (r.survived ? 1 : 0) << "\n";
+                const char* reason = r.survived ? (r.halted_quiet ? "tau_k_arrest" : "tmax_censored") : "extinct";
+                out << r.seed << "," << r.n3_final << "," << r.steps << "," << std::fixed << std::setprecision(6)
+                    << r.rho3_final << "," << (r.survived ? 1 : 0) << "," << (r.halted_quiet ? 1 : 0) << "," << reason << "\n";
             }
             std::cout << "Saved trajectory records to: " << csv_path << "\n";
         } else {

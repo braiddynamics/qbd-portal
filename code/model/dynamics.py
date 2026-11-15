@@ -271,6 +271,29 @@ def compute_proposal_rates(G: nx.DiGraph, config: dict
     return p_add, p_del
 
 
+def apply_filtered_proposals(
+    G: nx.DiGraph,
+    proposals_add: Set[Tuple[Tuple[int, int], int]],
+    proposals_del: Set[Tuple[int, int]],
+) -> bool:
+    """
+    Apply Step 3 symmetric reciprocal/self-loop filtering and Step 4 deletions.
+    Returns True iff at least one surviving graph mutation was applied.
+    """
+    add_edges_set = {edge for edge, _ in proposals_add}
+    edges_to_add = [
+        (edge[0], edge[1], {'H': h_val})
+        for edge, h_val in proposals_add
+        if (edge[1], edge[0]) not in add_edges_set and edge[0] != edge[1]
+    ]
+    dels_to_remove = proposals_del.intersection(G.edges())
+    if not edges_to_add and not dels_to_remove:
+        return False
+    G.add_edges_from(edges_to_add)
+    G.remove_edges_from(dels_to_remove)
+    return True
+
+
 # --- PUBLIC EVOLUTION FUNCTION (The "Scheduler" / Operator E) ---
 
 def evolve_graph_to_equilibrium(G: nx.DiGraph, config: dict):
@@ -317,19 +340,8 @@ def evolve_graph_to_equilibrium(G: nx.DiGraph, config: dict):
         proposals_add = _calculate_add_proposals(G, T, mu, stress_map)
         proposals_del = _calculate_del_proposals(G, T, mu, lam, all_cycles, stress_map)
 
-        # --- EQUILIBRIUM CHECK (Physical Stasis: Delta t_phys = 0) ---
-        if not proposals_add and not proposals_del:
+        # --- EQUILIBRIUM CHECK & COLLAPSE (Step 3 Merge Filter + Physical Stasis) ---
+        if not apply_filtered_proposals(G, proposals_add, proposals_del):
             return G, step + 1  # System reached homeostatic equilibrium
-
-        # --- COLLAPSE (Step 3 Merge Filter / Corollary 2.2) ---
-        # Eliminate reciprocal collision pairs (u, v) and (v, u), and self-loops
-        add_edges_set = {edge for edge, _ in proposals_add}
-        edges_to_add = [(edge[0], edge[1], {'H': h_val}) 
-                        for edge, h_val in proposals_add
-                        if (edge[1], edge[0]) not in add_edges_set and edge[0] != edge[1]]
-        G.add_edges_from(edges_to_add)
-        
-        # Ensure we only remove edges that still exist
-        G.remove_edges_from(proposals_del.intersection(G.edges()))
         
     return G, max_steps

@@ -369,4 +369,27 @@ def test_atomic_cycle_reduction_step_descent():
     l_max_after = max((len(c) for c in cycles_after), default=0)
     assert l_max_after == 3  # Strictly descended from 4 to 3
     assert len(cycles_after) == 1
-    assert set(cycles_after[0]) == {0, 1, 2}
+    assert set(cycles_after[0]) == {0, 1, 2}
+
+
+def test_reciprocal_cancellation_triggers_stasis(basic_config):
+    """
+    Post-filter homeostatic stasis: when Step 3 reciprocal filtering eliminates
+    every proposed addition ((2, 0) vs (0, 2)) and D = ∅, evolution halts at step 1
+    with G unchanged.
+    """
+    G = nx.DiGraph([
+        (0, 1, {"H": 2}),
+        (1, 2, {"H": 1}),
+        (2, 3, {"H": 2}),
+        (3, 0, {"H": 1}),
+    ])
+    expected_edges = set(G.edges())
+    config = basic_config.copy()
+    config["MU"] = 0.0
+    config["LAMBDA"] = 0.0
+    config["SIMULATION_STEPS"] = 10
+
+    G_eq, steps = evolve_graph_to_equilibrium(G.copy(), config)
+    assert steps == 1
+    assert set(G_eq.edges()) == expected_edges
