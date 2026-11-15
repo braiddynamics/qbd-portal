@@ -39,8 +39,8 @@ description: "Complete machine-checked Lean 4 formal kernel proofs (84 theorem d
 ---
 title: "Supplementary Material: Formal Lean 4 Specifications and Simulation Engines"
 subtitle: "Constrained Stochastic Rewrite System on Timestamped DAGs"
-author: "Braid Dynamics Research Collective"
-date: "February 2025"
+author: "R. Fisher"
+date: "August 24, 2026"
 ---
 
 
@@ -1185,7 +1185,7 @@ def triad_interaction_ports (num_vertices : Nat) : Nat :=
 /--
 THEOREM 9.4: Triad Interaction Boundary is Exactly Six Routing Ports
 Proves that across the 3 vertices of an elementary 2-simplex embedded in a trivalent
-Bethe tree substrate, the total boundary interaction interface comprises 3 × 2 = 6 routing ports (Table 5 & Theorem 4.4.1).
+Bethe tree substrate, the total boundary interaction interface comprises 3 × 2 = 6 routing ports (Table 4 & Theorem 4.4.1).
 -/
 theorem triad_interaction_ports_is_six :
     triad_interaction_ports 3 = 6 := by
@@ -2286,7 +2286,7 @@ import networkx as nx
 # =============================================================================
 
 def compute_analytical_priors() -> Dict[str, float]:
-    """Computes constitutive scales from discrete combinatorial principles (Table 5)."""
+    """Computes constitutive scales from discrete combinatorial principles (Table 4)."""
     T_c = math.log(2.0)                                    # Loop-closure free energy neutrality: T_c = ln 2 (Sec 4.2)
     mu_0 = 1.0 / math.sqrt(2.0 * math.pi)                  # Z Poisson summation & modular S-duality: mu_0 = 1/sqrt(2*pi) (Sec 4.4)
     lambda_0 = math.e - 1.0                                # Arrhenius 1-nat defect relaxation: lambda_0 = e - 1 (Sec 4.4)
@@ -2722,7 +2722,7 @@ def compute_qsd_moments(n3_values: Sequence[int], N: int) -> Dict[str, float]:
 
 
 def compute_scar_diagnostics(G: nx.DiGraph, N: int = 100) -> Dict[str, float]:
-    """Computes topological scar and graph degree observables (Table 5)."""
+    """Computes topological scar and graph degree observables (Table 7)."""
     cycles = find_all_3_cycles(G)
     cycle_edges = {e for c in cycles for e in c}
     total_edges = G.number_of_edges()

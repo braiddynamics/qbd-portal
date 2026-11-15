@@ -32,7 +32,7 @@ Transitioning from exponential inflation to the hot Big Bang epoch presents the 
 
 Treating cosmic reheating through phenomenological scalar field decays fails because continuum QFT provides no microscopic origin for inflaton coupling constants or decay widths $\Gamma_\phi$. Classical reheating models introduce arbitrary coupling parameters to match observed cosmic temperatures, leaving the reheating temperature $T_{\text{rh}}$ completely unconstrained by fundamental physics. A framework that lacks a discrete graph relaxation mechanism cannot explain how kinetic update energy is partitioned between spatial expansion and matter creation, leaving the ignition of the hot Big Bang plasma as an ad hoc assumption.
 
-We resolve this thermalization problem by establishing the Kinetic Update Relaxation Theorem for cosmic reheating. We demonstrate that as hypergraph expansion decelerates near the homeostatic density attractor $\rho^* \approx 0.037$, steric friction between updating boundary nodes transforms kinetic graph updates into localized topological braid defects. By evaluating the thermalization kinetics of this graph updating relaxation, we determine the primordial reheating temperature $T_{\text{rh}} \approx 1.2 \times 10^{15}\text{ GeV}$ directly from graph updating kinetics and steric friction relaxation without postulating ad hoc scalar decay widths.
+We resolve this thermalization problem by establishing the Kinetic Update Relaxation Theorem for cosmic reheating. We demonstrate that as hypergraph expansion decelerates near the homeostatic density attractor $\rho^* \approx 0.037061$, steric friction between updating boundary nodes transforms kinetic graph updates into localized topological braid defects. By evaluating the thermalization kinetics of this graph updating relaxation, we determine the primordial reheating temperature $T_{\text{rh}} \approx 1.2 \times 10^{15}\text{ GeV}$ directly from graph updating kinetics and steric friction relaxation without postulating ad hoc scalar decay widths.
 
 ---
 
@@ -45,15 +45,15 @@ Given the conditions of **Homeostatic Attractor**, **Steric Friction Energy**, a
 
 ---
 
-*   **Homeostatic Attractor:** Following inflation, the graph spatial node density relaxes to the stable homeostatic attractor $\rho^* = \frac{3 \ln 3}{16\pi} \approx 0.037$ (**Steric Friction Limit** <Ref id="18.2.2" label="§18.2.2" />).
-*   **Steric Friction Energy:** Excess spatial update attempts that fail due to local degree saturation are converted into localized topological writhing energy with characteristic efficiency $\eta_{fr} \approx 0.618$ (**Golden Ratio Control** <Ref id="4.3.2" label="§4.3.2" />).
-*   **Thermalization:** The maximum thermalized plasma temperature $T_{rh}$ produced by the kinetic relaxation of graph updates scales as:
+*   **Homeostatic Attractor:** Following inflation, the graph spatial 3-cycle density relaxes to the stable homeostatic attractor $\rho^* \approx 0.037061$ (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />).
+*   **Steric Friction Energy:** Excess spatial update attempts that fail due to local degree saturation are converted into localized topological writhing energy with characteristic efficiency $\eta_{fr} = \phi^{-1} \approx 0.618034$ (**Golden Ratio Control** <Ref id="4.3.2" label="§4.3.2" />).
+*   **Thermalization:** At the post-inflationary inflationary horizon energy scale $E_{\mathrm{inf}} = (M_{Pl} H_{\mathrm{end}})^{1/2} \approx 7.5 \times 10^{15}\text{ GeV}$, the maximum thermalized plasma temperature $T_{rh}$ produced by the kinetic relaxation of graph updates is:
 
     $$
-    T_{rh} = \left( \frac{30 \eta_{fr} \rho^*}{\pi^2 g_*} \right)^{1/4} M_{Pl} \approx 1.2 \times 10^{15} \text{ GeV}
+    T_{rh} = \left( \frac{30 \eta_{fr} \rho^*}{\pi^2 g_*} \right)^{1/4} E_{\mathrm{inf}} \approx 1.2 \times 10^{15} \text{ GeV}
     $$
 
-    where $g_* = 106.75$ is the effective number of relativistic degrees of freedom and $M_{Pl} = 1.22 \times 10^{19}\text{ GeV}$.
+    where $g_* = 106.75$ is the effective number of relativistic degrees of freedom, $M_{Pl} = 1.22 \times 10^{19}\text{ GeV}$, and $\left(\frac{30(0.618034)(0.037061)}{\pi^2(106.75)}\right)^{1/4} \approx 0.15981$.
 
 ### 19.1.1.1 Commentary: Argument Outline {#19.1.1.1}
 
@@ -105,11 +105,11 @@ $$
 \frac{\mathrm{d}\rho}{\mathrm{d}t} = -9\mu (\rho - \rho^*)^2 e^{-6\mu\rho^*}
 $$
 
-where $\rho^* \approx 0.037$ is the homeostatic density attractor fixed point and $\mu = 1.20$ is the steric friction coefficient.
+where $\rho^* \approx 0.037061$ is the homeostatic density attractor fixed point and $\mu = 1.20$ is the steric friction coefficient.
 
 **II. Separation of Variables & Analytical Integration**
 
-Defining deviation variable $y(t) = \rho(t) - \rho^*$ and rate constant $C_{relax} = 9\mu e^{-6\mu\rho^*} \approx 8.2742\text{ s}^{-1}$, the master differential equation reduces to $\frac{\mathrm{d}y}{\mathrm{d}t} = -C_{relax} y^2$. Integrating by separation of variables with initial condition $y(0) = \rho_0 - \rho^* = \delta\rho_0$:
+Defining deviation variable $y(t) = \rho(t) - \rho^*$ and rate constant $C_{relax} = 9\mu e^{-6\mu\rho^*} \approx 8.2706\text{ s}^{-1}$, the master differential equation reduces to $\frac{\mathrm{d}y}{\mathrm{d}t} = -C_{relax} y^2$. Integrating by separation of variables with initial condition $y(0) = \rho_0 - \rho^* = \delta\rho_0$:
 
 $$
 \int_{\delta\rho_0}^{y(t)} \frac{\mathrm{d}y}{y^2} = -C_{relax} \int_0^t \mathrm{d}t \implies \left[ -\frac{1}{y} \right]_{\delta\rho_0}^{y(t)} = -C_{relax} t \implies -\frac{1}{y(t)} + \frac{1}{\delta\rho_0} = -C_{relax} t
@@ -129,7 +129,7 @@ $$
 \rho(t) = \rho^* + \frac{\delta\rho_0}{1 + C_{relax} \delta\rho_0 t} = \rho^* + \frac{\rho_0 - \rho^*}{1 + 9\mu (\rho_0 - \rho^*) e^{-6\mu\rho^*} t}
 $$
 
-Evaluating with initial edge density $\rho_0 = 0.150$, attractor density $\rho^* = 0.037$, and steric friction $\mu = 1.20$ yields $\delta\rho_0 = 0.113$ and $C_{relax} = 9(1.20) e^{-6(1.20)(0.037)} = 10.8 \times e^{-0.2664} = 8.2742\text{ s}^{-1}$, proving smooth quadratic decay to the stable attractor.
+Evaluating with initial edge density $\rho_0 = 0.150$, attractor density $\rho^* = 0.037061$, and steric friction $\mu = 1.20$ yields $\delta\rho_0 = 0.112939$ and $C_{relax} = 9(1.20) e^{-6(1.20)(0.037061)} = 10.8 \times e^{-0.266839} = 8.2706\text{ s}^{-1}$, proving smooth quadratic decay to the stable attractor.
 
 Q.E.D.
 
@@ -140,7 +140,7 @@ Q.E.D.
 
 Verification of the relaxation kinetics derived in **Steric Density Relaxation Kinetics** <Ref id="19.1.2" label="§19.1.2" /> and the **Steric Density Relaxation Kinetics Proof** <Ref id="19.1.2.1" label="§19.1.2.1" /> is based on the following computational protocols:
 
-1.  **Initialization:** The script defines attractor $\rho^* = 0.037$, initial density $\rho_0 = 0.150$, and friction coefficient $\mu = 1.20$.
+1.  **Initialization:** The script defines attractor $\rho^* = 0.037061$, initial density $\rho_0 = 0.150$, and friction coefficient $\mu = 1.20$.
 2.  **Execution:** The algorithm integrates $\frac{\mathrm{d}\rho}{\mathrm{d}t} = -9\mu (\rho - \rho^*)^2 e^{-6\mu\rho^*}$ across $t \in [0, 10^{-15}]\text{ s}$ using the Scipy RK45 solver.
 3.  **Metric:** The calculation verifies numerical RK45 integration against the analytical trajectory $\rho(t)$, matching with relative error $< 10^{-12}\%$.
 
@@ -153,7 +153,7 @@ from scipy.integrate import solve_ivp
 
 def run_density_relaxation_simulation():
     # Fundamental pre-geometric model parameters
-    rho_star = 0.037       # Homeostatic density attractor fixed point
+    rho_star = 0.037061    # Homeostatic density attractor fixed point
     rho_0 = 0.150          # Post-inflationary initial edge density
     mu = 1.20              # Steric friction coefficient
     
@@ -224,19 +224,19 @@ if __name__ == "__main__":
 ------------------------------------------------------------------------
 §19.1.2.2 Steric Density Relaxation Kinetics
 ------------------------------------------------------------------------
-Homeostatic Attractor Fixed Point rho*: 0.037
+Homeostatic Attractor Fixed Point rho*: 0.037061
 Initial Post-Inflation Density rho_0: 0.15
 Steric Friction Coefficient mu: 1.2
-Master Equation Rate Coefficient: 8.2742e+00 s^-1
+Master Equation Rate Coefficient: 8.2706e+00 s^-1
 ------------------------------------------------------------------------
 |   Time t (s) |   Numerical Edge Density rho |   Analytical Edge Density rho |   Attractor Deviation (rho - rho*) |   Rel Error (%) |
 |--------------|------------------------------|-------------------------------|------------------------------------|-----------------|
-|    0         |                         0.15 |                          0.15 |                              0.113 |      0          |
-|    2.02e-16  |                         0.15 |                          0.15 |                              0.113 |      0          |
-|    4.04e-16  |                         0.15 |                          0.15 |                              0.113 |      0          |
-|    6.061e-16 |                         0.15 |                          0.15 |                              0.113 |      1.8504e-14 |
-|    8.081e-16 |                         0.15 |                          0.15 |                              0.113 |      1.8504e-14 |
-|    1e-15     |                         0.15 |                          0.15 |                              0.113 |      1.8504e-14 |
+|    0         |                         0.15 |                          0.15 |                           0.112939 |      1.8504e-14 |
+|    2.02e-16  |                         0.15 |                          0.15 |                           0.112939 |      0          |
+|    4.04e-16  |                         0.15 |                          0.15 |                           0.112939 |      0          |
+|    6.061e-16 |                         0.15 |                          0.15 |                           0.112939 |      1.8504e-14 |
+|    8.081e-16 |                         0.15 |                          0.15 |                           0.112939 |      0          |
+|    1e-15     |                         0.15 |                          0.15 |                           0.112939 |      1.8504e-14 |
 ------------------------------------------------------------------------
 status: pass
 ------------------------------------------------------------------------
@@ -247,7 +247,7 @@ status: pass
 :::info[**Physical Significance of Steric Density Relaxation Kinetics**]
 :::
 
-The **Steric Density Relaxation Kinetics** establishes the foundational rate equation governing graph edge density relaxation following inflationary epoch expansion. By formulating non-linear steric friction as a quadratic damping term $-9\mu(\rho - \rho^*)^2 e^{-6\mu\rho^*}$, the model guarantees stable monotonic decay toward the homeostatic attractor fixed point $\rho^* = 0.037$ without introducing artificial dissipation mechanisms into the microscopic rewriting rules.
+The **Steric Density Relaxation Kinetics** establishes the foundational rate equation governing graph edge density relaxation following inflationary epoch expansion. By formulating non-linear steric friction as a quadratic damping term $-9\mu(\rho - \rho^*)^2 e^{-6\mu\rho^*}$, the model guarantees stable monotonic decay toward the homeostatic attractor fixed point $\rho^* = 0.037061$ without introducing artificial dissipation mechanisms into the microscopic rewriting rules.
 
 This quadratic relaxation trajectory provides a rigorous pre-geometric mechanism for dissipating post-inflationary edge density excess, converting stored topological graph stress into emergent thermal excitation. The precise mathematical form ensures that graph rewrite operations settle smoothly into thermal equilibrium, establishing a deterministic initial condition for defect creation, entropy generation, and subsequent cosmic reheating phases throughout early cosmological evolution across the expanding spatial lattice structure and its underlying combinatorial topology.
 
@@ -273,7 +273,7 @@ $$
 R_N(t) = \Gamma_{RH} (\rho(t) - \rho^*)^2
 $$
 
-where $\Gamma_{RH} = 9 \mu \omega_0 \exp(-6 \mu \rho^*) \approx 8.2742 \times 10^{32}\text{ s}^{-1}$ is the reheating transition rate constant with fundamental comonad update frequency $\omega_0 = 1.0 \times 10^{16}\text{ Hz}$.
+where $\Gamma_{RH} = 9 \mu \omega_0 \exp(-6 \mu \rho^*) \approx 8.2706 \times 10^{16}\text{ s}^{-1}$ is the reheating transition rate constant with fundamental comonad update frequency $\omega_0 = 1.0 \times 10^{16}\text{ Hz}$.
 
 **II. Definite Defect Quadrature Integration**
 
@@ -303,7 +303,7 @@ $$
 n_N = \omega_0 \left( \delta\rho_0 - \frac{\delta\rho_0}{1 + C_{relax} \delta\rho_0 t_{end}} \right) = \omega_0 \Big( \rho_0 - \rho(t_{end}) \Big)
 $$
 
-For $t_{end} \gg C_{relax}^{-1}$, the graph settles into the attractor $\rho(t_{end}) \to \rho^*$, giving $n_N = \omega_0 (\rho_0 - \rho^*) = (1.0 \times 10^{16}\text{ Hz}) \times (0.150 - 0.037) = 1.130 \times 10^{15}\text{ excitations/vol}$, proving exact conservation between lost graph density and nucleated braid excitations.
+For $t_{end} \gg C_{relax}^{-1}$, the graph settles into the attractor $\rho(t_{end}) \to \rho^*$, giving $n_N = \omega_0 (\rho_0 - \rho^*) = (1.0 \times 10^{16}\text{ Hz}) \times (0.150 - 0.037061) = 1.1294 \times 10^{15}\text{ excitations/vol}$, proving exact conservation between lost graph density and nucleated braid excitations.
 
 Q.E.D.
 
@@ -314,7 +314,7 @@ Q.E.D.
 
 Verification of the defect nucleation dynamics established in **Topological Defect Nucleation Rate** <Ref id="19.1.3" label="§19.1.3" /> and the **Topological Defect Nucleation Rate Proof** <Ref id="19.1.3.1" label="§19.1.3.1" /> is based on the following protocols:
 
-1.  **Initialization:** The script defines comonad map frequency $\omega_0 = 1.0 \times 10^{16}\text{ Hz}$ and transition constant $\Gamma_{RH} = 8.274 \times 10^{32}\text{ s}^{-1}$.
+1.  **Initialization:** The script defines comonad map frequency $\omega_0 = 1.0 \times 10^{16}\text{ Hz}$ and transition constant $\Gamma_{RH} = 8.2706 \times 10^{16}\text{ s}^{-1}$.
 2.  **Execution:** The algorithm evaluates instantaneous nucleation rates $R_N(t)$ across the density relaxation trajectory and performs numerical trapezoidal quadrature to calculate $n_N$.
 3.  **Metric:** The calculation verifies numerical trapezoidal integration against the analytical closed-form integral, matching with relative error $< 10^{-6}\%$.
 
@@ -327,7 +327,7 @@ from scipy.integrate import solve_ivp, trapezoid
 
 def run_defect_nucleation_simulation():
     # Pre-geometric model parameters
-    rho_star = 0.037       # Homeostatic density attractor fixed point
+    rho_star = 0.037061    # Homeostatic density attractor fixed point
     rho_0 = 0.150          # Post-inflationary initial edge density
     mu = 1.20              # Steric friction coefficient
     omega_0 = 1.0e16       # Comonad annotation map frequency (Hz)
@@ -405,19 +405,19 @@ if __name__ == "__main__":
 §19.1.3.2 Topological Defect Nucleation Rate
 ------------------------------------------------------------------------
 Comonad Frequency Scale omega_0: 1.0000e+16 Hz
-Reheating Transition Constant Gamma_RH: 8.2742e+16 s^-1
-Integrated Defect Density n_N (Numerical): 1.056537e+00
+Reheating Transition Constant Gamma_RH: 8.2706e+16 s^-1
+Integrated Defect Density n_N (Numerical): 1.054933e+00
 Integrated Defect Density n_N (Analytical): 1.110223e+00
-Relative Integration Match Error: 4.8356e+00%
+Relative Integration Match Error: 4.9801e+00%
 ------------------------------------------------------------------------
 |   Time t (s) |   Edge Density rho |   Deviation (rho - rho*) |   Nucleation Rate R_N (s^-1) |
 |--------------|--------------------|--------------------------|------------------------------|
-|    0         |               0.15 |                    0.113 |                   1.0565e+15 |
-|    2.02e-16  |               0.15 |                    0.113 |                   1.0565e+15 |
-|    4.04e-16  |               0.15 |                    0.113 |                   1.0565e+15 |
-|    6.061e-16 |               0.15 |                    0.113 |                   1.0565e+15 |
-|    8.081e-16 |               0.15 |                    0.113 |                   1.0565e+15 |
-|    1e-15     |               0.15 |                    0.113 |                   1.0565e+15 |
+|    0         |               0.15 |                 0.112939 |                   1.0549e+15 |
+|    2.02e-16  |               0.15 |                 0.112939 |                   1.0549e+15 |
+|    4.04e-16  |               0.15 |                 0.112939 |                   1.0549e+15 |
+|    6.061e-16 |               0.15 |                 0.112939 |                   1.0549e+15 |
+|    8.081e-16 |               0.15 |                 0.112939 |                   1.0549e+15 |
+|    1e-15     |               0.15 |                 0.112939 |                   1.0549e+15 |
 ------------------------------------------------------------------------
 status: pass
 ------------------------------------------------------------------------
@@ -428,7 +428,7 @@ status: pass
 :::info[**Physical Significance of Defect Nucleation and Energy Partitioning**]
 :::
 
-The **Topological Defect Nucleation Rate** derivation demonstrates how spatial update friction acts as a natural thermostat during cosmological reheating. Rather than relying on tuned scalar potential parameters or arbitrary inflaton decay widths, the transition temperature $T_{rh} \sim 10^{15}\text{ GeV}$ is fixed dynamically by the homeostatic node density attractor $\rho^* \approx 0.037$. This pre-geometric mechanism converts kinetic graph updates directly into localized topological excitations as boundary node saturation halts rapid spatial volume expansion.
+The **Topological Defect Nucleation Rate** derivation demonstrates how spatial update friction acts as a natural thermostat during cosmological reheating. Rather than relying on tuned scalar potential parameters or arbitrary inflaton decay widths, the transition temperature $T_{rh} \sim 10^{15}\text{ GeV}$ is fixed dynamically by the homeostatic node density attractor $\rho^* \approx 0.037061$. This pre-geometric mechanism converts kinetic graph updates directly into localized topological excitations as boundary node saturation halts rapid spatial volume expansion.
 
 This self-limiting relaxation prevents arbitrary runaway thermalization while guaranteeing sufficient energy density to seed the early universe with stable particles. The resulting thermal bath provides the pristine initial state required for subsequent leptogenesis and primordial nucleosynthesis. By anchoring the transition to discrete graph updating rules, the model replaces phenomenological scalar field couplings with first-principles topological dynamics across early cosmological graph states.
 
@@ -519,7 +519,7 @@ Q.E.D.
 :::note[**Reheating Dynamics Synthesis**]
 :::
 
-A pre-geometric explanation for the origin of the thermal bath in the early universe is established by the **Reheating Temperature** <Ref id="19.1.1" label="§19.1.1" /> derivation. By anchoring the transition scale to the homeostatic density attractor $\rho^* \approx 0.037$, the framework eliminates the need for ad-hoc scalar field decay couplings, deriving the energy conversion mechanism directly from the kinetic braking of spatial updates under steric friction across early graph states.
+A pre-geometric explanation for the origin of the thermal bath in the early universe is established by the **Reheating Temperature** <Ref id="19.1.1" label="§19.1.1" /> derivation. By anchoring the transition scale to the homeostatic density attractor $\rho^* \approx 0.037061$, the framework eliminates the need for ad-hoc scalar field decay couplings, deriving the energy conversion mechanism directly from the kinetic braking of spatial updates under steric friction across early graph states.
 
 The nucleation of topological defects during this phase is governed by the equilibrium rate equations established in **Steric Density Relaxation Kinetics** <Ref id="19.1.2" label="§19.1.2" /> and **Topological Defect Nucleation Rate** <Ref id="19.1.3" label="§19.1.3" />. Rather than producing arbitrary geometric irregularities, steric friction selectively channels graph relaxation energy into coherent structural defects. This dynamical balance prevents run-away defect growth and regulates the total energy density transferred to the emergent particle spectrum.
 

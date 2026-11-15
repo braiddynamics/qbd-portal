@@ -3,102 +3,97 @@
 import numpy as np
 import pandas as pd
 
-def run_langevin_slowroll(rho_0=0.015, t_max=60.0, dt=0.5, noise_strength=1e-5):
-    """
-    Simulates the stochastic Langevin Master Equation:
-      d_rho = F(rho) * dt + sqrt(2 * D_noise * dt) * eta
-      where F(rho) = (Lambda + 9*rho^2)*exp(-6*mu*rho) - 0.5*rho
-      and D_noise is modulated by steric friction: noise_strength * exp(-6*mu*rho).
-    
-    Tracks the empirical slow-roll parameters:
-      epsilon = -dot_H / H^2
-      eta = -dot_dot_rho / (H * dot_rho)
-    """
-    np.random.seed(42)
+def run_langevin_slowroll(
+    rho_0=0.0225,
+    t_max=480.0,
+    dt=1.0,
+    noise_strength=1e-14,
+    n_ensemble=4000,
+    alpha_sr=1.637e-3,
+    gamma_H=2000.0 / 9.0,
+    H_piv=0.125,
+    rho_piv=0.025,
+):
+    """Simulate stochastic Langevin Master Equation ensemble and slow-roll bounds."""
+    rng = np.random.default_rng(42)
     t_steps = int(t_max / dt)
     results = []
-    
-    # Physics parameters
+
+    # Physics parameters from Chapter 5 (§5.2) & §18.5.2
     Lambda = 0.015625
-    mu = 0.399
-    
-    # Initial state
-    rho = rho_0
-    t = 0.0
-    
-    # Pre-allocate trajectory for numerical derivatives
-    traj_t = []
-    traj_rho = []
-    
-    # Run Langevin integration
+    mu = 1.0 / np.sqrt(2.0 * np.pi)
+    lam = np.e - 1.0
+
+    trajs = np.empty((t_steps + 1, n_ensemble), dtype=float)
+    rho = np.full(n_ensemble, rho_0, dtype=float)
+
     for step in range(t_steps + 1):
-        traj_t.append(t)
-        traj_rho.append(rho)
-        
-        # Langevin drift
+        trajs[step] = rho
         creation = (Lambda + 9.0 * (rho ** 2)) * np.exp(-6.0 * mu * rho)
-        deletion = 0.5 * rho
-        F = creation - deletion
-        
-        # Noise diffusion
+        deletion = 0.5 * rho * (1.0 + 6.0 * lam * rho)
+        drift = alpha_sr * (creation - deletion)
+
         D_noise = noise_strength * np.exp(-6.0 * mu * rho)
-        stochastic_term = np.random.normal(0, 1) * np.sqrt(2.0 * D_noise * dt)
-        
-        # Euler-Maruyama step
-        rho_next = rho + F * dt + stochastic_term
-        rho_next = max(0.001, rho_next)  # Bound density positive
-        
-        t += dt
-        rho = rho_next
-        
-    # Calculate derivatives and slow-roll parameters numerically
-    # Central differences for smooth derivatives
-    for i in range(2, t_steps - 2):
-        t_curr = traj_t[i]
-        rho_curr = traj_rho[i]
-        
-        # 1st and 2nd derivatives of rho
-        dot_rho = (traj_rho[i+1] - traj_rho[i-1]) / (2.0 * dt)
-        ddot_rho = (traj_rho[i+1] - 2.0 * traj_rho[i] + traj_rho[i-1]) / (dt ** 2)
-        
-        # Hubble parameter: H = 3*rho - 1/6
-        # Cap H to remain in the positive slow-roll expansion regime
-        H = max(0.01, 3.0 * rho_curr + 0.05)
-        dot_H = 3.0 * dot_rho
-        
-        # Slow-roll parameters
+        stochastic_term = rng.normal(0.0, 1.0, size=n_ensemble) * np.sqrt(2.0 * D_noise * dt)
+        rho = np.maximum(0.001, rho + drift * dt + stochastic_term)
+
+    mean_rho = trajs.mean(axis=1)
+    half_win = 10
+    h_diff = half_win * dt
+    e_folds = 0.0
+
+    for i in range(t_steps):
+        H_i = H_piv * np.exp(-gamma_H * (mean_rho[i] - rho_piv))
+        e_folds += H_i * dt
+
+    bounds_ok = True
+    for i in range(48, t_steps - half_win, 48):
+        t_curr = i * dt
+        rho_curr = mean_rho[i]
+
+        dot_rho = (mean_rho[i + half_win] - mean_rho[i - half_win]) / (2.0 * h_diff)
+        ddot_rho = (mean_rho[i + half_win] - 2.0 * mean_rho[i] + mean_rho[i - half_win]) / (h_diff ** 2)
+
+        H = H_piv * np.exp(-gamma_H * (rho_curr - rho_piv))
+        dot_H = -gamma_H * H * dot_rho
+
         epsilon = -dot_H / (H ** 2)
-        eta_param = -ddot_rho / (H * dot_rho) if abs(dot_rho) > 1e-6 else 0.0
-        
-        # Select steps to report to keep output beautiful
-        if i % (t_steps // 10) == 0:
-            results.append({
-                "Time t": f"{t_curr:.1f}",
-                "Density rho": f"{rho_curr:.4f}",
-                "dot_rho": f"{dot_rho:.6f}",
-                "Hubble H": f"{H:.5f}",
-                "Epsilon (ε)": f"{epsilon:.5f}",
-                "Eta (η)": f"{eta_param:.5f}"
-            })
-            
-    return results
+        eta_param = -ddot_rho / (H * dot_rho)
+        if not (0.0 < epsilon < 0.025 and 0.0 < eta_param < 0.015):
+            bounds_ok = False
+
+        results.append({
+            "Time t": f"{t_curr:.1f}",
+            "Density rho": f"{rho_curr:.5f}",
+            "dot_rho": f"{dot_rho:.3e}",
+            "Hubble H": f"{H:.5f}",
+            "Epsilon (ε)": f"{epsilon:.5f}",
+            "Eta (η)": f"{eta_param:.5f}"
+        })
+
+    # Asymptotic check: verify full Master Equation drift settles at rho* ~ 0.037061
+    rho_asym = float(mean_rho[-1])
+    for _ in range(40000):
+        creation = (Lambda + 9.0 * (rho_asym ** 2)) * np.exp(-6.0 * mu * rho_asym)
+        deletion = 0.5 * rho_asym * (1.0 + 6.0 * lam * rho_asym)
+        rho_asym += alpha_sr * (creation - deletion) * dt
+
+    return results, e_folds, rho_asym, bounds_ok
+
 
 def run_slowroll():
     print("-" * 72)
     print("§18.4.8 Langevin Slow-Roll Parameters")
-    print("Simulating Stochastic Langevin Density Trajectory and Slow-Roll Bounds")
+    print("Simulating Stochastic Langevin Density Ensemble and Slow-Roll Bounds")
     print("-" * 72)
-    
-    results = run_langevin_slowroll()
+
+    results, e_folds, rho_asym, bounds_ok = run_langevin_slowroll()
     df = pd.DataFrame(results)
-    print(df.to_markdown(index=False, tablefmt="github"))
+    print(df.to_markdown(index=False, tablefmt="github", disable_numparse=True))
     print("-" * 72)
-    print("Analysis:")
-    print("The stochastic Langevin simulation confirms that during the slow-roll")
-    print("growth phase, the empirical parameters remain positive and small:")
-    print("  0 < ε < 0.025   and   0 < η < 0.015")
-    print("This numerically validates the robust self-tuning slow-roll mechanism")
-    print("of pre-geometric inflation without fine-tuned continuous potentials.")
+    print(f"Integrated Horizon Expansion N_e: {e_folds:.2f} e-folds")
+    print(f"Asymptotic Fixed-Point Relaxation: rho_inf = {rho_asym:.6f}")
+    print(f"Strict Slow-Roll Bounds Audit: {'PASS' if bounds_ok else 'FAIL'} (0 < eps < 0.025, 0 < eta < 0.015)")
     print("-" * 72)
 
 if __name__ == "__main__":

@@ -1496,7 +1496,7 @@ $$
 \mathcal{S}[G] = \sum_{(u,v) \in E} K(u,v).
 $$
 
-This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The normalized bulk comparison to a Riemannian scalar-curvature integral uses the directional curvature coefficient and the edge-count measure in **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
+This functional serves as the intrinsic measure of the total geometric content of the finite graph, with its baseline value $\mathcal{S}[G_0]$ anchored in the 3-cycle equilibrium density $\rho_3^* \approx 0.037061$ derived in **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />. The normalized bulk comparison to a Riemannian scalar-curvature integral uses the directional curvature coefficient and the edge-count measure in **Ollivier-Ricci Asymptotic Limit** <Ref id="12.1.6" label="§12.1.6" />.
 
 ### 11.3.1.1 Commentary: Cost of Curvature {#11.3.1.1}
 
@@ -8658,7 +8658,7 @@ Q.E.D.
 
 Verification of the curvature-entropy coupling and induced metric elasticity established in **Einstein Field Equations** <Ref id="14.4.5" label="§14.4.5" /> and **Sakharov Induced Metric Elasticity (G)** <Ref id="14.4.3" label="§14.4.3" /> is based on the following protocols:
 
-1.  **Sakharov Metric Elasticity:** Evaluates Newton's constant $G = \frac{c^3 \ell_0^2}{4\hbar \rho_3^*}$ and Einstein coupling $\kappa = \frac{8\pi G}{c^4}$ from the homeostatic 3-cycle equilibrium density $\rho_3^* \approx 0.0370$.
+1.  **Sakharov Metric Elasticity:** Evaluates Newton's constant $G = \frac{c^3 \ell_0^2}{4\hbar \rho_3^*}$ and Einstein coupling $\kappa = \frac{8\pi G}{c^4}$ from the homeostatic 3-cycle equilibrium density $\rho_3^* \approx 0.037061$.
 2.  **Jacobson Modular Entanglement Regression:** Evaluates the First Law of Entanglement Entropy $\delta S_{\text{ent}} = \delta \langle K \rangle$ under Raychaudhuri null expansion focusing, confirming linear proportionality to curvature across stress fluxes.
 3.  **Kramers-Moyal Vacuum Stress-Energy:** Evaluates the equation of state of the modeled homogeneous vacuum $T_{\mu\nu}^{\text{vac}} = -V(\phi_0)g_{\mu\nu}$ at the supplied potential value, giving $w = -1.000000$ and $\Pi_{\mu\nu} = 0$.
 
@@ -8681,10 +8681,10 @@ HBAR = 1.0
 C = 1.0
 KB = 1.0
 L0 = 1.0
-RHO_3_STAR = 0.0370     # Equilibrium 3-cycle density (Section 5.4.1)
+RHO_3_STAR = 0.037061   # Equilibrium 3-cycle density (Section 5.4.1)
 
 # Sakharov (1967) Induced Metric Elasticity (Section 14.4.3)
-G_CONST = (C**3 * (L0**2)) / (4.0 * HBAR * RHO_3_STAR)  # G = 1 / (4 * 0.037) = 6.756757
+G_CONST = (C**3 * (L0**2)) / (4.0 * HBAR * RHO_3_STAR)  # G = 1 / (4 * 0.037061) = 6.745636
 KAPPA = (8.0 * np.pi * G_CONST) / (C**4)               # Einstein coupling constant
 
 # Kramers-Moyal Vacuum Energy Density V0 = 2^-6 = 0.015625
@@ -8700,7 +8700,7 @@ def run_entanglement_gravity_validation():
     # --------------------------------------------------------------------------
     print("Protocol 1: Sakharov (1967) Induced Metric Elasticity")
     print(f"  Microscopic Discreteness Area ell_0^2:  {L0**2:.4f}")
-    print(f"  Equilibrium 3-Cycle Density rho_3*:     {RHO_3_STAR:.4f}")
+    print(f"  Equilibrium 3-Cycle Density rho_3*:     {RHO_3_STAR:.6f}")
     print(f"  Derived Newton Constant G:              {G_CONST:.6f} (c^3 ell_0^2 / 4 hbar rho_3*)")
     print(f"  Einstein Coupling Constant kappa:       {KAPPA:.6f} (8 pi G / c^4)")
     print("-" * 78)
@@ -8784,13 +8784,13 @@ Section 14.4.5.1 Entanglement Equilibrium & Induced Metric Elasticity Verificati
 ==============================================================================
 Protocol 1: Sakharov (1967) Induced Metric Elasticity
   Microscopic Discreteness Area ell_0^2:  1.0000
-  Equilibrium 3-Cycle Density rho_3*:     0.0370
-  Derived Newton Constant G:              6.756757 (c^3 ell_0^2 / 4 hbar rho_3*)
-  Einstein Coupling Constant kappa:       169.815819 (8 pi G / c^4)
+  Equilibrium 3-Cycle Density rho_3*:     0.037061
+  Derived Newton Constant G:              6.745636 (c^3 ell_0^2 / 4 hbar rho_3*)
+  Einstein Coupling Constant kappa:       169.536313 (8 pi G / c^4)
 ------------------------------------------------------------------------------
 Protocol 2: Jacobson (2016) Modular Entanglement Regression
   Regression Slope (delta <K> vs Curvature): 1.000000 (Target: 1.000000)
-  Regression Intercept:                     -3.42e-15 (Target: 0.0)
+  Regression Intercept:                     -3.41e-15 (Target: 0.0)
   Determination Coefficient R^2:            1.00000000
   Verdict: First Law delta S_ent == delta <K> holds across all stress fluxes.
 ------------------------------------------------------------------------------
@@ -8804,7 +8804,7 @@ Protocol 3: Kramers-Moyal Vacuum Stress-Energy Tensor
 ```
 
 **Conclusion:**
-The simulation confirms all three components of the emergent gravitational sector with machine precision. Protocol 1 validates Sakharov's induced metric elasticity: Newton's constant $G \approx 6.756757$ and Einstein coupling $\kappa \approx 169.815819$ are computed analytically from the fundamental vacuum 3-cycle density $\rho_3^* = 0.0370$. Protocol 2 confirms Jacobson's First Law of Entanglement Entropy: the linear regression of modular Hamiltonian variation $\delta \langle K \rangle$ against horizon curvature yields a slope of exactly $1.000000$, zero intercept ($-3.42 \times 10^{-15}$), and determination coefficient $R^2 = 1.00000000$. Protocol 3 reproduces $w = -1.000000$ and $\Pi_{\mu\nu} = 0$ for the supplied homogeneous vacuum ansatz. Its cosmological constant contribution follows from the stress decomposition in the proof.
+The simulation confirms all three components of the emergent gravitational sector with machine precision. Protocol 1 validates Sakharov's induced metric elasticity: Newton's constant $G \approx 6.745636$ and Einstein coupling $\kappa \approx 169.536313$ are computed analytically from the fundamental vacuum 3-cycle density $\rho_3^* = 0.037061$. Protocol 2 confirms Jacobson's First Law of Entanglement Entropy: the linear regression of modular Hamiltonian variation $\delta \langle K \rangle$ against horizon curvature yields a slope of exactly $1.000000$, zero intercept ($-3.41 \times 10^{-15}$), and determination coefficient $R^2 = 1.00000000$. Protocol 3 reproduces $w = -1.000000$ and $\Pi_{\mu\nu} = 0$ for the supplied homogeneous vacuum ansatz. Its cosmological constant contribution follows from the stress decomposition in the proof.
 
 ---
 
@@ -8831,7 +8831,7 @@ The sequence of causal graphs $\{G_t\}$ defined by the Quantum Braid Dynamics su
 The proof proceeds by sequential deduction through the complete five-stage derivation chain of the monograph:
 
 ### Phase I: Substrate Foundation & Microstate Equilibrium (Chapter 5)
-- **Equilibrium Fixed Point**: The microscopic phase-space volume fixes the equilibrium 3-cycle area density to $\rho_3^* \approx 0.037$ per Planck area unit $\ell_0^2$ (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />).
+- **Equilibrium Fixed Point**: The microscopic phase-space volume fixes the equilibrium 3-cycle area density to $\rho_3^* \approx 0.037061$ per Planck area unit $\ell_0^2$ (**Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />).
 - **Non-Perturbative RG Stability**: Dynamic Renormalization Group (RG) analysis proves that the equilibrium density $\rho_3^*$ is a stable attractor fixed point ($\beta(\bar{\lambda}^*) = 0$) protected against parameter drift (**Vacuum Stability** <Ref id="5.4.2" label="§5.4.2" />).
 - **Statistical Self-Averaging**: Exponential correlation decay ensures that global density fluctuations vanish as $\text{Var}(\langle \rho_3 \rangle) \le C_2 / N_t$, yielding a deterministic macrostate (**Controlled Fluctuations** <Ref id="5.5.7.2" label="§5.5.7.2" />).
 - **Non-Local Cycle Suppression**: Long non-manifold cycles are exponentially suppressed $\mathbb{E}[C_k] \le N_t (D_{\max} p_{\max})^k$, guaranteeing a manifold-like topology (**Long-Cycle Tail** <Ref id="5.5.8" label="§5.5.8" />).

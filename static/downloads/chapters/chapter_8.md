@@ -3474,7 +3474,7 @@ Gauge coupling constants dictate the interaction strengths of the fundamental fo
 
 In quantum field theory, couplings are running parameters that evolve with energy scale, but their absolute values at any given point must be measured rather than calculated. There is no first-principles argument in standard physics that yields the fine-structure constant or the weak coupling from pure mathematics. A discrete theory offers the unique potential to count the degrees of freedom and probability amplitudes directly, but failing to produce a value that aligns with the Standard Model would falsify the approach. A calculation is required that connects the entropic cost of processing a single bit of topological information to the macroscopic force observed in the laboratory, bridging the gap between information theory and particle physics.
 
-We derive the weak coupling constant $g \approx 0.664$ by equating the square of the coupling to the probability density of the flavor-changing rewrite. We evaluate the equilibrium vacuum density derived in Chapter 5 alongside the geometric factors of the internal symmetry space, including vertex spherical integration and the bit-nat entropic scale. This calculation yields a value that agrees with experimental measurement within the natural variance of vacuum fluctuations.
+We derive the weak coupling constant $g \approx 0.664$ by equating the square of the coupling to the probability density of the flavor-changing rewrite. We evaluate the discrete-ensemble mean vacuum density ($\langle\rho\rangle_{\mathrm{all}} \approx 0.0290$, distinct from the driven continuum fixed point $\rho^* \approx 0.037061$) obtained in Chapter 5 alongside the geometric factors of the internal symmetry space, including vertex spherical integration and the bit-nat entropic scale. This calculation yields a value that agrees with experimental measurement within the natural variance of vacuum fluctuations.
 
 ---
 
@@ -3483,7 +3483,7 @@ We derive the weak coupling constant $g \approx 0.664$ by equating the square of
 :::info[**Derivation of the Weak Constant from Vacuum Parameters**]
 :::
 
-Let the $SU(2)_L$ gauge coupling constant, denoted $g$, be a derived quantity determined strictly by the geometric saturation of the vacuum equilibrium state. The value of $g$ corresponds to the square root of the probability density for a flavor-changing rewrite event $\mathcal{R}_W$ (**Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />), subject to the relation $g = \sqrt{4\pi \cdot \alpha_{\text{topo}} \cdot M \cdot \rho_3^*}$. This derivation is constrained by spherical geometry, the entropic scale $\alpha_{\text{topo}} = \ln 2 / 4$, the local multiplicity channel count $M=7$, and the equilibrium vacuum density $\rho_3^* \approx 0.029$ determined by **Transcendental Balance** <Ref id="5.4.1" label="§5.4.1" />.
+Let the $SU(2)_L$ gauge coupling constant, denoted $g$, be a derived quantity determined strictly by the geometric saturation of the vacuum equilibrium state. The value of $g$ corresponds to the square root of the probability density for a flavor-changing rewrite event $\mathcal{R}_W$ (**Unitary Twist Anticommutation** <Ref id="7.1.3" label="§7.1.3" />), subject to the relation $g = \sqrt{4\pi \cdot \alpha_{\text{topo}} \cdot M \cdot \rho_3^*}$. This derivation is constrained by spherical geometry, the entropic scale $\alpha_{\text{topo}} = \ln 2 / 4$, the local multiplicity channel count $M=7$, and the discrete-ensemble mean vacuum density $\rho_3^* \equiv \langle\rho\rangle_{\mathrm{all}} \approx 0.0290$ determined by **Phase Space Sweep** <Ref id="5.3.3" label="§5.3.3" /> (distinct from the driven continuum mean-field fixed point $\rho_{\mathrm{MF}}^* \approx 0.037061$).
 
 ### 8.6.1.1 Commentary: Argument Outline {#8.6.1.1}
 
@@ -4059,7 +4059,7 @@ Q.E.D.
 The calculation evaluates the matching formula of **Emergent Gauge Coupling** <Ref id="8.6.7" label="§8.6.7" /> with the expanded channel count from **Local State Space Multiplier** <Ref id="8.6.6" label="§8.6.6" />.
 
 1.  **Constant Initialization:** Fix $\alpha_{\mathrm{topo}}=\ln(2)/4$ and $M=7$.
-2.  **Coupling Calculation:** Evaluate $g=\sqrt{4\pi\alpha_{\mathrm{topo}}M\rho_3^*}$ at $\rho_3^*=0.0290$ and at the endpoints $0.0290\pm0.0050$.
+2.  **Coupling Calculation:** Evaluate $g=\sqrt{4\pi\alpha_{\mathrm{topo}}M\rho_3^*}$ at the discrete-ensemble mean $\rho_3^*=0.0290$ and at the endpoints $0.0290\pm0.0050$.
 3.  **Benchmarking:** Compare the central evaluation and the range of endpoint values with the fixed reference $g_{\rm ref}=0.6530$.
 
 ```python
@@ -4080,7 +4080,7 @@ def verify_gauge_coupling_consistency():
     # Derivation: 3 (Cycle Orientations) * 2 (Doublet States) + 1 (Spin Stabilizer)
     M_SU2 = 7 
     
-    # Equilibrium Equilibrium Vacuum Density (Rho*)
+    # Discrete-Ensemble Unconditioned Vacuum Density (<rho>_all)
     # Source: section 5.3 (§5.3) (Parameter Sweep Results)
     # Mean density of the Region of Physical Viability (RPV)
     RHO_MEAN = 0.0290 
@@ -4121,7 +4121,7 @@ def verify_gauge_coupling_consistency():
     print("-" * 65)
     print(f"{'Alpha_topo':<25} | {ALPHA_TOPO:.4f}     | {'ln(2)/4'}")
     print(f"{'Multiplier (M)':<25} | {M_SU2}          | {'SU(2) DoF'}")
-    print(f"{'Equilibrium Density (rho)':<25} | {RHO_MEAN:.4f}     | {'+/- 0.0050'}")
+    print(f"{'Discrete Mean (<rho>)':<25} | {RHO_MEAN:.4f}     | {'+/- 0.0050'}")
     print("-" * 65)
     print(f"{'Predicted g (Mean)':<25} | {g_predicted_mean:.4f}     | {'Source: Thm 8.6.1'}")
     print(f"{'Experimental g (PDG)':<25} | {G_EXP_PDG:.4f}     | {'Benchmark'}")
@@ -4152,7 +4152,7 @@ METRIC                    | VALUE      | NOTES
 -----------------------------------------------------------------
 Alpha_topo                | 0.1733     | ln(2)/4
 Multiplier (M)            | 7          | SU(2) DoF
-Equilibrium Density (rho) | 0.0290     | +/- 0.0050
+Discrete Mean (<rho>)     | 0.0290     | +/- 0.0050
 -----------------------------------------------------------------
 Predicted g (Mean)        | 0.6649     | Source: Thm 8.6.1
 Experimental g (PDG)      | 0.6530     | Benchmark
@@ -4198,7 +4198,7 @@ We generate mass by defining the Vacuum Expectation Value (VEV) as a measure of 
 :::tip[**Identification of the Vacuum Expectation Value by Equilibrium Three-Cycle Density**]
 :::
 
-The **Geometric Reservoir** (manifesting as the Higgs Vacuum Expectation Value, denoted $v$) is defined strictly as the macroscopic order parameter associated with the equilibrium density $\rho_3^*$ of the geometric vacuum. The value of $v$ scales with the square root of the density, $v \propto \sqrt{\rho_3^*}$, representing the availability of geometric quanta to sustain topological defects. The dimensionful scale $v \approx 246$ GeV is anchored by the finite volume of the causal graph $N$ and the universal mass constant $\kappa_m$, establishing the reservoir from which particles extract the structural resources required for their existence.
+The **Geometric Reservoir** (manifesting as the Higgs Vacuum Expectation Value, denoted $v$) is defined strictly as the macroscopic order parameter associated with the discrete-ensemble mean 3-cycle density $\rho_3^* \equiv \langle\rho\rangle_{\mathrm{all}} \approx 0.0290$ from **Phase Space Sweep** <Ref id="5.3.3" label="§5.3.3" /> (distinct from the driven continuum mean-field fixed point $\rho_{\mathrm{MF}}^* \approx 0.037061$) of the geometric vacuum. The value of $v$ scales with the square root of the density, $v \propto \sqrt{\rho_3^*}$, representing the availability of geometric quanta to sustain topological defects. The dimensionful scale $v \approx 246$ GeV is anchored by the finite volume of the causal graph $N$ and the universal mass constant $\kappa_m$, establishing the reservoir from which particles extract the structural resources required for their existence.
 
 ### 8.7.1.1 Commentary: Mass Reservoir {#8.7.1.1}
 
@@ -4402,7 +4402,7 @@ This yields $v$ bounded above and below by fixed multiples of $(\rho_3^*)^{-1/2}
 
 **III. Numerical anchor**
 
-With $\kappa_m=0.170\,\mathrm{MeV}=1.70\times10^{-4}\,\mathrm{GeV}$ and $\rho_3^*=0.029$, matching $v_{\mathrm{ref}}=246\,\mathrm{GeV}$ fixes the product
+With $\kappa_m=0.170\,\mathrm{MeV}=1.70\times10^{-4}\,\mathrm{GeV}$ and the discrete-ensemble mean $\rho_3^*=0.029$, matching $v_{\mathrm{ref}}=246\,\mathrm{GeV}$ fixes the product
 
 $$
 E_*N_\xi=\frac{v_{\mathrm{ref}}^2}{2\kappa_m\rho_3^*}
@@ -4510,7 +4510,7 @@ The calculation uses **Topological Yukawa Identity** <Ref id="8.7.5" label="§8.
 
 1.  **Scale Calibration:** Set $v_{\rm calib}=246.22\,\mathrm{GeV}$, $\kappa_m=0.0001703\,\mathrm{GeV}$ per quantum and $N_{\rm scale}=v_{\rm calib}/\kappa_m$.
 2.  **Complexity Assignment:** Use $N_{\rm net}=1,4,10^6$ for the three representative inputs.
-3.  **Monte Carlo Evaluation:** Generate 1,000 seeded density draws with location $0.029$ and standard deviation $0.005$. At each shared density evaluate $y=N_{\rm net}/(N_{\rm scale}\sqrt{\rho_3^*})$ and $m=yv_{\rm calib}$ for all three representatives.
+3.  **Monte Carlo Evaluation:** Generate 1,000 seeded density draws with discrete-ensemble mean location $0.029$ and standard deviation $0.005$. At each shared density evaluate $y=N_{\rm net}/(N_{\rm scale}\sqrt{\rho_3^*})$ and $m=yv_{\rm calib}$ for all three representatives.
 
 ```python
 import numpy as np
@@ -4518,7 +4518,7 @@ import numpy as np
 kappa_m_gev = 0.0001703  # GeV / 3-cycle
 V_CALIB = 246.22  # GeV, EW scale
 N_SCALE_BASE = V_CALIB / kappa_m_gev  # ~1.445e6 3-cycles / GeV
-RHO_CENTER = 0.0290
+RHO_CENTER = 0.0290  # Discrete-ensemble mean <rho>_all (§5.3, Table 5.3.3.2)
 RHO_SIGMA = 0.0050  # Ensemble scatter
 NUM_MC = 1000  # Runs
 # Generation Configurations (N_net from Ch7 writhe minima, adj for hierarchy)

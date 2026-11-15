@@ -770,16 +770,16 @@ contradicting $\rho(t)\ge\rho^*$. Therefore $\ell=\rho^*$.
 
 **IV. High-Density Evaluation**
 
-At the stated test density, using $\Lambda\approx0.0156$,
+At the stated test density, using $\Lambda = 0.015625$,
 
 $$
 \begin{aligned}
 J_{in}(1/2)
 &=(\Lambda+9/4)e^{-3/\sqrt{2\pi}}
- \approx2.2656e^{-1.1968\ldots}\approx0.685,\\
-J_{cat}(1/2)&=3(e-1)/4\approx1.289,\\
-J_{out}(1/2)&=1/4+3(e-1)/4\approx1.539,\\
-F(1/2)&\approx0.685-1.539=-0.854.
+ \approx 2.265625e^{-1.196827\ldots}\approx 0.684562,\\
+J_{cat}(1/2)&=3(e-1)/4\approx 1.288711,\\
+J_{out}(1/2)&=1/4+3(e-1)/4\approx 1.538711,\\
+F(1/2)&\approx 0.684562-1.538711=-0.854149.
 \end{aligned}
 $$
 
@@ -799,7 +799,7 @@ Q.E.D.
 
 Quantification of the density-dependent instability established by **Catalyzed Instability** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
 
-1.  **Dynamical Definition:** The algorithm defines the creation flux $J_{in}$ and deletion flux $J_{out}$ according to the **Master Equation** <Ref id="5.2" label="§5.2" /> parameters derived in Chapter 5 ($\Lambda \approx 0.016$, $\mu \approx 0.40$, $\lambda_{cat} \approx 1.72$).
+1.  **Dynamical Definition:** The algorithm defines the creation flux $J_{in}$ and deletion flux $J_{out}$ according to the **Master Equation** <Ref id="5.2" label="§5.2" /> parameters derived in Chapter 5 ($\Lambda = 0.015625$, $\mu \approx 0.398942$, $\lambda_{cat} \approx 1.718282$).
 2.  **Scenario Contrast:** The protocol evolves two distinct initial states: a **Trivial Excitation** subject to the full deletion flux, and a **Prime Knot** where the deletion flux $J_{out}$ is set to zero when the density drops below the knot core threshold.
 3.  **Flux Integration:** The simulation integrates the net topological current $d\rho/dt$ over time to map the trajectory of a high-stress fluctuation ($\rho = 0.50$) toward equilibrium.
 
@@ -823,12 +823,12 @@ def simulate_cluster_decay():
     print("=" * 60)
 
     # ── Physical Constants (Derived in Chapter 5) ─────────────────────
-    Λ_vac     = 0.0156                          # Vacuum Permittivity
+    Λ_vac     = 2.0 ** (-6)                     # Vacuum Permittivity = 0.015625
     μ         = 1.0 / np.sqrt(2 * np.pi)        # Friction Coefficient ≈ 0.398942
     λ_cat     = np.e - 1                        # Catalysis Coefficient ≈ 1.718282
 
-    ρ_star    = 0.0370                          # Equilibrium vacuum density
-    ρ_core    = 0.0820                          # Knot core threshold (topological lock)
+    ρ_star    = 0.037061                        # Equilibrium vacuum density
+    ρ_core    = 0.082000                        # Knot core threshold (topological lock)
 
     # ── Simulation Parameters ────────────────────────────────────────
     initial_ρ = 0.50                            # High-stress fluctuation
@@ -866,11 +866,11 @@ def simulate_cluster_decay():
 
     # ── Results Output ───────────────────────────────────────────────
     print(f"\nPhysical Parameters:")
-    print(f"  Vacuum Drive (Λ)      : {Λ_vac:.4f}")
+    print(f"  Vacuum Drive (Λ)      : {Λ_vac:.6f}")
     print(f"  Friction (μ)          : {μ:.6f}")
     print(f"  Catalysis (λ_cat)     : {λ_cat:.6f}")
-    print(f"  Equilibrium Density   : {ρ_star:.4f}")
-    print(f"  Knot Core Threshold   : {ρ_core:.4f}")
+    print(f"  Equilibrium Density   : {ρ_star:.6f}")
+    print(f"  Knot Core Threshold   : {ρ_core:.6f}")
     print(f"\nInitial Local Density   : {initial_ρ:.2f}")
     print("-" * 60)
     print(f"Final States after {n_steps} steps:")
@@ -881,9 +881,9 @@ def simulate_cluster_decay():
     # Initial flux balance verification
     j_in_0, j_out_0 = fluxes(initial_ρ)
     print(f"Initial Flux Balance (ρ = {initial_ρ}):")
-    print(f"  Creation  J_in  : {j_in_0:.4f}")
-    print(f"  Deletion  J_out : {j_out_0:.4f}")
-    print(f"  Net Rate dρ/dt  : {j_in_0 - j_out_0:+.4f} (Strong Decay)")
+    print(f"  Creation  J_in  : {j_in_0:.6f}")
+    print(f"  Deletion  J_out : {j_out_0:.6f}")
+    print(f"  Net Rate dρ/dt  : {j_in_0 - j_out_0:+.6f} (Strong Decay)")
 if __name__ == "__main__":
     simulate_cluster_decay()
 ```
@@ -896,26 +896,26 @@ Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux
 ============================================================
 
 Physical Parameters:
-  Vacuum Drive (Λ)      : 0.0156
+  Vacuum Drive (Λ)      : 0.015625
   Friction (μ)          : 0.398942
   Catalysis (λ_cat)     : 1.718282
-  Equilibrium Density   : 0.0370
-  Knot Core Threshold   : 0.0820
+  Equilibrium Density   : 0.037061
+  Knot Core Threshold   : 0.082000
 
 Initial Local Density   : 0.50
 ------------------------------------------------------------
 Final States after 600 steps:
-  Trivial Cluster       : 0.037000 → Vacuum Equilibrium
-  Prime Knot            : 0.081329 → Stable Particle
+  Trivial Cluster       : 0.037061 → Vacuum Equilibrium
+  Prime Knot            : 0.082356 → Stable Particle
 ------------------------------------------------------------
 Initial Flux Balance (ρ = 0.5):
-  Creation  J_in  : 0.6846
-  Deletion  J_out : 1.5387
-  Net Rate dρ/dt  : -0.8542 (Strong Decay)
+  Creation  J_in  : 0.684562
+  Deletion  J_out : 1.538711
+  Net Rate dρ/dt  : -0.854149 (Strong Decay)
 ```
 
 **Conclusion:**
-The simulation data indicates that at the initial high density $\rho=0.50$, the deletion flux $J_{out} \approx 1.54$ significantly exceeds the creation flux $J_{in} \approx 0.69$, yielding a net negative current of $-0.85$. This imbalance drives the trivial cluster to collapse to the vacuum fixed point $\rho^* \approx 0.037$. In contrast, the knotted cluster trajectory stabilizes at $\rho \approx 0.081$, confirming that the activation of the topological barrier arrests the decay process despite the high catalytic stress. These results validate the decay mechanics and the barrier efficiency described in the derivation.
+The simulation data indicates that at the initial high density $\rho=0.50$, the deletion flux $J_{out} \approx 1.538711$ significantly exceeds the creation flux $J_{in} \approx 0.684562$, yielding a net negative current of $-0.854149$. This imbalance drives the trivial cluster to collapse to the vacuum fixed point $\rho^* \approx 0.037061$. In contrast, the knotted cluster trajectory stabilizes at $\rho \approx 0.082356$, confirming that the activation of the topological barrier arrests the decay process despite the high catalytic stress. These results validate the decay mechanics and the barrier efficiency described in the derivation.
 
 ### 6.1.4.3 Commentary: Erasure Mechanism {#6.1.4.3}
 

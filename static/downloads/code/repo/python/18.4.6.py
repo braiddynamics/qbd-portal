@@ -11,7 +11,7 @@ def simulate_power_spectrum_horizon_exit(n_modes=10):
     k_scales = np.logspace(1, 4, n_modes)
     
     # Physical vacuum parameter
-    mu = 0.399
+    mu = 1.0 / np.sqrt(2.0 * np.pi)
     
     # Map comoving scale k to the proper time of horizon exit: k = a(t) * H
     # Since proper time scales logarithmically with comoving scale: t_exit = ln(k) / H

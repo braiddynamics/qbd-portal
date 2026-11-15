@@ -7,18 +7,18 @@ import pandas as pd
 def run_vacuum_pressure_eos():
     # Master Equation parameters from Chapter 18 (§18.5.2) & Chapter 5 (§5.2)
     Lambda = 0.015625      # Primordial loop nucleation seed (2^-6)
-    mu = 0.399             # Steric friction coefficient
-    lcat = 1.718           # Catalytic deletion parameter
-    rho_star = 0.0370      # Equilibrium 3-cycle density attractor
+    mu = 1.0 / np.sqrt(2.0 * np.pi)  # Steric friction coefficient (mu_0)
+    lcat = np.e - 1.0      # Catalytic deletion parameter (lambda_0)
+    rho_star = 0.037061    # Equilibrium 3-cycle density attractor
 
     # 1. Equilibrium Flux Evaluation
     # Creation flux J+ and deletion flux J- at attractor fixed point
     creation_flux = (Lambda + 9.0 * (rho_star**2)) * np.exp(-6.0 * mu * rho_star)
-    deletion_flux = (0.5 + 6.0 * lcat * rho_star) * rho_star
+    deletion_flux = 0.5 * rho_star * (1.0 + 6.0 * lcat * rho_star)
 
     # 2. Linearized Jacobian Derivatives & Stability Eigenvalue (§21.2.4.1)
     dJ_plus = (18.0 * rho_star - 6.0 * mu * (Lambda + 9.0 * (rho_star**2))) * np.exp(-6.0 * mu * rho_star)
-    dJ_minus = 0.5 + 12.0 * lcat * rho_star
+    dJ_minus = 0.5 + 6.0 * lcat * rho_star
     J_eigenvalue = dJ_plus - dJ_minus
 
     # 3. Holographic Infrared Horizon Suppression (§21.2.6.1)
@@ -74,7 +74,7 @@ def run_vacuum_pressure_eos():
         "-" * 78,
         "Section 21.2.5.2 Vacuum Creation Pressure & Equation of State Invariance",
         "-" * 78,
-        f"Attractor Fixed Point rho*: {rho_star:.4f}",
+        f"Attractor Fixed Point rho*: {rho_star:.6f}",
         f"Creation Current J+: {creation_flux:.6f} cycles/tick/node",
         f"Deletion Current J-: {deletion_flux:.6f} cycles/tick/node",
         f"Jacobian Derivatives: dJ+/drho = {dJ_plus:.5f}, dJ-/drho = {dJ_minus:.5f}",

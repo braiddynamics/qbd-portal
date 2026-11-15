@@ -44,13 +44,14 @@ def R(annotated_graph, T, mu, lambda_cat):
         # Base probability is 0.5 (Entropic Penalty of Erasure)
         P_del_thermo = 0.5
         
-        # B.2) The "Catalysis" (Modulation by Tension)
-        # Stress *excluding* this cycle's own contribution
-        stress = measure_local_stress(G, cycle.nodes) - 1
-        f_catalysis = (1 + lambda_cat * max(0, stress))
+        # B.2) The "Catalysis" & "Friction" (Modulation by Local Stress)
+        # Stress *excluding* this cycle's own contribution: s_c = max(0, sum_{v in c} s_G(v) - 1)
+        stress = max(0, measure_local_stress(G, cycle.nodes) - 1)
+        f_catalysis = 1 + lambda_cat * stress
+        f_friction = exp(-mu * stress)
         
         # The full probability for this single event
-        P_del = min(1.0, f_catalysis * P_del_thermo)
+        P_del = min(1.0, f_catalysis * f_friction * P_del_thermo)
         del_proposals.append( (cycle, P_del) )
 
     # --- 3. RETURN THE PROBABILITY DISTRIBUTION ---

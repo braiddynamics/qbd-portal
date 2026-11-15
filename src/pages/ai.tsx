@@ -74,7 +74,7 @@ const PARTS: Part[] = [
     number: 1,
     title: 'The Foundational Principles (The Rules)',
     chapters: '1-5',
-    tokens: '~479K',
+    tokens: '~491K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_1_the_foundational_principles_the_rules.md',
     summary: 'Substrate ontology, axioms, object model (causal network architecture), dynamics (update rules), and geometrogenesis (equilibrium spacetime emergence).',
   },
@@ -82,7 +82,7 @@ const PARTS: Part[] = [
     number: 2,
     title: 'Topological Nature of Matter (The Players)',
     chapters: '6-10',
-    tokens: '~396K',
+    tokens: '~397K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_2_topological_nature_of_matter_the_players.md',
     summary: 'Tripartite braid fermions, quantum numbers from topology, gauge symmetries as braid automorphisms, particle generations and decay, quantum universality as computation.',
   },
@@ -98,7 +98,7 @@ const PARTS: Part[] = [
     number: 4,
     title: 'Phenomenological Consequences (The Output)',
     chapters: '18-22',
-    tokens: '~366K',
+    tokens: '~367K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_4_phenomenological_consequences_the_output.md',
     summary: 'Big Kindling / inflation, nucleosynthesis, cosmic web, dark sector relics, singularities & saturated core condensates.',
   },
@@ -114,7 +114,7 @@ const PARTS: Part[] = [
     number: 6,
     title: 'Appendices',
     chapters: 'A-C',
-    tokens: '~56K',
+    tokens: '~57K',
     md: 'https://braiddynamics.com/downloads/parts/qbd_part_6_appendices.md',
     summary: 'External references cited, Python simulation models, and comprehensive notation & symbol table.',
   },
@@ -122,10 +122,10 @@ const PARTS: Part[] = [
 
 const CHAPTERS = [
   { n: 1,  title: 'Substrate (Ontology)',                                        tokens: '~133K', md: '/downloads/chapters/chapter_1.md' },
-  { n: 2,  title: 'Constraints (Axioms)',                                        tokens: '~79K',  md: '/downloads/chapters/chapter_2.md' },
-  { n: 3,  title: 'Object Model (Architecture)',                                 tokens: '~93K', md: '/downloads/chapters/chapter_3.md' },
-  { n: 4,  title: 'Operations (Dynamics)',                                       tokens: '~103K', md: '/downloads/chapters/chapter_4.md' },
-  { n: 5,  title: 'Geometrogenesis (Equilibrium)',                               tokens: '~74K',  md: '/downloads/chapters/chapter_5.md' },
+  { n: 2,  title: 'Constraints (Axioms)',                                        tokens: '~82K',  md: '/downloads/chapters/chapter_2.md' },
+  { n: 3,  title: 'Object Model (Architecture)',                                 tokens: '~94K', md: '/downloads/chapters/chapter_3.md' },
+  { n: 4,  title: 'Operations (Dynamics)',                                       tokens: '~105K', md: '/downloads/chapters/chapter_4.md' },
+  { n: 5,  title: 'Geometrogenesis (Equilibrium)',                               tokens: '~82K',  md: '/downloads/chapters/chapter_5.md' },
   { n: 6,  title: 'Tripartite Braid (Fermions)',                                 tokens: '~57K',  md: '/downloads/chapters/chapter_6.md' },
   { n: 7,  title: 'Quantum Numbers (Topology)',                                  tokens: '~57K',  md: '/downloads/chapters/chapter_7.md' },
   { n: 8,  title: 'Gauge Symmetries (Braids)',                                   tokens: '~86K',  md: '/downloads/chapters/chapter_8.md' },
@@ -138,7 +138,7 @@ const CHAPTERS = [
   { n: 15, title: 'Geometry of Entanglement (ER = EPR)',                         tokens: '~51K',  md: '/downloads/chapters/chapter_15.md' },
   { n: 16, title: 'Isomorphism Principle (Holography)',                          tokens: '~46K',  md: '/downloads/chapters/chapter_16.md' },
   { n: 17, title: 'String Limit (Worldsheets)',                                  tokens: '~53K',  md: '/downloads/chapters/chapter_17.md' },
-  { n: 18, title: 'Big Kindling (Inflation)',                                    tokens: '~82K',  md: '/downloads/chapters/chapter_18.md' },
+  { n: 18, title: 'Big Kindling (Inflation)',                                    tokens: '~83K',  md: '/downloads/chapters/chapter_18.md' },
   { n: 19, title: 'Hot Universe (Nucleosynthesis)',                              tokens: '~55K',  md: '/downloads/chapters/chapter_19.md' },
   { n: 20, title: 'Structured Universe (Cosmic Web)',                            tokens: '~96K',  md: '/downloads/chapters/chapter_20.md' },
   { n: 21, title: 'Dark Sector (Relics)',                                        tokens: '~53K',  md: '/downloads/chapters/chapter_21.md' },
@@ -151,7 +151,7 @@ const CHAPTERS = [
 const APPENDICES = [
   { id: 'A', title: 'Appendix A: External References Cited', tokens: '~34K', url: '/monograph/appendices/a-references', desc: 'Comprehensive bibliography of peer-reviewed literature, historical foundations, and foundational mathematical citations.' },
   { id: 'B', title: 'Appendix B: Python Simulation Models',  tokens: '~1K', url: '/monograph/appendices/b-sim-models', desc: 'Numerical simulation scripts, Monte Carlo algorithms, and empirical verification packages validating QBD theorems.' },
-  { id: 'C', title: 'Appendix C: Notation & Symbol Table',   tokens: '~23K', url: '/monograph/appendices/notation', desc: 'Global mathematical notation ledger, operators, topological invariants, and physical units across all chapters.' },
+  { id: 'C', title: 'Appendix C: Notation & Symbol Table',   tokens: '~24K', url: '/monograph/appendices/notation', desc: 'Global mathematical notation ledger, operators, topological invariants, and physical units across all chapters.' },
 ];
 
 const LEAN_PROOFS = [
@@ -436,7 +436,7 @@ export default function AiPage() {
 
         <pre style={{ ...s.pre, borderLeft: '4px solid var(--ifm-color-warning)', background: 'var(--ifm-color-warning-contrast-background)' }}>{`IMPORTANT — HOW TO REVIEW THIS WORK ACCURATELY:
 
-The monograph is ~1.77M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
+The monograph is ~1.78M tokens total across 25 chapters. Standalone papers are 2.5K–45K tokens each.
 Large context windows (1M–2M) are available and useful for cross-referencing and maintaining coherence,
 but context size is NOT the limiting factor for accurate analysis.
 
@@ -772,8 +772,8 @@ Machine-readable download catalogue:
 
         {/* ── Context window guidance ── */}
         <h2 style={s.h2}>CONTEXT WINDOW GUIDANCE</h2>
-        <pre style={s.pre}>{`Total monograph:  ~1.77M tokens  (full book Markdown)
-                  ~1.91M tokens  (full book JSON, includes structure overhead)
+        <pre style={s.pre}>{`Total monograph:  ~1.78M tokens  (full book Markdown)
+                  ~1.93M tokens  (full book JSON, includes structure overhead)
 
 Analysis unit recommendation: ONE CHAPTER PER REVIEW PASS
   The bottleneck is reasoning depth, not context size. Reviewing one chapter
@@ -788,7 +788,7 @@ Chapter sizes (for planning):
   Smallest chapter:  ~24K tokens (Ch. 25)
   Largest chapter:   ~133K tokens (Ch. 1)
   Typical chapter:   ~45–85K tokens
-  All 25 chapters:   ~1.77M tokens total
+  All 25 chapters:   ~1.78M tokens total
 
 File format guidance:
   Markdown  → best for prose reading and analysis (no overhead)

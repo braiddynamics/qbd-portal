@@ -1108,7 +1108,7 @@ def triad_interaction_ports (num_vertices : Nat) : Nat :=
 /--
 THEOREM 9.4: Triad Interaction Boundary is Exactly Six Routing Ports
 Proves that across the 3 vertices of an elementary 2-simplex embedded in a trivalent
-Bethe tree substrate, the total boundary interaction interface comprises 3 × 2 = 6 routing ports (Table 5 & Theorem 4.4.1).
+Bethe tree substrate, the total boundary interaction interface comprises 3 × 2 = 6 routing ports (Table 4 & Theorem 4.4.1).
 -/
 theorem triad_interaction_ports_is_six :
     triad_interaction_ports 3 = 6 := by

@@ -33,8 +33,8 @@ Independent academic manuscripts, formal critiques, and computational replicatio
 The comprehensive theoretical physics treatise *Quantum Braid Dynamics: A Computational Process*:
 
 - [Monograph Web Reader](https://braiddynamics.com/monograph): Full book table of contents and online chapters.
-- [Complete Monograph (Markdown, ~1.77M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.md)
-- [Complete Monograph (Structured JSON, ~1.91M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.json)
+- [Complete Monograph (Markdown, ~1.78M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.md)
+- [Complete Monograph (Structured JSON, ~1.93M tokens)](https://braiddynamics.com/downloads/qbd_monograph_complete.json)
 - [Individual Chapter Pattern (Markdown)](https://braiddynamics.com/downloads/chapters/chapter_N.md): Replace `N` with chapter number (1 to 25).
 - [Individual Chapter Pattern (JSON)](https://braiddynamics.com/downloads/chapters/chapter_N.json): Replace `N` with chapter number (1 to 25).
 

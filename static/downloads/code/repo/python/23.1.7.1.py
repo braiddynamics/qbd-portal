@@ -18,7 +18,7 @@ def run_rydberg_vacuum_simulation():
     steric_factor = 6.0 * mu_0  # approx 2.39365
 
     # Calibrated critical offset delta_crit
-    target_rho = 0.0370
+    target_rho = 0.037061
     delta_crit = target_rho * steric_factor / (1.0 - decay_ratio)
 
     # 2. Control Parameter Sweep Across Transition
@@ -35,7 +35,7 @@ def run_rydberg_vacuum_simulation():
 
         rows.append({
             "delta": f"{delta:.4f}",
-            "rho_steady": f"{rho_val:.4f}",
+            "rho_steady": f"{rho_val:.6f}",
             "Gamma_eff_MHz": f"{gamma_eff / 1.0e6:.2f}",
             "rate_residual": f"{rate_balance:.2e}",
             "regime": "Sub-Critical" if delta < delta_crit else "Super-Critical"
@@ -62,7 +62,7 @@ def run_rydberg_vacuum_simulation():
         f"Dissipation Ratio gamma_r / Gamma_0: {decay_ratio:.6f}",
         f"Calibrated Critical Offset delta_crit: {delta_crit:.6f}",
         f"Extracted Critical Exponent beta: {beta_extracted:.4f} (Mean-Field: 1.0000)",
-        f"Steady-State Vacuum Density rho*: {calibrated_rho:.4f} (Target: 0.0370)",
+        f"Steady-State Vacuum Density rho*: {calibrated_rho:.6f} (Target: 0.037061)",
         "-" * 78,
         df.to_markdown(index=False, tablefmt="github"),
         "-" * 78,

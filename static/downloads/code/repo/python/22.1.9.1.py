@@ -12,7 +12,7 @@ def run_collapse_saturation_dynamics():
     Lambda = 0.015625       # Primordial loop nucleation seed (2^-6)
     mu = 0.398942          # Steric friction coefficient (1/sqrt(2pi))
     lcat = 1.718282        # Catalytic deletion coefficient
-    rho_star = 0.037037    # Vacuum attractor density (§5.4.1)
+    rho_star = 0.037061    # Vacuum attractor density (§5.4.1)
     rho_crit = 1.0 / (6.0 * mu)  # Critical steric saturation density (~0.4178 cycles/node)
     
     # Gravitational and geometric parameters
@@ -76,7 +76,7 @@ def run_collapse_saturation_dynamics():
             "Time t": f"{t:.1f}",
             "Radius r (ell_0)": f"{r:.2f}",
             "Velocity v": f"{v:.3f}",
-            "Density rho_3": f"{rho:.4f}",
+            "Density rho_3": f"{rho:.6f}",
             "rho / rho_crit": f"{(rho / rho_crit):.4f}",
             "Ollivier K": f"{k_ollivier:.4f}",
             "Curvature R": f"{scalar_r:.4f}",
@@ -95,10 +95,10 @@ def run_collapse_saturation_dynamics():
         "§22.1.9.1 Collapse Trajectory and Core Saturation Dynamics",
         "-" * 78,
         f"Steric Friction Coefficient mu: {mu:.6f} (Canonical value 1/sqrt(2pi))",
-        f"Critical Saturation Density rho_crit: {rho_crit:.4f} cycles/node",
-        f"Initial State: Radius R_0 = {R_0:.1f} ell_0, Density rho_0 = {rho_star:.4f}",
+        f"Critical Saturation Density rho_crit: {rho_crit:.6f} cycles/node",
+        f"Initial State: Radius R_0 = {R_0:.1f} ell_0, Density rho_0 = {rho_star:.6f}",
         f"Asymptotic Stable Core Radius R_core: {final_r:.2f} ell_0 (> 0, non-zero crystal)",
-        f"Asymptotic Core Density rho_inf: {final_rho:.4f} (Saturation: {final_rho/rho_crit*100:.2f}%)",
+        f"Asymptotic Core Density rho_inf: {final_rho:.6f} (Saturation: {final_rho/rho_crit*100:.2f}%)",
         f"Curvature Bound R_inf: {final_curv:.4f} ell_0^-2 (Strictly bounded < 6.0000)",
         "-" * 78,
         df.to_markdown(index=False, tablefmt="github"),

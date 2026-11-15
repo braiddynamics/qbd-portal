@@ -509,7 +509,7 @@ In particular $C\in\mathcal D_L(e)$, so $|\mathcal D_L(e)|\ge1$.
 
 **II. Exact Cycle-Set Identity**
 
-Deletion gives $G'=(V,E\setminus\{e\})$ (Section 1.5). If $D\in\mathcal C_k(G')$, all its edges lie in $E\setminus\{e\}$, so $D\in\mathcal C_k(G)$ and $e\notin E(D)$. Conversely, if $D\in\mathcal C_k(G)$ and $e\notin E(D)$, all its edges remain in $G'$, so $D\in\mathcal C_k(G')$. Thus
+Deletion gives $G'=(V,E\setminus\{e\})$ (Definition 1.3.3, Section 1.3). If $D\in\mathcal C_k(G')$, all its edges lie in $E\setminus\{e\}$, so $D\in\mathcal C_k(G)$ and $e\notin E(D)$. Conversely, if $D\in\mathcal C_k(G)$ and $e\notin E(D)$, all its edges remain in $G'$, so $D\in\mathcal C_k(G')$. Thus
 
 $$
 \mathcal C_k(G')=\mathcal C_k(G)\setminus\mathcal D_k(e)
@@ -633,27 +633,7 @@ A foundational conceptual distinction must be maintained between the instantaneo
 
 **Definition 2.3.1** (Spatial Graphs, Occurrence Records and Event Dependencies).
 
-Let the **Causal Graph Substrate** at logical tick $t$ be the active spatial configuration $G_t=(V,E_t,H_t)$, where $V$ is a fixed finite vertex set, $E_t\subseteq V\times V$ is irreflexive and asymmetric, and $H_t:E_t\to\mathbb N_0$ records immutable causal heights of the active edge occurrences. Directed spatial cycles are permitted; the chronological order belongs to the distinct creation-event structure.
-
-A creation occurrence is a record $\omega=(u,v,b,h)$ with birth tick $b\in\mathbb N_0$ and causal height $h\in\mathbb N_0$. At most one occurrence of a given ordered pair is created per tick. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies the current record and satisfies $H_t(u,v)=h(\alpha_t(u,v))$. The cumulative creation record $\mathcal E_t$ retains past occurrences after active deletion (Definition 4.1.2).
-
-Let the **Historical Category** $\mathbf{Hist}$ have objects given by cumulative creation-record sets $\mathcal E_t$ and morphisms given by their canonical inclusions. A record is $\omega=(u,v,b,h)$ with source, target, scheduler birth tick and causal height (Definition 1.2.1). Write
-
-$$
-\mathcal E_{t+1}=\mathcal E_t\cup A^{\mathrm{occ}}_{t+1},\qquad
-b(\omega)=\omega_3,\quad h(\omega)=\omega_4.
-$$
-
-The initial records have $b=h=0$. New records have birth tick $t+1$ and height assigned from the pre-tick snapshot. For any fixed pair and birth tick the scheduler creates at most one record. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies which past creation is currently active. The cumulative spatial support is the projection
-
-$$
-\overline E_t=\{(u,v):\exists b,h,\ (u,v,b,h)\in\mathcal E_t\},\qquad
-\overline G_t=(V,\overline E_t).
-$$
-
-The unlabeled support $\overline G_t$ is the cumulative spatial shadow of the creation history. It is not itself the occurrence dependency poset, and it does not identify different births of the same pair. A first-birth label on $\overline E_t$, if used, is not the current active height. Deletion records and the full state trajectory are additional data when required; the creation record alone is not defined to reconstruct every intermediate state.
-
-An inclusion $\iota_{t,s}:\mathcal E_t\hookrightarrow\mathcal E_s$, $t\le s$, has $\iota_{t,s}(\omega)=\omega$. Identities and composition are ordinary inclusion identities and composition, preserving all four coordinates exactly.
+Following the active spatial substrate $G_t=(V,E_t,H_t)$ and occurrence-record coordinates $\omega=(u,v,b,h)\in\mathcal E_t$ of Definition 1.1.11 (with scheduler timestamps of Definition 1.2.1 and the cumulative historical category $\mathbf{Hist}$ of record inclusions $\iota_{t,s}\colon \mathcal E_t \hookrightarrow \mathcal E_s$ formalized in Definition 4.1.2), each active edge $(u,v)\in E_t$ maps via $\alpha_t\colon E_t\to\mathcal E_t$ to an immutable creation record satisfying $H_t(u,v)=h(\alpha_t(u,v))$. Whereas $G_t$ and its cumulative spatial shadow $\overline G_t=(V,\overline E_t)$ permit directed spatial cycles, chronological precedence belongs separately to event-dependency order on $\mathcal E_t$.
 
 **Definition 2.3.2** (Mediated Time-Respecting Influence).
 
@@ -1102,7 +1082,7 @@ Q.E.D.
 
 To verify uniqueness quantitatively, we evaluate the complete configuration space of all 106 non-isomorphic candidate trees at size $N = 10$. Applying the axiomatic constraints sequentially acts as a rigorous sieve:
 
-Table 3: *Axiomatic Sieve across the Complete Configuration Space of Non-Isomorphic Trees ($N=10$).*
+Table 2: *Axiomatic Sieve across the Complete Configuration Space of Non-Isomorphic Trees ($N=10$).*
 
 | Sieve Step | Axiomatic Filter | Mathematical Constraint | Survivors | Eliminated Candidates |
 | :--- | :--- | :--- | :---: | :--- |
@@ -1113,10 +1093,10 @@ Table 3: *Axiomatic Sieve across the Complete Configuration Space of Non-Isomorp
 
 The two surviving configurations are the **Balanced Regular Bethe Fragment** and the **Caterpillar Graph** (linear internal core). Ranking candidates by the **Structural Optimality Score** $\mathcal{O}(G; \lambda) = \lambda \log_2 |\operatorname{Aut}(G)| + (1-\lambda) H_S(G)$ (where $H_S = -\sum p_i \log_2 p_i$ is the Shannon orbit entropy measuring positional indistinguishability) confirms quantitative supremacy across the parameter interval $\lambda \in [0.4, 0.6]$:
 
-Table 4: *Structural Optimality Scorecard and Orbit Entropy Comparison ($N=10$).*
+Table 3: *Structural Optimality Scorecard and Orbit Entropy Comparison ($N=10$).*
 
 | Candidate Topology | $|\operatorname{Aut}(G)|$ | Orbit Entropy $H_S$ | $\mathcal{O}(\lambda=0.4)$ | $\mathcal{O}(\lambda=0.5)$ | $\mathcal{O}(\lambda=0.6)$ | Classification |
-| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| :------------------------ | :------: | :------: | :------: | :------: | :------: | :----------------------- |
 | **Balanced Bethe Fragment** | $\mathbf{48}$ | $\mathbf{1.2955}$ | $\mathbf{3.011}$ | $\mathbf{3.440}$ | $\mathbf{3.869}$ | **Optimal Vacuum ($G_0$)** |
 | **Caterpillar (Linear Core)**| $8$ | $1.9219$ | $2.353$ | $2.461$ | $2.569$ | Suboptimal Branching |
 | **Star Graph (Hub)** | $362,880$ | $0.4690$ | $7.670$ | $9.469$ | $11.268$ | Excluded by Lemma 3.2.2 |
@@ -2100,7 +2080,7 @@ Q.E.D.
 
 The canonical analytical reference coordinates are conditional constitutive choices. The unbiased binary prior follows from bit-flip symmetry; channel energies additionally use stipulated equal allocation, the source uses six independent fair decisions and a reference attempt clock, catalysis uses an affine family with a chosen endpoint, and friction uses the continuum Gaussian reference. The exact discrete Gaussian normalization retains the theta correction shown below. These assumptions define the reference model against which scalar stability and simulations are compared.
 
-Table 5: *Constitutive Assumptions, Conditional Coordinates and Their Mathematical Relations.*
+Table 4: *Constitutive Assumptions, Conditional Coordinates and Their Mathematical Relations.*
 
 | Constitutive Parameter | Reference Value | Specified Premise | Mathematical Relation | Operational Role | Validation Scope |
 | :--- | :---: | :--- | :--- | :--- | :--- |
@@ -2252,7 +2232,7 @@ where $|\mathcal{C}_3(x)|$ is the number of closed directed 3-cycles incident on
 For a deletion candidate on directed 3-cycle $c = (u, v, w)$, the constitutive deletion self-stress measures cycle crowding minus the cycle's own contribution:
 $$s_{\mathrm{del}}(c) = \max\left(0, \sum_{x \in \{u, v, w\}} |\mathcal{C}_3(x)| - 1\right).$$
 
-**Theorem 4.5.5** (Constitutive Kernel).
+**Theorem 4.5.1** (Constitutive Kernel).
 Under the canonical reference priors $(\mu_0, \lambda_0) = (1/\sqrt{2\pi}, e-1)$, transition probabilities are given by:
 $$P_{\mathrm{acc}}(s_{\mathrm{add}}) = \mathrm{e}^{-\mu_0 s_{\mathrm{add}}}, \qquad Q_{\mathrm{del}}(s_{\mathrm{del}}) = \min\left(1, \frac{1}{2}(1 + \lambda_0 s_{\mathrm{del}})\,\mathrm{e}^{-\mu_0 s_{\mathrm{del}}}\right).$$
 
@@ -2281,9 +2261,9 @@ Here the addition set is taken after reciprocal filtering. The supplement report
 
 ## 4.6 Single Tick of Logical Time
 
-The microscopic rewrite grammar, parallel execution scheduler $\mathcal{U}$, and resulting dynamical phase trajectories are summarized in Figure 1.
+The microscopic rewrite grammar, parallel execution scheduler $\mathcal{U}$, and resulting dynamical phase trajectories are summarized in Figure 3.
 
-![Microscopic graph rewrite system, elementary moves, execution scheduler, and bifurcating dynamical fates. (a) Regular bipartite Bethe substrate ($k=3$) with alternating depth-parity node coloring (dark for even depths, open for odd depths) and an initial parity-breaking defect edge linking inner same-parity nodes. (b) Elementary rewrite moves: path-closing addition on directed 2-paths and tension-dependent deletion on 3-cycle edges under causal PUC and AEC constraints. (c) Maximally parallel discrete tick $\mathcal{U}$ executing candidate proposals, independent Bernoulli selections, idempotent addition merge, and deletion purge (Lemma 4.6.1). (d) Dynamical trajectories of 3-cycle population $N_3(t)$, illustrating the bifurcation between rapid decay to the frozen absorbing vacuum ($N_3=0$) and first-tick burst escape into a persistent Quasi-Stationary Distribution (QSD, $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124$ at $N = 10^4$).](figure_framework_schematic.png)
+![Microscopic graph rewrite system, elementary moves, execution scheduler, and bifurcating dynamical fates. (a) Regular bipartite Bethe substrate ($k=3$) with alternating depth-parity node coloring (dark for even depths, open for odd depths) and an initial parity-breaking defect edge linking inner same-parity nodes. (b) Elementary rewrite moves: path-closing addition on directed 2-paths and tension-dependent deletion on 3-cycle edges under causal PUC and AEC constraints. (c) Maximally parallel discrete tick $\mathcal{U}$ executing candidate proposals, independent Bernoulli selections, idempotent addition merge, and deletion purge (Lemma 4.6.1). (d) Dynamical trajectories of 3-cycle population $N_3(t)$, illustrating the bifurcation between rapid decay to the frozen absorbing vacuum ($N_3=0$) and first-tick burst escape into a metastable Quasi-Stationary Distribution (QSD, $\langle N_3 \rangle_{\mathrm{QSD}} \approx 124$ at $N = 10^4$ under $\tau_{\mathrm{homeo}}$).](figure_framework_schematic.png)
 
 Let the **Evolution Operator** be the Markov kernel induced by a deterministic four-stage realization map $\mathcal U(G,\xi)$ on the complete active graph state, including its current heights. All proposals and their probabilities are evaluated against the same pre-tick snapshot.
 
@@ -2816,7 +2796,7 @@ Q.E.D.
 
 **I. Specified Scalar Stress**
 
-The model supplies $s_{\mathrm{cl}}=6\rho$ as a candidate-conditioned constitutive approximation. The acceptance law at deterministic stress is $P(s)=\exp(-\mu s)$ (Theorem 4.5.5).
+The model supplies $s_{\mathrm{cl}}=6\rho$ as a candidate-conditioned constitutive approximation. The acceptance law at deterministic stress is $P(s)=\exp(-\mu s)$ (Theorem 4.5.1).
 
 **II. Substitution**
 
@@ -2966,22 +2946,36 @@ where $\Lambda = 2^{-6} = 0.015625$ is the auxiliary source under the six-decisi
 
 ## 5.3 Computational Verification and Multi-Scale Scaling
 
-To resolve the finite-volume behavior, extensive ensemble simulations were conducted across four orders of magnitude in system size ($N = 10, 100, 1,000, 10,000$) using the high-performance multi-threaded C++20 simulation engine (Supplementary Material, Appendix B):
+To resolve the finite-volume behavior, extensive ensemble simulations were conducted across four orders of magnitude in system size ($N = 10, 100, 1,000, 10,000$) using the high-performance multi-threaded C++20 simulation engine and the Python reference implementation (Supplementary Material, Appendices B and C), under a maximum step ceiling $T_{\max} = 1500\text{ ticks}$ combined with the $K = 1$ homeostatic stopping protocol $\tau_{\mathrm{homeo}}$ (Section 4.5.3):
 
-* **Mesoscopic Zero-Inflation ($N = 100$):** On small lattices, leaf boundary truncation ($L/N \approx 50\%$, Proposition 3.3.1) exerts strong finite-size quenching, matching boundary extinction thresholds in tree contact processes [14, 18]. In an ensemble of 100 independent realizations running for $T = 100$ ticks, 73% extinguish rapidly into the absorbing vacuum ($p_{\mathrm{surv}} = 0.270 \pm 0.044$, median $\rho = 0$). Surviving paths populate an active Quasi-Stationary Distribution with mean density $\langle\rho\rangle_{\mathrm{QSD}} = 0.0919 \pm 0.0119$.
-* **Suppression of Boundary Quenching at Large Volume ($N = 10,000$):** Expanding the volume to $N = 10,000$ increases the internal path capacity and suppresses boundary loss, raising survival to $p_{\mathrm{surv}} = 0.990 \pm 0.010$. The active core expands to $\langle N_3 \rangle_{\mathrm{QSD}} \approx 123.6$ cycles ($\rho \approx 1.2\%$), while the non-equilibrium lifetime scales power-law with system volume:
+* **Mesoscopic Zero-Inflation ($N = 100$):** On small lattices, leaf boundary truncation ($L/N \approx 50\%$, Proposition 3.3.1) exerts strong finite-size quenching, matching boundary extinction thresholds in tree contact processes [14, 18]. In the `p_surv_N100_design.csv` reference ensemble ($M = 100$ realizations, $T_{\max} = 1500$ under $\tau_{\mathrm{homeo}}$), $73\%$ extinguish into the absorbing vacuum while $27\%$ arrest on active states ($p_{\mathrm{surv}} = 0.270 \pm 0.044$, unconditioned $\langle N_3 \rangle = 2.48 \pm 0.44$, median $\rho = 0$). Surviving realizations populate a conditioned Quasi-Stationary Distribution with mean density $\langle\rho\rangle_{\mathrm{QSD}} = 0.0919 \pm 0.0119$ (C++20 `seed = 0` cross-check yields matching $27/100$ active realizations at arrest, $\langle N_3 \rangle = 2.12$, $\langle N_3 \rangle_{\mathrm{QSD}} = 7.85$, $\langle\rho\rangle_{\mathrm{QSD}} = 0.0785$, and mean duration $\tau_{\mathrm{homeo}} = 67.9$ ticks across range $[27, 122]$).
+* **Suppression of Boundary Quenching at Large Volume ($N = 10,000$):** Expanding the volume to $N = 10,000$ under the same $\tau_{\mathrm{homeo}}$ protocol ($T_{\max} = 1500$) increases the internal path capacity and suppresses boundary loss, raising survival to $p_{\mathrm{surv}} = 0.990 \pm 0.010$. The active core expands to $\langle N_3 \rangle_{\mathrm{QSD}} \approx 123.6$ cycles ($\rho \approx 1.2\%$), while the mean homeostatic duration $\tau_{\mathrm{ext}}$ (the ensemble expectation of $\tau_{\mathrm{homeo}}$ bounded by $T_{\max}$) scales power-law with system volume:
 
    $$\tau_{\mathrm{ext}} \sim N^{0.64},$$
-   extending the mean boundary extinction lifetime from $\tau_{\mathrm{ext}} \approx 67.8\text{ ticks}$ at $N=100$ to $\tau_{\mathrm{ext}} \approx 752.4\text{ ticks}$ at $N=10,000$ ($11.1\times$ longevity increase).
+   extending from $\tau_{\mathrm{ext}} \approx 67.8\text{ ticks}$ at $N=100$ to $\tau_{\mathrm{ext}} \approx 752.4\text{ ticks}$ at $N=10,000$ ($11.1\times$ longevity increase).
+
+* **Stopping-Rule Sensitivity ($\tau_K$) and Unstopped Horizon Comparison ($K = \infty$):** Because any active configuration ($N_3 > 0$) has strictly positive deletion probability ($Q_{\mathrm{del}}(2) \approx 0.999$, Lemma 4.6.5), it is not strictly absorbing ($K(G,G) < 1$). Consequently, a finite persistence criterion $\tau_K$ arrests active trajectories whenever $K$ consecutive ticks draw zero accepted moves, whereas an unstopped trajectory ($K = \infty$) continues evolving up to the fixed horizon $T$. Table 5 quantifies this stopping-rule dependence across both the Supplement Appendix D.7 sweep ($K \in \{1, 2, 5, 10\}$) and direct C++20 (`seed = 0`, $M = 100$) runs. Increasing $K$ filters out brief quiescent pauses: at $N = 100$ ($T_{\max} = 1500$), unstopped evolution extinguishes all $100$ realizations before tick $1500$ ($p_{\mathrm{surv}} = 0.000$), whereas at $T = 100$ ticks $9/100$ remain active unstopped ($p_{\mathrm{surv}} = 0.0900 \pm 0.0286$) and at $N = 1000$ ($T_{\max} = 1500$) $2/100$ remain continuously active without halting ($p_{\mathrm{surv}} = 0.0200 \pm 0.0140$, $\langle N_3 \rangle_{\mathrm{QSD}} = 43.0$). Thus, $\tau_{\mathrm{homeo}}$ ($K = 1$) characterizes short-time homeostatic stasis under the dual-time rule rather than permanent invariance at small $N$.
+
+Table 5: *Stopping-Rule Sensitivity ($\tau_K$, $K \in \{1, 2, 5, 10\}$) and Unstopped Fixed-Horizon Baseline ($K = \infty$) at Canonical Coordinates $(\mu_0, \lambda_0)$ ($M = 100$ realizations per row).*
+
+| Protocol / Lattice Size | Survival $p_{\mathrm{surv}}$ | Mean Cycles $\langle N_3 \rangle$ | QSD Cycles $\langle N_3 \rangle_{\mathrm{QSD}}$ | Mean Duration (ticks) | Terminal Regime |
+| :------------------------ | :--------------------: | :-------------------: | :-------------------------: | :-------------------: | :------------------------ |
+| $K=1$ ($\tau_{\mathrm{homeo}}$, $N=100$, D.7) | $0.2700 \pm 0.0444$ | $2.17 \pm 0.48$ | $8.04 \pm 0.89$ | $66.02$ | First quiet-tick arrest |
+| $K=2$ ($\tau_2$, $N=100$, D.7 / C++) | $0.0600 \pm 0.0237$ ($0.070$) | $0.70 \pm 0.34$ ($0.70$) | $11.67 \pm 1.42$ ($10.00$) | $71.03$ ($72.72$) | 2-tick quiet filter |
+| $K=5$ ($\tau_5$, $N=100$, D.7 / C++) | $0.0200 \pm 0.0140$ ($0.010$) | $0.22 \pm 0.16$ ($0.10$) | $11.00 \pm 1.85$ ($10.00$) | $74.79$ ($77.09$) | 5-tick quiet filter |
+| $K=10$ ($\tau_{10}$, $N=100$, D.7 / C++) | $0.0100 \pm 0.0099$ ($0.000$) | $0.15 \pm 0.15$ ($0.00$) | $15.00 \pm 2.10$ (--) | $80.19$ ($82.19$) | 10-tick quiet filter |
+| $K=\infty$, $T=100$ ($N=100$, C++) | $0.0900 \pm 0.0286$ | $0.42$ | $4.67$ | $100.00$ | Unstopped fixed horizon |
+| $K=\infty$, $T=1500$ ($N=100$, C++) | $0.0000$ ($0/100$) | $0.00$ | -- | $1500.00$ | Full finite-$N$ absorption |
+| $K=\infty$, $T=1500$ ($N=1000$, C++) | $0.0200 \pm 0.0140$ | $0.86$ | $43.00$ | $1500.00$ | Large-$N$ active tail |
 
 ### 5.3.1 Parameter Sweep Ensemble Records
 
-Ensemble simulation records at the constitutive design point $(\mu_0, \lambda_0, T_c) \approx (0.398942, 1.718282, 0.693147)$ (labeled at two-decimal sweep resolution in Table 6) from the benchmark dataset (`p_surv_N100_design.csv`) along with parameter sweep variations confirm the analytical phase boundaries:
+Ensemble simulation records at the constitutive design point $(\mu_0, \lambda_0, T_c) \approx (0.398942, 1.718282, 0.693147)$ (labeled at two-decimal sweep resolution in Table 6) from the benchmark dataset (`p_surv_N100_design.csv`, $T_{\max} = 1500$ under $\tau_{\mathrm{homeo}}$) along with parameter sweep variations confirm the analytical phase boundaries:
 
-Table 6: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100\text{ ticks}$, 100 Realizations per Cell).*
+Table 6: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T_{\max} = 1500\text{ ticks}$ under $\tau_{\mathrm{homeo}}$, 100 Realizations per Cell).*
 
 | $T$ | $\lambda$ | $\mu$ | Survival $p_{\mathrm{surv}}$ | Mean Cycles $\langle N_3 \rangle$ | QSD Density $\langle\rho\rangle_{\mathrm{QSD}}$ | Lifetime $\tau_{\mathrm{ext}}$ | Dynamical Phase Regime |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| :----: | :-------: | :----: | :------------------------: | :---------------------------------: | :---------------------------------------------------: | :----------------------------------: | :------------------------------ |
 | $0.10$ | $1.72$ | $0.05$ | $0.000$ | $0.00$ | -- | $4.2 \pm 0.8$ | Frozen / Immediate Extinction |
 | $0.69$ | $0.50$ | $0.05$ | $0.050 \pm 0.022$ | $0.34 \pm 0.12$ | $0.068 \pm 0.014$ | $18.4 \pm 3.1$ | Sub-critical / Boundary Quenched |
 | $\mathbf{0.69}$ | $\mathbf{1.72}$ | $\mathbf{0.40}$ | $\mathbf{0.270 \pm 0.044}$ | $\mathbf{2.48 \pm 0.44}$ | $\mathbf{0.092 \pm 0.012}$ | $\mathbf{67.8 \pm 8.4}$ | **Design-Point Unpumped QSD ($\Lambda_{\mathrm{micro}}=0$)** |
@@ -2989,7 +2983,7 @@ Table 6: *Representative Parameter Sweep Records on $N = 100$ Lattices ($T = 100
 | $0.69$ | $1.72$ | $0.15$ | $0.020 \pm 0.014$ | $0.11 \pm 0.08$ | $0.055 \pm 0.020$ | $12.1 \pm 2.4$ | High Friction Attenuation |
 | $1.00$ | $1.72$ | $0.05$ | $0.440 \pm 0.050$ | $4.12 \pm 0.61$ | $0.094 \pm 0.014$ | $74.5 \pm 7.1$ | Thermalized Active QSD |
 
-*Note:* The highlighted row denotes the canonical design point $(\mu_0, \lambda_0, T_c)$ established in Table 5; non-canonical rows at $\mu = 0.05$ and $\mu = 0.15$ represent low-friction exploratory contrasts and are not the source of the design-point survival fraction $p_{\mathrm{surv}} = 0.270$.
+*Note:* The highlighted row denotes the canonical design point $(\mu_0, \lambda_0, T_c)$ established in Table 4 (under $\tau_{\mathrm{homeo}}$; see Table 5 for $\tau_K$ and unstopped sensitivity); non-canonical rows at $\mu = 0.05$ and $\mu = 0.15$ represent low-friction exploratory contrasts and are not the source of the design-point survival fraction $p_{\mathrm{surv}} = 0.270$.
 
 ## 5.4 Equilibrium Analysis and Phase Boundaries
 
@@ -3102,7 +3096,7 @@ Q.E.D.
 The physical behavior of the active phase resolves into three distinct regimes across the mean-field and microscopic formulations:
 
 1. **Unpumped Homogeneous Cubic Approximation ($\Lambda = 0$):** In the unpumped homogeneous cubic truncation of Section 5.2.3, the saddle-node bifurcation threshold evaluates to $\mu_c(\lambda_0) \approx 0.136900$. When evaluated at the constitutive prior $\mu_0 = 1/\sqrt{2\pi} \approx 0.398942$, the cubic discriminant is negative ($\Delta < 0$), ruling out any homogeneous non-zero fixed point in that truncation.
-2. **Unpumped Discrete Stochastic Lattice ($\Lambda_{\mathrm{micro}} = 0$):** Despite the negative homogeneous mean-field discriminant ($\Delta < 0$, Section 5.2.3), the microscopic discrete rewrite dynamics at the exact canonical design point $(\mu_0, \lambda_0, T_c)$ sustain an active Quasi-Stationary Distribution with finite survival fraction $p_{\mathrm{surv}} = 0.270 \pm 0.044$ and conditioned core density $\langle\rho\rangle_{\mathrm{QSD}} \approx 0.092$ at $N = 100$, rising to $p_{\mathrm{surv}} = 0.990 \pm 0.010$ at $N = 10,000$ (Table 6). Survival is enabled by localized soliton clustering ($\rho_{\mathrm{local}} \gg \langle \rho \rangle$) and non-mean-field cycle correlations on the Bethe tree, operating in the Pemantle-Liggett weak survival window ($\lambda_{c1} < \hat{\lambda}_{\mathrm{eff}} < \lambda_{c2}$) where branching path expansion overcomes local extinction [14, 18].
+2. **Unpumped Discrete Stochastic Lattice ($\Lambda_{\mathrm{micro}} = 0$):** Despite the negative homogeneous mean-field discriminant ($\Delta < 0$, Section 5.2.3), under $\tau_{\mathrm{homeo}}$ the microscopic discrete rewrite dynamics at the exact canonical design point $(\mu_0, \lambda_0, T_c)$ arrest in an active Quasi-Stationary Distribution with finite survival fraction $p_{\mathrm{surv}} = 0.270 \pm 0.044$ and conditioned core density $\langle\rho\rangle_{\mathrm{QSD}} \approx 0.092$ at $N = 100$, rising to $p_{\mathrm{surv}} = 0.990 \pm 0.010$ at $N = 10,000$ (Table 6; see Table 5 for $K$-sensitivity and unstopped behavior). Survival is enabled by localized soliton clustering ($\rho_{\mathrm{local}} \gg \langle \rho \rangle$) and non-mean-field cycle correlations on the Bethe tree, operating in the Pemantle-Liggett weak survival window ($\lambda_{c1} < \hat{\lambda}_{\mathrm{eff}} < \lambda_{c2}$) where branching path expansion overcomes local extinction [14, 18].
 3. **Driven Continuum Master Equation ($\Lambda = 2^{-6}$):** Under continuous microscopic creation injection, the driven non-equilibrium master equation admits a strictly stable steady-state attractor $\rho^* \approx 0.037061$ with negative restoring flux $J \approx -0.332922 < 0$ at the exact canonical coordinates $(\mu_0, \lambda_0)$. This active attractor is driven by non-equilibrium flux and does not represent an invariant measure of the unpumped discrete Markov chain.
 
 ## 5.5 Geometric Stabilization (Topological Stability)
@@ -3379,7 +3373,7 @@ To establish complete transparency regarding the nature of the mathematical clai
 Table 8: *Lean 4 Formal Verification Correspondence and Scope Delineation.*
 
 | Paper Statement / Theorem | Lean 4 Identifier | Nature of Formalization | Certified Mathematical Scope |
-| :--- | :--- | :--- | :--- |
+| :-------------------- | :---------------------------------- | :---------------------- | :---------------------------- |
 | **Lemma 1.2.3 & Thm 1.2.4** (Causal Monotonicity) | `edge_monotone_no_causal_cycle` | Inductive structural proof (0 axioms) | Strictly timestamp-monotone paths cannot close into causal cycles ($P_{\mathrm{CTC}} \equiv 0$). |
 | **Theorem 2.1.4** (Axiom 1 Primitive) | `asymmetry_equiv_irreflexive_and_antisymmetric` | Constructive propositional logic | Asymmetry $\iff$ Irreflexivity $\land$ Antisymmetry; self-loops excluded. |
 | **Theorem 2.1.4** (Antisymmetry Loophole) | `antisymmetry_insufficient` | Explicit Boolean countermodel | Order-theoretic antisymmetry alone permits length-1 self-loops. |
@@ -3391,7 +3385,7 @@ Table 8: *Lean 4 Formal Verification Correspondence and Scope Delineation.*
 | **Theorem 3.3.2** (Symmetry Breaking) | `orbit_splitting_breaks_automorphism` | Symmetry breaking theorem | Splitting an orbit breaks a successor symmetry under the distinct-effect hypothesis. |
 | **Theorem 4.4.1** (Informational Prior) | `permutation_invariance_uniquely_determines_prior` | Information-theoretic deduction | $\mathfrak{S}_2$ bit-flip symmetry uniquely forces unbiased prior $p=1/2$. |
 | **Theorem 4.4.1** (Drive Capacity) | `triad_interaction_ports_is_six`, `simplicial_permittivity_scale` | Simplicial combinatorics | 6-port boundary capacity ($3 \times 2 = 6$) fixes theoretical drive $\Lambda = 2^{-6}$. |
-| **Theorem 4.5.5 / Prop 3.1** (Base Stress) | `isolated_3cycle_self_stress_eq_two` | Combinatorial evaluation | Base self-stress on an isolated 3-cycle evaluates to $s_{\mathrm{del}} = 2$. |
+| **Theorem 4.5.1 / Prop 3.1** (Base Stress) | `isolated_3cycle_self_stress_eq_two` | Combinatorial evaluation | Base self-stress on an isolated 3-cycle evaluates to $s_{\mathrm{del}} = 2$. |
 | **Theorem 6.1** (Absorbing State) | `absorbing_state_stationary` | Transition measure invariance | Vacuum configuration ($N_3=0, \mathcal{S}=\emptyset$) is strictly absorbing. |
 | **Theorem 6.2** (Scar Permanence) | `scar_edges_immune_to_deletion` | Structural graph invariant | Non-cycle chord edges carry zero deletion weight ($Q_{\mathrm{del}}=0$). |
 | **Lemma 4.1.3** (Indelible History) | `deletion_preserves_cumulative_history` | Poset inclusion | Spatial edge deletion preserves the edge in cumulative history $\mathbf{Hist}$. |

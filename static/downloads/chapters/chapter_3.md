@@ -518,14 +518,14 @@ Q.E.D.
 
 ### 3.1.8.2 Calculation: Connectivity Counterexample {#3.1.8.2}
 
-:::note[**Computational Demonstration of Entropy Violation in Disconnected Graphs by Group Size Comparison**]
+:::note[**Automorphism Order and Orbit Splitting via Bridge Coupling of Disjoint Stars**]
 :::
 
-Algorithmic validation of the entropic penalty for disconnected topologies established by **Global Connectivity** <Ref id="3.1.8.1" label="§3.1.8.1" /> is based on the following protocols:
+Quantitative comparison of permutation symmetry before and after coupling disjoint components alongside **Global Connectivity** <Ref id="3.1.8.1" label="§3.1.8.1" /> is based on the following protocols:
 
-1.  **Disconnected Topology:** The simulation instantiates a graph `G_disc` comprising two disjoint star subgraphs ($N=4$ each), representing a vacuum state with broken causal connectivity. Each star consists of a central root connected to three leaf nodes.
-2.  **Connected Topology:** A second graph `G_conn` is derived from the disconnected state by introducing a single bridge edge between the centers of the two stars, establishing a weak causal path between the previously disjoint regions.
-3.  **Symmetry Quantification:** The algorithm computes the cardinality of the automorphism group $|\text{Aut}(G)|$ for both configurations using the `VF2` isomorphism algorithm provided by `networkx`. This metric quantifies the relational entropy cost of disconnection by counting the number of valid symmetry permutations, verifying the **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> symmetry preservation.
+1.  **Disconnected Topology:** The simulation instantiates a graph `G_disc` comprising two disjoint star subgraphs ($N=4$ each), with edges $0 \to \{1, 2, 3\}$ and $4 \to \{5, 6, 7\}$, representing two causally isolated components.
+2.  **Connected Topology:** A second graph `G_conn` is derived from `G_disc` by introducing a single bridge edge $(3, 4)$ connecting leaf $3$ of the first star to center $4$ of the second star, establishing a directed causal link between the two components.
+3.  **Symmetry Quantification:** The algorithm computes the cardinality of the automorphism group $|\operatorname{Aut}(G)|$ for both configurations using the `VF2` isomorphism algorithm provided by `networkx`, quantifying how coupling the two components alters global permutation symmetry relative to the **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" /> baseline.
 
 ```python
 import networkx as nx
@@ -543,7 +543,7 @@ G_disc.add_edges_from([(0,1), (0,2), (0,3)])
 G_disc.add_edges_from([(4,5), (4,6), (4,7)])
 
 # 2. Connected Configuration
-# Bridge the roots: 3->4
+# Bridge leaf 3 (first star) to center 4 (second star): 3->4
 G_conn = nx.DiGraph(G_disc)
 G_conn.add_edge(3, 4)
 
@@ -570,7 +570,7 @@ Symmetry Reduction Factor: 6.0x
 ```
 
 **Conclusion:**
-The disconnected graph exhibits 72 automorphisms, arising from the permutation of leaves within the stars and the independent swapping of the two identical star components ($2 \times 3! \times 3! \times 2$). The connected graph reduces this symmetry group to 12. The calculated symmetry reduction factor of 6.0 confirms that disconnected states possess a significantly larger symmetry group ($72$ vs $12$). This high "symmetry penalty" corresponds to a lower relational entropy state, demonstrating that the vacuum thermodynamically disfavors disconnection and validating the exclusion of such topologies from the maximum-entropy vacuum state.
+The disconnected graph exhibits $3! \times 3! \times 2 = 72$ automorphisms, arising from permuting leaves within each star together with swapping the two isomorphic components. Introducing the asymmetric bridge $(3, 4)$ fixes leaf $3$, distinguishes centers $0$ and $4$ by their indegree and outdegree roles, and leaves only $2! \times 3! = 12$ automorphisms ($2!$ permutations on $\{1, 2\}$ and $3!$ on $\{5, 6, 7\}$), a $6.0\times$ reduction. Crucially, this coupling splits the vertex automorphism orbits from two orbits of sizes $[2, 6]$ (orbit-partition Shannon entropy $H_S \approx 0.8113$ bits) into five orbits of sizes $[1, 1, 1, 2, 3]$ ($H_S \approx 2.1556$ bits): coupling increases orbit-partition diversity while lowering $|\operatorname{Aut}(G)|$. Larger $|\operatorname{Aut}(G)|$ therefore cannot by itself enforce connectedness; connectivity in **Global Connectivity** <Ref id="3.1.8" label="§3.1.8" /> follows directly from the root-reachability premise of **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" />. By contrast, positive $\log_2|\operatorname{Aut}(G)|$ weighting in **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> evaluates candidates only after connectedness and coordination filters restrict the tree class.
 
 ### 3.1.8.3 Commentary: Unity of the Vacuum {#3.1.8.3}
 
@@ -817,11 +817,11 @@ Q.E.D.
 :::note[**Vacuum is a Finite Rooted Tree**]
 :::
 
-The specified initial class has root reachability, a finite horizon, bounded branching and non-reconvergence (**Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" />). These independent premises imply the conditional tree result (**Vacuum Structure** <Ref id="3.1.3" label="§3.1.3" />). The proof does not derive a common origin or finite extent from a generic partial order.
+Together, the foundational constraints execute a sequential topological compression of the initial substrate under the four independent premises of **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" />. Vertex-cardinality closure in **Existence and Finiteness** <Ref id="3.1.4" label="§3.1.4" /> anchors a finite domain on which explicit bans prune self-loops and reciprocal two-cycles (**Exclusion of Reflexivity and Reciprocity** <Ref id="3.1.5" label="§3.1.5" />). Iterated closure extends that exclusion across arbitrary path lengths into the strict partial order of **Global Acyclicity** <Ref id="3.1.7" label="§3.1.7" />.
 
-The resulting indegree count gives exact sparsity (**Path Uniqueness and Sparsity** <Ref id="3.1.9" label="§3.1.9" />). Unique root paths define depth and its parity bipartition (**Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />), so the initialized tree has no odd geometric cycle. These are properties of the unperturbed substrate, before any triangle-closing chord has been inserted.
+Pairing that global DAG ordering with root reachability (**Global Connectivity** <Ref id="3.1.8" label="§3.1.8" />) and spanning-edge economy (**Path Uniqueness and Sparsity** <Ref id="3.1.9" label="§3.1.9" />) locks the initial configuration into the canonical outward rooted tree. Within that tree, shell bipartition (**Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />) and parity obstruction (**Exclusion of Odd Cycles** <Ref id="3.1.11" label="§3.1.11" />) jointly perform a dual architectural role: they certify an unperturbed triangle-free state prior to dynamical updates while equipping every vertex with a well-defined depth parity that later governs cross-branch closure.
 
-The next selection problem compares particular members of this initial class. Its score and regularity restrictions must be specified independently of the tree characterization. Rooted-tree structure alone neither selects a unique branching pattern nor proves a unique score maximizer at every size.
+What remains invariant under tree constraints alone defines the input contract for optimal lattice selection: spanning economy guarantees $|E_0| = |V_0| - 1$ equally for unbranched chains, high-degree hubs, and regular trees. Selecting a uniform pre-geometric lattice from this combinatorial class therefore shifts from global connectivity premises to internal coordination constraints and variational comparison in **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> and **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" />.
 
 ---
 
@@ -1477,12 +1477,12 @@ Q.E.D.
 
 ### 3.2.10.2 Commentary: Structural Optimality {#3.2.10.2}
 
-:::info[**Minimization of Curvature Stress Metrics under Variational Search**]
+:::info[**Maximization of Structural Optimality Metrics under Variational Search**]
 :::
 
-The structural optimality metric defines the explicit target state of the pre-geometric variational search across all candidate vacuum configurations. The physical universe naturally minimizes this global metric to select maximally stable, highly symmetric relational topologies. By balancing orbit entropy with structural graph complexity, the optimization principle identifies topological configurations that maintain global homogeneity while resisting local structural decay across all spatial and temporal scales.
+The structural optimality metric defines the explicit comparison criterion of the pre-geometric variational search across candidate vacuum configurations. Candidate architectures are evaluated by maximizing this global weighted score $\mathcal{O}(G; \lambda)$ to balance global automorphism symmetry against local orbit-partition entropy while resisting structural anisotropy across spatial and temporal scales.
 
-Minimizing structural stress drives candidate graphs relentlessly toward the regular Bethe fragment topology. This mathematical selection mechanism establishes a highly symmetric, isotropic background from which continuous metric space subsequently emerges. The resulting vacuum configuration exhibits maximal structural stability, providing a uniform, coordinate-free foundation for the propagation of physical quantum fields, gauge interactions, and fundamental particles.
+Maximizing $\mathcal{O}(G; \lambda)$ favors the regular Bethe fragment topology over irregular alternatives such as linear caterpillars within the trivalent comparison class. This scoring criterion selects a highly symmetric, isotropic background from which continuous metric space subsequently emerges, providing a uniform, coordinate-free foundation for the propagation of physical quantum fields, gauge interactions, and fundamental particles.
 
 The weighting formula defines a comparison score; it does not establish its optimizer over a graph class. The orbit entropy measures the distribution of orbit sizes, and its interpretation as a proxy for local homogeneity needs care: splitting an orbit of probability mass p into two nonempty parts increases the Shannon entropy of the partition. Claims that a particular regular tree uniquely maximizes this score therefore require separate candidate inequalities and cannot follow merely from having fewer orbits.
 
@@ -2105,11 +2105,11 @@ Q.E.D.
 :::note[**Optimal Structure**]
 :::
 
-The **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> is specified inside the initial rooted-tree class with an explicit internal coordination filter. The conditional **Degree Regularity** <Ref id="3.2.8" label="§3.2.8" /> calculation uses the prescribed averaging domain, including the exceptional role of the root when outgoing branching is counted.
+Admissible configurations from the rooted-tree class pass through two distinct selection stages to construct the **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />. First, kinematic filters forbidding cyclic topologies, short-range loops, disconnected components, and redundant DAGs combine with trivalent branching (**Degree Regularity** <Ref id="3.2.8" label="§3.2.8" />) and depth-shell homogeneity (**Orbit Transitivity** <Ref id="3.2.9" label="§3.2.9" />) to narrow the candidate pool. Second, variational scoring in **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> adjudicates among surviving ten-vertex trivalent fragments.
 
-On the stated ten-vertex comparison domain, the **Structural Optimality Metric** <Ref id="3.2.10" label="§3.2.10" /> combines orbit-partition entropy and automorphism order. The balanced shape has more automorphisms; the caterpillar has larger orbit entropy. The expanded **Quantitative Supremacy** <Ref id="3.2.11" label="§3.2.11" /> proof establishes the positive weighted-score difference throughout the specified interval.
+This optimization result anchors the **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> and supplies the structural inputs required across the remainder of the substrate architecture. Internally, uniform branching generates isomorphic automorphism orbits per depth level that form the symmetry domain in **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. Boundary accounting and cross-branch partitioning likewise organize candidate pools and incidence bounds (**Extensive Leaf Boundary of Bethe Fragments** <Ref id="3.2.14" label="§3.2.14" />) alongside **Full Triangle Incidence Check** <Ref id="3.2.15" label="§3.2.15" /> before dynamical transitions activate.
 
-This is the bounded **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" /> conclusion. It does not establish a unique optimizer at every size or derive the coordination filter from a full manifold-face theorem. The extensive leaf boundary remains visible in finite fragments (**Extensive Leaf Boundary of Bethe Fragments** <Ref id="3.2.14" label="§3.2.14" />); boundary inactivity does not by itself prove that every finite-size observable converges to its infinite-substrate value.
+Finally, this stage cleanly demarcates its architectural scope boundary: establishing $G_0$ as the maximally symmetric trivalent reference state (**Quantitative Supremacy** <Ref id="3.2.11" label="§3.2.11" />) fixes the initial graph data and face-budget constraints without deriving either continuum limits or scheduling mechanics. Those responsibilities pass directly to covariant parallel execution and localized triangle nucleation (**Seeded Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />).
 
 ---
 
@@ -2749,14 +2749,14 @@ The two typeclasses establish the minimal group-action framework required for th
 
 ### 3.3.Z Implications and Synthesis {#3.3.Z}
 
-:::note[**Only Parallelism Preserves Symmetry**]
+:::note[**Covariant Parallel Execution Architecture**]
 :::
 
-The formalization of the **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" /> and its type-theoretic machine verification establish that time evolution preserves the symmetry group of the vacuum if and only if the update operator is strictly equivariant ($f(g \cdot x) = g \cdot f(x)$ for all $g \in G$). As proved in the **Preservation of Automorphisms** <Ref id="3.3.9" label="§3.3.9" />, any sequential, serialized, or partial update scheduler necessarily breaks this algebraic identity by processing only a proper subset of indistinguishable sites. Such partial execution acts as an unphysical measurement on the **Annotated State Space** <Ref id="3.3.1" label="§3.3.1" />, collapsing the global automorphism group $\text{Aut}(G)$ into an arbitrary historical trajectory and imprinting a preferred reference frame onto the background manifold.
+**Annotated State Space** <Ref id="3.3.1" label="§3.3.1" /> lifts bare graph automorphisms to height- and syndrome-preserving bijections, establishing the equivariance domain consumed by **Formal Symmetry Framework** <Ref id="3.3.2" label="§3.3.2" />. Because candidate extraction (**Equivariance of Site Definition** <Ref id="3.3.4" label="§3.3.4" />) commutes with annotation-preserving relabelings, orbit decomposition in **Preservation of Automorphisms** <Ref id="3.3.3" label="§3.3.3" /> partitions the eligible pool $\mathcal{S}(G)$ without depending on vertex indexing or storage queues.
 
-This algebraic necessity mandates that the universe operate as a massively parallel computational substrate. Time evolution advances not through sequential threading, but through a synchronized global wavefront wherein the computational heartbeat ticks simultaneously across all valid rewrite sites. By enforcing joint-update equivariance across space, maximal parallelism serves as the discrete precursor to general covariance, ensuring that the passage of time respects the permutation symmetry of isomorphic graph nodes and eliminates privileged observer clocks.
+Coupling symmetric site discovery to dynamical execution requires resolving overlapping footprints without violating relabeling equivariance. **Conflict Resolution** <Ref id="3.3.5" label="§3.3.5" /> supplies a deterministic strict-priority independent set on conflict graphs, while **Covariant Conflict Resolution** <Ref id="3.3.6" label="§3.3.6" /> pushes equivariance forward to the full snapshot transition kernel $K(\varphi G, \varphi F) = K(G, F)$, ensuring distributional gauge invariance across ensemble trajectories even when individual realizations sample only part of an orbit.
 
-By establishing that update parallelism and spatial covariance are locked in strict mutual implication, the framework resolves the fundamental tension between discrete dynamical time and relativistic symmetry. The causal structure remains fully invariant under spatial relabeling, defining time evolution as a global, background-independent transformation. Having proved that only maximally parallel updates preserve vacuum automorphisms, we proceed in the subsequent section to derive the bounded degree and steric exclusion constraints that prevent infinite node connectivity.
+Combined with the polylogarithmic depth bounds of **Scalability of the Scheduler** <Ref id="3.3.7" label="§3.3.7" /> and **Conditional Conflict Diameter Tail** <Ref id="3.3.8" label="§3.3.8" />, synchronous parallel transitions execute within sub-critical conflict horizons across the symmetric Bethe vacuum $G_0$. Distributional invariance holds across the full execution hierarchy (**Preservation of Automorphisms** <Ref id="3.3.9" label="§3.3.9" />), preparing a covariant parallel engine under which **Seeded Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" /> tracks how a localized same-parity chord nucleates the first geometric triangles.
 
 ---
 
@@ -3231,11 +3231,11 @@ All 16 local realizations have total mass one. The enumerated descendant-event p
 :::note[**Seeded Local Geometrogenesis**]
 :::
 
-The initialized **Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" /> has no geometric triangle. The specified grandchild-to-root **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" /> seed closes an existing two-path, so the seed itself supplies the **First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />.
+Within the overall pre-geometric progression, **Seeded Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" /> connects the cycle-free reference lattice (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />) to the covariant parallel update engine. Under **Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />, a single same-parity edge injection acts simultaneously along two coupled channels: closing an existing root-to-grandchild two-path into an immediate seed triangle while routing compliant addition candidates across the remaining branches of the root (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />).
 
-The two cross-branch sites have stress two and pass the stated candidate tests (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />). Under the complete snapshot sampling law, the probability of a surviving next-tick descendant is $[1-(1-e^{-2\mu})^2](1-Q(2)/3)$ (**Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />). This probability is positive and is not one at the canonical coordinates.
+Pairing snapshot acceptance weights with the three-edge seed-deletion competition separates local one-tick micro-kinetics from global thermodynamic assumptions, as formalized in **Ignition Probability** <Ref id="3.4.5" label="§3.4.5" /> and **One-Tick Seed-Sector Survival** <Ref id="3.4.6" label="§3.4.6" />. Rather than extrapolating local nucleation into an unconditional macroscopic phase transition (**Seeded Geometrogenesis** <Ref id="3.4.7" label="§3.4.7" />), these identities isolate the exact one-tick sector handed forward to Chapters 4 and 5, where exponential free-energy weights, extensive defect cascades, and quasi-stationary survival bounds are established.
 
-The resulting **Seeded Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" /> statement is a bounded local construction. It neither proves an extensive first-tick burst nor establishes barrier crossing or long-time active survival. Those population questions remain separate from the exact seeded candidate and survival calculation.
+At the algebraic state-space interface, a single nucleation cycle populates the complete local taxonomy of three-vertex subgraphs: unperturbed empty triples, single dangling edges, open cross-branch two-path precursors, and closed three-cycles. In **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />, these local edge-occupancy motifs map directly onto commuting projector constraints and triplet syndrome sectors.
 
 ---
 
@@ -3739,7 +3739,7 @@ def commutes(p1: str, p2: str) -> bool:
     """Return True if two Pauli strings commute (even number of anti-commuting sites)."""
     anti_count = 0
     for a, b in zip(p1, p2):
-        if a in 'IXYZ' and b in 'IXYZ' and a != b and {a, b} == {'X', 'Y'}:
+        if a in 'XYZ' and b in 'XYZ' and a != b:
             anti_count += 1
     return anti_count % 2 == 0
 
@@ -3789,48 +3789,48 @@ generate_syndrome_table(7, stabilizers_7, "7-Qubit Steane Code")
 | Error Type   | Qubit   |   Syndrome |
 |--------------|---------|------------|
 | None         | -       |       0000 |
-| X            | 0       |       0000 |
-| Y            | 0       |       1010 |
-| Z            | 0       |       0000 |
-| X            | 1       |       0000 |
-| Y            | 1       |       0101 |
-| Z            | 1       |       0000 |
-| X            | 2       |       0000 |
-| Y            | 2       |       0010 |
-| Z            | 2       |       0000 |
-| X            | 3       |       0000 |
-| Y            | 3       |       1001 |
-| Z            | 3       |       0000 |
-| X            | 4       |       0000 |
-| Y            | 4       |       0100 |
-| Z            | 4       |       0000 |
+| X            | 0       |       0001 |
+| Y            | 0       |       1011 |
+| Z            | 0       |       1010 |
+| X            | 1       |       1000 |
+| Y            | 1       |       1101 |
+| Z            | 1       |       0101 |
+| X            | 2       |       1100 |
+| Y            | 2       |       1110 |
+| Z            | 2       |       0010 |
+| X            | 3       |       0110 |
+| Y            | 3       |       1111 |
+| Z            | 3       |       1001 |
+| X            | 4       |       0011 |
+| Y            | 4       |       0111 |
+| Z            | 4       |       0100 |
 
 7-Qubit Steane Code Syndrome Table
 =================================
 | Error Type   | Qubit   |   Syndrome |
 |--------------|---------|------------|
 | None         | -       |     000000 |
-| X            | 0       |     000000 |
-| Y            | 0       |     001000 |
-| Z            | 0       |     000000 |
-| X            | 1       |     000000 |
-| Y            | 1       |     010000 |
-| Z            | 1       |     000000 |
-| X            | 2       |     000000 |
-| Y            | 2       |     011000 |
-| Z            | 2       |     000000 |
-| X            | 3       |     000000 |
-| Y            | 3       |     100000 |
-| Z            | 3       |     000000 |
-| X            | 4       |     000000 |
-| Y            | 4       |     101000 |
-| Z            | 4       |     000000 |
-| X            | 5       |     000000 |
-| Y            | 5       |     110000 |
-| Z            | 5       |     000000 |
-| X            | 6       |     000000 |
-| Y            | 6       |     111000 |
-| Z            | 6       |     000000 |
+| X            | 0       |     000001 |
+| Y            | 0       |     001001 |
+| Z            | 0       |     001000 |
+| X            | 1       |     000010 |
+| Y            | 1       |     010010 |
+| Z            | 1       |     010000 |
+| X            | 2       |     000011 |
+| Y            | 2       |     011011 |
+| Z            | 2       |     011000 |
+| X            | 3       |     000100 |
+| Y            | 3       |     100100 |
+| Z            | 3       |     100000 |
+| X            | 4       |     000101 |
+| Y            | 4       |     101101 |
+| Z            | 4       |     101000 |
+| X            | 5       |     000110 |
+| Y            | 5       |     110110 |
+| Z            | 5       |     110000 |
+| X            | 6       |     000111 |
+| Y            | 6       |     111111 |
+| Z            | 6       |     111000 |
 
 **Conclusion:**
 The tables confirm that each single-qubit error generates a unique syndrome signature. No two single-qubit errors map to the same syndrome string (e.g., in 5-qubit code, X on Q0 is `0001`, Z on Q0 is `1010`). This injectivity verifies the capability of the stabilizer formalism to identify and distinguish local errors, supporting the physical interpretation of syndromes as diagnostic data. This capability allows the system to localize faults precisely without collapsing the global wavefunction.
@@ -4338,11 +4338,11 @@ The formal encoding establishes the binary symplectic geometry of the $n$-qubit 
 :::note[**Fault-Tolerance (QECC)**]
 :::
 
-The adjacency map identifies labeled graph basis states with occupancy bit strings (**Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" />). Its linear extension is the isometry in the scoped result (**Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" />). A fixed family of hard projections selects the span of permitted basis configurations (**Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />).
+The stabilizer encoding closes this architectural layer by translating pre-geometric topology, covariant parallelism, and seeded nucleation into a three-layer operator algebra over labeled edge occupancies. First, **Configuration Space Validity** <Ref id="3.5.3" label="§3.5.3" /> and **Stabilizer Isomorphism** <Ref id="3.5.2" label="§3.5.2" /> pair permitted classical adjacency states linearly with computational basis spans inside $\mathcal{H}$. Second, commuting orthogonal projectors $\Pi_{\mathrm{cycle}}(u,v)$ and $\Pi_{\mathrm{local}}(u,v)$ carve out the cyclic-exclusion and locality-masked subspaces (**Hard Constraint Validity** <Ref id="3.5.4" label="§3.5.4" />), while **Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" /> maps local triad motifs onto uniquely invertible $(S_1, S_2, S_3, V)$ readouts.
 
-Pair-product checks identify complementary strings, while the existing volume readout resolves that ambiguity through the explicit inverse (**Syndrome Classification for Triplets** <Ref id="3.5.5" label="§3.5.5" />). Commutation follows from a common diagonal basis (**Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" />). Hard projections belong to that algebra but need not be invertible Pauli-group elements.
+Diagonal hard constraints remain mutually consistent across all pair checks (**Stabilizer Commutativity** <Ref id="3.5.6" label="§3.5.6" />) and vanish nowhere on the finite Bethe state $|G_0\rangle \in \mathcal{C}_F$ (**Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />). Paired with the corrected multi-qubit Pauli tables of **Qubit Syndrome Table** <Ref id="3.5.5.2" label="§3.5.5.2" />, this establishes a strict separation between kinematic subspace indexing (diagonal projections and single-triad diagnostics) and full active quantum error recovery or nonzero code distance, which require multi-site dynamical protocols beyond Chapter 3.
 
-The permitted subspace is nonzero under the stated valid-tree and locality-mask premises (**Codespace Non-Triviality** <Ref id="3.5.7" label="§3.5.7" />). These occupancy statements provide diagnostic algebra for the framework. Physical recovery, code distance and protected coherent dynamics remain additional requirements; neither the isometry nor commutation alone establishes fault-tolerant quantum memory.
+Across Chapter 3's architectural progression, these results assemble the complete static and kinematic interface delivered to **Chapter 4**: a unique trivalent rooted-tree vacuum, a relabeling-covariant parallel update scheduler, a localized same-parity triangle nucleation mechanism (**Seeded Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />), and the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" /> over Hilbert-space edge occupancies. Chapter 4 takes this initialized Universe Object and equips it with functorial dynamics, thermodynamic parameters, and the Universal Evolution Operator $\mathcal{U}$.
 
 ---
 
@@ -4351,11 +4351,11 @@ The permitted subspace is nonzero under the stated valid-tree and locality-mask 
 :::note[**End of Chapter 3**]
 :::
 
-The pre-geometric vacuum has successfully crystallized into a concrete physical object: the **Finite Rooted Tree**. This structure emerges by necessity: it is the sole topology capable of providing a cycle-free, unified origin for all causal paths. To animate this static frame, **Maximal Parallelism** installs as the heartbeat of the system, ensuring that time propagates as a uniform wavefront that respects the fundamental symmetries of space.
+The pre-geometric vacuum has successfully crystallized into a concrete physical object: the **Finite Rooted Tree**. This structure emerges from the initial-state premises as the unique acyclic topology anchoring a unified origin for all causal paths. To animate this static frame, **Maximal Parallelism** installs as the covariant scheduler of the system, ensuring that time evolution respects automorphism relabeling in distribution rather than imprinting privileged sequential orderings.
 
-Furthermore, the paradox of the "frozen" perfect tree resolves through the identification of **Ignition** as a statistical inevitability. The very perfection of the Bethe lattice creates a thermodynamic pressure for a symmetry-breaking tunneling event, a spark that nucleates the transition from a sterile hierarchy to a complex, interacting geometry. Encasing this entire structure in the armor of **Quantum Error Correction** ensures that the complex structures generated by ignition do not dissolve back into chaos but are preserved by the topological rigidity of the graph.
+Furthermore, the question of how cycles first nucleate inside an odd-cycle-free Bethe lattice resolves through **Seeded Geometrogenesis**, where a localized same-parity seed creates a first 3-cycle and opens cross-branch descendant sites with strictly positive one-tick survival probability under the snapshot transition law. Encoding the resulting graph states into the diagonal projector and triplet-syndrome algebra of the **Generalized Stabilizer Formulation** provides exact local readouts of forbidden 2-cycles, locality masks, and closed versus precursor triads.
 
-This synthesis yields a "Universe Object" at $t_L = 0$ that is complete and primed for execution. It possesses a defined topology, a precise clock, a mechanism for phase transition, and a protocol for self-repair. The distinction between static laws and dynamic evolution has blurred: the structure dictates the motion, and the motion preserves the structure. We stand now on the precipice of the first true event, ready to ignite the engine in **Chapter 4**.
+This synthesis yields a "Universe Object" at $t_L = 0$ that is complete and primed for execution. It possesses a defined topology, a covariant parallel clock, a seeded local triangle-nucleation mechanism, and an algebraic state-space diagnostic representation. Together these components hand a complete static and kinematic architecture over to **Chapter 4**, where functorial dynamics, thermodynamic parameters, and the Universal Evolution Operator govern global evolution.
 
 ---
 
@@ -4363,36 +4363,34 @@ This synthesis yields a "Universe Object" at $t_L = 0$ that is complete and prim
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $G_0$ | The Initial State (Vacuum) at $t_L=0$ | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
-| $V_0, E_0$ | Vertex and Edge sets of the Initial State | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
-| $r$ | The Root Vertex ($d_{in}(r)=0$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
+| $r$ | The Root Vertex ($d_{\mathrm{in}}(r)=0$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $d(v)$ | Logical Depth of vertex $v$ from root | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $\pi(v)$ | Parity of vertex $v$ ($d(v) \pmod 2$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $V_{even}, V_{odd}$ | Vertex partitions based on depth parity | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
-| $k_{deg}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1](/monograph/rules/architecture/3.2/#3.2.1) |
-| $\text{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8](/monograph/rules/architecture/3.1/#3.1.8) |
-| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
-| $\lambda$ | Weighting parameter for optimality score | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
-| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
-| $\mathcal{S}_{\text{sites}}(G)$ | Set of candidate rewrite sites | [§3.3.3](/monograph/rules/architecture/3.3/#3.3.3) |
+| $G_0$ | The Initial State (Vacuum) at $t_L=0$ | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
+| $V_0, E_0$ | Vertex and Edge sets of the Initial State | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
+| $\operatorname{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8.2](/monograph/rules/architecture/3.1/#3.1.8.2) |
+| $k_{\mathrm{deg}}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1](/monograph/rules/architecture/3.2/#3.2.1) |
+| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
+| $\lambda$ | Weighting parameter for optimality score | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
+| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
 | $\mathbf{A}$ | Annotation structure $(a_V, a_E)$ | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
 | $\varphi$ | An automorphism mapping | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
-| $\mathcal{T}_{\text{tunnel}}$ | Tunneling Operator | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $e_{\text{tunnel}}$ | Symmetry-breaking tunneling edge | [§3.4.2](/monograph/rules/architecture/3.4/#3.4.2) |
-| $d_H$ | Hamming Distance | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $\chi(G)$ | Chromatic Number | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $\Delta F$ | Change in Free Energy | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
-| $\epsilon_{geo}$ | Geometric Self-Energy | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
-| $\mathbb{P}_{\text{ign}}$ | Probability of ignition (tunneling) | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
+| $\mathcal{S}(G)$ | Set of eligible candidate rewrite sites | [§3.3.2](/monograph/rules/architecture/3.3/#3.3.2) |
+| $\mathcal{S}_{\text{sites}}(G)$ | Equivariant candidate rewrite site set | [§3.3.4](/monograph/rules/architecture/3.3/#3.3.4) |
+| $s_{\mathrm{add}}$ | Addition stress score of a candidate 2-path site | [§3.4.5.1](/monograph/rules/architecture/3.4/#3.4.5.1) |
 | $\mathcal{H}$ | Configuration Hilbert Space $(\mathbb{C}^2)^{\otimes K}$ | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\mathcal{C}$ | QECC Codespace (Protected subspace) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path metric | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\Pi_{\text{local}}$ | Projector enforcing locality distance | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $F$ | Fixed forbidden-pair locality mask | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\mathcal{C}_F$ | QECC codespace for forbidden-pair mask $F$ (abbreviated $\mathcal{C}$ when $F$ is fixed) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Pi_{\mathrm{cycle}}(u,v)$ | Hard Constraint Projector excluding reciprocal 2-cycles | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Pi_{\mathrm{local}}(u,v)$ | Hard Constraint Projector enforcing locality mask $F$ | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $Z_{uv}$ | Pauli-Z operator on edge qubit (Check) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.2](/monograph/rules/architecture/3.5/#3.5.2) |
-| $K_{uv}$ | Geometric Check Operator (Triplet stabilizer) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $K_{uv}$ | Individual edge occupancy readout | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $S_1, S_2, S_3$ | Triplet pair-product diagnostic checks | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $V = Z_{uv}Z_{vw}Z_{wu}$ | Three-qubit triplet volume readout resolving pair-check degeneracy | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Omega_F$ | Set of labeled adjacency configurations satisfying hard projections | [§3.5.2](/monograph/rules/architecture/3.5/#3.5.2) |
+| $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.3.2](/monograph/rules/architecture/3.5/#3.5.3.2) |
+| $\Pi_{\mathrm{order}}$ | Non-linear triad order projector annihilating closed 3-cycles | [§3.5.5.4](/monograph/rules/architecture/3.5/#3.5.5.4) |
 
 \newpage
 # References

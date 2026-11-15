@@ -221,7 +221,7 @@ $$
 Substituting numerical constants $\mu_0 \approx 0.39894$, $\rho_{\text{crit}} \approx 0.41781$, and $\lambda_{\text{cat}} \approx 1.71828$:
 
 $$
-\mathcal{J}(\rho_{\text{crit}}) \approx \left[7.520 - (0.0156 + 1.571 + J_{\text{infall}})\right](0.3679) - 0.500 - 4.307
+\mathcal{J}(\rho_{\text{crit}}) \approx \left[7.520 - (0.015625 + 1.571 + J_{\text{infall}})\right](0.3679) - 0.500 - 4.307
 $$
 
 $$
@@ -438,7 +438,7 @@ Q.E.D.
 
 The vanishing Lapse function $N \to 0$ provides a microscopic, relational explanation for gravitational time dilation in extreme gravitational fields. In classical general relativity, the coordinate time of an infalling object appears to freeze at the Schwarzschild horizon from the viewpoint of an asymptotic observer ($g_{00} = -(1 - 2GM/r) \to 0$). In QBD, this temporal dilation is not an optical illusion or coordinate artifact; it reflects the physical frame rate of the causal graph.
 
-As a matter cluster collapses toward critical saturation, the graph requires exponentially more sequencer evaluation cycles to locate valid, non-conflicting update rungs. To an exterior observer whose local graph neighborhood updates rapidly at the equilibrium rate $\rho^* \approx 0.037$, the saturated core appears computationally frozen. Clocks in the core stop ticking relative to the outside universe because the underlying graph nodes have exhausted their update throughput, seamlessly unifying classical relativistic time dilation with discrete algorithmic processing latency.
+As a matter cluster collapses toward critical saturation, the graph requires exponentially more sequencer evaluation cycles to locate valid, non-conflicting update rungs. To an exterior observer whose local graph neighborhood updates rapidly at the equilibrium rate $\rho^* \approx 0.037061$, the saturated core appears computationally frozen. Clocks in the core stop ticking relative to the outside universe because the underlying graph nodes have exhausted their update throughput, seamlessly unifying classical relativistic time dilation with discrete algorithmic processing latency.
 
 ---
 
@@ -516,7 +516,7 @@ In Quantum Braid Dynamics, because each elementary bit of information and unit o
 
 **I. Initial Infall Dynamics**
 
-Let $G_t$ be a dynamic causal graph undergoing gravitational collapse sourced by an infalling mass cluster $M > 0$. In the initial collapse phase, the concentration of mass-energy drives local edge addition rates according to the **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />, increasing local 3-cycle density $\rho_3(x)$ above the vacuum attractor baseline $\rho^* \approx 0.0370$.
+Let $G_t$ be a dynamic causal graph undergoing gravitational collapse sourced by an infalling mass cluster $M > 0$. In the initial collapse phase, the concentration of mass-energy drives local edge addition rates according to the **Discrete Stress-Energy Tensor** <Ref id="13.1.1" label="§13.1.1" />, increasing local 3-cycle density $\rho_3(x)$ above the vacuum attractor baseline $\rho^* \approx 0.037061$.
 
 **II. Steric Suppression and Fixed Point Incompressibility**
 
@@ -543,7 +543,7 @@ Q.E.D.
 
 Verification of the core saturation and curvature bounding established in the **Saturated Core Crystallization Proof** <Ref id="22.1.9" label="§22.1.9" /> is based on the following protocols:
 
-1.  **System Initialization:** Configure a collapsing spherical matter cluster with total mass $M = 500.0 M_P$, initial radius $R_0 = 40.0 \ell_0$, and initial density set to the vacuum attractor $\rho_0 = 0.0370$ established in **Vacuum Attractor Density** <Ref id="5.4.1" label="§5.4.1" />.
+1.  **System Initialization:** Configure a collapsing spherical matter cluster with total mass $M = 500.0 M_P$, initial radius $R_0 = 40.0 \ell_0$, and initial density set to the vacuum attractor $\rho_0 = 0.037061$ established in **Vacuum Attractor Density** <Ref id="5.4.1" label="§5.4.1" />.
 2.  **Coupled Dynamic Integration:** Integrate the non-linear Master Equation ODE coupled to gravitational infall acceleration over time span $t \in [0, 40]$ using explicit 4th/5th-order Runge-Kutta integration.
 3.  **Convergence Metric:** Measure asymptotic core radius $R_{\text{core}}$, saturation density ratio $\rho / \rho_{\text{crit}}$, discrete Ollivier-Ricci curvature $K$, and coordinate Lapse $N(r)$ to verify non-singular stabilization.
 
@@ -562,7 +562,7 @@ def run_collapse_saturation_dynamics():
     Lambda = 0.015625       # Primordial loop nucleation seed (2^-6)
     mu = 0.398942          # Steric friction coefficient (1/sqrt(2pi))
     lcat = 1.718282        # Catalytic deletion coefficient
-    rho_star = 0.037037    # Vacuum attractor density (§5.4.1)
+    rho_star = 0.037061    # Vacuum attractor density (§5.4.1)
     rho_crit = 1.0 / (6.0 * mu)  # Critical steric saturation density (~0.4178 cycles/node)
     
     # Gravitational and geometric parameters
@@ -626,7 +626,7 @@ def run_collapse_saturation_dynamics():
             "Time t": f"{t:.1f}",
             "Radius r (ell_0)": f"{r:.2f}",
             "Velocity v": f"{v:.3f}",
-            "Density rho_3": f"{rho:.4f}",
+            "Density rho_3": f"{rho:.6f}",
             "rho / rho_crit": f"{(rho / rho_crit):.4f}",
             "Ollivier K": f"{k_ollivier:.4f}",
             "Curvature R": f"{scalar_r:.4f}",
@@ -645,10 +645,10 @@ def run_collapse_saturation_dynamics():
         "§22.1.9.1 Collapse Trajectory and Core Saturation Dynamics",
         "-" * 78,
         f"Steric Friction Coefficient mu: {mu:.6f} (Canonical value 1/sqrt(2pi))",
-        f"Critical Saturation Density rho_crit: {rho_crit:.4f} cycles/node",
-        f"Initial State: Radius R_0 = {R_0:.1f} ell_0, Density rho_0 = {rho_star:.4f}",
+        f"Critical Saturation Density rho_crit: {rho_crit:.6f} cycles/node",
+        f"Initial State: Radius R_0 = {R_0:.1f} ell_0, Density rho_0 = {rho_star:.6f}",
         f"Asymptotic Stable Core Radius R_core: {final_r:.2f} ell_0 (> 0, non-zero crystal)",
-        f"Asymptotic Core Density rho_inf: {final_rho:.4f} (Saturation: {final_rho/rho_crit*100:.2f}%)",
+        f"Asymptotic Core Density rho_inf: {final_rho:.6f} (Saturation: {final_rho/rho_crit*100:.2f}%)",
         f"Curvature Bound R_inf: {final_curv:.4f} ell_0^-2 (Strictly bounded < 6.0000)",
         "-" * 78,
         df.to_markdown(index=False, tablefmt="github"),
@@ -673,28 +673,28 @@ if __name__ == "__main__":
 §22.1.9.1 Collapse Trajectory and Core Saturation Dynamics
 ------------------------------------------------------------------------------
 Steric Friction Coefficient mu: 0.398942 (Canonical value 1/sqrt(2pi))
-Critical Saturation Density rho_crit: 0.4178 cycles/node
-Initial State: Radius R_0 = 40.0 ell_0, Density rho_0 = 0.0370
+Critical Saturation Density rho_crit: 0.417772 cycles/node
+Initial State: Radius R_0 = 40.0 ell_0, Density rho_0 = 0.037061
 Asymptotic Stable Core Radius R_core: 5.27 ell_0 (> 0, non-zero crystal)
-Asymptotic Core Density rho_inf: 0.4169 (Saturation: 99.78%)
+Asymptotic Core Density rho_inf: 0.416864 (Saturation: 99.78%)
 Curvature Bound R_inf: 2.9935 ell_0^-2 (Strictly bounded < 6.0000)
 ------------------------------------------------------------------------------
 |   Time t |   Radius r (ell_0) |   Velocity v |   Density rho_3 |   rho / rho_crit |   Ollivier K |   Curvature R |   Lapse N(r) |
 |----------|--------------------|--------------|-----------------|------------------|--------------|---------------|--------------|
-|        0 |              40    |        0     |          0.037  |           0.0887 |       0.0443 |        0.266  |       0.9546 |
-|        2 |              39.38 |       -0.622 |          0.04   |           0.0958 |       0.0479 |        0.2874 |       0.9509 |
-|        5 |              36.06 |       -1.602 |          0.0549 |           0.1313 |       0.0657 |        0.394  |       0.932  |
-|       10 |              23.63 |       -3.186 |          0.1772 |           0.4242 |       0.2121 |        1.2725 |       0.7588 |
-|       18 |               9.48 |       -0.605 |          0.3973 |           0.951  |       0.4755 |        2.8531 |       0.2213 |
-|       28 |               6.49 |       -0.154 |          0.4148 |           0.9929 |       0.4964 |        2.9786 |       0.0844 |
-|       40 |               5.27 |       -0.068 |          0.4169 |           0.9978 |       0.4989 |        2.9935 |       0.0466 |
+|        0 |              40    |        0     |        0.037061 |           0.0887 |       0.0444 |        0.2661 |       0.9546 |
+|        2 |              39.38 |       -0.622 |        0.040038 |           0.0958 |       0.0479 |        0.2875 |       0.9509 |
+|        5 |              36.06 |       -1.602 |        0.054867 |           0.1313 |       0.0657 |        0.394  |       0.932  |
+|       10 |              23.63 |       -3.186 |        0.177194 |           0.4241 |       0.2121 |        1.2724 |       0.7589 |
+|       18 |               9.48 |       -0.605 |        0.39731  |           0.951  |       0.4755 |        2.8531 |       0.2213 |
+|       28 |               6.49 |       -0.154 |        0.414794 |           0.9929 |       0.4964 |        2.9786 |       0.0844 |
+|       40 |               5.27 |       -0.068 |        0.416864 |           0.9978 |       0.4989 |        2.9935 |       0.0466 |
 ------------------------------------------------------------------------------
 status: pass
 ------------------------------------------------------------------------------
 ```
 
 **Conclusion:**
-The numerical integration of the coupled collapse differential equations demonstrates that the infalling matter shell accelerates inward from $R_0 = 40.0\ell_0$ until density approaches critical saturation, where steric damping rapidly arrests the collapse velocity from $v = -3.186$ at $t = 10$ to $v = -0.068$ at $t = 40$. The system stabilizes at a finite asymptotic core radius $R_{\text{core}} = 5.27\ell_0 > 0$, with cycle density reaching $\rho_{\text{inf}} = 0.4169$ (99.78% of critical threshold $\rho_{\text{crit}} = 0.4178$), discrete Causal Ollivier-Ricci curvature plateauing at $K = 0.4989 \le 1.0$, scalar curvature plateauing at $R = 2.9935\ell_0^{-2} < 6.0000\ell_0^{-2}$, and the coordinate Lapse field vanishing toward $N \to 0.0466$. These numerical results confirm that non-linear steric damping prevents point-like geometric singularities and bounds discrete curvature, validating the Saturated Core Crystallization Proof.
+The numerical integration of the coupled collapse differential equations demonstrates that the infalling matter shell accelerates inward from $R_0 = 40.0\ell_0$ until density approaches critical saturation, where steric damping rapidly arrests the collapse velocity from $v = -3.186$ at $t = 10$ to $v = -0.068$ at $t = 40$. The system stabilizes at a finite asymptotic core radius $R_{\text{core}} = 5.27\ell_0 > 0$, with cycle density reaching $\rho_{\text{inf}} = 0.416864$ (99.78% of critical threshold $\rho_{\text{crit}} = 0.417772$), discrete Causal Ollivier-Ricci curvature plateauing at $K = 0.4989 \le 1.0$, scalar curvature plateauing at $R = 2.9935\ell_0^{-2} < 6.0000\ell_0^{-2}$, and the coordinate Lapse field vanishing toward $N \to 0.0466$. These numerical results confirm that non-linear steric damping prevents point-like geometric singularities and bounds discrete curvature, validating the Saturated Core Crystallization Proof.
 
 ---
 

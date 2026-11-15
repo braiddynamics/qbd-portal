@@ -2277,7 +2277,7 @@ The awareness layer illuminates local syndromes across the graph substrate, but 
 
 Calibrating the system with arbitrary constants inevitably leads to a universe that either freezes into stasis due to excessive barriers or explodes into noise due to unrestrained growth. An acceptance threshold set too restrictive creates an insurmountable barrier for structure formation, trapping the substrate in an inert pre-geometric void. Conversely, a threshold set too permissive allows unrestrained growth to dissolve the graph into a chaotic soup of random connections where no persistent forms can survive, known as an ultraviolet catastrophe of connectivity. A theory dependent on arbitrary fitting parameters fails to explain the physical origin of stability, leaving the emergence of spacetime as an unexplained coincidence.
 
-We resolve this calibration challenge by establishing that **probability is fundamental, while temperature is not**. In the discrete relational vacuum, there is no fictitious thermal reservoir or external heat bath. We derive the base-conversion modulus $\beta_c = \ln 2$ from discrete bit-nat equivalence ($1\text{ bit} = \ln 2\text{ nats}$), showing that temperature $T$ cancels identically out of the microscopic acceptance ratios across all $T > 0$. We determine the geometric self-energy $\varepsilon_{\mathrm{geo}} = \frac{\ln 2}{3}$ by distributing the loop-closure entropy uniformly across the $k_{\mathrm{deg}}=3$ incident topological routing ports of the regular Bethe substrate. We establish the simplicial permittivity scale $\Lambda_{\mathrm{theory}} = 2^{-6}$ across the 6-port triad interaction boundary, derive the Arrhenius defect relaxation constant $\lambda_0 = e - 1$ as the unique linear Markov jump generator preserving move additivity, and fix the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi}$ from discrete Poisson summation on the 1D integer counting fiber $\mathbb{Z}$.
+We resolve this calibration challenge by establishing that **probability is fundamental, while temperature is not**. In the discrete relational vacuum, there is no fictitious thermal reservoir or external heat bath. We derive the base-conversion modulus $\beta_c = \ln 2$ from discrete bit-nat equivalence ($1\text{ bit} = \ln 2\text{ nats}$), showing that temperature $T$ cancels identically out of the microscopic acceptance ratios across all $T > 0$. We determine the geometric self-energy $\varepsilon_0 = \frac{\ln 2}{3}$ by distributing the loop-closure entropy uniformly across the $k_{\mathrm{deg}}=3$ incident topological routing ports of the regular Bethe substrate. We establish the simplicial permittivity scale $\Lambda_0 = 2^{-6}$ across the 6-port triad interaction boundary, derive the Arrhenius defect relaxation constant $\lambda_0 = e - 1$ as the unique linear Markov jump generator preserving move additivity, and fix the modular S-duality friction constant $\mu_0 = 1/\sqrt{2\pi}$ from discrete Poisson summation on the 1D integer counting fiber $\mathbb{Z}$.
 
 ---
 
@@ -2994,7 +2994,7 @@ Type-theoretic certification of the information-theoretic foundations and base-c
 
 1.  **Combinatorial Base Priors:** The Lean proposition `permutation_invariance_uniquely_determines_prior` proves that automorphism invariance under the $\mathfrak{S}_2$ bit-flip permutation group uniquely forces the unbiased Bernoulli prior $Q_0 = 1/2$ without free parameters.
 2.  **Specified Decision Count:** The Lean theorems `triad_interaction_ports_is_six` and `simplicial_permittivity_scale` evaluate $3 \times 2 = 6$ and $2^6=64$ under the defined two-decision-per-vertex convention. Independence, fairness and the attempt clock are separate premises of the probability and rate interpretation.
-3.  **Simplicial Boundary Integrability:** The Lean theorem `simplicial_boundary_cycle_closed` proves that the boundary of the 2-simplex is a closed cycle in simplicial homology ($\partial_1 \circ \partial_2 = 0$), verifying that the elementary geometric quantum possesses vanishing boundary flow.
+3.  **Simplicial Boundary Integrability:** The Lean theorem `simplicial_boundary_cycle_closed` proves by structural induction on finite integer-weighted 2-chains that the iterated boundary vanishes at every vertex ($\partial_1 \circ \partial_2 = 0$), verifying that the boundary of any oriented 2-simplex forms a closed cycle.
 
 ```lean
 structure ProbField (α : Type) where
@@ -3080,11 +3080,63 @@ THEOREM 9.5: Simplicial Permittivity Microstate Space
 theorem simplicial_permittivity_scale :
     2 ^ (triad_interaction_ports 3) = 64 := by
   rfl
+
+-- Formal 1-chain over vertex universe V represented as a weighted list of directed edges
+abbrev Chain1 (V : Type) := List (Int × V × V)
+
+-- Formal 2-chain over vertex universe V represented as a weighted list of oriented 2-simplices
+abbrev Chain2 (V : Type) := List (Int × V × V × V)
+
+-- Boundary operator ∂₁ evaluating the signed incident flux at vertex x
+def boundary1 {V : Type} [DecidableEq V] : Chain1 V → V → Int
+  | [], _ => 0
+  | (k, u, v) :: rest, x =>
+    (if x = v then k else 0) - (if x = u then k else 0) + boundary1 rest x
+
+-- Boundary operator ∂₂ on a single oriented 2-simplex k·[a, b, c]
+def simplexBoundary2 {V : Type} (k : Int) (a b c : V) : Chain1 V :=
+  [(k, b, c), (-k, a, c), (k, a, b)]
+
+-- Linear boundary operator ∂₂ mapped across an arbitrary 2-chain
+def boundary2 {V : Type} : Chain2 V → Chain1 V
+  | [] => []
+  | (k, a, b, c) :: rest => simplexBoundary2 k a b c ++ boundary2 rest
+
+-- Additivity of ∂₁ under concatenation of 1-chains
+theorem boundary1_append {V : Type} [DecidableEq V] (c1 c2 : Chain1 V) (x : V) :
+    boundary1 (c1 ++ c2) x = boundary1 c1 x + boundary1 c2 x := by
+  induction c1 with
+  | nil => simp [boundary1]
+  | cons hd tl ih =>
+    rcases hd with ⟨k, u, v⟩
+    simp [boundary1, ih]
+    omega
+
+-- Vanishing vertex boundary flux on the boundary of any single oriented 2-simplex
+theorem simplex_boundary1_boundary2 {V : Type} [DecidableEq V]
+    (k : Int) (a b c x : V) :
+    boundary1 (simplexBoundary2 k a b c) x = 0 := by
+  simp [simplexBoundary2, boundary1]
+  split <;> split <;> split <;> omega
+
+/--
+THEOREM 4.4.9: Simplicial Boundary Cycle Closure (∂₁ ∘ ∂₂ = 0)
+Formally proves that the boundary of any integer-weighted 2-chain is a closed
+1-cycle with vanishing net boundary at every vertex x.
+-/
+theorem simplicial_boundary_cycle_closed {V : Type} [DecidableEq V]
+    (c2 : Chain2 V) (x : V) :
+    boundary1 (boundary2 c2) x = 0 := by
+  induction c2 with
+  | nil => rfl
+  | cons hd tl ih =>
+    rcases hd with ⟨k, a, b, c⟩
+    simp [boundary2, boundary1_append, simplex_boundary1_boundary2, ih]
 ```
 
 **Verification Summary:**
 
-The Lean block proves the bit-flip prior identity under its explicit algebraic field assumptions and evaluates the declared decision counts. Its decision-channel definition stipulates two variables per vertex; the arithmetic does not derive that convention from external edge incidence. The resulting 64 assignments have equal mass only when the independent fair law is supplied. Interpreting their probability as a continuum drive also needs the reference attempt clock. The block contains no admitted proof or custom axiom declaration, but its structures carry explicit premises. Lean kernel acceptance certifies the conditional prior identity (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />).
+The Lean block proves the bit-flip prior identity under its explicit algebraic field assumptions, evaluates the declared decision counts, and proves simplicial boundary cycle closure across arbitrary integer-weighted 2-chains. Its decision-channel definition stipulates two variables per vertex; the arithmetic does not derive that convention from external edge incidence, and the resulting 64 assignments carry equal mass only when the independent fair law is supplied. Interpreting their probability as a continuum drive also requires the reference attempt clock. For oriented chains encoded by `Chain1` and `Chain2`, structural induction over 2-chains paired with `boundary1_append`, `simplex_boundary1_boundary2`, and linear integer arithmetic (`omega`) eliminates every vertex incidence contribution identically, verifying $\partial_1 \circ \partial_2 = 0$. The block contains no admitted proof or custom axiom declaration, while its field structures carry explicit premises. Lean kernel acceptance certifies the conditional prior identity and combinatorial boundary identities (**Information Modulus & Prior Uniqueness** <Ref id="4.4.2" label="§4.4.2" />).
 
 ---
 
@@ -3165,13 +3217,14 @@ def R(annotated_graph, T, mu, lambda_cat):
         # Base probability is 0.5 (Entropic Penalty of Erasure)
         P_del_thermo = 0.5
         
-        # B.2) The "Catalysis" (Modulation by Tension)
-        # Stress *excluding* this cycle's own contribution
-        stress = measure_local_stress(G, cycle.nodes) - 1
-        f_catalysis = (1 + lambda_cat * max(0, stress))
+        # B.2) The "Catalysis" & "Friction" (Modulation by Local Stress)
+        # Stress *excluding* this cycle's own contribution: s_c = max(0, sum_{v in c} s_G(v) - 1)
+        stress = max(0, measure_local_stress(G, cycle.nodes) - 1)
+        f_catalysis = 1 + lambda_cat * stress
+        f_friction = exp(-mu * stress)
         
         # The full probability for this single event
-        P_del = min(1.0, f_catalysis * P_del_thermo)
+        P_del = min(1.0, f_catalysis * f_friction * P_del_thermo)
         del_proposals.append( (cycle, P_del) )
 
     # --- 3. RETURN THE PROBABILITY DISTRIBUTION ---
@@ -3191,7 +3244,7 @@ Designing the Universal Constructor $\mathcal{R}$ to decouple proposal generatio
 
 Furthermore, the candidate proposal search space enforces strict local radius bounds of $O(1)$ centered around active vertices, bounded by the Acyclicity Evaluation Check horizon cutoff $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$ under parent uniqueness. This local restriction guarantees computational scalability while ensuring physical realism, micro-causality, structural integrity, and strict spatial locality across the entire relational substrate.
 
-This operational pipeline operates within a dual time architecture distinguishing global logical scheduling time $t_L \in \mathbb{N}_0$ from emergent physical proper time $t_{\mathrm{phys}}$. When an execution tick produces no accepted additions and no accepted deletions ($\mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset$), the evolution operator acts as the identity map ($\mathcal{U}(G_{t_L}) = G_{t_L}$), and emergent physical time pauses ($\Delta t_{\mathrm{phys}} \equiv 0$). In finite-lattice simulations, the operational homeostatic stopping time $\tau_{\mathrm{homeo}} := \inf \{ t_L \ge 1 \mid \mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset \}$ halts iteration at the physical stasis point, isolating the true Quasi-Stationary Distribution before open leaf boundary dissipation takes effect.
+This operational pipeline operates within a dual time architecture distinguishing global logical scheduling time $t_L \in \mathbb{N}_0$ from emergent physical proper time $t_{\mathrm{phys}}$. When an execution tick produces no accepted additions and no accepted deletions ($\mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset$), the evolution operator acts as the identity map ($\mathcal{U}(G_{t_L}) = G_{t_L}$), and emergent physical time pauses ($\Delta t_{\mathrm{phys}} \equiv 0$). In finite-lattice simulations, the operational homeostatic stopping time $\tau_{\mathrm{homeo}} := \inf \{ t_L \ge 1 \mid \mathcal{A}_{t_L}^{\mathrm{ret}} = \emptyset \land \mathcal{D}_{t_L} = \emptyset \}$ (evaluated after reciprocal filtering) halts iteration at the first realized inactive tick ($K = 1$). Because active configurations ($N_3 > 0$) retain strictly positive single-tick continuation and deletion probabilities, $\tau_{\mathrm{homeo}}$ samples finite-horizon arrested states (including configurations frozen on a transient quiet draw across already ignited interior and boundary-adjacent branches) rather than isolating an invariant quasi-stationary measure prior to boundary dissipation; multi-tick persistence sensitivity ($K \in \{1, 2, 5, 10\}$) and unstopped fixed-horizon checks ($K = \infty$) are analyzed separately in the validation suite.
 
 ---
 
@@ -3200,23 +3253,25 @@ This operational pipeline operates within a dual time architecture distinguishin
 :::tip[**Syndrome-Response Function Modulating Base Probabilities via Catalytic Tension Factor**]
 :::
 
-The **Catalytic Tension Factor**, denoted $\chi(\boldsymbol{\sigma}_e)$, is defined as the scalar modulation function acting on the base transition probabilities. It is constructed as the product of two distinct terms:
+Let $s_G(v) = |\mathcal{C}_3(v)|$ denote the count of directed **3-cycles** incident to vertex $v$. For a candidate closing edge $e_a = (u, v)$ bridging an open 2-path $v \to w \to u$, define the local triad addition stress $s_a(v, w, u) = \sum_{x \in \{v, w, u\}} s_G(x)$, and for an existing cycle $c \in \mathcal{C}_3(G)$, define the self-excluded deletion stress $s_c = \max\!\left(0, \sum_{x \in c} s_G(x) - 1\right)$. The mode-separated **Catalytic Tension Factor** $(\chi_{\mathrm{add}}, \chi_{\mathrm{del}})$ modulates the thermodynamic baselines as
 
 $$
-\chi(\boldsymbol{\sigma}_e) = \underbrace{\left( \prod_{s \in \mathcal{S}_{\text{sites}, e}} (1 + \lambda_{\text{cat}} \cdot I[\Delta s(e) = +2]) \right)}_{\text{Catalysis Term}} \cdot \underbrace{\exp\left( -\mu \cdot \sum_{x \in \text{nbhd}(e)} I[\sigma_x = -1] \right)}_{\text{Friction Term}}
+\chi_{\mathrm{add}}(s_a) = e^{-\mu s_a}, \qquad \chi_{\mathrm{del}}(s_c) = (1 + \lambda s_c)e^{-\mu s_c},
 $$
 
-1.  **Catalysis Term:** The product over the set of local sites where the proposed action resolves a syndrome excitation ($\Delta s = +2$). This term applies a linear scaling factor of $(1 + \lambda_{cat})$ for every resolved defect.
-2.  **Friction Term:** The exponential decay function of the total local stress, defined as the count of negative syndromes ($\sigma_x = -1$) within the immediate neighborhood $\text{nbhd}(e)$. This term applies a damping factor with coefficient $\mu$.
+yielding the operational acceptance probabilities $p_a = \chi_{\mathrm{add}}(s_a)\mathbb{P}_{\text{acc,thermo}} = e^{-\mu s_a}$ for edge addition and $q_c = \min\{1, \chi_{\mathrm{del}}(s_c)\mathbb{P}_{\text{del,thermo}}\} = \min\!\left\{1, \tfrac{1}{2}(1 + \lambda s_c)e^{-\mu s_c}\right\}$ for triangle deletion (**Universal Constructor** <Ref id="4.5.8" label="§4.5.8" />).
+
+1.  **Addition Friction ($\chi_{\mathrm{add}}$):** Pure exponential steric damping by the candidate triad's 3-vertex cycle-incidence sum $s_a$, suppressing edge additions in crowded regions without catalytic boost (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />).
+2.  **Deletion Catalysis and Friction ($\chi_{\mathrm{del}}$):** Affine linear catalytic scaling $(1 + \lambda s_c)$ (**Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />) combined with exponential neighborhood friction $e^{-\mu s_c}$ in the self-excluded deletion stress $s_c$. Multiplication by the one-half entropic baseline yields the operational deletion probability (**Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />).
 
 ### 4.5.2.1 Commentary: Adaptive Feedback {#4.5.2.1}
 
 :::info[**Interpretation of Catalysis and Friction**]
 :::
 
-The Catalytic Tension Factor serves as the critical interface between the Awareness Layer (diagnosis) and the Action Layer (dynamics). It transforms abstract diagnostic data (syndrome tuples) into concrete kinetic bias. The duality of this function, additive catalysis for relief and exponential friction for caution, embeds a sophisticated negative feedback loop directly into the micro-physics of the vacuum.
+The Catalytic Tension Factor serves as the critical interface between the Awareness Layer (diagnosis) and the Action Layer (dynamics). It transforms abstract diagnostic data (local cycle-incidence counts) into concrete kinetic bias. The duality of this function, affine linear catalysis for relief and exponential friction for caution, embeds a sophisticated negative feedback loop directly into the micro-physics of the vacuum.
 
-Consider the physical implications: High stress (indicated by negative syndromes) catalyzes deletions via the mode-specific application of $\lambda_{cat}$, effectively accelerating the decay of unstable structures. Simultaneously, friction curbs additions in these same dense regions, preventing the system from adding fuel to the fire. By explicitly separating these terms, the theory allows the universe to navigate the "Goldilocks zone" of density. It prevents both runaway crystallization (the Small World catastrophe where every point connects to every other) and total dissolution (where structure evaporates faster than it can form). This function is the thermostat of the cosmos.
+Consider the physical implications: High stress (measured by local 3-cycle incidence $s_c$) catalyzes deletions via the mode-specific application of $\lambda$, effectively accelerating the decay of unstable structures while remaining regulated by the steric friction factor $e^{-\mu s_c}$. Simultaneously, friction curbs additions in these same dense regions, preventing the system from adding fuel to the fire. By explicitly separating these mode-dependent laws, the theory allows the universe to navigate the "Goldilocks zone" of density. It prevents both runaway crystallization (the Small World catastrophe where every point connects to every other) and total dissolution (where structure evaporates faster than it can form). This function is the thermostat of the cosmos.
 
 ---
 
@@ -3337,10 +3392,10 @@ In particular, the declared $\Delta E=0$ baseline gives $e^{-\Delta F/T}=e^{\ln2
 
 **III. The Stated Channel-Energy Examples**
 
-For the supplied microscopic channel value $\varepsilon_{geo}=\ln2/3$ and $T_c=\ln2$ (**Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />),
+For the supplied microscopic channel value $\varepsilon_0=\ln2/3$ and $T_c=\ln2$ (**Dimensional Equipartition** <Ref id="4.4.4" label="§4.4.4" />),
 
 $$
-\frac{\varepsilon_{geo}}{T_c}=\frac13.
+\frac{\varepsilon_0}{T_c}=\frac13.
 $$
 
 The logarithm satisfies
@@ -3367,10 +3422,10 @@ Both conclusions are conditional on their supplied energy normalizations.
 
 **IV. Scope of the Factor**
 
-Writing the full admissible-proposal acceptance as $P_{acc}=\chi(\sigma)P_{thermo}$ gives, within the barrierless range,
+Writing the full admissible-proposal acceptance as $P_{acc}=\chi_{\mathrm{add}}(s_a)P_{thermo}$ gives, within the barrierless range,
 
 $$
-P_{acc}=\chi(\sigma)\cdot1=\chi(\sigma).
+P_{acc}=\chi_{\mathrm{add}}(s_a)\cdot1=\chi_{\mathrm{add}}(s_a)=e^{-\mu s_a}.
 $$
 
 The exact claim about the thermodynamic factor is consequently (**Addition Probability** <Ref id="4.5.6" label="§4.5.6" />)
@@ -4963,32 +5018,31 @@ This runtime transforms the static tree into a living, breathing process. Howeve
 | $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1/#4.1.1) |
 | $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.2](/monograph/rules/dynamics/4.1/#4.1.2) |
 | $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
+| $s_X$ | Freshly computed syndrome map ($\sigma_{G_X}$) | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
 | $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
-| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
 | $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/rules/dynamics/4.3/#4.3.3) |
 | $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/rules/dynamics/4.3/#4.3.4) |
-| $T_c, \beta_c$ | Vacuum Temperature / Base Conversion Modulus ($\ln 2$) | [§4.4.1](/monograph/rules/dynamics/4.4/#4.4.1) |
+| $\beta_c$ | Base-Conversion Modulus ($\ln 2$, relating bits to nats) | [§4.4.2](/monograph/rules/dynamics/4.4/#4.4.2) |
 | $\Delta S_{\mathrm{close}}$ | Entropy of Closure ($\ln 2$) | [§4.4.3](/monograph/rules/dynamics/4.4/#4.4.3) |
-| $\varepsilon_{\mathrm{geo}}$ | Microscopic Channel Self-Energy ($\frac{\ln 2}{3} \approx 0.231049$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
-| $\alpha_{\mathrm{topo}}$ | Macroscopic Topological Energy Scale ($\frac{\ln 2}{4} \approx 0.173205$) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
-| $\Lambda_{\mathrm{theory}}$ | Simplicial Permittivity / Cosmological Vacuum Drive ($2^{-6} = 0.015625$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
-| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.7183$) | [§4.4.6](/monograph/rules/dynamics/4.4/#4.4.6) |
+| $\varepsilon_0$ | Microscopic Channel Self-Energy ($\frac{\ln 2}{3} \approx 0.231049$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
+| $\Lambda_0$ | Simplicial Permittivity / Cosmological Vacuum Drive ($2^{-6} = 0.015625$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
+| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.7183$) | [§4.4.6.1](/monograph/rules/dynamics/4.4/#4.4.6.1) |
 | $\mu_0$ | Modular S-Duality Friction Coefficient ($1/\sqrt{2\pi} \approx 0.3989$) | [§4.4.7](/monograph/rules/dynamics/4.4/#4.4.7) |
-| $\tau_{\mathrm{homeo}}$ | Operational Homeostatic Stopping Time | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
 | $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
-| $\chi(\boldsymbol{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
+| $\tau_{\mathrm{homeo}}$ | Operational Homeostatic Stopping Time | [§4.5.1.1](/monograph/rules/dynamics/4.5/#4.5.1.1) |
+| $\chi_{\mathrm{add}}(s_a), \chi_{\mathrm{del}}(s_c)$ | Mode-separated Catalytic Tension Factors | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $P_{\mathrm{acc}}$ | Addition Proposal Probability | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
 | $P_{\mathrm{del}}$ | Deletion Proposal Probability | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
-| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.6](/monograph/rules/dynamics/4.5/#4.5.6) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.7](/monograph/rules/dynamics/4.5/#4.5.7) |
-| $\mathcal{U}$ | Universal Evolution Operator ($\mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}$) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{A}$ | Diagnostic Awareness Mapping | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{P}_{\mathrm{prop}}$ | Stochastic Proposal Kernel | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{M}$ | Addition Merge Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{D}$ | Excision Deletion Operator | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\rho$ | Probability measure over the state space | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathbb{P}(G \to G')$ | Transition Probability | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
+| $\mathbb{P}_{\text{acc,thermo}}$ | Base Thermodynamic Acceptance Probability (Addition) | [§4.5.6](/monograph/rules/dynamics/4.5/#4.5.6) |
+| $T_c$ | Critical vacuum temperature normalization ($\ln 2$) | [§4.5.6.1](/monograph/rules/dynamics/4.5/#4.5.6.1) |
+| $\mathbb{P}_{\text{del,thermo}}$ | Base Thermodynamic Deletion Probability | [§4.5.7](/monograph/rules/dynamics/4.5/#4.5.7) |
+| $\mathcal{U}(G, \xi)$ | Four-stage Evolution Operator on snapshot $G$ and realization $\xi$ | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{A}(G)$ | Enumerated legal 2-path addition sites | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $s_G(v)$ | Directed 3-cycle incidence count at vertex $v$ | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $p_a, q_c$ | Mode-separated addition and triangle-deletion trial probabilities | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $B_{\mathrm{filt}}$ | Reciprocal-filtered accepted addition edge set | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $D$ | Aggregated deleted edge set excised after merge | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\Pr(\xi \mid G), K(G, G')$ | Realization probability law and Markov graph transition kernel | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
 
 \newpage
 # References

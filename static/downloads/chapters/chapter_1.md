@@ -945,7 +945,7 @@ Defining the absolute substrate of reality forces an immediate confrontation wit
 
 Classical physical reductionism frequently disguises this epistemological hazard by granting itself pre-existing geometric arenas, smooth continuum manifolds, or unexamined empirical primitives. However, Gödelian incompleteness demonstrates that no sufficiently powerful formal system can syntactically demonstrate its own consistency from within its own axiomatic boundaries. Searching for a pre-written, self-justifying scroll of physical truth traps theoretical physics in a state of paralysis, conflating syntactic provability with systemic validity. When background-dependent assumptions are stripped away, the illusion of self-evident physical primitives vanishes, leaving unconstrained continuous models vulnerable to severe logical and physical paradoxes.
 
-We resolve this impasse by adopting a coherentist epistemological framework that shifts the criterion of validity from isolated self-evidence to collective systemic utility and internal consistency. Rather than claiming absolute, uncaused truth for our starting assumptions, we evaluate postulates by their parsimony, computational tractability, and the fertility of the physical universe they construct. We operationalize this framework by defining a formal deductive system as a tripartite architecture $\mathfrak{D} = (\mathcal{L}, \mathcal{A}, \mathcal{I})$, comprising an explicit formal language, a finite axiomatic basis, and computable rules of inference. Establishing unprovability as a structural feature of axiomatic logic frees the substrate from dogmatic claims, grounding our ontology in an auditable engineering framework.
+We resolve this impasse by adopting a coherentist epistemological framework that shifts the criterion of validity from isolated self-evidence to collective systemic utility and internal consistency. Rather than claiming absolute, uncaused truth for our starting assumptions, we evaluate postulates by their parsimony, computational tractability, and the fertility of the physical universe they construct. We operationalize this framework by defining a formal deductive system as a tripartite architecture $\mathfrak{D} = (\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$, comprising an explicit formal language, a finite axiomatic basis, and computable rules of inference. Establishing unprovability as a structural feature of axiomatic logic frees the substrate from dogmatic claims, grounding our ontology in an auditable engineering framework.
 
 ---
 
@@ -954,7 +954,7 @@ We resolve this impasse by adopting a coherentist epistemological framework that
 :::info[**Inherent Unprovability of Axiomatic Foundations arising from the Structure of Deductive Systems**]
 :::
 
-It is established as a structural necessity of deductive logic that within any finite formal system $\mathfrak{S}$, the chain of justification for any proposition $p$ must terminate in a set of foundational propositions, designated as the **Axiomatic Basis** ($\mathcal{A}$), for which no antecedent justification exists within $\mathfrak{S}$. The truth value of any element $a \in \mathcal{A}$ is determined by postulate, not by syntactic derivation from a prior theorem. Consequently, the concept of proving an axiom within the system it generates constitutes a logical contradiction, as any such proof would require the axiom to serve as its own premise or derive from a circular chain, both of which invalidate the proof structure.
+It is established as a structural necessity of deductive logic that within any finite formal system $\mathfrak{S}$, the chain of justification for any proposition $p$ must terminate in a set of foundational propositions, designated as the **Axiomatic Basis** ($\mathcal{A}_{\mathrm{ax}}$), for which no antecedent justification exists within $\mathfrak{S}$. The truth value of any element $a \in \mathcal{A}_{\mathrm{ax}}$ is determined by postulate, not by syntactic derivation from a prior theorem. Consequently, the concept of proving an axiom within the system it generates constitutes a logical contradiction, as any such proof would require the axiom to serve as its own premise or derive from a circular chain, both of which invalidate the proof structure.
 
 The enterprise of deductive reasoning, the bedrock of mathematics and logic, is built upon a foundational paradox. Any attempt to establish an ultimate truth through proof must contend with the Münchhausen trilemma: the chain of justification must either regress infinitely, loop back upon itself in a circle, or terminate in a set of propositions that are accepted without proof. In the architecture of formal deductive systems, these terminal propositions are known as axioms. Historically, they were considered self-evident truths, but modern logic has recast them as foundational assumptions. A distinction is made between a syntactic process of derivation from accepted premises and a justification, which is the meta-systemic, philosophical, and pragmatic argument for adopting those premises in the first place.
 
@@ -992,13 +992,13 @@ To build this argument, the formal definitions that govern deductive systems are
 :::tip[**Definition of Formal Deductive Systems as a Tripartite Framework of Language, Axioms, and Inference**]
 :::
 
-A **Formal Deductive System** is defined as the tripartite structure $\mathfrak{D} = (\mathcal{L}, \mathcal{A}, \mathcal{I})$, comprising the following immutable components:
+A **Formal Deductive System** is defined as the tripartite structure $\mathfrak{D} = (\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$, comprising the following immutable components:
 
 1.  $\mathcal{L}$, the **Formal Language**, consisting of a finite alphabet and a recursive grammar that defines the set of all possible Well-Formed Formulas (WFFs).
-2.  $\mathcal{A}$, the **Axiomatic Basis**, a distinct, finite subset of formulas accepted as premises without internal proof.
+2.  $\mathcal{A}_{\mathrm{ax}}$, the **Axiomatic Basis**, a distinct, finite subset of formulas accepted as premises without internal proof.
 3.  $\mathcal{I}$, the set of **Rules of Inference**, defining computable transformations that map a finite set of premises to a valid conclusion.
 
-A **Proof** is strictly defined as a finite sequence of formulas wherein each member is either an element of $\mathcal{A}$ or derived directly from preceding members via the application of $\mathcal{I}$.
+A **Proof** is strictly defined as a finite sequence of formulas wherein each member is either an element of $\mathcal{A}_{\mathrm{ax}}$ or derived directly from preceding members via the application of $\mathcal{I}$.
 
 To comprehend the distinction between proof and justification, the precise structure of the environment in which proofs exist must first be understood. A formal, or deductive, system is an abstract framework composed of three essential components: a formal language; a set of axioms; a set of rules of inference.
 
@@ -1051,7 +1051,7 @@ This distinction is paramount: axioms are the starting points for the syntactic 
 :::info[**Limits of Provability and Consistency imposed by Sufficiently Powerful Formal Systems**]
 :::
 
-Pursuant to the Incompleteness Theorems, for any consistent formal system $\mathfrak{F}$ capable of expressing primitive recursive arithmetic, there exists a statement $\mathcal{G}$ such that $\mathfrak{F} \nvdash \mathcal{G}$ and $\mathfrak{F} \nvdash \neg \mathcal{G}$. Furthermore, the consistency of the system itself, denoted $Con(\mathfrak{F})$, cannot be derived using the resources of $\mathfrak{F}$ alone. Therefore, the validity of the axiomatic foundation $\mathcal{A}$ cannot be established by the deductive machinery it enables; justification must be sought through meta-systemic criteria.
+Pursuant to the Incompleteness Theorems, for any consistent formal system $\mathfrak{F}$ capable of expressing primitive recursive arithmetic, there exists a statement $\mathcal{G}_{\mathrm{G\ddot{o}del}}$ such that $\mathfrak{F} \nvdash \mathcal{G}_{\mathrm{G\ddot{o}del}}$ and $\mathfrak{F} \nvdash \neg \mathcal{G}_{\mathrm{G\ddot{o}del}}$. Furthermore, the consistency of the system itself, denoted $Con(\mathfrak{F})$, cannot be derived using the resources of $\mathfrak{F}$ alone. Therefore, the validity of the axiomatic foundation $\mathcal{A}_{\mathrm{ax}}$ cannot be established by the deductive machinery it enables; justification must be sought through meta-systemic criteria.
 
 The unprovability of axioms, while definitionally true, was elevated from a structural feature to a fundamental law of logic by the work of Kurt Gödel. Before Gödel, one could still harbor the ambition, as exemplified by the logicist program of Gottlob Frege and Bertrand Russell, of reducing the vast edifice of mathematics to a minimal set of purely logical axioms. The goal was to show that mathematical truths were simply complex tautologies. Gödel's incompleteness theorems demonstrated that this foundationalist dream was, for any sufficiently powerful system, mathematically impossible.
 
@@ -1059,7 +1059,7 @@ The unprovability of axioms, while definitionally true, was elevated from a stru
 
 In 1931, Gödel published his two incompleteness theorems, which irrevocably altered the philosophy of mathematics. <Cite id="A.31" label="(Gödel, 1931)" />
 
-  * **The First Incompleteness Theorem** states that for any consistent, effectively axiomatized formal system $F$ that is powerful enough to express the basic arithmetic of natural numbers, there will always be statements in the language of $F$ that are true but cannot be proven within $F$. Gödel's proof was constructive: he showed how to create such a statement, often called the Gödel sentence $\mathcal{G}$, which can be informally interpreted as, "This statement is not provable in system $F$. If $F$ is consistent, then $\mathcal{G}$ must be true, yet unprovable within $F$."
+  * **The First Incompleteness Theorem** states that for any consistent, effectively axiomatized formal system $F$ that is powerful enough to express the basic arithmetic of natural numbers, there will always be statements in the language of $F$ that are true but cannot be proven within $F$. Gödel's proof was constructive: he showed how to create such a statement, often called the Gödel sentence $\mathcal{G}_{\mathrm{G\ddot{o}del}}$, which can be informally interpreted as, "This statement is not provable in system $F$. If $F$ is consistent, then $\mathcal{G}_{\mathrm{G\ddot{o}del}}$ must be true, yet unprovable within $F$."
 
   * **The Second Incompleteness Theorem** is a corollary of the first. It states that such a system $F$ cannot prove its own consistency. The statement of consistency, $Con(F)$, is another example of a true but unprovable proposition within $F$.
 
@@ -1153,20 +1153,20 @@ The mathematical community has largely accepted AC because rejecting it would me
 :::info[**Justification of Unprovable Postulates by Coherentist Criteria**]
 :::
 
-The historical evolution of axiomatic justification, epitomized by the independence of Euclid's parallel postulate and the pragmatic acceptance of the Axiom of Choice, demonstrates that when foundational postulates cannot be syntactically derived or intuitively verified as "self-evident," their legitimacy rests upon **Coherentist Justification**. Rather than seeking validation from an impossible chain of antecedent proofs, the axiomatic basis $\mathcal{A}$ of a formal deductive system $\mathfrak{D} = (\mathcal{L}, \mathcal{A}, \mathcal{I})$ is justified holistically by the emergent properties of the global structure it generates.
+The historical evolution of axiomatic justification, epitomized by the independence of Euclid's parallel postulate and the pragmatic acceptance of the Axiom of Choice, demonstrates that when foundational postulates cannot be syntactically derived or intuitively verified as "self-evident," their legitimacy rests upon **Coherentist Justification**. Rather than seeking validation from an impossible chain of antecedent proofs, the axiomatic basis $\mathcal{A}_{\mathrm{ax}}$ of a formal deductive system $\mathfrak{D} = (\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$ is justified holistically by the emergent properties of the global structure it generates.
 
-The adoption of an Axiomatic Basis $\mathcal{A}$ is governed exclusively by the satisfaction of four **Coherence Criteria**:
+The adoption of an Axiomatic Basis $\mathcal{A}_{\mathrm{ax}}$ is governed exclusively by the satisfaction of four **Coherence Criteria**:
 
-1. **Consistency:** The absolute guarantee of formal non-contradiction, ensuring $\mathcal{A} \nvdash \perp$.
-2. **Independence:** The minimality of the basis, such that for every $a \in \mathcal{A}$, $\mathcal{A} \setminus \{a\} \nvdash a$, ensuring no redundant assumptions are codified as axioms.
-3. **Parsimony:** The minimization of the cardinality $|\mathcal{A}|$ and structural complexity of postulates relative to the explanatory scope of the system (Occam's razor).
-4. **Fertility (Systemic Utility):** The capacity of $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ to generate a rich, non-trivial body of theorems ($\mathcal{A} \vdash \theta$) that unifies disparate structures, resolves foundational paradoxes, and, in the construction of a physical theory, maps isomorphically to observable phenomena.
+1. **Consistency:** The absolute guarantee of formal non-contradiction, ensuring $\mathcal{A}_{\mathrm{ax}} \nvdash \perp$.
+2. **Independence:** The minimality of the basis, such that for every $a \in \mathcal{A}_{\mathrm{ax}}$, $\mathcal{A}_{\mathrm{ax}} \setminus \{a\} \nvdash a$, ensuring no redundant assumptions are codified as axioms.
+3. **Parsimony:** The minimization of the cardinality $|\mathcal{A}_{\mathrm{ax}}|$ and structural complexity of postulates relative to the explanatory scope of the system (Occam's razor).
+4. **Fertility (Systemic Utility):** The capacity of $(\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$ to generate a rich, non-trivial body of theorems ($\mathcal{A}_{\mathrm{ax}} \vdash \theta$) that unifies disparate structures, resolves foundational paradoxes, and, in the construction of a physical theory, maps isomorphically to observable phenomena.
 
 **Holistic Support vs. Linear Circularity**
 
 Coherentist justification replaces the classical foundationalist model, which envisions knowledge as a hierarchical tower resting upon "self-evident" bedrock, with a relational model (analogous to Otto Neurath's ship), wherein foundational postulates and derived theorems exist in a web of mutual support.
 
-Crucially, this mode of justification does not commit the fallacy of circular reasoning (*petitio principii*). A circular argument operates linearly ($P \vdash P$), providing no new explanatory content. Coherentist validation operates non-linearly: the axiomatic basis $\mathcal{A}$ is not proved by its consequences, but rather justified by the global stability, parsimony, and mathematical and empirical fertility of the complete deductive edifice.
+Crucially, this mode of justification does not commit the fallacy of circular reasoning (*petitio principii*). A circular argument operates linearly ($P \vdash P$), providing no new explanatory content. Coherentist validation operates non-linearly: the axiomatic basis $\mathcal{A}_{\mathrm{ax}}$ is not proved by its consequences, but rather justified by the global stability, parsimony, and mathematical and empirical fertility of the complete deductive edifice.
 
 :::note[**Summary Table: Epistemological Approaches**]
 :::
@@ -1174,7 +1174,7 @@ Crucially, this mode of justification does not commit the fallacy of circular re
 | Dimension | Foundationalist View (Classical) | Coherentist View (Formalist / Constructive) |
 | :--- | :--- | :--- |
 | **Nature of Axioms** | Self-evident truths; direct descriptions of an absolute, pre-existing reality. | Foundational assumptions; formal rules defining a generative system. |
-| **Source of Justification** | Direct intuition, self-evidence, or linear antecedent derivation. | Systemic properties: consistency ($\nvdash \perp$), parsimony ($|\mathcal{A}|$), and generative fertility. |
+| **Source of Justification** | Direct intuition, self-evidence, or linear antecedent derivation. | Systemic properties: consistency ($\nvdash \perp$), parsimony ($|\mathcal{A}_{\mathrm{ax}}|$), and generative fertility. |
 | **Structure of Knowledge** | Hierarchical pyramid resting on basic, unshakeable beliefs. | Holistic web of mutual logical and structural coherence. |
 | **Status of Alternatives** | Categorically false if non-corresponding to intuitive reality. | Valid alternative formal systems; selection is adjudicated pragmatically by systemic fertility and coherence. |
 
@@ -1235,11 +1235,11 @@ Ultimately, foundational axioms are not the bedrock of truth in the sense of bei
 :::note[**Epistemological Foundations**]
 :::
 
-The starting points of physical theory are justified by the concrete physics they generate. This framework allows for their acceptance without the impossible requirement of absolute, antecedent proof. By abandoning the search for a static or self-evident truth, the model commits to constructing logical self-consistency through a **Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" />. The illusion of a proven foundation is thus traded for the utility of a computable one. This clears the ground for a constructive physics that operates without requiring an infinite chain of prior causes, representing a strategic alignment with the nature of formal systems. A map must be drawn before it can be read.
+Foundational postulates gain warrant from the physical architecture they generate rather than from antecedent deduction (**Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" />). Abandoning linear foundationalist regress clears the way for a computable axiomatic system characterized by internal consistency, minimality, and generative scope. Rather than positing pre-existing arenas, continuum manifolds, or unexplained empirical laws as self-evident truths, this ontological stance treats every axiom as an auditable rule tested collectively by structural coherence.
 
-This result reframes the role of the physicist from a discoverer of pre-existing laws to an architect of necessary logic. In a traditional reductionist view, one expects to find a bottom to reality in the form of particles or fields that simply exist without cause. However, the logic of deductive systems teaches that any such foundation is arbitrary unless it justifies itself through operation. Rather than digging for a foundation that sits passively beneath the universe, the goal is to identify the operating system that keeps the universe running. The truth of the axioms lies not in their divine origin but in their structural stability. The physical universe is asserted to be isomorphic to a formal system because it is a deduction being executed, establishing the **Epistemological Foundations** <Ref id="1.1" label="§1.1" />. This justification is rooted in the **Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" /> <Cite id="A.51" label="(Marker, 2002)" />. Therefore, the constraints placed upon the theory, such as finiteness and consistency, are ontological requirements for existence itself.
+Because no sufficiently expressive formal system proves its own consistency from inside (**Epistemological Foundations** <Ref id="1.1" label="§1.1" />), physical law shifts from passive discovery of pre-written absolutes to explicit architectural construction. Structural stability and inferential fertility jointly bear epistemic weight across the entire deductive web (**Coherentist Justification** <Ref id="1.1.6" label="§1.1.6" /> <Cite id="A.51" label="(Marker, 2002)" />). Consequently, constraints such as finiteness, bounded expressibility, and discrete computability function as strict ontological preconditions rather than optional heuristic preferences.
 
-Furthermore, this finiteness imposes a strict boundary on the physical structure because it cannot support infinite histories or undefined origins. If the logic requires a starting point to be computable, we must conclude that the universe itself must be constructed from discrete, well-defined relations. We cannot hide behind the concept of continuous space or infinite regress. These are computationally undefined operations that would prevent the system from ever initializing. To build a computable universe, we must first define the primitive relational shapes and structures that can be realized within a **Directed Acyclic Graph** <Ref id="1.2.1" label="§1.2.1" />. This epistemological constraint forces our hand regarding the nature of space. We are thus compelled to define the graph-theoretic primitives that will serve as our geometric vocabulary, leading us directly to the definition of graph shapes.
+Finiteness in the deductive framework demands an equally finite relational substrate free of uncomputable continuum infinities or undefined origins. Every spatial and temporal distinction must therefore be built from discrete connectivity primitives realizable within a **Directed Acyclic Graph** <Ref id="1.2.1" label="§1.2.1" />. Defining the structural vocabulary of open paths and closed loops supplies the exact geometric alphabet required before dynamics or temporal order can be formulated. We turn now to these discrete graph-theoretic shapes.
 
 ---
 
@@ -1468,11 +1468,11 @@ Within the spatial state graph, these 3-cycles act as the elementary tiles that 
 :::note[**Graph-Theoretic Definitions**]
 :::
 
-Identification of the fundamental motifs yields the structural building blocks for subsequent chapters. The open path represents the potential for interaction and causal flow, as characterized by the **Directed Path** <Ref id="1.2.3" label="§1.2.3" />. The closed loop represents the realization of structure and geometric area, as defined by the **Cycle** <Ref id="1.2.6" label="§1.2.6" />. These simple shapes constitute the alphabet of the emergent physical geometry, serving as a periodic table of graph elements. They identify the stable isotopes of connectivity that endure in a fluctuating universe. Without these definitions, distinguishing a random tangle from a meaningful structure like a particle or a vacuum manifold would be impossible.
+Graph-theoretic connectivity splits cleanly into two complementary geometric primitives: open causal transmission along a **Directed Path** <Ref id="1.2.3" label="§1.2.3" /> and closed topological loops formalized by a **Cycle** <Ref id="1.2.6" label="§1.2.6" />. Together these discrete motifs provide the structural alphabet from which emergent geometry, dimensionality, and localized persistent structures are constructed. Separating acyclic propagation from recurrent closure isolates the basic invariants required to distinguish sparse relational backgrounds from nontrivial topological defects.
 
-Clear definitions grant the system the capacity to recognize its own local topology, distinguishing between a connection and a closure. This constitutes the first step toward the emergence of geometry from pure relation. An open path defines a one-dimensional causal relation (a sequence of before and after) formalizing the **2-Path** <Ref id="1.2.5" label="§1.2.5" />. A closed loop defines a two-dimensional area, establishing a boundary that separates an interior from an exterior, constituting the **3-Cycle** <Ref id="1.2.8" label="§1.2.8" />. Categorizing these shapes prepares the ground for a physics that constructs dimensionality from the bottom up, rather than assuming a pre-existing background stage. The graph is no longer merely a list of edges; it becomes a collection of geometric objects primed for assembly into a manifold.
+Minimal instances of each family sharpen the geometric contrast between transitive causal flow and elementary spatial enclosure. Composing two consecutive directed links establishes transitive mediation (**2-Path** <Ref id="1.2.5" label="§1.2.5" />), whereas closing three directed links into a loop encloses an elementary spatial boundary (**3-Cycle** <Ref id="1.2.8" label="§1.2.8" />). With both directed connectivity and closed-loop structure classified purely combinatorially, geometry no longer requires an external background manifold.
 
-With the graph-theoretic shapes defined, we have our structural vocabulary. However, these shapes are static configurations. To establish a physical universe, we must introduce a mechanism of change and an ordering of states. We must define what it means for one configuration to succeed another. This leads directly to the question of time. We must construct a temporal ontology that defines the absolute logical sequence of updates and the emergent physical coordinate time. We turn next to the temporal ontology.
+These structural motifs characterize individual graph configurations statically, leaving the ordering of transitions between states completely unspecified. A discrete physics requires both an absolute sequence governing update execution and an internal measure of elapsed physical duration along causal paths. Formulating this distinction cleanly avoids timeless frozen-formalism paradoxes and anchors dynamics in discrete succession. We turn next to the temporal ontology separating global logical iteration from emergent physical time.
 
 ---
 
@@ -1517,10 +1517,10 @@ Any attempt to merge or conflate these two temporal parameters into a single hyb
 :::tip[**Mathematical Characterization as Relational Physical Duration**]
 :::
 
-Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the **Emergent Physical Time** interval $\Delta t_{phys}$ along the path is defined as:
+Let $G = (V, E, H)$ be a causal graph. For any directed causal path $\pi_{\mathrm{path}} = (v_0, v_1, \dots, v_k)$ in $G$ representing an observer's trajectory, the **Emergent Physical Time** interval $\Delta t_{phys}$ along the path is defined as:
 
 $$
-\Delta t_{phys} = \tau(\pi) = f\left(k, \{H(e) \mid e \in \pi\}\right)
+\Delta t_{phys} = \tau(\pi_{\mathrm{path}}) = f\left(k, \{H(e) \mid e \in \pi_{\mathrm{path}}\}\right)
 $$
 
 where $k$ is the topological path length and $f$ is a scaling function mapping discrete edge creation timestamps to proper time, emerging as continuous physical time in the macroscopic limit.
@@ -1630,10 +1630,10 @@ Internal observers, operating within the emergent physical time $t_{phys}$, reco
 :::info[**Temporal Finitude via Finite Capacity of Distinguishable Histories**]
 :::
 
-Let the histories distinguished at observation admit an injective encoding into $M<\infty$ possible present states. Their cardinality is at most $M$, and the comb with distinct retained terminal alternatives and the full continuing binary prefix tree give, respectively,
+Let the histories distinguished at observation admit an injective encoding into $M_{\mathrm{st}}<\infty$ possible present states. Their cardinality is at most $M_{\mathrm{st}}$, and the comb with distinct retained terminal alternatives and the full continuing binary prefix tree give, respectively,
 
 $$
-K\le M-1,\qquad K\le\lfloor\log_2 M\rfloor.
+K\le M_{\mathrm{st}}-1,\qquad K\le\lfloor\log_2 M_{\mathrm{st}}\rfloor.
 $$
 
 These are tick bounds when $K$ bounds the number of past ticks.
@@ -1662,7 +1662,7 @@ The proof proceeds by partition into the comb and continuing-prefix cases of an 
 │
 ├── 1.3.8 Lemma: Supertask Impossibility
 │   ├── 1.3.8.1 Proof: Supertask Impossibility
-│   └── 1.3.8.2 Commentary: Collapse of Supertasks
+│   └── 1.3.8.2 Commentary: Physical Duration and Logical Indexing
 │
 ├── 1.3.9 Lemma: Finite Capacity of History Encodings
 │   ├── 1.3.9.1 Proof: Finite Capacity of History Encodings
@@ -1702,7 +1702,7 @@ The successor is determined by the snapshot and the realized list (**Evolution O
 
 $$
 \begin{aligned}
-H(\Xi_t\mid G_t=g)
+H_S(\Xi_t\mid G_t=g)
 &=\sum_{q_\xi>0}q_\xi\log_2\frac1{q_\xi}\\
 &\le \log_2\left(\sum_{q_\xi>0}q_\xi\frac1{q_\xi}\right)
 =\log_2 n_g
@@ -1730,9 +1730,9 @@ With $G_0$ fixed, each list $\xi_{<t}$ determines $G_t$. Applying the fixed-snap
 
 $$
 \begin{aligned}
-H(\Xi_t\mid\Xi_{<t})
+H_S(\Xi_t\mid\Xi_{<t})
 &=\sum_{\xi_{<t}}\Pr(\Xi_{<t}=\xi_{<t})
-  H(\Xi_t\mid\Xi_{<t}=\xi_{<t})\\
+  H_S(\Xi_t\mid\Xi_{<t}=\xi_{<t})\\
 &\le\sum_{\xi_{<t}}\Pr(\Xi_{<t}=\xi_{<t})\,3\Delta^2(a+bt)
 =3\Delta^2(a+bt).
 \end{aligned}
@@ -1742,8 +1742,8 @@ The chain rule and the arithmetic sum yield
 
 $$
 \begin{aligned}
-H(\Xi_0,\ldots,\Xi_{T-1})
-&=\sum_{t=0}^{T-1}H(\Xi_t\mid\Xi_{<t})\\
+H_S(\Xi_0,\ldots,\Xi_{T-1})
+&=\sum_{t=0}^{T-1}H_S(\Xi_t\mid\Xi_{<t})\\
 &\le3\Delta^2\left(aT+b\sum_{t=0}^{T-1}t\right)
 =3\Delta^2\left(aT+\frac{bT(T-1)}2\right).
 \end{aligned}
@@ -1751,10 +1751,10 @@ $$
 
 **IV. Projection to the Graph Trajectory**
 
-Write $X=(\Xi_0,\ldots,\Xi_{T-1})$ and $Y=(G_1,\ldots,G_T)$. As $Y$ is determined by $X$, $H(Y\mid X)=0$, so
+Write $X=(\Xi_0,\ldots,\Xi_{T-1})$ and $Y=(G_1,\ldots,G_T)$. As $Y$ is determined by $X$, $H_S(Y\mid X)=0$, so
 
 $$
-H(X)=H(X,Y)=H(Y)+H(X\mid Y)\ge H(Y).
+H_S(X)=H_S(X,Y)=H_S(Y)+H_S(X\mid Y)\ge H_S(Y).
 $$
 
 Thus both entropies satisfy the displayed quadratic bound (**Finite Information Substrate** <Ref id="1.3.5" label="§1.3.5" />).
@@ -1797,25 +1797,25 @@ $$
 |\mathcal E_b|-|\mathcal E_a|=\sum_{t=a}^{b-1}|B_t|\ge K.
 $$
 
-In a fixed-vertex execution of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, let $A_t$ and $D_t$ count the retained additions and actual deletions on the transition from $t$ to $t+1$. Each addition contributes one fresh occurrence to $B_t$. The additions use absent pairs and the deletions remove old edges, so
+In a fixed-vertex execution of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, let $A_t^{\mathrm{ret}}$ and $D_t$ count the retained additions and actual deletions on the transition from $t$ to $t+1$. Each addition contributes one fresh occurrence to $B_t$. The additions use absent pairs and the deletions remove old edges, so
 
 $$
 \begin{aligned}
-A&=\sum_{t=a}^{b-1}A_t=\sum_{t=a}^{b-1}|B_t|=|\mathcal E_b\setminus\mathcal E_a|,\\
+A^{\mathrm{ret}}&=\sum_{t=a}^{b-1}A_t^{\mathrm{ret}}=\sum_{t=a}^{b-1}|B_t|=|\mathcal E_b\setminus\mathcal E_a|,\\
 |E_b|-|E_a|
 &=\sum_{t=a}^{b-1}(|E_{t+1}|-|E_t|)
-=\sum_{t=a}^{b-1}(A_t-D_t)=A-D ,
+=\sum_{t=a}^{b-1}(A_t^{\mathrm{ret}}-D_t)=A^{\mathrm{ret}}-D ,
 \end{aligned}
 $$
 
-where $D=\sum_{t=a}^{b-1}D_t$. The active tick count $M_{\mathrm{act}}$ counts a tick with both operations once. Since $\mathbf1_{\{A_t+D_t>0\}}\le A_t+D_t$, it obeys
+where $D=\sum_{t=a}^{b-1}D_t$. The active tick count $M_{\mathrm{act}}$ counts a tick with both operations once. Since $\mathbf1_{\{A_t^{\mathrm{ret}}+D_t>0\}}\le A_t^{\mathrm{ret}}+D_t$, it obeys
 
 $$
 \begin{aligned}
 M_{\mathrm{act}}
-&=\sum_{t=a}^{b-1}\mathbf1_{\{A_t+D_t>0\}}
-\le A+D\\
-&=|E_a|+2A-|E_b|
+&=\sum_{t=a}^{b-1}\mathbf1_{\{A_t^{\mathrm{ret}}+D_t>0\}}
+\le A^{\mathrm{ret}}+D\\
+&=|E_a|+2A^{\mathrm{ret}}-|E_b|
 \le |E_a|+2|\mathcal E_b\setminus\mathcal E_a|.
 \end{aligned}
 $$
@@ -1826,9 +1826,9 @@ For trajectory variables $X_a,\ldots,X_b$ and the specified set $J$ of $K$ ticks
 
 $$
 \begin{aligned}
-H(X_a,\ldots,X_b)-H(X_a)
-&=\sum_{t=a}^{b-1}H(X_{t+1}\mid X_a,\ldots,X_t)\\
-&\ge \sum_{t\in J}H(X_{t+1}\mid X_a,\ldots,X_t)\ge \epsilon K.
+H_S(X_a,\ldots,X_b)-H_S(X_a)
+&=\sum_{t=a}^{b-1}H_S(X_{t+1}\mid X_a,\ldots,X_t)\\
+&\ge \sum_{t\in J}H_S(X_{t+1}\mid X_a,\ldots,X_t)\ge \epsilon K.
 \end{aligned}
 $$
 
@@ -1991,7 +1991,7 @@ The strict inequality follows from the floor bound and $\tau_0>0$. The contradic
 
 Q.E.D.
 
-### 1.3.8.2 Commentary: Collapse of Supertasks {#1.3.8.2}
+### 1.3.8.2 Commentary: Physical Duration and Logical Indexing {#1.3.8.2}
 
 :::info[**Physical Duration and Logical Indexing**]
 :::
@@ -2000,7 +2000,7 @@ The duration bound describes a sequence of nonoverlapping physical operations in
 
 Logical time enumerates the updates and does not assign an elapsed duration to them by itself. When a given trajectory has a first step, choosing zero for its index fixes a convention for describing that trajectory. A finite physical execution and a finite distinguishable history are separate consequences of their respective premises. Relating either quantity to all possible logical predecessors requires a statement about the dynamics. The counted steps must lie completely inside the physical observation interval.
 
-Under the physical stasis convention of the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />, a tick with neither retained additions nor deletions advances the logical index and contributes zero physical duration. The occurrence bound counts active ticks. Its conclusion concerns a first active step on the given trajectory, when there is one. The choice of a common initial configuration across trajectories is a separate question, with the ten-vertex comparison stated in **Optimal Vacuum** <Ref id="3.2.2" label="§3.2.2" />.
+By construction, a logical tick in which neither a retained addition nor an actual deletion occurs advances the sequencer index $t_L$ while registering no active transition and contributing zero physical duration. Because the physical interval bound counts only those active ticks separated by a strictly positive minimum step duration $\tau_0$, idle ticks can accumulate arbitrarily in logical indexing without inflating elapsed physical time. The active-step bound in **Supertask Impossibility** <Ref id="1.3.8" label="§1.3.8" /> holds conditioned on each specified finite trajectory and any chosen common initial configuration.
 
 ---
 
@@ -2009,10 +2009,10 @@ Under the physical stasis convention of the **Universal Constructor** <Ref id="4
 :::info[**Finite Capacity of History Encodings via Injective Encoding of Occurrence Histories**]
 :::
 
-Let $f:\mathcal H\to S$ inject a family of distinguishable histories into a finite set of $M$ states, so $|\mathcal H|\le M$. For a comb with its $K$ terminating alternatives and final continuing history included in $\mathcal H$, and for a binary continuing-prefix tree with all depth-$K$ histories included in $\mathcal H$, the respective bounds are
+Let $f:\mathcal H_{\mathrm{hist}}\to S$ inject a family of distinguishable histories into a finite set of $M_{\mathrm{st}}$ states, so $|\mathcal H_{\mathrm{hist}}|\le M_{\mathrm{st}}$. For a comb with its $K$ terminating alternatives and final continuing history included in $\mathcal H_{\mathrm{hist}}$, and for a binary continuing-prefix tree with all depth-$K$ histories included in $\mathcal H_{\mathrm{hist}}$, the respective bounds are
 
 $$
-K+1\le M,\qquad 2^K\le M.
+K+1\le M_{\mathrm{st}},\qquad 2^K\le M_{\mathrm{st}}.
 $$
 
 ### 1.3.9.1 Proof: Finite Capacity of History Encodings {#1.3.9.1}
@@ -2024,11 +2024,11 @@ $$
 
 The histories counted here are distinct records of occurrences (**Finite Capacity of History Encodings** <Ref id="1.3.9" label="§1.3.9" />) (**Backward Accumulation** <Ref id="1.3.6" label="§1.3.6" />).
 
-The image is a subset of the state set, so $|\mathcal H|=|f(\mathcal H)|\le |S|=M$.
+The image is a subset of the state set, so $|\mathcal H_{\mathrm{hist}}|=|f(\mathcal H_{\mathrm{hist}})|\le |S|=M_{\mathrm{st}}$.
 
 **II. Comb**
 
-Two alternatives that terminate at different branch points differ at the earlier point, where one continues and the other terminates. The final continuing history also differs from every terminated alternative at its branch point. Hence $K+1\le|\mathcal H|\le M$.
+Two alternatives that terminate at different branch points differ at the earlier point, where one continues and the other terminates. The final continuing history also differs from every terminated alternative at its branch point. Hence $K+1\le|\mathcal H_{\mathrm{hist}}|\le M_{\mathrm{st}}$.
 
 **III. Full Continuing Branches**
 
@@ -2038,7 +2038,7 @@ $$
 n_{j+1}=\sum_{p\in P_j}c(p)\ge\sum_{p\in P_j}2=2n_j .
 $$
 
-The induction hypothesis $n_j\ge2^j$ gives $n_{j+1}\ge2\cdot2^j=2^{j+1}$. In particular, $2^K\le n_K$. The depth-$K$ histories are included in $\mathcal H$, so $2^K\le n_K\le|\mathcal H|\le M$.
+The induction hypothesis $n_j\ge2^j$ gives $n_{j+1}\ge2\cdot2^j=2^{j+1}$. In particular, $2^K\le n_K$. The depth-$K$ histories are included in $\mathcal H_{\mathrm{hist}}$, so $2^K\le n_K\le|\mathcal H_{\mathrm{hist}}|\le M_{\mathrm{st}}$.
 
 Q.E.D.
 
@@ -2067,8 +2067,8 @@ A finite choice list has bounded conditional entropy (**Finite Information Subst
 The two counting cases give (**Finite Capacity of History Encodings** <Ref id="1.3.9" label="§1.3.9" />)
 
 $$
-K+1\le M\ \Longrightarrow\ K\le M-1,\qquad
-2^K\le M\ \Longrightarrow\ K\le\lfloor\log_2 M\rfloor .
+K+1\le M_{\mathrm{st}}\ \Longrightarrow\ K\le M_{\mathrm{st}}-1,\qquad
+2^K\le M_{\mathrm{st}}\ \Longrightarrow\ K\le\lfloor\log_2 M_{\mathrm{st}}\rfloor .
 $$
 
 If unbounded candidate past length forces unbounded $K$, the uniform bound on $K$ excludes unbounded candidate past length.
@@ -2168,11 +2168,11 @@ This contradicts $K_{n+1}=0$. The two cases exhaust the possible histories. The 
 :::note[**Temporal Ontology**]
 :::
 
-Finite encoding bounds the distinguishable alternatives (**Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />). A finite physical interval with positive minimum step duration bounds sequential execution (**Supertask Impossibility** <Ref id="1.3.8" label="§1.3.8" />).
+Finite present-state encoding bounds the distinguishable past alternatives (**Temporal Finitude** <Ref id="1.3.4" label="§1.3.4" />), while a strictly positive minimum step duration caps sequential active execution within any finite interval (**Supertask Impossibility** <Ref id="1.3.8" label="§1.3.8" />).
 
-The logical clock $t_L$ emerges here not as a coordinate dimension that one can travel through, but as defined in the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />. It separates the **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> from the **Emergent Physical Time** <Ref id="1.3.2" label="§1.3.2" />. It acts as the fundamental CPU cycle of the universe. It is an external iterator that processes the state transition function. This distinction is vital because it separates the act of change from the measurement of change. Physical time is the variable that appears in relativity equations and is measured by atomic clocks. It is an emergent property of the relations inside the graph and is subject to dilation and curvature. Logical time is the absolute ordering of the computation. It is immune to these relativistic effects. By separating these two concepts, the Problem of Time in quantum gravity is resolved. The universe has a heartbeat, but it is not a clock hanging on the wall of spacetime.
+This section resolves the tension between discrete computation and relativistic duration through the **Dual Time Architecture** <Ref id="1.3.1" label="§1.3.1" />. The non-dynamical iterator $t_L$ of **Global Logical Time** <Ref id="1.3.3" label="§1.3.3" /> strictly orders successive update steps, whereas **Emergent Physical Time** <Ref id="1.3.2" label="§1.3.2" /> measures internal relational duration along causal paths. Separating global update sequencing from intrinsic geometric intervals prevents frozen-formalism stasis without introducing an unphysical background clock coordinate.
 
-With the clock established, the nature of the object that evolves must be defined. Having secured the timing and the mechanism of the update cycle, the inquiry transitions from temporal iteration to the spatial substrate. Time cannot exist in a vacuum, as it requires a state to transition from and to. The definition of the spatial substrate becomes the next priority, characterizing the graph that serves as the memory of the system. The canvas upon which this temporal iterator paints the history of the cosmos must be established.
+Establishing the temporal ordering still leaves the evolving mathematical object itself unspecified. The discrete sequencer requires an explicit combinatorial data structure whose vertices, directed edges, and immutable historical labels record every transition. Formalizing how causal timestamps, birth ticks, and transitive precedence coexist inside each snapshot sets the stage for legal graph updates. We turn now to the structural definition of the causal graph substrate.
 
 ---
 
@@ -2200,9 +2200,9 @@ A creation occurrence is a record $\omega=(u,v,b,h)$ with birth tick $b\in\mathb
 :::info[**Epistemological Interpretation of the Snapshot Configuration Space**]
 :::
 
-Each configuration in $\Omega$ encodes an essential "moment" in the universe's history, represented by a single point $G \in \Omega$, which captures the complete relational and temporal structure at that instant without presupposing prior states or future evolutions. The finiteness constraint limits $|V| < \infty$ for every $G$, ensuring computational tractability and avoiding infinities that could undermine the discrete genesis principle, while acyclicity enforces the strict forward direction of causation, precluding loops that would imply retroactive influences or paradoxes. This triplet structure ensures that each $G \in \Omega$ represents a complete, self-contained snapshot of causal reality at a logical instant, with finiteness bounding complexity, acyclicity safeguarding consistency, and the history map providing an indelible record of emergence.
+Each snapshot $G_t = (V, E_t, H_t)$ encodes the complete relational configuration realized at logical tick $t$ without presupposing continuum coordinates or uncomputed future evolutions. Holding the vertex set finite ($|V| < \infty$) guarantees computational tractability at every step, while tracking creation timestamps through $H_t$ and the historical occurrence map preserves a strict, append-only record of causal precedence.
 
-Unlike graph models in condensed matter or 3D spatial networks, the graph in Quantum Braid Dynamics is fundamentally a four-dimensional spacetime poset. The vertex set $V$ enumerates discrete causal events across time and space, while the directed edge set $E$ encodes unmediated causal influences between events. This 4D event graph architecture differs from Causal Dynamical Triangulations (CDT), which foliates spacetime into explicit spatial 3-slices at fixed times, by storing the entire 4D causal history within a single, acyclic relational graph from which 3D spatial hypersurfaces emerge dynamically.
+Unlike static spatial networks in condensed matter physics, a causal graph $G_t$ combines relational spatial connectivity in $E_t$ with an explicit temporal ledger in $H_t$ and the associated creation occurrences $\mathcal{E}_t$. Even as localized topological loops later emerge in active edges, the underlying creation dependence relation remains strictly acyclic. This architecture contrasts with Causal Dynamical Triangulations (CDT), which imposes foliated spatial hypersurfaces externally, instead allowing spatial slices and metric intervals to emerge relationally from discrete edge timestamps.
 
 ---
 
@@ -2559,11 +2559,11 @@ Q.E.D.
 :::note[**Causal Graph Substrate**]
 :::
 
-A network of relations has replaced the coordinate system. The timestamp functions as a permanent label, defined on the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. It freezes the moment of creation for every link and embeds the arrow of time directly into the topology, which ensures the **Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />. This creates a static skeleton. It is a record of events and their causes that stands independent of any observer. The abstract concept of causality is successfully translated into a concrete, countable structure. This graph is the absolute floor of reality. Beneath this graph there is no sub-structure. There is only the logic of the code itself.
+An explicit network of directed relations replaces every presupposed coordinate grid in the **Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />. Because every newly added link carries a monotonic causal height $H_t(e)$ alongside its scheduler birth tick $b(e)$, the **Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" /> bars self-loops cleanly at the level of edge creation. Causality thereby assumes a concrete combinatorial form whose local ordering is legible directly from graph incidence.
 
-This structure provides the memory of the system. It encodes the past **Causal Relation** <Ref id="1.4.3" label="§1.4.3" /> states that define the present state, satisfying the strict ordering of the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />. In this ontology, space is not a pre-existing container that events happen within. Space is the relationship between events. If two particles are far apart, it is not because there is a lot of empty void separating them. It is because the graph distance is large. The graph distance is the sheer number of causal links one must traverse to get from one to the other. This is a background-independent description of reality that does not require an external ruler or grid. By embedding the timestamp $t_L$ onto the edges, the graph is not just a spatial web; it is a spacetime history. It is a growing block of causal connections where the past is preserved in the topology of the present.
+This structure functions simultaneously as geometry and archival memory across transitions. Historical records encode past **Causal Relation** <Ref id="1.4.3" label="§1.4.3" /> states while preserving strict partial ordering through the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" />. Spatial separation is measured purely by relational path length rather than distances across an external void, and embedding causal heights $H_t(e)$ onto active edges stores dynamical succession directly inside topology without violating snapshot finiteness.
 
-The inquiry now turns to the dynamics. Defining the specific operations allowed to transform this graph from one moment to the next is the next logical step. The object is defined, but the motion is not yet defined. It must be determined how this static web becomes a living, evolving universe. A graph that sits eternally unchanged does not represent a physics; it represents a painting. To breathe life into this structure, the legal moves that can alter it must be defined. This leads to the definition of the task space.
+With vertices, directed links, and timestamp monotonicity formalized, the substrate itself is complete as a sequence of well-typed configurations. Yet a sequence of graph definitions specifies only permissible states, not the elementary transitions linking one snapshot to the next. Physics requires legal local operations capable of constructing and dissolving causal relations without corrupting historical consistency. We turn next to the elementary task space governing valid graph updates.
 
 ---
 
@@ -2593,7 +2593,7 @@ Each primitive preserves $V$, changes at most one active edge, and leaves all su
 
 A defining virtue of this task-theoretic formulation resides in its kinematic purity: membership in $\mathfrak{T}$ invokes no oracle of probability, no calculus of free energy, nor any measure of dynamical preferability. The space enumerates merely the structural feasibility of flux, remaining agnostic to enactment frequency or energetic toll. An addition $\mathfrak{T}_{add}(u,v)$ qualifies if irreflexive and compliant with the **Monotonicity of History**, but its thermodynamic viability ($\Delta F < 0$ at vacuum temperature) defers to the **Addition Mode** <Ref id="4.5.3" label="§4.5.3" />. Deletions preserve $H$'s monotonicity yet postpone Landauer costs until **Deletion Mode** <Ref id="4.5.4" label="§4.5.4" /> is active.
  
- Within this space, transformations must not invoke infinite resources, permit retroactive revisions to timestamps, or violate the irreflexive causal primitive defined by **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. The preservation of acyclicity ensures that the target graph $G'$ admits no directed cycles, enforcing **Acyclic Effective Causality**. Monotonicity of $H$ requires that new timestamps exceed predecessors, which aligns with **Monotonicity of History**, and finite growth bounds $|V'| \leq |V| + k$ preventing unbounded structural blooms. Independent of probabilistic weighting or energetic viability, $\mathfrak{T}$ enumerates exhaustively "what can be built" from the discrete relations, serving as the kinematic substrate upon which dynamical laws impose selection <Cite id="A.58" label="(Abramsky, 2023)" />.
+ Within this space, transformations exclude infinite structural jumps, retroactive alteration of historical birth ticks, and the self-loops ruled out alongside **Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />. Because every legal transition holds the finite vertex set fixed ($V' = V$) and bounds each created edge's causal height $H'(u,v)$ by its incoming predecessors rather than imposing continuum metrics, **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" /> holds across all elementary steps. Independent of probabilistic weighting or energetic viability, $\mathfrak{T}$ enumerates exhaustively "what can be built" from discrete relations, serving as the kinematic substrate upon which dynamical laws impose selection <Cite id="A.58" label="(Abramsky, 2023)" />.
  
  This stratification upholds **Coherentist Justification**. Ontology affords the task space, while axioms constrain its potential to the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />. Finally, the dynamics impose the **Universal Constructor** <Ref id="4.5.1" label="§4.5.1" />. The vacuum's relationality thus emerges as the agent of becoming: persistent yet enabling the full cycle of construction that begets the universe from nullity. This independence ensures modularity: alterations to dynamical parameters (e.g., temperature scaling) perturb selection without reshaping kinematic possibility, facilitating isolation of ontology from mechanism and permitting the theory's scalability across regimes.
 
@@ -2619,7 +2619,7 @@ The transition from tick $t$ records the new occurrence $(u,v,t+1,H'(u,v))$. For
 :::info[**Accretion of Causal Links and Relational Horizon Expansion**]
 :::
 
-The edge addition task $\mathfrak{T}_{add}(u, v)$ represents the primitive creation operator that accretes a novel causal link $e = (u, v)$ with an emergent timestamp $H(e) = t_L$. This task instantiates an unmediated causal proposition, extending the local relational horizon and establishing a direct connection between previously unlinked event loci. In the early stages of network evolution, edge additions predominate, driving the growth of the causal graph and kindling relational density from primordial sparsity.
+The edge addition task $\mathfrak{T}_{add}(u, v)$ serves as the primitive creation operator that accretes a novel causal link $e = (u, v)$ while preserving $H_t$ on existing edges and assigning the new link causal height $H'(u, v) = 1 + \max(\{H_t(x, u) : (x, u) \in E_t\} \cup \{0\})$ alongside scheduler birth tick $b = t + 1$ (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). Because $H'(u, v)$ advances along incoming predecessors rather than echoing the global tick $t_L$, spatially parallel additions share heights bounded by elapsed scheduler steps. In sparse early network evolution, such additions predominate, extending the relational horizon across previously unlinked vertex loci.
 
 By connecting an existing vertex pair, the edge addition task creates the structural preconditions for spatial geometry. For instance, adding a link across an open 2-path closes the triangular motif, instantiating a 3-cycle (**Geometric Quantum** <Ref id="2.3.3" label="§2.3.3" />) that defines an elementary unit of spatial area. Edge addition thus serves as the kinematic engine that builds 3D spatial hypersurfaces and 4D causal connectivity from fundamental relational steps.
 
@@ -2648,7 +2648,7 @@ where the target components are defined by:
 
 The edge deletion task $\mathfrak{T}_{del}(u, v)$ executes the primitive excision transformation $G \to G - e$, where $e = (u, v) \in E$, removing an active link while preserving the immutable historical timestamp $H(e)$ and maintaining the global acyclicity of the target graph $G'$. This operation contracts superfluous connections and resolves local topological tensions, pruning redundant paths to enforce structural parsimony under **The Deletion Probability** <Ref id="4.5.7" label="§4.5.7" />.
 
-$\mathfrak{T}_{del}$ is defined as a topological modification, not an informational erasure. Within the Elementary Task Space, the excision of a causal link $e$ removes the *active relation* (causal influence) but does not retroactively annihilate the *event of its creation*. The task space assumes an "Append-Only" metaphysics regarding the Global Sequencer's log: $t_L$ at which $e$ was created remains a persistent property of the universe's trajectory, even if the geometric constituent $e$ is removed from the active graph $G$. This distinction allows for the pruning of geometry without the paradox of altering the past. Critically, this append-only historical poset complies with the **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" /> while incurring zero runtime memory overhead. When $e$ is pruned by $\mathfrak{T}_{del}$ (as established by the **Vacuum Repertoire** <Ref id="1.5.4" label="§1.5.4" />), it is fully excised from the active state graph data structure, maintaining strict structural sparsity and computational efficiency without retaining inactive or historically deleted edges in memory.
+$\mathfrak{T}_{del}$ is defined as a topological modification, not an informational erasure. Within the Elementary Task Space, the excision of a causal link $e$ removes the *active relation* (causal influence) while leaving intact the *historical occurrence* created when $e$ enters the graph. Under the append-only occurrence ledger, the scheduler birth tick $b(e) = t + 1$ and causal height $H_t(e)$ recorded at creation remain persistent facts of the universe's history even after geometric constituent $e$ leaves active snapshot $G'$. This distinction allows for pruning geometry without rewriting past occurrences, remaining consistent with **Monotonicity of History** <Ref id="1.4.5" label="§1.4.5" /> while incurring zero active-graph memory overhead. Once $e$ is pruned by $\mathfrak{T}_{del}$ (within the **Vacuum Repertoire** <Ref id="1.5.4" label="§1.5.4" />), $e$ is excised cleanly from active edge set $E'$, preserving strict computational sparsity without retaining deleted edges in memory.
 
 ---
 
@@ -2977,11 +2977,11 @@ The two closed terms certify the active-field identities. Deletion rollback read
 :::note[**Task Space**]
 :::
 
-Limiting dynamics to the bare minimum allows the system simply to make or break a link, as defined in the **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" />. The machinery of the universe is neutral, governed by the symmetric operators of **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> and **Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />. This symmetry reveals itself as a vital feature of the theory because it ensures the universe is not structurally biased by its own mechanics toward either infinite density or total emptiness. The machinery of the universe is neutral. This allows the outcome to be determined by the interaction of the parts rather than the design of the tools. This neutrality is essential. If the laws of physics were biased toward creation, the universe would explode instantly. If they were biased toward destruction, it would vanish.
+Restricting kinematics to two complementary operations allows dynamics strictly to create or dissolve a causal link within the **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" />. Because **Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" /> and **Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" /> carry no intrinsic structural asymmetry toward runaway accretion or collapse, macro-level organization must arise from dynamical selection rules rather than hardcoded kinematic bias.
 
-Structures can be built and dissolved with equal facility. This allows the system to explore its configuration space freely, ensuring the **Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />. This neutrality guarantees that any order that eventually emerges does so because of the thermodynamic rules of selection, not because the kinematic machinery was predisposed to produce it. By restricting the universe to these two operations, a conservation of possibility is established. Nothing is created that cannot be destroyed, and nothing is destroyed that cannot be recreated. This balance allows for a dynamic equilibrium to eventually form. It creates a state of flux that mimics the stability of matter.
+Symmetric construction and dissolution allow configuration space to remain balanced under **Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />. Every link added at an active vertex pair can subsequently be removed while keeping historical records coherent, establishing kinematic neutrality without locking in arbitrary defects. Any enduring structures that persist in later chapters therefore emerge through thermodynamic and combinatorial selection acting atop an unbiased operational basis.
 
-This kinematic freedom is necessary but insufficient. While the ability to add and delete edges provides the vocabulary of change, it does not provide the rules of selection. A universe that can do anything at random will likely do nothing coherent. The verbs of the physical language, which are the creation and destruction of relations, are defined. However, the grammar that governs them remains to be formulated. We must assemble these primitives, definitions, and temporal constructs into a unified mathematical syntax. We turn to the formal synthesis of our ontological symbols.
+Kinematic freedom alone supplies the alphabet of structural transformations without fixing the transition probabilities or selection laws that generate spacetime and matter. Having formalized logical foundations, discrete graph shapes, dual time, the causal graph substrate, and legal task operators, the full ontological vocabulary of Chapter 1 is in place. Consolidating these active definitions and notations prepares the ground for the physical axioms that govern survival. We turn to the formal synthesis of our ontological symbols.
 
 ---
 
@@ -3003,8 +3003,8 @@ The *substance* of reality is now established, but its *laws* remain unwritten. 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
 | $\mathfrak{S}$ | A finite formal system | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
-| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
-| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
+| $\mathcal{A}_{\mathrm{ax}}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
+| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$ | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathcal{L}$ | The Formal Language (alphabet and grammar) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathcal{I}$ | The set of Rules of Inference | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\vdash$ | Syntactic derivability (provability) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
@@ -3012,59 +3012,62 @@ The *substance* of reality is now established, but its *laws* remain unwritten. 
 | $\Gamma$ | A set of premises | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\theta$ | A derived theorem | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
-| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
+| $\mathcal{G}_{\mathrm{G\ddot{o}del}}$ | The Gödel sentence (true but unprovable in $\mathfrak{F}$) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $\perp$ | Logical contradiction | [§1.1.6](/monograph/rules/ontology/1.1/#1.1.6) |
+| $\text{DAG}$ | Directed Acyclic Graph (relational foundation of causal order) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
 | $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
+| $(v_0, v_1, \dots, v_n)$ | Directed path vertex sequence in graph $G$ | [§1.2.3](/monograph/rules/ontology/1.2/#1.2.3) |
+| $v_i \neq v_j$ | Vertex distinctness condition defining a simple path | [§1.2.4](/monograph/rules/ontology/1.2/#1.2.4) |
+| $(v, w, u)$ | 2-Path vertex triple ($v \to w \to u$) | [§1.2.5](/monograph/rules/ontology/1.2/#1.2.5) |
+| $v_0 = v_k$ | Cycle boundary closure condition for sequence length $k \ge 1$ | [§1.2.6](/monograph/rules/ontology/1.2/#1.2.6) |
+| $(u,v),(v,u)$ | 2-Cycle (minimal unit of reciprocal causality and feedback) | [§1.2.7](/monograph/rules/ontology/1.2/#1.2.7) |
+| $(A,B,C)$ | 3-Cycle (minimal closed loop enclosing elementary spatial area) | [§1.2.8](/monograph/rules/ontology/1.2/#1.2.8) |
+| $(t_L, t_{\text{phys}})$ | Dual Time Architecture (logical clock and emergent duration) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $t_{phys}$ | Physical Time (emergent metric time) | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
+| $\pi_{\mathrm{path}}$ | Directed causal path $(v_0, v_1, \dots, v_k)$ | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
+| $\tau(\pi_{\mathrm{path}})$ | Emergent physical proper duration functional along path $\pi_{\mathrm{path}}$ | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
 | $t_L$ | Global Logical Time (discrete iteration counter / coordinate clock) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
-| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
+| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$ and causal heights) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
+| $U_0$ | Specified initial state indexed by $t_L = 0$ on a trajectory | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
 | $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
 | $\mathcal{U}$ | Universal Evolution Operator | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
-| $\hat{H}$ | Hamiltonian constraint operator | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
-| $\Psi$ | Wavefunction of the universe | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
-| $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.3.3.1](/monograph/rules/ontology/1.3/#1.3.3.1) |
-| $\mu$ | Renormalization scale | [§1.3.3.1](/monograph/rules/ontology/1.3/#1.3.3.1) |
-| $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.3.3.2](/monograph/rules/ontology/1.3/#1.3.3.2) |
-| $\mathcal{T}$ | Unimodular Time variable | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
-| $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
-| $U_0$ | The state indexed by zero when a first tick is specified | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
-| $S(U)$ | Information content/Entropy of state $U$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $M_{\mathrm{st}}$ | Number of available present states in the history encoding | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
+| $A_t$ | Number of binary addition trials at tick $t$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $C_t$ | Number of old triangles with deletion trials at tick $t$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $T$ | Discrete tick horizon in asymptotic entropy bounds | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
 | $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
-| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $b$ | Finite Branching factor | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $s_t$ | Surface area (active degrees of freedom) | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $\delta_{\text{holo}}$ | Holographic scaling constant | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $T$ | Temporal Domain (Set of integers) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\mathbb{Z}_{\le 0}$ | Set of non-positive integers (Infinite Past domain) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\mathcal{H}_{\text{hist}}$ | History sequence (set of operations) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\mu$ | Mean of entropy production (Context: Statistics) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\sigma^2$ | Variance of entropy production | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\Delta I_k$ | Information bit contribution | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\Omega$ | Universal State Space (Set of all admissible graphs) | [§1.3.7.1](/monograph/rules/ontology/1.3/#1.3.7.1) |
-| $\mathcal{P}_T$ | Trajectory sequence (Context: Recurrence Proof) | [§1.3.7.1](/monograph/rules/ontology/1.3/#1.3.7.1) |
-| $\prec$ | Strict causal precedence | [§1.3.7.1](/monograph/rules/ontology/1.3/#1.3.7.1) |
-| $\epsilon(op)$ | Energy cost per operation | [§1.3.8.1](/monograph/rules/ontology/1.3/#1.3.8.1) |
-| $E_{total}$ | Total energy dissipated | [§1.3.8.1](/monograph/rules/ontology/1.3/#1.3.8.1) |
-| $k_B$ | Boltzmann constant | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $T$ | Temperature (Context: Thermodynamics) | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $\hbar$ | Reduced Planck constant | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $c$ | Speed of light | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $G_{\mu\nu}$ | Einstein Tensor | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $R_s$ | Schwarzschild Radius | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
+| $\Xi_t$ | Realized list of local update choices at tick $t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $H_S$ | Shannon entropy in bits | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $P_2(G_t)$ | Count of supporting directed 2-paths in snapshot $G_t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $\Delta$ | Maximum vertex degree bound in snapshot entropy estimates | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $\mathcal E_t$ | Cumulative set of creation occurrences through tick $t$ | [§1.3.6](/monograph/rules/ontology/1.3/#1.3.6) |
+| $B_t$ | Fresh occurrence increment $\mathcal E_{t+1} \setminus \mathcal E_t$ on tick $t$ | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $A_t^{\mathrm{ret}}, D_t$ | Retained additions and actual deletions on tick $t \to t+1$ | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $M_{\mathrm{act}}$ | Number of active ticks with at least one update event | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $N$ | Fixed number of vertices $\|V\|$ in finite recurrence bounds | [§1.3.7](/monograph/rules/ontology/1.3/#1.3.7) |
+| $E_t$ | Directed edge set at logical tick $t$ | [§1.3.7](/monograph/rules/ontology/1.3/#1.3.7) |
+| $\tau_0$ | Minimum step duration in the conditional sequential bound | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
+| $T_{\mathrm{phys}}$ | Finite physical time interval length | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
+| $\mathcal{H}_{\mathrm{hist}}$ | Family of distinguishable occurrence histories | [§1.3.9](/monograph/rules/ontology/1.3/#1.3.9) |
 | $R_n$ | The $n$-th Grim Reaper entity | [§1.3.10.1](/monograph/rules/ontology/1.3/#1.3.10.1) |
-| $G$ | A specific Causal Graph $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $G_t, G$ | Causal Graph snapshot $(V, E_t, H_t)$ and static form $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $H_t$ | Snapshot History Function assigning causal height $E_t \to \mathbb{N}_0$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $\omega=(u,v,b,h)$ | Historical creation occurrence record (endpoints, birth tick, height) | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
-| $E$ | Set of Directed Edges (Causal Relations) | [§1.4.3](/monograph/rules/ontology/1.4/#1.4.3) |
-| $H$ | History Function (Local proper time mapping $E \to \mathbb{N}$) | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
 | $v, u, w$ | Individual vertices | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
+| $E$ | Set of Directed Edges (Causal Relations) | [§1.4.3](/monograph/rules/ontology/1.4/#1.4.3) |
 | $e$ | Individual edge $(u, v)$ | [§1.4.3](/monograph/rules/ontology/1.4/#1.4.3) |
-| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.4.5](/monograph/rules/ontology/1.4/#1.4.5) |
+| $H$ | History Function (Causal height mapping $E \to \mathbb{N}_0$) | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
+| $b(e)$ | Scheduler birth tick assigned upon edge creation | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
+| $D, D^+$ | Direct causal dependence relation and transitive closure | [§1.4.5](/monograph/rules/ontology/1.4/#1.4.5) |
+| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.4.6](/monograph/rules/ontology/1.4/#1.4.6) |
 | $\mathfrak{T}$ | Elementary Task Space | [§1.5.1](/monograph/rules/ontology/1.5/#1.5.1) |
+| $\Delta F$ | Change in Free Energy | [§1.5.1.1](/monograph/rules/ontology/1.5/#1.5.1.1) |
 | $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.5.2](/monograph/rules/ontology/1.5/#1.5.2) |
 | $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.5.3](/monograph/rules/ontology/1.5/#1.5.3) |
-| $\Delta F$ | Change in Free Energy | [§1.5.1.1](/monograph/rules/ontology/1.5/#1.5.1.1) |
+| $V_{act}$ | Active vertex set (vertices with non-zero incidence degree) | [§1.5.5](/monograph/rules/ontology/1.5/#1.5.5) |
+| $\mathfrak{T}_{vac}$ | Vacuum Repertoire of admissible primitive operations | [§1.5.5](/monograph/rules/ontology/1.5/#1.5.5) |
 
 \newpage
 # References

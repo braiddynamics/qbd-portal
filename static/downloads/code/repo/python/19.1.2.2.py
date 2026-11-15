@@ -6,7 +6,7 @@ from scipy.integrate import solve_ivp
 
 def run_density_relaxation_simulation():
     # Fundamental pre-geometric model parameters
-    rho_star = 0.037       # Homeostatic density attractor fixed point
+    rho_star = 0.037061    # Homeostatic density attractor fixed point
     rho_0 = 0.150          # Post-inflationary initial edge density
     mu = 1.20              # Steric friction coefficient
     

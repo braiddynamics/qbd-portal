@@ -4,7 +4,7 @@ def commutes(p1: str, p2: str) -> bool:
     """Return True if two Pauli strings commute (even number of anti-commuting sites)."""
     anti_count = 0
     for a, b in zip(p1, p2):
-        if a in 'IXYZ' and b in 'IXYZ' and a != b and {a, b} == {'X', 'Y'}:
+        if a in 'XYZ' and b in 'XYZ' and a != b:
             anti_count += 1
     return anti_count % 2 == 0
 

@@ -886,7 +886,7 @@ This reference is necessary for the tripartite braid audits conducted in Chapter
 Sakharov introduces the concept of "induced gravity," proposing that the gravitational field and the Einstein-Hilbert action are not fundamental dynamical fields, but rather represent the macroscopic elastic response of spacetime metric geometry induced by the quantum fluctuations of microscopic matter and gauge fields. In this framework, Newton's constant $G$ measures the elasticity of the quantum vacuum.
 
 **Relevance to QBD:**
-Sakharov's induced metric elasticity directly underpins the derivation of Newton's constant in Chapter 14. In QBD, the metric tensor and its curvature action emerge from integrating out the microscopic combinatorial rewrite transitions on the causal network. Newton's constant is derived as $G = \frac{c^3 \ell_0^2}{4\hbar \rho_3^*}$, representing the induced elastic modulus of the vacuum resisting the deformation of its homeostatic 3-cycle equilibrium density $\rho_3^* \approx 0.0370$.
+Sakharov's induced metric elasticity directly underpins the derivation of Newton's constant in Chapter 14. In QBD, the metric tensor and its curvature action emerge from integrating out the microscopic combinatorial rewrite transitions on the causal network. Newton's constant is derived as $G = \frac{c^3 \ell_0^2}{4\hbar \rho_3^*}$, representing the induced elastic modulus of the vacuum resisting the deformation of its homeostatic 3-cycle equilibrium density $\rho_3^* \approx 0.037061$.
 
 ---
 
@@ -1144,10 +1144,9 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\hat{H}$ | Hamiltonian constraint operator | [§1.1](/monograph/rules/ontology/1.1/#1.1) |
 | $\mathfrak{S}$ | A finite formal system | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
-| $\mathcal{A}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
-| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}, \mathcal{I})$ | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
+| $\mathcal{A}_{\mathrm{ax}}$ | The Axiomatic Basis (set of foundational postulates) | [§1.1.1](/monograph/rules/ontology/1.1/#1.1.1) |
+| $\mathfrak{D}$ | A Formal Deductive System tuple $(\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$ | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathcal{L}$ | The Formal Language (alphabet and grammar) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathcal{I}$ | The set of Rules of Inference | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\vdash$ | Syntactic derivability (provability) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
@@ -1155,175 +1154,182 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\Gamma$ | A set of premises | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\theta$ | A derived theorem | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
-| $\mathcal{G}$ | The Gödel sentence (true but unprovable) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
+| $\mathcal{G}_{\mathrm{G\ddot{o}del}}$ | The Gödel sentence (true but unprovable in $\mathfrak{F}$) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $\perp$ | Logical contradiction | [§1.1.6](/monograph/rules/ontology/1.1/#1.1.6) |
 | $\text{DAG}$ | Directed Acyclic Graph (relational foundation of causal order) | [§1.2.1](/monograph/rules/ontology/1.2/#1.2.1) |
 | $V_A, V_B$ | Disjoint vertex partitions (Bipartite definition) | [§1.2.2](/monograph/rules/ontology/1.2/#1.2.2) |
-| $\Pi(u,v)$ | Directed Path (sequence of relational causality from vertex $u$ to $v$) | [§1.2.3](/monograph/rules/ontology/1.2/#1.2.3) |
-| $\pi_{\text{simple}}$ | Simple Path (acyclic trajectory of causal influence) | [§1.2.4](/monograph/rules/ontology/1.2/#1.2.4) |
-| $\Pi_2(u,v)$ | 2-Path (minimal unit of transitive mediation) | [§1.2.5](/monograph/rules/ontology/1.2/#1.2.5) |
-| $C$ | Cycle (general topological causal closure) | [§1.2.6](/monograph/rules/ontology/1.2/#1.2.6) |
+| $(v_0, v_1, \dots, v_n)$ | Directed path vertex sequence in graph $G$ | [§1.2.3](/monograph/rules/ontology/1.2/#1.2.3) |
+| $v_i \neq v_j$ | Vertex distinctness condition defining a simple path | [§1.2.4](/monograph/rules/ontology/1.2/#1.2.4) |
+| $(v, w, u)$ | 2-Path vertex triple ($v \to w \to u$) | [§1.2.5](/monograph/rules/ontology/1.2/#1.2.5) |
+| $v_0 = v_k$ | Cycle boundary closure condition for sequence length $k \ge 1$ | [§1.2.6](/monograph/rules/ontology/1.2/#1.2.6) |
 | $(u,v),(v,u)$ | 2-Cycle (minimal unit of reciprocal causality and feedback) | [§1.2.7](/monograph/rules/ontology/1.2/#1.2.7) |
 | $(A,B,C)$ | 3-Cycle (minimal closed loop enclosing elementary spatial area) | [§1.2.8](/monograph/rules/ontology/1.2/#1.2.8) |
 | $(t_L, t_{\text{phys}})$ | Dual Time Architecture (logical clock and emergent duration) | [§1.3.1](/monograph/rules/ontology/1.3/#1.3.1) |
 | $t_{phys}$ | Physical Time (emergent metric time) | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
-| $\pi$ | Directed Path (sequence of relational causality) | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
-| $\pi_2$ | 2-Path (minimal unit of transitive mediation) | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
+| $\pi_{\mathrm{path}}$ | Directed causal path $(v_0, v_1, \dots, v_k)$ | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
+| $\tau(\pi_{\mathrm{path}})$ | Emergent physical proper duration functional along path $\pi_{\mathrm{path}}$ | [§1.3.2](/monograph/rules/ontology/1.3/#1.3.2) |
 | $t_L$ | Global Logical Time (discrete iteration counter / coordinate clock) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
-| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
+| $\mathbb{N}_0$ | Set of non-negative integers (Domain of $t_L$ and causal heights) | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
+| $U_0$ | Specified initial state indexed by $t_L = 0$ on a trajectory | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
 | $U_{t_L}$ | Global state of the universe at step $t_L$ | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
 | $\mathcal{U}$ | Universal Evolution Operator | [§1.3.3](/monograph/rules/ontology/1.3/#1.3.3) |
-| $\Psi$ | Wavefunction of the universe | [§1.3.3.1](/monograph/rules/ontology/1.3/#1.3.3.1) |
-| $\tau$ | Fictitious time parameter (Stochastic Quantization) | [§1.3.3.1](/monograph/rules/ontology/1.3/#1.3.3.1) |
-| $\mu$ | Renormalization scale | [§1.3.3.1](/monograph/rules/ontology/1.3/#1.3.3.1) |
-| $\hat{P}$ | Permutation Operator (CAI interpretation) | [§1.3.3.2](/monograph/rules/ontology/1.3/#1.3.3.2) |
-| $\mathcal{T}$ | Unimodular Time variable | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
-| $\Lambda, \hat{\Lambda}$ | Cosmological Constant (variable/operator) | [§1.3.3.3](/monograph/rules/ontology/1.3/#1.3.3.3) |
-| $M$ | Number of available present states in the history encoding | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
-| $S(U)$ | Information content/Entropy of state $U$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
-| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
-| $\Omega_t$ | Set of admissible physical states at time $t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $b$ | Finite Branching factor | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $M_{\mathrm{st}}$ | Number of available present states in the history encoding | [§1.3.4](/monograph/rules/ontology/1.3/#1.3.4) |
 | $A_t$ | Number of binary addition trials at tick $t$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
-| $\delta_{\text{holo}}$ | Holographic scaling constant | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
-| $T$ | Temporal Domain (Set of integers) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $C_t$ | Number of old triangles with deletion trials at tick $t$ | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $T$ | Discrete tick horizon in asymptotic entropy bounds | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $\mathcal{O}(\cdot)$ | Big O notation (asymptotic growth) | [§1.3.5](/monograph/rules/ontology/1.3/#1.3.5) |
+| $\Xi_t$ | Realized list of local update choices at tick $t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $H_S$ | Shannon entropy in bits | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $P_2(G_t)$ | Count of supporting directed 2-paths in snapshot $G_t$ | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
+| $\Delta$ | Maximum vertex degree bound in snapshot entropy estimates | [§1.3.5.1](/monograph/rules/ontology/1.3/#1.3.5.1) |
 | $\mathcal E_t$ | Cumulative set of creation occurrences through tick $t$ | [§1.3.6](/monograph/rules/ontology/1.3/#1.3.6) |
-| $\mathcal{H}_{\text{hist}}$ | History sequence (set of operations) | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
-| $\mathcal{P}_T$ | Trajectory sequence (Context: Recurrence Proof) | [§1.3.7.1](/monograph/rules/ontology/1.3/#1.3.7.1) |
-| $\epsilon(op)$ | Energy cost per operation | [§1.3.8.1](/monograph/rules/ontology/1.3/#1.3.8.1) |
+| $B_t$ | Fresh occurrence increment $\mathcal E_{t+1} \setminus \mathcal E_t$ on tick $t$ | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $A_t^{\mathrm{ret}}, D_t$ | Retained additions and actual deletions on tick $t \to t+1$ | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $M_{\mathrm{act}}$ | Number of active ticks with at least one update event | [§1.3.6.1](/monograph/rules/ontology/1.3/#1.3.6.1) |
+| $N$ | Fixed number of vertices $\|V\|$ in finite recurrence bounds | [§1.3.7](/monograph/rules/ontology/1.3/#1.3.7) |
+| $E_t$ | Directed edge set at logical tick $t$ | [§1.3.7](/monograph/rules/ontology/1.3/#1.3.7) |
 | $\tau_0$ | Minimum step duration in the conditional sequential bound | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
-| $T$ | Temperature (Context: Thermodynamics) | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $c$ | Speed of light | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§1.3.8.2](/monograph/rules/ontology/1.3/#1.3.8.2) |
+| $T_{\mathrm{phys}}$ | Finite physical time interval length | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
+| $\mathcal{H}_{\mathrm{hist}}$ | Family of distinguishable occurrence histories | [§1.3.9](/monograph/rules/ontology/1.3/#1.3.9) |
 | $R_n$ | The $n$-th Grim Reaper entity | [§1.3.10.1](/monograph/rules/ontology/1.3/#1.3.10.1) |
-| $G$ | A specific Causal Graph $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $G_t, G$ | Causal Graph snapshot $(V, E_t, H_t)$ and static form $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $H_t$ | Snapshot History Function assigning causal height $E_t \to \mathbb{N}_0$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
+| $\omega=(u,v,b,h)$ | Historical creation occurrence record (endpoints, birth tick, height) | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
 | $V$ | Set of Vertices (Abstract Events) | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
 | $v, u, w$ | Individual vertices | [§1.4.2](/monograph/rules/ontology/1.4/#1.4.2) |
 | $E$ | Set of Directed Edges (Causal Relations) | [§1.4.3](/monograph/rules/ontology/1.4/#1.4.3) |
 | $e$ | Individual edge $(u, v)$ | [§1.4.3](/monograph/rules/ontology/1.4/#1.4.3) |
-| $H$ | History Function (Local proper time mapping $E \to \mathbb{N}$) | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
-| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.4.5](/monograph/rules/ontology/1.4/#1.4.5) |
+| $H$ | History Function (Causal height mapping $E \to \mathbb{N}_0$) | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
+| $b(e)$ | Scheduler birth tick assigned upon edge creation | [§1.4.4](/monograph/rules/ontology/1.4/#1.4.4) |
+| $D, D^+$ | Direct causal dependence relation and transitive closure | [§1.4.5](/monograph/rules/ontology/1.4/#1.4.5) |
+| $\text{In}(u)$ | Set of incoming edges to vertex $u$ | [§1.4.6](/monograph/rules/ontology/1.4/#1.4.6) |
 | $\mathfrak{T}$ | Elementary Task Space | [§1.5.1](/monograph/rules/ontology/1.5/#1.5.1) |
 | $\Delta F$ | Change in Free Energy | [§1.5.1.1](/monograph/rules/ontology/1.5/#1.5.1.1) |
 | $\mathfrak{T}_{add}$ | Primitive Task: Edge Addition | [§1.5.2](/monograph/rules/ontology/1.5/#1.5.2) |
 | $\mathfrak{T}_{del}$ | Primitive Task: Edge Deletion | [§1.5.3](/monograph/rules/ontology/1.5/#1.5.3) |
-| $P_{err}(R)$ | Probability of paradox evasion at radius $R$ | [§2.1](/monograph/rules/axioms/2.1/#2.1) |
+| $V_{act}$ | Active vertex set (vertices with non-zero incidence degree) | [§1.5.5](/monograph/rules/ontology/1.5/#1.5.5) |
+| $\mathfrak{T}_{vac}$ | Vacuum Repertoire of admissible primitive operations | [§1.5.5](/monograph/rules/ontology/1.5/#1.5.5) |
 | $(u, v)$ | The Directed Causal Link (Atomic relation $u \to v$) | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
-| $E$ | The set of edges within the graph | [§2.1.1](/monograph/rules/axioms/2.1/#2.1.1) |
 | $\implies$ | Logical implication | [§2.2.1](/monograph/rules/axioms/2.2/#2.2.1) |
 | $\forall$ | Universal quantifier ("for all") | [§2.2.1](/monograph/rules/axioms/2.2/#2.2.1) |
-| $\mathcal{T}_{self}$ | Self-Loop Addition Operation | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
 | $\Omega(G)$ | Cardinality of the set of Simple Paths | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
-| $\Delta S$ | Change in Entropy | [§2.2.3](/monograph/rules/axioms/2.2/#2.2.3) |
+| $S(G)$ | Logarithmic path entropy $k_B \log \Omega(G)$ | [§2.2.3.1](/monograph/rules/axioms/2.2/#2.2.3.1) |
 | $k_B$ | Boltzmann Constant | [§2.2.3.1](/monograph/rules/axioms/2.2/#2.2.3.1) |
-| $\mathfrak{T}_{add}$ | Edge Addition Operation | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
-| $\Pi_{\ell \le 2}(u, v)$ | Set of Simple Directed Paths from $u$ to $v$ with length $\le 2$ | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
-| $L$ | Length of a cycle or path | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
+| $\operatorname{PUC}(G; v, w, u)$ | Candidate-relative Principle of Unique Causality predicate | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
 | $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.3](/monograph/rules/axioms/2.3/#2.3.3) |
+| $L$ | Length of a cycle or path | [§2.3.3.1](/monograph/rules/axioms/2.3/#2.3.3.1) |
+| $\Pi_{\ell \le 2}(v, u)$ | Set of Simple Directed Paths from $v$ to $u$ with length $\le 2$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
 | $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
-| $\mathcal{R}$ | The Rewrite Rule (Edge addition mechanism) | [§2.4.2](/monograph/rules/axioms/2.4/#2.4.2) |
-| $C$ | A Simple Directed Cycle | [§2.4.3](/monograph/rules/axioms/2.4/#2.4.3) |
-| $\text{dist}_C(u, v)$ | Distance between vertices along a cycle $C$ | [§2.4.3.1](/monograph/rules/axioms/2.4/#2.4.3.1) |
-| $\mathcal{O}_{add}$ | Composite Addition Phase (Chord insertion) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\mathcal{O}_{del}$ | Composite Deletion Phase (Entropic breakage) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
-| $\mathcal{S}_{step}$ | Composite Update Step ($\mathcal{O}_{del} \circ \mathcal{O}_{add}$) | [§2.4.5](/monograph/rules/axioms/2.4/#2.4.5) |
+| $C, C_k$ | A Simple Directed Cycle (of length $k$) | [§2.4.1](/monograph/rules/axioms/2.4/#2.4.1) |
 | $R$ | Mediated influence by a strictly increasing simple directed path | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
-| $H(e)$ | History Timestamp (Local relational time / discrete proper time) | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
-| $\pi_{uv}$ | A specific Simple Directed Path instance from $u$ to $v$ | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
+| $R_\le$ | Mediated influence under nondecreasing path timestamps | [§2.6.3](/monograph/rules/axioms/2.6/#2.6.3) |
+| $G_{\mathrm{space}}, G_{\mathrm{event}}$ | Oriented spatial state graph and chronological event order graph | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
+| $\prec$ | Strict event-precedence relation on $G_{\mathrm{event}}$ | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
 | $\neg$ | Logical negation | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
+| $R^+$ | Strict partial order transitive closure of $R$ | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
 | $D_G(C)$ | Ambient graph diameter of the perimeter's vertices | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
-| $R$ | Radius of local computational patch | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
-| $D$ | Graph Diameter | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
-| $E_{sync}$ | Energy required for global synchronization | [§2.8](/monograph/rules/axioms/2.8/#2.8) |
-| $\Delta F$ | Change in Free Energy | [§3.1](/monograph/rules/architecture/3.1/#3.1) |
-| $r$ | The Root Vertex ($d_{in}(r)=0$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
+| $W_{\mathrm{repair}}$ | Thermodynamic lower-bound work cost for distributed cycle repair | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $\epsilon_{\mathrm{hop}}$ | Minimum energy cost per coordination hop | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $b$ | Minimum number of irreversibly erased bits in cycle repair | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $T_{\mathrm{bath}}$ | Landauer thermal bath temperature | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $r_{\mathrm{obs}}$ | Local observation radius of rooted graph neighborhoods | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
+| $B_C(0, r_{\mathrm{obs}})$ | Rooted ball of radius $r_{\mathrm{obs}}$ around vertex $0$ in $C$ | [§2.7.3.1](/monograph/rules/axioms/2.7/#2.7.3.1) |
+| $N$ | Fixed vertex count of the bounded reverse-search candidate support | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
+| $L_{\mathrm{cut}}$ | Logarithmic cutoff depth for bounded reverse-witness search | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
+| $p$ | Conditional edge timestamp-comparison bound ($0 < p < 1/4$) | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
+| $q$ | Conditional reverse-path branching factor ($q = 2p$) | [§2.7.4.1](/monograph/rules/axioms/2.7/#2.7.4.1) |
+| $\Omega_{\mathrm{occ}}$ | Set of immutable edge creation occurrences | [§2.7.5](/monograph/rules/axioms/2.7/#2.7.5) |
+| $r$ | The Root Vertex ($d_{\mathrm{in}}(r)=0$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $d(v)$ | Logical Depth of vertex $v$ from root | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $\pi(v)$ | Parity of vertex $v$ ($d(v) \pmod 2$) | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $V_{even}, V_{odd}$ | Vertex partitions based on depth parity | [§3.1.2](/monograph/rules/architecture/3.1/#3.1.2) |
 | $G_0$ | The Initial State (Vacuum) at $t_L=0$ | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
 | $V_0, E_0$ | Vertex and Edge sets of the Initial State | [§3.1.3](/monograph/rules/architecture/3.1/#3.1.3) |
-| $\text{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8](/monograph/rules/architecture/3.1/#3.1.8) |
-| $G_0$ | Regular Bethe Fragment (pre-geometric graph vacuum substrate) | [§3.2.1](/monograph/rules/architecture/3.2/#3.2.1) |
-| $k_{deg}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1.1](/monograph/rules/architecture/3.2/#3.2.1.1) |
-| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
-| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.9](/monograph/rules/architecture/3.2/#3.2.9) |
+| $\operatorname{Aut}(G)$ | Automorphism group of graph $G$ | [§3.1.8.2](/monograph/rules/architecture/3.1/#3.1.8.2) |
+| $k_{\mathrm{deg}}$ | Internal coordination number (Regular Bethe Fragment) | [§3.2.1](/monograph/rules/architecture/3.2/#3.2.1) |
+| $\mathcal{O}(G; \lambda)$ | Structural Optimality Score | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
 | $\lambda$ | Weighting parameter for optimality score | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
+| $H_S(G)$ | Shannon entropy of the orbit size distribution | [§3.2.10](/monograph/rules/architecture/3.2/#3.2.10) |
 | $\mathbf{A}$ | Annotation structure $(a_V, a_E)$ | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
 | $\varphi$ | An automorphism mapping | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
-| $\mathfrak{G}_{\text{sym}}$ | Formal Symmetry Framework (relational automorphism group) | [§3.3.2](/monograph/rules/architecture/3.3/#3.3.2) |
-| $\mathcal{S}_{\text{sites}}(G)$ | Set of candidate rewrite sites | [§3.3.3](/monograph/rules/architecture/3.3/#3.3.3) |
-| $e_{\text{tunnel}}$ | Symmetry-breaking tunneling edge | [§3.4.2](/monograph/rules/architecture/3.4/#3.4.2) |
-| $\mathcal{T}_{\text{tunnel}}$ | Tunneling Operator | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $\chi(G)$ | Chromatic Number | [§3.4.2.1](/monograph/rules/architecture/3.4/#3.4.2.1) |
-| $\epsilon_{geo}$ | Geometric Self-Energy | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
-| $\mathbb{P}_{\text{ign}}$ | Probability of ignition (tunneling) | [§3.4.5](/monograph/rules/architecture/3.4/#3.4.5) |
+| $\mathcal{S}(G)$ | Set of eligible candidate rewrite sites | [§3.3.2](/monograph/rules/architecture/3.3/#3.3.2) |
+| $\mathcal{S}_{\text{sites}}(G)$ | Equivariant candidate rewrite site set | [§3.3.4](/monograph/rules/architecture/3.3/#3.3.4) |
+| $s_{\mathrm{add}}$ | Addition stress score of a candidate 2-path site | [§3.4.5.1](/monograph/rules/architecture/3.4/#3.4.5.1) |
 | $\mathcal{H}$ | Configuration Hilbert Space $(\mathbb{C}^2)^{\otimes K}$ | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\mathcal{C}$ | QECC Codespace (Protected subspace) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path metric | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\Pi_{\text{local}}$ | Projector enforcing locality distance | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $F$ | Fixed forbidden-pair locality mask | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\mathcal{C}_F$ | QECC codespace for forbidden-pair mask $F$ (abbreviated $\mathcal{C}$ when $F$ is fixed) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Pi_{\mathrm{cycle}}(u,v)$ | Hard Constraint Projector excluding reciprocal 2-cycles | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Pi_{\mathrm{local}}(u,v)$ | Hard Constraint Projector enforcing locality mask $F$ | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $Z_{uv}$ | Pauli-Z operator on edge qubit (Check) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $K_{uv}$ | Individual edge occupancy readout | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
-| $\lambda_{uv}$ | Syndrome eigenvalue ($\pm 1$) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $S_1, S_2, S_3$ | Triplet pair-product diagnostic checks | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $V = Z_{uv}Z_{vw}Z_{wu}$ | Three-qubit triplet volume readout resolving pair-check degeneracy | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
+| $\Omega_F$ | Set of labeled adjacency configurations satisfying hard projections | [§3.5.2](/monograph/rules/architecture/3.5/#3.5.2) |
 | $X_{uv}$ | Pauli-X operator on edge qubit (Action) | [§3.5.3.2](/monograph/rules/architecture/3.5/#3.5.3.2) |
+| $\Pi_{\mathrm{order}}$ | Non-linear triad order projector annihilating closed 3-cycles | [§3.5.5.4](/monograph/rules/architecture/3.5/#3.5.5.4) |
 | $\mathbf{Caus}_t$ | Internal Causal Category (Path Category) | [§4.1.1](/monograph/rules/dynamics/4.1/#4.1.1) |
 | $\mathbf{Hist}$ | Global Historical Category (Embeddings) | [§4.1.2](/monograph/rules/dynamics/4.1/#4.1.2) |
 | $\mathbf{AnnCG}$ | Category of Annotated Causal Graphs | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
+| $s_X$ | Freshly computed syndrome map ($\sigma_{G_X}$) | [§4.3.1](/monograph/rules/dynamics/4.3/#4.3.1) |
 | $R_T$ | Awareness Endofunctor | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
-| $\sigma_G$ | Freshly computed syndrome map | [§4.3.2](/monograph/rules/dynamics/4.3/#4.3.2) |
 | $\epsilon$ | Counit (Context Extraction) | [§4.3.3](/monograph/rules/dynamics/4.3/#4.3.3) |
 | $\delta$ | Comultiplication (Meta-Check) | [§4.3.4](/monograph/rules/dynamics/4.3/#4.3.4) |
-| $T_c, \beta_c$ | Vacuum Temperature / Base Conversion Modulus ($\ln 2$) | [§4.4.1](/monograph/rules/dynamics/4.4/#4.4.1) |
+| $\beta_c$ | Base-Conversion Modulus ($\ln 2$, relating bits to nats) | [§4.4.2](/monograph/rules/dynamics/4.4/#4.4.2) |
 | $\Delta S_{\mathrm{close}}$ | Entropy of Closure ($\ln 2$) | [§4.4.3](/monograph/rules/dynamics/4.4/#4.4.3) |
-| $\varepsilon_{\mathrm{geo}}$ | Microscopic Channel Self-Energy ($\frac{\ln 2}{3} \approx 0.231049$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
-| $\Lambda_{\mathrm{theory}}$ | Simplicial Permittivity / Cosmological Vacuum Drive ($2^{-6} = 0.015625$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
-| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.7183$) | [§4.4.6](/monograph/rules/dynamics/4.4/#4.4.6) |
-| $\mu_0$ | Modular S-Duality Friction Coefficient ($1/\sqrt{2\pi} \approx 0.3989$) | [§4.4.7](/monograph/rules/dynamics/4.4/#4.4.7) |
-| $\tau_{\mathrm{homeo}}$ | Operational Homeostatic Stopping Time | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
+| $\varepsilon_0$ | Microscopic Channel Self-Energy ($\frac{\ln 2}{3} \approx 0.231049$) | [§4.4.4](/monograph/rules/dynamics/4.4/#4.4.4) |
+| $\Lambda_0$ | Simplicial Permittivity / Cosmological Vacuum Drive ($2^{-6} = 0.015625$) | [§4.4.5](/monograph/rules/dynamics/4.4/#4.4.5) |
+| $\lambda_0$ | Catalytic Defect Relaxation Generator ($e-1 \approx 1.718282$) | [§4.4.6.1](/monograph/rules/dynamics/4.4/#4.4.6.1) |
+| $\mu_0$ | Modular S-Duality Friction Coefficient ($1/\sqrt{2\pi} \approx 0.398942$) | [§4.4.7](/monograph/rules/dynamics/4.4/#4.4.7) |
 | $\mathcal{R}$ | Universal Constructor (Rewrite Rule) | [§4.5.1](/monograph/rules/dynamics/4.5/#4.5.1) |
-| $\chi(\boldsymbol{\sigma}_e)$ | Catalytic Tension Factor | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
+| $\tau_{\mathrm{homeo}}$ | Operational Homeostatic Stopping Time | [§4.5.1.1](/monograph/rules/dynamics/4.5/#4.5.1.1) |
+| $\chi_{\mathrm{add}}(s_a), \chi_{\mathrm{del}}(s_c)$ | Mode-separated Catalytic Tension Factors | [§4.5.2](/monograph/rules/dynamics/4.5/#4.5.2) |
 | $P_{\mathrm{acc}}$ | Addition Proposal Probability | [§4.5.3](/monograph/rules/dynamics/4.5/#4.5.3) |
 | $P_{\mathrm{del}}$ | Deletion Proposal Probability | [§4.5.4](/monograph/rules/dynamics/4.5/#4.5.4) |
-| $\mathbb{P}_{\text{acc}}$ | Acceptance Probability (Addition) | [§4.5.6](/monograph/rules/dynamics/4.5/#4.5.6) |
-| $\mathbb{P}_{\text{del}}$ | Acceptance Probability (Deletion) | [§4.5.7](/monograph/rules/dynamics/4.5/#4.5.7) |
-| $\mathcal{U}$ | Universal Evolution Operator ($\mathcal{D} \circ \mathcal{M} \circ \mathcal{P}_{\mathrm{prop}} \circ \mathcal{A}$) | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\Sigma_{\text{valid}}$ | State space of axiomatically compliant graphs | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{A}$ | Awareness Diagnostic Mapping | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{P}_{\mathrm{prop}}$ | Stochastic Proposal Kernel | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{M}$ | Addition Merge Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathcal{D}$ | Deletion Excision Map | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
-| $\mathbb{P}(G \to G')$ | Transition Probability | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
+| $\mathbb{P}_{\text{acc,thermo}}$ | Base Thermodynamic Acceptance Probability (Addition) | [§4.5.6](/monograph/rules/dynamics/4.5/#4.5.6) |
+| $T_c$ | Critical vacuum temperature normalization ($\ln 2$) | [§4.5.6.1](/monograph/rules/dynamics/4.5/#4.5.6.1) |
+| $\mathbb{P}_{\text{del,thermo}}$ | Base Thermodynamic Deletion Probability | [§4.5.7](/monograph/rules/dynamics/4.5/#4.5.7) |
+| $\mathcal{U}(G, \xi)$ | Four-stage Evolution Operator on snapshot $G$ and realization $\xi$ | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\mathcal{A}(G)$ | Enumerated legal 2-path addition sites | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $s_G(v)$ | Directed 3-cycle incidence count at vertex $v$ | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $p_a, q_c$ | Mode-separated addition and triangle-deletion trial probabilities | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $B_{\mathrm{filt}}$ | Reciprocal-filtered accepted addition edge set | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $D$ | Aggregated deleted edge set excised after merge | [§4.6.1](/monograph/rules/dynamics/4.6/#4.6.1) |
+| $\Pr(\xi \mid G), K(G, G')$ | Realization probability law and Markov graph transition kernel | [§4.6.3](/monograph/rules/dynamics/4.6/#4.6.3) |
 | $\Omega_N$ | Cardinality of configuration space on $N$ vertices | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $S(N)$ | Total Entropy ($c \cdot N$) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
-| $c_{\text{cap}}$ | Specific entropy per event (Capacity) | [§5.1.1](/monograph/rules/equilibrium/5.1/#5.1.1) |
+| $c$ | Limiting specific entropy per vertex | [§5.1.5](/monograph/rules/equilibrium/5.1/#5.1.5) |
 | $\operatorname{TC}(P)$ | Total correlation of the block law | [§5.1.2](/monograph/rules/equilibrium/5.1/#5.1.2) |
-| $V_\xi$ | Correlation Volume ($V \propto \xi^3$) | [§5.1.2.2](/monograph/rules/equilibrium/5.1/#5.1.2.2) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§5.2](/monograph/rules/equilibrium/5.2/#5.2) |
-| $N_3(t)$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
-| $\rho(t)$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.2](/monograph/rules/equilibrium/5.2/#5.2.2) |
-| $\Lambda_0$ | Vacuum Permittivity (Ignition Flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
-| $d_c$ | Upper critical dimension ($d=4$) | [§5.2.4.2](/monograph/rules/equilibrium/5.2/#5.2.4.2) |
-| $\mu$ | Geometric Friction Coefficient ($1/\sqrt{2\pi}$) | [§5.2.5](/monograph/rules/equilibrium/5.2/#5.2.5) |
-| $\lambda_{cat}$ | Catalysis Coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
-| $\mathcal{V}_{\text{phys}}$ | Region of Physical Viability (equilibrium parameter manifold) | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
-| $\mathcal{P}_{\text{sweep}}$ | Parameter Sweep Protocol (systematic vacuum calibration) | [§5.3.2](/monograph/rules/equilibrium/5.3/#5.3.2) |
-| $\mathcal{C}_{\text{viab}}$ | Viability Channel (stable topological evolution trajectory) | [§5.3.4](/monograph/rules/equilibrium/5.3/#5.3.4) |
-| $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§5.4.1](/monograph/rules/equilibrium/5.4/#5.4.1) |
-| $F(\rho)$ | Net Flux Function ($J_{in} - J_{out}$) | [§5.4.2.1](/monograph/rules/equilibrium/5.4/#5.4.2.1) |
-| $J$ | Jacobian Eigenvalue (Stability indicator) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
-| $\bar{d}(u,v)$ | Undirected shortest-path metric | [§5.5.2](/monograph/rules/equilibrium/5.5/#5.5.2) |
-| $\langle k \rangle$ | Mean vertex degree | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
-| $D_{\max}$ | Maximum vertex degree bound | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
+| $I(X;Y)$ | Mutual information between disjoint blocks | [§5.1.4.1](/monograph/rules/equilibrium/5.1/#5.1.4.1) |
+| $N_3$ | Population of 3-cycles (Geometric Quanta) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
+| $\rho$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
+| $C(\rho)$ | Mean-field 3-cycle creation rate | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
+| $D_0(\rho)$ | Undamped mean-field 3-cycle deletion rate | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
+| $\Lambda_0$ | Vacuum permittivity (ignition flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
+| $\mu$ | Geometric friction coefficient ($1/\sqrt{2\pi}$) | [§5.2.5.1](/monograph/rules/equilibrium/5.2/#5.2.5.1) |
+| $\lambda$ | Bare catalysis coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
+| $\lambda_{\text{cat}}$ | Effective catalytic parameter in the viability protocol | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $p_{\mathrm{surv}}$ | Ensemble survival probability to horizon $T$ | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $F_{\mathrm{QSD}}$ | Normalized quasi-stationary flux imbalance | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $\delta_\mu$ | Perturbation half-width in friction sweeps | [§5.3.2](/monograph/rules/equilibrium/5.3/#5.3.2) |
+| $\rho_c$ | Critical viability threshold density | [§5.3.4](/monograph/rules/equilibrium/5.3/#5.3.4) |
+| $\rho^*$ | Driven steady-state 3-cycle density ($\approx 0.037061$) | [§5.4.1](/monograph/rules/equilibrium/5.4/#5.4.1) |
+| $F(\rho)$ | Net 3-cycle flux ($C(\rho) - D_0(\rho)$) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
+| $J$ | Jacobian eigenvalue ($F'(\rho^*) < 0$) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
+| $\bar{d}_{G_t}(u,v)$ | Undirected shortest-path metric | [§5.5.2](/monograph/rules/equilibrium/5.5/#5.5.2) |
+| $M_v$ | Local vertex degree count | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
+| $\Delta$ | Uniform maximum vertex degree bound | [§5.5.4](/monograph/rules/equilibrium/5.5/#5.5.4) |
 | $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.6](/monograph/rules/equilibrium/5.5/#5.5.6) |
-| $W_1(\mu_u, \mu_v)$ | Wasserstein-1 Distance | [§5.5.6.1](/monograph/rules/equilibrium/5.5/#5.5.6.1) |
-| $B(v,r)$ | Volume of geodesic ball of radius $r$ | [§5.5.9](/monograph/rules/equilibrium/5.5/#5.5.9) |
+| $W_1(\mu_u,\mu_v)$ | Wasserstein-1 distance between local neighborhoods | [§5.5.6.1](/monograph/rules/equilibrium/5.5/#5.5.6.1) |
+| $A$ | Exponential covariance decay prefactor | [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
+| $L$ | Minimum simple cycle length scale | [§5.5.8](/monograph/rules/equilibrium/5.5/#5.5.8) |
+| $B_m(x)$ | Volume of geodesic ball of radius $m$ centered at $x$ | [§5.5.9](/monograph/rules/equilibrium/5.5/#5.5.9) |
+| $d_c$ | Upper critical dimension ($d_c=4$) | [§5.5.9.2](/monograph/rules/equilibrium/5.5/#5.5.9.2) |
 | $R$ | Causal Horizon (Radius of local operator) | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $V_\xi(t)$ | Jones Polynomial of subgraph $\xi$ | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $G_t^*$ | Geometric vacuum at homeostatic fixed point | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.03$) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
+| $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.037061$) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $\rho(\zeta)$ | Local 3-cycle density of excitation | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $\mathcal{C}$ | QECC Codespace (Protected subspace) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $w(\zeta)$ | Writhe of the configuration | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
@@ -1538,7 +1544,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\mathcal{U}$ | Universal Evolution Operator initiating dynamical graph sequencer | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
 | $P_{\text{nuc}}$ | Spontaneous loop nucleation tunneling probability | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
 | $\Gamma_{\text{spark}}$ | Primordial loop nucleation ignition current / spark rate | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
-| $\Lambda$ | Spontaneous 3-cycle creation seed rate ($=0.0156$) | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
+| $\Lambda$ | Spontaneous 3-cycle creation seed rate ($=2^{-6}=0.015625$) | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
 | $k, b$ | Root coordination number ($k=3$) and internal branching factor ($b=2$) | [§18.1.3](/monograph/output/inflation/18.1/#18.1.3) |
 | $\mathcal{P}_{\text{prec}}$ | Precursor 2-path abundance for 3-cycle closure | [§18.1.4](/monograph/output/inflation/18.1/#18.1.4) |
 | $\hat{P}$ | Topological parity projection operator breaking bipartite stasis | [§18.1.5](/monograph/output/inflation/18.1/#18.1.5) |
@@ -1549,10 +1555,10 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\rho(t)$ | Intensive 3-cycle density ($N_3(t)/\|V(t)\|$) | [§18.3.1](/monograph/output/inflation/18.3/#18.3.1) |
 | $F(\rho)$ | Master Equation intensive rate function ($(\Lambda + 9\rho^2)e^{-6\mu\rho} - 0.5\rho$) | [§18.3.1](/monograph/output/inflation/18.3/#18.3.1) |
 | $\lambda_{\text{cat}}$ | Catalytic deletion coupling parameter | [§18.3.1](/monograph/output/inflation/18.3/#18.3.1) |
-| $\mu$ | Steric hindrance / homeostatic friction parameter ($=0.399$) | [§18.3.2](/monograph/output/inflation/18.3/#18.3.2) |
+| $\mu$ | Steric hindrance / homeostatic friction parameter ($=1/\sqrt{2\pi} \approx 0.398942$) | [§18.3.2](/monograph/output/inflation/18.3/#18.3.2) |
 | $\rho_0$ | Frictionless cycle growth threshold density ($> 1/18 \approx 0.0556$) | [§18.3.2](/monograph/output/inflation/18.3/#18.3.2) |
 | $\rho_c$ | Exact unpumped critical nucleation barrier ($=\frac{1}{24-6e} \approx 0.130$) | [§18.3.2.1](/monograph/output/inflation/18.3/#18.3.2.1) |
-| $\rho^*$ | Homeostatic stable fixed-point attractor density ($\approx 0.0370$) | [§18.3.4](/monograph/output/inflation/18.3/#18.3.4) |
+| $\rho^*$ | Homeostatic stable fixed-point attractor density ($\approx 0.037061$) | [§18.3.4](/monograph/output/inflation/18.3/#18.3.4) |
 | $\varepsilon$ | First inflationary slow-roll parameter ($-\dot{H}/H^2 \approx 0.0125$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
 | $\eta$ | Second inflationary slow-roll parameter ($-\ddot{\rho}/(H\dot{\rho}) \approx 0.0050$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
 | $n_s$ | Primordial scalar spectral index ($= 1 - 2\varepsilon - 2\eta \approx 0.965$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
@@ -1636,7 +1642,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\hat{H}_{\text{Ryd}}$ | Driven-dissipative Rydberg blockade Hamiltonian | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
 | $R_b$ | Rydberg blockade exclusion radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
 | $R_{\text{fac}}$ | Rydberg facilitation resonance radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
-| $\rho_{\text{Ryd}}^*$ | Synthetic quasi-stationary vacuum density ($\approx 0.037$) | [§23.1.2](/monograph/conclusion/universality/23.1/#23.1.2) |
+| $\rho_{\text{Ryd}}^*$ | Synthetic quasi-stationary vacuum density ($\approx 0.037061$) | [§23.1.2](/monograph/conclusion/universality/23.1/#23.1.2) |
 | $\beta_{\text{DP}}$ | Directed percolation critical order parameter exponent | [§23.1.4](/monograph/conclusion/universality/23.1/#23.1.4) |
 | $S_v, S_p$ | Trivalent stabilizer vertex divergence and plaquette flux checks | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
 | $\hat{U}_{\text{synd}}$ | Transpiled trivalent stabilizer syndrome extraction operator | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
