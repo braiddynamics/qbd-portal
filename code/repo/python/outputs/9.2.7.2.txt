@@ -1,3 +1,3 @@
-encoding | vertices | selected states | exact diagonal action
-occupation | 35 | 5 | yes
-rung | 130 | 5 | yes
+encoding   | vertices | selected states | intertwining pairs
+occupation | 35       | 5               | 4
+rung       | 130      | 5               | 4

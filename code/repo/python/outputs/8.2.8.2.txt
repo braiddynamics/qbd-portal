@@ -1,4 +1,4 @@
-n | exchange directions | diagonal directions | real closure dimension
-2 | 1 | 0 | 1
-3 | 2 | 0 | 3
-5 | 4 | 0 | 10
+n | exchanges | closure_dim | zero_diagonal | conjugate_so(n)
+2 | 1         | 1           | true          | true
+3 | 2         | 3           | true          | true
+5 | 4         | 10          | true          | true

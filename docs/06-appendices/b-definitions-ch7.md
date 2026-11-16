@@ -832,47 +832,36 @@ Section 7.3.6.1 formalizes the properties of the QBD proof regarding permutation
 
 Type-theoretic validation of the relation established in the **Permutation-Fixed Writhe** <Ref id="7.3.6.1" label="§7.3.6.1" /> proceeds via the following verification strategy: The formal target concerns individual fixed integer labels (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />).
 
-1.  **Encoding:** The self-contained proof block specifies the mathematical objects independently of the target conclusion in the pinned Lean and Mathlib v4.33.1 environment.
-2.  **Theorem Statement:** The displayed theorem specializes the proved relation to the stated hypotheses without assuming its conclusion.
-3.  **Proof Closure:** The closed proof uses the mirrored dependency module and the displayed theorem to certify exactly the specified relation.
+1.  **Encoding:** The standalone Lean 4 and Mathlib v4.33.1 proof block encodes the integer writhe triple `WritheVector` over three ribbon coordinates, the constant configuration `uniform`, the coordinate permutation `permute`, and the pointwise invariance predicate `PermutationFixed`.
+2.  **Theorem Statement:** The displayed theorem `fixed_configurations` states that a triple satisfies `PermutationFixed` if and only if it equals `uniform k` for some integer `k`.
+3.  **Proof Closure:** The proof closes the equivalence via transposition swaps `(Equiv.swap 0 i)` and `funext` for necessity and `rfl` for sufficiency, certifying exact equality without extra axioms.
 
 ```lean
 import Mathlib.Tactic
-import Mathlib.Data.Complex.Basic
-import Mathlib.LinearAlgebra.Matrix.Notation
 
 /-!
-Accepted charge definition on integer writhe labels. PermutationFixed is a
-predicate on individual configurations, not the invariant subspace of the
-quantum permutation representation and not a physical SU(3) classification.
-The diagonal actions below are pointwise algebra on amplitudes; no Hilbert
-operator domain or microscopic graph identification is asserted.
+Permutation-fixed integer writhe configurations are precisely uniform triples,
+independently of physical color representations.
 -/
 
-namespace QBD.IntegerWritheCharge
+namespace QBD.Monograph.FixedWrithe
 
+-- Signed integer writhe triple across three ribbons.
 abbrev WritheVector := Fin 3 → ℤ
 
-def charge (w : WritheVector) : ℚ := (∑ i, (w i : ℚ)) / 3
-
-def complexity (w : WritheVector) : ℤ := ∑ i, |w i|
-
+-- Constant integer writhe configuration.
 def uniform (k : ℤ) : WritheVector := fun _ => k
 
+-- Coordinate permutation action on writhe labels.
 def permute (σ : Equiv.Perm (Fin 3)) (w : WritheVector) : WritheVector :=
   fun i => w (σ.symm i)
 
+-- Pointwise permutation invariance predicate on a configuration.
 def PermutationFixed (w : WritheVector) : Prop := ∀ σ, permute σ w = w
 
-def electron : WritheVector := uniform (-1)
-def asymmetric : WritheVector := ![-2, -1, 0]
-def downLabel : WritheVector := ![-1, 0, 0]
-def upLabel : WritheVector := ![1, 1, 0]
-
-def parity (w : WritheVector) (i : Fin 3) : ℤ :=
-  if w i % 2 = 0 then 1 else -1
-
-theorem fixed_iff_uniform (w : WritheVector) :
+-- Characterize fixed integer configurations as constant vectors.
+/-- Fixed configurations are precisely the constant writhe vectors. -/
+theorem fixed_configurations (w : WritheVector) :
     PermutationFixed w ↔ ∃ k : ℤ, w = uniform k := by
   constructor
   · intro h
@@ -883,179 +872,12 @@ theorem fixed_iff_uniform (w : WritheVector) :
   · rintro ⟨k, rfl⟩ σ
     rfl
 
-theorem charge_uniform (k : ℤ) : charge (uniform k) = k := by
-  norm_num [charge, uniform, Fin.sum_univ_succ]
-
-theorem complexity_uniform (k : ℤ) : complexity (uniform k) = 3 * |k| := by
-  simp [complexity, uniform]
-
-theorem fixed_charge_iff_uniform (w : WritheVector) (k : ℤ) :
-    (PermutationFixed w ∧ charge w = k) ↔ w = uniform k := by
-  constructor
-  · rintro ⟨hfixed, hcharge⟩
-    obtain ⟨a, rfl⟩ := (fixed_iff_uniform w).mp hfixed
-    have heq : (a : ℚ) = (k : ℚ) := by simpa [charge_uniform] using hcharge
-    have hak : a = k := by exact_mod_cast heq
-    subst a
-    rfl
-  · intro h
-    subst w
-    exact ⟨(fixed_iff_uniform (uniform k)).mpr ⟨k, rfl⟩, charge_uniform k⟩
-
-theorem unique_fixed_charge_minus_one (w : WritheVector)
-    (hfixed : PermutationFixed w) (hcharge : charge w = -1) : w = electron := by
-  exact (fixed_charge_iff_uniform w (-1)).mp ⟨hfixed, hcharge⟩
-
-theorem charge_permute (σ : Equiv.Perm (Fin 3)) (w : WritheVector) :
-    charge (permute σ w) = charge w := by
-  unfold charge permute
-  rw [Equiv.sum_comp σ.symm (fun i => (w i : ℚ))]
-
-theorem neutral_label_charge : charge (uniform 0) = 0 := by norm_num [charge_uniform]
-theorem down_label_charge : charge downLabel = -(1 / 3 : ℚ) := by
-  norm_num [charge, downLabel, Fin.sum_univ_succ]
-theorem up_label_charge : charge upLabel = (2 / 3 : ℚ) := by
-  norm_num [charge, upLabel, Fin.sum_univ_succ]
-theorem electron_charge : charge electron = -1 := by simp [electron, charge_uniform]
-theorem asymmetric_charge : charge asymmetric = -1 := by
-  norm_num [charge, asymmetric, Fin.sum_univ_succ]
-
-theorem asymmetric_not_fixed : ¬PermutationFixed asymmetric := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform asymmetric).mp h
-  have hzero := congrFun hk 0
-  have hone := congrFun hk 1
-  norm_num [asymmetric, uniform] at hzero hone
-  omega
-
-theorem complexity_tie : complexity electron = 3 ∧ complexity asymmetric = 3 := by
-  norm_num [complexity, electron, uniform, asymmetric, Fin.sum_univ_succ]
-
-theorem not_fixed_of_distinct_entries (w : WritheVector) (i j : Fin 3)
-    (hij : w i ≠ w j) : ¬PermutationFixed w := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform w).mp h
-  apply hij
-  rw [hk]
-  rfl
-
-theorem down_label_not_fixed : ¬PermutationFixed downLabel := by
-  apply not_fixed_of_distinct_entries downLabel 0 1
-  norm_num [downLabel]
-
-theorem up_label_not_fixed : ¬PermutationFixed upLabel := by
-  apply not_fixed_of_distinct_entries upLabel 0 (Fin.succ (Fin.succ 0))
-  decide
-
-theorem low_complexity_fixed_charge (w : WritheVector)
-    (hf : PermutationFixed w) (hc : complexity w ≤ 3) :
-    charge w = -1 ∨ charge w = 0 ∨ charge w = 1 := by
-  obtain ⟨k, rfl⟩ := (fixed_iff_uniform w).mp hf
-  have hc' : 3 * |k| ≤ 3 := by simpa [complexity_uniform] using hc
-  have ha : |k| ≤ 1 := by omega
-  have bounds := abs_le.mp ha
-  have hk : k = -1 ∨ k = 0 ∨ k = 1 := by omega
-  rcases hk with hk | hk | hk <;> subst k <;> norm_num [charge_uniform]
-
-theorem first_parity_distinguishes_labels : parity electron 0 ≠ parity asymmetric 0 := by
-  norm_num [parity, electron, uniform, asymmetric]
-
-theorem total_parity_same :
-    (∏ i, parity electron i) = -1 ∧ (∏ i, parity asymmetric i) = -1 := by
-  norm_num [parity, electron, uniform, asymmetric, Fin.prod_univ_succ]
-
-theorem fixed_charge_support_unique (ψ : WritheVector → ℂ)
-    (hsupport : ∀ w, ψ w ≠ 0 → PermutationFixed w ∧ charge w = -1)
-    (w : WritheVector) (hne : w ≠ electron) : ψ w = 0 := by
-  by_contra hnonzero
-  obtain ⟨hf, hq⟩ := hsupport w hnonzero
-  exact hne (unique_fixed_charge_minus_one w hf hq)
-
-theorem asymmetric_injective : Function.Injective asymmetric := by
-  intro i j hij
-  fin_cases i <;> fin_cases j <;> norm_num [asymmetric] at *
-
-theorem orbit_labels_injective : Function.Injective (fun σ => permute σ asymmetric) := by
-  intro σ τ h
-  have hinverse : σ.symm = τ.symm := by
-    apply Equiv.ext
-    intro i
-    apply asymmetric_injective
-    exact congrFun h i
-  have hdouble := congrArg (fun e : Equiv.Perm (Fin 3) => e.symm) hinverse
-  simpa using hdouble
-
-theorem orbit_labels_not_fixed (σ : Equiv.Perm (Fin 3)) :
-    ¬PermutationFixed (permute σ asymmetric) := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform (permute σ asymmetric)).mp h
-  have hzero := congrFun hk (σ 0)
-  have hone := congrFun hk (σ 1)
-  norm_num [permute, asymmetric, uniform] at hzero hone
-  omega
-
-abbrev OrbitAmplitudes := Equiv.Perm (Fin 3) → ℂ
-
-def symmetricOrbitSum : OrbitAmplitudes := fun _ => 1
-
-def permuteOrbitAmplitudes (σ : Equiv.Perm (Fin 3)) (ψ : OrbitAmplitudes) :
-    OrbitAmplitudes := fun τ => ψ (σ.symm * τ)
-
-theorem symmetric_orbit_sum_invariant (σ : Equiv.Perm (Fin 3)) :
-    permuteOrbitAmplitudes σ symmetricOrbitSum = symmetricOrbitSum := by rfl
-
-theorem symmetric_orbit_sum_nonzero : symmetricOrbitSum ≠ 0 := by
-  intro h
-  have he := congrFun h (1 : Equiv.Perm (Fin 3))
-  norm_num [symmetricOrbitSum] at he
-
-theorem all_orbit_labels_have_charge_minus_one (σ : Equiv.Perm (Fin 3)) :
-    charge (permute σ asymmetric) = -1 := by
-  rw [charge_permute, asymmetric_charge]
-
-abbrev Amplitudes := WritheVector → ℂ
-
-def writheAction (i : Fin 3) (ψ : Amplitudes) : Amplitudes :=
-  fun w => (w i : ℂ) * ψ w
-
-def chargeAction (ψ : Amplitudes) : Amplitudes :=
-  fun w => (charge w : ℂ) * ψ w
-
-theorem charge_action_is_normalized_writhe_sum (ψ : Amplitudes) (w : WritheVector) :
-    chargeAction ψ w = (∑ i, writheAction i ψ w) / 3 := by
-  simp [chargeAction, writheAction, charge, Fin.sum_univ_succ]
-  ring
-
-#print axioms fixed_iff_uniform
-#print axioms fixed_charge_iff_uniform
-#print axioms unique_fixed_charge_minus_one
-#print axioms charge_permute
-#print axioms asymmetric_not_fixed
-#print axioms low_complexity_fixed_charge
-#print axioms first_parity_distinguishes_labels
-#print axioms fixed_charge_support_unique
-#print axioms orbit_labels_injective
-#print axioms orbit_labels_not_fixed
-#print axioms symmetric_orbit_sum_invariant
-#print axioms all_orbit_labels_have_charge_minus_one
-#print axioms charge_action_is_normalized_writhe_sum
-
-end QBD.IntegerWritheCharge
-
-namespace QBD.Monograph.PermutationFixed
-open QBD.IntegerWritheCharge
-
--- Characterize fixed integer configurations, independently of physical color.
-/-- Fixed configurations are precisely the constant writhe vectors. -/
-theorem fixed_configurations (w : WritheVector) :
-    PermutationFixed w ↔ ∃ k : ℤ, w = uniform k := fixed_iff_uniform w
-
 #print axioms fixed_configurations
-end QBD.Monograph.PermutationFixed
+end QBD.Monograph.FixedWrithe
 ```
 
 **Verification Summary:**
-The integer coordinates and permutation action encode fixed configuration labels. The certificate proves equality of components and its converse; it does not equate this predicate with the entire invariant subspace of a quantum color representation. The full block and this specialization are mirrored together in the Lean repository, and compilation is checked separately from structural validation. The kernel's acceptance of the closed proof term certifies the logical claim in the corresponding proof.
+The minimal self-contained definitions `WritheVector`, `uniform`, `permute`, and `PermutationFixed` encode individual integer writhe triples and coordinate permutations. The tactic chain eliminates necessity using explicit index swaps with `Equiv.swap` and closes sufficiency by definitional equality; it does not equate this pointwise predicate with the invariant subspace of a quantum color representation. The kernel's acceptance of the closed proof term certifies the logical claim in the corresponding proof.
 
 **In Plain English:**  
 Section 7.3.6.2 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 and mathlib.
@@ -1144,46 +966,38 @@ Section 7.3.7.1 formalizes the properties of the QBD proof regarding fixed-charg
 
 Type-theoretic validation of the relation established in the **Fixed-Charge Uniqueness** <Ref id="7.3.7.1" label="§7.3.7.1" /> proceeds via the following verification strategy: The formal target retains the fixed integer charge as an explicit parameter (**Fixed-Charge Uniqueness** <Ref id="7.3.7" label="§7.3.7" />).
 
-1.  **Encoding:** The self-contained proof block specifies the mathematical objects independently of the target conclusion in the pinned Lean and Mathlib v4.33.1 environment.
-2.  **Theorem Statement:** The displayed theorem specializes the proved relation to the stated hypotheses without assuming its conclusion.
-3.  **Proof Closure:** The closed proof uses the mirrored dependency module and the displayed theorem to certify exactly the specified relation.
+1.  **Encoding:** The standalone Lean 4 and Mathlib v4.33.1 proof block defines `WritheVector` over three ribbon coordinates, the normalized rational charge `charge`, `uniform`, `permute`, and `PermutationFixed`, together with the helper lemmas `fixed_iff_uniform` and `charge_uniform`.
+2.  **Theorem Statement:** The displayed theorem `fixed_charge` asserts that `PermutationFixed w` and `charge w = k` hold together if and only if `w = uniform k`.
+3.  **Proof Closure:** The proof substitutes the constant characterization from `fixed_iff_uniform`, discharges integer-to-rational equality via `exact_mod_cast`, and verifies the converse by substitution, closing the biconditional cleanly.
 
 ```lean
 import Mathlib.Tactic
-import Mathlib.Data.Complex.Basic
-import Mathlib.LinearAlgebra.Matrix.Notation
 
 /-!
-Accepted charge definition on integer writhe labels. PermutationFixed is a
-predicate on individual configurations, not the invariant subspace of the
-quantum permutation representation and not a physical SU(3) classification.
-The diagonal actions below are pointwise algebra on amplitudes; no Hilbert
-operator domain or microscopic graph identification is asserted.
+A permutation-fixed integer writhe configuration is uniquely determined by its
+rational electric charge value.
 -/
 
-namespace QBD.IntegerWritheCharge
+namespace QBD.Monograph.ChargeUniqueness
 
+-- Signed integer writhe triple across three ribbons.
 abbrev WritheVector := Fin 3 → ℤ
 
+-- Normalized rational electric charge sum over three ribbons.
 def charge (w : WritheVector) : ℚ := (∑ i, (w i : ℚ)) / 3
 
-def complexity (w : WritheVector) : ℤ := ∑ i, |w i|
-
+-- Constant integer writhe configuration.
 def uniform (k : ℤ) : WritheVector := fun _ => k
 
+-- Coordinate permutation action on writhe labels.
 def permute (σ : Equiv.Perm (Fin 3)) (w : WritheVector) : WritheVector :=
   fun i => w (σ.symm i)
 
+-- Pointwise permutation invariance predicate on a configuration.
 def PermutationFixed (w : WritheVector) : Prop := ∀ σ, permute σ w = w
 
-def electron : WritheVector := uniform (-1)
-def asymmetric : WritheVector := ![-2, -1, 0]
-def downLabel : WritheVector := ![-1, 0, 0]
-def upLabel : WritheVector := ![1, 1, 0]
-
-def parity (w : WritheVector) (i : Fin 3) : ℤ :=
-  if w i % 2 = 0 then 1 else -1
-
+-- Characterize fixed writhe configurations as uniform triples.
+/-- Every permutation-fixed writhe vector is constant. -/
 theorem fixed_iff_uniform (w : WritheVector) :
     PermutationFixed w ↔ ∃ k : ℤ, w = uniform k := by
   constructor
@@ -1195,13 +1009,14 @@ theorem fixed_iff_uniform (w : WritheVector) :
   · rintro ⟨k, rfl⟩ σ
     rfl
 
+-- Compute the charge of a constant integer triple.
+/-- A uniform triple (k, k, k) carries charge k. -/
 theorem charge_uniform (k : ℤ) : charge (uniform k) = k := by
   norm_num [charge, uniform, Fin.sum_univ_succ]
 
-theorem complexity_uniform (k : ℤ) : complexity (uniform k) = 3 * |k| := by
-  simp [complexity, uniform]
-
-theorem fixed_charge_iff_uniform (w : WritheVector) (k : ℤ) :
+-- Relate the fixed-configuration predicate to its specified integer charge.
+/-- A fixed label of integer charge k is exactly the constant vector k. -/
+theorem fixed_charge (w : WritheVector) (k : ℤ) :
     (PermutationFixed w ∧ charge w = k) ↔ w = uniform k := by
   constructor
   · rintro ⟨hfixed, hcharge⟩
@@ -1214,161 +1029,12 @@ theorem fixed_charge_iff_uniform (w : WritheVector) (k : ℤ) :
     subst w
     exact ⟨(fixed_iff_uniform (uniform k)).mpr ⟨k, rfl⟩, charge_uniform k⟩
 
-theorem unique_fixed_charge_minus_one (w : WritheVector)
-    (hfixed : PermutationFixed w) (hcharge : charge w = -1) : w = electron := by
-  exact (fixed_charge_iff_uniform w (-1)).mp ⟨hfixed, hcharge⟩
-
-theorem charge_permute (σ : Equiv.Perm (Fin 3)) (w : WritheVector) :
-    charge (permute σ w) = charge w := by
-  unfold charge permute
-  rw [Equiv.sum_comp σ.symm (fun i => (w i : ℚ))]
-
-theorem neutral_label_charge : charge (uniform 0) = 0 := by norm_num [charge_uniform]
-theorem down_label_charge : charge downLabel = -(1 / 3 : ℚ) := by
-  norm_num [charge, downLabel, Fin.sum_univ_succ]
-theorem up_label_charge : charge upLabel = (2 / 3 : ℚ) := by
-  norm_num [charge, upLabel, Fin.sum_univ_succ]
-theorem electron_charge : charge electron = -1 := by simp [electron, charge_uniform]
-theorem asymmetric_charge : charge asymmetric = -1 := by
-  norm_num [charge, asymmetric, Fin.sum_univ_succ]
-
-theorem asymmetric_not_fixed : ¬PermutationFixed asymmetric := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform asymmetric).mp h
-  have hzero := congrFun hk 0
-  have hone := congrFun hk 1
-  norm_num [asymmetric, uniform] at hzero hone
-  omega
-
-theorem complexity_tie : complexity electron = 3 ∧ complexity asymmetric = 3 := by
-  norm_num [complexity, electron, uniform, asymmetric, Fin.sum_univ_succ]
-
-theorem not_fixed_of_distinct_entries (w : WritheVector) (i j : Fin 3)
-    (hij : w i ≠ w j) : ¬PermutationFixed w := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform w).mp h
-  apply hij
-  rw [hk]
-  rfl
-
-theorem down_label_not_fixed : ¬PermutationFixed downLabel := by
-  apply not_fixed_of_distinct_entries downLabel 0 1
-  norm_num [downLabel]
-
-theorem up_label_not_fixed : ¬PermutationFixed upLabel := by
-  apply not_fixed_of_distinct_entries upLabel 0 (Fin.succ (Fin.succ 0))
-  decide
-
-theorem low_complexity_fixed_charge (w : WritheVector)
-    (hf : PermutationFixed w) (hc : complexity w ≤ 3) :
-    charge w = -1 ∨ charge w = 0 ∨ charge w = 1 := by
-  obtain ⟨k, rfl⟩ := (fixed_iff_uniform w).mp hf
-  have hc' : 3 * |k| ≤ 3 := by simpa [complexity_uniform] using hc
-  have ha : |k| ≤ 1 := by omega
-  have bounds := abs_le.mp ha
-  have hk : k = -1 ∨ k = 0 ∨ k = 1 := by omega
-  rcases hk with hk | hk | hk <;> subst k <;> norm_num [charge_uniform]
-
-theorem first_parity_distinguishes_labels : parity electron 0 ≠ parity asymmetric 0 := by
-  norm_num [parity, electron, uniform, asymmetric]
-
-theorem total_parity_same :
-    (∏ i, parity electron i) = -1 ∧ (∏ i, parity asymmetric i) = -1 := by
-  norm_num [parity, electron, uniform, asymmetric, Fin.prod_univ_succ]
-
-theorem fixed_charge_support_unique (ψ : WritheVector → ℂ)
-    (hsupport : ∀ w, ψ w ≠ 0 → PermutationFixed w ∧ charge w = -1)
-    (w : WritheVector) (hne : w ≠ electron) : ψ w = 0 := by
-  by_contra hnonzero
-  obtain ⟨hf, hq⟩ := hsupport w hnonzero
-  exact hne (unique_fixed_charge_minus_one w hf hq)
-
-theorem asymmetric_injective : Function.Injective asymmetric := by
-  intro i j hij
-  fin_cases i <;> fin_cases j <;> norm_num [asymmetric] at *
-
-theorem orbit_labels_injective : Function.Injective (fun σ => permute σ asymmetric) := by
-  intro σ τ h
-  have hinverse : σ.symm = τ.symm := by
-    apply Equiv.ext
-    intro i
-    apply asymmetric_injective
-    exact congrFun h i
-  have hdouble := congrArg (fun e : Equiv.Perm (Fin 3) => e.symm) hinverse
-  simpa using hdouble
-
-theorem orbit_labels_not_fixed (σ : Equiv.Perm (Fin 3)) :
-    ¬PermutationFixed (permute σ asymmetric) := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform (permute σ asymmetric)).mp h
-  have hzero := congrFun hk (σ 0)
-  have hone := congrFun hk (σ 1)
-  norm_num [permute, asymmetric, uniform] at hzero hone
-  omega
-
-abbrev OrbitAmplitudes := Equiv.Perm (Fin 3) → ℂ
-
-def symmetricOrbitSum : OrbitAmplitudes := fun _ => 1
-
-def permuteOrbitAmplitudes (σ : Equiv.Perm (Fin 3)) (ψ : OrbitAmplitudes) :
-    OrbitAmplitudes := fun τ => ψ (σ.symm * τ)
-
-theorem symmetric_orbit_sum_invariant (σ : Equiv.Perm (Fin 3)) :
-    permuteOrbitAmplitudes σ symmetricOrbitSum = symmetricOrbitSum := by rfl
-
-theorem symmetric_orbit_sum_nonzero : symmetricOrbitSum ≠ 0 := by
-  intro h
-  have he := congrFun h (1 : Equiv.Perm (Fin 3))
-  norm_num [symmetricOrbitSum] at he
-
-theorem all_orbit_labels_have_charge_minus_one (σ : Equiv.Perm (Fin 3)) :
-    charge (permute σ asymmetric) = -1 := by
-  rw [charge_permute, asymmetric_charge]
-
-abbrev Amplitudes := WritheVector → ℂ
-
-def writheAction (i : Fin 3) (ψ : Amplitudes) : Amplitudes :=
-  fun w => (w i : ℂ) * ψ w
-
-def chargeAction (ψ : Amplitudes) : Amplitudes :=
-  fun w => (charge w : ℂ) * ψ w
-
-theorem charge_action_is_normalized_writhe_sum (ψ : Amplitudes) (w : WritheVector) :
-    chargeAction ψ w = (∑ i, writheAction i ψ w) / 3 := by
-  simp [chargeAction, writheAction, charge, Fin.sum_univ_succ]
-  ring
-
-#print axioms fixed_iff_uniform
-#print axioms fixed_charge_iff_uniform
-#print axioms unique_fixed_charge_minus_one
-#print axioms charge_permute
-#print axioms asymmetric_not_fixed
-#print axioms low_complexity_fixed_charge
-#print axioms first_parity_distinguishes_labels
-#print axioms fixed_charge_support_unique
-#print axioms orbit_labels_injective
-#print axioms orbit_labels_not_fixed
-#print axioms symmetric_orbit_sum_invariant
-#print axioms all_orbit_labels_have_charge_minus_one
-#print axioms charge_action_is_normalized_writhe_sum
-
-end QBD.IntegerWritheCharge
-
-namespace QBD.Monograph.ChargeUniqueness
-open QBD.IntegerWritheCharge
-
--- Relate the fixed-configuration predicate to its specified integer charge.
-/-- A fixed label of integer charge k is exactly the constant vector k. -/
-theorem fixed_charge (w : WritheVector) (k : ℤ) :
-    (PermutationFixed w ∧ charge w = k) ↔ w = uniform k :=
-  fixed_charge_iff_uniform w k
-
 #print axioms fixed_charge
 end QBD.Monograph.ChargeUniqueness
 ```
 
 **Verification Summary:**
-The charge function is normalized signed integer writhe. The certificate proves uniqueness within the fixed-configuration domain and does not prohibit asymmetric configurations at the same charge. The full block and this specialization are mirrored together in the Lean repository, and compilation is checked separately from structural validation. The kernel's acceptance of the closed proof term certifies the logical claim in the corresponding proof.
+The normalized charge functional `charge` and uniform label `uniform` express fixed integer charge directly on three-component writhe vectors. The proof term uses `fixed_iff_uniform`, `charge_uniform`, and `exact_mod_cast` to establish uniqueness within the fixed-configuration domain without excluding asymmetric configurations at the same charge. The kernel's acceptance of the closed proof term certifies the logical claim in the corresponding proof.
 
 **In Plain English:**  
 Section 7.3.7.2 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 and mathlib.
@@ -1463,46 +1129,41 @@ Section 7.3.8.1 formalizes the properties of the QBD proof regarding low-complex
 
 Type-theoretic validation of the relation established in the **Low-Complexity Lepton Spectrum** <Ref id="7.3.8.1" label="§7.3.8.1" /> proceeds via the following verification strategy: The complexity cutoff remains an explicit hypothesis of the formal target (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8" label="§7.3.8" />).
 
-1.  **Encoding:** The self-contained proof block specifies the mathematical objects independently of the target conclusion in the pinned Lean and Mathlib v4.33.1 environment.
-2.  **Theorem Statement:** The displayed theorem specializes the proved relation to the stated hypotheses without assuming its conclusion.
-3.  **Proof Closure:** The closed proof uses the mirrored dependency module and the displayed theorem to certify exactly the specified relation.
+1.  **Encoding:** The standalone Lean 4 block defines integer writhe triples, rational normalized charge, absolute-writhe complexity, and pointwise coordinate-permutation invariance directly in the pinned Mathlib v4.33.1 environment.
+2.  **Theorem Statement:** The Lean declaration `selected_charges` asserts that every permutation-fixed triple satisfying the explicit complexity bound $C \le 3$ carries electric charge $-1$, $0$, or $1$.
+3.  **Proof Closure:** The closed proof reduces permutation invariance to uniform triples $(k, k, k)$, collapses the complexity bound to $|k| \le 1$, and checks the normalized charge at $k \in \{-1, 0, 1\}$ using only core Lean axioms (`propext`, `Classical.choice`, `Quot.sound`).
 
 ```lean
 import Mathlib.Tactic
-import Mathlib.Data.Complex.Basic
-import Mathlib.LinearAlgebra.Matrix.Notation
 
 /-!
-Accepted charge definition on integer writhe labels. PermutationFixed is a
-predicate on individual configurations, not the invariant subspace of the
-quantum permutation representation and not a physical SU(3) classification.
-The diagonal actions below are pointwise algebra on amplitudes; no Hilbert
-operator domain or microscopic graph identification is asserted.
+Under the explicit complexity cutoff C ≤ 3, permutation-fixed writhe labels are
+restricted to uniform configurations carrying charges -1, 0, or 1.
 -/
 
-namespace QBD.IntegerWritheCharge
+namespace QBD.Monograph.LowComplexity
 
+-- Signed integer writhe triple across three ribbons.
 abbrev WritheVector := Fin 3 → ℤ
 
+-- Normalized rational electric charge sum over three ribbons.
 def charge (w : WritheVector) : ℚ := (∑ i, (w i : ℚ)) / 3
 
+-- Absolute-writhe complexity measure across three ribbons.
 def complexity (w : WritheVector) : ℤ := ∑ i, |w i|
 
+-- Constant integer writhe configuration.
 def uniform (k : ℤ) : WritheVector := fun _ => k
 
+-- Coordinate permutation action on writhe labels.
 def permute (σ : Equiv.Perm (Fin 3)) (w : WritheVector) : WritheVector :=
   fun i => w (σ.symm i)
 
+-- Pointwise permutation invariance predicate on a configuration.
 def PermutationFixed (w : WritheVector) : Prop := ∀ σ, permute σ w = w
 
-def electron : WritheVector := uniform (-1)
-def asymmetric : WritheVector := ![-2, -1, 0]
-def downLabel : WritheVector := ![-1, 0, 0]
-def upLabel : WritheVector := ![1, 1, 0]
-
-def parity (w : WritheVector) (i : Fin 3) : ℤ :=
-  if w i % 2 = 0 then 1 else -1
-
+-- Characterize fixed writhe configurations as uniform triples.
+/-- Every permutation-fixed writhe vector is constant. -/
 theorem fixed_iff_uniform (w : WritheVector) :
     PermutationFixed w ↔ ∃ k : ℤ, w = uniform k := by
   constructor
@@ -1514,73 +1175,20 @@ theorem fixed_iff_uniform (w : WritheVector) :
   · rintro ⟨k, rfl⟩ σ
     rfl
 
+-- Compute the charge of a constant integer triple.
+/-- A uniform triple (k, k, k) carries charge k. -/
 theorem charge_uniform (k : ℤ) : charge (uniform k) = k := by
   norm_num [charge, uniform, Fin.sum_univ_succ]
 
+-- Compute the complexity of a constant integer triple.
+/-- A uniform triple (k, k, k) has complexity 3 * |k|. -/
 theorem complexity_uniform (k : ℤ) : complexity (uniform k) = 3 * |k| := by
   simp [complexity, uniform]
 
-theorem fixed_charge_iff_uniform (w : WritheVector) (k : ℤ) :
-    (PermutationFixed w ∧ charge w = k) ↔ w = uniform k := by
-  constructor
-  · rintro ⟨hfixed, hcharge⟩
-    obtain ⟨a, rfl⟩ := (fixed_iff_uniform w).mp hfixed
-    have heq : (a : ℚ) = (k : ℚ) := by simpa [charge_uniform] using hcharge
-    have hak : a = k := by exact_mod_cast heq
-    subst a
-    rfl
-  · intro h
-    subst w
-    exact ⟨(fixed_iff_uniform (uniform k)).mpr ⟨k, rfl⟩, charge_uniform k⟩
-
-theorem unique_fixed_charge_minus_one (w : WritheVector)
-    (hfixed : PermutationFixed w) (hcharge : charge w = -1) : w = electron := by
-  exact (fixed_charge_iff_uniform w (-1)).mp ⟨hfixed, hcharge⟩
-
-theorem charge_permute (σ : Equiv.Perm (Fin 3)) (w : WritheVector) :
-    charge (permute σ w) = charge w := by
-  unfold charge permute
-  rw [Equiv.sum_comp σ.symm (fun i => (w i : ℚ))]
-
-theorem neutral_label_charge : charge (uniform 0) = 0 := by norm_num [charge_uniform]
-theorem down_label_charge : charge downLabel = -(1 / 3 : ℚ) := by
-  norm_num [charge, downLabel, Fin.sum_univ_succ]
-theorem up_label_charge : charge upLabel = (2 / 3 : ℚ) := by
-  norm_num [charge, upLabel, Fin.sum_univ_succ]
-theorem electron_charge : charge electron = -1 := by simp [electron, charge_uniform]
-theorem asymmetric_charge : charge asymmetric = -1 := by
-  norm_num [charge, asymmetric, Fin.sum_univ_succ]
-
-theorem asymmetric_not_fixed : ¬PermutationFixed asymmetric := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform asymmetric).mp h
-  have hzero := congrFun hk 0
-  have hone := congrFun hk 1
-  norm_num [asymmetric, uniform] at hzero hone
-  omega
-
-theorem complexity_tie : complexity electron = 3 ∧ complexity asymmetric = 3 := by
-  norm_num [complexity, electron, uniform, asymmetric, Fin.sum_univ_succ]
-
-theorem not_fixed_of_distinct_entries (w : WritheVector) (i j : Fin 3)
-    (hij : w i ≠ w j) : ¬PermutationFixed w := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform w).mp h
-  apply hij
-  rw [hk]
-  rfl
-
-theorem down_label_not_fixed : ¬PermutationFixed downLabel := by
-  apply not_fixed_of_distinct_entries downLabel 0 1
-  norm_num [downLabel]
-
-theorem up_label_not_fixed : ¬PermutationFixed upLabel := by
-  apply not_fixed_of_distinct_entries upLabel 0 (Fin.succ (Fin.succ 0))
-  decide
-
-theorem low_complexity_fixed_charge (w : WritheVector)
-    (hf : PermutationFixed w) (hc : complexity w ≤ 3) :
-    charge w = -1 ∨ charge w = 0 ∨ charge w = 1 := by
+-- Keep the complexity cutoff visible as an explicit hypothesis.
+/-- Fixed labels below the stated cutoff have the three selected charges. -/
+theorem selected_charges (w : WritheVector) (hf : PermutationFixed w)
+    (hc : complexity w ≤ 3) : charge w = -1 ∨ charge w = 0 ∨ charge w = 1 := by
   obtain ⟨k, rfl⟩ := (fixed_iff_uniform w).mp hf
   have hc' : 3 * |k| ≤ 3 := by simpa [complexity_uniform] using hc
   have ha : |k| ≤ 1 := by omega
@@ -1588,106 +1196,12 @@ theorem low_complexity_fixed_charge (w : WritheVector)
   have hk : k = -1 ∨ k = 0 ∨ k = 1 := by omega
   rcases hk with hk | hk | hk <;> subst k <;> norm_num [charge_uniform]
 
-theorem first_parity_distinguishes_labels : parity electron 0 ≠ parity asymmetric 0 := by
-  norm_num [parity, electron, uniform, asymmetric]
-
-theorem total_parity_same :
-    (∏ i, parity electron i) = -1 ∧ (∏ i, parity asymmetric i) = -1 := by
-  norm_num [parity, electron, uniform, asymmetric, Fin.prod_univ_succ]
-
-theorem fixed_charge_support_unique (ψ : WritheVector → ℂ)
-    (hsupport : ∀ w, ψ w ≠ 0 → PermutationFixed w ∧ charge w = -1)
-    (w : WritheVector) (hne : w ≠ electron) : ψ w = 0 := by
-  by_contra hnonzero
-  obtain ⟨hf, hq⟩ := hsupport w hnonzero
-  exact hne (unique_fixed_charge_minus_one w hf hq)
-
-theorem asymmetric_injective : Function.Injective asymmetric := by
-  intro i j hij
-  fin_cases i <;> fin_cases j <;> norm_num [asymmetric] at *
-
-theorem orbit_labels_injective : Function.Injective (fun σ => permute σ asymmetric) := by
-  intro σ τ h
-  have hinverse : σ.symm = τ.symm := by
-    apply Equiv.ext
-    intro i
-    apply asymmetric_injective
-    exact congrFun h i
-  have hdouble := congrArg (fun e : Equiv.Perm (Fin 3) => e.symm) hinverse
-  simpa using hdouble
-
-theorem orbit_labels_not_fixed (σ : Equiv.Perm (Fin 3)) :
-    ¬PermutationFixed (permute σ asymmetric) := by
-  intro h
-  obtain ⟨k, hk⟩ := (fixed_iff_uniform (permute σ asymmetric)).mp h
-  have hzero := congrFun hk (σ 0)
-  have hone := congrFun hk (σ 1)
-  norm_num [permute, asymmetric, uniform] at hzero hone
-  omega
-
-abbrev OrbitAmplitudes := Equiv.Perm (Fin 3) → ℂ
-
-def symmetricOrbitSum : OrbitAmplitudes := fun _ => 1
-
-def permuteOrbitAmplitudes (σ : Equiv.Perm (Fin 3)) (ψ : OrbitAmplitudes) :
-    OrbitAmplitudes := fun τ => ψ (σ.symm * τ)
-
-theorem symmetric_orbit_sum_invariant (σ : Equiv.Perm (Fin 3)) :
-    permuteOrbitAmplitudes σ symmetricOrbitSum = symmetricOrbitSum := by rfl
-
-theorem symmetric_orbit_sum_nonzero : symmetricOrbitSum ≠ 0 := by
-  intro h
-  have he := congrFun h (1 : Equiv.Perm (Fin 3))
-  norm_num [symmetricOrbitSum] at he
-
-theorem all_orbit_labels_have_charge_minus_one (σ : Equiv.Perm (Fin 3)) :
-    charge (permute σ asymmetric) = -1 := by
-  rw [charge_permute, asymmetric_charge]
-
-abbrev Amplitudes := WritheVector → ℂ
-
-def writheAction (i : Fin 3) (ψ : Amplitudes) : Amplitudes :=
-  fun w => (w i : ℂ) * ψ w
-
-def chargeAction (ψ : Amplitudes) : Amplitudes :=
-  fun w => (charge w : ℂ) * ψ w
-
-theorem charge_action_is_normalized_writhe_sum (ψ : Amplitudes) (w : WritheVector) :
-    chargeAction ψ w = (∑ i, writheAction i ψ w) / 3 := by
-  simp [chargeAction, writheAction, charge, Fin.sum_univ_succ]
-  ring
-
-#print axioms fixed_iff_uniform
-#print axioms fixed_charge_iff_uniform
-#print axioms unique_fixed_charge_minus_one
-#print axioms charge_permute
-#print axioms asymmetric_not_fixed
-#print axioms low_complexity_fixed_charge
-#print axioms first_parity_distinguishes_labels
-#print axioms fixed_charge_support_unique
-#print axioms orbit_labels_injective
-#print axioms orbit_labels_not_fixed
-#print axioms symmetric_orbit_sum_invariant
-#print axioms all_orbit_labels_have_charge_minus_one
-#print axioms charge_action_is_normalized_writhe_sum
-
-end QBD.IntegerWritheCharge
-
-namespace QBD.Monograph.LowComplexity
-open QBD.IntegerWritheCharge
-
--- Keep the complexity cutoff visible as an explicit hypothesis.
-/-- Fixed labels below the stated cutoff have the three selected charges. -/
-theorem selected_charges (w : WritheVector) (hf : PermutationFixed w)
-    (hc : complexity w ≤ 3) : charge w = -1 ∨ charge w = 0 ∨ charge w = 1 :=
-  low_complexity_fixed_charge w hf hc
-
 #print axioms selected_charges
 end QBD.Monograph.LowComplexity
 ```
 
 **Verification Summary:**
-The certificate retains both the fixed-label and complexity-cutoff hypotheses. It proves the restricted charge list and does not derive the cutoff from microscopic dynamics or exclude higher-complexity symmetric labels. The full block and this specialization are mirrored together in the Lean repository, and compilation is checked separately from structural validation. The kernel's acceptance of the closed proof term certifies the logical claim in the corresponding proof.
+The standalone module retains both the permutation-fixed predicate and the explicit complexity cutoff $C \le 3$ as explicit hypotheses rather than deriving the bound from microscopic graph dynamics or excluding higher-complexity symmetric labels. Within that discrete arithmetic model, the proof exhaustively certifies all allowed fixed-writhe charge values without auxiliary axioms or unproven admits. The kernel's acceptance of the closed proof term certifies the logical claim in the corresponding proof.
 
 **In Plain English:**  
 Section 7.3.8.2 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 and mathlib.
@@ -1795,10 +1309,10 @@ Section 7.3.9.1 formalizes the properties of the QBD proof regarding quark charg
 
 ### 7.3.10 Lemma: Charge Normalization {#7.3.10}
 
-:::info[**Charge Normalization via the Electron Unit and Generation Sums**]
+:::info[**Charge Normalization via the Electron Unit and Conjugate Pairing**]
 :::
 
-Let $Q=kW$ for integer writhe $W$ and assign the electron label $W=-3$ charge $-1$. Then $k$ is $1/3$, and the linear and cubic electric-charge sums over the specified left-handed $\bar{\mathbf5}\oplus\mathbf{10}$ generation vanish.
+Let $Q = kW$ for integer total writhe $W$ (**Charge Operator** <Ref id="7.3.1" label="§7.3.1" />) and assign the permutation-fixed electron label $(-1,-1,-1)$ ($W = -3$) electric charge $Q(e_L) = -1$. Then $k = 1/3$; over the unpaired low-complexity writhe sectors alone (the trivial singlet $(0,0,0)$, the fixed electron label $(-1,-1,-1)$, and the three-element orbits $\mathcal{O}_u$ and $\mathcal{O}_d$ counted with their $S_3$ orbit sizes), the linear charge sum vanishes ($\sum_{\mathrm{left}} Q_f = 0$) whereas the cubic charge sum is $-2/9 \neq 0$, while adjoining the orientation-reversed conjugate labels $\boldsymbol{w} \mapsto -\boldsymbol{w}$ yields a charge-balanced 15-state set in which both $\sum_f Q_f = 0$ and $\sum_f Q_f^3 = 0$ vanish identically under any common rescaling $Q_f \mapsto cQ_f$.
 
 **In Plain English:**  
 Section 7.3.10 formalizes the properties of the QBD lemma regarding charge normalization.
@@ -1807,51 +1321,60 @@ Section 7.3.10 formalizes the properties of the QBD lemma regarding charge norma
 
 ### 7.3.10.1 Proof: Charge Normalization {#7.3.10.1}
 
-:::tip[**Weyl-Fermion Charge Sums via Electron Normalization and Multiplicities**]
+:::tip[**Charge Normalization via the Electron Unit, Unpaired Cubic Sums, and Conjugate Pairing**]
 :::
 
-**I. Electron Unit and Writhe Labels**
+**I. Electron Unit and Orientation-Reversed Writhe Sectors**
 
-The singlet electron has $W=(-1)+(-1)+(-1)=-3$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />). Therefore
+The permutation-fixed singlet electron has integer writhe $W = (-1) + (-1) + (-1) = -3$ (**Permutation-Fixed Writhe** <Ref id="7.3.6" label="§7.3.6" />). Requiring $Q(e_L) = -1$ under $Q = kW$ uniquely fixes the proportionality constant:
 
 $$
-Q(e_L)=-1=-3k,\qquad k=\frac{-1}{-3}=\frac13.
+Q(e_L) = -1 = -3k, \qquad k = \frac{-1}{-3} = \frac{1}{3}.
 $$
 
-The neutrino label is $W=0$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8.1" label="§7.3.8.1" />), and the up and down labels are $W=2,-1$ (**Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />). Right-handed fields are counted as left-handed conjugates with opposite charges. With color multiplicities the first-generation list is
+The trivial fixed singlet $\nu_L$ carries $(0,0,0)$ with $W = 0$ (**Low-Complexity Lepton Spectrum** <Ref id="7.3.8.1" label="§7.3.8.1" />), and the minimum-complexity three-element quark orbits $\mathcal{O}_u$ and $\mathcal{O}_d$ carry $W = 2$ and $W = -1$ (**Quark Charge Solutions** <Ref id="7.3.9" label="§7.3.9" />). Orientation reversal $\boldsymbol{w} \mapsto -\boldsymbol{w}$ preserves complexity $C(-\boldsymbol{w}) = C(\boldsymbol{w})$ and negates total writhe and charge, $Q(-\boldsymbol{w}) = -Q(\boldsymbol{w})$ (**Quark Charge Solutions** <Ref id="7.3.9.1" label="§7.3.9.1" />), generating the conjugate orbits $\mathcal{O}_u^c = -\mathcal{O}_u$ ($W = -2$) and $\mathcal{O}_d^c = -\mathcal{O}_d$ ($W = 1$), together with the conjugate fixed label $e_L^c$ represented by $(1,1,1)$ ($W = 3$). Counting each permutation orbit by its $S_3$ size ($|\mathcal{O}| = 1$ for fixed singlets and $|\mathcal{O}| = 3$ for the asymmetric quark orbits) yields $1 + 1 + 3 + 3 + 3 + 3 + 1 = 15$ states:
 
 $$
 \begin{array}{c|r r r r r r r}
  &\nu_L&e_L&u_L&d_L&u_L^c&d_L^c&e_L^c\\\hline
-\text{multiplicity}&1&1&3&3&3&3&1\\
+\text{orbit size}&1&1&3&3&3&3&1\\
 W&0&-3&2&-1&-2&1&3\\
 Q&0&-1&2/3&-1/3&-2/3&1/3&1
 \end{array}
 $$
 
-Here $u_L^c,d_L^c,e_L^c$ denote the left-handed fields conjugate to the right-handed ones, so the list contains $1+1+3+3+3+3+1=15$ Weyl components.
+**II. Unpaired Sums Versus Conjugate Cancellation**
 
-**II. Linear and Cubic Electric-Charge Sums**
+Restricting to the eight unpaired left-sector labels ($\nu_L, e_L, u_L, d_L$, orbit sizes $1, 1, 3, 3$), the linear electric-charge sum vanishes, whereas the cubic electric-charge sum fails to cancel:
 
 $$
 \begin{aligned}
-\sum_f Q_f &=0-1+3(2/3)+3(-1/3)+3(-2/3)+3(1/3)+1\\
-&=(-1+1)+(2-2)+(-1+1)=0,\\
-\sum_f Q_f^3 &=0-1+3(8/27)+3(-1/27)+3(-8/27)+3(1/27)+1\\
-&=(-1+1)+(24-24-3+3)/27=0 .
+\sum_{\mathrm{left}} Q_f &= 0 - 1 + 3(2/3) + 3(-1/3) = -1 + 2 - 1 = 0, \\
+\sum_{\mathrm{left}} Q_f^3 &= 0 - 1 + 3(8/27) + 3(-1/27) = -1 + \frac{24 - 3}{27} = -1 + \frac{7}{9} = -\frac{2}{9} \neq 0.
+\end{aligned}
+$$
+
+Adjoining the orientation-reversed conjugate labels ($u_L^c, d_L^c, e_L^c$, orbit sizes $3, 3, 1$) restores exact linear and cubic cancellation across all fifteen states by oddness of $Q$ and $Q^3$:
+
+$$
+\begin{aligned}
+\sum_f Q_f &= 0 - 1 + 3(2/3) + 3(-1/3) + 3(-2/3) + 3(1/3) + 1 \\
+&= (-1 + 1) + (2 - 2) + (-1 + 1) = 0, \\
+\sum_f Q_f^3 &= 0 - 1 + 3(8/27) + 3(-1/27) + 3(-8/27) + 3(1/27) + 1 \\
+&= (-1 + 1) + \frac{24 - 24 - 3 + 3}{27} = 0.
 \end{aligned}
 $$
 
 **III. Effect of a Common Rescaling**
 
-For a rescaling $Q_f'=cQ_f$, the two sums satisfy
+For any common rescaling $Q_f' = cQ_f$ (equivalently changing $k \mapsto ck$), the homogeneous degree-1 and degree-3 sums transform covariantly:
 
 $$
-\sum_f Q_f'=c\sum_f Q_f=c\cdot0=0,\qquad
-\sum_f(Q_f')^3=c^3\sum_fQ_f^3=c^3\cdot0=0.
+\sum_f Q_f' = c \sum_f Q_f = c \cdot 0 = 0, \qquad
+\sum_f (Q_f')^3 = c^3 \sum_f Q_f^3 = c^3 \cdot 0 = 0.
 $$
 
-The electron condition after rescaling is $Q_e'=-c=-1$, which fixes $c=1$.
+Thus the vanishing of $\sum_f Q_f$ and $\sum_f Q_f^3$ is automatic for any conjugate-paired charge set and cannot determine $k$; fixing $k = 1/3$ rests exclusively on the unit assignment $Q(e_L) = -1$ ($c = 1$).
 
 Q.E.D.
 
@@ -2284,7 +1807,7 @@ Section 7.4.6 formalizes the properties of the QBD proof regarding topological m
 The example evaluates the quadratic cost ansatz on an assigned list of writhe labels for the three generations. Its first-generation unit-twist cases illustrate the zero-baseline model of **Topological Mass Functional** <Ref id="7.4.6" label="§7.4.6" />. The comparison uses the following protocols:
 
 1.  **Parameter Definition:** The example sets the zero baseline and fixes the scale $\kappa_m=0.511/3\,\mathrm{MeV}$ from the input electron mass under **Mass as Informational Inertia** <Ref id="7.4.1" label="§7.4.1" />. It assigns the sharing rule used in the up-type ansatz.
-2.  **Topological Harmonics:** The program evaluates the prescribed integer writhe $w$ in each row using these three cost formulas:
+2.  **Topological Harmonics:** Using unit-writhe baseline inputs $w=1$ for the first generation and assigned benchmark integers $w \in \{14, 24, 62, 59, 157, 712\}$ for the heavier rows, the program evaluates three cost formulas:
     * **Down-Type** $(-w, 0, 0) \implies N_{net} = w^2$
     * **Up-Type** $(w, w, 0) \implies N_{net} = 2w^2 - w$ (Accounting for parallel sharing)
     * **Lepton** $(-w, -w, -w) \implies N_{net} = 3w^2$ (Singlet symmetry prevents color-sharing)
@@ -2292,7 +1815,6 @@ The example evaluates the quadratic cost ansatz on an assigned list of writhe la
 
 ```python
 import pandas as pd
-import numpy as np
 
 def verify_full_mass_hierarchy():
     print("--- §7.4.6.1 Generational Mass Hierarchy ---")
@@ -2302,7 +1824,7 @@ def verify_full_mass_hierarchy():
     # m_e = 0.511 MeV. Net Complexity N_e = 3. 
     KAPPA_M = 0.511 / 3.0 
     
-    # Standard Model Empirical Masses (in MeV) for comparison
+    # Standard Model Reference Masses (in MeV; 2 GeV MS-bar values for light quarks)
     sm_masses = {
         "Electron": 0.511, "Muon": 105.66, "Tau": 1776.8,
         "Down": 4.7, "Strange": 95.0, "Bottom": 4180.0,
@@ -2311,25 +1833,25 @@ def verify_full_mass_hierarchy():
 
     # 2. Particle Topology Class Definitions
     def calc_lepton(w): 
-        return 3 * (w**2)  # (-w, -w, -w) -> no color sharing
+        return 3 * (w**2)   # (-w, -w, -w) -> no color sharing
         
     def calc_d_type(w): 
-        return w**2        # (-w, 0, 0) -> no sharing
+        return w**2         # (-w, 0, 0) -> no sharing
         
     def calc_u_type(w): 
         return 2*(w**2) - w # (w, w, 0) -> w parallel sharing instances
 
-    # 3. Best-Fit Integer Writhe Search
+    # 3. Assigned Benchmark Integer Writhes (First gen w=1; higher gens fixed to match spectrum)
     particles = [
-        # First Generation (w=1 ground states)
+        # First Generation (unit-writhe baseline inputs)
         {"name": "Electron", "type": "Lepton", "w": 1, "calc": calc_lepton},
         {"name": "Down", "type": "D-Type", "w": 1, "calc": calc_d_type},
         {"name": "Up", "type": "U-Type", "w": 1, "calc": calc_u_type},
-        # Second Generation (Harmonic Excitations)
+        # Second Generation (assigned benchmark writhes)
         {"name": "Muon", "type": "Lepton", "w": 14, "calc": calc_lepton},
         {"name": "Strange", "type": "D-Type", "w": 24, "calc": calc_d_type},
         {"name": "Charm", "type": "U-Type", "w": 62, "calc": calc_u_type},
-        # Third Generation (Heavy Excitations)
+        # Third Generation (assigned benchmark writhes)
         {"name": "Tau", "type": "Lepton", "w": 59, "calc": calc_lepton},
         {"name": "Bottom", "type": "D-Type", "w": 157, "calc": calc_d_type},
         {"name": "Top", "type": "U-Type", "w": 712, "calc": calc_u_type}
@@ -2343,7 +1865,6 @@ def verify_full_mass_hierarchy():
         empirical = sm_masses[p["name"]]
         
         # Calculate Delta (%)
-        # Note: Variance expected due to QED/QCD running couplings not included in pure rest topology
         delta_pct = abs(mass_mev - empirical) / empirical * 100
         
         if p["type"] == "Lepton": config = f"(-{w}, -{w}, -{w})"
@@ -2354,9 +1875,9 @@ def verify_full_mass_hierarchy():
             "Particle": p["name"],
             "Writhe Config": config,
             "Net N3": n_net,
-            "Topo Mass (MeV)": round(mass_mev, 1),
-            "Observed (MeV)": round(empirical, 1),
-            "Δ (%)": round(delta_pct, 2)
+            "Topo Mass (MeV)": f"{mass_mev:.3f}",
+            "Observed (MeV)": f"{empirical:.3f}",
+            "Δ (%)": f"{delta_pct:.2f}"
         })
 
     # 4. Output Table
@@ -2371,23 +1892,20 @@ if __name__ == "__main__":
 
 ```text
 --- §7.4.6.1 Generational Mass Hierarchy ---
-Particle   Writhe Config  Net N3  Topo Mass (MeV)  Observed (MeV)  Δ (%)
-Electron    (-1, -1, -1)       3              0.5             0.5   0.00
-    Down      (-1, 0, 0)       1              0.2             4.7  96.38
-      Up       (1, 1, 0)       1              0.2             2.2  92.26
-    Muon (-14, -14, -14)     588            100.2           105.7   5.21
- Strange     (-24, 0, 0)     576             98.1            95.0   3.28
-   Charm     (62, 62, 0)    7626           1299.0          1275.0   1.88
-     Tau (-59, -59, -59)   10443           1778.8          1776.8   0.11
-  Bottom    (-157, 0, 0)   24649           4198.5          4180.0   0.44
-     Top   (712, 712, 0) 1013176         172577.6        172900.0   0.19
+Particle   Writhe Config  Net N3 Topo Mass (MeV) Observed (MeV) Δ (%)
+Electron    (-1, -1, -1)       3           0.511          0.511  0.00
+    Down      (-1, 0, 0)       1           0.170          4.700 96.38
+      Up       (1, 1, 0)       1           0.170          2.200 92.26
+    Muon (-14, -14, -14)     588         100.156        105.660  5.21
+ Strange     (-24, 0, 0)     576          98.112         95.000  3.28
+   Charm     (62, 62, 0)    7626        1298.962       1275.000  1.88
+     Tau (-59, -59, -59)   10443        1778.791       1776.800  0.11
+  Bottom    (-157, 0, 0)   24649        4198.546       4180.000  0.44
+     Top   (712, 712, 0) 1013176      172577.645     172900.000  0.19
 ```
 
 **Conclusion:**
-
-The electron row agrees by construction because it sets the mass scale. For the assigned harmonics, the tabulated second- and third-generation differences range from $0.11\%$ to $5.21\%$. The two light-quark rows have the same modeled mass and much larger differences from their reference values. The table checks the assigned cost formulas and mass comparisons. Deriving the assigned writhes and matching the modeled mass to physical mass parameters are separate steps.
-
-The unit-twist proof gives a zeroth-order mass degeneracy. In the Standard Model, unequal up and down Yukawa couplings generate unequal quark masses after electroweak symmetry breaking. Low-energy running masses also require renormalization and matching. A running-mass analysis uses the $\overline{\mathrm{MS}}$ inputs at $2\,\mathrm{GeV}$ $m_d\simeq4.70\,\mathrm{MeV}$ and $m_u\simeq2.16\,\mathrm{MeV}$. The positive common charge-squared term checked in the proof would shift the up value more than the down value. That illustrative term is distinct from a scheme-dependent separation of strong and electromagnetic corrections to running masses. [Running quark mass analysis](https://journals.aps.org/prd/abstract/10.1103/fdcc-ycph)
+With the mass scale anchored to the electron ($\kappa_m \approx 0.170\,\mathrm{MeV}$ at $N_3 = 3$), the zero-baseline unit-writhe formulas yield $0.170\,\mathrm{MeV}$ for both $u$ and $d$ ($N_3 = 1$), deviating by $92.26\%$ and $96.38\%$ from the supplied $2\,\mathrm{GeV}$ reference values ($2.200\,\mathrm{MeV}$ and $4.700\,\mathrm{MeV}$). Across the assigned higher-generation benchmark integers $(14, 24, 62, 59, 157, 712)$, the resulting quadratic counts produce relative deviations from $0.11\%$ ($\tau$) to $5.21\%$ ($\mu$). These data validate the algebraic cost evaluation and zeroth-order light-quark degeneracy established in the derivation (**Topological Mass Functional** <Ref id="7.4.6" label="§7.4.6" />).
 
 **In Plain English:**  
 Section 7.4.6.1 formalizes the properties of the QBD calculation regarding generational mass hierarchy verification.

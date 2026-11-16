@@ -8,12 +8,14 @@ Physical Parameters:
   Catalysis (λ_cat)     : 1.718282
   Equilibrium Density   : 0.037061
   Knot Core Threshold   : 0.082000
+  Barrier Width (δ)     : 0.010000
+  Knotted Analytic Zero : 0.090225
 
 Initial Local Density   : 0.50
 ------------------------------------------------------------
 Final States after 600 steps:
-  Trivial Cluster       : 0.037061 → Vacuum Equilibrium
-  Prime Knot            : 0.082356 → Stable Particle
+  Trivial Cluster       : 0.037061 (|Δρ| = 1.63e-11)
+  Prime Knot            : 0.090225 (|Δρ| = 0.00e+00)
 ------------------------------------------------------------
 Initial Flux Balance (ρ = 0.5):
   Creation  J_in  : 0.684562

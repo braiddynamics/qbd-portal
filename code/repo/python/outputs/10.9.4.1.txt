@@ -1,8 +1,12 @@
-Target U (trace=1):
- [[ 0.118-0.402j -0.755-0.504j]
- [ 0.489+0.765j -0.405+0.11j ]]
-Approx U (trace=1):
- [[ 0.104+0.957j  0.25 +0.104j]
- [ 0.25 -0.104j -0.104+0.957j]]
-Approximation error ||U - U_approx||: 2.98e+00 (target <1e-1 for toy)
-Verification: Dense approximation confirms universality.
+SU(2) base net size (L0 <= 18): 27544
+depth | gate_count | ||U - U_n||_op | word_check
+    0 |         16 |      2.883e-02 |   0.00e+00
+    1 |         78 |      5.556e-02 |   7.19e-16
+    2 |        400 |      1.273e-02 |   1.83e-15
+    3 |       1692 |      6.395e-04 |   9.01e-15
+    4 |       8716 |      2.653e-05 |   5.13e-14
+    5 |      40900 |      2.944e-07 |   2.95e-13
+qubits | group  | CZ_gates | 1q_gates   | projective_error
+     1 | SU(2)  |        0 |       8275 |        3.374e-05
+     2 | SU(4)  |        6 |      86793 |        2.497e-04
+     3 | SU(8)  |       36 |     445113 |        5.907e-04

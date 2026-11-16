@@ -1,2 +1,2 @@
-signed checks | signed code eigenvalue | diagonal commutation
-35 | +1 | all raw edge words
+signed_checks | codeword_eigenvalue | bit_xor_commutator | ambient_basis_scope
+35            | +1                  | 0                  | all 2^40 words

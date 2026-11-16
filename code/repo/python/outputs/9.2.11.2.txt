@@ -1,2 +1,5 @@
-n | exchange directions | diagonal directions | real closure dimension
-5 | 4 | 4 | 24
+algebra_component | real_dim | skew_hermitian | traceless | residual
+F_pq (10 pairs)   | 10       | true           | true      | -
+S_pq (10 pairs)   | 10       | true           | true      | -
+H_p  (4 diag)     | 4        | true           | true      | -
+su(5) total       | 24       | true           | true      | 0

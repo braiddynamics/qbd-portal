@@ -1,59 +1,42 @@
-"""Exact real Lie closure of Gaussian-rational matrices; no numerical rank cutoff."""
-from sympy import I, Matrix, zeros
+# §8.2.8.2 — Swap-only Lie closure dimensions and diagonal obstruction
+# Checks: Lie_R{i X_k} = D so(n) D† has zero diagonal and dim n(n-1)/2.
+from sympy import I, Matrix, diag, zeros
 
 
-def elementary(n, i, j):
-    a = zeros(n)
-    a[i, j] = 1
-    return a
+def swap_only_closure(n):
+    exchanges = []
+    for k in range(n - 1):
+        mat = zeros(n)
+        mat[k, k + 1] = mat[k + 1, k] = I
+        exchanges.append(mat)
+
+    basis, coord_rows = [], []
+
+    def add_if_independent(mat):
+        vec = [comp for val in mat for comp in val.as_real_imag()]
+        if Matrix(coord_rows + [vec]).rank() > len(coord_rows):
+            coord_rows.append(vec)
+            basis.append(mat)
+
+    for gen in exchanges:
+        add_if_independent(gen)
+    idx = 0
+    while idx < len(basis):
+        for prev in range(idx):
+            add_if_independent(basis[idx] * basis[prev] - basis[prev] * basis[idx])
+        idx += 1
+
+    conj = diag(*[I**j for j in range(n)])
+    for elem in basis:
+        assert all(elem[j, j] == 0 for j in range(n))
+        rotated = conj.H * elem * conj
+        assert rotated.T == -rotated
+        assert all(entry.is_real for entry in rotated)
+    return len(exchanges), len(basis)
 
 
-def adjacent_generators(n):
-    if n < 2:
-        raise ValueError("At least two coordinates are required")
-    x = [I * (elementary(n, k, k+1) + elementary(n, k+1, k)) for k in range(n-1)]
-    z = [I * (elementary(n, k, k) - elementary(n, k+1, k+1)) for k in range(n-1)]
-    return x, z
-
-
-def real_coordinates(matrix):
-    # All entries here are Gaussian rationals, so this is exact over Q.
-    return [component for value in matrix for component in value.as_real_imag()]
-
-
-def lie_basis(generators):
-    basis = []
-    echelon = {}
-
-    def insert(matrix):
-        vector = real_coordinates(matrix)
-        for pivot in sorted(echelon):
-            coefficient = vector[pivot]
-            if coefficient:
-                vector = [a - coefficient * b for a, b in zip(vector, echelon[pivot])]
-        pivot = next((i for i, value in enumerate(vector) if value), None)
-        if pivot is None:
-            return
-        scale = vector[pivot]
-        echelon[pivot] = [value / scale for value in vector]
-        basis.append(matrix)
-
-    for generator in generators:
-        insert(generator)
-    cursor = 0
-    while cursor < len(basis):
-        for earlier in range(cursor):
-            a, b = basis[cursor], basis[earlier]
-            insert(a * b - b * a)
-        cursor += 1
-    return basis
-
-print("n | exchange directions | diagonal directions | real closure dimension")
+print("n | exchanges | closure_dim | zero_diagonal | conjugate_so(n)")
 for n in (2, 3, 5):
-    exchanges, diagonals = adjacent_generators(n)
-    generators = exchanges
-    expected = n * (n - 1) // 2
-    basis = lie_basis(generators)
-    assert len(basis) == expected
-    assert all(a.conjugate().T == -a and a.trace() == 0 for a in basis)
-    print(f"{n} | {len(exchanges)} | {len(generators)-len(exchanges)} | {len(basis)}")
+    num_ex, dim = swap_only_closure(n)
+    assert dim == n * (n - 1) // 2
+    print(f"{n} | {num_ex:<9} | {dim:<11} | true          | true")

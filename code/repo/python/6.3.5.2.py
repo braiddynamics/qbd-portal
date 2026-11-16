@@ -1,30 +1,38 @@
-def simulate_torsional_strain(max_writhe=15):
+def simulate_torsional_strain(max_half_twists=30, base_cost=2, alpha=1):
     """
-    Simulates torsional strain accumulation in a ribbon under PUC constraints.
+    Simulates torsional strain accumulation in a framed ribbon under PUC constraints
+    using the half-twist recurrence N(1) = c, N(j+1) - N(j) = alpha * j (k = 2w).
     
-    Measures marginal and cumulative geometric quanta (N3) for successive writhe units.
-    Demonstrates quadratic scaling of total complexity with writhe.
+    Measures marginal and cumulative geometric quanta (N3) for successive half-twists
+    and compares directly against N(2w) = 2 * alpha * w^2 - alpha * w + c.
     """
-    print("=" * 60)
+    print("=" * 72)
     print("SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING")
-    print("Accumulated Geometric Quanta vs. Writhe (w)")
-    print("=" * 60)
+    print(f"Half-Twist Recurrence (c = {base_cost}, α = {alpha}): N(2w) = 2αw² - αw + c")
+    print("=" * 72)
     
-    print(f"{'Writhe (w)':<12} {'Marginal Cost':<15} {'Cumulative N3':<15}")
-    print("-" * 58)
+    print(f"{'k':<6} {'Writhe (w)':<12} {'Marginal ΔN':<14} {'Cumulative N':<14} {'Analytic N(2w)':<16}")
+    print("-" * 72)
     
-    cumulative = 0
+    cumulative = base_cost
+    max_err = 0
     
-    # Iteratively apply twists (writhe w)
-    for w in range(1, max_writhe + 1):
-        marginal = 5 + 2 * (w - 1)                 # Marginal cost: base bridge + penalty per prior twist
-        cumulative += marginal
-        print(f"{w:<12} {marginal:<15} {cumulative:<15}")
+    for k in range(1, max_half_twists + 1):
+        w = k / 2.0
+        marginal = base_cost if k == 1 else alpha * (k - 1)
+        if k > 1:
+            cumulative += marginal
+        analytic = (alpha * k * (k - 1)) // 2 + base_cost
+        max_err = max(max_err, abs(cumulative - analytic))
+        print(f"{k:<6} {w:<12.1f} {marginal:<14} {cumulative:<14} {analytic:<16}")
     
-    print("-" * 58)
-    print(f"Final state (w = {max_writhe}):")
-    print(f"  Total geometric quanta N3 = {cumulative}")
-    print("  Scaling: quadratic in writhe (w² dominant term)")
+    w_final = max_half_twists / 2.0
+    ratio = cumulative / (w_final ** 2)
+    print("-" * 72)
+    print(f"Final state (k = {max_half_twists}, w = {w_final:.1f}):")
+    print(f"  Total geometric quanta N = {cumulative}")
+    print(f"  Normalized ratio N / w²  = {ratio:.6f} (asymptote 2α = {2 * alpha:.6f})")
+    print(f"  Max discrepancy vs closed form: {max_err}")
 
 if __name__ == "__main__":
-    simulate_torsional_strain(max_writhe=15)
+    simulate_torsional_strain(max_half_twists=30, base_cost=2, alpha=1)

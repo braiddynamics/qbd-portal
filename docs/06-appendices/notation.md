@@ -192,125 +192,135 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $L$ | Minimum simple cycle length scale | [§5.5.8](/monograph/rules/equilibrium/5.5/#5.5.8) |
 | $B_m(x)$ | Volume of geodesic ball of radius $m$ centered at $x$ | [§5.5.9](/monograph/rules/equilibrium/5.5/#5.5.9) |
 | $d_c$ | Upper critical dimension ($d_c=4$) | [§5.5.9.2](/monograph/rules/equilibrium/5.5/#5.5.9.2) |
+| $\xi$ | Localized excitation (subgraph of $G_t^*$) | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
+| $\mathcal{S}_{\mathrm{rew}}$ | Sequence of rewrite operations | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $R$ | Causal Horizon (Radius of local operator) | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $V_\xi(t)$ | Jones Polynomial of subgraph $\xi$ | [§6.1.1](/monograph/players/fermions/6.1/#6.1.1) |
 | $G_t^*$ | Geometric vacuum at homeostatic fixed point | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $\rho^*$ | Equilibrium 3-cycle density ($\approx 0.037061$) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $\rho(\zeta)$ | Local 3-cycle density of excitation | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
+| $\rho(\xi)$ | Local 3-cycle density of excitation | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $\mathcal{C}$ | QECC Codespace (Protected subspace) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $w(\zeta)$ | Writhe of the configuration | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
+| $w(\xi)$ | Writhe of the configuration | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $L_{ij}$ | Pairwise Linking Number | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
 | $\sigma$ | Syndrome value ($\pm 1$) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $\chi(\sigma)$ | Catalytic Tension Factor | [§6.1.2](/monograph/players/fermions/6.1/#6.1.2) |
-| $\mathfrak{T}$ | Elementary Task Space | [§6.1.3.1](/monograph/players/fermions/6.1/#6.1.3.1) |
-| $\mathbb{P}_{del}$ | Deletion Probability | [§6.1.4](/monograph/players/fermions/6.1/#6.1.4) |
-| $\text{Inv}$ | Generic topological invariant | [§6.1.5](/monograph/players/fermions/6.1/#6.1.5) |
-| $\beta_n$ | Braid on $n$ ribbons | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $\mathfrak{su}(n)$ | Special Unitary Lie Algebra | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $A(n)$ | Anomaly Coefficient | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $C[\beta]$ | Minimal Crossing Number | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
-| $f^{abc}$ | Structure constants of Lie algebra | [§6.2.2.1](/monograph/players/fermions/6.2/#6.2.2.1) |
-| $B_n$ | Braid Group on $n$ strands | [§6.2.5.1](/monograph/players/fermions/6.2/#6.2.5.1) |
+| $J_{in}, J_{out}$ | Topological Fluxes (Creation/Deletion) | [§6.1.4.1](/monograph/players/fermions/6.1/#6.1.4.1) |
+| $\rho_{\mathrm{core}}$ | Knot core threshold density ($= 0.082000$) | [§6.1.4.2](/monograph/players/fermions/6.1/#6.1.4.2) |
+| $\mathfrak{T}$ | Elementary Task Space | [§6.1.4.3](/monograph/players/fermions/6.1/#6.1.4.3) |
+| $\mathcal{I}_{\mathrm{top}}$ | Generic topological invariant | [§6.1.5](/monograph/players/fermions/6.1/#6.1.5) |
+| $\beta_3$ | Tripartite braid on $3$ ribbons | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
+| $B_3$ | Braid Group on $3$ strands | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
+| $b_1, b_2$ | Braid group generators ($B_3$) | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
+| $\mathfrak{su}(3)$ | Special Unitary Lie Algebra ($SU(3)$) | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
+| $K_{\text{geom}}$ | Geometric stabilizer operator ($ZZZ$) | [§6.2.1](/monograph/players/fermions/6.2/#6.2.1) |
+| $B_n$ | Artin braid group on $n$ strands | [§6.2.5.1](/monograph/players/fermions/6.2/#6.2.5.1) |
+| $C[\beta]$ | Minimal Crossing Number | [§6.3.1](/monograph/players/fermions/6.3/#6.3.1) |
 | $C_C$ | Crossing Complexity | [§6.3.1](/monograph/players/fermions/6.3/#6.3.1) |
 | $C_T$ | Torsional Complexity | [§6.3.2](/monograph/players/fermions/6.3/#6.3.2) |
-| $m$ | Topological Mass (Informational Inertia) | [§6.3.3](/monograph/players/fermions/6.3/#6.3.3) |
+| $m$ | Modeled excess rest mass | [§6.3.3](/monograph/players/fermions/6.3/#6.3.3) |
 | $k_{writhe}$ | Mass-Writhe coupling constant | [§6.3.3](/monograph/players/fermions/6.3/#6.3.3) |
 | $N_3$ | Count of 3-cycles (Geometric Quanta) | [§6.3.4](/monograph/players/fermions/6.3/#6.3.4) |
 | $k_c$ | Crossing proportionality constant | [§6.3.4](/monograph/players/fermions/6.3/#6.3.4) |
 | $k_t$ | Torsional proportionality constant | [§6.3.7](/monograph/players/fermions/6.3/#6.3.7) |
-| $\mathcal{B}_{\text{lin}}$ | Linear Barrier (density growth containment threshold) | [§6.4.1](/monograph/players/fermions/6.4/#6.4.1) |
-| $\Sigma$ | Sequence of rewrite operations | [§6.4.4.1](/monograph/players/fermions/6.4/#6.4.4.1) |
+| $\mathcal{K}$ | Prime knot configuration | [§6.4.1](/monograph/players/fermions/6.4/#6.4.1) |
 | $\Xi$ | Set of all localized excitations | [§6.4.5](/monograph/players/fermions/6.4/#6.4.5) |
-| $\zeta$ | Localized excitation (subgraph of $G_t^*$) | [§6.5](/monograph/players/fermions/6.5/#6.5) |
-| $b_i$ | Braid group generator | [§6.5](/monograph/players/fermions/6.5/#6.5) |
-| $L_S$ | Spin Operator (Product of rung Z-operators) | [§7.1.1](/monograph/players/topology/7.1/#7.1.1) |
+| $L_S$ | Rung parity product (spin diagnostic) | [§7.1.1](/monograph/players/topology/7.1/#7.1.1) |
 | $Z_{e_i}$ | Pauli-Z operator on rung edge $e_i$ | [§7.1.1](/monograph/players/topology/7.1/#7.1.1) |
 | $\hat{P}_{12}$ | Particle Exchange Operator | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
 | $s$ | Spin quantum number ($1/2$) | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
 | $\phi$ | Topological phase factor ($-1$) | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
-| $\Pi_s$ | Spin Projector | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
+| $\Pi_{joint}$ | Joint spin projector | [§7.1.2](/monograph/players/topology/7.1/#7.1.2) |
 | $\hat{\mathcal{T}}$ | Unitary Twist Operator | [§7.1.3](/monograph/players/topology/7.1/#7.1.3) |
-| $\Vert \psi_{violation}\rangle$ | State of dual fermion occupancy (Forbidden) | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
-| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
+| $P_\lambda$ | Single-ribbon parity projector ($\lambda \in \{\pm 1\}$) | [§7.1.3.1](/monograph/players/topology/7.1/#7.1.3.1) |
+| $P_{\lambda_1\lambda_2}$ | Two-particle joint parity projector | [§7.1.5](/monograph/players/topology/7.1/#7.1.5) |
+| $\Pi_{\text{cycle}}$ | Hard Constraint Projector (2-Cycle) | [§7.2.1](/monograph/players/topology/7.2/#7.2.1) |
+| $\lvert\psi_{\mathrm{violation}}\rangle$ | State of dual fermion occupancy (Forbidden) | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
+| $Q_{uv}, P_{uv}$ | Forbidden reciprocal-pair projector and orthogonal complement | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
+| $\Pi_{\mathcal C}$ | Orthogonal projector onto physical codespace $\mathcal C$ | [§7.2.4](/monograph/players/topology/7.2/#7.2.4) |
 | $Q$ | Electric Charge Operator | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
-| $w(\beta)$ | Total Writhe of braid $\beta$ | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
-| $Q_\nu, Q_e$ | Charge of neutrino ($0$), electron ($-1$) | [§7.3.8.1](/monograph/players/topology/7.3/#7.3.8.1) |
+| $\boldsymbol w$ | Integer ribbon-writhe label vector in $\mathbb Z^3$ | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
+| $\widehat W_i$ | Signed integer writhe operator on ribbon $i$ | [§7.3.1](/monograph/players/topology/7.3/#7.3.1) |
+| $P_i(\boldsymbol w)$ | Integer-label ribbon parity diagnostic | [§7.3.2](/monograph/players/topology/7.3/#7.3.2) |
+| $W(\boldsymbol w)$ | Total integer writhe functional ($w_1+w_2+w_3$) | [§7.3.4.1](/monograph/players/topology/7.3/#7.3.4.1) |
+| $Q(\boldsymbol w)$ | Normalized charge evaluation on writhe label $\boldsymbol w$ | [§7.3.6.1](/monograph/players/topology/7.3/#7.3.6.1) |
 | $C(\boldsymbol{w})$ | Topological Complexity (Sum of absolute writhes) | [§7.3.8.1](/monograph/players/topology/7.3/#7.3.8.1) |
 | $Q_d, Q_u$ | Charge of down quark ($-1/3$), up quark ($+2/3$) | [§7.3.9.1](/monograph/players/topology/7.3/#7.3.9.1) |
 | $k$ | Charge normalization constant ($1/3$) | [§7.3.10](/monograph/players/topology/7.3/#7.3.10) |
 | $Y$ | Hypercharge | [§7.3.10.2](/monograph/players/topology/7.3/#7.3.10.2) |
 | $m$ | Topological Mass (Informational Inertia) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
 | $N_3$ | Count of 3-cycles (Geometric Quanta) | [§7.4.1](/monograph/players/topology/7.4/#7.4.1) |
-| $\kappa_m$ | Universal Mass Constant ($\approx 0.170$ MeV) | [§7.4.2](/monograph/players/topology/7.4/#7.4.2) |
-| $U_{\text{braid}}$ | Internal Energy (Topological) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
-| $S_{\text{braid}}$ | Configurational Entropy (Zero) | [§7.4.3](/monograph/players/topology/7.4/#7.4.3) |
+| $\kappa_m$ | Modeled mass per quantum ($\approx 0.170$ MeV) | [§7.4.2](/monograph/players/topology/7.4/#7.4.2) |
+| $U(\beta)$ | Internal Energy of fixed braid configuration $\beta$ | [§7.4.3.1](/monograph/players/topology/7.4/#7.4.3.1) |
+| $S(\beta)$ | Configurational Entropy of restricted braid sector ($0$) | [§7.4.3.1](/monograph/players/topology/7.4/#7.4.3.1) |
 | $\epsilon_{geo}$ | Geometric Self-Energy | [§7.4.3.1](/monograph/players/topology/7.4/#7.4.3.1) |
 | $k_{\text{share}}$ | Geometric Sharing Integer ($1$) | [§7.4.5](/monograph/players/topology/7.4/#7.4.5) |
 | $U(t)$ | Admitted one-parameter unitary evolution | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
-| $H$ | Hermitian generator of the admitted unitary group | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
+| $\mathcal{R}_i$ | Invertible encoded braid-exchange rewrite | [§8.1.2](/monograph/players/braids/8.1/#8.1.2) |
 | $\sigma_i$ | Braid Group Generator (swap ribbons $i, i+1$) | [§8.1.2](/monograph/players/braids/8.1/#8.1.2) |
-| $J^\mu$ | Weak Current | [§8.4.6.1](/monograph/players/braids/8.4/#8.4.6.1) |
-| $\lambda^{(i,j)}$ | Traceless Hermitian Basis Matrix | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
-| $\gamma^5$ | Chirality Operator | [§8.4.6.1](/monograph/players/braids/8.4/#8.4.6.1) |
+| $H_a$ | Hermitian generators of admitted unitary controls | [§8.1.5](/monograph/players/braids/8.1/#8.1.5) |
+| $X_k, Z_k, F_{pq}, S_{pq}$ | Adjacent matrix generators and off-diagonal directions | [§8.2.1](/monograph/players/braids/8.2/#8.2.1) |
+| $H_p$ | Normalized independent diagonal basis direction ($i(E_{pp}-E_{nn})$) | [§8.2.5.1](/monograph/players/braids/8.2/#8.2.5.1) |
+| $X_1, X_2, Z_1, Z_2$ | Adjacent tripartite generator seed on three-state basis | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
 | $\mathcal{R}_W$ | Flavor-Changing Rewrite Process (Weak) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
 | $\chi$ | Chiral Invariant (Sign of timestamp difference) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
+| $P_L$ | Left-Handed Chiral Projector | [§8.4.6](/monograph/players/braids/8.4/#8.4.6) |
+| $\gamma^5$ | Chirality Operator | [§8.4.6](/monograph/players/braids/8.4/#8.4.6) |
+| $J_L^{\mu a}$ | Left-handed weak current | [§8.4.8](/monograph/players/braids/8.4/#8.4.8) |
 | $\theta_W$ | Electroweak mixing angle (Weinberg angle) | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
 | $p_3, p_4$ | Probabilities of 3-cycle and 4-cycle rewrites | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
 | $\sin^2\theta_W^{(0)}$ | Isolated doublet rewrite baseline ($=0.25$) | [§8.5.5](/monograph/players/braids/8.5/#8.5.5) |
 | $g$ | SU(2) Gauge Coupling Constant | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
-| $\alpha_{\text{topo}}$ | Topological Energy Scale ($\ln 2 / 4$) | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
-| $M$ | Vertex Multiplicity Factor ($M=7$) | [§8.6.6](/monograph/players/braids/8.6/#8.6.6) |
+| $\alpha_{\text{topo}}$ | Assigned dimensionless channel weight ($\ln 2 / 4$) | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
+| $\lambda^a$ | Traceless Hermitian fundamental matrix basis ($\operatorname{Tr}(\lambda^a\lambda^b)=2\delta^{ab}$) | [§8.6.3](/monograph/players/braids/8.6/#8.6.3) |
+| $M$ | Assigned channel count ($M=3$ or $7$) | [§8.6.6](/monograph/players/braids/8.6/#8.6.6) |
 | $v$ | Higgs Vacuum Expectation Value (VEV) | [§8.7.1](/monograph/players/braids/8.7/#8.7.1) |
+| $m_W, m_Z$ | Masses of W and Z Bosons | [§8.7.3](/monograph/players/braids/8.7/#8.7.3) |
 | $y_f$ | Yukawa Coupling for fermion $f$ | [§8.7.5](/monograph/players/braids/8.7/#8.7.5) |
 | $N_{\text{scale}}$ | Vacuum Characteristic Quantum Supply | [§8.7.5](/monograph/players/braids/8.7/#8.7.5) |
-| $m_{W}, m_{Z}$ | Masses of W and Z Bosons | [§8.8](/monograph/players/braids/8.8/#8.8) |
-| $P_i(\boldsymbol w)$ | Integer-label ribbon parity diagnostic | [§7.3.2](/monograph/players/topology/7.3/#7.3.2) |
-| $X_k,Z_k,F_{pq},S_{pq}$ | Adjacent matrix generators and off-diagonal directions | [§8.2.1](/monograph/players/braids/8.2/#8.2.1) |
-| $W,P_5$ | Candidate graph encoding and selected-sector projector | [§9.2.2](/monograph/players/unification/9.2/#9.2.2) |
-| $\widehat X_k,\widehat Z_k$ | Admitted encoded exchange and imbalance controls | [§9.2.3](/monograph/players/unification/9.2/#9.2.3) |
 | $G_{GUT}$ | Candidate Grand Unified Theory group | [§9.1.2](/monograph/players/unification/9.1/#9.1.2) |
-| $r(G)$ | Rank of a Lie algebra | [§9.1.2.1](/monograph/players/unification/9.1/#9.1.2.1) |
-| $\sin^2\theta_W(M_{\text{GUT}})$ | Grand Unified $SU(5)$ boundary value ($=3/8 = 0.375$) | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
-| $A(R)$ | Anomaly Coefficient | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
+| $\operatorname{rank} G_{GUT}$ | Rank of the candidate unified Lie group | [§9.1.2.1](/monograph/players/unification/9.1/#9.1.2.1) |
+| $\mathcal{A}(X)$ | Combined cubic anomaly trace on $\mathbf{\bar{5}}\oplus\mathbf{10}$ | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
 | $\mathbf{\bar{5}}, \mathbf{10}$ | SU(5) Representations | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
-| $\mathcal{R}_5$ | Penta-Ribbon (5-strand topological composite state) | [§9.2.1](/monograph/players/unification/9.2/#9.2.1) |
+| $\sin^2\theta_W$ | Grand Unified $SU(5)$ boundary value ($=3/8$) | [§9.1.5](/monograph/players/unification/9.1/#9.1.5) |
+| $R_1, R_2, R_3, R_4, R_5$ | Five constituent ribbons of the Penta-Ribbon | [§9.2.1](/monograph/players/unification/9.2/#9.2.1) |
+| $W, P_5$ | Candidate graph encoding and selected-sector projector | [§9.2.2](/monograph/players/unification/9.2/#9.2.2) |
+| $\widehat X_k, \widehat Z_k$ | Admitted encoded exchange and imbalance controls | [§9.2.3](/monograph/players/unification/9.2/#9.2.3) |
 | $V(C)$ | Topological complexity potential landscape | [§9.3.1](/monograph/players/unification/9.3/#9.3.1) |
 | $\Delta C$ | Complexity gap (Barrier height) | [§9.3.4.1](/monograph/players/unification/9.3/#9.3.4.1) |
 | $\mathcal{R}_{LQ}$ | Rewrite process for leptoquarks | [§9.4.1](/monograph/players/unification/9.4/#9.4.1) |
-| $\hat{\lambda}_{LQ}$ | Leptoquark generator | [§9.4.2](/monograph/players/unification/9.4/#9.4.2) |
+| $\lambda_{\mathrm{LQ}}$ | Leptoquark off-diagonal block generator | [§9.4.3.1](/monograph/players/unification/9.4/#9.4.3.1) |
 | $\beta_5$ | Penta-ribbon braid (Unified State) | [§9.4.4.1](/monograph/players/unification/9.4/#9.4.4.1) |
 | $C_{\text{total}}$ | Total topological complexity | [§9.4.4.1](/monograph/players/unification/9.4/#9.4.4.1) |
-| $L_{CW}$ | Linking number between Color and Weak sectors | [§9.4.4.1](/monograph/players/unification/9.4/#9.4.4.1) |
-| $\tau_p$ | Proton lifetime | [§9.5.2](/monograph/players/unification/9.5/#9.5.2) |
-| $S_{inst}$ | Instanton Action (Tunneling) | [§9.5.4](/monograph/players/unification/9.5/#9.5.4) |
+| $L_{CW}$ | Registered cross-sector ribbon pair count ($\binom{5}{2}-\binom{3}{2}-\binom{2}{2}=6$) | [§9.4.4.1](/monograph/players/unification/9.4/#9.4.4.1) |
+| $\tau_p$ | Partial lifetime for the stated proton decay channel | [§9.5.2.2](/monograph/players/unification/9.5/#9.5.2.2) |
+| $S_{inst}$ | Dimensionless instanton rate action | [§9.5.4](/monograph/players/unification/9.5/#9.5.4) |
 | $\beta_+, \beta_-$ | Braid and anti-braid segments (Folded) | [§9.6.1](/monograph/players/unification/9.6/#9.6.1) |
 | $m_D$ | Dirac mass term | [§9.6.2](/monograph/players/unification/9.6/#9.6.2) |
 | $M_R$ | Heavy right-handed neutrino mass | [§9.6.2](/monograph/players/unification/9.6/#9.6.2) |
 | $m_\nu$ | Light neutrino mass | [§9.6.2](/monograph/players/unification/9.6/#9.6.2) |
-| $N_{3,\max}$ | Maximum sustainable complexity (Criticality) | [§9.6.7](/monograph/players/unification/9.6/#9.6.7) |
+| $N_{3,\max}$ | Upper root of the dimensionless balance benchmark | [§9.6.7](/monograph/players/unification/9.6/#9.6.7) |
 | $M_{\text{Pl}}$ | Planck mass | [§9.6.8](/monograph/players/unification/9.6/#9.6.8) |
-| $0_L\rangle, 1_L\rangle$ | Logical qubit basis states (Ground/Excited) | [§10.1.1](/monograph/players/computation/10.1/#10.1.1) |
-| $\beta_e, \beta_{e*}$ | Physical electron braid topologies (Symmetric/Asymmetric) | [§10.1.1](/monograph/players/computation/10.1/#10.1.1) |
+| $\lvert 0_L\rangle,\lvert 1_L\rangle$ | Logical qubit basis states (Ground/Excited) | [§10.1.1](/monograph/players/computation/10.1/#10.1.1) |
+| $\beta_e, \beta_{e*}$ | Selected symmetric and asymmetric logical braid labels | [§10.1.1](/monograph/players/computation/10.1/#10.1.1) |
 | $\hat{T}_{ij}$ | Writhe Exchange Operator (Twist transfer) | [§10.1.5.1](/monograph/players/computation/10.1/#10.1.5.1) |
 | $\hat{H}_X$ | Hamiltonian for the Logical X transition | [§10.1.5.1](/monograph/players/computation/10.1/#10.1.5.1) |
 | $\hat{C}^2_{SU(3)}$ | Quadratic Casimir Operator (Color measurement) | [§10.1.6.1](/monograph/players/computation/10.1/#10.1.6.1) |
-| $S_{\text{geom}}^{(uvw)}$ | Geometric check operator (Z-type on cycles) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
-| $S_{\text{ribbon}}^{(k,i)}$ | Ribbon integrity operator (Z-type on ladders) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
-| $S_v^X$ | Vertex stabilizer (X-type flow check) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
+| $S_{\text{geom}}^{(\gamma)}$ | Geometric check operator (Z-type on cycles) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
+| $S_{\text{ribbon}}^{(k,p)}$ | Ribbon integrity operator (Z-type on plaquettes) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
+| $S_{\text{vert}}^{(v)}$ | Vertex stabilizer (X-type flow check) | [§10.2.1](/monograph/players/computation/10.2/#10.2.1) |
 | $\mathcal{S}$ | The Stabilizer Group | [§10.2.2](/monograph/players/computation/10.2/#10.2.2) |
 | $\mathcal{C}_L$ | Logical Codespace (Protected subspace) | [§10.3.1](/monograph/players/computation/10.3/#10.3.1) |
 | $d$ | Pauli code distance | [§10.3.4](/monograph/players/computation/10.3/#10.3.4) |
 | $\mathcal{R}_X$ | Logical X gate rewrite process (Writhe Shuffle) | [§10.4.1](/monograph/players/computation/10.4/#10.4.1) |
-| $\mathcal{R}_Z$ | Logical Z gate rewrite process (QND Measure) | [§10.5.1](/monograph/players/computation/10.5/#10.5.1) |
-| $\mathcal{R}_H$ | Hadamard gate rewrite process (Thermo-Quench) | [§10.6.1](/monograph/players/computation/10.6/#10.6.1) |
+| $\mathcal{R}_Z$ | Logical Z gate rewrite process (coherent color holonomy) | [§10.5.1](/monograph/players/computation/10.5/#10.5.1) |
+| $\mathcal{R}_H$ | Hadamard gate rewrite process (admitted coherent drive) | [§10.6.1](/monograph/players/computation/10.6/#10.6.1) |
 | $T_{local}$ | Local temperature of a graph region | [§10.6.2.1](/monograph/players/computation/10.6/#10.6.2.1) |
-| $\mathcal{R}_{CZ}$ | Controlled-Z gate rewrite process (Catalytic) | [§10.7.1](/monograph/players/computation/10.7/#10.7.1) |
+| $\mathcal{R}_{CZ}$ | Controlled-Z gate rewrite process (matched projector interaction) | [§10.7.1](/monograph/players/computation/10.7/#10.7.1) |
 | $\sigma_{eff}$ | Effective stress syndrome | [§10.7.2.2](/monograph/players/computation/10.7/#10.7.2.2) |
 | $\mathcal{R}_T$ | T-gate rewrite process (Self-Braiding) | [§10.8.1](/monograph/players/computation/10.8/#10.8.1) |
-| $\mathcal{C}_{QBD}$ | Ribbon Category of stable braids | [§10.8.3](/monograph/players/computation/10.8/#10.8.3) |
-| $\mathcal{G}_{phys}$ | Universal Physical Gate Set | [§10.8.8](/monograph/players/computation/10.8/#10.8.8) |
-| $\hat{D}$ | Dehn Twist Operator | [§10.8.9](/monograph/players/computation/10.8/#10.8.9) |
+| $\mathcal{C}_{QBD}$ | Ribbon category of collared framed tangles | [§10.8.3](/monograph/players/computation/10.8/#10.8.3) |
+| $\theta_X$ | Ribbon twist isomorphism (positive full framing rotation) | [§10.8.7](/monograph/players/computation/10.8/#10.8.7) |
+| $\mathcal{G}_{phys}$ | Candidate physical gate set with conditional logical universality | [§10.8.8](/monograph/players/computation/10.8/#10.8.8) |
+| $\hat{D}_L, B_L$ | Encoded full-twist and half-twist logical operators ($B_L^2 = \hat{D}_L$) | [§10.8.9](/monograph/players/computation/10.8/#10.8.9) |
 | $d_{GHW}$ | Gromov-Hausdorff-Wasserstein metric | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
 | $\pi$ | Transport coupling (joint measure) | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
 | $d_{\text{GHW}}$ | Gromov-Hausdorff-Wasserstein metric on graph state space | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |

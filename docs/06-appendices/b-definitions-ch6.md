@@ -12,10 +12,10 @@ This appendix serves as a centralized, rigorous catalog of the foundational math
 :::tip[**Criterion for Topological Triviality determined by Local Horizon Constraints**]
 :::
 
-A localized subgraph $\xi \subset G$ exhibits **Local Reducibility** if there exists a finite, ordered sequence of elementary rewrite operations $\mathcal{S} = \{r_1, \dots, r_k\} \subseteq \mathcal{R}$ that satisfies the conjunction of the following three conditions:
+A localized subgraph $\xi \subset G$ exhibits **Local Reducibility** if there exists a finite, ordered sequence of elementary rewrite operations $\mathcal{S}_{\mathrm{rew}} = \{r_1, \dots, r_k\} \subseteq \mathcal{R}$ that satisfies the conjunction of the following three conditions:
 1.  **Volume Reduction:** The execution of the sequence strictly reduces the scalar edge count or the cycle count of the subgraph, such that the final cardinality satisfies $|\xi_{final}| < |\xi_{initial}|$.
 2.  **Horizon Compliance:** Each constituent operation $r_i$ acts exclusively upon vertices located within the causal horizon radius $R$ of the target edge, thereby satisfying the strict locality constraint of the Universal Constructor.
-3.  **Invariant Preservation:** The sequence preserves the global topological invariants of the subgraph, specifically maintaining the Jones Polynomial $V(t)$ invariant, while mapping the geometric realization of the trivial unknot to the empty set or to a single, non-interacting vacuum cycle.
+3.  **Invariant Preservation:** The sequence preserves the global topological invariants of the subgraph, specifically maintaining the Jones Polynomial $V_\xi(t)$ invariant, while mapping the geometric realization of the trivial unknot to the empty set or to a single, non-interacting vacuum cycle.
 
 **In Plain English:**  
 Section 6.1.1 formalizes the properties of the QBD definition regarding local reducibility.
@@ -726,8 +726,8 @@ Section 6.1.4.1 formalizes the properties of the QBD proof regarding catalyzed i
 Quantification of the density-dependent instability established by **Catalyzed Instability** <Ref id="6.1.4.1" label="§6.1.4.1" /> is based on the following protocols:
 
 1.  **Dynamical Definition:** The algorithm defines the creation flux $J_{in}$ and deletion flux $J_{out}$ according to the **Master Equation** <Ref id="5.2" label="§5.2" /> parameters derived in Chapter 5 ($\Lambda = 0.015625$, $\mu \approx 0.398942$, $\lambda_{cat} \approx 1.718282$).
-2.  **Scenario Contrast:** The protocol evolves two distinct initial states: a **Trivial Excitation** subject to the full deletion flux, and a **Prime Knot** where the deletion flux $J_{out}$ is set to zero when the density drops below the knot core threshold.
-3.  **Flux Integration:** The simulation integrates the net topological current $d\rho/dt$ over time to map the trajectory of a high-stress fluctuation ($\rho = 0.50$) toward equilibrium.
+2.  **Scenario Contrast:** The protocol evolves two distinct initial states: a **Trivial Excitation** subject to the full deletion flux $J_{out}$, and a **Prime Knot** whose effective deletion flux is modulated by the continuous core-protection factor $s(\rho) = \min(1, \max(0, (\rho - \rho_{\mathrm{core}})/\delta))$ over transition width $\delta = 0.010000$ above core threshold $\rho_{\mathrm{core}} = 0.082000$.
+3.  **Flux Integration:** The simulation locates the analytic zeros of $F(\rho) = J_{in}(\rho) - J_{out}(\rho)$ and $F_{\mathrm{knot}}(\rho) = J_{in}(\rho) - s(\rho)J_{out}(\rho)$ and integrates the net topological current $d\rho/dt$ over time from an initial fluctuation $\rho = 0.50$ to verify convergence.
 
 ```python
 import numpy as np
@@ -736,74 +736,101 @@ def simulate_cluster_decay():
     """
     Simulates the thermodynamic fate of a high-density excitation under the
     Fundamental Equation of Geometrogenesis.
-
+    
     Compares:
     - Trivial (reducible) cluster: Fully exposed to deletion flux.
-    - Prime knot: Protected by topological barrier below core density.
-
-    Demonstrates architectural stability of non-trivial topology.
+    - Prime knot: Continuous barrier suppression of deletion at and below core density.
+    
+    Demonstrates convergence of the knotted cluster to an analytic zero.
     """
-
+    
     print("SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES")
     print("Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux")
     print("=" * 60)
-
+    
     # ── Physical Constants (Derived in Chapter 5) ─────────────────────
     Λ_vac     = 2.0 ** (-6)                     # Vacuum Permittivity = 0.015625
     μ         = 1.0 / np.sqrt(2 * np.pi)        # Friction Coefficient ≈ 0.398942
     λ_cat     = np.e - 1                        # Catalysis Coefficient ≈ 1.718282
-
+    
     ρ_star    = 0.037061                        # Equilibrium vacuum density
     ρ_core    = 0.082000                        # Knot core threshold (topological lock)
-
+    δ_core    = 0.010000                        # Continuous barrier transition width
+    
     # ── Simulation Parameters ────────────────────────────────────────
     initial_ρ = 0.50                            # High-stress fluctuation
     dt        = 0.10                            # Time step
     n_steps   = 600                             # Total steps (ensures convergence)
-
+    
     time = np.arange(0, n_steps * dt, dt)
-
+    
     # ── State Initialization ─────────────────────────────────────────
     ρ_trivial = np.zeros_like(time)
     ρ_knotted = np.zeros_like(time)
-
+    
     ρ_trivial[0] = initial_ρ
     ρ_knotted[0] = initial_ρ
-
-    # ── Flux Calculation Helper ──────────────────────────────────────
+    
+    # ── Flux Calculation Helpers ─────────────────────────────────────
     def fluxes(ρ):
         j_in  = (Λ_vac + 9 * ρ**2) * np.exp(-6 * μ * ρ)
         j_out = 0.5 * ρ + 3 * λ_cat * ρ**2
         return j_in, j_out
-
+    
+    def barrier_suppression(ρ):
+        # Continuous core-protection ramp: 0 for ρ <= ρ_core, rising to 1 over width δ_core
+        return float(np.clip((ρ - ρ_core) / δ_core, 0.0, 1.0))
+    
+    # Locate analytic fixed points of F(ρ) and F_knot(ρ) = J_in(ρ) - s(ρ) * J_out(ρ)
+    lo_t, hi_t = 0.0, 0.10
+    for _ in range(80):
+        mid = 0.5 * (lo_t + hi_t)
+        j_in_m, j_out_m = fluxes(mid)
+        if j_in_m - j_out_m > 0.0:
+            lo_t = mid
+        else:
+            hi_t = mid
+    ρ_trivial_star = 0.5 * (lo_t + hi_t)
+    
+    lo_k, hi_k = ρ_core, ρ_core + δ_core
+    for _ in range(80):
+        mid = 0.5 * (lo_k + hi_k)
+        j_in_m, j_out_m = fluxes(mid)
+        if j_in_m - barrier_suppression(mid) * j_out_m > 0.0:
+            lo_k = mid
+        else:
+            hi_k = mid
+    ρ_knot_star = 0.5 * (lo_k + hi_k)
+    
     # ── Time Evolution Loop ──────────────────────────────────────────
     for i in range(1, len(time)):
         # Trivial cluster: Full exposure
         j_in_t, j_out_t = fluxes(ρ_trivial[i-1])
         dρ_t = j_in_t - j_out_t
         ρ_trivial[i] = max(ρ_star, ρ_trivial[i-1] + dρ_t * dt)
-
-        # Prime knot: Deletion suppressed below core
+        
+        # Prime knot: Continuous barrier suppression of deletion
         j_in_k, j_out_k = fluxes(ρ_knotted[i-1])
-        if ρ_knotted[i-1] <= ρ_core:
-            j_out_k = 0.0  # Topological barrier activates
-        dρ_k = j_in_k - j_out_k
+        s_k = barrier_suppression(ρ_knotted[i-1])
+        dρ_k = j_in_k - s_k * j_out_k
         ρ_knotted[i] = max(ρ_star, ρ_knotted[i-1] + dρ_k * dt)
-
+    
     # ── Results Output ───────────────────────────────────────────────
     print(f"\nPhysical Parameters:")
     print(f"  Vacuum Drive (Λ)      : {Λ_vac:.6f}")
     print(f"  Friction (μ)          : {μ:.6f}")
     print(f"  Catalysis (λ_cat)     : {λ_cat:.6f}")
-    print(f"  Equilibrium Density   : {ρ_star:.6f}")
+    print(f"  Equilibrium Density   : {ρ_trivial_star:.6f}")
     print(f"  Knot Core Threshold   : {ρ_core:.6f}")
+    print(f"  Barrier Width (δ)     : {δ_core:.6f}")
+    print(f"  Knotted Analytic Zero : {ρ_knot_star:.6f}")
     print(f"\nInitial Local Density   : {initial_ρ:.2f}")
     print("-" * 60)
     print(f"Final States after {n_steps} steps:")
-    print(f"  Trivial Cluster       : {ρ_trivial[-1]:.6f} → Vacuum Equilibrium")
-    print(f"  Prime Knot            : {ρ_knotted[-1]:.6f} → Stable Particle")
+    print(f"  Trivial Cluster       : {ρ_trivial[-1]:.6f} (|Δρ| = {abs(ρ_trivial[-1] - ρ_trivial[-2]):.2e})")
+    print(f"  Prime Knot            : {ρ_knotted[-1]:.6f} (|Δρ| = {abs(ρ_knotted[-1] - ρ_knotted[-2]):.2e})")
     print("-" * 60)
-
+    
     # Initial flux balance verification
     j_in_0, j_out_0 = fluxes(initial_ρ)
     print(f"Initial Flux Balance (ρ = {initial_ρ}):")
@@ -816,7 +843,7 @@ if __name__ == "__main__":
 
 **Simulation Results:**
 
-```
+```text
 SIMULATION: TOPOLOGICAL STABILITY OF PARTICLES
 Trivial Cluster vs. Prime Knot under Vacuum Deletion Flux
 ============================================================
@@ -827,12 +854,14 @@ Physical Parameters:
   Catalysis (λ_cat)     : 1.718282
   Equilibrium Density   : 0.037061
   Knot Core Threshold   : 0.082000
+  Barrier Width (δ)     : 0.010000
+  Knotted Analytic Zero : 0.090225
 
 Initial Local Density   : 0.50
 ------------------------------------------------------------
 Final States after 600 steps:
-  Trivial Cluster       : 0.037061 → Vacuum Equilibrium
-  Prime Knot            : 0.082356 → Stable Particle
+  Trivial Cluster       : 0.037061 (|Δρ| = 1.63e-11)
+  Prime Knot            : 0.090225 (|Δρ| = 0.00e+00)
 ------------------------------------------------------------
 Initial Flux Balance (ρ = 0.5):
   Creation  J_in  : 0.684562
@@ -841,7 +870,7 @@ Initial Flux Balance (ρ = 0.5):
 ```
 
 **Conclusion:**
-The simulation data indicates that at the initial high density $\rho=0.50$, the deletion flux $J_{out} \approx 1.538711$ significantly exceeds the creation flux $J_{in} \approx 0.684562$, yielding a net negative current of $-0.854149$. This imbalance drives the trivial cluster to collapse to the vacuum fixed point $\rho^* \approx 0.037061$. In contrast, the knotted cluster trajectory stabilizes at $\rho \approx 0.082356$, confirming that the activation of the topological barrier arrests the decay process despite the high catalytic stress. These results validate the decay mechanics and the barrier efficiency described in the derivation.
+At the initial high density $\rho=0.50$, the deletion flux $J_{out} \approx 1.538711$ significantly exceeds the creation flux $J_{in} \approx 0.684562$, yielding a net negative current of $-0.854149$. This imbalance drives the trivial cluster monotonically to the vacuum fixed point $\rho^* \approx 0.037061$ with final step difference $|\Delta\rho| = 1.63\times 10^{-11}$. Under the continuous barrier modulation $F_{\mathrm{knot}}(\rho) = J_{in}(\rho) - s(\rho)J_{out}(\rho)$, deletion vanishes at and below $\rho_{\mathrm{core}} = 0.082000$, and the knotted cluster settles smoothly to the analytic zero $\rho_{\mathrm{knot}}^* \approx 0.090225$ with step-600 residual $|\Delta\rho| = 0.00\times 10^{0}$. These results validate the decay mechanics and continuous barrier stabilization established in **Catalyzed Instability** <Ref id="6.1.4.1" label="§6.1.4.1" />.
 
 **In Plain English:**  
 Section 6.1.4.2 formalizes the properties of the QBD calculation regarding cluster decay simulation.
@@ -853,7 +882,7 @@ Section 6.1.4.2 formalizes the properties of the QBD calculation regarding clust
 :::info[**Protection via invariance under local tasks**]
 :::
 
-Let $\xi_0$ be a closed knot or link configuration with a registered invariant $\mathcal I(\xi_0)\ne 0$, and let the protected family consist of legal horizon-supported tasks that preserve $\mathcal I$. Then zero-invariant configurations are unreachable by words in that family, and any admitted path with conditional acceptance factors bounded by $e^{-\mu b_j}$ has probability at most $e^{-\mu\sum_j b_j}$ for $\mu>0$ and $b_j\ge 0$.
+Let $\xi_0$ be a closed knot or link configuration with a registered invariant $\mathcal{I}_{\mathrm{top}}(\xi_0)\ne 0$, and let the protected family consist of legal horizon-supported tasks that preserve $\mathcal{I}_{\mathrm{top}}$. Then zero-invariant configurations are unreachable by words in that family, and any admitted path with conditional acceptance factors bounded by $e^{-\mu b_j}$ has probability at most $e^{-\mu\sum_j b_j}$ for $\mu>0$ and $b_j\ge 0$.
 
 **In Plain English:**  
 Section 6.1.5 formalizes the properties of the QBD lemma regarding topological barrier.
@@ -867,7 +896,7 @@ Section 6.1.5 formalizes the properties of the QBD lemma regarding topological b
 
 **I. Legal words and the protected family**
 
-Fix the legality-indexed **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" /> and the registered invariant $\mathcal I$. A certified word has successive states
+Fix the legality-indexed **Elementary Task Space** <Ref id="1.5.1" label="§1.5.1" /> and the registered invariant $\mathcal{I}_{\mathrm{top}}$. A certified word has successive states
 
 $$
 \xi_0 \xrightarrow{\tau_1} \xi_1 \xrightarrow{\tau_2} \cdots
@@ -875,7 +904,7 @@ $$
 \tau_j\in\mathfrak T(G_{j-1}).
 $$
 
-Write $\mathfrak T_{\mathrm{prot}}$ for the legal tasks supported within the model horizon that preserve $\mathcal I$ on their stated domain. For example, for the pairwise Gauss linking number, the protected domain includes the disjoint closed-curve deformations of **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />.
+Write $\mathfrak T_{\mathrm{prot}}$ for the legal tasks supported within the model horizon that preserve $\mathcal{I}_{\mathrm{top}}$ on their stated domain. For example, for the pairwise Gauss linking number, the protected domain includes the disjoint closed-curve deformations of **Local Horizon** <Ref id="6.4.3" label="§6.4.3" />.
 
 **II. Exact invariant balance**
 
@@ -883,20 +912,20 @@ If every step lies in the protected family, then
 
 $$
 \begin{aligned}
-\mathcal I(\xi_m)-\mathcal I(\xi_0)
-&=\sum_{j=1}^{m}\bigl(\mathcal I(\xi_j)-\mathcal I(\xi_{j-1})\bigr)\\
+\mathcal{I}_{\mathrm{top}}(\xi_m)-\mathcal{I}_{\mathrm{top}}(\xi_0)
+&=\sum_{j=1}^{m}\bigl(\mathcal{I}_{\mathrm{top}}(\xi_j)-\mathcal{I}_{\mathrm{top}}(\xi_{j-1})\bigr)\\
 &=\sum_{j=1}^{m}0=0,\\
-\mathcal I(\xi_m)&=\mathcal I(\xi_0)\ne0.
+\mathcal{I}_{\mathrm{top}}(\xi_m)&=\mathcal{I}_{\mathrm{top}}(\xi_0)\ne0.
 \end{aligned}
 $$
 
-Equivalently, if $\mathcal I(\xi_m)=0$, then
+Equivalently, if $\mathcal{I}_{\mathrm{top}}(\xi_m)=0$, then
 
 $$
-\sum_{j=1}^{m}\bigl(\mathcal I(\xi_j)-\mathcal I(\xi_{j-1})\bigr)
-=-\mathcal I(\xi_0)\ne 0
+\sum_{j=1}^{m}\bigl(\mathcal{I}_{\mathrm{top}}(\xi_j)-\mathcal{I}_{\mathrm{top}}(\xi_{j-1})\bigr)
+=-\mathcal{I}_{\mathrm{top}}(\xi_0)\ne 0
 \ \Longrightarrow\
-\exists j:\ \mathcal I(\xi_j)\ne\mathcal I(\xi_{j-1}).
+\exists j:\ \mathcal{I}_{\mathrm{top}}(\xi_j)\ne\mathcal{I}_{\mathrm{top}}(\xi_{j-1}).
 $$
 
 Thus that word must use a step outside the protected family.
@@ -971,11 +1000,11 @@ For $t>t_0+(\rho_0-\rho_-)/\delta$, the right side would force $\rho(t)<\rho_-$.
 
 **III. Protected and escaping histories**
 
-Let a second candidate have a registered invariant $\mathcal I(\xi_0)\ne0$. For a word in the protected task family of **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />,
+Let a second candidate have a registered invariant $\mathcal{I}_{\mathrm{top}}(\xi_0)\ne0$. For a word in the protected task family of **Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />,
 
 $$
-\mathcal I(\xi_m)-\mathcal I(\xi_0)
-=\sum_{j=1}^m\bigl(\mathcal I(\xi_j)-\mathcal I(\xi_{j-1})\bigr)
+\mathcal{I}_{\mathrm{top}}(\xi_m)-\mathcal{I}_{\mathrm{top}}(\xi_0)
+=\sum_{j=1}^m\bigl(\mathcal{I}_{\mathrm{top}}(\xi_j)-\mathcal{I}_{\mathrm{top}}(\xi_{j-1})\bigr)
 =\sum_{j=1}^m 0=0 .
 $$
 
@@ -1140,7 +1169,7 @@ Section 6.2.4 formalizes the properties of the QBD lemma regarding exclusion of 
 
 **I. Inter-strand braid and framed twist**
 
-The Artin presentation has one adjacent generator per adjacent pair (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />). For a single ribbon this gives
+The standard Artin presentation of the $n$-strand braid group $B_n$ assigns one generator $\sigma_i$ per adjacent pair of strands modulo the Artin braid and far-commutativity relations, whose $n=3$ sector is formalized directly (**Validation via Lean 4 Core** <Ref id="6.1.3.3" label="§6.1.3.3" />) (**Tripartite Braid** <Ref id="6.2.1" label="§6.2.1" />). For a single ribbon ($n=1$) there are no adjacent pairs, giving
 
 $$
 B_1=\langle\,\varnothing\mid\varnothing\,\rangle=\{e\}.
@@ -1216,7 +1245,7 @@ Section 6.2.4.1 formalizes the properties of the QBD proof regarding exclusion o
 :::info[**Algebraic insufficiency via the cyclic braid image**]
 :::
 
-Let the continuous gauge action of a two-ribbon sector be generated solely by the closure of a unitary image of its Artin braid group $B_2$ (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />). Then the resulting gauge Lie algebra is Abelian and insufficient to supply the non-Abelian color action of a fundamental quark.
+Let the continuous gauge action of a two-ribbon sector be generated solely by the closure of a unitary image of its Artin braid group $B_2$ (with a single adjacent swap generator as in the Artin presentation formalized for $n=3$ in **Validation via Lean 4 Core** <Ref id="6.1.3.3" label="§6.1.3.3" />). Then the resulting gauge Lie algebra is Abelian and insufficient to supply the non-Abelian color action of a fundamental quark.
 
 **In Plain English:**  
 Section 6.2.5 formalizes the properties of the QBD lemma regarding exclusion of two-ribbon (n=2).
@@ -1230,7 +1259,7 @@ Section 6.2.5 formalizes the properties of the QBD lemma regarding exclusion of 
 
 **I. Normal form**
 
-Let $B_n$ denote the Artin braid group on $n$ strands (**Braid Group Isomorphism** <Ref id="8.1.2" label="§8.1.2" />). For $n=2$, the presentation is $B_2=\langle \sigma_1\mid\varnothing\rangle$. The maps $p\mapsto\sigma_1^p$ and $\sigma_1\mapsto1$ extend to homomorphisms with compositions $p\mapsto p$ and $\sigma_1^p\mapsto\sigma_1^p$. Hence
+Let $B_n=\langle \sigma_1,\ldots,\sigma_{n-1}\mid \sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_i\sigma_{i+1},\;[\sigma_i,\sigma_j]=e\text{ for }|i-j|\ge 2\rangle$ denote the Artin braid group on $n$ strands, whose $n=3$ sector is formalized in **Validation via Lean 4 Core** <Ref id="6.1.3.3" label="§6.1.3.3" />. For $n=2$, no Artin triple relation can occur and the presentation reduces to $B_2=\langle \sigma_1\mid\varnothing\rangle$. The maps $p\mapsto\sigma_1^p$ and $\sigma_1\mapsto1$ extend to homomorphisms with compositions $p\mapsto p$ and $\sigma_1^p\mapsto\sigma_1^p$. Hence
 
 $$
 B_2\cong(\mathbb Z,+),\qquad
@@ -1692,75 +1721,99 @@ Section 6.3.5.1 formalizes the properties of the QBD proof regarding quadratic s
 
 Verification of the non-linear complexity growth established by **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" /> is based on the following protocols:
 
-1.  **Constraint Implementation:** The algorithm models the construction of a twisted ribbon within a graph subject to the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, which forbids the reuse of existing edges for new causal paths.
-2.  **Cost Measurement:** The protocol measures the topological cost $N_3$ required to add each successive unit of writhe $w$, defined as the graph distance required to circumnavigate the existing twist structure.
-3.  **Metric Analysis:** The simulation aggregates the marginal costs to determine the total accumulated complexity as a mapping of total writhe.
+1.  **Constraint Implementation:** The algorithm models torsional strain in a framed ribbon under the **Principle of Unique Causality** <Ref id="2.3.4" label="§2.3.4" />, which forbids reusing existing causal edges for successive twists.
+2.  **Cost Measurement:** Starting from the two-cycle baseline $N(1) = c = 2$ established in **Exclusion of Single-Ribbon (n=1)** <Ref id="6.2.4.1" label="§6.2.4.1" />, the protocol iterates over half-twists $k = 1,\dots,30$ ($w = k/2$), adding marginal cost $N(j+1)-N(j) = \alpha j$ with unit increment $\alpha = 1$ after each prior half-twist $j \ge 1$.
+3.  **Metric Analysis:** The simulation compares the accumulated count against the closed form $N(2w) = 2\alpha w^2 - \alpha w + c$ and evaluates the normalized ratio $N(2w)/w^2$ as writhe increases.
 
 ```python
-def simulate_torsional_strain(max_writhe=15):
+def simulate_torsional_strain(max_half_twists=30, base_cost=2, alpha=1):
     """
-    Simulates torsional strain accumulation in a ribbon under PUC constraints.
+    Simulates torsional strain accumulation in a framed ribbon under PUC constraints
+    using the half-twist recurrence N(1) = c, N(j+1) - N(j) = alpha * j (k = 2w).
     
-    Measures marginal and cumulative geometric quanta (N3) for successive writhe units.
-    Demonstrates quadratic scaling of total complexity with writhe.
+    Measures marginal and cumulative geometric quanta (N3) for successive half-twists
+    and compares directly against N(2w) = 2 * alpha * w^2 - alpha * w + c.
     """
-    print("=" * 60)
+    print("=" * 72)
     print("SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING")
-    print("Accumulated Geometric Quanta vs. Writhe (w)")
-    print("=" * 60)
+    print(f"Half-Twist Recurrence (c = {base_cost}, α = {alpha}): N(2w) = 2αw² - αw + c")
+    print("=" * 72)
     
-    print(f"{'Writhe (w)':<12} {'Marginal Cost':<15} {'Cumulative N3':<15}")
-    print("-" * 58)
+    print(f"{'k':<6} {'Writhe (w)':<12} {'Marginal ΔN':<14} {'Cumulative N':<14} {'Analytic N(2w)':<16}")
+    print("-" * 72)
     
-    cumulative = 0
+    cumulative = base_cost
+    max_err = 0
     
-    # Iteratively apply twists (writhe w)
-    for w in range(1, max_writhe + 1):
-        marginal = 5 + 2 * (w - 1)                 # Marginal cost: base bridge + penalty per prior twist
-        cumulative += marginal
-        print(f"{w:<12} {marginal:<15} {cumulative:<15}")
+    for k in range(1, max_half_twists + 1):
+        w = k / 2.0
+        marginal = base_cost if k == 1 else alpha * (k - 1)
+        if k > 1:
+            cumulative += marginal
+        analytic = (alpha * k * (k - 1)) // 2 + base_cost
+        max_err = max(max_err, abs(cumulative - analytic))
+        print(f"{k:<6} {w:<12.1f} {marginal:<14} {cumulative:<14} {analytic:<16}")
     
-    print("-" * 58)
-    print(f"Final state (w = {max_writhe}):")
-    print(f"  Total geometric quanta N3 = {cumulative}")
-    print("  Scaling: quadratic in writhe (w² dominant term)")
+    w_final = max_half_twists / 2.0
+    ratio = cumulative / (w_final ** 2)
+    print("-" * 72)
+    print(f"Final state (k = {max_half_twists}, w = {w_final:.1f}):")
+    print(f"  Total geometric quanta N = {cumulative}")
+    print(f"  Normalized ratio N / w²  = {ratio:.6f} (asymptote 2α = {2 * alpha:.6f})")
+    print(f"  Max discrepancy vs closed form: {max_err}")
 
 if __name__ == "__main__":
-    simulate_torsional_strain(max_writhe=15)
+    simulate_torsional_strain(max_half_twists=30, base_cost=2, alpha=1)
 ```
 
 **Simulation Results:**
 
 ```text
-============================================================
+========================================================================
 SIMULATION 3: TORSIONAL STRAIN AND QUADRATIC MASS SCALING
-Accumulated Geometric Quanta vs. Writhe (w)
-============================================================
-Writhe (w)   Marginal Cost   Cumulative N3
-----------------------------------------------------------
-1            5               5
-2            7               12
-3            9               21
-4            11              32
-5            13              45
-6            15              60
-7            17              77
-8            19              96
-9            21              117
-10           23              140
-11           25              165
-12           27              192
-13           29              221
-14           31              252
-15           33              285
-----------------------------------------------------------
-Final state (w = 15):
-  Total geometric quanta N3 = 285
-  Scaling: quadratic in writhe (w² dominant term)
+Half-Twist Recurrence (c = 2, α = 1): N(2w) = 2αw² - αw + c
+========================================================================
+k      Writhe (w)   Marginal ΔN    Cumulative N   Analytic N(2w)  
+------------------------------------------------------------------------
+1      0.5          2              2              2               
+2      1.0          1              3              3               
+3      1.5          2              5              5               
+4      2.0          3              8              8               
+5      2.5          4              12             12              
+6      3.0          5              17             17              
+7      3.5          6              23             23              
+8      4.0          7              30             30              
+9      4.5          8              38             38              
+10     5.0          9              47             47              
+11     5.5          10             57             57              
+12     6.0          11             68             68              
+13     6.5          12             80             80              
+14     7.0          13             93             93              
+15     7.5          14             107            107             
+16     8.0          15             122            122             
+17     8.5          16             138            138             
+18     9.0          17             155            155             
+19     9.5          18             173            173             
+20     10.0         19             192            192             
+21     10.5         20             212            212             
+22     11.0         21             233            233             
+23     11.5         22             255            255             
+24     12.0         23             278            278             
+25     12.5         24             302            302             
+26     13.0         25             327            327             
+27     13.5         26             353            353             
+28     14.0         27             380            380             
+29     14.5         28             408            408             
+30     15.0         29             437            437             
+------------------------------------------------------------------------
+Final state (k = 30, w = 15.0):
+  Total geometric quanta N = 437
+  Normalized ratio N / w²  = 1.942222 (asymptote 2α = 2.000000)
+  Max discrepancy vs closed form: 0
 ```
 
 **Conclusion:**
-The simulation output establishes a linear relationship between the marginal path cost and the writhe, described by $Cost(w) = 2w + 3$. Consequently, the total integrated complexity follows the quadratic function $N(w) = w^2 + 4w$. The data point at $w=10$ yields a total complexity of $140$, matching the predicted quadratic value exactly. This result confirms that the linear increase in pathfinding difficulty integrates to a quadratic scaling of total inertial mass.
+With base cost $N(1)=c=2$ and marginal half-twist increment $N(j+1)-N(j)=\alpha j$ ($\alpha=1$), the cumulative quantum count increases from $N(1)=2$ at $w=0.5$ to $N(20)=192$ at $w=10.0$ and $N(30)=437$ at $w=15.0$, matching the exact closed form $N(2w) = 2w^2 - w + 2$ with maximum discrepancy $0$ across all $30$ steps. At $w=15.0$, the normalized ratio reaches $N/w^2 \approx 1.942222$ and approaches its asymptotic limit $2\alpha = 2.000000$ from below. These results validate the telescoping half-twist recurrence and quadratic leading scaling derived in **Quadratic Scaling of Torsion** <Ref id="6.3.5.1" label="§6.3.5.1" />.
 
 **In Plain English:**  
 Section 6.3.5.2 formalizes the properties of the QBD calculation regarding torsional strain simulation.
@@ -2175,11 +2228,11 @@ Section 6.4.4 formalizes the properties of the QBD lemma regarding global unwind
 
 **I. Invariant change**
 
-Let $\Sigma=(\tau_1,\ldots,\tau_m)$ be the supplied path from a prime knot to the unknot with successive states $\xi_0,\ldots,\xi_m$. For an invariant $\mathcal I$ distinguishing the endpoint topologies, the telescoping balance is (**Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />)
+Let $\mathcal{S}_{\mathrm{rew}}=(\tau_1,\ldots,\tau_m)$ be the supplied path from a prime knot to the unknot with successive states $\xi_0,\ldots,\xi_m$. For an invariant $\mathcal{I}_{\mathrm{top}}$ distinguishing the endpoint topologies, the telescoping balance is (**Topological Barrier** <Ref id="6.1.5" label="§6.1.5" />)
 
 $$
-0\ne\mathcal I(\xi_m)-\mathcal I(\xi_0)
-=\sum_{j=1}^m\bigl(\mathcal I(\xi_j)-\mathcal I(\xi_{j-1})\bigr).
+0\ne\mathcal{I}_{\mathrm{top}}(\xi_m)-\mathcal{I}_{\mathrm{top}}(\xi_0)
+=\sum_{j=1}^m\bigl(\mathcal{I}_{\mathrm{top}}(\xi_j)-\mathcal{I}_{\mathrm{top}}(\xi_{j-1})\bigr).
 $$
 
 At least one summand is nonzero, so some step lies outside the invariant-preserving family. For example, an ambient isotopy would induce a homeomorphism of knot complements and hence an isomorphism of their fundamental groups. It preserves the knot type as well.

@@ -1,6 +1,10 @@
-Measured x samples (first 10): [2, 6, 4, 4, 0, 0, 0, 6, 4, 4]
-Estimated r: 4 (correct=4, success: True)
-Unique measures: 7
-x distribution: {2: 234, 6: 242, 4: 253, 0: 268, 1: 1, 7: 1, 5: 1}
-Success P (over 1000): 1.00
-Check: P>0.75 confirms fault-tolerant Shor under noise.
+N  | a | t  | qubits | mean_gates | r_est | factors | peak_lock | single_P | lcm2_P
+15 | 7 | 8  | 11     | 10321      | 4     | 3x5     |      1.00 |     0.62 |   0.75
+21 | 2 | 9  | 13     | 18287      | 6     | 3x7     |      0.90 |     0.57 |   0.85
+35 | 2 | 11 | 15     | 32881      | 12    | 5x7     |      0.80 |     0.60 |   1.00
+p_gate   | shots | peak_lock | single_P | lcm2_P
+ 0.0e+00 |    40 |      0.90 |     0.57 |   0.85
+ 3.0e-05 |    36 |      0.67 |     0.50 |   0.67
+ 1.0e-04 |    36 |      0.39 |     0.33 |   0.44
+ 3.0e-04 |    36 |      0.14 |     0.19 |   0.28
+ 1.0e-03 |    36 |      0.06 |     0.19 |   0.33
