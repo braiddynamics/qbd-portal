@@ -1553,7 +1553,7 @@ Depth 6: 0 final sampled triangles
 
 **Conclusion:**
 
-The original paths confirm the depth decrement in the finite fragment. Under the repaired directed-cycle deletion rule with PUC, bounded AEC, and symmetric reciprocal filtering, the 30-step sampled horizon captures transient active cores totaling $1,410$ triangles across 100 runs, confined to original depths $0$–$4$ with zero triangles at depth $\ge 5$ (without early homeostatic stopping, longer unstopped runs extinguish to zero triangles by tick $200$).
+The original paths confirm the depth decrement in the finite fragment. Under the repaired directed-cycle deletion rule with PUC, bounded AEC, and symmetric reciprocal filtering, the 30-step sampled horizon captures transient active cores totaling $1,410$ triangles across 100 runs, confined to original depths $0$ to $4$ with zero triangles at depth $\ge 5$ (without early homeostatic stopping, longer unstopped runs extinguish to zero triangles by tick $200$).
 
 **In Plain English:**  
 Section 5.2.8.2 formalizes the properties of the QBD calculation regarding finite seeded depth profile.
