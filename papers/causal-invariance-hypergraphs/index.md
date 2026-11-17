@@ -447,7 +447,7 @@ The exact enumeration results across $N=5 \dots 8$ are summarized in Table 1, an
 
 **Table 1: Multi-Scale Multiway Trajectory Evaluation ($k = 3$, $N = 5 \dots 8$, Exact C++20 Enumeration).** $M$ is the number of distinct labeled chronological derivation pathways; $|\Omega|$ is the number of distinct unlabeled physical graph isomorphism classes reached; Reachability is the dynamically accessible fraction of all possible unlabeled graphs on $N$ vertices ($|\Omega| / |\mathcal{G}_N|$, OEIS A000088).
 
-| Scale ($N$) | Trajectory Paths ($M$) | Classes ($|\Omega|$) | $H_{\text{process}}$ (bits) | $H_{\text{macro}}$ (bits) | $\Delta H$ (bits) | $P(\text{Connected})$ | $P(\text{Regular})$ | Reachability |
+| Scale ($N$) | Trajectory Paths ($M$) | Classes ($\lvert\Omega\rvert$) | $H_{\text{process}}$ (bits) | $H_{\text{macro}}$ (bits) | $\Delta H$ (bits) | $P(\text{Connected})$ | $P(\text{Regular})$ | Reachability |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 5 | 1,620 | 4 | 10.6618 | 1.6416 | 9.0201 | $9.2593 \times 10^{-1}$ | $0.0000$ | 11.76% (4 / 34) |
 | 6 | 133,797,600 | 29 | 26.9955 | 4.0145 | 22.9809 | $6.3799 \times 10^{-1}$ | $3.7669 \times 10^{-4}$ | 18.59% (29 / 156) |
@@ -529,7 +529,7 @@ To contextualize the computational scaling across both exact full-state dynamic 
 
 **Table 5: Combinatorial Phase-Space Scaling Across Vertex Regimes ($k = 3$).** $M_{\text{base}} = E_0! / E_f!$ is the analytical falling factorial baseline (Section 5.3); $|\mathcal{G}_N|$ is the total unlabelled graph space (OEIS A000088); $N!$ is the canonical permutation cost per state.
 
-| Scale ($N$) | Edges ($E_0$) | Unlabelled Classes ($|\mathcal{G}_N|$) | Baseline Trajectories ($M_{\text{base}}$) | Canonical Cost ($N!$) |
+| Scale ($N$) | Edges ($E_0$) | Unlabelled Classes ($\lvert\mathcal{G}_N\rvert$) | Baseline Trajectories ($M_{\text{base}}$) | Canonical Cost ($N!$) |
 | :---: | :---: | :---: | :---: | :---: |
 | 8 | 28 | 12,346 | $6.37 \times 10^{20}$ | 40,320 |
 | 10 | 45 | $1.20 \times 10^7$ | $9.14 \times 10^{43}$ | $3.63 \times 10^6$ |

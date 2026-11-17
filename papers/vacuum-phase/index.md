@@ -926,7 +926,7 @@ The two surviving configurations are the **Balanced Regular Bethe Fragment** and
 
 Table 3: *Structural Optimality Scorecard and Orbit Entropy Comparison ($N=10$).*
 
-| Candidate Topology | $|\operatorname{Aut}(G)|$ | Orbit Entropy $H_S$ | $\mathcal{O}(\lambda=0.4)$ | $\mathcal{O}(\lambda=0.5)$ | $\mathcal{O}(\lambda=0.6)$ | Classification |
+| Candidate Topology | $\lvert\operatorname{Aut}(G)\rvert$ | Orbit Entropy $H_S$ | $\mathcal{O}(\lambda=0.4)$ | $\mathcal{O}(\lambda=0.5)$ | $\mathcal{O}(\lambda=0.6)$ | Classification |
 | :------------------------ | :------: | :------: | :------: | :------: | :------: | :----------------------- |
 | **Balanced Bethe Fragment** | $\mathbf{48}$ | $\mathbf{1.2955}$ | $\mathbf{3.011}$ | $\mathbf{3.440}$ | $\mathbf{3.869}$ | **Optimal Vacuum ($G_0$)** |
 | **Caterpillar (Linear Core)**| $8$ | $1.9219$ | $2.353$ | $2.461$ | $2.569$ | Suboptimal Branching |
@@ -1273,16 +1273,16 @@ These operators label constructor sites. They are not stabilizer generators of a
 
 The joint measurement yields a syndrome vector $\sigma = (\lambda_1, \lambda_2, \lambda_3) \in \{+1, -1\}^3$, evaluated on candidate 2-paths:
 
-| Configuration | Qubit State $|q_{12}q_{23}q_{31}\rangle$ | $\lambda_1$ ($Z_{12}Z_{23}$) | $\lambda_2$ ($Z_{23}Z_{31}$) | $\lambda_3$ ($Z_{31}Z_{12}$) | Physical State |
+| Configuration | Qubit State $\lvert q_{12}q_{23}q_{31}\rangle$ | $\lambda_1$ ($Z_{12}Z_{23}$) | $\lambda_2$ ($Z_{23}Z_{31}$) | $\lambda_3$ ($Z_{31}Z_{12}$) | Physical State |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **Vacuum** | $|000\rangle$ | $+1$ | $+1$ | $+1$ | Pre-geometric Void |
-| **Tension A** | $|100\rangle$ | $-1$ | $+1$ | $-1$ | Single Edge $1 \to 2$ |
-| **Tension B** | $|010\rangle$ | $-1$ | $-1$ | $+1$ | Single Edge $2 \to 3$ |
-| **Tension C** | $|001\rangle$ | $+1$ | $-1$ | $-1$ | Single Edge $3 \to 1$ |
-| **Precursor A** | $|110\rangle$ | $+1$ | $-1$ | $-1$ | Compliant 2-Path $1 \to 2 \to 3$ |
-| **Precursor B** | $|011\rangle$ | $-1$ | $+1$ | $-1$ | Compliant 2-Path $2 \to 3 \to 1$ |
-| **Precursor C** | $|101\rangle$ | $-1$ | $-1$ | $+1$ | Compliant 2-Path $3 \to 1 \to 2$ |
-| **Geometric Quantum** | $|111\rangle$ | $+1$ | $+1$ | $+1$ | Closed 3-Cycle $\partial \Delta_2$ |
+| **Vacuum** | $\lvert 000\rangle$ | $+1$ | $+1$ | $+1$ | Pre-geometric Void |
+| **Tension A** | $\lvert 100\rangle$ | $-1$ | $+1$ | $-1$ | Single Edge $1 \to 2$ |
+| **Tension B** | $\lvert 010\rangle$ | $-1$ | $-1$ | $+1$ | Single Edge $2 \to 3$ |
+| **Tension C** | $\lvert 001\rangle$ | $+1$ | $-1$ | $-1$ | Single Edge $3 \to 1$ |
+| **Precursor A** | $\lvert 110\rangle$ | $+1$ | $-1$ | $-1$ | Compliant 2-Path $1 \to 2 \to 3$ |
+| **Precursor B** | $\lvert 011\rangle$ | $-1$ | $+1$ | $-1$ | Compliant 2-Path $2 \to 3 \to 1$ |
+| **Precursor C** | $\lvert 101\rangle$ | $-1$ | $-1$ | $+1$ | Compliant 2-Path $3 \to 1 \to 2$ |
+| **Geometric Quantum** | $\lvert 111\rangle$ | $+1$ | $+1$ | $+1$ | Closed 3-Cycle $\partial \Delta_2$ |
 
 The $(+1, +1, +1)$ syndrome degeneracy between the Vacuum $|000\rangle$ and the Geometric Quantum $|111\rangle$ is a consequence of even overlap: completing a 3-cycle flips all three occupancy bits, hence an even number of factors in each $S_i$. The topological volume operator $V = Z_{12}Z_{23}Z_{31}$ (odd support) lifts the degeneracy, yielding eigenvalue $\lambda_V = +1$ for the vacuum and $\lambda_V = -1$ for the elementary 2-simplex.
 
@@ -2669,7 +2669,7 @@ Table 7: *Topological Invariants of the Scarred Absorbing Vacuum State ($N = 100
 | :--- | :---: | :---: | :---: | :---: | :--- |
 | **Directed 3-Cycles** | $N_3$ | $0$ | $9.19 \pm 1.19$ | $\mathbf{0}$ | No directed triangles in the sampled final snapshot |
 | **Directed 2-Paths** | $N_{\mathrm{2-path}}$ | $126$ | $184.2 \pm 14.8$ | $\mathbf{128.4 \pm 2.1}$ | Residual causal routing channels |
-| **Total Edges** | $|E|$ | $99$ | $108.2 \pm 3.4$ | $\mathbf{100.2 \pm 0.8}$ | Frozen residual chord defects ($\Delta E \approx +1.2$) |
+| **Total Edges** | $\lvert E\rvert$ | $99$ | $108.2 \pm 3.4$ | $\mathbf{100.2 \pm 0.8}$ | Frozen residual chord defects ($\Delta E \approx +1.2$) |
 | **Acyclicity Check** | AEC | Compliant | Compliant | **Compliant** | Reported check on sampled configurations |
 
 The sampled final graphs retain about $1.2$ additional edges on average. A retained same-parity chord violates the fixed initial coloring while active. Its creation record and the graph's current coloring are separate observables.
