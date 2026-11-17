@@ -321,98 +321,119 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\theta_X$ | Ribbon twist isomorphism (positive full framing rotation) | [§10.8.7](/monograph/players/computation/10.8/#10.8.7) |
 | $\mathcal{G}_{phys}$ | Candidate physical gate set with conditional logical universality | [§10.8.8](/monograph/players/computation/10.8/#10.8.8) |
 | $\hat{D}_L, B_L$ | Encoded full-twist and half-twist logical operators ($B_L^2 = \hat{D}_L$) | [§10.8.9](/monograph/players/computation/10.8/#10.8.9) |
-| $d_{GHW}$ | Gromov-Hausdorff-Wasserstein metric | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
+| $d_{GH}(X,Y)$ | Gromov-Hausdorff distance | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
+| $d_H(A,B)$ | Hausdorff distance | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
+| $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
 | $\pi$ | Transport coupling (joint measure) | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
-| $d_{\text{GHW}}$ | Gromov-Hausdorff-Wasserstein metric on graph state space | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
-| $d_{GH}(X,Y)$ | Gromov-Hausdorff distance | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
-| $d_H(A,B)$ | Hausdorff distance | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
-| $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
+| $d_{GHW}$ | Gromov-Hausdorff-Wasserstein metric | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
 | $\bar{d}(u,v)$ | Undirected shortest-path metric | [§11.1.2](/monograph/stage/discrete/11.1/#11.1.2) |
-| $N^+(u), N^-(u)$ | Future/Past causal neighborhoods | [§11.2](/monograph/stage/discrete/11.2/#11.2) |
-| $\alpha$ | Laziness parameter (self-mass) | [§11.2](/monograph/stage/discrete/11.2/#11.2) |
+| $N^+(u), N^-(u)$ | Future/Past causal neighborhoods | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
+| $\alpha$ | Laziness parameter (self-mass) | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
 | $\beta$ | Neighborhood mass parameter ($(1-\alpha)/2$) | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
-| $\mu_u$ | Lazy causal probability measure for Ollivier-Ricci curvature | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
-| $\mu_u$ | Lazy causal probability measure for vertex $u$ | [§11.2.1.1](/monograph/stage/discrete/11.2/#11.2.1.1) |
-| $\mathbb{I}[\cdot]$ | Indicator function | [§11.2.1.1](/monograph/stage/discrete/11.2/#11.2.1.1) |
+| $\mu_u$ | Lazy causal probability measure for vertex $u$ | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
 | $K(u,v)$ | Causal Ollivier-Ricci curvature | [§11.2.2](/monograph/stage/discrete/11.2/#11.2.2) |
-| $H(\mu_u)$ | Shannon entropy of measure $\mu_u$ | [§11.2.3](/monograph/stage/discrete/11.2/#11.2.3) |
-| $h(\alpha)$ | Allocation entropy function | [§11.2.3.1](/monograph/stage/discrete/11.2/#11.2.3.1) |
-| $d_{\text{dir}}$ | Directed distance function (shown insufficient) | [§11.2.4.1](/monograph/stage/discrete/11.2/#11.2.4.1) |
-| $\mathcal{S}_{\text{EH}}$ | Discrete Einstein-Hilbert Action on causal graphs | [§11.3.1](/monograph/stage/discrete/11.3/#11.3.1) |
-| $\Delta \mathcal{S}$ | Variation in total action | [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
-| $K_{\text{baseline}}$ | Baseline curvature in sparse graph | [§11.3.2.1](/monograph/stage/discrete/11.3/#11.3.2.1) |
+| $\mathbb{I}[\cdot]$ | Indicator function | [§11.2.4.1](/monograph/stage/discrete/11.2/#11.2.4.1) |
+| $H_{\text{temporal}}(\alpha, \beta)$ | Macroscopic three-sector temporal entropy | [§11.2.5.1](/monograph/stage/discrete/11.2/#11.2.5.1) |
+| $h(\alpha)$ | Allocation entropy function | [§11.2.5.1](/monograph/stage/discrete/11.2/#11.2.5.1) |
+| $d_{\text{dir}}$ | Directed distance function (shown insufficient) | [§11.2.6.1](/monograph/stage/discrete/11.2/#11.2.6.1) |
+| $\mathcal{S}[G]$ | Discrete Einstein-Hilbert action | [§11.3.1](/monograph/stage/discrete/11.3/#11.3.1) |
+| $K_0(u,v), K_1(u,v)$ | Pre- and post-nucleation causal curvatures | [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
 | $m_w$ | Zero-cost shared mass at vertex $w$ | [§11.3.3.1](/monograph/stage/discrete/11.3/#11.3.3.1) |
+| $\Delta \mathcal{S}$ | Variation in total action | [§11.3.6](/monograph/stage/discrete/11.3/#11.3.6) |
+| $c_\pi$ | Mean action increment per 3-cycle | [§11.3.6](/monograph/stage/discrete/11.3/#11.3.6) |
 | $\tilde{\mathcal{L}}_t$ | Consistently weighted graph Laplacian | [§12.1.1](/monograph/stage/reconstruction/12.1/#12.1.1) |
-| $-\Delta_g$ | Laplace-Beltrami operator | [§12.1.2](/monograph/stage/reconstruction/12.1/#12.1.2) |
-| $\tilde{\lambda}_k^{(t)}$ | Eigenvalues of $\tilde{\mathcal{L}}_t$ | [§12.1.3](/monograph/stage/reconstruction/12.1/#12.1.3) |
-| $\psi_k^{(t)}$ | Eigenfunctions of $\tilde{\mathcal{L}}_t$ | [§12.1.3](/monograph/stage/reconstruction/12.1/#12.1.3) |
+| $-\Delta_g$ | Laplace-Beltrami operator | [§12.1.3.1](/monograph/stage/reconstruction/12.1/#12.1.3.1) |
+| $\widetilde{\lambda}_{t,k}$ | Eigenvalues of $\tilde{\mathcal{L}}_t$ | [§12.1.3.1](/monograph/stage/reconstruction/12.1/#12.1.3.1) |
+| $\psi_{t,k}$ | Eigenfunctions of $\tilde{\mathcal{L}}_t$ | [§12.1.3.1](/monograph/stage/reconstruction/12.1/#12.1.3.1) |
 | $f_k$ | Continuum eigenfunctions | [§12.1.3.1](/monograph/stage/reconstruction/12.1/#12.1.3.1) |
 | $p_t(x,y)$ | Heat kernel on graph/manifold | [§12.1.4](/monograph/stage/reconstruction/12.1/#12.1.4) |
-| $\widetilde{\mathcal{G}}^{(t)}_{ij}$ | Coarse-grained (averaged) Einstein tensor | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
-| $\widetilde{T}^{(t)}_{ij}$ | Coarse-grained (averaged) stress-energy tensor | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
+| $\rho_E(x)$ | Limiting spatial edge density | [§12.1.6](/monograph/stage/reconstruction/12.1/#12.1.6) |
+| $\omega_h$ | Rescaled edge measure on unit tangent bundle | [§12.1.6.1](/monograph/stage/reconstruction/12.1/#12.1.6.1) |
+| $\mathcal{A}_R$ | Tensorial averaging map on edge scalars | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
 | $\hat{n}_e$ | Unit direction vector of edge $e$ | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
 | $B(x,R)$ | Mesoscopic ball of radius $R$ | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
-| $\kappa'$ | Continuum gravitational coupling constant | [§12.2.5](/monograph/stage/reconstruction/12.2/#12.2.5) |
-| $\Delta_{\tilde{\mathcal{L}}}$ | Spectral manifold reconstruction operator | [§12.3.1](/monograph/stage/reconstruction/12.3/#12.3.1) |
+| $\widetilde{\mathcal{G}}_{ij}^{(t)}$ | Coarse-grained (averaged) Einstein tensor | [§12.2.5.1](/monograph/stage/reconstruction/12.2/#12.2.5.1) |
+| $\widetilde{\mathcal{T}}_{ij}^{(t)}$ | Coarse-grained (averaged) stress-energy tensor | [§12.2.5.1](/monograph/stage/reconstruction/12.2/#12.2.5.1) |
+| $\nu_t$ | Embedded common comparison measure | [§12.2.5.1](/monograph/stage/reconstruction/12.2/#12.2.5.1) |
+| $\mathcal{C}_x$ | Emergent causal light cone in tangent space $T_x M$ | [§12.3.1](/monograph/stage/reconstruction/12.3/#12.3.1) |
+| $D^\mu$ | Non-vanishing causal drift vector field | [§12.3.3.2](/monograph/stage/reconstruction/12.3/#12.3.3.2) |
+| $\Theta_c$ | Causal aperture half-angle ($\arctan K_{\max}$) | [§12.3.4](/monograph/stage/reconstruction/12.3/#12.3.4) |
+| $P^{\mu\nu}$ | Second-moment causal propagator tensor | [§12.3.5](/monograph/stage/reconstruction/12.3/#12.3.5) |
 | $T_{ab}$ | Discrete stress-energy tensor | [§13.1.1](/monograph/stage/dynamics/13.1/#13.1.1) |
 | $P_{\text{add}}(a,b)$ | Probability of edge addition | [§13.1.1](/monograph/stage/dynamics/13.1/#13.1.1) |
 | $P_{\text{del}}(a,b)$ | Probability of edge deletion | [§13.1.1](/monograph/stage/dynamics/13.1/#13.1.1) |
-| $\mathbb{E}[\Delta \deg(a)]$ | Expected degree change | [§13.1.2.1](/monograph/stage/dynamics/13.1/#13.1.2.1) |
+| $J_{ab}$ | Antisymmetric discrete skew current ($T_{ab}-T_{ba}$) | [§13.1.1](/monograph/stage/dynamics/13.1/#13.1.1) |
+| $\mathbb{E}[\Delta \deg(a)]$ | Expected degree change | [§13.1.3.1](/monograph/stage/dynamics/13.1/#13.1.3.1) |
 | $\ell_0$ | Microscopic discreteness / Planck area element | [§13.1.5.1](/monograph/stage/dynamics/13.1/#13.1.5.1) |
-| $\kappa$ | Discrete gravitational coupling | [§13.2.5](/monograph/stage/dynamics/13.2/#13.2.5) |
-| $\mathcal{G}_{ab}$ | Discrete Einstein Tensor quantifying local curvature response | [§13.2.1](/monograph/stage/dynamics/13.2/#13.2.1) |
-| $\mathcal{G}_{ab}$ | Discrete Einstein tensor | [§13.2.1.1](/monograph/stage/dynamics/13.2/#13.2.1.1) |
-| $R_{\text{disc}}$ | Discrete scalar curvature | [§13.2.1.1](/monograph/stage/dynamics/13.2/#13.2.1.1) |
+| $\mathcal{G}_{ab}$ | Discrete Einstein tensor quantifying local curvature response | [§13.2.1](/monograph/stage/dynamics/13.2/#13.2.1) |
+| $R_{\text{disc}}$ | Discrete scalar curvature | [§13.2.1](/monograph/stage/dynamics/13.2/#13.2.1) |
 | $\mathcal{S}[G]$ | Discrete Einstein-Hilbert action | [§13.2.3](/monograph/stage/dynamics/13.2/#13.2.3) |
-| $\mathcal{T}_{\text{conv}}$ | Topological convergence operator on causal graphs | [§13.3.1](/monograph/stage/dynamics/13.3/#13.3.1) |
+| $\kappa$ | Discrete gravitational coupling | [§13.2.5](/monograph/stage/dynamics/13.2/#13.2.5) |
+| $\nabla \cdot \mathcal{G}$ | Discrete Bianchi divergence operator | [§13.3.1](/monograph/stage/dynamics/13.3/#13.3.1) |
 | $M$ | Continuous Lorentzian manifold | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
-| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
-| $N$ | Lapse function (coordinate update rate) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |
-| $N^i$ | Shift vector (coordinate spatial offset) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |
-| $\mathcal{H}_{\text{rel}}$ | Relational Hamiltonian constraint operator | [§14.2.1](/monograph/stage/time/14.2/#14.2.1) |
-| $\hat{H}$ | Hamiltonian constraint operator | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
-| $\Lambda$ | Cosmological constant | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§14.4.2](/monograph/stage/time/14.4/#14.4.2) |
+| $N(x)$ | Lapse function (coordinate update rate) | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
+| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§14.2.1](/monograph/stage/time/14.2/#14.2.1) |
+| $g_{ij}$ | Spatial Riemannian metric on hypersurfaces | [§14.2.1](/monograph/stage/time/14.2/#14.2.1) |
+| $\beta^i$ | Shift vector (coordinate spatial offset) | [§14.2.1](/monograph/stage/time/14.2/#14.2.1) |
+| $\phi(x)$ | Quantum field operator (operator-valued distribution) | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
+| $U(\Lambda, a)$ | Unitary Poincaré group representation | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
+| $P^\mu$ | Energy-momentum 4-vector generator | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
+| $G_{\mu\nu}$ | Continuum Einstein tensor | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
+| $\Lambda$ | Cosmological constant | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
+| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
+| $S_{\text{ent}}$ | Vacuum entanglement entropy | [§14.4.2](/monograph/stage/time/14.4/#14.4.2) |
+| $\delta\langle K\rangle$ | Modular Hamiltonian expectation variation | [§14.4.2](/monograph/stage/time/14.4/#14.4.2) |
 | $G$ | Emergent gravitational constant | [§14.4.3](/monograph/stage/time/14.4/#14.4.3) |
-| $K_{ij}$ | Extrinsic curvature tensor | [§14.6](/monograph/stage/time/14.6/#14.6) |
-| $S_{EE}$ | Entanglement entropy | [§14.6](/monograph/stage/time/14.6/#14.6) |
-| $S(A)$ | boundary entanglement entropy of region $A$ | [§15.1.1](/monograph/stage/epr/15.1/#15.1.1) |
-| $\rho_A$ | Reduced density matrix of region $A$ | [§15.1.1](/monograph/stage/epr/15.1/#15.1.1) |
+| $\mathcal{S}$ | Stabilizer group protecting codespace | [§15.1.1](/monograph/stage/epr/15.1/#15.1.1) |
 | $E_{bridge}$ | Entanglement shortcut edges (non-local) | [§15.1.1](/monograph/stage/epr/15.1/#15.1.1) |
 | $d_{geo}$ | Emergent spatial distance on manifold | [§15.1.2](/monograph/stage/epr/15.1/#15.1.2) |
 | $d_{topo}$ | Intrinsic topological distance on causal graph | [§15.1.2](/monograph/stage/epr/15.1/#15.1.2) |
-| $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§15.1.2](/monograph/stage/epr/15.1/#15.1.2) |
-| $\mathcal{S}$ | Stabilizer group protecting codespace | [§15.1.4](/monograph/stage/epr/15.1/#15.1.4) |
-| $\vert\Psi\rangle$ | Wavefunction of the universe | [§15.1.4.1](/monograph/stage/epr/15.1/#15.1.4.1) |
 | $E_{bulk}$ | Standard spatial edges (local) | [§15.1.5.1](/monograph/stage/epr/15.1/#15.1.5.1) |
-| $S$ | Bell CHSH correlation metric | [§15.2.1](/monograph/stage/epr/15.2/#15.2.1) |
-| $\mathcal{E}_{\Gamma}$ | Causal history path ensemble | [§15.4.1](/monograph/stage/epr/15.4/#15.4.1) |
-| $\mathcal{TN}$ | Causal Tensor Network (Renormalization flow) | [§16.1.1](/monograph/stage/holography/16.1/#16.1.1) |
+| $S$ | Bell CHSH correlation metric | [§15.2.4](/monograph/stage/epr/15.2/#15.2.4) |
+| $S(A)$ | Boundary entanglement entropy of region $A$ | [§15.3.3.1](/monograph/stage/epr/15.3/#15.3.3.1) |
+| $W_1(\mu_A, \mu_B)$ | Wasserstein-1 transport metric | [§15.3.3.1](/monograph/stage/epr/15.3/#15.3.3.1) |
+| $\vert\Psi_{AB}\rangle$ | Bipartite entangled quantum state | [§15.3.5](/monograph/stage/epr/15.3/#15.3.5) |
+| $\mathcal{E}$ | Causal history path ensemble | [§15.4.1](/monograph/stage/epr/15.4/#15.4.1) |
+| $\rho_A$ | Reduced density matrix of region $A$ | [§15.4.4.1](/monograph/stage/epr/15.4/#15.4.4.1) |
+| $\mathcal{T}$ | Causal Tensor Network (MERA Structure) | [§16.1.1](/monograph/stage/holography/16.1/#16.1.1) |
 | $\ell_0$ | Microscopic discreteness / Planck area element | [§16.1.1](/monograph/stage/holography/16.1/#16.1.1) |
-| $S(A)$ | boundary entanglement entropy of region $A$ | [§16.1.2](/monograph/stage/holography/16.1/#16.1.2) |
-| $\gamma_A$ | Ryu-Takayanagi minimal bulk surface | [§16.1.2](/monograph/stage/holography/16.1/#16.1.2) |
+| $\gamma_A$ | Ryu-Takayanagi Minimal Surface | [§16.1.2](/monograph/stage/holography/16.1/#16.1.2) |
 | $G_N$ | Boundary Newton gravitational constant | [§16.1.2](/monograph/stage/holography/16.1/#16.1.2) |
+| $S(\rho_A)$ | Von Neumann entanglement entropy of subregion $A$ | [§16.1.2](/monograph/stage/holography/16.1/#16.1.2) |
+| $r_A$ | Bipartite Schmidt Rank Capacity | [§16.1.3](/monograph/stage/holography/16.1/#16.1.3) |
 | $W_k$ | Isometric tensor mapping bulk to boundary | [§16.1.5.1](/monograph/stage/holography/16.1/#16.1.5.1) |
-| $\rho_{max}$ | Maximum bulk informational capacity density | [§16.2.1](/monograph/stage/holography/16.2/#16.2.1) |
-| $I(R)$ | Information bound of spatial region $R$ | [§16.2.2](/monograph/stage/holography/16.2/#16.2.2) |
+| $d_{\text{AdS}}$ | Anti-de Sitter Geodesic Distance | [§16.1.6](/monograph/stage/holography/16.1/#16.1.6) |
+| $S(A)$ | Boundary entanglement entropy of region $A$ | [§16.1.7](/monograph/stage/holography/16.1/#16.1.7) |
+| $\rho_{\text{max}}$ | Bulk Saturation Density Limit | [§16.2.1](/monograph/stage/holography/16.2/#16.2.1) |
 | $S(\Omega)$ | Universal holographic information bound on spatial subgraph | [§16.2.2](/monograph/stage/holography/16.2/#16.2.2) |
 | $A$ | Area of black hole horizon / holographic screen | [§16.2.4](/monograph/stage/holography/16.2/#16.2.4) |
 | $\Phi_S$ | Information entropy flux through holographic screen boundary | [§16.2.4](/monograph/stage/holography/16.2/#16.2.4) |
-| $\mathcal{TN}_{\text{bulk}}$ | Bulk causal tensor network geometry | [§16.3.1](/monograph/stage/holography/16.3/#16.3.1) |
-| $\mathcal{A}_{\text{RT}}$ | Ryu-Takayanagi holographic entanglement area | [§16.4.1](/monograph/stage/holography/16.4/#16.4.1) |
-| $B_{\mu\nu}$ | Kalb-Ramond 2-form field | [§17.1](/monograph/stage/worldsheets/17.1/#17.1) |
-| $A_\mu$ | Emergent heterotic gauge field | [§17.1](/monograph/stage/worldsheets/17.1/#17.1) |
+| $\eta$ | Horizon 3-Cycle Tiling Efficiency ($1/4$) | [§16.2.5](/monograph/stage/holography/16.2/#16.2.5) |
+| $S_{\text{BH}}$ | Bekenstein-Hawking Black Hole Entropy | [§16.2.6](/monograph/stage/holography/16.2/#16.2.6) |
+| $\mathcal{W}_E(A)$ | Entanglement Wedge of Subregion $A$ | [§16.3.1](/monograph/stage/holography/16.3/#16.3.1) |
+| $K(x, z; x')$ | HKLL Bulk-to-Boundary Smearing Kernel | [§16.3.3](/monograph/stage/holography/16.3/#16.3.3) |
+| $\Phi(x,z)$ | Bulk scalar field dual to $\mathcal{O}_\Delta(x)$ | [§16.4.1](/monograph/stage/holography/16.4/#16.4.1) |
+| $\mathcal{O}_\Delta(x)$ | Boundary CFT scalar operator of scaling dimension $\Delta$ | [§16.4.1](/monograph/stage/holography/16.4/#16.4.1) |
+| $H_A$ | Boundary Modular Hamiltonian | [§16.4.2](/monograph/stage/holography/16.4/#16.4.2) |
+| $g_{(d)\alpha\beta}$ | Fefferman-Graham Metric Coefficient | [§16.4.3](/monograph/stage/holography/16.4/#16.4.3) |
+| $T_{\alpha\beta}^{\text{boundary}}$ | Holographic Energy-Momentum Tensor | [§16.4.3](/monograph/stage/holography/16.4/#16.4.3) |
+| $S_{\text{ct}}$ | Holographic Renormalization Counterterm Action | [§16.4.4](/monograph/stage/holography/16.4/#16.4.4) |
+| $\mathcal{T}$ | Causal tube history subgraph | [§17.1.1](/monograph/stage/worldsheets/17.1/#17.1.1) |
 | $\Sigma$ | Discrete worldsheet / causal tube | [§17.1.1](/monograph/stage/worldsheets/17.1/#17.1.1) |
-| $\Phi$ | Dilaton field | [§17.1.4.1](/monograph/stage/worldsheets/17.1/#17.1.4.1) |
+| $\Phi$ | Topological Berry phase of holonomy loop | [§17.1.4.1](/monograph/stage/worldsheets/17.1/#17.1.4.1) |
 | $S_{NG}$ | Nambu-Goto informational action | [§17.1.5](/monograph/stage/worldsheets/17.1/#17.1.5) |
 | $T_0$ | Relativistic string tension | [§17.1.5](/monograph/stage/worldsheets/17.1/#17.1.5) |
-| $R$ | Wess-Zumino compactification radius | [§17.2.1](/monograph/stage/worldsheets/17.2/#17.2.1) |
+| $h_{ab}$ | Auxiliary 2D worldsheet metric tensor | [§17.1.5](/monograph/stage/worldsheets/17.1/#17.1.5) |
+| $R$ | Kaluza-Klein / toroidal compactification radius | [§17.2.1](/monograph/stage/worldsheets/17.2/#17.2.1) |
 | $H(R)$ | Hamiltonian operator of compactified string | [§17.2.2](/monograph/stage/worldsheets/17.2/#17.2.2) |
-| $T$ | T-duality mapping operator | [§17.2.2](/monograph/stage/worldsheets/17.2/#17.2.2) |
-| $D_L, D_R$ | Left-moving and right-moving critical dimensions | [§17.3](/monograph/stage/worldsheets/17.3/#17.3) |
-| $\mathcal{S}_{\text{WS}}$ | Causal worldsheet action in heterotic string target space | [§17.4.1](/monograph/stage/worldsheets/17.4/#17.4.1) |
+| $\mathcal{D}$ | T-duality transformation | [§17.2.2](/monograph/stage/worldsheets/17.2/#17.2.2) |
+| $T_H$ | Hagedorn maximum temperature bound | [§17.2.5](/monograph/stage/worldsheets/17.2/#17.2.5) |
+| $D_L, D_R$ | Left-moving and right-moving critical dimensions | [§17.3.3.2](/monograph/stage/worldsheets/17.3/#17.3.3.2) |
+| $\mathcal{H}_{Het}$ | Heterotic chiral-fusion Hilbert space | [§17.4.1](/monograph/stage/worldsheets/17.4/#17.4.1) |
+| $\Gamma_{16}$ | Even self-dual rank-16 momentum lattice | [§17.4.1](/monograph/stage/worldsheets/17.4/#17.4.1) |
 | $E_8 \times E_8$ | Heterotic unified gauge lattice group | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
-| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§17.4.2](/monograph/stage/worldsheets/17.4/#17.4.2) |
+| $B_{\mu\nu}$ | Kalb-Ramond 2-form field | [§17.4.5.1](/monograph/stage/worldsheets/17.4/#17.4.5.1) |
+| $A_\mu$ | Emergent heterotic gauge field | [§17.4.6.1](/monograph/stage/worldsheets/17.4/#17.4.6.1) |
 | $G_0$ | Pre-Geometric Vacuum (3-regular directed bipartite Bethe tree substrate) | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
 | $V_A, V_B$ | Bipartite vertex partition of the pre-geometric tree vacuum | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
 | $\rho_3$ | Directed 3-cycle intensive density in pre-geometric vacuum ($=0$) | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |

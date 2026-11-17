@@ -2,7 +2,7 @@ import numpy as np
 from itertools import product, combinations
 
 def verify_standard_model_embedding():
-    """§17.4.4.2: build E8 roots, check Jacobi identity, and report force/matter root counts."""
+    """§17.4.4.2: build E8 roots, check Jacobi identity, and report force/spinor slot counts."""
     print("E8 Force-Matter Decomposition & Lie Algebra Jacobi Closure (Section 17.4.4.2)")
     print("=" * 80)
 
@@ -52,23 +52,25 @@ def verify_standard_model_embedding():
                 if jacobi_err > 1e-12:
                     jacobi_violations += 1
 
-    # 3. Subgroup Decomposition & Family Capacity
+    # 3. Subgroup Decomposition & Pre-Breaking Spinor Slot Capacity
+    # Under Spin(16) -> SO(10) x SO(6), 128 = (16, 4) + (16_bar, 4_bar) provides 8 unsigned 16-plets
+    # prior to E8 -> E6 x SU(3)_family breaking to the 3 chiral generations of §17.4.4.1 / Ch. 9.
     su3_color_roots = sum(1 for r in roots_D8 if np.all(r[3:] == 0))
     su2_weak_roots = sum(1 for r in roots_D8 if np.all(r[:3] == 0) and np.all(r[5:] == 0))
     
     family_size_so10 = 16
-    n_families = n_matter / family_size_so10
+    n_spinor_slots = n_matter / family_size_so10
     
     print(f"Subgroup & Family Capacity Analysis:")
     print(f"  SU(3) Color Embedding Roots:  {su3_color_roots:<4} (Matches SO(6) ~ SU(4) subalgebra)")
     print(f"  SU(2) Weak Embedding Roots:   {su2_weak_roots:<4} (Matches SO(4) ~ SU(2)xSU(2) subalgebra)")
-    print(f"  Chiral Matter Generations:     {n_families:.1f}  (SO(10) 16-state multiplets)")
+    print(f"  Pre-Breaking Spinor Slots:     {n_spinor_slots:.1f}  (128/16 in Spin(16) before E6 x SU(3) breaking)")
     print(f"  Jacobi Identity Violations:    {jacobi_violations:<4} (out of {tested_triples} tested root triples)")
     print("-" * 80)
     print("checks:")
     print("1. Root Lattice Decomposition         : pass (112 Force + 128 Matter = 240 Roots)")
     print("2. Lie Algebra Jacobi Identity       : pass (Zero Violations across Root Triples)")
-    print("3. Standard Model & Family Capacity  : pass (SU(3)xSU(2) & 8 SO(10) Generations)")
+    print("3. Standard Model & Spinor Capacity  : pass (SU(3)xSU(2); 8 SO(10) Slots -> 3 Chiral Gen)")
     print("=" * 80)
 
 if __name__ == "__main__":

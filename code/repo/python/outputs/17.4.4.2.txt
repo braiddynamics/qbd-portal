@@ -9,11 +9,11 @@ E8 (Total Roots)     | 240            | Unified Exceptional Algebra | pass (Unif
 Subgroup & Family Capacity Analysis:
   SU(3) Color Embedding Roots:  12   (Matches SO(6) ~ SU(4) subalgebra)
   SU(2) Weak Embedding Roots:   4    (Matches SO(4) ~ SU(2)xSU(2) subalgebra)
-  Chiral Matter Generations:     8.0  (SO(10) 16-state multiplets)
+  Pre-Breaking Spinor Slots:     8.0  (128/16 in Spin(16) before E6 x SU(3) breaking)
   Jacobi Identity Violations:    0    (out of 356 tested root triples)
 --------------------------------------------------------------------------------
 checks:
 1. Root Lattice Decomposition         : pass (112 Force + 128 Matter = 240 Roots)
 2. Lie Algebra Jacobi Identity       : pass (Zero Violations across Root Triples)
-3. Standard Model & Family Capacity  : pass (SU(3)xSU(2) & 8 SO(10) Generations)
+3. Standard Model & Spinor Capacity  : pass (SU(3)xSU(2); 8 SO(10) Slots -> 3 Chiral Gen)
 ================================================================================

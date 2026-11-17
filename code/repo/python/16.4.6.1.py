@@ -11,15 +11,12 @@ def run_fefferman_graham_asymptotics():
     G_bulk = 1.0 / (16.0 * np.pi)  # Normalized 16piG = 1
     g_3_target = 0.5  # Boundary stress tensor source amplitude
     
-    # Define the radial metric ODE for g_00(z) in Fefferman-Graham coordinates:
-    # z^2 * g_00'' - 2 * z * g_00' + 6 * (g_00 - g_(0)00) = 0
+    # Define the homogeneous Fefferman-Graham radial ODE in d=3 (AdS_4 / CFT_3):
+    # z^2 * g_00'' - (d - 1) * z * g_00' = 0, with general solution g_(0)00 + z^d g_(d)00
     def metric_ode(z, y):
         # y[0] = g_00(z), y[1] = g_00'(z)
-        g_00 = y[0]
         g_00_prime = y[1]
-        
-        # Exact solution enforces g_00''(z) = 6 * z * g_3_target
-        g_00_double_prime = 6.0 * z * g_3_target
+        g_00_double_prime = (d - 1.0) * g_00_prime / z
         return [g_00_prime, g_00_double_prime]
 
     z_cutoffs = [0.1000, 0.0500, 0.0100, 0.0050, 0.0010]

@@ -201,7 +201,7 @@ $$
 
 Then $y=Rb$, and compactness of $R$ gives $Rb_t\to Rb$, contradicting the choice of $b_t$. A quantitative bound on $\varepsilon_t$ would require a quantitative comparison.
 
-Here $R_t$ acts as zero on the orthogonal complement of the embedded space. Write $r_k=(1+\lambda_k)^{-1}$ and $r_{t,k}=(1+\widetilde\lambda_{t,k})^{-1}$ for the positive eigenvalues of the two resolvents in descending order. For any unit $u\in H$,
+Here $R_t$ acts as zero on the orthogonal complement of the embedded space. Write $r_k=(1+\lambda_k)^{-1}$ and $r_{t,k}=(1+\widetilde{\lambda}_{t,k})^{-1}$ for the positive eigenvalues of the two resolvents in descending order. For any unit $u\in H$,
 
 $$
 \langle u,Ru\rangle-\varepsilon_t
@@ -221,7 +221,7 @@ $$
 For $\varepsilon_t<r_k/2$ the $k$th graph resolvent eigenvalue is positive and $r_{t,k}\ge r_k/2$. Hence
 
 $$
-\left|\widetilde\lambda_{t,k}-\lambda_k\right|
+\left|\widetilde{\lambda}_{t,k}-\lambda_k\right|
 =\left|\frac{1}{r_{t,k}}-\frac{1}{r_k}\right|
 =\frac{|r_{t,k}-r_k|}{r_{t,k}r_k}
 \le \frac{2\varepsilon_t}{r_k^2}.
@@ -1414,13 +1414,11 @@ Section 12.2.4.2 formalizes the properties of the QBD calculation regarding riem
 :::info[**Derivation of the Global Proportionality of Limit Tensor Fields from the Linearity of the Averaging Map Applied to the Discrete Field Equation**]
 :::
 
-Let the discrete curvature scalar $\mathcal{G}^{(t)}$ and flux scalar $\mathcal{T}^{(t)}$ satisfy the microscopic field equation $\mathcal{G}^{(t)}_e = \kappa \mathcal{T}^{(t)}_e$ identically for all edges $e \in E_t$. Then, the limiting smooth tensor fields $G_{\mu\nu}$ and $T_{\mu\nu}$ on the manifold $M$ satisfy the continuum Einstein Field Equations:
+Let the discrete curvature scalar $\mathcal{G}^{(t)}$ and flux scalar $\mathcal{T}^{(t)}$ satisfy the microscopic field identity $\mathcal{G}^{(t)}_e = \kappa \mathcal{T}^{(t)}_e$ identically for all edges $e \in E_t$, and suppose both coarse-grained tensor fields $\widetilde{\mathcal{G}}^{(t)}$ and $\widetilde{\mathcal{T}}^{(t)}$ share a common comparison space, normalization, and embedded measure $\nu_t \rightharpoonup \nu$ whose weak pairings converge to continuous limiting tensor fields $G_{\mu\nu}$ and $T_{\mu\nu}$ relative to the metric volume $\nu$. Then the limiting fields satisfy the pointwise Einstein Field Equations with the identical coupling constant $\kappa$ preserved unchanged across the scale transition:
 
 $$
-G_{\mu\nu}(x) = \kappa' T_{\mu\nu}(x) \quad \forall x \in M.
+G_{\mu\nu}(x) = \kappa T_{\mu\nu}(x) \quad \forall x \in M.
 $$
-
-The macroscopic coupling constant $\kappa'$ is related to the microscopic coupling $\kappa$ by the dimensional renormalization factor arising from the spherical averaging, $\kappa' = \kappa \cdot \frac{\ell_0^d}{V_{cell}}$, ensuring the preservation of the linear algebraic relationship between geometry and matter content across the scale transition.
 
 **In Plain English:**  
 Section 12.2.5 formalizes the properties of the QBD lemma regarding efe convergence.

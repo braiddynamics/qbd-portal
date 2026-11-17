@@ -7,6 +7,7 @@ def verify_distance_gap():
     print("=" * 80)
     
     grid_sizes = [4, 8, 12, 16, 20]
+    g_eff_values = []
     
     print(f"{'Grid Size (L x L)':<18} | {'Spatial d_geo':<15} | {'Topological d_topo':<20} | {'EPR Bonds (k)':<15} | {'Eff Conductance G_eff'}")
     print("-" * 88)
@@ -21,16 +22,15 @@ def verify_distance_gap():
         # Spatial geodesic distance (Manhattan metric on 2D grid)
         d_geo = nx.shortest_path_length(G, source=node_A, target=node_B)
         
-        # Add k non-local EPR stabilizer bridge edges between corners A and B
+        # Add k parallel non-local EPR stabilizer bridge bonds between corners A and B
         k_bonds = L // 4
-        for b in range(k_bonds):
-            G.add_edge(node_A, node_B, weight=1.0)
+        G.add_edge(node_A, node_B, weight=float(k_bonds))
             
         # Topological causal graph metric d_topo
         d_topo = nx.shortest_path_length(G, source=node_A, target=node_B)
         
-        # Compute effective Laplacian conductance G_eff(A, B) via graph resistance
-        L_matrix = nx.laplacian_matrix(G).toarray().astype(float)
+        # Compute effective Laplacian conductance G_eff(A, B) via weighted graph resistance
+        L_matrix = nx.laplacian_matrix(G, weight='weight').toarray().astype(float)
         L_pinv = np.linalg.pinv(L_matrix)
         
         node_list = list(G.nodes())
@@ -39,9 +39,13 @@ def verify_distance_gap():
         
         R_eff = L_pinv[idx_A, idx_A] + L_pinv[idx_B, idx_B] - 2.0 * L_pinv[idx_A, idx_B]
         G_eff = 1.0 / R_eff if R_eff > 0 else 0.0
+        g_eff_values.append(G_eff)
         
+        assert d_geo == 2 * (L - 1)
+        assert d_topo == 1
         print(f"{f'{L}x{L}':<18} | {d_geo:<15} | {d_topo:<20} | {k_bonds:<15} | {G_eff:<20.4f}")
 
+    assert all(g_eff_values[i] > g_eff_values[i - 1] for i in range(1, len(g_eff_values)))
     print("-" * 88)
     print("checks:")
     print("1. Spatial Geodesic Metric (d_geo)    : pass (Scales linearly with grid extent L)")

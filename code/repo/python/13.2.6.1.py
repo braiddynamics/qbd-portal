@@ -95,26 +95,17 @@ def protocol_a_exact_mechanism():
     print("Protocol A: Exact Mechanism (3-Node Topology Change)")
     print("-" * 65)
     
-    # Setup: 3 Nodes
-    nodes = [0, 1, 2]
-    # Fixed Distance Metric (Undirected Shortest Path)
-    # 0-1 (1), 1-2 (1), 0-2 (2 if chain, 1 if cycle? No, metric is background fixed for variation)
-    # To check the tensor G_ab on edge (0,1), use the underlying metric d(0,2)=2.
-    d_mat = {
-        0: {0:0, 1:1, 2:2},
-        1: {0:1, 1:0, 2:1},
-        2: {0:2, 1:1, 2:0}
-    }
-    
-    # State 0: Vacuum Chain (0->1->2)
-    G0 = nx.DiGraph([(0,1), (1,2)])
-    G_vac = compute_curvature_exact(G0, 0, 1, d_mat)
+    # State 0: Vacuum Chain (0->1->2), where undirected distance gives d_bar(0,2) = 2
+    G0 = nx.DiGraph([(0, 1), (1, 2)])
+    d_mat_0 = dict(nx.all_pairs_shortest_path_length(G0.to_undirected()))
+    G_vac = compute_curvature_exact(G0, 0, 1, d_mat_0)
     T_vac = 0.0 # No net creation
     
-    # State 1: Active Cycle (0->1->2->0)
-    # The flux T increases by 1 unit (net addition of edge 2->0 driving the cycle)
-    G1 = nx.DiGraph([(0,1), (1,2), (2,0)])
-    G_act = compute_curvature_exact(G1, 0, 1, d_mat)
+    # State 1: Active Cycle (0->1->2->0), recomputing d_bar on the closed cycle gives d_bar(0,2) = 1
+    # Because mu_0 = mu_1 = (1/3, 1/3, 1/3) on G1, W_1 = 0 identically regardless of d_bar(0,2)
+    G1 = nx.DiGraph([(0, 1), (1, 2), (2, 0)])
+    d_mat_1 = dict(nx.all_pairs_shortest_path_length(G1.to_undirected()))
+    G_act = compute_curvature_exact(G1, 0, 1, d_mat_1)
     T_act = 1.0 
     
     # Differential Analysis

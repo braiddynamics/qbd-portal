@@ -576,7 +576,7 @@ The **Discrete Einstein Tensor**, denoted $\mathcal{G}_{ab}$, is defined as the 
 1.  **Curvature Mapping:** For any realized directed edge $(a,b) \in E_t$, the tensor adopts the value $\mathcal{G}_{ab} = \frac{1}{2} K(a,b)$, where $K(a,b)$ denotes the Causal Ollivier-Ricci curvature derived from the Wasserstein transport distance between the lazy causal measures $\mu_a$ and $\mu_b$ **Lazy Causal Measure** <Ref id="11.2.1" label="§11.2.1" />.
 2.  **Trace Normalization:** The prefactor of $\frac{1}{2}$ aligns the discrete scalar with the trace-reversed formulation of the continuum Einstein tensor, ensuring that the contraction of the tensor over the local neighborhood recovers the discrete scalar curvature density $R_{\text{disc}}(a) = 2 \mathcal{G}_{aa} = \sum_{b \in N(a)} K(a,b)$.
 3.  **Vacuum Extension:** The domain of the tensor extends to the set of potential edges $(a,b) \notin E_t$ satisfying the undirected distance constraint $\bar{d}(a,b) > 2$ **Undirected Shortest-Path Metric** <Ref id="11.1.2" label="§11.1.2" /> through the assignment $\mathcal{G}_{ab} = \frac{1}{2}(1 - W_1(\mu_a, \mu_b))$, which quantifies the geometric potential of the acausal vacuum.
-4.  **Causal Antisymmetry:** The tensor field satisfies the strict antisymmetry condition $\mathcal{G}_{ba} = -\mathcal{G}_{ab}$ for all pairs, inherited from the directional asymmetry of the transport cost under time reversal **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />, thereby encoding the causal orientation of the underlying spacetime foliation.
+4.  **Transport Symmetry and Causal Labeling:** By **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" />, optimal transport $W_1(\mu_a, \mu_b)$ over the undirected shortest-path metric $\bar{d}$ is symmetric ($W_1(\mu_b, \mu_a) = W_1(\mu_a, \mu_b)$), so $\mathcal{G}_{ba} = \mathcal{G}_{ab}$ yields a symmetric coarse-grained tensor distinct from the skew current $J_{ab} = T_{ab} - T_{ba}$, while causal orientation resides in the ordered future/past neighbor sectors $N^+(u), N^-(u)$ of $\mu_a$ and $\mu_b$.
 
 **In Plain English:**  
 Section 13.2.1 formalizes the properties of the QBD definition regarding discrete einstein tensor.
@@ -793,7 +793,7 @@ Section 13.2.5.1 formalizes the properties of the QBD proof regarding gravitatio
 :::
 
 This synthesis proof utilizes the structural results established in supporting **Curvature-Flux Coupling** <Ref id="13.2.4" label="§13.2.4" />.
- This synthesis proof utilizes the structural results established in supporting **Gravitational Coupling Scale** <Ref id="13.2.5" label="§13.2.5" />.
+This synthesis proof utilizes the structural results established in supporting **Gravitational Coupling Scale** <Ref id="13.2.5" label="§13.2.5" />.
 **I. The Field Hypothesis**
 It is asserted that the local geometric curvature $\mathcal{G}_{ab}$ and the complexity flux $T_{ab}$ satisfy the linear constitutive relation $\mathcal{G}_{ab} = \kappa T_{ab}$ at the homeostatic fixed point. This relation is tested against the constraints of stationary action, local conservation, and entropic exclusion of fine-tuning.
 
@@ -832,11 +832,11 @@ Section 13.2.6 formalizes the properties of the QBD proof regarding emergent fie
 :::note[**Verification of the Discrete Field Equation via Exact Topological Response and Statistical Regression**]
 :::
 
-Verification of the discrete coupling relations established in the **Derivation from Stationary Action**  **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" /> is based on the following protocols:
+Verification of the discrete coupling relations established in **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" /> is based on the following protocols:
 
 1.  **Deterministic Response Evaluation:** The algorithm constructs a minimal three-node graph representing a closed 3-cycle to compute the exact coupling constant in the absence of noise.
 2.  **Statistical Permittivity Simulation:** The protocol simulates a statistical ensemble of edge configurations subject to vacuum fluctuations and Poissonian noise.
-3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept. This verifies the result established in  **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" />.
+3.  **Regression Analysis:** The metric performs a linear regression on the simulated curvature and stress-energy tensors to extract the effective coupling slope and vacuum intercept. This verifies the result established in **Emergent Field Equations** <Ref id="13.2.6" label="§13.2.6" />.
 
 ```python
 import numpy as np
@@ -936,26 +936,17 @@ def protocol_a_exact_mechanism():
     print("Protocol A: Exact Mechanism (3-Node Topology Change)")
     print("-" * 65)
     
-    # Setup: 3 Nodes
-    nodes = [0, 1, 2]
-    # Fixed Distance Metric (Undirected Shortest Path)
-    # 0-1 (1), 1-2 (1), 0-2 (2 if chain, 1 if cycle? No, metric is background fixed for variation)
-    # To check the tensor G_ab on edge (0,1), use the underlying metric d(0,2)=2.
-    d_mat = {
-        0: {0:0, 1:1, 2:2},
-        1: {0:1, 1:0, 2:1},
-        2: {0:2, 1:1, 2:0}
-    }
-    
-    # State 0: Vacuum Chain (0->1->2)
-    G0 = nx.DiGraph([(0,1), (1,2)])
-    G_vac = compute_curvature_exact(G0, 0, 1, d_mat)
+    # State 0: Vacuum Chain (0->1->2), where undirected distance gives d_bar(0,2) = 2
+    G0 = nx.DiGraph([(0, 1), (1, 2)])
+    d_mat_0 = dict(nx.all_pairs_shortest_path_length(G0.to_undirected()))
+    G_vac = compute_curvature_exact(G0, 0, 1, d_mat_0)
     T_vac = 0.0 # No net creation
     
-    # State 1: Active Cycle (0->1->2->0)
-    # The flux T increases by 1 unit (net addition of edge 2->0 driving the cycle)
-    G1 = nx.DiGraph([(0,1), (1,2), (2,0)])
-    G_act = compute_curvature_exact(G1, 0, 1, d_mat)
+    # State 1: Active Cycle (0->1->2->0), recomputing d_bar on the closed cycle gives d_bar(0,2) = 1
+    # Because mu_0 = mu_1 = (1/3, 1/3, 1/3) on G1, W_1 = 0 identically regardless of d_bar(0,2)
+    G1 = nx.DiGraph([(0, 1), (1, 2), (2, 0)])
+    d_mat_1 = dict(nx.all_pairs_shortest_path_length(G1.to_undirected()))
+    G_act = compute_curvature_exact(G1, 0, 1, d_mat_1)
     T_act = 1.0 
     
     # Differential Analysis
@@ -1488,7 +1479,7 @@ Section 13.3.3 formalizes the properties of the QBD lemma regarding action invar
 :::tip[**Demonstration of Symmetry via Metric and Measure Isomorphisms**]
 :::
 
-For any permutation $\pi: V \to V$ of the vertex labels, the action of the permuted graph $G' = \pi(G)$ satisfies:.  **Action Invariance** <Ref id="13.3.3" label="§13.3.3" /> and  **Discrete Divergence-Free Geometry** <Ref id="13.3.2" label="§13.3.2" />
+For any permutation $\pi: V \to V$ of the vertex labels, under **Action Invariance** <Ref id="13.3.3" label="§13.3.3" /> (supporting **Discrete Divergence-Free Geometry** <Ref id="13.3.2" label="§13.3.2" />), the action of the permuted graph $G' = \pi(G)$ satisfies:
 
 $$
 \mathcal{S}[G'] = \mathcal{S}[G].
@@ -1805,7 +1796,7 @@ Section 13.3.6 formalizes the properties of the QBD proof regarding discrete div
 :::note[**Verification of the Discrete Bianchi Identity via Divergence Minimization**]
 :::
 
-Verification of the geometric divergence conservation established in the **Identity Derivation**  **Discrete Divergence-Free Geometry** <Ref id="13.3.5" label="§13.3.5" /> is based on the following protocols:
+Verification of the geometric divergence conservation established in **Bianchi Error Scaling** <Ref id="13.3.5" label="§13.3.5" /> (supporting **Discrete Divergence-Free Geometry** <Ref id="13.3.6" label="§13.3.6" />) is based on the following protocols:
 
 1.  **Conserved Flux Generation:** The algorithm constructs regular graphs and injects strictly conserved stress-energy flux configurations generated from closed cycle flows.
 2.  **Geometric Curvature Mapping:** The protocol maps the conserved flux to the discrete Einstein curvature tensor using the Einstein-Hilbert coupling constant.
@@ -1845,14 +1836,16 @@ def verify_bianchi_identity():
                 cycle = nx.find_cycle(G, source=np.random.choice(range(N)))
                 flow_mag = np.random.normal(0, 1)
 
+                # Finite skew 1-form cycle circulation test (§13.2.8 item 2),
+                # distinct from symmetric transport curvature G_ba = G_ab (§13.2.1).
                 for u, v in cycle:
                     T_matrix[u, v] += flow_mag
-                    T_matrix[v, u] -= flow_mag # Antisymmetry
+                    T_matrix[v, u] -= flow_mag # Skew cycle-current circulation
             except:
                 pass
 
-        # 3. Compute Geometry G_ab via Field Equation
-        # G_ab = kappa * T_ab (plus G_vac, which is isotropic/divergence-free)
+        # 3. Compute Skew Proxy G_ab via Field Equation
+        # G_matrix = kappa * T_matrix tests conserved cycle circulation sum_v G_uv = 0
         kappa = 0.3333
         G_matrix = kappa * T_matrix
 

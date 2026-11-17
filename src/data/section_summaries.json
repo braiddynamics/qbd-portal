@@ -717,7 +717,7 @@
   "14.6": {
     "id": "14.6",
     "title": "Formal Synthesis",
-    "summary": "The emergent Lorentzian geometry $(M, g_{\\mu\\nu})$ is established under the 3+1 ADM Decomposition, identifying the coordinate Lapse $N$ and Shift $N^i$ as the local update rates and spatial offsets of the underlying causal network."
+    "summary": "The emergent Lorentzian geometry $(M, g_{\\mu\\nu})$ is established under the 3+1 ADM Decomposition, identifying the coordinate Lapse $N$ and Shift $\\beta^i$ as the local update rates and spatial offsets of the underlying causal network."
   },
   "15.5": {
     "id": "15.5",
@@ -737,7 +737,7 @@
   "16.5": {
     "id": "16.5",
     "title": "Formal Synthesis",
-    "summary": "The structural bedrock of holographic duality establishes spacetime geometry as an exact informational isomorphism within Quantum Braid Dynamics. The renormalization group flow of the discrete causal graph maps isomorphically to a multi-scale entanglement renormalization ansatz (**Causal Tensor Network** <Ref id=\"16.1.1\" label=\"§16.1.1\" />). Within this discrete network, minimal graph cut capacities geometrically measure boundary entanglement entropy, securing the holographic area law (**Ryu-Takayanagi Correspondence** <Ref id=\"16.1.2\" label=\"§16.1.2\" />) directly from bipartite Schmidt rank bounds and code-space isometries. Continuous anti-de Sitter geodesics emerge naturally from graph-theoretic shortest paths across the causal web."
+    "summary": "The structural bedrock of holographic duality establishes spacetime geometry as an exact informational isomorphism within Quantum Braid Dynamics. The renormalization group flow of the discrete causal graph maps isomorphically to a Multi-scale Entanglement Renormalization Ansatz (**Causal Tensor Network** <Ref id=\"16.1.1\" label=\"§16.1.1\" />). Within this discrete network, minimal graph cut capacities geometrically measure boundary entanglement entropy, securing the holographic area law (**Ryu-Takayanagi Correspondence** <Ref id=\"16.1.2\" label=\"§16.1.2\" />) directly from bipartite Schmidt rank bounds and code-space isometries. Continuous anti-de Sitter geodesics emerge naturally from graph-theoretic shortest paths across the causal web."
   },
   "17.5": {
     "id": "17.5",

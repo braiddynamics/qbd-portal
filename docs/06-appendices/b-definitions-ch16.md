@@ -109,7 +109,7 @@ Section 16.1.4 formalizes the properties of the QBD lemma regarding min-cut entr
 :::tip[**Direct Verification of Uniform Schmidt Spectra through Isometric Layer Action**]
 :::
 
-Let $\gamma_{\text{min}}$ be the minimal surface minimizing $|\text{Cut}(\gamma)|$. In accordance with **Schmidt Rank Capacity Bound** <Ref id="16.1.3" label="§16.1.3" />, the entitlement entropy satisfies $S(\rho_A) \le |\text{Cut}(\gamma_{\text{min}})| \ln \chi$.
+Let $\gamma_{\text{min}}$ be the minimal surface minimizing $|\text{Cut}(\gamma)|$. In accordance with **Schmidt Rank Capacity Bound** <Ref id="16.1.3" label="§16.1.3" />, the entanglement entropy satisfies $S(\rho_A) \le |\text{Cut}(\gamma_{\text{min}})| \ln \chi$.
 
 **I. Uniform Singular Values from Isometric Contraction**
 
@@ -661,9 +661,9 @@ Section 16.2.7 formalizes the properties of the QBD proof regarding maximum info
 
 Verification of the holographic saturation limit established by **Maximum Informational Density (The Bound)** <Ref id="16.2.2" label="§16.2.2" /> is based on the following simulation protocol:
 
-1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and establishes a spherical trapped surface to represent a black hole horizon (**Bulk Saturation Limit** <Ref id="16.2.1" label="§16.2.1" />).
-2.  **Plaquette Cycle Counting:** The protocol counts the number of exposed fundamental boundary 3-cycles to compute the discrete horizon area (**Holographic Screen Mechanism** <Ref id="16.2.4" label="§16.2.4" />).
-3.  **Entropy Scaling Check:** The metric tracks the holographic entropy to verify quadratic area scaling against cubic volume growth (**Maximum Informational Density (The Bound)** <Ref id="16.2.2" label="§16.2.2" />).
+1.  **Horizon Lattice Generation:** The algorithm constructs a 3D cubic lattice and defines a spherical trapped surface ($x^2 + y^2 + z^2 \le R^2$) to represent a black hole horizon (**Bulk Saturation Limit** <Ref id="16.2.1" label="§16.2.1" />).
+2.  **Plaquette Cycle Counting:** The protocol approximates horizon stabilizer plaquettes by counting exposed exterior boundary faces on the cubic ball, assigning one bit ($\ln 2$) and plaquette area quantum $a_0 = 4\ln 2\,\ell_P^2$ per face alongside the continuum sphere surface area $4\pi R^2\ell_P^2$ (**Holographic Screen Mechanism** <Ref id="16.2.4" label="§16.2.4" />).
+3.  **Entropy Scaling Check:** Power-law fits verify quadratic surface area-law scaling ($d_{\text{ent}} \approx 1.95$) against cubic interior volume growth ($d_{\text{vol}} \approx 2.95$), confirming horizon scaling with $S/A = \ln(2)/a_0 = 0.2500$ under **Maximum Informational Density (The Bound)** <Ref id="16.2.2" label="§16.2.2" />.
 
 ```python
 import networkx as nx
@@ -671,9 +671,9 @@ import numpy as np
 from scipy.optimize import curve_fit
 
 def verify_bekenstein_scaling():
-    """§16.2.7.1: count horizon stabilizer plaquettes and check S/A against the Bekenstein coefficient 1/4."""
+    """§16.2.7.1: count exposed lattice horizon faces, verify d_ent ~ 2 vs d_vol ~ 3, and check S/A normalization."""
     print("Trapped Horizon Stabilizer Plaquette Microstate Counting (Section 16.2.7.1)")
-    print("=" * 75)
+    print("=" * 85)
     
     radii = [2, 3, 4, 5, 6, 7, 8]
     ell_P = 1.0  # Planck length
@@ -683,10 +683,11 @@ def verify_bekenstein_scaling():
     results_Vol = []
     results_Cycles = []
     results_Area = []
+    results_Area_Sphere = []
     results_S_micro = []
     
-    print(f"{'Radius (R)':<10} | {'Volume (Nodes)':<14} | {'3-Cycles (N)':<14} | {'Area A (ell_P^2)':<18} | {'Entropy S_micro':<16} | {'S / A Ratio'}")
-    print("-" * 85)
+    print(f"{'Radius (R)':<10} | {'Volume (Nodes)':<14} | {'Boundary Faces':<14} | {'Area A (ell_P^2)':<18} | {'Entropy S_micro':<16} | {'S / A Ratio'}")
+    print("-" * 92)
 
     for R in radii:
         G = nx.Graph()
@@ -711,7 +712,7 @@ def verify_bekenstein_scaling():
                 if nb in G.nodes():
                     G.add_edge(n, nb)
 
-        # Count 3-cycle stabilizer plaquettes exposed on the trapped surface
+        # Approximate horizon plaquettes via exposed exterior boundary faces on the 3D cubic ball
         N_cycles = 0
         for n in nodes:
             x, y, z = n
@@ -726,10 +727,11 @@ def verify_bekenstein_scaling():
         # Microstate Degeneracy Omega = 2^N_cycles => S_micro = N_cycles * ln(2)
         S_micro = N_cycles * np.log(2.0)
         
-        # Discrete Horizon Area A = N_cycles * a_0
+        # Discrete Horizon Area A = N_cycles * a_0 (with a_0 = 4 ln(2) ell_P^2 by definition)
         Area_A = N_cycles * a_0
+        Area_Sphere = 4.0 * np.pi * (R**2) * (ell_P**2)
         
-        # Bekenstein Ratio S / A
+        # Bekenstein Ratio S / A (= ln(2) / a_0 = 0.2500 identically for this plaquette area quantum)
         ratio_S_A = S_micro / Area_A
         
         Volume_V = len(nodes)
@@ -738,13 +740,14 @@ def verify_bekenstein_scaling():
         results_Vol.append(Volume_V)
         results_Cycles.append(N_cycles)
         results_Area.append(Area_A)
+        results_Area_Sphere.append(Area_Sphere)
         results_S_micro.append(S_micro)
         
         print(f"{R:<10} | {Volume_V:<14} | {N_cycles:<14} | {Area_A:<18.4f} | {S_micro:<16.4f} | {ratio_S_A:.4f}")
 
-    print("-" * 85)
+    print("-" * 92)
 
-    # Power law fits: Vol ~ R^d_vol vs Area ~ R^d_area
+    # Power law fits: Vol ~ R^d_vol vs Boundary Faces ~ R^d_ent
     def power_law(x, a, b):
         return a * (x**b)
     
@@ -755,16 +758,21 @@ def verify_bekenstein_scaling():
     exp_ent = popt_s[1]
     
     mean_ratio = np.mean(np.array(results_S_micro) / np.array(results_Area))
+    mean_sphere_density = np.mean(np.array(results_Cycles) / np.array(results_Area_Sphere))
+    assert 2.8 < exp_vol < 3.2
+    assert 1.8 < exp_ent < 2.2
+    assert np.isclose(mean_ratio, 0.25)
     
     print(f"Lattice Geometry & Microstate Counting Analysis:")
-    print(f"  Volume Scaling Exponent (d_vol): {exp_vol:.4f}  (Expected ~ 3.0)")
-    print(f"  Entropy Scaling Exponent (d_ent): {exp_ent:.4f}  (Expected ~ 2.0)")
-    print(f"  Bekenstein Coeff (S / A):        {mean_ratio:.4f}  (Exact Target = 0.2500)")
-    print("-" * 85)
+    print(f"  Volume Scaling Exponent (d_vol):      {exp_vol:.4f}  (Expected ~ 3.0)")
+    print(f"  Entropy Scaling Exponent (d_ent):     {exp_ent:.4f}  (Expected ~ 2.0)")
+    print(f"  Mean Sphere Face Density (N/4piR^2):  {mean_sphere_density:.4f}  ell_P^-2")
+    print(f"  Plaquette Coeff (ln(2)/a_0 = S/A):    {mean_ratio:.4f}  (Exact Target = 0.2500)")
+    print("-" * 92)
     print("checks:")
-    print("1. Trapped Plaquette Cycle Counting  : pass (N_cycles Identified)")
+    print("1. Trapped Surface Area-Law Scaling   : pass (d_ent ~ 1.95 vs d_vol ~ 2.95)")
     print("2. Microstate Degeneracy Entropy      : pass (S = N * ln 2)")
-    print("3. Bekenstein Bound Saturation        : pass (S/A = 1/(4 ell_P^2) = 0.2500)")
+    print("3. Plaquette Area Quantum Calibration : pass (S/A = ln(2)/a_0 = 0.2500)")
     print("=" * 85)
 
 if __name__ == "__main__":
@@ -775,9 +783,9 @@ if __name__ == "__main__":
 
 ```text
 Trapped Horizon Stabilizer Plaquette Microstate Counting (Section 16.2.7.1)
-===========================================================================
-Radius (R) | Volume (Nodes) | 3-Cycles (N)   | Area A (ell_P^2)   | Entropy S_micro  | S / A Ratio
--------------------------------------------------------------------------------------
+=====================================================================================
+Radius (R) | Volume (Nodes) | Boundary Faces | Area A (ell_P^2)   | Entropy S_micro  | S / A Ratio
+--------------------------------------------------------------------------------------------
 2          | 33             | 78             | 216.2619           | 54.0655          | 0.2500
 3          | 123            | 174            | 482.4304           | 120.6076         | 0.2500
 4          | 257            | 294            | 815.1411           | 203.7853         | 0.2500
@@ -785,16 +793,17 @@ Radius (R) | Volume (Nodes) | 3-Cycles (N)   | Area A (ell_P^2)   | Entropy S_mi
 6          | 925            | 678            | 1879.8152          | 469.9538         | 0.2500
 7          | 1419           | 894            | 2478.6943          | 619.6736         | 0.2500
 8          | 2109           | 1182           | 3277.1999          | 819.3000         | 0.2500
--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
 Lattice Geometry & Microstate Counting Analysis:
-  Volume Scaling Exponent (d_vol): 2.9548  (Expected ~ 3.0)
-  Entropy Scaling Exponent (d_ent): 1.9467  (Expected ~ 2.0)
-  Bekenstein Coeff (S / A):        0.2500  (Exact Target = 0.2500)
--------------------------------------------------------------------------------------
+  Volume Scaling Exponent (d_vol):      2.9548  (Expected ~ 3.0)
+  Entropy Scaling Exponent (d_ent):     1.9467  (Expected ~ 2.0)
+  Mean Sphere Face Density (N/4piR^2):  1.5028  ell_P^-2
+  Plaquette Coeff (ln(2)/a_0 = S/A):    0.2500  (Exact Target = 0.2500)
+--------------------------------------------------------------------------------------------
 checks:
-1. Trapped Plaquette Cycle Counting  : pass (N_cycles Identified)
+1. Trapped Surface Area-Law Scaling   : pass (d_ent ~ 1.95 vs d_vol ~ 2.95)
 2. Microstate Degeneracy Entropy      : pass (S = N * ln 2)
-3. Bekenstein Bound Saturation        : pass (S/A = 1/(4 ell_P^2) = 0.2500)
+3. Plaquette Area Quantum Calibration : pass (S/A = ln(2)/a_0 = 0.2500)
 =====================================================================================
 ```
 
@@ -808,7 +817,7 @@ Section 16.2.7.1 formalizes the properties of the QBD calculation regarding beke
 :::tip[**Formalization of the Bulk Domain of Dependence Bounded by Minimal Surfaces**]
 :::
 
-The **Entanglement Wedge** $\mathcal{W}_E(A)$ is defined as the bulk spatial domain bounded by boundary subregion $A$ and its associated Ryu-Takayanagi minimal surface $\gamma_A$.
+The **Entanglement Wedge** $\mathcal{W}_E(A)$ is defined as the 4D bulk causal domain of dependence $D[r_A]$ determined by a constant-time spatial homology slice $r_A$ bounded by boundary subregion $A$ and its associated Ryu-Takayanagi minimal surface $\gamma_A$.
 
 1.  **Boundary Subregion:** Let $A \subset V_{\partial}$ be a connected subset of boundary vertices at the ultraviolet cutoff scale $\ell_0$.
 2.  **Minimal Surface Locus:** Let $\gamma_A$ be the minimal graph cut separating $A$ from its complement $A^c = V_{\partial} \setminus A$, satisfying the Ryu-Takayanagi area minimization condition:
@@ -817,10 +826,10 @@ The **Entanglement Wedge** $\mathcal{W}_E(A)$ is defined as the bulk spatial dom
     \text{Area}(\gamma_A) = \min_{\Sigma \sim A} \text{Area}(\Sigma)
     $$
 
-3.  **Wedge Domain:** The **Entanglement Wedge** $\mathcal{W}_E(A)$ is the set of all bulk vertices $v \in V(G_{\text{bulk}})$ contained within the homology region $r_A$ bounded by $A \cup \gamma_A$:
+3.  **Wedge Domain:** Let $r_A \subset G_{\Sigma}$ be the spatial homology region on a constant-time slice satisfying $\partial r_A = A \cup \gamma_A$. The **Entanglement Wedge** $\mathcal{W}_E(A)$ is the 4D bulk domain of dependence of $r_A$ (reducing to $\{ v \in V(G_{\Sigma}) : v \in r_A \}$ on an equal-time slice):
 
     $$
-    \mathcal{W}_E(A) = \left\{ v \in V(G_{\text{bulk}}) \ : \ \partial r_A = A \cup \gamma_A \right\}
+    \mathcal{W}_E(A) \equiv D[r_A], \qquad \partial r_A = A \cup \gamma_A
     $$
 
 **In Plain English:**  
@@ -939,7 +948,7 @@ Section 16.3.4.1 formalizes the properties of the QBD proof regarding discrete a
 :::info[**Establishment of Fault-Tolerant Quantum Error Correction Thresholds via Bulk Geometries**]
 :::
 
-Suppose $\mathcal{H}_{\text{code}} \subset \mathcal{H}_{\text{boundary}}$ is the subspace of boundary states corresponding to smooth semiclassical bulk geometries. Then erasure of boundary subregion $A^c$ leaves bulk operators in $\mathcal{W}_E(A)$ perfectly recoverable with Unitary fidelity $F = 1.0$.
+Suppose $\mathcal{H}_{\text{code}} \subset \mathcal{H}_{\text{boundary}}$ is the subspace of boundary states corresponding to smooth semiclassical bulk geometries. Then erasure of boundary subregion $A^c$ leaves bulk operators in $\mathcal{W}_E(A)$ perfectly recoverable with unitary fidelity $F = 1.0$.
 
 **In Plain English:**  
 Section 16.3.5 formalizes the properties of the QBD lemma regarding code-space protection against boundary erasure.
@@ -1013,9 +1022,9 @@ Section 16.3.6 formalizes the properties of the QBD proof regarding subregion-su
 
 Verification of the Subregion-Subregion Duality established in **Subregion-Subregion Duality** <Ref id="16.3.2" label="§16.3.2" /> is based on the following simulation protocol:
 
-1. **System Initialization**: Define radial AdS depth $z$ and boundary subregion size $A$ (**Entanglement Wedge** <Ref id="16.3.1" label="§16.3.1" />).
-2. **Wedge Evaluation**: Determine whether vertex $(x,z)$ lies within the Entanglement Wedge $\mathcal{W}_E(A)$ bounded by $\gamma_A$ (**Bulk-to-Boundary Operator Reconstruction** <Ref id="16.3.3" label="§16.3.3" />).
-3. **Fidelity Benchmark**: Evaluate reconstruction fidelity $F$ across inside-wedge vs. outside-wedge regimes (**Subregion-Subregion Duality** <Ref id="16.3.2" label="§16.3.2" />).
+1. **System Initialization**: Construct a UV-regulated positive-definite $\mathrm{CFT}_2$ two-point covariance matrix $C_{ij}$ on $N = 100$ boundary sites ($\epsilon_{\mathrm{UV}} = 2\sin(\pi/N)$) together with radial AdS depth $z$ and boundary subregion fraction $A$ (**Entanglement Wedge** <Ref id="16.3.1" label="§16.3.1" />).
+2. **Spacelike Shadow Kernel & Pseudoinverse Recovery**: Assemble the compactly supported spacelike HKLL smearing vector $K_j$ over the boundary shadow $\theta_{\mathrm{shadow}} = \pi f_{\mathrm{RT}}$ (**Bulk-to-Boundary Operator Reconstruction** <Ref id="16.3.3" label="§16.3.3" />) and solve the subregion recovery weights $w_A = C_{AA}^+ C_{A,\cdot} K$ explicitly in the $C$-inner product.
+3. **Fidelity Benchmark**: Evaluate the normalized covariance fidelity $F(A) = (w_A^T C_{AA} w_A) / W_{\mathrm{total}}$ uniformly inside and outside $\mathcal{W}_E(A)$ (**Subregion-Subregion Duality** <Ref id="16.3.2" label="§16.3.2" />).
 
 ```python
 import numpy as np
@@ -1028,18 +1037,15 @@ def run_entanglement_wedge_reconstruction():
     N_boundary = 100
     Delta = 2.0
     C_Delta = (Delta - 1.0) / np.pi  # Normalized HKLL coefficient for d=2
+    eps_uv = 2.0 * np.sin(np.pi / N_boundary)
     
-    # Construct CFT_2 conformal two-point correlation matrix C_ij on a circle
-    sites = np.arange(N_boundary)
+    # Construct UV-regulated positive-definite CFT_2 two-point correlation matrix C_ij on a circle
     C_matrix = np.zeros((N_boundary, N_boundary))
-    
     for i in range(N_boundary):
         for j in range(N_boundary):
-            if i == j:
-                C_matrix[i, j] = 1.0
-            else:
-                dist = np.sin(np.pi * np.abs(i - j) / N_boundary)
-                C_matrix[i, j] = 1.0 / ((2.0 * dist)**(2.0 * Delta))
+            chord = 2.0 * np.sin(np.pi * abs(i - j) / N_boundary)
+            C_matrix[i, j] = (eps_uv**(2.0 * Delta)) / ((chord**2 + eps_uv**2)**Delta)
+    assert np.linalg.eigvalsh(C_matrix).min() > 0.0
 
     z_bulk_list = [0.10, 0.30, 0.50, 0.70, 0.90]
     subregion_fractions = [0.20, 0.40, 0.60, 0.80]
@@ -1051,34 +1057,43 @@ def run_entanglement_wedge_reconstruction():
     for z in z_bulk_list:
         # Ryu-Takayanagi minimal surface boundary coverage threshold for depth z: f_RT = (2/pi) * arcsin(z)
         f_RT_threshold = (2.0 / np.pi) * np.arcsin(z)
+        theta_shadow = np.pi * f_RT_threshold
         
-        # Discrete HKLL smearing kernel K_j(x_0, z)
+        # Compactly supported spacelike-shadow HKLL smearing kernel K_j(x_0, z) matching §16.3.4
         K_vector = np.zeros(N_boundary)
         for j in range(N_boundary):
-            x_dist = np.abs(j - center_site)
-            x_dist_phys = N_boundary * np.sin(np.pi * x_dist / N_boundary) / np.pi
-            K_vector[j] = C_Delta * (z / (z**2 + x_dist_phys**2))**Delta
+            d_site = min(abs(j - center_site), N_boundary - abs(j - center_site))
+            theta_j = 2.0 * np.pi * d_site / N_boundary
+            if theta_j <= theta_shadow:
+                K_vector[j] = C_Delta * (1.0 - (theta_j / theta_shadow)**2)**(Delta - 1.0)
 
         W_total = float(K_vector.T @ C_matrix @ K_vector)
+        assert W_total > 0.0
         
         for frac in subregion_fractions:
             inside_wedge = frac >= f_RT_threshold
+            half_width = int(round(frac * N_boundary / 2))
+            idx_A = [(center_site + k) % N_boundary for k in range(-half_width, half_width + 1)]
+            C_AA = C_matrix[np.ix_(idx_A, idx_A)]
+
+            # Solve optimal CFT subregion recovery via pseudoinverse map in the C_matrix metric
+            w_A = np.linalg.pinv(C_AA, rcond=1e-10) @ (C_matrix[idx_A, :] @ K_vector)
+            fidelity = float(w_A.T @ C_AA @ w_A) / W_total
             
             if inside_wedge:
-                fidelity = 1.000000
+                assert np.isclose(fidelity, 1.0, atol=1e-6)
                 status = "pass (QECC Protected)"
             else:
-                # Outside wedge: Partial code recovery capacity capped by subregion size ratio
-                fidelity = float(np.sin(np.pi * frac / (2.0 * f_RT_threshold))**2)
+                assert fidelity < 1.0 - 1e-4
                 status = "fail (Outside Wedge)"
                 
             print(f"{z:<14.2f} | {frac:<18.2f} | {f_RT_threshold:<14.4f} | {str(inside_wedge):<14} | {fidelity:<14.6f} | {status}")
 
     print("-" * 90)
     print("checks:")
-    print("1. CFT Two-Point Matrix Assembly       : pass (Conformal Correlation Matrix C_ij)")
-    print("2. HKLL Smearing Operator Norm        : pass (Continuous Boundary Inversion)")
-    print("3. Entanglement Wedge Reconstruction  : pass (F(A) = 1.000000 inside W_E(A))")
+    print("1. CFT Two-Point Matrix Assembly       : pass (Positive-Definite Regulated C_ij)")
+    print("2. HKLL Shadow & Covariance Norm       : pass (Compact Shadow Kernel, W_total > 0)")
+    print("3. Matrix Pseudoinverse Recovery       : pass (F(A) = 1.000000 inside W_E(A))")
     print("=" * 80)
 
 if __name__ == "__main__":
@@ -1100,23 +1115,23 @@ Bulk Depth (z) | Subregion A Frac   | RT Threshold   | Inside Wedge   | Fidelity
 0.30           | 0.40               | 0.1940         | True           | 1.000000       | pass (QECC Protected)
 0.30           | 0.60               | 0.1940         | True           | 1.000000       | pass (QECC Protected)
 0.30           | 0.80               | 0.1940         | True           | 1.000000       | pass (QECC Protected)
-0.50           | 0.20               | 0.3333         | False          | 0.654508       | fail (Outside Wedge)
+0.50           | 0.20               | 0.3333         | False          | 0.918003       | fail (Outside Wedge)
 0.50           | 0.40               | 0.3333         | True           | 1.000000       | pass (QECC Protected)
 0.50           | 0.60               | 0.3333         | True           | 1.000000       | pass (QECC Protected)
 0.50           | 0.80               | 0.3333         | True           | 1.000000       | pass (QECC Protected)
-0.70           | 0.20               | 0.4936         | False          | 0.353219       | fail (Outside Wedge)
-0.70           | 0.40               | 0.4936         | False          | 0.913821       | fail (Outside Wedge)
+0.70           | 0.20               | 0.4936         | False          | 0.722137       | fail (Outside Wedge)
+0.70           | 0.40               | 0.4936         | False          | 0.991416       | fail (Outside Wedge)
 0.70           | 0.60               | 0.4936         | True           | 1.000000       | pass (QECC Protected)
 0.70           | 0.80               | 0.4936         | True           | 1.000000       | pass (QECC Protected)
-0.90           | 0.20               | 0.7129         | False          | 0.181963       | fail (Outside Wedge)
-0.90           | 0.40               | 0.7129         | False          | 0.595409       | fail (Outside Wedge)
-0.90           | 0.60               | 0.7129         | False          | 0.939412       | fail (Outside Wedge)
+0.90           | 0.20               | 0.7129         | False          | 0.534619       | fail (Outside Wedge)
+0.90           | 0.40               | 0.7129         | False          | 0.871356       | fail (Outside Wedge)
+0.90           | 0.60               | 0.7129         | False          | 0.994373       | fail (Outside Wedge)
 0.90           | 0.80               | 0.7129         | True           | 1.000000       | pass (QECC Protected)
 ------------------------------------------------------------------------------------------
 checks:
-1. CFT Two-Point Matrix Assembly       : pass (Conformal Correlation Matrix C_ij)
-2. HKLL Smearing Operator Norm        : pass (Continuous Boundary Inversion)
-3. Entanglement Wedge Reconstruction  : pass (F(A) = 1.000000 inside W_E(A))
+1. CFT Two-Point Matrix Assembly       : pass (Positive-Definite Regulated C_ij)
+2. HKLL Shadow & Covariance Norm       : pass (Compact Shadow Kernel, W_total > 0)
+3. Matrix Pseudoinverse Recovery       : pass (F(A) = 1.000000 inside W_E(A))
 ================================================================================
 ```
 
@@ -1352,15 +1367,12 @@ def run_fefferman_graham_asymptotics():
     G_bulk = 1.0 / (16.0 * np.pi)  # Normalized 16piG = 1
     g_3_target = 0.5  # Boundary stress tensor source amplitude
     
-    # Define the radial metric ODE for g_00(z) in Fefferman-Graham coordinates:
-    # z^2 * g_00'' - 2 * z * g_00' + 6 * (g_00 - g_(0)00) = 0
+    # Define the homogeneous Fefferman-Graham radial ODE in d=3 (AdS_4 / CFT_3):
+    # z^2 * g_00'' - (d - 1) * z * g_00' = 0, with general solution g_(0)00 + z^d g_(d)00
     def metric_ode(z, y):
         # y[0] = g_00(z), y[1] = g_00'(z)
-        g_00 = y[0]
         g_00_prime = y[1]
-        
-        # Exact solution enforces g_00''(z) = 6 * z * g_3_target
-        g_00_double_prime = 6.0 * z * g_3_target
+        g_00_double_prime = (d - 1.0) * g_00_prime / z
         return [g_00_prime, g_00_double_prime]
 
     z_cutoffs = [0.1000, 0.0500, 0.0100, 0.0050, 0.0010]
@@ -1405,11 +1417,11 @@ Fefferman-Graham Metric ODE Integration & Holographic Stress Tensor (Section 16.
 ===========================================================================
 Radial Cutoff (z)    | g_(3)_00 Coefficient   | T_00^boundary      | First Law Error
 ---------------------------------------------------------------------------
-0.1000               | 0.500000               | 1.500000           | 1.66e-13
-0.0500               | 0.500000               | 1.500000           | 1.17e-12
-0.0100               | 0.500000               | 1.500000           | 1.52e-10
-0.0050               | 0.500000               | 1.500000           | 1.26e-09
-0.0010               | 0.500000               | 1.499999           | 1.81e-07
+0.1000               | 0.500000               | 1.500000           | 1.24e-11
+0.0500               | 0.500000               | 1.500000           | 5.03e-11
+0.0100               | 0.500000               | 1.500000           | 1.07e-09
+0.0050               | 0.500000               | 1.500000           | 4.95e-09
+0.0010               | 0.500000               | 1.500000           | 1.52e-07
 ---------------------------------------------------------------------------
 checks:
 1. Fefferman-Graham Asymptotic Convergence: pass (g_(3) extracted = 0.500000)
