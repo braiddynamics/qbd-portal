@@ -707,7 +707,7 @@ If the causal structure of the emergent continuum manifold $(M, g_{\mu\nu})$ is 
 :::tip[**Verification of Order Preservation substantiated by the Coincidence of Discrete and Continuous Light Cone Boundaries**]
 :::
 
-Specifically, let $\Phi: V \to M$ be the **spectral embedding** map  **Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />. For any two points $x, y \in M$, the point $x$ lies in the causal past of $y$ (denoted $x \in J^-(y)$) if and only if there exist sequences of vertices $\{u_n\}$ and $\{v_n\}$ in $G_n$ converging to $x$ and $y$ respectively, such that for all sufficiently large $n$, there exists a directed path from $u_n$ to $v_n$ in the graph. This isomorphism guarantees that the emergent General Relativity inherits the exact causal skeleton of the computational substrate, preserving the distinction between timelike, null, and spacelike separations without modification.
+Specifically, let $\Phi: V \to M$ be the **spectral embedding** map (**Consistently Weighted Laplacian** <Ref id="12.1.1" label="§12.1.1" />). For any two points $x, y \in M$, the point $x$ lies in the causal past of $y$ (denoted $x \in J^-(y)$) if and only if there exist sequences of vertices $\{u_n\}$ and $\{v_n\}$ in $G_n$ converging to $x$ and $y$ respectively, such that for all sufficiently large $n$, there exists a directed path from $u_n$ to $v_n$ in the graph. This isomorphism guarantees that the emergent General Relativity inherits the exact causal skeleton of the computational substrate, preserving the distinction between timelike, null, and spacelike separations without modification.
 
 The proof demonstrates that the transitive closure of the graph's directed edges maps bijectively to the causal future sets of the Lorentzian manifold in the thermodynamic limit.
 
@@ -768,9 +768,9 @@ Use the metric of **Lorentzian Metric** <Ref id="14.2.1" label="§14.2.1" /> in 
 $$
 \begin{aligned}
 \frac{\mathrm ds^2}{\mathrm dt^2}
-&=-c^2N^2+h_{ij}(v^i+N^i)(v^j+N^j),\\
+&=-c^2N^2+h_{ij}(v^i+\beta^i)(v^j+\beta^j),\\
 \mathrm ds^2\le0
-&\ \Longrightarrow\ h_{ij}(v^i+N^i)(v^j+N^j)\le c^2N^2.
+&\ \Longrightarrow\ h_{ij}(v^i+\beta^i)(v^j+\beta^j)\le c^2N^2.
 \end{aligned}
 $$
 
@@ -2376,7 +2376,7 @@ Q.E.D.
 :::note[**End of Chapter 14**]
 :::
 
-The emergent Lorentzian geometry $(M, g_{\mu\nu})$ is established under the 3+1 ADM Decomposition, identifying the coordinate Lapse $N$ and Shift $N^i$ as the local update rates and spatial offsets of the underlying causal network.
+The emergent Lorentzian geometry $(M, g_{\mu\nu})$ is established under the 3+1 ADM Decomposition, identifying the coordinate Lapse $N$ and Shift $\beta^i$ as the local update rates and spatial offsets of the underlying causal network.
 
 This implies that the Einstein Field Equations $G_{\mu\nu} = 8\pi G T_{\mu\nu}$ and continuous relativistic quantum field theory arise naturally from the thermodynamics of graph entanglement, where curvature is the network's entropy-maximization response. Yet, this model introduces a deep conceptual friction: while continuous field theory is successfully recovered, the underlying substrate remains strictly discrete, forcing the treatment of the continuous vacuum as an effective approximation. The delicate challenge remains of reconciling continuous diffeomorphism invariance with discrete graph updates.
 
@@ -2388,16 +2388,18 @@ Having established the local dynamics of space and time on the stage, we must no
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $M$ | Continuous Lorentzian manifold | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
-| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
-| $N$ | Lapse function (coordinate update rate) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |
-| $N^i$ | Shift vector (coordinate spatial offset) | [§14.1.2](/monograph/stage/time/14.1/#14.1.2) |
-| $K_{ij}$ | Extrinsic curvature tensor | [§14.1.5](/monograph/stage/time/14.1/#14.1.5) |
-| $\hat{H}$ | Hamiltonian constraint operator | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
-| $\vert\Psi\rangle$ | Wavefunction of the universe | [§14.3.2](/monograph/stage/time/14.3/#14.3.2) |
-| $\Lambda$ | Cosmological constant | [§14.3.5](/monograph/stage/time/14.3/#14.3.5) |
-| $S_{EE}$ | Entanglement entropy | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
-| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§14.4.2](/monograph/stage/time/14.4/#14.4.2) |
+| $N(x)$ | Lapse function (coordinate update rate) | [§14.1.1](/monograph/stage/time/14.1/#14.1.1) |
+| $g_{\mu\nu}$ | Lorentzian spacetime metric tensor | [§14.2.1](/monograph/stage/time/14.2/#14.2.1) |
+| $g_{ij}$ | Spatial Riemannian metric on hypersurfaces | [§14.2.1](/monograph/stage/time/14.2/#14.2.1) |
+| $\beta^i$ | Shift vector (coordinate spatial offset) | [§14.2.1](/monograph/stage/time/14.2/#14.2.1) |
+| $\phi(x)$ | Quantum field operator (operator-valued distribution) | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
+| $U(\Lambda, a)$ | Unitary Poincaré group representation | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
+| $P^\mu$ | Energy-momentum 4-vector generator | [§14.3.1](/monograph/stage/time/14.3/#14.3.1) |
+| $G_{\mu\nu}$ | Continuum Einstein tensor | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
+| $\Lambda$ | Cosmological constant | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
+| $T_{\mu\nu}$ | Continuous stress-energy tensor | [§14.4.1](/monograph/stage/time/14.4/#14.4.1) |
+| $S_{\text{ent}}$ | Vacuum entanglement entropy | [§14.4.2](/monograph/stage/time/14.4/#14.4.2) |
+| $\delta\langle K\rangle$ | Modular Hamiltonian expectation variation | [§14.4.2](/monograph/stage/time/14.4/#14.4.2) |
 | $G$ | Emergent gravitational constant | [§14.4.3](/monograph/stage/time/14.4/#14.4.3) |
 
 \newpage

@@ -255,7 +255,7 @@ $$
 
 Then $y=Rb$, and compactness of $R$ gives $Rb_t\to Rb$, contradicting the choice of $b_t$. A quantitative bound on $\varepsilon_t$ would require a quantitative comparison.
 
-Here $R_t$ acts as zero on the orthogonal complement of the embedded space. Write $r_k=(1+\lambda_k)^{-1}$ and $r_{t,k}=(1+\widetilde\lambda_{t,k})^{-1}$ for the positive eigenvalues of the two resolvents in descending order. For any unit $u\in H$,
+Here $R_t$ acts as zero on the orthogonal complement of the embedded space. Write $r_k=(1+\lambda_k)^{-1}$ and $r_{t,k}=(1+\widetilde{\lambda}_{t,k})^{-1}$ for the positive eigenvalues of the two resolvents in descending order. For any unit $u\in H$,
 
 $$
 \langle u,Ru\rangle-\varepsilon_t
@@ -275,7 +275,7 @@ $$
 For $\varepsilon_t<r_k/2$ the $k$th graph resolvent eigenvalue is positive and $r_{t,k}\ge r_k/2$. Hence
 
 $$
-\left|\widetilde\lambda_{t,k}-\lambda_k\right|
+\left|\widetilde{\lambda}_{t,k}-\lambda_k\right|
 =\left|\frac{1}{r_{t,k}}-\frac{1}{r_k}\right|
 =\frac{|r_{t,k}-r_k|}{r_{t,k}r_k}
 \le \frac{2\varepsilon_t}{r_k^2}.
@@ -1547,13 +1547,11 @@ The factor $1/4$ (in $d=4$) is the physical consequence of this equidistribution
 :::info[**Derivation of the Global Proportionality of Limit Tensor Fields from the Linearity of the Averaging Map Applied to the Discrete Field Equation**]
 :::
 
-Let the discrete curvature scalar $\mathcal{G}^{(t)}$ and flux scalar $\mathcal{T}^{(t)}$ satisfy the microscopic field equation $\mathcal{G}^{(t)}_e = \kappa \mathcal{T}^{(t)}_e$ identically for all edges $e \in E_t$. Then, the limiting smooth tensor fields $G_{\mu\nu}$ and $T_{\mu\nu}$ on the manifold $M$ satisfy the continuum Einstein Field Equations:
+Let the discrete curvature scalar $\mathcal{G}^{(t)}$ and flux scalar $\mathcal{T}^{(t)}$ satisfy the microscopic field identity $\mathcal{G}^{(t)}_e = \kappa \mathcal{T}^{(t)}_e$ identically for all edges $e \in E_t$, and suppose both coarse-grained tensor fields $\widetilde{\mathcal{G}}^{(t)}$ and $\widetilde{\mathcal{T}}^{(t)}$ share a common comparison space, normalization, and embedded measure $\nu_t \rightharpoonup \nu$ whose weak pairings converge to continuous limiting tensor fields $G_{\mu\nu}$ and $T_{\mu\nu}$ relative to the metric volume $\nu$. Then the limiting fields satisfy the pointwise Einstein Field Equations with the identical coupling constant $\kappa$ preserved unchanged across the scale transition:
 
 $$
-G_{\mu\nu}(x) = \kappa' T_{\mu\nu}(x) \quad \forall x \in M.
+G_{\mu\nu}(x) = \kappa T_{\mu\nu}(x) \quad \forall x \in M.
 $$
-
-The macroscopic coupling constant $\kappa'$ is related to the microscopic coupling $\kappa$ by the dimensional renormalization factor arising from the spherical averaging, $\kappa' = \kappa \cdot \frac{\ell_0^d}{V_{cell}}$, ensuring the preservation of the linear algebraic relationship between geometry and matter content across the scale transition.
 
 ### 12.2.5.1 Proof: EFE Convergence {#12.2.5.1}
 
@@ -1608,7 +1606,7 @@ Q.E.D.
 
 ### 12.2.5.2 Commentary: Physical Significance {#12.2.5.2}
 
-:::info[**Pointwise Emergence of Einstein Field Equations via Renormalized Averaging**]
+:::info[**Pointwise Emergence of Einstein Field Equations via Common-Measure Averaging**]
 :::
 
 A weak tensor limit carries the finite field identity through the tested pairing when the two fields use the same normalization and measure. If the limiting fields are continuous with respect to a metric volume, their distributional equality also gives equality as continuous tensors. A divergence comparison for the discrete approximants requires control of derivatives or a separate weak divergence pairing.
@@ -2036,16 +2034,23 @@ The stage is now set with a smooth continuous manifold and coarse-grained fields
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
 | $\tilde{\mathcal{L}}_t$ | Consistently weighted graph Laplacian | [§12.1.1](/monograph/stage/reconstruction/12.1/#12.1.1) |
-| $\tilde{\lambda}_k^{(t)}$ | Eigenvalues of $\tilde{\mathcal{L}}_t$ | [§12.1.3](/monograph/stage/reconstruction/12.1/#12.1.3) |
-| $\psi_k^{(t)}$ | Eigenfunctions of $\tilde{\mathcal{L}}_t$ | [§12.1.3](/monograph/stage/reconstruction/12.1/#12.1.3) |
-| $-\Delta_g$ | Laplace-Beltrami operator | [§12.1.2](/monograph/stage/reconstruction/12.1/#12.1.2) |
+| $-\Delta_g$ | Laplace-Beltrami operator | [§12.1.3.1](/monograph/stage/reconstruction/12.1/#12.1.3.1) |
+| $\widetilde{\lambda}_{t,k}$ | Eigenvalues of $\tilde{\mathcal{L}}_t$ | [§12.1.3.1](/monograph/stage/reconstruction/12.1/#12.1.3.1) |
+| $\psi_{t,k}$ | Eigenfunctions of $\tilde{\mathcal{L}}_t$ | [§12.1.3.1](/monograph/stage/reconstruction/12.1/#12.1.3.1) |
+| $f_k$ | Continuum eigenfunctions | [§12.1.3.1](/monograph/stage/reconstruction/12.1/#12.1.3.1) |
 | $p_t(x,y)$ | Heat kernel on graph/manifold | [§12.1.4](/monograph/stage/reconstruction/12.1/#12.1.4) |
-| $f_k$ | Continuum eigenfunctions | [§12.1.2](/monograph/stage/reconstruction/12.1/#12.1.2) |
-| $\widetilde{\mathcal{G}}^{(t)}_{ij}$ | Coarse-grained (averaged) Einstein tensor | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
-| $\widetilde{T}^{(t)}_{ij}$ | Coarse-grained (averaged) stress-energy tensor | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
+| $\rho_E(x)$ | Limiting spatial edge density | [§12.1.6](/monograph/stage/reconstruction/12.1/#12.1.6) |
+| $\omega_h$ | Rescaled edge measure on unit tangent bundle | [§12.1.6.1](/monograph/stage/reconstruction/12.1/#12.1.6.1) |
+| $\mathcal{A}_R$ | Tensorial averaging map on edge scalars | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
 | $\hat{n}_e$ | Unit direction vector of edge $e$ | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
 | $B(x,R)$ | Mesoscopic ball of radius $R$ | [§12.2.1](/monograph/stage/reconstruction/12.2/#12.2.1) |
-| $\kappa'$ | Continuum gravitational coupling constant | [§12.2.5](/monograph/stage/reconstruction/12.2/#12.2.5) |
+| $\widetilde{\mathcal{G}}_{ij}^{(t)}$ | Coarse-grained (averaged) Einstein tensor | [§12.2.5.1](/monograph/stage/reconstruction/12.2/#12.2.5.1) |
+| $\widetilde{\mathcal{T}}_{ij}^{(t)}$ | Coarse-grained (averaged) stress-energy tensor | [§12.2.5.1](/monograph/stage/reconstruction/12.2/#12.2.5.1) |
+| $\nu_t$ | Embedded common comparison measure | [§12.2.5.1](/monograph/stage/reconstruction/12.2/#12.2.5.1) |
+| $\mathcal{C}_x$ | Emergent causal light cone in tangent space $T_x M$ | [§12.3.1](/monograph/stage/reconstruction/12.3/#12.3.1) |
+| $D^\mu$ | Non-vanishing causal drift vector field | [§12.3.3.2](/monograph/stage/reconstruction/12.3/#12.3.3.2) |
+| $\Theta_c$ | Causal aperture half-angle ($\arctan K_{\max}$) | [§12.3.4](/monograph/stage/reconstruction/12.3/#12.3.4) |
+| $P^{\mu\nu}$ | Second-moment causal propagator tensor | [§12.3.5](/monograph/stage/reconstruction/12.3/#12.3.5) |
 
 \newpage
 # References

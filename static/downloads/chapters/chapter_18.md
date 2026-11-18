@@ -4156,23 +4156,27 @@ This synthesis resolves the classic fine-tuning paradoxes of early cosmology thr
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $G_0$ | Pre-geometric trivalent tree vacuum substrate | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
-| $\rho_3$ | Density of directed 3-cycles | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
-| $d_S$ | Spectral dimension of spatial slice | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
-| $d_H$ | Hausdorff dimension of spatial slice | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
-| $\Lambda$ | Vacuum permittivity constant | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
-| $P_{\text{alignment}}$ | Directed out-degree slot alignment probability | [§18.1.3](/monograph/output/inflation/18.1/#18.1.3) |
-| $N_{\text{active-precursors}}$ | Active directed 2-path precursors | [§18.1.4](/monograph/output/inflation/18.1/#18.1.4) |
-| $J_{\text{in}}$ | Spontaneous loop nucleation current | [§18.1.5](/monograph/output/inflation/18.1/#18.1.5) |
-| $d(u,v)$ | Reconstructed physical distance between vertices | [§18.2.3](/monograph/output/inflation/18.2/#18.2.3) |
-| $L(t)$ | Macroscopic geodesic separation | [§18.2.4](/monograph/output/inflation/18.2/#18.2.4) |
-| $H(t)$ | Emergent macroscopic Hubble parameter | [§18.2.5](/monograph/output/inflation/18.2/#18.2.5) |
-| $a(t)$ | Emergent macroscopic scale factor | [§18.2.5](/monograph/output/inflation/18.2/#18.2.5) |
-| $B(v, R)$ | Topological ball of radius $R$ at vertex $v$ | [§18.3.8](/monograph/output/inflation/18.3/#18.3.8) |
-| $\Delta$ | Discrete graph Laplacian | [§18.3.9](/monograph/output/inflation/18.3/#18.3.9) |
-| $\varepsilon, \eta$ | Dimensionless slow-roll parameters | [§18.4.2](/monograph/output/inflation/18.4/#18.4.2) |
-| $P_{\mathcal{R}}(k)$ | Primordial power spectrum of curvature perturbations | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
-| $n_s$ | Primordial spectral index | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
-| $\Omega_k(t)$ | Macroscopic spatial curvature parameter | [§18.5.1](/monograph/output/inflation/18.5/#18.5.1) |
-| $J$ | Jacobian eigenvalue at stable fixed point | [§18.5.1](/monograph/output/inflation/18.5/#18.5.1) |
-| $G_{uv}(s)$ | Relational causal propagator resolvent | [§18.5.9](/monograph/output/inflation/18.5/#18.5.9) |
+| $k, b$ | Root coordination number ($k=3$) and internal branching factor ($b=2$) | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $\rho_3$ | Directed 3-cycle intensive density in pre-geometric vacuum ($=0$) | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $d_S, d_H$ | Spectral and Hausdorff dimensions of emergent spatial slice ($1 \to 4$) | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $P_{\text{alignment}}$ | Directed out-degree slot alignment probability ($=2^{-6}=0.015625$) | [§18.1.3](/monograph/output/inflation/18.1/#18.1.3) |
+| $N_{\text{active-precursors}}$ | Active directed 2-path precursor abundance ($=2N$) | [§18.1.4](/monograph/output/inflation/18.1/#18.1.4) |
+| $\mathcal{P}$ | Topological parity projection operator breaking bipartite stasis | [§18.1.5](/monograph/output/inflation/18.1/#18.1.5) |
+| $J_{\text{in}}$ | Spontaneous loop nucleation current ($=N/32$) | [§18.1.7](/monograph/output/inflation/18.1/#18.1.7) |
+| $N_3(t)$ | Directed 3-cycle count (emergent macroscopic spatial 3-volume) | [§18.2.1](/monograph/output/inflation/18.2/#18.2.1) |
+| $a(t)$ | Emergent cosmic scale factor ($a(t) \propto N_3(t)^{1/3}$) | [§18.2.1](/monograph/output/inflation/18.2/#18.2.1) |
+| $H(t)$ | Emergent Hubble expansion parameter ($H(t) \equiv \dot{a}(t)/a(t)$) | [§18.2.2](/monograph/output/inflation/18.2/#18.2.2) |
+| $d(u,v)$ | Reconstructed physical distance between graph vertices | [§18.2.3](/monograph/output/inflation/18.2/#18.2.3) |
+| $L(t)$ | Macroscopic hypersurface geodesic separation | [§18.2.4](/monograph/output/inflation/18.2/#18.2.4) |
+| $\rho(t)$ | Intensive 3-cycle density ($N_3(t)/\lvert V(t) \rvert$) | [§18.3.1](/monograph/output/inflation/18.3/#18.3.1) |
+| $\rho_0$ | Frictionless cycle growth threshold density ($> 1/18 \approx 0.0556$) | [§18.3.2](/monograph/output/inflation/18.3/#18.3.2) |
+| $B(v, R)$ | Topological ball of radius $R$ at vertex $v$ | [§18.3.4](/monograph/output/inflation/18.3/#18.3.4) |
+| $\Delta_{G_n}$ | Discrete graph Laplacian converging to manifold Laplacian $\Delta_g$ | [§18.3.6](/monograph/output/inflation/18.3/#18.3.6) |
+| $\varepsilon$ | First inflationary slow-roll parameter ($-\dot{H}/H^2 \approx 0.0125$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
+| $\eta(\rho)$ | Second inflationary slow-roll parameter ($-\alpha_{\mathrm{sr}} F'(\rho)/H(\rho) \approx 0.0050$) | [§18.4.4](/monograph/output/inflation/18.4/#18.4.4) |
+| $n_s$ | Primordial scalar spectral index ($= 1 - 2\varepsilon - 2\eta \approx 0.965$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
+| $P_{\mathcal{R}}(k)$ | Primordial curvature perturbation power spectrum amplitude at horizon exit | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
+| $D_{\text{noise}}(\rho)$ | Steric-damped stochastic update noise diffusion coefficient | [§18.4.3.1](/monograph/output/inflation/18.4/#18.4.3.1) |
+| $\sigma_0^2$ | Bare quantum rewrite fluctuation amplitude | [§18.4.3.1](/monograph/output/inflation/18.4/#18.4.3.1) |
+| $\Omega_k(t)$ | Macroscopic spatial curvature density parameter ($\Omega_k(t) = \Omega_{k,0} e^{Jt}$) | [§18.5.1](/monograph/output/inflation/18.5/#18.5.1) |
+| $G_{uv}(s)$ | Relational causal propagator resolvent ($\propto 2^{-d(u,v)}$) | [§18.5.5](/monograph/output/inflation/18.5/#18.5.5) |

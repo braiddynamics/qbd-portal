@@ -1,59 +1,48 @@
-"""Exact real Lie closure of Gaussian-rational matrices; no numerical rank cutoff."""
+# §8.2.9.1 — Adjacent exchange-plus-diagonal Lie closure and depth bound
+# Checks: Lie_R{i X_k, i Z_k} = su(n) with dim n^2 - 1 and bracket depth <= n - 1.
 from sympy import I, Matrix, zeros
 
 
-def elementary(n, i, j):
-    a = zeros(n)
-    a[i, j] = 1
-    return a
+def su_closure_with_depth(n):
+    seeds = []
+    for k in range(n - 1):
+        ex = zeros(n)
+        ex[k, k + 1] = ex[k + 1, k] = I
+        dz = zeros(n)
+        dz[k, k] = I
+        dz[k + 1, k + 1] = -I
+        seeds.extend((ex, dz))
+
+    basis, coord_rows, depths = [], [], []
+
+    def try_add(mat, depth):
+        vec = [comp for val in mat for comp in val.as_real_imag()]
+        if Matrix(coord_rows + [vec]).rank() > len(coord_rows):
+            coord_rows.append(vec)
+            basis.append(mat)
+            depths.append(depth)
+            return True
+        return False
+
+    for s in seeds:
+        try_add(s, 0)
+
+    depth = 0
+    while len(basis) < n * n - 1 and depth < n:
+        snapshot = len(basis)
+        for i in range(snapshot):
+            for j in range(i):
+                if depths[i] == depth or depths[j] == depth:
+                    try_add(basis[i] * basis[j] - basis[j] * basis[i], 1 + max(depths[i], depths[j]))
+        depth += 1
+
+    assert all(m.H == -m and m.trace() == 0 for m in basis)
+    return n - 1, n - 1, len(basis), max(depths)
 
 
-def adjacent_generators(n):
-    if n < 2:
-        raise ValueError("At least two coordinates are required")
-    x = [I * (elementary(n, k, k+1) + elementary(n, k+1, k)) for k in range(n-1)]
-    z = [I * (elementary(n, k, k) - elementary(n, k+1, k+1)) for k in range(n-1)]
-    return x, z
-
-
-def real_coordinates(matrix):
-    # All entries here are Gaussian rationals, so this is exact over Q.
-    return [component for value in matrix for component in value.as_real_imag()]
-
-
-def lie_basis(generators):
-    basis = []
-    echelon = {}
-
-    def insert(matrix):
-        vector = real_coordinates(matrix)
-        for pivot in sorted(echelon):
-            coefficient = vector[pivot]
-            if coefficient:
-                vector = [a - coefficient * b for a, b in zip(vector, echelon[pivot])]
-        pivot = next((i for i, value in enumerate(vector) if value), None)
-        if pivot is None:
-            return
-        scale = vector[pivot]
-        echelon[pivot] = [value / scale for value in vector]
-        basis.append(matrix)
-
-    for generator in generators:
-        insert(generator)
-    cursor = 0
-    while cursor < len(basis):
-        for earlier in range(cursor):
-            a, b = basis[cursor], basis[earlier]
-            insert(a * b - b * a)
-        cursor += 1
-    return basis
-
-print("n | exchange directions | diagonal directions | real closure dimension")
+print("n | exchanges | diagonals | su(n)_dim | max_depth")
 for n in (2, 3, 5):
-    exchanges, diagonals = adjacent_generators(n)
-    generators = exchanges + diagonals
-    expected = n * n - 1
-    basis = lie_basis(generators)
-    assert len(basis) == expected
-    assert all(a.conjugate().T == -a and a.trace() == 0 for a in basis)
-    print(f"{n} | {len(exchanges)} | {len(generators)-len(exchanges)} | {len(basis)}")
+    nex, ndz, dim, max_d = su_closure_with_depth(n)
+    assert dim == n * n - 1
+    assert max_d <= n - 1
+    print(f"{n} | {nex:<9} | {ndz:<9} | {dim:<9} | {max_d}")

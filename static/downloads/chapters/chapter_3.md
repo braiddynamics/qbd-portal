@@ -1598,7 +1598,7 @@ This computational boundary signals the emergence of non-trivial quantum behavio
 
 Computational verification of the bounds established in **Quantitative Supremacy** <Ref id="3.2.11.1" label="§3.2.11.1" />, demonstrating the Regular Bethe Fragment as the unique maximizer under the **Structural Optimality Metric** <Ref id="3.2.10.1" label="§3.2.10.1" />, is based on the following protocols:
 
-1.  **Combinatorial Enumeration:** The algorithm utilizes `networkx` generators to produce the complete set of non-isomorphic free trees of size $N=10$, establishing the full configuration space for the vacuum candidates.
+1.  **Combinatorial Enumeration:** Because regular Bethe fragments obey a scale-invariant leaf-to-bulk ratio $L/N = \tfrac{1}{2} + \tfrac{1}{N} \to 50\%$ across all $N$, the algorithm utilizes `networkx` generators on $N=10$ (the minimal even vertex count admitting more than one internally trivalent tree, with consistent balanced-fragment dominance checked through $N=12, 14$, while extending this scale-invariant Bethe symmetry family to larger $N$ serves as the canonical initial-state substrate), establishing the finite comparison space at the bifurcation order for vacuum candidates.
 2.  **Axiomatic Filtering:** Three sequential filters are applied to the candidate set based on prior constraints:
     * **Simplicial Closure:** Rejects graphs with a coordination number $k_{deg} > 3$, as established by the **Simplicial Closure Constraint** <Ref id="3.2.13" label="§3.2.13" />.
     * **Site Maximality:** Rejects linear chains ($k_{deg} < 3$) which lack sufficient branching for rewrite sites, per **Site Maximality** <Ref id="3.2.7" label="§3.2.7" />.

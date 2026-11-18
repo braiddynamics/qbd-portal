@@ -2248,14 +2248,25 @@ This pre-geometric formulation resolves longstanding cosmological puzzles by ide
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $B_4$ | Four-Strand Braid Group Defect | [§21.1.2](/monograph/output/relics/21.1/#21.1.2) |
-| $m_{B_4}$ | Ground-State Dark Relic Mass ($\approx 5.026\text{ GeV}$) | [§21.1.4](/monograph/output/relics/21.1/#21.1.4) |
-| $\Omega_{DM}/\Omega_B$ | Dark-to-Baryonic Mass Density Ratio ($\approx 5.36$) | [§21.1.1](/monograph/output/relics/21.1/#21.1.1) |
-| $n_{B_4}/n_B$ | Primordial Freeze-Out Defect-to-Baryon Number Ratio ($1.000$) | [§21.1.6](/monograph/output/relics/21.1/#21.1.6) |
-| $J_+$ | Equilibrium 3-Cycle Creation Current Density | [§21.2.2](/monograph/output/relics/21.2/#21.2.2) |
-| $P_{vac}$ | Master Equation Vacuum Negative Pressure ($-\rho_{vac} c^2$) | [§21.2.3](/monograph/output/relics/21.2/#21.2.3) |
-| $w$ | Dark Energy Equation of State Parameter ($-1.000$) | [§21.2.5](/monograph/output/relics/21.2/#21.2.5) |
-| $L_{IR}$ | Cosmological Holographic Infrared Horizon Radius ($c H_0^{-1}$) | [§21.2.6](/monograph/output/relics/21.2/#21.2.6) |
-| $\sigma_{\text{geom}}$ | Atmospheric Hadronic-Scale Contact Cross-Section ($\approx 30\text{ mb}$) | [§21.3.6](/monograph/output/relics/21.3/#21.3.6) |
-| $t_{\text{sat}}$ | Master Equation Attractor Saturation Timescale ($\approx 13.8\text{ Gyr}$) | [§21.4.3](/monograph/output/relics/21.4/#21.4.3) |
-| $\Delta \ln a$ | Cosmic Coincidence Window Expansion Duration ($1.535$) | [§21.4.4](/monograph/output/relics/21.4/#21.4.4) |
+| $\Omega_{DM}/\Omega_B$ | Dark-to-baryonic cosmic mass density ratio ($\approx 5.36$) | [§21.1](/monograph/output/relics/21.1/#21.1) |
+| $n_{B_4}/n_B$ | Primordial freeze-out 4-strand defect-to-baryon number ratio ($1.000$) | [§21.1.1](/monograph/output/relics/21.1/#21.1.1) |
+| $\Omega_{\text{DM}}$ | Cold dark matter cosmic density parameter | [§21.1.1](/monograph/output/relics/21.1/#21.1.1) |
+| $B_4$ | Four-strand braid group topological dark relic sector | [§21.1.2](/monograph/output/relics/21.1/#21.1.2) |
+| $\beta_4$ | Gauge-sterile 4-strand topological dark matter braid defect | [§21.1.2](/monograph/output/relics/21.1/#21.1.2) |
+| $H_1(G \setminus K, \mathbb{Z})$ | First graph complement homology group protecting 4-strand relic stability | [§21.1.2.1](/monograph/output/relics/21.1/#21.1.2.1) |
+| $\hat{T}^a$ | Standard Model gauge generator annihilating sterile 4-strand relic states | [§21.1.3](/monograph/output/relics/21.1/#21.1.3) |
+| $m_{B_4}$ | Ground-state rest mass of 4-strand dark relic ($= 5.0265\text{ GeV}$) | [§21.1.4](/monograph/output/relics/21.1/#21.1.4) |
+| $\kappa_H$ | Hadronic / crystallization scale mass quantum ($\approx 314.159\text{ MeV}$) | [§21.1.4](/monograph/output/relics/21.1/#21.1.4) |
+| $C[\beta_4]$ | Crossing complexity of minimal 4-strand defect ($=16$) | [§21.1.4](/monograph/output/relics/21.1/#21.1.4) |
+| $n_{B_4}$ | Volumetric number density of 4-strand dark relics | [§21.1.5](/monograph/output/relics/21.1/#21.1.5) |
+| $\xi(t_{\text{cryst}})$ | Kibble-Zurek topological correlation length at crystallization freeze-out | [§21.1.5](/monograph/output/relics/21.1/#21.1.5) |
+| $\rho_{vac}$ | Holographic vacuum energy density ($\approx 10^{-122} \rho_{Pl}$) | [§21.2.1](/monograph/output/relics/21.2/#21.2.1) |
+| $P_{vac}$ | Master Equation vacuum negative isotropic pressure ($-\rho_{vac} c^2$) | [§21.2.1](/monograph/output/relics/21.2/#21.2.1) |
+| $w$ | Dark energy equation of state parameter ($= -1.000$) | [§21.2.1](/monograph/output/relics/21.2/#21.2.1) |
+| $L_{IR}$ | Cosmological holographic infrared horizon radius ($c H_0^{-1}$) | [§21.2.1](/monograph/output/relics/21.2/#21.2.1) |
+| $J_+$ | Equilibrium unpinned 3-cycle creation current density ($\approx 0.0256\text{ cycles/tick/node}$) | [§21.2.2](/monograph/output/relics/21.2/#21.2.2) |
+| $\sigma_{\text{geom}}$ | Atmospheric hadronic-scale geometric contact cross section ($\approx 30\text{ mb}$) | [§21.3.1](/monograph/output/relics/21.3/#21.3.1) |
+| $\lambda_{\text{CMB}}$ | Relic mean free path through CMB photon bath ($\to \infty$) | [§21.3.1](/monograph/output/relics/21.3/#21.3.1) |
+| $\sigma_{\text{SI}}$ | Spin-independent dark matter-nucleon scattering cross section | [§21.3.6.2](/monograph/output/relics/21.3/#21.3.6.2) |
+| $t_{\text{sat}}$ | Master Equation attractor saturation timescale ($\approx 13.8\text{ Gyr}$) | [§21.4.3](/monograph/output/relics/21.4/#21.4.3) |
+| $\Delta \ln a$ | Cosmic coincidence window expansion duration ($= 1.535$ $e$-folds) | [§21.4.4](/monograph/output/relics/21.4/#21.4.4) |

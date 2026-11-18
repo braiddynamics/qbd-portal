@@ -31,14 +31,16 @@ def verify_bianchi_identity():
                 cycle = nx.find_cycle(G, source=np.random.choice(range(N)))
                 flow_mag = np.random.normal(0, 1)
                 
+                # Finite skew 1-form cycle circulation test (§13.2.8 item 2),
+                # distinct from symmetric transport curvature G_ba = G_ab (§13.2.1).
                 for u, v in cycle:
                     T_matrix[u, v] += flow_mag
-                    T_matrix[v, u] -= flow_mag # Antisymmetry
+                    T_matrix[v, u] -= flow_mag # Skew cycle-current circulation
             except:
                 pass
 
-        # 3. Compute Geometry G_ab via Field Equation
-        # G_ab = kappa * T_ab (plus G_vac, which is isotropic/divergence-free)
+        # 3. Compute Skew Proxy G_ab via Field Equation
+        # G_matrix = kappa * T_matrix tests conserved cycle circulation sum_v G_uv = 0
         kappa = 0.3333
         G_matrix = kappa * T_matrix 
         

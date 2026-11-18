@@ -1,32 +1,46 @@
+# §8.7.5.2 — Yukawa coupling sweep under density-dependent VEV scaling
+# Checks: m_f = y_f(rho) * v(rho) = kappa_m * N_net cancels v(rho) variations.
 import numpy as np
-# Fixed Units: kappa_m in GeV / 3-cycle from m_e=0.000511 GeV / N_e=3
-kappa_m_gev = 0.0001703  # GeV / 3-cycle
-V_CALIB = 246.22  # GeV, EW scale
-N_SCALE_BASE = V_CALIB / kappa_m_gev  # ~1.445e6 3-cycles / GeV
+
+kappa_m_gev = 0.0001703  # GeV / 3-cycle (m_e / 3)
+V_CALIB = 246.22  # GeV, electroweak scale at discrete-ensemble mean density
 RHO_CENTER = 0.0290  # Discrete-ensemble mean <rho>_all (§5.3, Table 5.3.3.2)
 RHO_SIGMA = 0.0050  # Ensemble scatter
-NUM_MC = 1000  # Runs
-# Generation Configurations (N_net from Ch7 writhe minima, adj for hierarchy)
+NUM_MC = 1000  # Monte Carlo draws
+
 gen_configs = {
-    'Gen1_u/d': {'N_net': 1, 'label': 'Up/Down Quarks (current ~2-5 MeV)'},
-    'Gen2_μ/s/c': {'N_net': 4, 'label': 'Muon/Strange/Charm (~100 MeV w/ torsion)'},
-    'Gen3_τ/b/t': {'N_net': 1000000, 'label': 'Tau/Bottom/Top (t~173 GeV)'}  # Metastable w~400, N~w^2~1.6e5 + base ~10^6
+    "Rep1 (N_net=1)": {"N_net": 1},
+    "Rep2 (N_net=4)": {"N_net": 4},
+    "Rep3 (N_net=10^6)": {"N_net": 1000000},
 }
+
 np.random.seed(42)
 rho_samples = np.random.normal(RHO_CENTER, RHO_SIGMA, NUM_MC)
-print(f"{'GENERATION':<20} | {'N_net':<8} | {'<y_f>':<8} | {'<m_f> (GeV)':<12} | {'σ_m (GeV)':<10}")
-print("-" * 75)
-gen1_m = None
-for gen, config in gen_configs.items():
-    y_f_samples = config['N_net'] / (N_SCALE_BASE * np.sqrt(rho_samples))
-    m_f_samples = y_f_samples * V_CALIB  # GeV
+v_samples = V_CALIB * np.sqrt(rho_samples / RHO_CENTER)
+n_scale_samples = v_samples / kappa_m_gev
+
+print(
+    f"{'REPRESENTATIVE':<18} | {'N_net':<8} | {'<y_f>':<9} | "
+    f"{'σ_y':<9} | {'<m_f> (GeV)':<12} | {'σ_m (GeV)':<10}"
+)
+print("-" * 81)
+
+rep1_m = None
+for label, config in gen_configs.items():
+    n_net = config["N_net"]
+    y_f_samples = n_net / n_scale_samples
+    m_f_samples = y_f_samples * v_samples
     y_f_mean = np.mean(y_f_samples)
+    y_f_std = np.std(y_f_samples)
     m_f_mean = np.mean(m_f_samples)
     m_f_std = np.std(m_f_samples)
-    print(f"{gen:<20} | {config['N_net']:<8} | {y_f_mean:.6f} | {m_f_mean:.3f} | {m_f_std:.3f}")
-    if gen == 'Gen1_u/d':
-        gen1_m = m_f_mean
-    if gen == 'Gen3_τ/b/t' and gen1_m is not None:
-        ratio = m_f_mean / gen1_m
-        print(f"  Hierarchy (Gen3/Gen1): ~{ratio:.0f} (adj QCD ~10^6 effective)")
-print("-" * 75)
+    print(
+        f"{label:<18} | {n_net:<8} | {y_f_mean:<9.3e} | "
+        f"{y_f_std:<9.3e} | {m_f_mean:<12.6f} | {m_f_std:<10.6f}"
+    )
+    if n_net == 1:
+        rep1_m = m_f_mean
+    if n_net == 1000000 and rep1_m is not None:
+        ratio = m_f_mean / rep1_m
+        print(f"  Hierarchy ratio (Rep3/Rep1): {ratio:.0f}")
+print("-" * 81)

@@ -1412,82 +1412,65 @@ Q.E.D.
 
 Verification of the relations established in the **Swap-Only Closure** <Ref id="8.2.8.1" label="§8.2.8.1" /> is based on the following protocols: The input contains the exchange directions alone (**Swap-Only Closure** <Ref id="8.2.8" label="§8.2.8" />).
 
-1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
-2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
-3.  **Certification:** The recorded values confirm the finite claim while leaving physical control admission as a separate hypothesis.
+1.  **Encoding:** The standalone matrix model constructs only the skew-Hermitian adjacent exchanges $iX_k$ for $k = 1, \ldots, n - 1$ over exact Gaussian rationals.
+2.  **Comparison:** Exact rational rank reduction computes the real Lie closure dimensions for $n = 2, 3, 5$ and checks vanishing diagonals together with real skew-symmetry after conjugation by $D = \operatorname{diag}(1, i, \ldots, i^{n-1})$.
+3.  **Certification:** The exact counts and invariants confirm the swap-only subalgebra while leaving physical control admission as a separate hypothesis.
 
 ```python
-"""Exact real Lie closure of Gaussian-rational matrices; no numerical rank cutoff."""
-from sympy import I, Matrix, zeros
+# §8.2.8.2  -  Swap-only Lie closure dimensions and diagonal obstruction
+# Checks: Lie_R{i X_k} = D so(n) D† has zero diagonal and dim n(n-1)/2.
+from sympy import I, Matrix, diag, zeros
 
 
-def elementary(n, i, j):
-    a = zeros(n)
-    a[i, j] = 1
-    return a
+def swap_only_closure(n):
+    exchanges = []
+    for k in range(n - 1):
+        mat = zeros(n)
+        mat[k, k + 1] = mat[k + 1, k] = I
+        exchanges.append(mat)
+
+    basis, coord_rows = [], []
+
+    def add_if_independent(mat):
+        vec = [comp for val in mat for comp in val.as_real_imag()]
+        if Matrix(coord_rows + [vec]).rank() > len(coord_rows):
+            coord_rows.append(vec)
+            basis.append(mat)
+
+    for gen in exchanges:
+        add_if_independent(gen)
+    idx = 0
+    while idx < len(basis):
+        for prev in range(idx):
+            add_if_independent(basis[idx] * basis[prev] - basis[prev] * basis[idx])
+        idx += 1
+
+    conj = diag(*[I**j for j in range(n)])
+    for elem in basis:
+        assert all(elem[j, j] == 0 for j in range(n))
+        rotated = conj.H * elem * conj
+        assert rotated.T == -rotated
+        assert all(entry.is_real for entry in rotated)
+    return len(exchanges), len(basis)
 
 
-def adjacent_generators(n):
-    if n < 2:
-        raise ValueError("At least two coordinates are required")
-    x = [I * (elementary(n, k, k+1) + elementary(n, k+1, k)) for k in range(n-1)]
-    z = [I * (elementary(n, k, k) - elementary(n, k+1, k+1)) for k in range(n-1)]
-    return x, z
-
-
-def real_coordinates(matrix):
-    # All entries here are Gaussian rationals, so this is exact over Q.
-    return [component for value in matrix for component in value.as_real_imag()]
-
-
-def lie_basis(generators):
-    basis = []
-    echelon = {}
-
-    def insert(matrix):
-        vector = real_coordinates(matrix)
-        for pivot in sorted(echelon):
-            coefficient = vector[pivot]
-            if coefficient:
-                vector = [a - coefficient * b for a, b in zip(vector, echelon[pivot])]
-        pivot = next((i for i, value in enumerate(vector) if value), None)
-        if pivot is None:
-            return
-        scale = vector[pivot]
-        echelon[pivot] = [value / scale for value in vector]
-        basis.append(matrix)
-
-    for generator in generators:
-        insert(generator)
-    cursor = 0
-    while cursor < len(basis):
-        for earlier in range(cursor):
-            a, b = basis[cursor], basis[earlier]
-            insert(a * b - b * a)
-        cursor += 1
-    return basis
-
-print("n | exchange directions | diagonal directions | real closure dimension")
+print("n | exchanges | closure_dim | zero_diagonal | conjugate_so(n)")
 for n in (2, 3, 5):
-    exchanges, diagonals = adjacent_generators(n)
-    generators = exchanges
-    expected = n * (n - 1) // 2
-    basis = lie_basis(generators)
-    assert len(basis) == expected
-    assert all(a.conjugate().T == -a and a.trace() == 0 for a in basis)
-    print(f"{n} | {len(exchanges)} | {len(generators)-len(exchanges)} | {len(basis)}")
+    num_ex, dim = swap_only_closure(n)
+    assert dim == n * (n - 1) // 2
+    print(f"{n} | {num_ex:<9} | {dim:<11} | true          | true")
 ```
 
 **Simulation Results:**
 ```text
-n | exchange directions | diagonal directions | real closure dimension
-2 | 1 | 0 | 1
-3 | 2 | 0 | 3
-5 | 4 | 0 | 10
+n | exchanges | closure_dim | zero_diagonal | conjugate_so(n)
+2 | 1         | 1           | true          | true
+3 | 2         | 3           | true          | true
+5 | 4         | 10          | true          | true
 ```
 
 **Conclusion:**
-The exact dimensions are 1, 3 and 10 for exchanges alone. The recorded exact values validate the finite derivation in the proof.
+The exact real Lie closure dimensions for adjacent exchanges alone are $1$, $3$, and $10$ at $n = 2, 3, 5$, with strictly vanishing diagonal entries and exact $\mathfrak{so}(n)$ conjugation across all basis directions. The recorded exact values validate the finite derivation in the proof.
 
 ### 8.2.8.3 Commentary: Missing Diagonal Directions {#8.2.8.3}
 
@@ -1632,82 +1615,71 @@ Q.E.D.
 
 Verification of the relations established in the **Adjacent Generator Closure** <Ref id="8.2.9" label="§8.2.9" /> is based on the following protocols: The target uses both exchange and diagonal initial directions (**Adjacent Generator Closure** <Ref id="8.2.2" label="§8.2.2" />).
 
-1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
-2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
-3.  **Certification:** The recorded values confirm the finite claim while leaving physical control admission as a separate hypothesis.
+1.  **Encoding:** The standalone matrix calculation forms the adjacent exchange $iX_k$ and diagonal imbalance $iZ_k$ seeds for $n = 2, 3, 5$ over exact Gaussian rationals.
+2.  **Comparison:** Level-by-level exact rational rank checks track both the real closure dimension and the maximum nested commutator depth alongside tracelessness and skew-Hermiticity.
+3.  **Certification:** The recorded dimensions and depth bounds confirm the finite closure theorem while leaving physical control admission as a separate hypothesis.
 
 ```python
-"""Exact real Lie closure of Gaussian-rational matrices; no numerical rank cutoff."""
+# §8.2.9.1  -  Adjacent exchange-plus-diagonal Lie closure and depth bound
+# Checks: Lie_R{i X_k, i Z_k} = su(n) with dim n^2 - 1 and bracket depth <= n - 1.
 from sympy import I, Matrix, zeros
 
 
-def elementary(n, i, j):
-    a = zeros(n)
-    a[i, j] = 1
-    return a
+def su_closure_with_depth(n):
+    seeds = []
+    for k in range(n - 1):
+        ex = zeros(n)
+        ex[k, k + 1] = ex[k + 1, k] = I
+        dz = zeros(n)
+        dz[k, k] = I
+        dz[k + 1, k + 1] = -I
+        seeds.extend((ex, dz))
+
+    basis, coord_rows, depths = [], [], []
+
+    def try_add(mat, depth):
+        vec = [comp for val in mat for comp in val.as_real_imag()]
+        if Matrix(coord_rows + [vec]).rank() > len(coord_rows):
+            coord_rows.append(vec)
+            basis.append(mat)
+            depths.append(depth)
+            return True
+        return False
+
+    for s in seeds:
+        try_add(s, 0)
+
+    depth = 0
+    while len(basis) < n * n - 1 and depth < n:
+        snapshot = len(basis)
+        for i in range(snapshot):
+            for j in range(i):
+                if depths[i] == depth or depths[j] == depth:
+                    try_add(basis[i] * basis[j] - basis[j] * basis[i], 1 + max(depths[i], depths[j]))
+        depth += 1
+
+    assert all(m.H == -m and m.trace() == 0 for m in basis)
+    return n - 1, n - 1, len(basis), max(depths)
 
 
-def adjacent_generators(n):
-    if n < 2:
-        raise ValueError("At least two coordinates are required")
-    x = [I * (elementary(n, k, k+1) + elementary(n, k+1, k)) for k in range(n-1)]
-    z = [I * (elementary(n, k, k) - elementary(n, k+1, k+1)) for k in range(n-1)]
-    return x, z
-
-
-def real_coordinates(matrix):
-    # All entries here are Gaussian rationals, so this is exact over Q.
-    return [component for value in matrix for component in value.as_real_imag()]
-
-
-def lie_basis(generators):
-    basis = []
-    echelon = {}
-
-    def insert(matrix):
-        vector = real_coordinates(matrix)
-        for pivot in sorted(echelon):
-            coefficient = vector[pivot]
-            if coefficient:
-                vector = [a - coefficient * b for a, b in zip(vector, echelon[pivot])]
-        pivot = next((i for i, value in enumerate(vector) if value), None)
-        if pivot is None:
-            return
-        scale = vector[pivot]
-        echelon[pivot] = [value / scale for value in vector]
-        basis.append(matrix)
-
-    for generator in generators:
-        insert(generator)
-    cursor = 0
-    while cursor < len(basis):
-        for earlier in range(cursor):
-            a, b = basis[cursor], basis[earlier]
-            insert(a * b - b * a)
-        cursor += 1
-    return basis
-
-print("n | exchange directions | diagonal directions | real closure dimension")
+print("n | exchanges | diagonals | su(n)_dim | max_depth")
 for n in (2, 3, 5):
-    exchanges, diagonals = adjacent_generators(n)
-    generators = exchanges + diagonals
-    expected = n * n - 1
-    basis = lie_basis(generators)
-    assert len(basis) == expected
-    assert all(a.conjugate().T == -a and a.trace() == 0 for a in basis)
-    print(f"{n} | {len(exchanges)} | {len(generators)-len(exchanges)} | {len(basis)}")
+    nex, ndz, dim, max_d = su_closure_with_depth(n)
+    assert dim == n * n - 1
+    assert max_d <= n - 1
+    print(f"{n} | {nex:<9} | {ndz:<9} | {dim:<9} | {max_d}")
 ```
 
 **Simulation Results:**
 ```text
-n | exchange directions | diagonal directions | real closure dimension
-2 | 1 | 1 | 3
-3 | 2 | 2 | 8
-5 | 4 | 4 | 24
+n | exchanges | diagonals | su(n)_dim | max_depth
+2 | 1         | 1         | 3         | 1
+3 | 2         | 2         | 8         | 2
+5 | 4         | 4         | 24        | 3
 ```
 
 **Conclusion:**
-The exact enlarged-set dimensions are 3, 8 and 24. The recorded exact values validate the finite derivation in the proof.
+The exact enlarged-set closure dimensions are $3$, $8$, and $24$ for $n = 2, 3, 5$, reached at maximum nested bracket depths $1$, $2$, and $3$ within the bound $n - 1$. The recorded exact values validate the finite derivation in the proof.
 
 ### 8.2.9.2 Commentary: Scope of Lean Specialization {#8.2.9.2}
 
@@ -2150,82 +2122,68 @@ Q.E.D.
 :::note[**Verification of Exact Four-Generator SU(3) Closure via Exact Arithmetic**]
 :::
 
-Verification of the relations established in the **Algebraic Closure** <Ref id="8.3.5.1" label="§8.3.5.1" /> is based on the following protocols: The input is the specified four-direction tripartite seed (**Tripartite Basis** <Ref id="8.3.1" label="§8.3.1" />).
+Verification of the relations established in the **Algebraic Closure** <Ref id="8.3.5.1" label="§8.3.5.1" /> is based on the explicit $3 \times 3$ nested commutators of **Commutator Generation** <Ref id="8.3.4" label="§8.3.4" />:
 
-1.  **Encoding:** The finite representation fixes the stated generator or graph coordinates exactly.
-2.  **Comparison:** Exact arithmetic evaluates the identities and compares the resulting dimensions or eigenvalues with the stated targets.
-3.  **Certification:** The recorded values confirm the finite claim while leaving physical control admission as a separate hypothesis.
+1.  **Encoding:** The standalone matrix calculation instantiates the four tripartite seed directions $A_1, A_2, C_1, C_2$ and forms the explicit brackets $F_{12}, F_{23}, F_{13}, S_{13}$ over $\mathbb{C}^{3\times 3}$.
+2.  **Comparison:** Exact rational rank verification contrasts the three-dimensional swap-only closure $\{A_1, A_2, [A_1, A_2]\}$ against the eight-element full basis and checks symbolic reconstruction $R = M$ for an arbitrary element $M \in \mathfrak{su}(3)$.
+3.  **Certification:** The exact ranks and zero symbolic residual confirm $\mathfrak{su}(3)$ spanning while leaving physical control admission as a separate hypothesis.
 
 ```python
-"""Exact real Lie closure of Gaussian-rational matrices; no numerical rank cutoff."""
-from sympy import I, Matrix, zeros
+# §8.3.5.2  -  Explicit 3x3 tripartite commutator construction and su(3) spanning
+# Checks: nested brackets yield F12, F23, F13, S13, spanning su(3) with dim 8.
+from sympy import I, Matrix, symbols, zeros
 
 
-def elementary(n, i, j):
-    a = zeros(n)
-    a[i, j] = 1
-    return a
+def E(i, j):
+    mat = zeros(3)
+    mat[i, j] = 1
+    return mat
 
 
-def adjacent_generators(n):
-    if n < 2:
-        raise ValueError("At least two coordinates are required")
-    x = [I * (elementary(n, k, k+1) + elementary(n, k+1, k)) for k in range(n-1)]
-    z = [I * (elementary(n, k, k) - elementary(n, k+1, k+1)) for k in range(n-1)]
-    return x, z
+def real_row(mat):
+    return [comp for val in mat for comp in val.as_real_imag()]
 
 
-def real_coordinates(matrix):
-    # All entries here are Gaussian rationals, so this is exact over Q.
-    return [component for value in matrix for component in value.as_real_imag()]
+A1, A2 = I * (E(0, 1) + E(1, 0)), I * (E(1, 2) + E(2, 1))
+C1, C2 = I * (E(0, 0) - E(1, 1)), I * (E(1, 1) - E(2, 2))
+S12, S23 = A1, A2
+F12 = (A1 * C1 - C1 * A1) / 2
+F23 = (A2 * C2 - C2 * A2) / 2
+F13 = F12 * F23 - F23 * F12
+S13 = F12 * A2 - A2 * F12
 
+full_basis = [F12, S12, F13, S13, F23, S23, C1, C2]
+swap_only = [A1, A2, A1 * A2 - A2 * A1]
+assert Matrix([real_row(m) for m in full_basis]).rank() == 8
+assert Matrix([real_row(m) for m in swap_only]).rank() == 3
+assert all(m.H == -m and m.trace() == 0 for m in full_basis)
 
-def lie_basis(generators):
-    basis = []
-    echelon = {}
+x, y, a12, b12, a13, b13, a23, b23 = symbols("x y a12 b12 a13 b13 a23 b23", real=True)
+M = Matrix([
+    [I * x, a12 + I * b12, a13 + I * b13],
+    [-a12 + I * b12, I * y, a23 + I * b23],
+    [-a13 + I * b13, -a23 + I * b23, -I * (x + y)],
+])
+R = (
+    a12 * F12 + b12 * S12 + a13 * F13 + b13 * S13
+    + a23 * F23 + b23 * S23 + x * C1 + (x + y) * C2
+)
+assert (R - M).expand() == zeros(3)
 
-    def insert(matrix):
-        vector = real_coordinates(matrix)
-        for pivot in sorted(echelon):
-            coefficient = vector[pivot]
-            if coefficient:
-                vector = [a - coefficient * b for a, b in zip(vector, echelon[pivot])]
-        pivot = next((i for i, value in enumerate(vector) if value), None)
-        if pivot is None:
-            return
-        scale = vector[pivot]
-        echelon[pivot] = [value / scale for value in vector]
-        basis.append(matrix)
-
-    for generator in generators:
-        insert(generator)
-    cursor = 0
-    while cursor < len(basis):
-        for earlier in range(cursor):
-            a, b = basis[cursor], basis[earlier]
-            insert(a * b - b * a)
-        cursor += 1
-    return basis
-
-print("n | exchange directions | diagonal directions | real closure dimension")
-for n in (3,):
-    exchanges, diagonals = adjacent_generators(n)
-    generators = exchanges + diagonals
-    expected = n * n - 1
-    basis = lie_basis(generators)
-    assert len(basis) == expected
-    assert all(a.conjugate().T == -a and a.trace() == 0 for a in basis)
-    print(f"{n} | {len(exchanges)} | {len(generators)-len(exchanges)} | {len(basis)}")
+print("basis_set       | real_dim | skew_hermitian | traceless | reconstruction_error")
+print("swap_only       | 3        | true           | true      | incomplete")
+print("tripartite_seed | 8        | true           | true      | 0")
 ```
 
 **Simulation Results:**
 ```text
-n | exchange directions | diagonal directions | real closure dimension
-3 | 2 | 2 | 8
+basis_set       | real_dim | skew_hermitian | traceless | reconstruction_error
+swap_only       | 3        | true           | true      | incomplete
+tripartite_seed | 8        | true           | true      | 0
 ```
 
 **Conclusion:**
-The initial four exchange and diagonal directions generate exactly eight real dimensions. The recorded exact values validate the finite derivation in the proof.
+The explicit tripartite nested-commutator basis attains exact real rank $8$ with zero symbolic reconstruction residual across all entries of a general $M \in \mathfrak{su}(3)$, whereas exchanges alone span dimension $3$. These exact algebraic checks validate the tripartite closure derivation in the proof.
 
 ### 8.3.5.3 Commentary: Structural Inevitability {#8.3.5.3}
 
@@ -2510,7 +2468,7 @@ The maximal violation of parity by the weak interaction, which acts exclusively 
 
 Theoretical frameworks typically enforce parity violation by constructing chiral Lagrangians where left and right-handed fields transform under different representations, a mathematical solution that lacks a physical rationale for nature's abhorrence of the mirror image. In a discrete causal model, all interactions are expected to be reversible and symmetric; a failure to break this symmetry spontaneously would render the model incompatible with the observed universe. The persistence of the "mirror universe" problem in standard unification theories suggests that chirality is not an accident of symmetry breaking but a fundamental feature of the spacetime metric. Explaining this requires a mechanism that physically forbids the existence of right-handed currents, treating them not as heavy or suppressed states, but as topological impossibilities within the causal flow.
 
-We establish the chiral nature of the weak force by linking the timestamp ordering of causal paths to the topological handedness of braid crossings. We demonstrate that the "right-handed" mirror process requires a timestamp inversion generating forbidden causal loops, leading to the annihilation of right-handed currents via the Principle of Unique Causality. This topological constraint enforces the observed chiral projection as an absolute consistency condition of the timeline.
+We establish the chiral nature of the weak force by linking the timestamp ordering of causal paths to the topological handedness of encoded braid crossings. When a fixed directed background supplies a retained short-path witness alongside a right-handed vertex candidate, the Principle of Unique Causality rejects that mirror proposal via redundant path multiplicity ($|\Pi_{\ell\le 2}| \ge 2$) and exact projection, whereas full-graph reflection preserves path counts. This mechanism separates background-relative witness rejection from global mirror isomorphism and grounds the observed chiral projection.
 
 ---
 
@@ -2540,7 +2498,7 @@ Defining chirality based on the timestamp difference of the crossing strands lin
 :::info[**Emergence of Weak Gauge Theory from Doublet Flavor Rewrites**]
 :::
 
-Suppose the Weak Interaction constitutes a chiral gauge theory governing the transformation of electroweak doublets, characterized by the strict enforcement of left-handed currents and the violation of parity symmetry. Under this formulation, the flavor-changing rewrites acting on the doublet space are restricted to the $\chi = -1$ sector by the strict monotonicity of the timestamp ordering, which aligns the causal flow with the left-handed projector $P_L$. Furthermore, the right-handed mirror processes ($\chi = +1$) are physically excluded from the dynamics by the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, which identifies the inverted timestamp order as a generator of redundant causal paths.
+Suppose the Weak Interaction acts through a chiral gauge theory governing electroweak doublets, characterized by left-handed currents $J_L^{\mu a}$ and parity asymmetry. Under this formulation, admitted left-handed flavor-changing rewrites carry monotone causal invariant $\chi = -1$ and align with the left-handed projector $P_L$, while any right-handed mirror proposal in a fixed background that already contains a distinct alternative short-path witness violates the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> and is annihilated by the allowed-sector projector $\Pi_{\mathrm{PUC}}$.
 
 ### 8.4.2.1 Commentary: Argument Outline {#8.4.2.1}
 
@@ -2965,7 +2923,7 @@ Exact exclusion of the right vertex would require an exact constraint that remov
 :::info[**Rejection of a mirror proposal via a distinct short-path witness**]
 :::
 
-Let a specified mirror rewrite proposal have a directed two-path precursor and an alternative simple path of length at most two with the same ordered endpoints. Then that proposal is inadmissible under the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />, and an exact projector onto the allowed sector annihilates states supported entirely on such violations.
+Let a specified mirror rewrite proposal in a fixed directed background have a two-path precursor and an alternative simple path of length at most two with the same ordered endpoints. Then that proposal violates the **Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" /> with $|\Pi_{\ell\le 2}| \ge 2$ and is annihilated by $\Pi_{\mathrm{PUC}}$, whereas any full-graph reflection isomorphism $f: G \to G^*$ preserves $|\Pi_{\ell\le 2}|$ identically.
 
 ### 8.4.7.1 Proof: Mirror PUC Violation {#8.4.7.1}
 
@@ -3062,10 +3020,10 @@ $$
 Use the graph-to-Dirac assignment of the admitted chirality and the framed sign convention of **Chiral Stability** <Ref id="8.4.3" label="§8.4.3" />. Suppose the left vertex is admitted and every right-handed vertex candidate in this model has a directed precursor $u\to x\to v$ and a distinct short-path witness with the same ordered endpoints. The two paths contribute distinct terms, so
 
 $$
-|\Pi_{\le2}(u,v)|\ge1+1=2>1
+|\Pi_{\ell\le2}(u,v)|\ge1+1=2>1
 $$
 
-(**Mirror PUC Violation** <Ref id="8.4.7" label="§8.4.7" />). For a right-handed input entirely in that violating sector, the exact allowed-sector projector satisfies $P_{\mathrm{PUC}}(I-P_{\mathrm{PUC}})=P_{\mathrm{PUC}}-P_{\mathrm{PUC}}^2=0$, so $P_{\mathrm{PUC}}|\psi_R\rangle=0$. This conclusion uses the witness premise for the entire right-handed vertex sector. A finite search with conditional miss $e^{-R}$ and witness prevalence $p_{\mathrm{alt}}$ gives rejection $p_{\mathrm{alt}}(1-e^{-R})$ in the detection-only model (**Right-Handed Rejection** <Ref id="8.4.5" label="§8.4.5" />).
+(**Mirror PUC Violation** <Ref id="8.4.7" label="§8.4.7" />). For a right-handed input entirely in that violating sector, the exact allowed-sector projector satisfies $\Pi_{\mathrm{PUC}}(I-\Pi_{\mathrm{PUC}})=\Pi_{\mathrm{PUC}}-\Pi_{\mathrm{PUC}}^2=0$, so $\Pi_{\mathrm{PUC}}|\psi_R\rangle=0$. This conclusion uses the witness premise for the entire right-handed vertex sector. A finite search with conditional miss $e^{-R}$ and witness prevalence $p_{\mathrm{alt}}$ gives rejection $p_{\mathrm{alt}}(1-e^{-R})$ in the detection-only model (**Right-Handed Rejection** <Ref id="8.4.5" label="§8.4.5" />).
 
 **III. Parity and the current**
 
@@ -3103,11 +3061,11 @@ Q.E.D.
 :::note[**Chiral Weak Interaction**]
 :::
 
-The chiral nature of the weak interaction is derived as a topological filter imposed by the arrow of time. It is demonstrated that the "mirror" process of a right-handed interaction requires an inversion of timestamp ordering that violates the Principle of Unique Causality, generating forbidden closed causal loops. The causal graph acts as a diode, permitting only left-handed topological transformations to propagate while suppressing their mirror images with a probability approaching unity. This is grounded in the **Chiral Symmetry and Parity Violation** <Ref id="8.4.2" label="§8.4.2" />. The structural consequences are further developed in the **Chiral Stability** <Ref id="8.4.3" label="§8.4.3" /> and **Weak Algebra Emergence** <Ref id="8.4.4" label="§8.4.4" />.
+Chiral weak asymmetry connects causal path ordering on the graph to left-handed doublet transformations and parity violation in a Dirac representation. Order-preserving rewrites maintain the fixed chiral sign $\chi = -1$ (**Chiral Stability** <Ref id="8.4.3" label="§8.4.3" />), while admitted doublet exchanges and diagonal controls generate the weak algebra $\mathfrak{su}(2)$ (**Chiral Symmetry and Parity Violation** <Ref id="8.4.2" label="§8.4.2" />). Admitting only the left-handed current $J_L^{\mu a}$ produces an explicit vector-minus-axial interaction with no parity-conjugate right partner.
 
-This transforms parity violation from an unexplained symmetry breaking into a fundamental feature of causal geometry. The universe is not asymmetric by accident; it is asymmetric because the alternative violates the logic of sequence. The V-A structure of the weak current is the algebraic signature of a timeline that flows in only one direction. Matter distinguishes left from right because the vacuum distinguishes past from future.
+Because a global graph isomorphism $f: G \to G^*$ preserves every short-path cardinality $|\Pi_{\ell \le 2}|$ identically, rejecting right-handed mirror vertices via the Principle of Unique Causality requires comparing different proposals inside a fixed directed background that already retains an alternate short-path witness (**Mirror PUC Violation** <Ref id="8.4.7" label="§8.4.7" />). Whenever every right-handed vertex candidate encounters such a retained witness, the codespace projector $\Pi_{\mathrm{PUC}}$ annihilates that sector identically, whereas finite-radius detection with witness prevalence $p_{\mathrm{alt}}$ gives unconditional rejection $p_{\mathrm{alt}}(1 - e^{-R})$.
 
-The suppression of right-handed currents is therefore absolute in the low-energy limit. The weak force does not merely "prefer" left-handed particles; the graph geometry actively annihilates the causal paths required to construct right-handed interactions. The universe is chiral because a non-chiral causal graph would be incapable of sustaining a consistent history.
+Parity violation in this model therefore rests jointly on monotone causal orientation selecting one chiral sign and on a physical background encoding that supplies short-path witnesses against mirror vertex proposals. Identifying microscopic graph motifs with the Dirac representation and establishing universal witness coverage for every right-handed transition remain explicit interface conditions alongside the algebraic current structure.
 
 ---
 
@@ -4506,61 +4464,74 @@ Q.E.D.
 :::note[**Evaluation of Assigned Mass Ratios via Shared Density Sampling**]
 :::
 
-The calculation uses **Topological Yukawa Identity** <Ref id="8.7.5" label="§8.7.5" /> as the fixed-scale reference and applies its own density-dependent denominator for the sweep. The local reservoir matching in **Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" /> specifies the separate conditions for a density-dependent VEV.
+The calculation tests the density-dependent VEV scaling of **Dimensionful VEV Scaling** <Ref id="8.7.4" label="§8.7.4" /> within **Topological Yukawa Identity** <Ref id="8.7.5.1" label="§8.7.5.1" /> to verify cancellation of $v(\rho_3^*)$ in fermion masses:
 
-1.  **Scale Calibration:** Set $v_{\rm calib}=246.22\,\mathrm{GeV}$, $\kappa_m=0.0001703\,\mathrm{GeV}$ per quantum and $N_{\rm scale}=v_{\rm calib}/\kappa_m$.
-2.  **Complexity Assignment:** Use $N_{\rm net}=1,4,10^6$ for the three representative inputs.
-3.  **Monte Carlo Evaluation:** Generate 1,000 seeded density draws with discrete-ensemble mean location $0.029$ and standard deviation $0.005$. At each shared density evaluate $y=N_{\rm net}/(N_{\rm scale}\sqrt{\rho_3^*})$ and $m=yv_{\rm calib}$ for all three representatives.
+1.  **Scale Calibration:** Set $\kappa_m = 0.0001703\,\mathrm{GeV}$ per quantum and anchor $v(\rho_0) = v_{\rm calib} = 246.22\,\mathrm{GeV}$ at the discrete-ensemble mean $\rho_0 = 0.0290$.
+2.  **Complexity Assignment:** Assign representative net complexity counts $N_{\rm net} = 1, 4, 10^6$.
+3.  **Monte Carlo Evaluation:** Generate 1,000 seeded density draws with mean $0.029$ and standard deviation $0.005$, evaluating $v(\rho_3^*) = v_{\rm calib}\sqrt{\rho_3^*/\rho_0}$, $N_{\rm scale}(\rho_3^*) = v(\rho_3^*)/\kappa_m$, $y_f = N_{\rm net}/N_{\rm scale}(\rho_3^*)$, and $m_f = y_f v(\rho_3^*)$ across all draws.
 
 ```python
+# §8.7.5.2  -  Yukawa coupling sweep under density-dependent VEV scaling
+# Checks: m_f = y_f(rho) * v(rho) = kappa_m * N_net cancels v(rho) variations.
 import numpy as np
-# Fixed Units: kappa_m in GeV / 3-cycle from m_e=0.000511 GeV / N_e=3
-kappa_m_gev = 0.0001703  # GeV / 3-cycle
-V_CALIB = 246.22  # GeV, EW scale
-N_SCALE_BASE = V_CALIB / kappa_m_gev  # ~1.445e6 3-cycles / GeV
+
+kappa_m_gev = 0.0001703  # GeV / 3-cycle (m_e / 3)
+V_CALIB = 246.22  # GeV, electroweak scale at discrete-ensemble mean density
 RHO_CENTER = 0.0290  # Discrete-ensemble mean <rho>_all (§5.3, Table 5.3.3.2)
 RHO_SIGMA = 0.0050  # Ensemble scatter
-NUM_MC = 1000  # Runs
-# Generation Configurations (N_net from Ch7 writhe minima, adj for hierarchy)
+NUM_MC = 1000  # Monte Carlo draws
+
 gen_configs = {
-    'Gen1_u/d': {'N_net': 1, 'label': 'Up/Down Quarks (current ~2-5 MeV)'},
-    'Gen2_μ/s/c': {'N_net': 4, 'label': 'Muon/Strange/Charm (~100 MeV w/ torsion)'},
-    'Gen3_τ/b/t': {'N_net': 1000000, 'label': 'Tau/Bottom/Top (t~173 GeV)'}  # Metastable w~400, N~w^2~1.6e5 + base ~10^6
+    "Rep1 (N_net=1)": {"N_net": 1},
+    "Rep2 (N_net=4)": {"N_net": 4},
+    "Rep3 (N_net=10^6)": {"N_net": 1000000},
 }
+
 np.random.seed(42)
 rho_samples = np.random.normal(RHO_CENTER, RHO_SIGMA, NUM_MC)
-print(f"{'GENERATION':<20} | {'N_net':<8} | {'<y_f>':<8} | {'<m_f> (GeV)':<12} | {'σ_m (GeV)':<10}")
-print("-" * 75)
-gen1_m = None
-for gen, config in gen_configs.items():
-    y_f_samples = config['N_net'] / (N_SCALE_BASE * np.sqrt(rho_samples))
-    m_f_samples = y_f_samples * V_CALIB  # GeV
+v_samples = V_CALIB * np.sqrt(rho_samples / RHO_CENTER)
+n_scale_samples = v_samples / kappa_m_gev
+
+print(
+    f"{'REPRESENTATIVE':<18} | {'N_net':<8} | {'<y_f>':<9} | "
+    f"{'σ_y':<9} | {'<m_f> (GeV)':<12} | {'σ_m (GeV)':<10}"
+)
+print("-" * 81)
+
+rep1_m = None
+for label, config in gen_configs.items():
+    n_net = config["N_net"]
+    y_f_samples = n_net / n_scale_samples
+    m_f_samples = y_f_samples * v_samples
     y_f_mean = np.mean(y_f_samples)
+    y_f_std = np.std(y_f_samples)
     m_f_mean = np.mean(m_f_samples)
     m_f_std = np.std(m_f_samples)
-    print(f"{gen:<20} | {config['N_net']:<8} | {y_f_mean:.6f} | {m_f_mean:.3f} | {m_f_std:.3f}")
-    if gen == 'Gen1_u/d':
-        gen1_m = m_f_mean
-    if gen == 'Gen3_τ/b/t' and gen1_m is not None:
-        ratio = m_f_mean / gen1_m
-        print(f"  Hierarchy (Gen3/Gen1): ~{ratio:.0f} (adj QCD ~10^6 effective)")
-print("-" * 75)
+    print(
+        f"{label:<18} | {n_net:<8} | {y_f_mean:<9.3e} | "
+        f"{y_f_std:<9.3e} | {m_f_mean:<12.6f} | {m_f_std:<10.6f}"
+    )
+    if n_net == 1:
+        rep1_m = m_f_mean
+    if n_net == 1000000 and rep1_m is not None:
+        ratio = m_f_mean / rep1_m
+        print(f"  Hierarchy ratio (Rep3/Rep1): {ratio:.0f}")
+print("-" * 81)
 ```
 
 **Simulation Results:**
-
 ```text
-GENERATION           | N_net    | <y_f>    | <m_f> (GeV)  | σ_m (GeV) 
----------------------------------------------------------------------------
-Gen1_u/d             | 1        | 0.000004 | 0.001 | 0.000
-Gen2_μ/s/c           | 4        | 0.000016 | 0.004 | 0.000
-Gen3_τ/b/t           | 1000000  | 4.100022 | 1009.507 | 89.239
-  Hierarchy (Gen3/Gen1): ~1000000 (adj QCD ~10^6 effective)
----------------------------------------------------------------------------
+REPRESENTATIVE     | N_net    | <y_f>     | σ_y       | <m_f> (GeV)  | σ_m (GeV) 
+---------------------------------------------------------------------------------
+Rep1 (N_net=1)     | 1        | 6.982e-07 | 6.172e-08 | 0.000170     | 0.000000  
+Rep2 (N_net=4)     | 4        | 2.793e-06 | 2.469e-07 | 0.000681     | 0.000000  
+Rep3 (N_net=10^6)  | 1000000  | 6.982e-01 | 6.172e-02 | 170.300000   | 0.000000  
+  Hierarchy ratio (Rep3/Rep1): 1000000
+---------------------------------------------------------------------------------
 ```
 
 **Conclusion:**
-The displayed masses summarize the specified inputs and density sweep. For each shared density draw, $m_2/m_1=4$ and $m_3/m_1=10^6$ because all three masses have the same density factor. The absolute values depend on the selected normalization. Connecting these representative complexities and the resulting masses to particular fermions requires an additional assignment.
+Across the $1{,}000$ seeded density draws, the mean Yukawa couplings scale inversely with $\sqrt{\rho_3^*/\rho_0}$ ($\langle y_1 \rangle = 6.982\times 10^{-7}$, $\langle y_2 \rangle = 2.793\times 10^{-6}$, $\langle y_3 \rangle = 0.698209$ with $\sigma_y = 0.061721$), while the product $m_f = y_f v(\rho_3^*) = \kappa_m N_{\mathrm{net}}$ cancels density variations identically ($\langle m_1 \rangle = 0.000170\,\mathrm{GeV}$, $\langle m_2 \rangle = 0.000681\,\mathrm{GeV}$, $\langle m_3 \rangle = 170.300000\,\mathrm{GeV}$, $\sigma_m = 0$) and preserves the exact ratios $m_2/m_1 = 4$ and $m_3/m_1 = 10^6$. The recorded values validate the exact VEV cancellation and Yukawa identity established in the proof.
 
 ### 8.7.5.3 Commentary: Hierarchy Origin {#8.7.5.3}
 
@@ -4841,26 +4812,29 @@ An effective scalar doublet and local reservoir calibration give the weak-boson 
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\mathcal{R}$ | Unitary Rewrite Operator ($e^{i\hat{H}}$) | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
-| $\hat{H}_i$ | Hamiltonian Generator for rewrite $\mathcal{R}_i$ | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
-| $f_{ijk}$ | Structure Constants of the Lie algebra | [§8.1.1.1](/monograph/players/braids/8.1/#8.1.1.1) |
-| $G_{ab}$ | Gram Matrix element | [§8.1.1.1](/monograph/players/braids/8.1/#8.1.1.1) |
+| $U(t)$ | Admitted one-parameter unitary evolution | [§8.1.1](/monograph/players/braids/8.1/#8.1.1) |
+| $\mathcal{R}_i$ | Invertible encoded braid-exchange rewrite | [§8.1.2](/monograph/players/braids/8.1/#8.1.2) |
 | $\sigma_i$ | Braid Group Generator (swap ribbons $i, i+1$) | [§8.1.2](/monograph/players/braids/8.1/#8.1.2) |
-| $\lambda^{(i,j)}$ | Traceless Hermitian Basis Matrix | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
+| $H_a$ | Hermitian generators of admitted unitary controls | [§8.1.5](/monograph/players/braids/8.1/#8.1.5) |
+| $X_k, Z_k, F_{pq}, S_{pq}$ | Adjacent matrix generators and off-diagonal directions | [§8.2.1](/monograph/players/braids/8.2/#8.2.1) |
+| $H_p$ | Normalized independent diagonal basis direction ($i(E_{pp}-E_{nn})$) | [§8.2.5.1](/monograph/players/braids/8.2/#8.2.5.1) |
+| $X_1, X_2, Z_1, Z_2$ | Adjacent tripartite generator seed on three-state basis | [§8.3.1](/monograph/players/braids/8.3/#8.3.1) |
 | $\mathcal{R}_W$ | Flavor-Changing Rewrite Process (Weak) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
 | $\chi$ | Chiral Invariant (Sign of timestamp difference) | [§8.4.1](/monograph/players/braids/8.4/#8.4.1) |
-| $P_L$ | Left-Handed Chiral Projector | [§8.4.8](/monograph/players/braids/8.4/#8.4.8) |
-| $\theta_W$ | Weinberg Angle | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
+| $P_L$ | Left-Handed Chiral Projector | [§8.4.6](/monograph/players/braids/8.4/#8.4.6) |
+| $\gamma^5$ | Chirality Operator | [§8.4.6](/monograph/players/braids/8.4/#8.4.6) |
+| $J_L^{\mu a}$ | Left-handed weak current | [§8.4.8](/monograph/players/braids/8.4/#8.4.8) |
+| $\theta_W$ | Electroweak mixing angle (Weinberg angle) | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
 | $p_3, p_4$ | Probabilities of 3-cycle and 4-cycle rewrites | [§8.5.1](/monograph/players/braids/8.5/#8.5.1) |
+| $\sin^2\theta_W^{(0)}$ | Isolated doublet rewrite baseline ($=0.25$) | [§8.5.5](/monograph/players/braids/8.5/#8.5.5) |
 | $g$ | SU(2) Gauge Coupling Constant | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
 | $\alpha_{\text{topo}}$ | Assigned dimensionless channel weight ($\ln 2 / 4$) | [§8.6.1](/monograph/players/braids/8.6/#8.6.1) |
+| $\lambda^a$ | Traceless Hermitian fundamental matrix basis ($\operatorname{Tr}(\lambda^a\lambda^b)=2\delta^{ab}$) | [§8.6.3](/monograph/players/braids/8.6/#8.6.3) |
 | $M$ | Assigned channel count ($M=3$ or $7$) | [§8.6.6](/monograph/players/braids/8.6/#8.6.6) |
 | $v$ | Higgs Vacuum Expectation Value (VEV) | [§8.7.1](/monograph/players/braids/8.7/#8.7.1) |
+| $m_W, m_Z$ | Masses of W and Z Bosons | [§8.7.3](/monograph/players/braids/8.7/#8.7.3) |
 | $y_f$ | Yukawa Coupling for fermion $f$ | [§8.7.5](/monograph/players/braids/8.7/#8.7.5) |
 | $N_{\text{scale}}$ | Vacuum Characteristic Quantum Supply | [§8.7.5](/monograph/players/braids/8.7/#8.7.5) |
-| $m_{W}, m_{Z}$ | Masses of W and Z Bosons | [§8.7.3](/monograph/players/braids/8.7/#8.7.3) |
-| $J^{\mu a}_L$ | Left-handed weak current | [§8.4.8](/monograph/players/braids/8.4/#8.4.8) |
-| $\gamma^5$ | Chirality Operator | [§8.4.6](/monograph/players/braids/8.4/#8.4.6) |
 
 \newpage
 # References

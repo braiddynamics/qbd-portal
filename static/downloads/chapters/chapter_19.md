@@ -2432,9 +2432,9 @@ Subsequent **Deuterium Bottleneck Thermodynamics** <Ref id="19.4.4" label="§19.
 :::note[**End of Chapter 19**]
 :::
 
-The structural bedrock of primordial matter formation rests upon the thermodynamic release of pre-geometric kinetic energy and the discrete topological decay of heavy braid defects. As the cosmological update speed decelerates during the post-inflationary transition, steric density relaxation drives the thermalization of the graph substrate, establishing the primordial reheating temperature $T_{RH}$. Within this thermalized environment, non-zero topological CP phase quantization introduces a fundamental chirality bias into braid swap operations, satisfying the Sakharov conditions relationally and generating the net cosmic baryon asymmetry without fine-tuned parameter intervention.
+The structural bedrock of primordial matter formation rests upon the thermodynamic release of pre-geometric kinetic energy and the discrete topological decay of heavy braid defects. As the cosmological update speed decelerates during the post-inflationary transition, steric density relaxation drives the thermalization of the graph substrate, establishing the primordial reheating temperature $T_{\text{rh}}$. Within this thermalized environment, non-zero topological CP phase quantization introduces a fundamental chirality bias into braid swap operations, satisfying the Sakharov conditions relationally and generating the net cosmic baryon asymmetry without fine-tuned parameter intervention.
 
-Dynamic enforcement of these topological primitives governs the sequential emergence of stable hadronic mass states and primordial nuclear yields. The geometric writhe configurations of tripartite braid structures dictate the non-zero neutron-proton mass splitting $\Delta m_{NP}$, fixing the equilibrium neutron abundance prior to weak interaction decoupling. Electroweak sphaleron processes maintain chemical equilibrium across the quark-gluon plasma until the freeze-out temperature $T_f$, whereupon the weak rate normalization operator freezes the neutron-to-proton ratio and channels the surviving free neutron flux through the deuterium bottleneck into Helium-4 nuclei with asymptotic abundance $Y_p \approx 0.245$.
+Dynamic enforcement of these topological primitives governs the sequential emergence of stable hadronic mass states and primordial nuclear yields. The geometric writhe configurations of tripartite braid structures dictate the non-zero neutron-proton mass splitting $\Delta m_{np}$, fixing the equilibrium neutron abundance prior to weak interaction decoupling. Electroweak sphaleron processes maintain chemical equilibrium across the quark-gluon plasma until the freeze-out temperature $T_f$, whereupon the weak rate normalization operator freezes the neutron-to-proton ratio and channels the surviving free neutron flux through the deuterium bottleneck into Helium-4 nuclei with asymptotic abundance $Y_p \approx 0.245$.
 
 This synthesis proves that the primordial chemical composition of the cosmos emerges as an inevitable algebraic consequence of graph defect decay and topological knot invariants. The apparent fine-tuning of early baryogenesis and light element abundances reflects the strict combinatorial constraints imposed by the graph substrate during dimensional cooling. Having secured the topological origins of matter abundance and primordial nuclear stability, we turn now to **Chapter 20**, where long-range gravitational relaxation and dark matter scaffolding orchestrate the formation of the Cosmic Web.
 
@@ -2444,16 +2444,28 @@ This synthesis proves that the primordial chemical composition of the cosmos eme
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $T_{RH}$ | Primordial Reheating Temperature | [§19.1.1](/monograph/output/nucleosynthesis/19.1/#19.1.1) |
-| $\Gamma_{\text{steric}}$ | Steric Density Relaxation Rate | [§19.1.2](/monograph/output/nucleosynthesis/19.1/#19.1.2) |
-| $\Gamma_{\text{defect}}$ | Topological Defect Nucleation Rate | [§19.1.3](/monograph/output/nucleosynthesis/19.1/#19.1.3) |
-| $\delta_{\text{CP}}$ | Quantized Topological CP Violation Phase | [§19.2.2](/monograph/output/nucleosynthesis/19.2/#19.2.2) |
-| $\epsilon_M$ | Majorana Defect Decay Asymmetry Parameter | [§19.2.3](/monograph/output/nucleosynthesis/19.2/#19.2.3) |
-| $\eta_B$ | Baryon-to-Photon Ratio | [§19.2.4](/monograph/output/nucleosynthesis/19.2/#19.2.4) |
-| $\Delta m_{NP}$ | Neutron-Proton Topological Mass Splitting | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
-| $Wr(p), Wr(n)$ | Proton and Neutron Braid Writhe Numbers | [§19.3.3](/monograph/output/nucleosynthesis/19.3/#19.3.3) |
-| $T_f$ | Weak Interaction Decoupling Scale Temperature | [§19.4.2](/monograph/output/nucleosynthesis/19.4/#19.4.2) |
-| $(n/p)_f$ | Primordial Neutron-to-Proton Freeze-Out Ratio | [§19.4.3](/monograph/output/nucleosynthesis/19.4/#19.4.3) |
-| $T_{\text{deut}}$ | Deuterium Bottleneck Breakthrough Temperature | [§19.4.4](/monograph/output/nucleosynthesis/19.4/#19.4.4) |
-| $X_n$ | Free Neutron Survival Fraction | [§19.4.5](/monograph/output/nucleosynthesis/19.4/#19.4.5) |
-| $Y_p$ | Primordial Helium-4 Mass Fraction Abundance | [§19.4.1](/monograph/output/nucleosynthesis/19.4/#19.4.1) |
+| $T_{\text{rh}}$ | Primordial reheating temperature generated by topological defect annihilation ($\approx 1.2 \times 10^{15}\text{ GeV}$) | [§19.1.1](/monograph/output/nucleosynthesis/19.1/#19.1.1) |
+| $\eta_{fr}$ | Golden-ratio reheating energy conversion efficiency ($\phi^{-1} \approx 0.618034$) | [§19.1.1](/monograph/output/nucleosynthesis/19.1/#19.1.1) |
+| $C_{relax}$ | Steric density relaxation rate constant ($9\mu e^{-6\mu\rho^*} \approx 8.2706\text{ s}^{-1}$) | [§19.1.2.1](/monograph/output/nucleosynthesis/19.1/#19.1.2.1) |
+| $R_N(t)$ | Volumetric topological defect nucleation rate ($\Gamma_{RH}(\rho(t)-\rho^*)^2$) | [§19.1.3](/monograph/output/nucleosynthesis/19.1/#19.1.3) |
+| $\Gamma_{RH}$ | Topological defect nucleation rate coefficient ($\approx 8.2706 \times 10^{16}\text{ s}^{-1}$) | [§19.1.3](/monograph/output/nucleosynthesis/19.1/#19.1.3) |
+| $P(C)$ | Boltzmann creation probability for braid defect of crossing complexity $C$ | [§19.1.4](/monograph/output/nucleosynthesis/19.1/#19.1.4) |
+| $Y_{B-L}$ | Primordial lepton-minus-baryon asymmetry yield prior to sphaleron redistribution | [§19.2.1](/monograph/output/nucleosynthesis/19.2/#19.2.1) |
+| $w_{top}$ | Signed topological braid writhe winding integer ($w_{top} \in \mathbb{Z}$) | [§19.2.2](/monograph/output/nucleosynthesis/19.2/#19.2.2) |
+| $\epsilon_{CP}$ | Majorana defect decay CP-violation asymmetry parameter ($\approx 2.429 \times 10^{-6}$) | [§19.2.3](/monograph/output/nucleosynthesis/19.2/#19.2.3) |
+| $C_{sph}$ | Electroweak sphaleron $B/(B-L)$ chemical conversion factor ($=28/79 \approx 0.3544$) | [§19.2.4](/monograph/output/nucleosynthesis/19.2/#19.2.4) |
+| $W_{twist}(u)$ | Total crossing writhe invariant of valence quark braid ($W_{twist}(u)=+2, W_{twist}(d)=-1$) | [§19.3.1](/monograph/output/nucleosynthesis/19.3/#19.3.1) |
+| $N_{shared}$ | Constructive shared boundary cycle count between parallel quark twists | [§19.3.1](/monograph/output/nucleosynthesis/19.3/#19.3.1) |
+| $\Delta m_{np}$ | Neutron-proton rest mass difference ($= 1.2930\text{ MeV}$) | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
+| $\kappa_{\text{top}}$ | Topological mass splitting energy scale ($= 0.6843\text{ MeV}$) | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
+| $\Delta m_{\text{top}}$ | Topological mass defect contribution ($=+2.0530\text{ MeV}$) | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
+| $\Delta m_{\text{EM}}$ | Hadronic electromagnetic Coulomb self-energy contribution ($-0.7600\text{ MeV}$) | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
+| $C_{uud}$ | Effective composite crossing complexity of the proton ($=1$) | [§19.3.3](/monograph/output/nucleosynthesis/19.3/#19.3.3) |
+| $Y_p$ | Primordial Helium-4 mass fraction abundance ($\approx 0.248$) | [§19.4.1](/monograph/output/nucleosynthesis/19.4/#19.4.1) |
+| $\tau_n$ | Free neutron decay lifetime ($= 879.4\text{ s}$) | [§19.4.1](/monograph/output/nucleosynthesis/19.4/#19.4.1) |
+| $T_f$ | Weak interaction freeze-out temperature ($\approx 0.8135\text{ MeV}$) | [§19.4.2](/monograph/output/nucleosynthesis/19.4/#19.4.2) |
+| $(n_n/n_p)_0$ | Primordial neutron-to-proton freeze-out ratio ($\approx 0.2040$) | [§19.4.3](/monograph/output/nucleosynthesis/19.4/#19.4.3) |
+| $X_n(0)$ | Initial freeze-out free neutron fractional abundance ($\approx 0.1695$) | [§19.4.3.1](/monograph/output/nucleosynthesis/19.4/#19.4.3.1) |
+| $B_d$ | Deuteron nuclear binding energy ($= 2.2246\text{ MeV}$) | [§19.4.4](/monograph/output/nucleosynthesis/19.4/#19.4.4) |
+| $T_{BBN}$ | Deuterium bottleneck breakthrough temperature ($\approx 0.0767\text{ MeV}$) | [§19.4.4](/monograph/output/nucleosynthesis/19.4/#19.4.4) |
+| $f_{survival}$ | Free neutron survival fraction across weak freeze-out to BBN ($\approx 0.6461$) | [§19.4.5.1](/monograph/output/nucleosynthesis/19.4/#19.4.5.1) |

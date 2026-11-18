@@ -868,7 +868,7 @@ For any graph in the causal graph class, the undirected shortest-path ground met
 
 **I. Directed ground cost**
 
-Let $d_{\rm dir}$ assign to an ordered pair the length of its shortest directed path, with value $\infty$ if there is no such path. A finite-cost coupling $\pi$ can have $\pi(x,y)>0$ only if $d_{\rm dir}(x,y)<\infty$ (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />).
+Let $d_{\text{dir}}$ assign to an ordered pair the length of its shortest directed path, with value $\infty$ if there is no such path. A finite-cost coupling $\pi$ can have $\pi(x,y)>0$ only if $d_{\text{dir}}(x,y)<\infty$ (**Causal Ollivier-Ricci Curvature** <Ref id="11.2.2" label="§11.2.2" />).
 
 **II. Marginal obstruction on a directed fork**
 
@@ -1467,7 +1467,7 @@ The definition of curvature as $K = 1 - W_1$ implies that positive curvature cor
 
 Furthermore, the derivation of the laziness parameter $\alpha = 1/3$ in the **entropy maximization** framework of <Ref id="11.2.5" label="§11.2.5" /> provides a microscopic origin for the concept of mass and inertia in the geometry. By mandating that a significant portion of the probability mass remains at the vertex, the measure resists instantaneous transport. This resistance to flow creates the non-zero transport costs that define the metric scale, ensuring that the geometry possesses stability and weight.
 
-Finally, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> mechanism solves the fundamental problem of defining directed time on an undirected metric space. By encoding the arrow of time into the measure rather than the metric, this framework avoids the singularities that plague other discrete gravity approaches where spacelike distances are often imaginary or undefined. We can thus employ this geometric engine to couple the discrete causal structure directly to a variational principle, establishing the foundation of our therm**odynamic act**ion.
+Finally, the **Compensation by Causal Measures** <Ref id="11.2.7" label="§11.2.7" /> mechanism solves the fundamental problem of defining directed time on an undirected metric space. By encoding the arrow of time into the measure rather than the metric, this framework avoids the singularities that plague other discrete gravity approaches where spacelike distances are often imaginary or undefined. We can thus employ this geometric engine to couple the discrete causal structure directly to a variational principle, establishing the foundation of our **thermodynamic action**.
 
 ---
 
@@ -2220,21 +2220,23 @@ We now possess a fully defined geometric spacetime that arises directly from dis
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $d_{GH}(X,Y)$ | Gromov-Hausdorff distance | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
-| $d_H(A,B)$ | Hausdorff distance | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
-| $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
-| $d_{GHW}$ | Gromov-Hausdorff-Wasserstein metric | [§11.1.1.1](/monograph/stage/discrete/11.1/#11.1.1.1) |
+| $d_{GH}(X,Y)$ | Gromov-Hausdorff distance | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
+| $d_H(A,B)$ | Hausdorff distance | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
+| $W_1(\mu_X, \mu_Y)$ | Wasserstein-1 transport metric | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
+| $\pi$ | Transport coupling (joint measure) | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
+| $d_{GHW}$ | Gromov-Hausdorff-Wasserstein metric | [§11.1.1](/monograph/stage/discrete/11.1/#11.1.1) |
 | $\bar{d}(u,v)$ | Undirected shortest-path metric | [§11.1.2](/monograph/stage/discrete/11.1/#11.1.2) |
-| $N^+(u), N^-(u)$ | Future/Past causal neighborhoods | [§11.2](/monograph/stage/discrete/11.2/#11.2) |
-| $\alpha$ | Laziness parameter (self-mass) | [§11.2](/monograph/stage/discrete/11.2/#11.2) |
-| $\beta$ | Neighborhood mass parameter ($(1-\alpha)/2$) | [§11.2](/monograph/stage/discrete/11.2/#11.2) |
-| $\mu_u$ | Lazy causal probability measure for vertex $u$ | [§11.2.1.1](/monograph/stage/discrete/11.2/#11.2.1.1) |
-| $\mathbb{I}[\cdot]$ | Indicator function | [§11.2.1.1](/monograph/stage/discrete/11.2/#11.2.1.1) |
+| $N^+(u), N^-(u)$ | Future/Past causal neighborhoods | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
+| $\alpha$ | Laziness parameter (self-mass) | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
+| $\beta$ | Neighborhood mass parameter ($(1-\alpha)/2$) | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
+| $\mu_u$ | Lazy causal probability measure for vertex $u$ | [§11.2.1](/monograph/stage/discrete/11.2/#11.2.1) |
 | $K(u,v)$ | Causal Ollivier-Ricci curvature | [§11.2.2](/monograph/stage/discrete/11.2/#11.2.2) |
-| $H(\mu_u)$ | Shannon entropy of measure $\mu_u$ | [§11.2.3](/monograph/stage/discrete/11.2/#11.2.3) |
-| $h(\alpha)$ | Allocation entropy function | [§11.2.3.1](/monograph/stage/discrete/11.2/#11.2.3.1) |
-| $d_{\text{dir}}$ | Directed distance function (shown insufficient) | [§11.2.4.1](/monograph/stage/discrete/11.2/#11.2.4.1) |
-| $\pi$ | Transport coupling (joint measure) | [§11.3.1](/monograph/stage/discrete/11.3/#11.3.1) |
-| $m_w$ | Zero-cost shared mass at vertex $w$ | [§11.3.3](/monograph/stage/discrete/11.3/#11.3.3) |
-| $\Delta \mathcal{S}$ | Variation in total action | [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
-| $K_{\text{baseline}}$ | Baseline curvature in sparse graph | [§11.3.2.1](/monograph/stage/discrete/11.3/#11.3.2.1) |
+| $\mathbb{I}[\cdot]$ | Indicator function | [§11.2.4.1](/monograph/stage/discrete/11.2/#11.2.4.1) |
+| $H_{\text{temporal}}(\alpha, \beta)$ | Macroscopic three-sector temporal entropy | [§11.2.5.1](/monograph/stage/discrete/11.2/#11.2.5.1) |
+| $h(\alpha)$ | Allocation entropy function | [§11.2.5.1](/monograph/stage/discrete/11.2/#11.2.5.1) |
+| $d_{\text{dir}}$ | Directed distance function (shown insufficient) | [§11.2.6.1](/monograph/stage/discrete/11.2/#11.2.6.1) |
+| $\mathcal{S}[G]$ | Discrete Einstein-Hilbert action | [§11.3.1](/monograph/stage/discrete/11.3/#11.3.1) |
+| $K_0(u,v), K_1(u,v)$ | Pre- and post-nucleation causal curvatures | [§11.3.2](/monograph/stage/discrete/11.3/#11.3.2) |
+| $m_w$ | Zero-cost shared mass at vertex $w$ | [§11.3.3.1](/monograph/stage/discrete/11.3/#11.3.3.1) |
+| $\Delta \mathcal{S}$ | Variation in total action | [§11.3.6](/monograph/stage/discrete/11.3/#11.3.6) |
+| $c_\pi$ | Mean action increment per 3-cycle | [§11.3.6](/monograph/stage/discrete/11.3/#11.3.6) |

@@ -22,6 +22,7 @@ from _runner_common import ensure_outdir, print_banner, timestamp, verdict_line,
 from model.config import DEFAULT_CONFIG
 from model.graph_setup import generate_zpi_vacuum, inject_energic_event
 from model.dynamics import (
+    apply_filtered_proposals,
     evolve_graph_to_equilibrium,
     _calculate_add_proposals,
     _calculate_del_proposals,
@@ -64,12 +65,9 @@ def evolve_with_samples(G, config, sample_every: int) -> List[Dict]:
         all_cycles, stress_map = build_stress_map(G)
         proposals_add = _calculate_add_proposals(G, mu, stress_map)
         proposals_del = _calculate_del_proposals(G, mu, lam, all_cycles, stress_map)
-        if not proposals_add and not proposals_del:
+        if not apply_filtered_proposals(G, proposals_add, proposals_del):
             rows.append({"step": step + 1, **snapshot_T(G, config), "halted": 1})
             break
-        edges_to_add = [(e[0], e[1], {"H": h}) for e, h in proposals_add]
-        G.add_edges_from(edges_to_add)
-        G.remove_edges_from(proposals_del.intersection(G.edges()))
         if (step + 1) % sample_every == 0:
             rows.append({"step": step + 1, **snapshot_T(G, config), "halted": 0})
     else:

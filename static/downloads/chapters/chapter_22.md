@@ -3374,18 +3374,25 @@ Having completed the derivation of the four output domains in Part 4 (Inflation,
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\rho_{\text{crit}}$ | Critical 3-Cycle Core Packing Density ($1/(6\mu_0) \approx 0.4178$) | [§22.1.1](/monograph/output/extremes/22.1/#22.1.1) |
-| $V_{\text{core}}$ | Asymptotic Saturated Core Volume Lower Bound | [§22.1.2](/monograph/output/extremes/22.1/#22.1.2) |
-| $K_{\text{max}}$ | Bounded Discrete Causal Ollivier-Ricci Curvature ($1.000$) | [§22.1.6](/monograph/output/extremes/22.1/#22.1.6) |
-| $\mathcal{H}_{\text{desync}}$ | Causal Desynchronization Horizon Boundary | [§22.2.1](/monograph/output/extremes/22.2/#22.2.1) |
-| $S_{BH}$ | Bekenstein-Hawking Boundary Graph Entropy ($k_B A / (4\ell_P^2)$) | [§22.2.2](/monograph/output/extremes/22.2/#22.2.2) |
-| $\tau_{\text{synd}}$ | Error-Correction Syndrome Extraction Latency | [§22.2.4](/monograph/output/extremes/22.2/#22.2.4) |
-| $\Gamma_{\text{evap}}$ | Boundary Swap Instanton Evaporation Rate | [§22.3.1](/monograph/output/extremes/22.3/#22.3.1) |
-| $t_{\text{Page}}$ | Unitary Quantum Island Entanglement Inversion Page Time | [§22.3.2](/monograph/output/extremes/22.3/#22.3.2) |
-| $M_{\text{TOV}}$ | Relativistic Tripartite Maximum Neutron Star Mass Threshold ($\approx 2.14 M_\odot$) | [§22.4.2](/monograph/output/extremes/22.4/#22.4.2) |
-| $P_{\text{deg}}$ | Relativistic Fermionic Degeneracy Pressure | [§22.4.3](/monograph/output/extremes/22.4/#22.4.3) |
-| $\Psi_{\text{cond}}$ | Macroscopic Cooper Braid Stabilizer Condensate | [§22.5.1](/monograph/output/extremes/22.5/#22.5.1) |
-| $\rho_{\text{DC}}$ | Macroscopic DC Electrical Resistivity ($0.000\,\Omega\cdot\text{cm}$) | [§22.5.2](/monograph/output/extremes/22.5/#22.5.2) |
-| $p_{\text{th}}$ | 3D Stabilizer Percolation Fault-Tolerance Threshold ($\approx 0.104$) | [§22.5.5](/monograph/output/extremes/22.5/#22.5.5) |
-| $\lambda_L$ | London Magnetic Screening Penetration Depth ($\approx 21.69\text{ nm}$) | [§22.6.2](/monograph/output/extremes/22.6/#22.6.2) |
-| $\Phi_0$ | Fundamental Homological Magnetic Fluxoid Quantum ($h/(2e) \approx 2.068 \times 10^{-15}\text{ Wb}$) | [§22.6.5](/monograph/output/extremes/22.6/#22.6.5) |
+| $\mathcal{C}_{\text{core}}$ | Saturated graph core induced subgraph at extreme compression | [§22.1.1](/monograph/output/extremes/22.1/#22.1.1) |
+| $\rho_{\text{crit}}$ | Critical incompressible 3-cycle packing density ($1/(6\mu_0) \approx 0.4178$) | [§22.1.1](/monograph/output/extremes/22.1/#22.1.1) |
+| $V_{\text{core}}$ | Asymptotic saturated core spatial volume lower bound | [§22.1.2](/monograph/output/extremes/22.1/#22.1.2) |
+| $P_{\text{acc}}(v)$ | Steric exponentially suppressed rewrite acceptance probability | [§22.1.3](/monograph/output/extremes/22.1/#22.1.3) |
+| $R(v)$ | Bounded discrete scalar curvature ($R(v) \le 6/\ell_0^2$) | [§22.1.6](/monograph/output/extremes/22.1/#22.1.6) |
+| $N(r)$ | Emergent gravitational lapse function in regular black hole core | [§22.1.7](/monograph/output/extremes/22.1/#22.1.7) |
+| $R_{\text{core}}$ | Minimum quantum core radius of non-singular regular black holes | [§22.1.8.1](/monograph/output/extremes/22.1/#22.1.8.1) |
+| $\mathcal{H}_{\text{desync}}$ | Causal desynchronization horizon boundary ($N(x)=0$) | [§22.2.1](/monograph/output/extremes/22.2/#22.2.1) |
+| $S(\mathcal{H})$ | Horizon Bekenstein-Hawking boundary graph entropy ($A(\mathcal{H})/(4\ell_0^2)$) | [§22.2.2](/monograph/output/extremes/22.2/#22.2.2) |
+| $\Delta\tau_{\text{cycle}}(r)$ | Proper-time error-correction syndrome extraction latency | [§22.2.4](/monograph/output/extremes/22.2/#22.2.4) |
+| $\hat{\mathcal{E}}_{\text{Hawking}}$ | Boundary swap Hawking evaporation unitary transition operator | [§22.3.1](/monograph/output/extremes/22.3/#22.3.1) |
+| $t_{\text{Page}}$ | Unitary quantum island entanglement turnover Page time ($\approx 0.5679 t_{\text{evap}}$) | [§22.3.2](/monograph/output/extremes/22.3/#22.3.2) |
+| $\Gamma_{\text{emit}}(\omega)$ | Discrete path-sum Hawking instanton emission rate | [§22.3.3](/monograph/output/extremes/22.3/#22.3.3) |
+| $\mathcal{M}_{\text{deg}}$ | Degenerate tripartite braid media codespace lattice | [§22.4.1](/monograph/output/extremes/22.4/#22.4.1) |
+| $M_{\text{TOV}}$ | Relativistic tripartite maximum neutron star mass threshold ($\approx 2.14 M_\odot$) | [§22.4.2](/monograph/output/extremes/22.4/#22.4.2) |
+| $P_{\text{deg}}$ | Relativistic fermionic braid degeneracy pressure | [§22.4.3](/monograph/output/extremes/22.4/#22.4.3) |
+| $\Psi_{\text{cond}}$ | Macroscopic Cooper braid stabilizer condensate state | [§22.5.1](/monograph/output/extremes/22.5/#22.5.1) |
+| $\rho_{\text{DC}}$ | Macroscopic DC electrical resistivity ($= 0$) | [§22.5.2](/monograph/output/extremes/22.5/#22.5.2) |
+| $p_{\text{th}}$ | 3D stabilizer percolation fault-tolerance threshold ($\approx 0.104$) | [§22.5.5](/monograph/output/extremes/22.5/#22.5.5) |
+| $\mathcal{G}_{\text{SC}}$ | Superconducting graph discrete $U(1)$ gauge invariance group | [§22.6.1](/monograph/output/extremes/22.6/#22.6.1) |
+| $\lambda_L$ | London magnetic screening penetration depth ($\approx 21.69\text{ nm}$) | [§22.6.2](/monograph/output/extremes/22.6/#22.6.2) |
+| $\Phi_0$ | Fundamental homological magnetic fluxoid quantum ($h/(2e)$) | [§22.6.5](/monograph/output/extremes/22.6/#22.6.5) |

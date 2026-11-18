@@ -3545,6 +3545,8 @@ The bounded reverse-path guard checks a frozen proposal (**Acyclic Effective Cau
 
 Full batch closure has a separate target-diagonal test under dominance (**Batch Causal Preservation under Dominance** <Ref id="2.7.8" label="§2.7.8" />). On uniform-height graded inputs, depth decrease gives first-tick acyclicity (**First-Tick Causality on Graded Graphs** <Ref id="2.7.9" label="§2.7.9" />).
 
+Any approximate acyclicity behavior in the operational simulator therefore arises purely from two classical algorithmic approximations. First, reverse-witness searches truncate at $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$, whose missed-witness estimate assumes fixed degree $\le 3$ and uniform conditional comparison probability $p < 1/4$ (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />). Second, single-edge frozen snapshot checking omits post-merge target-diagonal closure (**Batch Causal Preservation under Dominance** <Ref id="2.7.8" label="§2.7.8" />). These simulator truncations do not reflect an omitted quantum error-correcting code (diagonal occupancy checks in Chapter 3 are classical constraint readouts, distinct from Chapter 10 QECC recovery), and immutable occurrence dependencies ($D^+$, **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />) remain unconditionally acyclic.
+
 Distributed rollback costs use the stated ambient coordination and erasure premises. The constructor can implement candidate checks locally, while a global batch requirement depends on the scope of the evolution rule.
 
 ---
@@ -3574,13 +3576,13 @@ But a set of rules is not a universe: laws require a jurisdiction. Possessing th
 | $k_B$ | Boltzmann Constant | [§2.2.3.1](/monograph/rules/axioms/2.2/#2.2.3.1) |
 | $\operatorname{PUC}(G; v, w, u)$ | Candidate-relative Principle of Unique Causality predicate | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
 | $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.3](/monograph/rules/axioms/2.3/#2.3.3) |
-| $L$ | Length of a cycle or path | [§2.3.3.1](/monograph/rules/axioms/2.3/#2.3.3.1) |
+| $L_{min}$ | Minimum length of a simple directed cycle ($=3$) | [§2.3.3.1](/monograph/rules/axioms/2.3/#2.3.3.1) |
 | $\Pi_{\ell \le 2}(v, u)$ | Set of Simple Directed Paths from $v$ to $u$ with length $\le 2$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
 | $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $C, C_k$ | A Simple Directed Cycle (of length $k$) | [§2.4.1](/monograph/rules/axioms/2.4/#2.4.1) |
-| $R$ | Mediated influence by a strictly increasing simple directed path | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
+| $uRv$ | Mediated influence from $u$ to $v$ via a strictly increasing simple directed path | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
 | $R_\le$ | Mediated influence under nondecreasing path timestamps | [§2.6.3](/monograph/rules/axioms/2.6/#2.6.3) |
 | $G_{\mathrm{space}}, G_{\mathrm{event}}$ | Oriented spatial state graph and chronological event order graph | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
 | $\prec$ | Strict event-precedence relation on $G_{\mathrm{event}}$ | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
@@ -3593,7 +3595,6 @@ But a set of rules is not a universe: laws require a jurisdiction. Possessing th
 | $T_{\mathrm{bath}}$ | Landauer thermal bath temperature | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
 | $r_{\mathrm{obs}}$ | Local observation radius of rooted graph neighborhoods | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
 | $B_C(0, r_{\mathrm{obs}})$ | Rooted ball of radius $r_{\mathrm{obs}}$ around vertex $0$ in $C$ | [§2.7.3.1](/monograph/rules/axioms/2.7/#2.7.3.1) |
-| $N$ | Fixed vertex count of the bounded reverse-search candidate support | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
 | $L_{\mathrm{cut}}$ | Logarithmic cutoff depth for bounded reverse-witness search | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
 | $p$ | Conditional edge timestamp-comparison bound ($0 < p < 1/4$) | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
 | $q$ | Conditional reverse-path branching factor ($q = 2p$) | [§2.7.4.1](/monograph/rules/axioms/2.7/#2.7.4.1) |

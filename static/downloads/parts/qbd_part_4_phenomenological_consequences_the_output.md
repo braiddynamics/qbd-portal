@@ -4156,26 +4156,30 @@ This synthesis resolves the classic fine-tuning paradoxes of early cosmology thr
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $G_0$ | Pre-geometric trivalent tree vacuum substrate | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
-| $\rho_3$ | Density of directed 3-cycles | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
-| $d_S$ | Spectral dimension of spatial slice | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
-| $d_H$ | Hausdorff dimension of spatial slice | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
-| $\Lambda$ | Vacuum permittivity constant | [§18.1.2](/monograph/output/inflation/18.1/#18.1.2) |
-| $P_{\text{alignment}}$ | Directed out-degree slot alignment probability | [§18.1.3](/monograph/output/inflation/18.1/#18.1.3) |
-| $N_{\text{active-precursors}}$ | Active directed 2-path precursors | [§18.1.4](/monograph/output/inflation/18.1/#18.1.4) |
-| $J_{\text{in}}$ | Spontaneous loop nucleation current | [§18.1.5](/monograph/output/inflation/18.1/#18.1.5) |
-| $d(u,v)$ | Reconstructed physical distance between vertices | [§18.2.3](/monograph/output/inflation/18.2/#18.2.3) |
-| $L(t)$ | Macroscopic geodesic separation | [§18.2.4](/monograph/output/inflation/18.2/#18.2.4) |
-| $H(t)$ | Emergent macroscopic Hubble parameter | [§18.2.5](/monograph/output/inflation/18.2/#18.2.5) |
-| $a(t)$ | Emergent macroscopic scale factor | [§18.2.5](/monograph/output/inflation/18.2/#18.2.5) |
-| $B(v, R)$ | Topological ball of radius $R$ at vertex $v$ | [§18.3.8](/monograph/output/inflation/18.3/#18.3.8) |
-| $\Delta$ | Discrete graph Laplacian | [§18.3.9](/monograph/output/inflation/18.3/#18.3.9) |
-| $\varepsilon, \eta$ | Dimensionless slow-roll parameters | [§18.4.2](/monograph/output/inflation/18.4/#18.4.2) |
-| $P_{\mathcal{R}}(k)$ | Primordial power spectrum of curvature perturbations | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
-| $n_s$ | Primordial spectral index | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
-| $\Omega_k(t)$ | Macroscopic spatial curvature parameter | [§18.5.1](/monograph/output/inflation/18.5/#18.5.1) |
-| $J$ | Jacobian eigenvalue at stable fixed point | [§18.5.1](/monograph/output/inflation/18.5/#18.5.1) |
-| $G_{uv}(s)$ | Relational causal propagator resolvent | [§18.5.9](/monograph/output/inflation/18.5/#18.5.9) |
+| $k, b$ | Root coordination number ($k=3$) and internal branching factor ($b=2$) | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $\rho_3$ | Directed 3-cycle intensive density in pre-geometric vacuum ($=0$) | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $d_S, d_H$ | Spectral and Hausdorff dimensions of emergent spatial slice ($1 \to 4$) | [§18.1.1](/monograph/output/inflation/18.1/#18.1.1) |
+| $P_{\text{alignment}}$ | Directed out-degree slot alignment probability ($=2^{-6}=0.015625$) | [§18.1.3](/monograph/output/inflation/18.1/#18.1.3) |
+| $N_{\text{active-precursors}}$ | Active directed 2-path precursor abundance ($=2N$) | [§18.1.4](/monograph/output/inflation/18.1/#18.1.4) |
+| $\mathcal{P}$ | Topological parity projection operator breaking bipartite stasis | [§18.1.5](/monograph/output/inflation/18.1/#18.1.5) |
+| $J_{\text{in}}$ | Spontaneous loop nucleation current ($=N/32$) | [§18.1.7](/monograph/output/inflation/18.1/#18.1.7) |
+| $N_3(t)$ | Directed 3-cycle count (emergent macroscopic spatial 3-volume) | [§18.2.1](/monograph/output/inflation/18.2/#18.2.1) |
+| $a(t)$ | Emergent cosmic scale factor ($a(t) \propto N_3(t)^{1/3}$) | [§18.2.1](/monograph/output/inflation/18.2/#18.2.1) |
+| $H(t)$ | Emergent Hubble expansion parameter ($H(t) \equiv \dot{a}(t)/a(t)$) | [§18.2.2](/monograph/output/inflation/18.2/#18.2.2) |
+| $d(u,v)$ | Reconstructed physical distance between graph vertices | [§18.2.3](/monograph/output/inflation/18.2/#18.2.3) |
+| $L(t)$ | Macroscopic hypersurface geodesic separation | [§18.2.4](/monograph/output/inflation/18.2/#18.2.4) |
+| $\rho(t)$ | Intensive 3-cycle density ($N_3(t)/\lvert V(t) \rvert$) | [§18.3.1](/monograph/output/inflation/18.3/#18.3.1) |
+| $\rho_0$ | Frictionless cycle growth threshold density ($> 1/18 \approx 0.0556$) | [§18.3.2](/monograph/output/inflation/18.3/#18.3.2) |
+| $B(v, R)$ | Topological ball of radius $R$ at vertex $v$ | [§18.3.4](/monograph/output/inflation/18.3/#18.3.4) |
+| $\Delta_{G_n}$ | Discrete graph Laplacian converging to manifold Laplacian $\Delta_g$ | [§18.3.6](/monograph/output/inflation/18.3/#18.3.6) |
+| $\varepsilon$ | First inflationary slow-roll parameter ($-\dot{H}/H^2 \approx 0.0125$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
+| $\eta(\rho)$ | Second inflationary slow-roll parameter ($-\alpha_{\mathrm{sr}} F'(\rho)/H(\rho) \approx 0.0050$) | [§18.4.4](/monograph/output/inflation/18.4/#18.4.4) |
+| $n_s$ | Primordial scalar spectral index ($= 1 - 2\varepsilon - 2\eta \approx 0.965$) | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
+| $P_{\mathcal{R}}(k)$ | Primordial curvature perturbation power spectrum amplitude at horizon exit | [§18.4.1](/monograph/output/inflation/18.4/#18.4.1) |
+| $D_{\text{noise}}(\rho)$ | Steric-damped stochastic update noise diffusion coefficient | [§18.4.3.1](/monograph/output/inflation/18.4/#18.4.3.1) |
+| $\sigma_0^2$ | Bare quantum rewrite fluctuation amplitude | [§18.4.3.1](/monograph/output/inflation/18.4/#18.4.3.1) |
+| $\Omega_k(t)$ | Macroscopic spatial curvature density parameter ($\Omega_k(t) = \Omega_{k,0} e^{Jt}$) | [§18.5.1](/monograph/output/inflation/18.5/#18.5.1) |
+| $G_{uv}(s)$ | Relational causal propagator resolvent ($\propto 2^{-d(u,v)}$) | [§18.5.5](/monograph/output/inflation/18.5/#18.5.5) |
 
 ---
 
@@ -6605,9 +6609,9 @@ Subsequent **Deuterium Bottleneck Thermodynamics** <Ref id="19.4.4" label="§19.
 :::note[**End of Chapter 19**]
 :::
 
-The structural bedrock of primordial matter formation rests upon the thermodynamic release of pre-geometric kinetic energy and the discrete topological decay of heavy braid defects. As the cosmological update speed decelerates during the post-inflationary transition, steric density relaxation drives the thermalization of the graph substrate, establishing the primordial reheating temperature $T_{RH}$. Within this thermalized environment, non-zero topological CP phase quantization introduces a fundamental chirality bias into braid swap operations, satisfying the Sakharov conditions relationally and generating the net cosmic baryon asymmetry without fine-tuned parameter intervention.
+The structural bedrock of primordial matter formation rests upon the thermodynamic release of pre-geometric kinetic energy and the discrete topological decay of heavy braid defects. As the cosmological update speed decelerates during the post-inflationary transition, steric density relaxation drives the thermalization of the graph substrate, establishing the primordial reheating temperature $T_{\text{rh}}$. Within this thermalized environment, non-zero topological CP phase quantization introduces a fundamental chirality bias into braid swap operations, satisfying the Sakharov conditions relationally and generating the net cosmic baryon asymmetry without fine-tuned parameter intervention.
 
-Dynamic enforcement of these topological primitives governs the sequential emergence of stable hadronic mass states and primordial nuclear yields. The geometric writhe configurations of tripartite braid structures dictate the non-zero neutron-proton mass splitting $\Delta m_{NP}$, fixing the equilibrium neutron abundance prior to weak interaction decoupling. Electroweak sphaleron processes maintain chemical equilibrium across the quark-gluon plasma until the freeze-out temperature $T_f$, whereupon the weak rate normalization operator freezes the neutron-to-proton ratio and channels the surviving free neutron flux through the deuterium bottleneck into Helium-4 nuclei with asymptotic abundance $Y_p \approx 0.245$.
+Dynamic enforcement of these topological primitives governs the sequential emergence of stable hadronic mass states and primordial nuclear yields. The geometric writhe configurations of tripartite braid structures dictate the non-zero neutron-proton mass splitting $\Delta m_{np}$, fixing the equilibrium neutron abundance prior to weak interaction decoupling. Electroweak sphaleron processes maintain chemical equilibrium across the quark-gluon plasma until the freeze-out temperature $T_f$, whereupon the weak rate normalization operator freezes the neutron-to-proton ratio and channels the surviving free neutron flux through the deuterium bottleneck into Helium-4 nuclei with asymptotic abundance $Y_p \approx 0.245$.
 
 This synthesis proves that the primordial chemical composition of the cosmos emerges as an inevitable algebraic consequence of graph defect decay and topological knot invariants. The apparent fine-tuning of early baryogenesis and light element abundances reflects the strict combinatorial constraints imposed by the graph substrate during dimensional cooling. Having secured the topological origins of matter abundance and primordial nuclear stability, we turn now to **Chapter 20**, where long-range gravitational relaxation and dark matter scaffolding orchestrate the formation of the Cosmic Web.
 
@@ -6617,19 +6621,31 @@ This synthesis proves that the primordial chemical composition of the cosmos eme
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $T_{RH}$ | Primordial Reheating Temperature | [§19.1.1](/monograph/output/nucleosynthesis/19.1/#19.1.1) |
-| $\Gamma_{\text{steric}}$ | Steric Density Relaxation Rate | [§19.1.2](/monograph/output/nucleosynthesis/19.1/#19.1.2) |
-| $\Gamma_{\text{defect}}$ | Topological Defect Nucleation Rate | [§19.1.3](/monograph/output/nucleosynthesis/19.1/#19.1.3) |
-| $\delta_{\text{CP}}$ | Quantized Topological CP Violation Phase | [§19.2.2](/monograph/output/nucleosynthesis/19.2/#19.2.2) |
-| $\epsilon_M$ | Majorana Defect Decay Asymmetry Parameter | [§19.2.3](/monograph/output/nucleosynthesis/19.2/#19.2.3) |
-| $\eta_B$ | Baryon-to-Photon Ratio | [§19.2.4](/monograph/output/nucleosynthesis/19.2/#19.2.4) |
-| $\Delta m_{NP}$ | Neutron-Proton Topological Mass Splitting | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
-| $Wr(p), Wr(n)$ | Proton and Neutron Braid Writhe Numbers | [§19.3.3](/monograph/output/nucleosynthesis/19.3/#19.3.3) |
-| $T_f$ | Weak Interaction Decoupling Scale Temperature | [§19.4.2](/monograph/output/nucleosynthesis/19.4/#19.4.2) |
-| $(n/p)_f$ | Primordial Neutron-to-Proton Freeze-Out Ratio | [§19.4.3](/monograph/output/nucleosynthesis/19.4/#19.4.3) |
-| $T_{\text{deut}}$ | Deuterium Bottleneck Breakthrough Temperature | [§19.4.4](/monograph/output/nucleosynthesis/19.4/#19.4.4) |
-| $X_n$ | Free Neutron Survival Fraction | [§19.4.5](/monograph/output/nucleosynthesis/19.4/#19.4.5) |
-| $Y_p$ | Primordial Helium-4 Mass Fraction Abundance | [§19.4.1](/monograph/output/nucleosynthesis/19.4/#19.4.1) |
+| $T_{\text{rh}}$ | Primordial reheating temperature generated by topological defect annihilation ($\approx 1.2 \times 10^{15}\text{ GeV}$) | [§19.1.1](/monograph/output/nucleosynthesis/19.1/#19.1.1) |
+| $\eta_{fr}$ | Golden-ratio reheating energy conversion efficiency ($\phi^{-1} \approx 0.618034$) | [§19.1.1](/monograph/output/nucleosynthesis/19.1/#19.1.1) |
+| $C_{relax}$ | Steric density relaxation rate constant ($9\mu e^{-6\mu\rho^*} \approx 8.2706\text{ s}^{-1}$) | [§19.1.2.1](/monograph/output/nucleosynthesis/19.1/#19.1.2.1) |
+| $R_N(t)$ | Volumetric topological defect nucleation rate ($\Gamma_{RH}(\rho(t)-\rho^*)^2$) | [§19.1.3](/monograph/output/nucleosynthesis/19.1/#19.1.3) |
+| $\Gamma_{RH}$ | Topological defect nucleation rate coefficient ($\approx 8.2706 \times 10^{16}\text{ s}^{-1}$) | [§19.1.3](/monograph/output/nucleosynthesis/19.1/#19.1.3) |
+| $P(C)$ | Boltzmann creation probability for braid defect of crossing complexity $C$ | [§19.1.4](/monograph/output/nucleosynthesis/19.1/#19.1.4) |
+| $Y_{B-L}$ | Primordial lepton-minus-baryon asymmetry yield prior to sphaleron redistribution | [§19.2.1](/monograph/output/nucleosynthesis/19.2/#19.2.1) |
+| $w_{top}$ | Signed topological braid writhe winding integer ($w_{top} \in \mathbb{Z}$) | [§19.2.2](/monograph/output/nucleosynthesis/19.2/#19.2.2) |
+| $\epsilon_{CP}$ | Majorana defect decay CP-violation asymmetry parameter ($\approx 2.429 \times 10^{-6}$) | [§19.2.3](/monograph/output/nucleosynthesis/19.2/#19.2.3) |
+| $C_{sph}$ | Electroweak sphaleron $B/(B-L)$ chemical conversion factor ($=28/79 \approx 0.3544$) | [§19.2.4](/monograph/output/nucleosynthesis/19.2/#19.2.4) |
+| $W_{twist}(u)$ | Total crossing writhe invariant of valence quark braid ($W_{twist}(u)=+2, W_{twist}(d)=-1$) | [§19.3.1](/monograph/output/nucleosynthesis/19.3/#19.3.1) |
+| $N_{shared}$ | Constructive shared boundary cycle count between parallel quark twists | [§19.3.1](/monograph/output/nucleosynthesis/19.3/#19.3.1) |
+| $\Delta m_{np}$ | Neutron-proton rest mass difference ($= 1.2930\text{ MeV}$) | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
+| $\kappa_{\text{top}}$ | Topological mass splitting energy scale ($= 0.6843\text{ MeV}$) | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
+| $\Delta m_{\text{top}}$ | Topological mass defect contribution ($=+2.0530\text{ MeV}$) | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
+| $\Delta m_{\text{EM}}$ | Hadronic electromagnetic Coulomb self-energy contribution ($-0.7600\text{ MeV}$) | [§19.3.2](/monograph/output/nucleosynthesis/19.3/#19.3.2) |
+| $C_{uud}$ | Effective composite crossing complexity of the proton ($=1$) | [§19.3.3](/monograph/output/nucleosynthesis/19.3/#19.3.3) |
+| $Y_p$ | Primordial Helium-4 mass fraction abundance ($\approx 0.248$) | [§19.4.1](/monograph/output/nucleosynthesis/19.4/#19.4.1) |
+| $\tau_n$ | Free neutron decay lifetime ($= 879.4\text{ s}$) | [§19.4.1](/monograph/output/nucleosynthesis/19.4/#19.4.1) |
+| $T_f$ | Weak interaction freeze-out temperature ($\approx 0.8135\text{ MeV}$) | [§19.4.2](/monograph/output/nucleosynthesis/19.4/#19.4.2) |
+| $(n_n/n_p)_0$ | Primordial neutron-to-proton freeze-out ratio ($\approx 0.2040$) | [§19.4.3](/monograph/output/nucleosynthesis/19.4/#19.4.3) |
+| $X_n(0)$ | Initial freeze-out free neutron fractional abundance ($\approx 0.1695$) | [§19.4.3.1](/monograph/output/nucleosynthesis/19.4/#19.4.3.1) |
+| $B_d$ | Deuteron nuclear binding energy ($= 2.2246\text{ MeV}$) | [§19.4.4](/monograph/output/nucleosynthesis/19.4/#19.4.4) |
+| $T_{BBN}$ | Deuterium bottleneck breakthrough temperature ($\approx 0.0767\text{ MeV}$) | [§19.4.4](/monograph/output/nucleosynthesis/19.4/#19.4.4) |
+| $f_{survival}$ | Free neutron survival fraction across weak freeze-out to BBN ($\approx 0.6461$) | [§19.4.5.1](/monograph/output/nucleosynthesis/19.4/#19.4.5.1) |
 
 ---
 
@@ -10800,18 +10816,33 @@ This synthesis demonstrates that the complex architecture of the Cosmic Web is t
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $z_{\text{rec}}$ | Recombination Decoupling Redshift ($z \approx 1100$) | [§20.1.1](/monograph/output/web/20.1/#20.1.1) |
-| $X_e(z)$ | Fractional Free Electron Ionization Abundance | [§20.1.3](/monograph/output/web/20.1/#20.1.3) |
-| $r_s(z_{\text{drag}})$ | Comoving Sound Horizon Drag Scale ($147.5\text{ Mpc}$) | [§20.2.3](/monograph/output/web/20.2/#20.2.3) |
-| $k_D$ | Silk Diffusion Damping Wavenumber | [§20.2.5](/monograph/output/web/20.2/#20.2.5) |
-| $C_\ell$ | Angular Power Spectrum Multipolar Amplitude | [§20.2.1](/monograph/output/web/20.2/#20.2.1) |
-| $T(k)$ | Linear Matter Density Transfer Function | [§20.3.1](/monograph/output/web/20.3/#20.3.1) |
-| $M_J(t)$ | Baryonic Jeans Collapse Mass Threshold | [§20.3.4](/monograph/output/web/20.3/#20.3.4) |
-| $D_{ij}$ | Discrete Tidal Deformation Tensor | [§20.4.2](/monograph/output/web/20.4/#20.4.2) |
-| $\alpha \ge \beta \ge \gamma$ | Ordered Deformation Tensor Principal Eigenvalues | [§20.4.3](/monograph/output/web/20.4/#20.4.3) |
-| $\Omega_{\text{void}}(t)$ | Cosmic Void Fractional Volume Occupancy | [§20.5.1](/monograph/output/web/20.5/#20.5.1) |
-| $P_m(k)$ | Evolved Non-Linear Matter Power Spectrum | [§20.6.1](/monograph/output/web/20.6/#20.6.1) |
-| $r_{\text{BAO}}$ | Baryon Acoustic Oscillation Standard Ruler Scale | [§20.6.3](/monograph/output/web/20.6/#20.6.3) |
+| $z_*$ | Last Scattering Surface photon decoupling redshift ($\approx 1090$) | [§20.1.1](/monograph/output/web/20.1/#20.1.1) |
+| $\Gamma_{\mathcal{R}}$ | Microscopic photon-plasma local rewrite scattering frequency | [§20.1.2](/monograph/output/web/20.1/#20.1.2) |
+| $\mu_\gamma$ | Relativistic photon ensemble chemical potential ($\equiv 0$) | [§20.1.2](/monograph/output/web/20.1/#20.1.2) |
+| $T_{\text{rec}}$ | Hydrogen recombination temperature threshold ($\approx 0.30\text{ eV}$) | [§20.1.3](/monograph/output/web/20.1/#20.1.3) |
+| $x_e$ | Fractional free electron ionization abundance ($n_e / n_H$) | [§20.1.3](/monograph/output/web/20.1/#20.1.3) |
+| $\alpha_B$ | Case-B hydrogen recombination rate coefficient | [§20.1.3.1](/monograph/output/web/20.1/#20.1.3.1) |
+| $z_{\text{rec}}$ | Peak hydrogen recombination redshift ($= 1275.45$) | [§20.1.3.1](/monograph/output/web/20.1/#20.1.3.1) |
+| $\Phi_c(x)$ | Discrete gravitational potential sourced by 3-cycle overdensity | [§20.1.4](/monograph/output/web/20.1/#20.1.4) |
+| $\frac{\delta T}{T}$ | Sachs-Wolfe gravitational potential temperature anisotropy ($\frac{1}{3}\Phi_c/c^2$) | [§20.1.4](/monograph/output/web/20.1/#20.1.4) |
+| $g(z)$ | Photon decoupling visibility function ($\frac{d\tau}{dz}e^{-\tau(z)}$) | [§20.1.5](/monograph/output/web/20.1/#20.1.5) |
+| $\tau(z)$ | Thomson scattering optical depth from observer to redshift $z$ | [§20.1.5](/monograph/output/web/20.1/#20.1.5) |
+| $C_\ell$ | CMB angular power spectrum multipole expansion coefficients | [§20.2.1](/monograph/output/web/20.2/#20.2.1) |
+| $\ell_*$ | Fundamental acoustic multipole spacing ($= 302.28$) | [§20.2.1](/monograph/output/web/20.2/#20.2.1) |
+| $c_s(\eta)$ | Relativistic baryon-photon plasma adiabatic sound speed | [§20.2.2](/monograph/output/web/20.2/#20.2.2) |
+| $r_s(z_*)$ | Comoving sound horizon scale at photon decoupling ($= 144.42 \pm 0.26\text{ Mpc}$) | [§20.2.3](/monograph/output/web/20.2/#20.2.3) |
+| $\Omega_\Lambda$ | Dark energy cosmological constant density parameter | [§20.2.3.1](/monograph/output/web/20.2/#20.2.3.1) |
+| $\Omega_m$ | Total non-relativistic matter cosmic density parameter | [§20.2.3.1](/monograph/output/web/20.2/#20.2.3.1) |
+| $\theta_*$ | Angular scale subtended by sound horizon at decoupling ($\approx 0.5955^\circ$) | [§20.2.4](/monograph/output/web/20.2/#20.2.4) |
+| $k_D$ | Silk photon diffusion damping wavenumber ($\approx 0.1007\text{ Mpc}^{-1}$) | [§20.2.5](/monograph/output/web/20.2/#20.2.5) |
+| $T(k)$ | Linear matter density transfer function | [§20.3.1](/monograph/output/web/20.3/#20.3.1) |
+| $M_J$ | Baryonic Jeans gravitational collapse mass threshold | [§20.3.4](/monograph/output/web/20.3/#20.3.4) |
+| $\mathcal{D}_{ij}(\mathbf{q})$ | Discrete Zel'dovich tidal deformation tensor ($\partial^2\Phi_0/\partial q_i\partial q_j$) | [§20.4.1](/monograph/output/web/20.4/#20.4.1) |
+| $\lambda_1 > \lambda_2 > \lambda_3$ | Ordered tidal deformation tensor principal eigenvalues | [§20.4.4](/monograph/output/web/20.4/#20.4.4) |
+| $\mathcal{Q}_{\mathcal{D}}$ | Buchert cosmic void-wall kinematic backreaction invariant | [§20.5.1](/monograph/output/web/20.5/#20.5.1) |
+| $P(k, z)$ | Evolved linear matter power spectrum at redshift $z$ | [§20.6.1](/monograph/output/web/20.6/#20.6.1) |
+| $r_{\text{BAO}}$ | Baryon Acoustic Oscillation standard ruler scale ($101.72 \pm 0.30 h^{-1}\text{ Mpc}$) | [§20.6.3](/monograph/output/web/20.6/#20.6.3) |
+| $\sigma_8$ | Linear matter fluctuation amplitude within $8 h^{-1}\text{ Mpc}$ spheres ($= 0.811$) | [§20.6.3.1](/monograph/output/web/20.6/#20.6.3.1) |
 
 ---
 
@@ -13057,17 +13088,28 @@ This pre-geometric formulation resolves longstanding cosmological puzzles by ide
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $B_4$ | Four-Strand Braid Group Defect | [§21.1.2](/monograph/output/relics/21.1/#21.1.2) |
-| $m_{B_4}$ | Ground-State Dark Relic Mass ($\approx 5.026\text{ GeV}$) | [§21.1.4](/monograph/output/relics/21.1/#21.1.4) |
-| $\Omega_{DM}/\Omega_B$ | Dark-to-Baryonic Mass Density Ratio ($\approx 5.36$) | [§21.1.1](/monograph/output/relics/21.1/#21.1.1) |
-| $n_{B_4}/n_B$ | Primordial Freeze-Out Defect-to-Baryon Number Ratio ($1.000$) | [§21.1.6](/monograph/output/relics/21.1/#21.1.6) |
-| $J_+$ | Equilibrium 3-Cycle Creation Current Density | [§21.2.2](/monograph/output/relics/21.2/#21.2.2) |
-| $P_{vac}$ | Master Equation Vacuum Negative Pressure ($-\rho_{vac} c^2$) | [§21.2.3](/monograph/output/relics/21.2/#21.2.3) |
-| $w$ | Dark Energy Equation of State Parameter ($-1.000$) | [§21.2.5](/monograph/output/relics/21.2/#21.2.5) |
-| $L_{IR}$ | Cosmological Holographic Infrared Horizon Radius ($c H_0^{-1}$) | [§21.2.6](/monograph/output/relics/21.2/#21.2.6) |
-| $\sigma_{\text{geom}}$ | Atmospheric Hadronic-Scale Contact Cross-Section ($\approx 30\text{ mb}$) | [§21.3.6](/monograph/output/relics/21.3/#21.3.6) |
-| $t_{\text{sat}}$ | Master Equation Attractor Saturation Timescale ($\approx 13.8\text{ Gyr}$) | [§21.4.3](/monograph/output/relics/21.4/#21.4.3) |
-| $\Delta \ln a$ | Cosmic Coincidence Window Expansion Duration ($1.535$) | [§21.4.4](/monograph/output/relics/21.4/#21.4.4) |
+| $\Omega_{DM}/\Omega_B$ | Dark-to-baryonic cosmic mass density ratio ($\approx 5.36$) | [§21.1](/monograph/output/relics/21.1/#21.1) |
+| $n_{B_4}/n_B$ | Primordial freeze-out 4-strand defect-to-baryon number ratio ($1.000$) | [§21.1.1](/monograph/output/relics/21.1/#21.1.1) |
+| $\Omega_{\text{DM}}$ | Cold dark matter cosmic density parameter | [§21.1.1](/monograph/output/relics/21.1/#21.1.1) |
+| $B_4$ | Four-strand braid group topological dark relic sector | [§21.1.2](/monograph/output/relics/21.1/#21.1.2) |
+| $\beta_4$ | Gauge-sterile 4-strand topological dark matter braid defect | [§21.1.2](/monograph/output/relics/21.1/#21.1.2) |
+| $H_1(G \setminus K, \mathbb{Z})$ | First graph complement homology group protecting 4-strand relic stability | [§21.1.2.1](/monograph/output/relics/21.1/#21.1.2.1) |
+| $\hat{T}^a$ | Standard Model gauge generator annihilating sterile 4-strand relic states | [§21.1.3](/monograph/output/relics/21.1/#21.1.3) |
+| $m_{B_4}$ | Ground-state rest mass of 4-strand dark relic ($= 5.0265\text{ GeV}$) | [§21.1.4](/monograph/output/relics/21.1/#21.1.4) |
+| $\kappa_H$ | Hadronic / crystallization scale mass quantum ($\approx 314.159\text{ MeV}$) | [§21.1.4](/monograph/output/relics/21.1/#21.1.4) |
+| $C[\beta_4]$ | Crossing complexity of minimal 4-strand defect ($=16$) | [§21.1.4](/monograph/output/relics/21.1/#21.1.4) |
+| $n_{B_4}$ | Volumetric number density of 4-strand dark relics | [§21.1.5](/monograph/output/relics/21.1/#21.1.5) |
+| $\xi(t_{\text{cryst}})$ | Kibble-Zurek topological correlation length at crystallization freeze-out | [§21.1.5](/monograph/output/relics/21.1/#21.1.5) |
+| $\rho_{vac}$ | Holographic vacuum energy density ($\approx 10^{-122} \rho_{Pl}$) | [§21.2.1](/monograph/output/relics/21.2/#21.2.1) |
+| $P_{vac}$ | Master Equation vacuum negative isotropic pressure ($-\rho_{vac} c^2$) | [§21.2.1](/monograph/output/relics/21.2/#21.2.1) |
+| $w$ | Dark energy equation of state parameter ($= -1.000$) | [§21.2.1](/monograph/output/relics/21.2/#21.2.1) |
+| $L_{IR}$ | Cosmological holographic infrared horizon radius ($c H_0^{-1}$) | [§21.2.1](/monograph/output/relics/21.2/#21.2.1) |
+| $J_+$ | Equilibrium unpinned 3-cycle creation current density ($\approx 0.0256\text{ cycles/tick/node}$) | [§21.2.2](/monograph/output/relics/21.2/#21.2.2) |
+| $\sigma_{\text{geom}}$ | Atmospheric hadronic-scale geometric contact cross section ($\approx 30\text{ mb}$) | [§21.3.1](/monograph/output/relics/21.3/#21.3.1) |
+| $\lambda_{\text{CMB}}$ | Relic mean free path through CMB photon bath ($\to \infty$) | [§21.3.1](/monograph/output/relics/21.3/#21.3.1) |
+| $\sigma_{\text{SI}}$ | Spin-independent dark matter-nucleon scattering cross section | [§21.3.6.2](/monograph/output/relics/21.3/#21.3.6.2) |
+| $t_{\text{sat}}$ | Master Equation attractor saturation timescale ($\approx 13.8\text{ Gyr}$) | [§21.4.3](/monograph/output/relics/21.4/#21.4.3) |
+| $\Delta \ln a$ | Cosmic coincidence window expansion duration ($= 1.535$ $e$-folds) | [§21.4.4](/monograph/output/relics/21.4/#21.4.4) |
 
 ---
 
@@ -16439,18 +16481,25 @@ Having completed the derivation of the four output domains in Part 4 (Inflation,
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\rho_{\text{crit}}$ | Critical 3-Cycle Core Packing Density ($1/(6\mu_0) \approx 0.4178$) | [§22.1.1](/monograph/output/extremes/22.1/#22.1.1) |
-| $V_{\text{core}}$ | Asymptotic Saturated Core Volume Lower Bound | [§22.1.2](/monograph/output/extremes/22.1/#22.1.2) |
-| $K_{\text{max}}$ | Bounded Discrete Causal Ollivier-Ricci Curvature ($1.000$) | [§22.1.6](/monograph/output/extremes/22.1/#22.1.6) |
-| $\mathcal{H}_{\text{desync}}$ | Causal Desynchronization Horizon Boundary | [§22.2.1](/monograph/output/extremes/22.2/#22.2.1) |
-| $S_{BH}$ | Bekenstein-Hawking Boundary Graph Entropy ($k_B A / (4\ell_P^2)$) | [§22.2.2](/monograph/output/extremes/22.2/#22.2.2) |
-| $\tau_{\text{synd}}$ | Error-Correction Syndrome Extraction Latency | [§22.2.4](/monograph/output/extremes/22.2/#22.2.4) |
-| $\Gamma_{\text{evap}}$ | Boundary Swap Instanton Evaporation Rate | [§22.3.1](/monograph/output/extremes/22.3/#22.3.1) |
-| $t_{\text{Page}}$ | Unitary Quantum Island Entanglement Inversion Page Time | [§22.3.2](/monograph/output/extremes/22.3/#22.3.2) |
-| $M_{\text{TOV}}$ | Relativistic Tripartite Maximum Neutron Star Mass Threshold ($\approx 2.14 M_\odot$) | [§22.4.2](/monograph/output/extremes/22.4/#22.4.2) |
-| $P_{\text{deg}}$ | Relativistic Fermionic Degeneracy Pressure | [§22.4.3](/monograph/output/extremes/22.4/#22.4.3) |
-| $\Psi_{\text{cond}}$ | Macroscopic Cooper Braid Stabilizer Condensate | [§22.5.1](/monograph/output/extremes/22.5/#22.5.1) |
-| $\rho_{\text{DC}}$ | Macroscopic DC Electrical Resistivity ($0.000\,\Omega\cdot\text{cm}$) | [§22.5.2](/monograph/output/extremes/22.5/#22.5.2) |
-| $p_{\text{th}}$ | 3D Stabilizer Percolation Fault-Tolerance Threshold ($\approx 0.104$) | [§22.5.5](/monograph/output/extremes/22.5/#22.5.5) |
-| $\lambda_L$ | London Magnetic Screening Penetration Depth ($\approx 21.69\text{ nm}$) | [§22.6.2](/monograph/output/extremes/22.6/#22.6.2) |
-| $\Phi_0$ | Fundamental Homological Magnetic Fluxoid Quantum ($h/(2e) \approx 2.068 \times 10^{-15}\text{ Wb}$) | [§22.6.5](/monograph/output/extremes/22.6/#22.6.5) |
+| $\mathcal{C}_{\text{core}}$ | Saturated graph core induced subgraph at extreme compression | [§22.1.1](/monograph/output/extremes/22.1/#22.1.1) |
+| $\rho_{\text{crit}}$ | Critical incompressible 3-cycle packing density ($1/(6\mu_0) \approx 0.4178$) | [§22.1.1](/monograph/output/extremes/22.1/#22.1.1) |
+| $V_{\text{core}}$ | Asymptotic saturated core spatial volume lower bound | [§22.1.2](/monograph/output/extremes/22.1/#22.1.2) |
+| $P_{\text{acc}}(v)$ | Steric exponentially suppressed rewrite acceptance probability | [§22.1.3](/monograph/output/extremes/22.1/#22.1.3) |
+| $R(v)$ | Bounded discrete scalar curvature ($R(v) \le 6/\ell_0^2$) | [§22.1.6](/monograph/output/extremes/22.1/#22.1.6) |
+| $N(r)$ | Emergent gravitational lapse function in regular black hole core | [§22.1.7](/monograph/output/extremes/22.1/#22.1.7) |
+| $R_{\text{core}}$ | Minimum quantum core radius of non-singular regular black holes | [§22.1.8.1](/monograph/output/extremes/22.1/#22.1.8.1) |
+| $\mathcal{H}_{\text{desync}}$ | Causal desynchronization horizon boundary ($N(x)=0$) | [§22.2.1](/monograph/output/extremes/22.2/#22.2.1) |
+| $S(\mathcal{H})$ | Horizon Bekenstein-Hawking boundary graph entropy ($A(\mathcal{H})/(4\ell_0^2)$) | [§22.2.2](/monograph/output/extremes/22.2/#22.2.2) |
+| $\Delta\tau_{\text{cycle}}(r)$ | Proper-time error-correction syndrome extraction latency | [§22.2.4](/monograph/output/extremes/22.2/#22.2.4) |
+| $\hat{\mathcal{E}}_{\text{Hawking}}$ | Boundary swap Hawking evaporation unitary transition operator | [§22.3.1](/monograph/output/extremes/22.3/#22.3.1) |
+| $t_{\text{Page}}$ | Unitary quantum island entanglement turnover Page time ($\approx 0.5679 t_{\text{evap}}$) | [§22.3.2](/monograph/output/extremes/22.3/#22.3.2) |
+| $\Gamma_{\text{emit}}(\omega)$ | Discrete path-sum Hawking instanton emission rate | [§22.3.3](/monograph/output/extremes/22.3/#22.3.3) |
+| $\mathcal{M}_{\text{deg}}$ | Degenerate tripartite braid media codespace lattice | [§22.4.1](/monograph/output/extremes/22.4/#22.4.1) |
+| $M_{\text{TOV}}$ | Relativistic tripartite maximum neutron star mass threshold ($\approx 2.14 M_\odot$) | [§22.4.2](/monograph/output/extremes/22.4/#22.4.2) |
+| $P_{\text{deg}}$ | Relativistic fermionic braid degeneracy pressure | [§22.4.3](/monograph/output/extremes/22.4/#22.4.3) |
+| $\Psi_{\text{cond}}$ | Macroscopic Cooper braid stabilizer condensate state | [§22.5.1](/monograph/output/extremes/22.5/#22.5.1) |
+| $\rho_{\text{DC}}$ | Macroscopic DC electrical resistivity ($= 0$) | [§22.5.2](/monograph/output/extremes/22.5/#22.5.2) |
+| $p_{\text{th}}$ | 3D stabilizer percolation fault-tolerance threshold ($\approx 0.104$) | [§22.5.5](/monograph/output/extremes/22.5/#22.5.5) |
+| $\mathcal{G}_{\text{SC}}$ | Superconducting graph discrete $U(1)$ gauge invariance group | [§22.6.1](/monograph/output/extremes/22.6/#22.6.1) |
+| $\lambda_L$ | London magnetic screening penetration depth ($\approx 21.69\text{ nm}$) | [§22.6.2](/monograph/output/extremes/22.6/#22.6.2) |
+| $\Phi_0$ | Fundamental homological magnetic fluxoid quantum ($h/(2e)$) | [§22.6.5](/monograph/output/extremes/22.6/#22.6.5) |

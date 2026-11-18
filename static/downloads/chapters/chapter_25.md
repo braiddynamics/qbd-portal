@@ -465,7 +465,6 @@ The resulting paradigm presents a profound philosophical vision: the universe as
 | $S_{\text{vac}}$ | Ground-State Vacuum Code Entropy per Erased Link ($=\ln 2$) | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
 | $C_{\mu\nu\rho\sigma}$ | Conformal Weyl Curvature Tensor | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
 | $T^\mu_\mu$ | Trace of Energy-Momentum Tensor in Conformal Epoch | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
-| $\mathcal{R}$ | Space of Microscopic Local Graph Rewrite Rules | [§25.2.1](/monograph/conclusion/synthesis/25.2/#25.2.1) |
 | $p_{\text{eff}}$ | Effective Error Rate per Graph Rewrite Step | [§25.2.2](/monograph/conclusion/synthesis/25.2/#25.2.2) |
 | $\mathcal{O}$ | Embedded Localized Braided Observer Subsystem | [§25.3](/monograph/conclusion/synthesis/25.3/#25.3) |
 | $\hat{\mathcal{W}}_{\text{loop}}$ | Self-Observing Participatory Cosmic Closure Operator | [§25.3](/monograph/conclusion/synthesis/25.3/#25.3) |

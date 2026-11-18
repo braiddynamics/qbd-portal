@@ -24,6 +24,7 @@ from _runner_common import ensure_outdir, print_banner, timestamp, verdict_line,
 from model.config import DEFAULT_CONFIG
 from model.graph_setup import generate_zpi_vacuum, inject_energic_event
 from model.dynamics import (
+    apply_filtered_proposals,
     build_stress_map,
     _calculate_add_proposals,
     _calculate_del_proposals,
@@ -43,10 +44,8 @@ def evolve_custom(G, config, protected_edges: Set[Tuple[int, int]] | None, steps
         proposals_del = _calculate_del_proposals(G, mu, lam, all_cycles, stress_map)
         if protected_edges:
             proposals_del = {e for e in proposals_del if e not in protected_edges}
-        if not proposals_add and not proposals_del:
+        if not apply_filtered_proposals(G, proposals_add, proposals_del):
             return G, step + 1
-        G.add_edges_from([(u, v, {"H": h}) for (u, v), h in proposals_add])
-        G.remove_edges_from(proposals_del.intersection(G.edges()))
     return G, steps
 
 

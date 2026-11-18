@@ -2084,18 +2084,21 @@ This synthesis establishes that background-independent quantum gravity can be ri
 
 | Symbol | Description | Context / First Used |
 | :--- | :--- | :--- |
-| $\hat{H}_{\text{Ryd}}$ | Driven-Dissipative Rydberg Blockade Hamiltonian | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
-| $R_b$ | Rydberg Blockade Radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
-| $R_{\text{fac}}$ | Rydberg Facilitation Resonance Radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
-| $\rho_{\text{Ryd}}^*$ | Synthetic Quasi-Stationary Vacuum Density ($\approx 0.037061$) | [§23.1.2](/monograph/conclusion/universality/23.1/#23.1.2) |
-| $\Delta t_{\text{circ}}$ | Minimal Trivalent Syndrome Extraction Circuit Depth ($4\tau_{\text{gate}}$) | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
-| $p_{\text{th}}$ | Pre-Geometric Multi-Qubit Fault-Tolerance Threshold ($\approx 0.104$) | [§23.2.2](/monograph/conclusion/universality/23.2/#23.2.2) |
-| $\hat{\Phi}(L, t)$ | Discrete Metric Optical Phase Shift Operator | [§23.3.1](/monograph/conclusion/universality/23.3/#23.3.1) |
-| $S_h(f)$ | Holographic Strain Cross-Power Spectral Density | [§23.3.1](/monograph/conclusion/universality/23.3/#23.3.1) |
-| $\Diamond_x$ | Spacetime Causal Diamond of Cavity Optical Path | [§23.3.3](/monograph/conclusion/universality/23.3/#23.3.3) |
-| $\lvert \Psi_{\text{bif}} \rangle$ | Geodesically Bifurcated Center-of-Mass State | [§23.4.1](/monograph/conclusion/universality/23.4/#23.4.1) |
-| $\Gamma_{\text{dec}}$ | Discrete Lapse Desynchronization Decoherence Rate | [§23.4.2](/monograph/conclusion/universality/23.4/#23.4.2) |
-| $E_\Delta$ | Relational Gravitational Self-Energy Difference | [§23.4.3](/monograph/conclusion/universality/23.4/#23.4.3) |
+| $\hat{H}_{\text{Ryd}}$ | Driven-dissipative Rydberg blockade Hamiltonian | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
+| $R_b$ | Rydberg blockade exclusion radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
+| $R_{\text{fac}}$ | Rydberg facilitation resonance radius | [§23.1.1](/monograph/conclusion/universality/23.1/#23.1.1) |
+| $\rho_{\text{Ryd}}^*$ | Synthetic quasi-stationary vacuum density ($\approx 0.037061$) | [§23.1.2](/monograph/conclusion/universality/23.1/#23.1.2) |
+| $S_v, S_p$ | Trivalent stabilizer vertex divergence and plaquette flux checks | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
+| $\hat{U}_{\text{synd}}$ | Transpiled trivalent stabilizer syndrome extraction operator | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
+| $\Delta t_{\text{circ}}$ | Minimal trivalent syndrome extraction circuit depth ($4\tau_{\text{gate}}$) | [§23.2.1](/monograph/conclusion/universality/23.2/#23.2.1) |
+| $\epsilon_L$ | Logical qubit error rate per syndrome extraction cycle | [§23.2.2](/monograph/conclusion/universality/23.2/#23.2.2) |
+| $\hat{\Phi}(L, t)$ | Discrete metric optical phase shift operator | [§23.3.1](/monograph/conclusion/universality/23.3/#23.3.1) |
+| $S_h(f)$ | Holographic strain cross-power spectral density | [§23.3.1](/monograph/conclusion/universality/23.3/#23.3.1) |
+| $\Diamond_x$ | Spacetime causal diamond of cavity optical path | [§23.3.3](/monograph/conclusion/universality/23.3/#23.3.3) |
+| $\lvert \Psi_{\text{bif}} \rangle$ | Geodesically bifurcated center-of-mass spatial superposition | [§23.4.1](/monograph/conclusion/universality/23.4/#23.4.1) |
+| $\mathcal{F}_{\text{graph}}$ | Inner product overlap of disjointly deformed graph states | [§23.4.1](/monograph/conclusion/universality/23.4/#23.4.1) |
+| $\Gamma_{\text{dec}}$ | Discrete lapse desynchronization decoherence rate | [§23.4.2](/monograph/conclusion/universality/23.4/#23.4.2) |
+| $E_\Delta$ | Relational gravitational self-energy difference | [§23.4.3](/monograph/conclusion/universality/23.4/#23.4.3) |
 
 ---
 
@@ -4697,7 +4700,7 @@ The formal epistemic audit validates these non-perturbative derivations within a
 | $\lvert \Omega \rangle$ | Unique Non-Degenerate Gauge Vacuum State | [§24.1.5](/monograph/conclusion/derivations/24.1/#24.1.5) |
 | $\Delta_{\text{YM}}$ | Non-Perturbative Yang-Mills Mass Gap | [§24.2.1](/monograph/conclusion/derivations/24.2/#24.2.1) |
 | $C(K)$ | Knot Minimal Crossing Number | [§24.2.2](/monograph/conclusion/derivations/24.2/#24.2.2) |
-| $\kappa$ | Dimensionless Ribbon Casimir Modulus | [§24.2.3](/monograph/conclusion/derivations/24.2/#24.2.3) |
+| $\mathcal{E}(c)$ | Minimal Elastic Casimir Deformation Energy Bound ($\ge \kappa\hbar c/\ell_0$) | [§24.2.3](/monograph/conclusion/derivations/24.2/#24.2.3) |
 | $\kappa_{\text{eff}}$ | Effective Multi-Crossing Ribbon Modulus | [§24.2.4](/monograph/conclusion/derivations/24.2/#24.2.4) |
 | $\Delta_{\text{pl}}$ | Planar Plaquette Flux Spectral Gap | [§24.2.5](/monograph/conclusion/derivations/24.2/#24.2.5) |
 | $\Lambda_{\text{YM}}$ | Dynamically Transmuted Hadronic Scale | [§24.3.1](/monograph/conclusion/derivations/24.3/#24.3.1) |
@@ -5175,7 +5178,6 @@ The resulting paradigm presents a profound philosophical vision: the universe as
 | $S_{\text{vac}}$ | Ground-State Vacuum Code Entropy per Erased Link ($=\ln 2$) | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
 | $C_{\mu\nu\rho\sigma}$ | Conformal Weyl Curvature Tensor | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
 | $T^\mu_\mu$ | Trace of Energy-Momentum Tensor in Conformal Epoch | [§25.1.5](/monograph/conclusion/synthesis/25.1/#25.1.5) |
-| $\mathcal{R}$ | Space of Microscopic Local Graph Rewrite Rules | [§25.2.1](/monograph/conclusion/synthesis/25.2/#25.2.1) |
 | $p_{\text{eff}}$ | Effective Error Rate per Graph Rewrite Step | [§25.2.2](/monograph/conclusion/synthesis/25.2/#25.2.2) |
 | $\mathcal{O}$ | Embedded Localized Braided Observer Subsystem | [§25.3](/monograph/conclusion/synthesis/25.3/#25.3) |
 | $\hat{\mathcal{W}}_{\text{loop}}$ | Self-Observing Participatory Cosmic Closure Operator | [§25.3](/monograph/conclusion/synthesis/25.3/#25.3) |

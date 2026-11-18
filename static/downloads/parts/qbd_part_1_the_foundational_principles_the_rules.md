@@ -1180,7 +1180,7 @@ Crucially, this mode of justification does not commit the fallacy of circular re
 | Dimension | Foundationalist View (Classical) | Coherentist View (Formalist / Constructive) |
 | :--- | :--- | :--- |
 | **Nature of Axioms** | Self-evident truths; direct descriptions of an absolute, pre-existing reality. | Foundational assumptions; formal rules defining a generative system. |
-| **Source of Justification** | Direct intuition, self-evidence, or linear antecedent derivation. | Systemic properties: consistency ($\nvdash \perp$), parsimony ($|\mathcal{A}_{\mathrm{ax}}|$), and generative fertility. |
+| **Source of Justification** | Direct intuition, self-evidence, or linear antecedent derivation. | Systemic properties: consistency ($\nvdash \perp$), parsimony ($\lvert\mathcal{A}_{\mathrm{ax}}\rvert$), and generative fertility. |
 | **Structure of Knowledge** | Hierarchical pyramid resting on basic, unshakeable beliefs. | Holistic web of mutual logical and structural coherence. |
 | **Status of Alternatives** | Categorically false if non-corresponding to intuitive reality. | Valid alternative formal systems; selection is adjudicated pragmatically by systemic fertility and coherence. |
 
@@ -6616,6 +6616,8 @@ The bounded reverse-path guard checks a frozen proposal (**Acyclic Effective Cau
 
 Full batch closure has a separate target-diagonal test under dominance (**Batch Causal Preservation under Dominance** <Ref id="2.7.8" label="§2.7.8" />). On uniform-height graded inputs, depth decrease gives first-tick acyclicity (**First-Tick Causality on Graded Graphs** <Ref id="2.7.9" label="§2.7.9" />).
 
+Any approximate acyclicity behavior in the operational simulator therefore arises purely from two classical algorithmic approximations. First, reverse-witness searches truncate at $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$, whose missed-witness estimate assumes fixed degree $\le 3$ and uniform conditional comparison probability $p < 1/4$ (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />). Second, single-edge frozen snapshot checking omits post-merge target-diagonal closure (**Batch Causal Preservation under Dominance** <Ref id="2.7.8" label="§2.7.8" />). These simulator truncations do not reflect an omitted quantum error-correcting code (diagonal occupancy checks in Chapter 3 are classical constraint readouts, distinct from Chapter 10 QECC recovery), and immutable occurrence dependencies ($D^+$, **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />) remain unconditionally acyclic.
+
 Distributed rollback costs use the stated ambient coordination and erasure premises. The constructor can implement candidate checks locally, while a global batch requirement depends on the scope of the evolution rule.
 
 ---
@@ -6645,13 +6647,13 @@ But a set of rules is not a universe: laws require a jurisdiction. Possessing th
 | $k_B$ | Boltzmann Constant | [§2.2.3.1](/monograph/rules/axioms/2.2/#2.2.3.1) |
 | $\operatorname{PUC}(G; v, w, u)$ | Candidate-relative Principle of Unique Causality predicate | [§2.3.1](/monograph/rules/axioms/2.3/#2.3.1) |
 | $\gamma$ | Geometric Quantum (Directed 3-Cycle) | [§2.3.3](/monograph/rules/axioms/2.3/#2.3.3) |
-| $L$ | Length of a cycle or path | [§2.3.3.1](/monograph/rules/axioms/2.3/#2.3.3.1) |
+| $L_{min}$ | Minimum length of a simple directed cycle ($=3$) | [§2.3.3.1](/monograph/rules/axioms/2.3/#2.3.3.1) |
 | $\Pi_{\ell \le 2}(v, u)$ | Set of Simple Directed Paths from $v$ to $u$ with length $\le 2$ | [§2.3.4](/monograph/rules/axioms/2.3/#2.3.4) |
 | $\Phi(G)$ | Lexicographic Potential $(L_{\max}, N_{L_{\max}})$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $L_{\max}$ | Length of the longest simple cycle in $G$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $N_{L_{\max}}$ | Count of distinct cycles of length $L_{\max}$ | [§2.3.5](/monograph/rules/axioms/2.3/#2.3.5) |
 | $C, C_k$ | A Simple Directed Cycle (of length $k$) | [§2.4.1](/monograph/rules/axioms/2.4/#2.4.1) |
-| $R$ | Mediated influence by a strictly increasing simple directed path | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
+| $uRv$ | Mediated influence from $u$ to $v$ via a strictly increasing simple directed path | [§2.6.2](/monograph/rules/axioms/2.6/#2.6.2) |
 | $R_\le$ | Mediated influence under nondecreasing path timestamps | [§2.6.3](/monograph/rules/axioms/2.6/#2.6.3) |
 | $G_{\mathrm{space}}, G_{\mathrm{event}}$ | Oriented spatial state graph and chronological event order graph | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
 | $\prec$ | Strict event-precedence relation on $G_{\mathrm{event}}$ | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
@@ -6664,7 +6666,6 @@ But a set of rules is not a universe: laws require a jurisdiction. Possessing th
 | $T_{\mathrm{bath}}$ | Landauer thermal bath temperature | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
 | $r_{\mathrm{obs}}$ | Local observation radius of rooted graph neighborhoods | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
 | $B_C(0, r_{\mathrm{obs}})$ | Rooted ball of radius $r_{\mathrm{obs}}$ around vertex $0$ in $C$ | [§2.7.3.1](/monograph/rules/axioms/2.7/#2.7.3.1) |
-| $N$ | Fixed vertex count of the bounded reverse-search candidate support | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
 | $L_{\mathrm{cut}}$ | Logarithmic cutoff depth for bounded reverse-witness search | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
 | $p$ | Conditional edge timestamp-comparison bound ($0 < p < 1/4$) | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
 | $q$ | Conditional reverse-path branching factor ($q = 2p$) | [§2.7.4.1](/monograph/rules/axioms/2.7/#2.7.4.1) |
@@ -8264,7 +8265,7 @@ This computational boundary signals the emergence of non-trivial quantum behavio
 
 Computational verification of the bounds established in **Quantitative Supremacy** <Ref id="3.2.11.1" label="§3.2.11.1" />, demonstrating the Regular Bethe Fragment as the unique maximizer under the **Structural Optimality Metric** <Ref id="3.2.10.1" label="§3.2.10.1" />, is based on the following protocols:
 
-1.  **Combinatorial Enumeration:** The algorithm utilizes `networkx` generators to produce the complete set of non-isomorphic free trees of size $N=10$, establishing the full configuration space for the vacuum candidates.
+1.  **Combinatorial Enumeration:** Because regular Bethe fragments obey a scale-invariant leaf-to-bulk ratio $L/N = \tfrac{1}{2} + \tfrac{1}{N} \to 50\%$ across all $N$, the algorithm utilizes `networkx` generators on $N=10$ (the minimal even vertex count admitting more than one internally trivalent tree, with consistent balanced-fragment dominance checked through $N=12, 14$, while extending this scale-invariant Bethe symmetry family to larger $N$ serves as the canonical initial-state substrate), establishing the finite comparison space at the bifurcation order for vacuum candidates.
 2.  **Axiomatic Filtering:** Three sequential filters are applied to the candidate set based on prior constraints:
     * **Simplicial Closure:** Rejects graphs with a coordination number $k_{deg} > 3$, as established by the **Simplicial Closure Constraint** <Ref id="3.2.13" label="§3.2.13" />.
     * **Site Maximality:** Rejects linear chains ($k_{deg} < 3$) which lack sufficient branching for rewrite sites, per **Site Maximality** <Ref id="3.2.7" label="§3.2.7" />.
@@ -14296,9 +14297,11 @@ This implementation adheres to the Micro/Macro separation principle, operating e
 
 Designing the Universal Constructor $\mathcal{R}$ to decouple proposal generation from stochastic collapse is essential for maintaining causal integrity across the pre-geometric graph. By separating the mechanical enumeration of candidate graph rewrites from their physical realization, the theory places the origin of thermodynamic irreversibility strictly within the state sampling step executed by the evolution operator $\mathcal{U}$.
 
-Furthermore, the candidate proposal search space enforces strict local radius bounds of $O(1)$ centered around active vertices, bounded by the Acyclicity Evaluation Check horizon cutoff $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$ under parent uniqueness. This local restriction guarantees computational scalability while ensuring physical realism, micro-causality, structural integrity, and strict spatial locality across the entire relational substrate.
+Furthermore, the candidate proposal search space enforces strict $O(1)$ two-hop parent-uniqueness filtering around active vertices alongside the bounded-horizon Acyclicity Evaluation Check cutoff $L_{\mathrm{cut}} = \lfloor \log_2 N \rfloor + 3$. In simulator execution, this truncated guard provides a scalable classical approximation whose missed-witness estimate assumes fixed degree $\le 3$ and uniform conditional height-comparison probability $p < 1/4$ (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />). Independently, single-edge frozen snapshot checking omits post-merge target-diagonal batch closure (**Batch Causal Preservation under Dominance** <Ref id="2.7.8" label="§2.7.8" />).
 
-This operational pipeline operates within a dual time architecture distinguishing global logical scheduling time $t_L \in \mathbb{N}_0$ from emergent physical proper time $t_{\mathrm{phys}}$. When an execution tick produces no accepted additions and no accepted deletions ($\mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset$), the evolution operator acts as the identity map ($\mathcal{U}(G_{t_L}) = G_{t_L}$), and emergent physical time pauses ($\Delta t_{\mathrm{phys}} \equiv 0$). In finite-lattice simulations, the operational homeostatic stopping time $\tau_{\mathrm{homeo}} := \inf \{ t_L \ge 1 \mid \mathcal{A}_{t_L}^{\mathrm{ret}} = \emptyset \land \mathcal{D}_{t_L} = \emptyset \}$ (evaluated after reciprocal filtering) halts iteration at the first realized inactive tick ($K = 1$). Because active configurations ($N_3 > 0$) retain strictly positive single-tick continuation and deletion probabilities, $\tau_{\mathrm{homeo}}$ samples finite-horizon arrested states (including configurations frozen on a transient quiet draw across already ignited interior and boundary-adjacent branches) rather than isolating an invariant quasi-stationary measure prior to boundary dissipation; multi-tick persistence sensitivity ($K \in \{1, 2, 5, 10\}$) and unstopped fixed-horizon checks ($K = \infty$) are analyzed separately in the validation suite.
+Meanwhile, immutable occurrence ordering ($D^+$) remains unconditionally acyclic under all admissible scheduler updates (**Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />). This purely classical causal admission filter relies strictly on classical diagonal occupancy constraints codified in Chapter 3 and is completely distinct from quantum error-correcting code recovery, whose fault-tolerant stabilizer constructions are deferred until Chapter 10.
+
+This operational pipeline operates within a dual time architecture distinguishing global logical scheduling time $t_L \in \mathbb{N}_0$ from emergent physical proper time $t_{\mathrm{phys}}$. When an execution tick produces no accepted additions and no accepted deletions ($\mathcal{A}_{t_L} = \emptyset \land \mathcal{D}_{t_L} = \emptyset$), the evolution operator acts as the identity map ($\mathcal{U}(G_{t_L}) = G_{t_L}$), and emergent physical time pauses ($\Delta t_{\mathrm{phys}} \equiv 0$). In finite-lattice simulations, the operational **first-pause stopping time** $\tau_{\mathrm{homeo}} \equiv \tau_1 := \inf \{ t_L \ge 1 \mid \mathcal{A}_{t_L}^{\mathrm{ret}} = \emptyset \land \mathcal{D}_{t_L} = \emptyset \}$ (evaluated after reciprocal filtering) halts iteration at the first realized inactive tick ($K = 1$). Because active configurations ($N_3 > 0$) retain strictly positive single-tick continuation and deletion probabilities ($K(G,G) < 1$), $\tau_{\mathrm{homeo}}$ marks a realized first pause on the active metastable manifold rather than an absorbing vacuum state ($N_3 = 0$); bounded runs terminate either by quiet-tick arrest ($\tau_K \le T_{\max}$, $N_3 > 0$), by $T_{\max}$ horizon censorship ($N_3 > 0$ without $K$ trailing quiet ticks), or by absorbing extinction ($N_3 = 0$). Multi-tick persistence sensitivity ($K \in \{1, 2, 5, 10\}$) and unstopped fixed-horizon checks ($K = \infty$) are analyzed separately in the [multi-scale benchmark synthesis](/monograph/rules/equilibrium/5.3/#5.3.4.3) (**Viability Channel** <Ref id="5.3.4" label="§5.3.4" />).
 
 ---
 
@@ -17226,6 +17229,8 @@ Computational verification of the Kramers-Moyal jump moments and Pawula truncati
 
 ```python
 import sys
+import collections
+import math
 import random
 import numpy as np
 import networkx as nx
@@ -17274,60 +17279,102 @@ def generate_bethe_fragment(N):
     return G, levels
 
 def find_all_3_cycles(G):
-    """Identifies all directed 3-cycles (triangles) in G."""
-    cycles = set()
+    """Identifies all unique directed 3-cycles (u -> v -> w -> u) in G."""
+    cycles = []
     for u in G.nodes():
         for v in G.successors(u):
+            if v <= u:
+                continue
             for w in G.successors(v):
-                if G.has_edge(w, u):
-                    canonical = tuple(sorted([u, v, w]))
-                    cycles.add(canonical)
-    return list(cycles)
+                if w > u and G.has_edge(w, u):
+                    cycles.append((u, v, w))
+    return cycles
+
+def is_permissible_puc(G, u, v, w):
+    """Enforces Parent-Uniqueness Condition PUC(G; u, v, w) for 2-path v -> w -> u."""
+    if G.has_edge(v, u):
+        return False
+    for x in G.successors(v):
+        if x != w and G.has_edge(x, u):
+            return False
+    return True
+
+def pre_check_aec(G, u, v, H_new):
+    """Bounded-horizon Acyclicity Evaluation Check (L_cut = floor(log2 N) + 3)."""
+    N = G.number_of_nodes()
+    L_cut = max(1, int(math.floor(math.log2(N))) + 3) if N > 1 else 1
+    queue = collections.deque([(v, -1, 0)])
+    min_h = {v: -1}
+    while queue:
+        curr, prev_h, depth = queue.popleft()
+        if depth >= L_cut:
+            continue
+        for succ in G.successors(curr):
+            edge_h = G[curr][succ].get('H', 0)
+            if edge_h > prev_h:
+                if succ == u and edge_h < H_new:
+                    return False
+                if edge_h < min_h.get(succ, 10**9):
+                    min_h[succ] = edge_h
+                    queue.append((succ, edge_h, depth + 1))
+    return True
 
 def execute_scheduler_tick(G, mu, lam):
     """
     Executes one discrete parallel tick under Universal Constructor U.
-    Evaluates candidate 2-paths for chord addition and candidate edges for catalytic deletion.
+    Evaluates candidate 2-paths under PUC and AEC with symmetric reciprocal filtering,
+    and directed 3-cycle edges for catalytic deletion (scar immunity preserved).
     """
     G_next = G.copy()
     all_cycles = find_all_3_cycles(G)
-    
+
     node_stress = {n: 0 for n in G.nodes()}
     for u, v, w in all_cycles:
         node_stress[u] += 1
         node_stress[v] += 1
         node_stress[w] += 1
-        
-    candidate_additions = []
-    for u in G.nodes():
-        for w in G.successors(u):
-            for v in G.successors(w):
-                if u != v and not G.has_edge(v, u) and not G.has_edge(u, v):
-                    s_add = node_stress[u] + node_stress[w] + node_stress[v]
-                    p_acc = np.exp(-mu * s_add)
-                    candidate_additions.append((v, u, p_acc))
-                    
-    candidate_deletions = []
-    for u, v in G.edges():
-        s_edge = node_stress[u] + node_stress[v]
-        if s_edge > 0:
-            q_del = min(1.0, 0.5 * (1.0 + lam * s_edge) * np.exp(-mu * s_edge))
-            candidate_deletions.append((u, v, q_del))
-        else:
-            candidate_deletions.append((u, v, 0.05))
-            
-    accepted_adds = [chord for chord in candidate_additions if random.random() < chord[2]]
-    accepted_dels = [edge for edge in candidate_deletions if random.random() < edge[2]]
-    
-    for v, u, _ in accepted_adds:
-        preds = list(G_next.predecessors(v))
-        max_h = max([G_next.edges[p, v].get('H', 0) for p in preds] + [0])
-        G_next.add_edge(v, u, H=max_h + 1)
-        
-    for u, v, _ in accepted_dels:
+
+    legal_additions = []
+    for v in G.nodes():
+        for w in G.successors(v):
+            for u in G.successors(w):
+                if v == u or G.has_edge(u, v):
+                    continue
+                if not is_permissible_puc(G, u, v, w):
+                    continue
+                H_new = max((G.edges[p, u].get('H', 0) for p in G.predecessors(u)), default=0) + 1
+                if not pre_check_aec(G, u, v, H_new):
+                    continue
+                legal_additions.append(((u, v), H_new, (v, w, u)))
+
+    accepted_adds = []
+    for (u, v), H_new, (nv, nw, nu) in legal_additions:
+        s_add = node_stress[nv] + node_stress[nw] + node_stress[nu]
+        p_acc = np.exp(-mu * s_add)
+        if random.random() < p_acc:
+            accepted_adds.append(((u, v), H_new))
+
+    accepted_dels = []
+    for u, v, w in all_cycles:
+        s_del = max(0, node_stress[u] + node_stress[v] + node_stress[w] - 1)
+        q_del = min(1.0, 0.5 * (1.0 + lam * s_del) * np.exp(-mu * s_del))
+        if random.random() < q_del:
+            chosen = random.choice([(u, v), (v, w), (w, u)])
+            accepted_dels.append(chosen)
+
+    add_edges = {edge for edge, _ in accepted_adds}
+    filtered_adds = [
+        ((u, v), H_new)
+        for (u, v), H_new in accepted_adds
+        if u != v and (v, u) not in add_edges
+    ]
+    for (u, v), H_new in filtered_adds:
+        G_next.add_edge(u, v, H=H_new)
+
+    for u, v in accepted_dels:
         if G_next.has_edge(u, v):
             G_next.remove_edge(u, v)
-            
+
     return G_next
 
 def measure_km_cumulants(Omega_list=[50, 100, 200, 400], rho_target=0.06, trials=1200):
@@ -17421,13 +17468,13 @@ Trials per Volume:            1200
 Constitutive Priors:          mu_0 = 0.3989, lambda_0 = 1.7183
 Measured Scaling Exponents (kappa_k ~ Omega^b_k):
   Drift Velocity b_1:         0.0000 (Theoretical:  0.0000)
-  Diffusion Variance b_2:    -1.1070 (Theoretical: -1.0000)
-  Skewness Moment b_3:       -4.1456 (Theoretical: -2.0000)
-  Kurtosis Moment b_4:       -2.8756 (Theoretical: -3.0000)
+  Diffusion Variance b_2:    -1.4948 (Theoretical: -1.0000)
+  Skewness Moment b_3:       -2.1235 (Theoretical: -2.0000)
+  Kurtosis Moment b_4:       -1.9935 (Theoretical: -3.0000)
 ```
 
 **Conclusion:**
-The computational evaluation confirms that diffusion scales as $\kappa_2 \sim \Omega^{-1.11}$ (matching the demographic $\Omega^{-1.00}$ scaling), while higher-order jump moments vanish rapidly ($\kappa_3 \sim \Omega^{-4.15}$ and $\kappa_4 \sim \Omega^{-2.88}$). This rigorously validates Pawula truncation at second order in **Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" />.
+The computational evaluation measures decay of the finite-volume jump cumulants across $\Omega \in \{50, 100, 200, 400\}$ under the canonical four-step scheduler ($\kappa_2 \sim \Omega^{-1.49}$, $\kappa_3 \sim \Omega^{-2.12}$, and $\kappa_4 \sim \Omega^{-1.99}$), showing that diffusion and higher-order jump moments diminish with increasing volume, while these finite root-seeded fits do not by themselves establish an asymptotic continuum limit or prove second-order Pawula truncation (**Kramers-Moyal Continuum Expansion** <Ref id="5.2.7" label="§5.2.7" />).
 
 ### 5.2.7.3 Commentary: Systematic van Kampen Expansion {#5.2.7.3}
 
@@ -17486,6 +17533,7 @@ Verification of the original depth decrement and finite sampled profile (**Initi
 
 ```python
 import sys
+import collections
 import math
 import random
 import numpy as np
@@ -17546,20 +17594,50 @@ def inject_seed_defect(G, levels):
     return G
 
 def find_all_3_cycles(G):
-    """Identifies all directed 3-cycles in G."""
-    cycles = set()
+    """Identifies all unique directed 3-cycles (u -> v -> w -> u) in G."""
+    cycles = []
     for u in G.nodes():
         for v in G.successors(u):
+            if v <= u:
+                continue
             for w in G.successors(v):
-                if G.has_edge(w, u):
-                    canonical = tuple(sorted([u, v, w]))
-                    cycles.add(canonical)
-    return list(cycles)
+                if w > u and G.has_edge(w, u):
+                    cycles.append((u, v, w))
+    return cycles
+
+def is_permissible_puc(G, u, v, w):
+    """Enforces Parent-Uniqueness Condition PUC(G; u, v, w) for 2-path v -> w -> u."""
+    if G.has_edge(v, u):
+        return False
+    for x in G.successors(v):
+        if x != w and G.has_edge(x, u):
+            return False
+    return True
+
+def pre_check_aec(G, u, v, H_new):
+    """Bounded-horizon Acyclicity Evaluation Check (L_cut = floor(log2 N) + 3)."""
+    N = G.number_of_nodes()
+    L_cut = max(1, int(math.floor(math.log2(N))) + 3) if N > 1 else 1
+    queue = collections.deque([(v, -1, 0)])
+    min_h = {v: -1}
+    while queue:
+        curr, prev_h, depth = queue.popleft()
+        if depth >= L_cut:
+            continue
+        for succ in G.successors(curr):
+            edge_h = G[curr][succ].get('H', 0)
+            if edge_h > prev_h:
+                if succ == u and edge_h < H_new:
+                    return False
+                if edge_h < min_h.get(succ, 10**9):
+                    min_h[succ] = edge_h
+                    queue.append((succ, edge_h, depth + 1))
+    return True
 
 def execute_scheduler_tick(G, mu, lam):
     """
     Executes one discrete tick under scheduler operator U.
-    Step 1: Awareness | Step 2: Proposals | Step 3: Merge | Step 4: Deletion
+    Step 1: Awareness | Step 2: Proposals | Step 3: Reciprocal Filter & Merge | Step 4: Deletion
     """
     G_next = G.copy()
     cycles = find_all_3_cycles(G)
@@ -17570,35 +17648,44 @@ def execute_scheduler_tick(G, mu, lam):
         stress_map[v] += 1
         stress_map[w] += 1
 
-    candidate_additions = []
-    for u in G.nodes():
-        for w in G.successors(u):
-            for v in G.successors(w):
-                if u != v and not G.has_edge(v, u) and not G.has_edge(u, v):
-                    s_add = stress_map[u] + stress_map[w] + stress_map[v]
-                    p_acc = np.exp(-mu * s_add)
-                    candidate_additions.append((v, u, p_acc))
+    legal_additions = []
+    for v in G.nodes():
+        for w in G.successors(v):
+            for u in G.successors(w):
+                if v == u or G.has_edge(u, v):
+                    continue
+                if not is_permissible_puc(G, u, v, w):
+                    continue
+                h_new = max((G.edges[p, u].get('H', 0) for p in G.predecessors(u)), default=0) + 1
+                if not pre_check_aec(G, u, v, h_new):
+                    continue
+                legal_additions.append(((u, v), h_new, (v, w, u)))
 
-    candidate_deletions = []
-    for cycle in cycles:
-        cycle_nodes = list(cycle)
-        s_del = max(0, sum(stress_map[x] for x in cycle_nodes) - 1)
+    accepted_adds = []
+    for (u, v), h_new, (nv, nw, nu) in legal_additions:
+        s_add = stress_map[nv] + stress_map[nw] + stress_map[nu]
+        p_acc = np.exp(-mu * s_add)
+        if random.random() < p_acc:
+            accepted_adds.append(((u, v), h_new))
+
+    accepted_dels = []
+    for u, v, w in cycles:
+        s_del = max(0, stress_map[u] + stress_map[v] + stress_map[w] - 1)
         q_del = min(1.0, 0.5 * (1.0 + lam * s_del) * np.exp(-mu * s_del))
-        u, v, w = cycle
-        edges = [(u, v), (v, w), (w, u)] if G.has_edge(u, v) and G.has_edge(v, w) and G.has_edge(w, u) else []
-        if edges:
-            chosen = random.choice(edges)
-            candidate_deletions.append((chosen[0], chosen[1], q_del))
+        if random.random() < q_del:
+            chosen = random.choice([(u, v), (v, w), (w, u)])
+            accepted_dels.append(chosen)
 
-    accepted_adds = [chord for chord in candidate_additions if random.random() < chord[2]]
-    accepted_dels = [edge for edge in candidate_deletions if random.random() < edge[2]]
+    add_edges = {edge for edge, _ in accepted_adds}
+    filtered_adds = [
+        ((u, v), h_new)
+        for (u, v), h_new in accepted_adds
+        if u != v and (v, u) not in add_edges
+    ]
+    for (u, v), h_new in filtered_adds:
+        G_next.add_edge(u, v, H=h_new)
 
-    for v, u, _ in accepted_adds:
-        preds = list(G_next.predecessors(v))
-        max_h = max([G_next.edges[p, v].get('H', 0) for p in preds] + [0])
-        G_next.add_edge(v, u, H=max_h + 1)
-
-    for u, v, _ in accepted_dels:
+    for u, v in accepted_dels:
         if G_next.has_edge(u, v):
             G_next.remove_edge(u, v)
 
@@ -17644,18 +17731,18 @@ if __name__ == "__main__":
 ```text
 Original outward two-path returns checked: 96
 Active fraction at the sampled stopping rule: 1.0000
-Depth 0: 858 final sampled triangles
-Depth 1: 1961 final sampled triangles
-Depth 2: 1335 final sampled triangles
-Depth 3: 3514 final sampled triangles
-Depth 4: 800 final sampled triangles
+Depth 0: 329 final sampled triangles
+Depth 1: 480 final sampled triangles
+Depth 2: 156 final sampled triangles
+Depth 3: 388 final sampled triangles
+Depth 4: 57 final sampled triangles
 Depth 5: 0 final sampled triangles
 Depth 6: 0 final sampled triangles
 ```
 
 **Conclusion:**
 
-The original paths confirm the depth decrement in the finite fragment. The terminal profile describes the sampled outcomes under the stated stopping rule.
+The original paths confirm the depth decrement in the finite fragment. Under the repaired directed-cycle deletion rule with PUC, bounded AEC, and symmetric reciprocal filtering, the 30-step sampled horizon captures transient active cores totaling $1,410$ triangles across 100 runs, confined to original depths $0$ to $4$ with zero triangles at depth $\ge 5$ (without early homeostatic stopping, longer unstopped runs extinguish to zero triangles by tick $200$).
 
 ### 5.2.8.3 Commentary: Contact Processes and Geometric Solitons {#5.2.8.3}
 
@@ -17830,10 +17917,10 @@ We establish the dynamical stability of the kinetic model by evaluating the evol
 :::tip[**Criteria through a Stable Geometric Vacuum**]
 :::
 
-Let $\rho(t) = N_3(t)/N$ denote the time-dependent cycle density of a causal graph simulation on $N$ vertices. The **Region of Physical Viability (RPV)** is defined as the subset of the parameter space $(\mu, \lambda_{\text{cat}})$ wherein the ensemble statistics of density evolution satisfy three invariant physical conditions:
+Let $\rho(t) = N_3(t)/N$ denote the time-dependent cycle density of a causal graph simulation on $N$ vertices. The **Region of Physical Viability (RPV)** is defined as the subset of the parameter space $(\mu, \lambda_{\text{cat}})$ wherein the ensemble statistics of density evolution (evaluated at $N = 100$ under the operational $K = 1$ homeostatic stopping protocol $\tau_{\mathrm{homeo}}$ bounded by $T_{\max} = 1500$, [Algorithmic Agency](/monograph/rules/dynamics/4.5/#4.5.1.1)) satisfy three invariant physical conditions:
 
 1.  **Non-Perturbative Ignition:** The system must strictly escape immediate extinction at $t=1$, generating an unconditioned ensemble with non-zero mean $\langle \rho \rangle = 0.0290 \pm 0.0052$, survival fraction $p_{\mathrm{surv}} = 0.270 \pm 0.044$, and zero-inflated skewness $\gamma = 1.867$.
-2.  **Sparsity of the Active Foam:** Conditioned on survival in the active Quasi-Stationary Distribution (QSD), the stationary density must remain bounded in a sparse geometric regime with $\langle \rho \rangle_{\mathrm{QSD}} = 0.0919 \pm 0.0119$ and median $\rho_{\mathrm{med,QSD}} = 0.0800$.
+2.  **Sparsity of the Active Foam:** Conditioned on active arrest under $\tau_{\mathrm{homeo}}$ in the active Quasi-Stationary Distribution (QSD), the stationary density must remain bounded in a sparse geometric regime with $\langle \rho \rangle_{\mathrm{QSD}} = 0.0919 \pm 0.0119$ and median $\rho_{\mathrm{med,QSD}} = 0.0800$.
 3.  **Fluctuation Regulation:** The variance across surviving trajectories must be bounded by sub-percolating Poisson fluctuations with Fano factor $F_{\mathrm{QSD}} = \mathrm{Var}(N_3)/\langle N_3 \rangle \approx 4.14$, strictly avoiding explosive percolation or runaway small-world collapse.
 
 ### 5.3.1.1 Commentary: Goldilocks Zone of Connectivity {#5.3.1.1}
@@ -17859,7 +17946,7 @@ The **Parameter Sweep Protocol** is defined as the algorithmic procedure for the
 1.  **Grid Discretization:** The phase space is discretized into a 132-point grid. The friction coefficient $\mu$ is sampled from $[0.15, 0.65]$ with step size $\delta_\mu = 0.05$. The catalysis coefficient $\lambda_{\text{cat}}$ is sampled from $[0.8, 4.1]$ with step size $\delta_\lambda = 0.3$, with refined sampling ($\delta_\lambda = 0.1$) in the vicinity of the theoretical nominal value derived via **Catalysis Coefficient** <Ref id="4.4.6" label="§4.4.6" />.
 2.  **Ensemble Initialization:** For each grid point, an ensemble of **100** independent trajectories is instantiated. Each trajectory is initialized from a **Zero-Point Information (ZPI) Vacuum**, defined as a finite, rooted, outward-directed Bethe fragment ($N \approx 100$) exhibiting trivalent coordination at the root and bivalent coordination at internal nodes.
 3.  **Ignition Injection:** A symmetry-breaking edge $(u, v)$ is added to the ZPI vacuum such that $\pi(u) = \pi(v)$ by **Seeded Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />, creating the first **3-cycle** ($H=1$) and transforming the inert vacuum into an active initial state.
-4.  **Evolution and Aggregation:** The system is advanced via 1500 iterative applications of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, denoted $\mathcal{U}$. Observables (specifically $N_3$ and $\rho_3$) are recorded at each tick, and statistical moments (mean, median, skew) are aggregated across the ensemble.
+4.  **Evolution and Aggregation:** The system is advanced via iterative applications of the **Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />, denoted $\mathcal{U}$, up to a ceiling of $T_{\max} = 1500$ ticks, using fixed-horizon sampling for the 132-point 2D grid matrix (**Table 5.3.3.2**) and the operational $K = 1$ homeostatic stopping protocol $\tau_{\mathrm{homeo}}$ for the canonical multi-scale C++20 and design-point ensembles. The main 2D parameter sweep uses $T_{\max} = 100$ (**Phase Space Sweep** <Ref id="5.3.3" label="§5.3.3" />), while multi-tick persistence thresholds $\tau_K$ ($K \in \{1, 2, 5, 10\}$) and unstopped fixed-horizon checks ($K = \infty$) are analyzed separately alongside the $K = 1$ baseline. Observables (specifically $N_3$ and $\rho_3$) and statistical moments (mean, median, skew) are aggregated across each ensemble.
 
 ### 5.3.2.1 Commentary: Discrete Simulation Model and Stress Metrics {#5.3.2.1}
 
@@ -18124,7 +18211,7 @@ In contrast, the canonical homeostatic corridor around $\mu_0 = 0.398942$ ($\mu=
 To provide strict empirical grounding, the exact density values $\langle \rho_3 \rangle$ extracted from the 2-parameter ensemble sweep are tabulated, with the optimal homeostatic values bolded.
 
 |  | 0.8 | 1.1 | 1.5 | 1.7 | 2.0 | 2.3 | 2.6 | 2.9 | 3.2 | 3.5 | 3.8 | 4.1 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **0.15** | .000 | .000 | .000 | .000 | .000 | .000 | .000 | .000 | .000 | .000 | .000 | .000 |
 | **0.20** | .001 | .000 | .003 | .000 | .000 | .000 | .000 | .000 | .000 | .000 | .000 | .000 |
 | **0.25** | .009 | .003 | .000 | .001 | .001 | .003 | .003 | .000 | .000 | .000 | .000 | .000 |
@@ -18176,7 +18263,7 @@ The **Viability Channel** forms a contiguous band in the $(\mu, \lambda_{\text{c
 
 1.  **Extinction Boundary ($\mu \le 0.25$):** Under-damped initial bursts consume all local precursors and trigger Planar Unitarity Constraint rejections, causing the **3-cycle** population to rapidly extinguish into a static scarred directed acyclic graph.
 2.  **Topological Jamming Boundary ($\mu \ge 0.55$):** Over-damped dynamics heavily penalize edge deletions, freezing the graph into an unphysical high-density regime ($\rho > 0.10$) with negative skewness and loss of manifold locality.
-3.  **Active Soliton Scaling:** Within the viable corridor ($\mu \in [0.35, 0.50]$), single-seed point ignition produces a localized topological soliton with sub-extensive core mass $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.2$ cycles at $N = 100$ (scaling to $\sim 10^2$ at $N = 10^4$) and intensive density $\langle \rho \rangle_{\mathrm{QSD}} \sim \mathcal{O}(1/N)$, whereas distributed multi-seed initial conditions exceeding $\rho_c \approx 0.130$ drive extensive volume-filling bulk geometrogenesis.
+3.  **Active Soliton Scaling:** Within the viable corridor ($\mu \in [0.35, 0.50]$) under the operational $K = 1$ first-pause stopping protocol $\tau_{\mathrm{homeo}}$ ($T_{\max} = 1500$), single-seed point ignition produces a localized topological soliton with sub-extensive core mass $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.2$ cycles at $N = 100$ (C++20 $7.85$, scaling to $123.59 \sim 10^2$ at $N = 10^4$). Although the leaf fraction $L/N = \tfrac{1}{2} + \tfrac{1}{N} \to 50\%$ is scale-invariant, growing radial shell depth ($d \sim \log_2 N$) shields the interior core so survival rises from $p_{\mathrm{surv}} = 0.270 \pm 0.044$ to $0.990 \pm 0.010$ with zero $T_{\max} = 1500$ horizon censorship across $N \in [10, 10^4]$, mean stopping duration scaling as $\tau_{\mathrm{ext}} \approx 6.45\,N^{0.51}$ over $N \in [10^2, 10^4]$ ($67.88$ to $751.53$ ticks, or $N^{0.64}$ including depth-2 $N = 10$), and intensive density $\langle \rho \rangle_{\mathrm{QSD}} \sim \mathcal{O}(1/N)$, whereas distributed multi-seed initial conditions exceeding $\rho_c \approx 0.130$ drive extensive volume-filling bulk geometrogenesis.
 
 ### 5.3.4.1 Commentary: Robustness and Fine-Tuning {#5.3.4.1}
 
@@ -18196,7 +18283,7 @@ Algorithmic verification of the theoretical prior coordinates established by **V
 
 1.  **Analytical Invariant Synthesis:** The evaluation computes the microscopic constants anchored to the canonical reference priors: base conversion modulus $\beta_c = \ln 2$, thermodynamic friction $\mu_0 = 1/\sqrt{2\pi}$, catalytic defect relaxation $\lambda_0 = e - 1$, elementary geometric quantum energy $\varepsilon_0 = \frac{\ln 2}{3}$, and driven cosmological flux $\Lambda_0 = 2^{-6}$.
 2.  **Three-Regime Scalar Root Classification:** The solver evaluates the critical unpumped barrier $\rho_c = \frac{1}{24 - 6e} \approx 0.130034$, the saddle-node limit $\mu_{\mathrm{crit}} = \frac{(9 - 3\lambda_0)^2}{108} \approx 0.136900$, the negative homogeneous discriminant $\Delta(\mu_0, \lambda_0) \approx -28.300553$, and all positive fixed points and linearized Jacobians across the driven undamped, unpumped symmetric, driven symmetric, and unit-offset closures.
-3.  **Bethe-Tree Threshold Check:** The benchmark computes the isolated cycle deletion probability $Q_{\mathrm{del}}(2) \approx 0.998849$ together with the Bethe-tree ($b=2$) Pemantle-Liggett thresholds $[\lambda_{c1}, \lambda_{c2}] \approx [0.353553, 0.750000]$, checking both $\mu_0 > \mu_{\mathrm{crit}}$ and weak-survival placement $\lambda_{c1} \le \hat{\lambda}_{\mathrm{eff}} \approx 0.443889 < \lambda_{c2}$.
+3.  **Bethe-Tree Threshold Check:** The benchmark computes the isolated cycle deletion probability $Q_{\mathrm{del}}(2) \approx 0.998849$ together with the Bethe-tree ($b=2$) Pemantle-Liggett thresholds $[\lambda_{c1}, \lambda_{c2}] \approx [0.353553, 0.750000]$, checking both $\mu_0 > \mu_{\mathrm{crit}}$ and clustering-adjusted branching placement $\lambda_{c1} \le \hat{\lambda}_{\mathrm{eff}} \approx 0.443889 < \lambda_{c2}$ under $\kappa_{\mathrm{clust}} = 0.55$.
 
 ```python
 """Evaluate constitutive analytical priors, three-regime scalar fixed points, and Bethe-tree branching thresholds."""
@@ -18342,7 +18429,7 @@ Regime check: scalar drive stable (J < 0); tree branching in weak survival windo
 ```
 
 **Conclusion:**
-The numerical evaluation establishes the quantitative separation between the driven continuum attractor ($\rho^* = 0.037061$, $J = -0.332922$), the symmetric-damping nucleation barrier ($\rho_c = 0.130034$, splitting under $\Lambda_0 = 2^{-6}$ into conjugate fixed points $0.052225$ and $0.077809$), and the unpumped undamped mean-field extinction ($\Delta = -28.300553 < 0$), confirming that Bethe-tree weak survival ($\hat{\lambda}_{\mathrm{eff}} = 0.443889 \in [0.353553, 0.750000)$) accounts for persistent soliton survival in the discrete dynamics.
+The numerical evaluation establishes the quantitative separation between the driven continuum attractor ($\rho^* = 0.037061$, $J = -0.332922$), the symmetric-damping nucleation barrier ($\rho_c = 0.130034$, splitting under $\Lambda_0 = 2^{-6}$ into conjugate fixed points $0.052225$ and $0.077809$), and the unpumped undamped mean-field extinction ($\Delta = -28.300553 < 0$), showing that the clustering-adjusted effective branching rate ($\hat{\lambda}_{\mathrm{eff}} = \hat{\lambda}(1 + 0.55) = 0.443889 \in [0.353553, 0.750000)$ with $\kappa_{\mathrm{clust}} = 0.55$) falls directly inside the Bethe-tree weak-survival interval as an effective-rate correspondence capturing core clustering on the non-Markovian timestamped rewrite chain.
 
 ### 5.3.4.3 Commentary: Analytical and Multi-Scale Simulation Synthesis {#5.3.4.3}
 
@@ -18351,7 +18438,42 @@ The numerical evaluation establishes the quantitative separation between the dri
 
 The derivation and numerical validation of the seven constitutive analytical priors firmly anchor the dynamical viability corridor within fundamental information-theoretic and topological invariants. Rather than adjusting parameters phenomenologically, the critical temperature $T_c = \ln 2$, thermodynamic friction $\mu_0 = 1/\sqrt{2\pi}$, and catalytic defect relaxation $\lambda_0 = e - 1$ serve as canonical analytical reference priors governing loop-closure free energy, Gaussian fluctuation modular duality, and unit-nat entropic activation. The microscopic cosmological drive $\Lambda = 2^{-6}$ reflects the binary branching topology of the 6-port triad simplex.
 
-High-performance C++20 bitset simulations across multiple system scales ($N = 100, 1000, 10000$) confirm that these theoretical constants position the vacuum at the precise boundary between sub-critical extinction and super-critical jamming. The unpumped critical barrier $\rho_c = 1/(24-6e) \approx 0.130$ ensures that an isolated localized seed nucleates a sub-extensive soliton core of mass $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.2$ cycles (scaling to $\approx 124$ at $N = 10^4$) with zero-inflated survival probability $p_{\mathrm{surv}} \approx 0.27$, while distributed seeding above $\rho_c$ ignites extensive space-filling geometrogenesis. Furthermore, because $\mu_0 \approx 0.3989$ comfortably exceeds the saddle-node bifurcation threshold $\mu_{\mathrm{crit}} \approx 0.1369$, the emergent geometry remains robustly stable against thermal runaway.
+High-performance C++20 bitset simulations across $N \in \{10, 100, 300, 1000, 3000, 10000\}$ ($M = 100$) evaluated under the maximum step ceiling $T_{\max} = 1500\text{ ticks}$ combined with the operational $K = 1$ first-pause stopping protocol $\tau_{\mathrm{homeo}} \equiv \tau_1$ ([Algorithmic Agency](/monograph/rules/dynamics/4.5/#4.5.1.1)) separate genuine quiet-tick arrests ($\tau_K \le T_{\max}$, $N_3 > 0$), $T_{\max}$ horizon censorship ($t_L = T_{\max}$, $N_3 > 0$), and absorbing extinction ($N_3 = 0$). Across all six system sizes under $K = 1$, **zero** realizations (`0/100`) reach the $T_{\max} = 1500$ ceiling (maximum observed runtime $1045 < 1500$ ticks at $N = 10,000$), confirming that every active survivor represents a realized first pause rather than fixed-horizon censorship. On small lattices ($N = 100$), the scale-invariant leaf boundary ($L/N = \tfrac{1}{2} + \tfrac{1}{N} \approx 50\%$, **Extensive Leaf Boundary of Bethe Fragments** <Ref id="3.2.14" label="§3.2.14" />) sits within only a few hops of the seed and exerts strong finite-size quenching: in `p_surv_N100_design.csv` ($M = 100$), $73/100$ extinguish ($N_3 = 0$) while $27/100$ arrest via $\tau_1$ with $0/100$ censored ($p_{\mathrm{surv}} = 0.270 \pm 0.044$, $\langle N_3 \rangle = 2.48 \pm 0.44$, median $\rho = 0$, $\langle\rho\rangle_{\mathrm{QSD}} = 0.0919 \pm 0.0119$); in the C++20 ensemble reported in Tables 5.3.4.3a and 5.3.4.3b (`27 / 0 / 73`), $\langle N_3 \rangle = 2.12$, conditioned mean $\langle N_3 \rangle_{\mathrm{QSD}} = 7.85$, $\langle\rho\rangle_{\mathrm{QSD}} = 0.0785$, and mean duration $67.88$ ticks (max $122$). Expanding to $N = 10,000$ grows radial shell depth ($d \sim \log_2 N$) and interior path capacity while preserving $L/N \to 50\%$, shielding the soliton core ($\langle N_3 \rangle_{\mathrm{QSD}} = 123.59$ cycles, $\rho \approx 1.24\%$) inside deep interior shells and raising $\tau_1$ survival to $p_{\mathrm{surv}} = 0.990 \pm 0.010$ (`99 / 0 / 1`), while the mean stopping/extinction duration follows $\tau_{\mathrm{ext}} \approx 6.45\,N^{0.51}$ ($R^2 = 0.995$) across $N \in [10^2, 10^4]$ ($67.88$ to $751.53$ ticks, $11.1\times$ increase; including depth-2 $N = 10$ at $7.38$ ticks steepens the four-decade fit to $2.47\,N^{0.64}$, $R^2 = 0.969$). The unpumped critical barrier $\rho_c = 1/(24-6e) \approx 0.130$ ensures isolated seeds remain sub-extensive while distributed seeding above $\rho_c$ ignites extensive geometrogenesis, and $\mu_0 \approx 0.3989 > \mu_{\mathrm{crit}} \approx 0.1369$ secures stability against thermal runaway.
+
+To characterize stopping-rule sensitivity under finite simulation horizons, note that by **Exact Unpumped Quiescence** <Ref id="4.6.6" label="§4.6.6" /> any active configuration ($N_3 > 0$) retains strictly positive single-tick deletion probability and non-unit diagonal transition probability ($K(G,G) < 1$, with $Q_{\mathrm{del}}(2) \approx 0.999$). Defining the generalized $K$-consecutive-pause stopping time along logical ticks $t_L \ge K$
+
+$$
+\tau_K := \inf \left\{ t_L \ge K \;\middle|\; \Delta t_{\mathrm{phys}}(t_L - j) = 0 \quad \forall j \in \{0, \dots, K-1\} \right\}
+$$
+
+(where $K = 1$ recovers the canonical first-pause rule $\tau_{\mathrm{homeo}}$), a finite threshold $K < \infty$ arrests an active trajectory whenever $K$ consecutive ticks draw zero accepted moves, whereas an unstopped run ($K = \infty$) evolves continuously to $T_{\max}$. **Tables 5.3.4.3a and 5.3.4.3b** decompose the three terminal outcome classes under **Exit** ($\tau_K$ arrest / $T_{\max}$ censorship / $N_3 = 0$ extinction) across all six $N$-scales ($K=1$, Table 5.3.4.3a) and across $K \in \{1, 2, 5, 10, \infty\}$ at both $N = 100$ and $N = 1000$ (Table 5.3.4.3b), reporting the uniform C++20 ensemble ($M = 100$ realizations per row) where $p_{\mathrm{surv}}$ carries binomial standard error, $\langle N_3 \rangle$ averages over all $M$ runs, $\langle N_3 \rangle_{\mathrm{QSD}} = \langle N_3 \mid N_3 > 0 \rangle$ averages strictly over surviving active runs (`--` when zero survive), and **Mean Ticks** is the ensemble mean stopping or extinction time. Filtering brief pauses drops $N=100$ ($T_{\max}=1500$) survival to $0$ by $K=10$ or $\infty$, whereas at $N=100$ ($T_{\max}=100, K=\infty$) $9/100$ survive via $T_{\max}$ censorship (`0 / 9 / 91`) and at $N = 1000$ ($T_{\max} = 1500$) $46/100$ pause at $K=1$, $14/100$ still halt at $K=10$, and $2/100$ remain active at horizon (`0 / 2 / 98`, $\langle N_3 \rangle_{\mathrm{QSD}} = 43.00$). Thus, $\tau_{\mathrm{homeo}}$ ($K = 1$) measures the operational first-pause stopping distribution on the active metastable manifold ($0/100$ censored across $N \in [10, 10^4]$), while larger-$K$ sweeps quantify multi-tick persistence and isolate finite-size stabilization against leaf-boundary extinction.
+
+**Table 5.3.4.3a: Multi-Scale Terminal Classification Across Six Lattice Sizes Under First-Pause Arrest ($K=1$, $T_{\max}=1500$) at Canonical Coordinates $(\mu_0, \lambda_0)$.** Entries report the C++20 ensemble across one hundred independent realizations per scale, classifying terminal exits into realized first-pause arrests, finite-horizon censorship, and absorbing extinction alongside unconditional cycle counts, conditioned quasi-stationary cycle means, and ensemble termination durations.
+
+| $N$ | $p_{\mathrm{surv}}$ | Exit ($\tau_1$ / Cens. / Ext.) | $\langle N_3 \rangle$ | $\langle N_3 \rangle_{\mathrm{QSD}}$ | Mean Ticks |
+| :---: | :--------------------: | :--------------------------: | :-------------------: | :----------------------------------: | :---------------: |
+| $10$ | $0.2500 \pm 0.0433$ | $25 / 0 / 75$ | $1.21$ | $4.84$ | $7.38$ |
+| $100$ | $0.2700 \pm 0.0444$ | $27 / 0 / 73$ | $2.12$ | $7.85$ | $67.88$ |
+| $300$ | $0.2800 \pm 0.0449$ | $28 / 0 / 72$ | $2.52$ | $9.00$ | $123.65$ |
+| $1000$ | $0.4600 \pm 0.0498$ | $46 / 0 / 54$ | $6.54$ | $14.22$ | $202.56$ |
+| $3000$ | $0.8100 \pm 0.0392$ | $81 / 0 / 19$ | $20.15$ | $24.88$ | $352.10$ |
+| $10000$ | $0.9900 \pm 0.0099$ | $99 / 0 / 1$ | $122.35$ | $123.59$ | $751.53$ |
+
+**Table 5.3.4.3b: Stopping-Rule Persistence Sensitivity ($\tau_K$, $K \in \{1, 2, 5, 10\}$) and Unstopped Horizon Checks ($K = \infty$) at Mesoscopic and Intermediate Lattice Scales.** Rows report uniform C++20 ensemble statistics across one hundred trajectories per cell, separating quiet-tick persistence pauses from unstopped fixed-horizon survivors and absorbing vacuum extinctions with explicit unconditional, survivor-conditioned, and duration columns defined consistently across finite simulation ceilings.
+
+| $(N, K, T_{\max})$ | $p_{\mathrm{surv}}$ | Exit ($\tau_K$ / Cens. / Ext.) | $\langle N_3 \rangle$ | $\langle N_3 \rangle_{\mathrm{QSD}}$ | Mean Ticks |
+| :------------------- | :--------------------: | :--------------------------: | :-------------------: | :----------------------------------: | :---------------: |
+| $(100, 1, 1500)$ | $0.2700 \pm 0.0444$ | $27 / 0 / 73$ | $2.12$ | $7.85$ | $67.88$ |
+| $(100, 2, 1500)$ | $0.0700 \pm 0.0255$ | $7 / 0 / 93$ | $0.70$ | $10.00$ | $72.72$ |
+| $(100, 5, 1500)$ | $0.0100 \pm 0.0099$ | $1 / 0 / 99$ | $0.10$ | $10.00$ | $77.09$ |
+| $(100, 10, 1500)$ | $0.0000$ | $0 / 0 / 100$ | $0.00$ | -- | $82.19$ |
+| $(100, \infty, 100)$ | $0.0900 \pm 0.0286$ | $0 / 9 / 91$ | $0.42$ | $4.67$ | $100.00$ |
+| $(100, \infty, 1500)$ | $0.0000$ | $0 / 0 / 100$ | $0.00$ | -- | $1500.00$ |
+| $(1000, 1, 1500)$ | $0.4600 \pm 0.0498$ | $46 / 0 / 54$ | $6.54$ | $14.22$ | $202.56$ |
+| $(1000, 2, 1500)$ | $0.3000 \pm 0.0458$ | $30 / 0 / 70$ | $5.03$ | $16.77$ | $207.48$ |
+| $(1000, 5, 1500)$ | $0.2200 \pm 0.0414$ | $22 / 0 / 78$ | $4.18$ | $19.00$ | $212.72$ |
+| $(1000, 10, 1500)$ | $0.1400 \pm 0.0347$ | $14 / 0 / 86$ | $3.14$ | $22.43$ | $222.00$ |
+| $(1000, \infty, 1500)$ | $0.0200 \pm 0.0140$ | $0 / 2 / 98$ | $0.86$ | $43.00$ | $1500.00$ |
 
 ---
 
@@ -18362,7 +18484,7 @@ High-performance C++20 bitset simulations across multiple system scales ($N = 10
 
 The parameter sweep corroborates the kinetic stability of the **Master Equation** <Ref id="5.2" label="§5.2" /> regime by confirming that unpumped discrete causal graph rewrites ($\Lambda_{\mathrm{micro}} \equiv 0$, symmetric deletion friction) sustain a non-zero active cycle population without uniform absorbing collapse or topological jamming. Evaluating $13,200$ independent trajectories across the $(\mu, \lambda)$ plane demonstrates that the theoretical constants derived in Chapter 4 reside at the center of the **Region of Physical Viability (RPV)** <Ref id="5.3.1" label="§5.3.1" />.
 
-The active Quasi-Stationary Distribution characterized in the **Viability Channel** <Ref id="5.3.4" label="§5.3.4" /> exhibits regulated Poisson fluctuations with Fano factor $F \approx 4.14$ and positive skewness $\gamma \approx 1.87$, establishing that the emergent foam supports localized structural heterogeneity while preserving global metric stability. Finite-size scaling confirms that point-source seeding produces a localized topological soliton of mass $\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.2$ cycles at $N = 100$ (scaling to $\approx 124$ at $N = 10^4$), while distributed multi-seed ignition above the critical barrier $\rho_c \approx 0.130$ realizes extensive volume-filling geometrogenesis.
+Under the operational $K = 1$ first-pause stopping protocol $\tau_{\mathrm{homeo}}$ ($T_{\max} = 1500$), the active Quasi-Stationary Distribution characterized in the **Viability Channel** <Ref id="5.3.4" label="§5.3.4" /> exhibits regulated Poisson fluctuations with Fano factor $F \approx 4.14$ and positive skewness $\gamma \approx 1.87$, establishing that the emergent foam supports localized structural heterogeneity while preserving global metric stability. Finite-size scaling under $\tau_{\mathrm{homeo}}$ confirms zero $T_{\max}=1500$ horizon censorship across $N \in [10, 10^4]$ (`0/100` at every scale) and localized topological soliton masses confined within deep interior shells ($\langle N_3 \rangle_{\mathrm{QSD}} \approx 9.2$ at $N = 100$ and $p_{\mathrm{surv}} = 0.270$, scaling to $123.59$ cycles and $p_{\mathrm{surv}} = 0.990$ at $N = 10^4$ despite the scale-invariant $L/N \to 50\%$ boundary ratio, with mean duration $\tau_{\mathrm{ext}} \sim N^{0.51}$ across $N \in [10^2, 10^4]$ and $N^{0.64}$ over $[10, 10^4]$), while $K$-persistence and unstopped ($K = \infty$) baselines confirm full small-lattice absorption by $T = 1500$ at $N = 100$ alongside persistent unstopped trajectories at $N = 1000$, and distributed multi-seed ignition above $\rho_c \approx 0.130$ realizes extensive volume-filling geometrogenesis.
 
 These numerical findings demonstrate that the fundamental parameters of quantum braid dynamics are self-selected by the requirements of structural viability and manifold emergence. The computational evidence validates the discrete relational architecture as a mathematically sound and physically robust foundation for quantum gravity.
 
@@ -20064,11 +20186,11 @@ The master equation ensures the vacuum fluctuates around a stable density, but f
 | $\rho$ | Normalized 3-cycle density ($N_3/N$) | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
 | $C(\rho)$ | Mean-field 3-cycle creation rate | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
 | $D_0(\rho)$ | Undamped mean-field 3-cycle deletion rate | [§5.2.1](/monograph/rules/equilibrium/5.2/#5.2.1) |
-| $\Lambda_0$ | Vacuum permittivity (ignition flux) | [§5.2.3](/monograph/rules/equilibrium/5.2/#5.2.3) |
 | $\mu$ | Geometric friction coefficient ($1/\sqrt{2\pi}$) | [§5.2.5.1](/monograph/rules/equilibrium/5.2/#5.2.5.1) |
-| $\lambda$ | Bare catalysis coefficient ($e-1$) | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
+| $D(\rho)$ | Steric-damped mean-field 3-cycle deletion rate | [§5.2.6](/monograph/rules/equilibrium/5.2/#5.2.6) |
 | $\lambda_{\text{cat}}$ | Effective catalytic parameter in the viability protocol | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
-| $p_{\mathrm{surv}}$ | Ensemble survival probability to horizon $T$ | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $p_{\mathrm{surv}}$ | Ensemble survival probability (to horizon $T$ or stopping rule $\tau_{\mathrm{homeo}}$) | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
+| $\tau_K$ | Generalized $K$-tick persistence stopping time ($\tau_1 \equiv \tau_{\mathrm{homeo}}$) | [§5.3.4.3](/monograph/rules/equilibrium/5.3/#5.3.4.3) |
 | $F_{\mathrm{QSD}}$ | Normalized quasi-stationary flux imbalance | [§5.3.1](/monograph/rules/equilibrium/5.3/#5.3.1) |
 | $\delta_\mu$ | Perturbation half-width in friction sweeps | [§5.3.2](/monograph/rules/equilibrium/5.3/#5.3.2) |
 | $\rho_c$ | Critical viability threshold density | [§5.3.4](/monograph/rules/equilibrium/5.3/#5.3.4) |
@@ -20077,8 +20199,7 @@ The master equation ensures the vacuum fluctuates around a stable density, but f
 | $J$ | Jacobian eigenvalue ($F'(\rho^*) < 0$) | [§5.4.3.1](/monograph/rules/equilibrium/5.4/#5.4.3.1) |
 | $\bar{d}_{G_t}(u,v)$ | Undirected shortest-path metric | [§5.5.2](/monograph/rules/equilibrium/5.5/#5.5.2) |
 | $M_v$ | Local vertex degree count | [§5.5.3](/monograph/rules/equilibrium/5.5/#5.5.3) |
-| $\Delta$ | Uniform maximum vertex degree bound | [§5.5.4](/monograph/rules/equilibrium/5.5/#5.5.4) |
-| $K(u,v)$ | Causal Ollivier-Ricci curvature | [§5.5.6](/monograph/rules/equilibrium/5.5/#5.5.6) |
+| $C_1$ | Uniform Ollivier-Ricci curvature magnitude bound ($\lvert K(u,v)\rvert \le C_1$) | [§5.5.6](/monograph/rules/equilibrium/5.5/#5.5.6) |
 | $W_1(\mu_u,\mu_v)$ | Wasserstein-1 distance between local neighborhoods | [§5.5.6.1](/monograph/rules/equilibrium/5.5/#5.5.6.1) |
 | $A$ | Exponential covariance decay prefactor | [§5.5.7](/monograph/rules/equilibrium/5.5/#5.5.7) |
 | $L$ | Minimum simple cycle length scale | [§5.5.8](/monograph/rules/equilibrium/5.5/#5.5.8) |

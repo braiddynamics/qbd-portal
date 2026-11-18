@@ -2604,7 +2604,7 @@ The formal epistemic audit validates these non-perturbative derivations within a
 | $\lvert \Omega \rangle$ | Unique Non-Degenerate Gauge Vacuum State | [§24.1.5](/monograph/conclusion/derivations/24.1/#24.1.5) |
 | $\Delta_{\text{YM}}$ | Non-Perturbative Yang-Mills Mass Gap | [§24.2.1](/monograph/conclusion/derivations/24.2/#24.2.1) |
 | $C(K)$ | Knot Minimal Crossing Number | [§24.2.2](/monograph/conclusion/derivations/24.2/#24.2.2) |
-| $\kappa$ | Dimensionless Ribbon Casimir Modulus | [§24.2.3](/monograph/conclusion/derivations/24.2/#24.2.3) |
+| $\mathcal{E}(c)$ | Minimal Elastic Casimir Deformation Energy Bound ($\ge \kappa\hbar c/\ell_0$) | [§24.2.3](/monograph/conclusion/derivations/24.2/#24.2.3) |
 | $\kappa_{\text{eff}}$ | Effective Multi-Crossing Ribbon Modulus | [§24.2.4](/monograph/conclusion/derivations/24.2/#24.2.4) |
 | $\Delta_{\text{pl}}$ | Planar Plaquette Flux Spectral Gap | [§24.2.5](/monograph/conclusion/derivations/24.2/#24.2.5) |
 | $\Lambda_{\text{YM}}$ | Dynamically Transmuted Hadronic Scale | [§24.3.1](/monograph/conclusion/derivations/24.3/#24.3.1) |
