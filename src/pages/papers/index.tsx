@@ -145,7 +145,7 @@ export default function PapersHub() {
                           fontSize: '0.75rem',
                           fontWeight: 600
                         }}>
-                          {rec.date} ({rec.version})
+                          {rec.date}{rec.version ? ` (${rec.version})` : ''}
                         </span>
 
                         {/* Type Badge */}
@@ -272,7 +272,7 @@ export default function PapersHub() {
 
                       {pdfLink && (
                         <a
-                          href={pdfLink.href}
+                          href={pdfLink.href.replace(/^pathname:\/\//, '')}
                           download
                           style={{
                             display: 'inline-flex',
@@ -288,6 +288,25 @@ export default function PapersHub() {
                             border: '1px solid var(--ifm-color-emphasis-300)'
                           }}>
                           <span>📄</span> PDF {pdfLink.size && `(${pdfLink.size})`}
+                        </a>
+                      )}
+
+                      {/* DOI record */}
+                      {rec.doiUrl && (
+                        <a
+                          href={rec.doiUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            padding: '0.4rem 0.85rem',
+                            borderRadius: '6px',
+                            fontSize: '0.825rem',
+                            fontWeight: 600,
+                            color: '#6366f1',
+                            border: '1px solid rgba(99, 102, 241, 0.4)',
+                            textDecoration: 'none'
+                          }}>
+                          DOI / Zenodo ↗
                         </a>
                       )}
 

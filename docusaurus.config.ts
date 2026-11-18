@@ -50,6 +50,7 @@ function papersAssetsPlugin() {
         'vacuum-phase',
         'causal-invariance-hypergraphs',
         'maximal-entropy-random-walk',
+        'geometric-unity',
         'comments/js-riverfield',
       ];
       const assetSubdirs = ['downloads', 'simulations', 'code', 'data', 'figures'];

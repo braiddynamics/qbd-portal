@@ -520,7 +520,7 @@ Machine-readable download catalogue:
                   </td>
                   <td style={{ ...s.td, whiteSpace: 'nowrap' }}>
                     <strong>{p.typeLabel}</strong><br />
-                    <span style={{ fontSize: '0.75rem', color: 'var(--ifm-color-emphasis-600)' }}>{p.version} · {p.date}</span>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--ifm-color-emphasis-600)' }}>{p.version ? `${p.version} · ` : ''}{p.date}</span>
                   </td>
                   <td style={{ ...s.td, whiteSpace: 'nowrap' }}>
                     {mdLink && (

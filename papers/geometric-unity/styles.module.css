@@ -1,0 +1,36 @@
+.reader {
+  min-width: 0;
+  position: relative;
+  overflow-x: clip;
+}
+
+.reader table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.reader :global(.katex-display) {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.3rem 0;
+}
+
+.reader :global(.katex-display > .katex) {
+  min-width: max-content;
+}
+
+.reader code,
+.reader a {
+  overflow-wrap: anywhere;
+}
+
+.reader :global(a[id]) {
+  scroll-margin-top: 5rem;
+}
+
+.reader figure img {
+  display: block;
+  width: 100%;
+}
