@@ -1849,7 +1849,374 @@ Section 2.6.6.1 formalizes the properties of the QBD proof regarding causal acyc
 
 ---
 
-### 2.6.7 Proof: Inadequacy of Local Axioms {#2.6.7}
+### 2.6.7 Lemma: Least Constructive Countermodel {#2.6.7}
+
+:::info[**Existence of a Minimum Four-Vertex Constructive Countermodel via Two Return Chords**]
+:::
+
+Let $\mathcal C$ denote the class of finite timestamped graphs satisfying Axiom 1 and the constructive geometric predicate. The least vertex count in $\mathcal C$ with $(u,u)\in R^+$ for some vertex $u$ is four.
+
+**In Plain English:**  
+Four vertices are necessary and sufficient for a constructible counterexample to irreflexivity of the mediated closure.
+
+---
+
+### 2.6.7.1 Proof: Least Constructive Countermodel {#2.6.7.1}
+
+:::tip[**Minimality via Triangle Acyclicity and Two Return-Chord Insertions**]
+:::
+
+**I. Reduction to a Directed Triangle**
+
+Let $G$ denote a graph satisfying **Axiom 1 Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" /> on at most three vertices. If $uR^+u$, then a finite nonempty chain has the form
+
+$$
+u=u_0Ru_1R\cdots Ru_m=u,\qquad m\ge1.
+$$
+
+For each $1\le j\le m$, let $P_j=(x_{j,0},\ldots,x_{j,k_j})$ denote a witness of $u_{j-1}Ru_j$ (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />). Its endpoints satisfy
+
+$$
+k_j\ge2,\qquad x_{j,0}=u_{j-1},\qquad x_{j,k_j}=u_j,
+\qquad x_{j,k_j}=x_{j+1,0}\quad (j<m).
+$$
+
+Let $s_j$ denote $\sum_{\ell=1}^j k_\ell$, with $s_0=0$. Define $W=(w_0,\ldots,w_{s_m})$ as the concatenation with $w_{s_{j-1}+a}=x_{j,a}$ for $0\le a\le k_j$. The endpoint equality makes the two assignments at $s_j$ agree. For $0\le a<k_j$,
+
+$$
+(w_{s_{j-1}+a},w_{s_{j-1}+a+1})=(x_{j,a},x_{j,a+1})\in E,\qquad
+w_0=x_{1,0}=u=w_{s_m},\qquad s_m\ge2m>0.
+$$
+
+Let $(i,j)$ denote equal-vertex indices in $W$ with $0\le i<j\le s_m$ minimizing $d=j-i$. Any equal pair $w_a=w_b$ with $i\le a<b<j$ would give a smaller positive difference $b-a\le j-1-i<d$. Thus $w_i,\ldots,w_{j-1}$ are distinct, so $d\le |V|\le3$. For the two shorter possibilities,
+
+$$
+\begin{aligned}
+d=1&\ \Longrightarrow\ (w_i,w_{i+1})=(w_i,w_i)\in E,\\
+d=2&\ \Longrightarrow\ w_{i+1}\ne w_i,\quad
+       (w_i,w_{i+1})\in E,\quad (w_{i+1},w_{i+2})=(w_{i+1},w_i)\in E .
+\end{aligned}
+$$
+
+The first contradicts irreflexivity and the second contradicts the reciprocal-edge exclusion. Hence $d=3$. Let $(x,y,z)$ denote $(w_i,w_{i+1},w_{i+2})$. Since these are all three vertices of $G$,
+
+$$
+\{(x,y),(y,z),(z,x)\}\subseteq E,\qquad
+E\setminus\{(x,y),(y,z),(z,x)\}
+ \subseteq\{(x,x),(y,y),(z,z),(y,x),(z,y),(x,z)\}.
+$$
+
+All six pairs in the second set are forbidden by Axiom 1. Thus $E=\{(x,y),(y,z),(z,x)\}$.
+
+**II. Mediated Closure on a Triangle**
+
+Let $x\to y\to z\to x$ denote the triangle, with respective heights $a,b,c$. A simple witness in this graph has at most two edges, and membership in $R$ requires at least two. Each start vertex has one outgoing edge and its successor also has one, so the complete list of candidates is
+
+$$
+\begin{array}{c|c|c}
+\text{witness} & \text{ordered pair in }R & \text{height test}\\ \hline
+x\to y\to z & (x,z) & a<b\\
+y\to z\to x & (y,x) & b<c\\
+z\to x\to y & (z,y) & c<a
+\end{array}
+$$
+
+The three tests together imply $a<b<c<a$, hence $a<a$. At least one test fails. In each row below, $S$ denotes the relation formed by the other two candidate pairs. The only composition within $S$ joins its two arrows at their common vertex:
+
+$$
+\begin{array}{c|c|c}
+\text{failed test} & S & S^2\\ \hline
+a<b & \{(y,x),(z,y)\} & \{(z,x)\}\\
+b<c & \{(x,z),(z,y)\} & \{(x,y)\}\\
+c<a & \{(x,z),(y,x)\} & \{(y,z)\}
+\end{array}
+$$
+
+The terminal vertex of the sole pair in $S^2$ has no outgoing pair in $S$ in each row. Thus $S^n=\varnothing$ for $n\ge3$. The inclusion $R\subseteq S$ yields $R^+\subseteq S\cup S^2$, whose displayed pairs have distinct endpoints. This contradicts $uR^+u$.
+
+**III. Construction of a Four-Vertex Accretion**
+
+Let $G_0$ denote the graph on $V=\{A,B,C,D\}$ with edges $C\xrightarrow{1}A$, $A\xrightarrow{2}B$, and $B\xrightarrow{4}D$. Let $E_i$ and $O_i(v)$ denote the edge set and outgoing neighbors of $v$ after $i$ insertions. The base satisfies
+
+$$
+E_0=\{(C,A),(A,B),(B,D)\},\qquad
+E_0^{-1}=\{(A,C),(B,A),(D,B)\},\qquad E_0\cap E_0^{-1}=\varnothing.
+$$
+
+Define $r$ as the rank function with $(r(C),r(A),r(B),r(D))=(0,1,2,3)$. Every base edge increases $r$ by one. A directed cycle $v_0,\ldots,v_\ell=v_0$ in $G_0$ would yield
+
+$$
+0=r(v_\ell)-r(v_0)=\sum_{j=0}^{\ell-1}\bigl(r(v_{j+1})-r(v_j)\bigr)=\ell>0.
+$$
+
+Let $I_0(v)$ denote the incoming neighbors of $v$ in $G_0$. Pairing each incoming tail with each outgoing head lists the two-paths:
+
+$$
+\begin{array}{c|c|c|c}
+v & I_0(v) & O_0(v) & I_0(v)\times O_0(v) \\ \hline
+A & \{C\} & \{B\} & \{(C,B)\}\\
+B & \{A\} & \{D\} & \{(A,D)\}\\
+C & \varnothing & \{A\} & \varnothing\\
+D & \{B\} & \varnothing & \varnothing
+\end{array}
+$$
+
+The two endpoint pairs differ, and $\{(C,B),(A,D)\}\cap E_0=\varnothing$. Each of the two paths is therefore unique among paths of length at most two with its endpoints, as required of the base (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />).
+
+For the first candidate $B\to C$, the support from $C$ to $B$ is obtained from the $A$ row of the table:
+
+$$
+\Pi_{\ell\le2}^{\,G_0}(C,B)=\varnothing\cup\{(C,A,B)\}=\{(C,A,B)\},
+\qquad
+\{(B,C),(C,B)\}\cap E_0=\varnothing.
+$$
+
+The first equality establishes candidate-relative PUC and the second excludes an existing edge or its reverse (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). The $B$ row and the timestamp recurrence yield
+
+$$
+E_1=E_0\cup\{(B,C)\},\qquad
+H_1(B,C)=1+\max\bigl(\{H_0(A,B)\}\cup\{0\}\bigr)=1+\max\{2,0\}=3
+$$
+
+(**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />).
+
+For the second candidate $D\to A$, the outgoing sets yield the two-path family
+
+$$
+\{(A,v,w):v\in O_1(A),\ w\in O_1(v)\}
+=\{(A,B,C),(A,B,D)\}.
+$$
+
+Here $O_1(A)=\{B\}$ and $O_1(B)=\{C,D\}$. The subfamily ending at $D$ consists of $(A,B,D)$ alone, and $D\notin O_1(A)$ excludes the direct bypass. Hence
+
+$$
+\Pi_{\ell\le2}^{\,G_1}(A,D)=\varnothing\cup\{(A,B,D)\}=\{(A,B,D)\},
+\qquad
+\{(D,A),(A,D)\}\cap E_1=\varnothing.
+$$
+
+These conditions establish PUC and preserve Axiom 1. Since the only incoming edge of $D$ is $B\to D$ and its height is unchanged, the recurrence yields
+
+$$
+E_2=E_1\cup\{(D,A)\},\qquad
+H_2(D,A)=1+\max\bigl(\{H_1(B,D)\}\cup\{0\}\bigr)=1+\max\{4,0\}=5.
+$$
+
+The restriction of either $E_1$ or $E_2$ to $V\setminus\{A\}$ is $\{(B,C),(B,D)\}$. Both heads have no outgoing edge in this restriction, so every directed cycle contains $A$. For a simple cycle $(v_0,\ldots,v_\ell=v_0)$ with $v_j=A$, the sequence $(v_j,\ldots,v_{\ell-1},v_0,\ldots,v_j)$ is a rotation starting and ending at $A$. Since $O_i(A)=\{B\}$ and $O_i(B)=\{C,D\}$ for $i=1,2$, the two possible two-edge prefixes are $(A,B,C)$ and $(A,B,D)$. Their continuations use
+
+$$
+\begin{array}{c|cc}
+& O_i(C) & O_i(D) \\ \hline
+i=1 & \{A\} & \varnothing\\
+i=2 & \{A\} & \{A\}
+\end{array}
+$$
+
+The table allows only a return to $A$ or termination after the two-edge prefix. Continuation past a return would repeat $A$, contrary to simplicity. Therefore the cycle families, with each cycle written from $A$, are
+
+$$
+\begin{aligned}
+\{(A,B,v,A):v\in O_1(B),\ A\in O_1(v)\}
+  &=\{(A,B,C,A)\},\\
+\{(A,B,v,A):v\in O_2(B),\ A\in O_2(v)\}
+  &=\{(A,B,C,A),(A,B,D,A)\}.
+\end{aligned}
+$$
+
+Both insertions satisfy the cycle condition of the constructive predicate.
+
+**IV. Attainment of a Diagonal**
+
+The final adjacency and height lists yield the following distinct-vertex witnesses with increasing heights:
+
+$$
+\begin{array}{c|c|c}
+\text{witness in }G_2 & \text{height comparison} & \text{relation}\\ \hline
+A\to B\to C & 2<3 & AR C\\
+C\to A\to B & 1<2 & CR B\\
+B\to D\to A & 4<5 & BR A
+\end{array}
+$$
+
+These three relations compose in the nonempty closure:
+
+$$
+\begin{aligned}
+(A,C),(C,B)\in R &\ \Longrightarrow\ (A,B)\in R^2,\\
+(A,B)\in R^2,\ (B,A)\in R &\ \Longrightarrow\ (A,A)\in R^3\subseteq R^+.
+\end{aligned}
+$$
+
+The four-vertex construction and the exclusion for at most three vertices establish the minimum.
+
+Q.E.D.
+
+**In Plain English:**  
+The proof excludes a mediated cycle on three vertices and constructs and verifies a four-vertex witness.
+
+---
+
+### 2.6.8 Lemma: Least Static Countermodel {#2.6.8}
+
+:::info[**Existence of a Minimum Five-Vertex Static Countermodel via the Butterfly**]
+:::
+
+Let $\mathcal S$ denote the class of finite timestamped graphs satisfying Axiom 1 and the static geometric diagnostic. The least vertex count in $\mathcal S$ with $(u,u)\in R^+$ for some vertex $u$ is five.
+
+**In Plain English:**  
+Five vertices are necessary and sufficient for a counterexample satisfying the static geometric diagnostic.
+
+---
+
+### 2.6.8.1 Proof: Least Static Countermodel {#2.6.8.1}
+
+:::tip[**Minimality via Shared-Edge Triangles and the Five-Vertex Butterfly**]
+:::
+
+**I. Exclusion of Two Triangles on Four Vertices**
+
+Let $G$ denote a graph on at most four vertices satisfying Axiom 1 and the static geometric diagnostic (**Independence of Axioms 1 and 2** <Ref id="2.5.1" label="§2.5.1" />). Let $S,T$ denote the vertex sets of two directed triangles. Then
+
+$$
+|S\cap T|=|S|+|T|-|S\cup T|\ge3+3-4=2.
+$$
+
+If $|S\cap T|=3$, then $S=T$. Let $E_S$ and $E_T$ denote the triangle edge sets. For any unordered pair $\{p,q\}$ in $S$, both intersections of the triangle edge sets with $\{(p,q),(q,p)\}$ are singletons. If the singletons differed, their union would include both orientations in $E$, contrary to Axiom 1. Thus
+
+$$
+E_S\cap\{(p,q),(q,p)\}=E_T\cap\{(p,q),(q,p)\}
+\qquad(\{p,q\}\subseteq S,\ p\ne q).
+$$
+
+The union over the three unordered pairs yields $E_S=E_T$.
+
+For distinct triangles, $|S\cap T|=2$. Let $\{u,v\}$ denote the intersection, with the shared edge oriented $u\to v$, and let $x$ and $y$ denote the third vertices in $S$ and $T$, respectively. Closure of each triangle determines its other two edges:
+
+$$
+\begin{array}{c|c|c}
+\text{vertex set} & \text{edge set} & \text{two-path from }v\text{ to }u \\ \hline
+\{u,v,x\} & \{(u,v),(v,x),(x,u)\} & (v,x,u)\\
+\{u,v,y\} & \{(u,v),(v,y),(y,u)\} & (v,y,u)
+\end{array}
+$$
+
+Since $x\ne y$, the set of simple paths of length at most two from $v$ to $u$ includes both distinct triples and has cardinality at least two. This contradicts uniqueness under the static diagnostic. Thus $G$ contains at most one directed triangle.
+
+**II. Localization of a Closed Mediated Chain**
+
+Suppose $uR^+u$. Then $u=u_0Ru_1R\cdots Ru_m=u$ for some $m\ge1$, and each link admits a simple witness (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />). Let $W=(w_0,\ldots,w_q)$ denote the closed walk given by substituting those witnesses at the shared endpoints (**Least Constructive Countermodel** <Ref id="2.6.7" label="§2.6.7" />). For $0\le i<q$, let $x$ and $y$ denote $w_i$ and $w_{i+1}$, respectively. The return walk from $y$ to $x$ along the other edges of $W$ is
+
+$$
+(w_{i+1},\ldots,w_{q-1},w_0,\ldots,w_i),
+$$
+
+where the first segment is empty if $i+1=q$, because $w_q=w_0$. Let $P=(p_0,\ldots,p_k)$ denote a shortest walk from $p_0=y$ to $p_k=x$ using edges of $W$. If $p_a=p_b$ for $0\le a<b\le k$, deleting that segment yields
+
+$$
+P'=
+\begin{cases}
+(p_0,\ldots,p_a,p_{b+1},\ldots,p_k), & b<k,\\
+(p_0,\ldots,p_a), & b=k .
+\end{cases}
+$$
+
+In the first case $(p_a,p_{b+1})=(p_b,p_{b+1})$ is an edge of $W$. In the second case $p_a=p_k=x$, so the terminal vertex is preserved. Both walks have $k-(b-a)<k$ edges, contrary to the choice of $P$. Thus the vertices of $P$ are distinct. Since $x\ne y$, prefixing $x$ to $P$ yields the simple cycle $(x,p_0,\ldots,p_k=x)$ containing $x\to y$.
+
+The static diagnostic requires each of these cycles to have length three. Since $W$ has an edge, there is at least one such triangle, and Part I establishes that there is at most one. Let $T$ denote this triangle, let $E_T$ denote its edges, and let $R_T$ denote mediated influence computed using only these edges and their original heights. For the vertices $u_0,\ldots,u_m$ of the original $R$-chain, each witness uses only edges of $W$, and $E(W)\subseteq E_T$. Consequently,
+
+$$
+(u_{j-1},u_j)\in R_T\quad(1\le j\le m),\qquad u_0=u_m=u
+\quad\Longrightarrow\quad (u,u)\in R_T^+.
+$$
+
+The closure on the triangle is irreflexive for any assignment of its active heights (**Least Constructive Countermodel** <Ref id="2.6.7" label="§2.6.7" />). Thus $\{(v,v):v\in V(T)\}\cap R_T^+=\varnothing$, contrary to $(u,u)\in R_T^+$.
+
+**III. Verification of the Five-Vertex Static Diagnostic**
+
+Let $G$ denote the graph on $\{A,B,C,D,Z\}$ given by
+
+$$
+A\xrightarrow{1}Z,\quad Z\xrightarrow{2}D,\quad D\xrightarrow{3}C,\quad
+C\xrightarrow{4}Z,\quad Z\xrightarrow{5}B,\quad B\xrightarrow{6}A.
+$$
+
+The edge set and its reverse satisfy
+
+$$
+\begin{aligned}
+E&=\{(A,Z),(Z,D),(D,C),(C,Z),(Z,B),(B,A)\},\\
+E^{-1}&=\{(Z,A),(D,Z),(C,D),(Z,C),(B,Z),(A,B)\},\\
+E\cap E^{-1}&=\varnothing .
+\end{aligned}
+$$
+
+Each pair in $E$ has distinct coordinates, establishing Axiom 1 together with the disjointness. The restriction to $V\setminus\{Z\}$ is $\{(B,A),(D,C)\}$, whose heads have no outgoing edges in that restriction. Thus every simple cycle contains $Z$. Following each first edge out of $Z$ yields the following successive choices:
+
+$$
+\begin{array}{c|c|c|c}
+\text{first edge} & \text{next edge} & \text{first return edge} & \text{cycle}\\ \hline
+Z\to B & B\to A & A\to Z & (Z,B,A,Z)\\
+Z\to D & D\to C & C\to Z & (Z,D,C,Z)
+\end{array}
+$$
+
+The only outgoing edges from $Z$ are the two first edges in the table, and each subsequent choice is unique until the return. Continuing past that return would repeat $Z$. Hence the listed triangles are the only simple cycles up to rotation.
+
+Every two-path through a middle vertex $w$ comes from pairing an incoming edge of $w$ with an outgoing edge of $w$. The complete choices and their endpoint pairs are
+
+$$
+\begin{array}{c|c|c|l|l}
+w & \text{incoming tails} & \text{outgoing heads}
+  & \text{paths} & \text{endpoint pairs}\\ \hline
+A & B & Z & B\to A\to Z & (B,Z)\\
+B & Z & A & Z\to B\to A & (Z,A)\\
+C & D & Z & D\to C\to Z & (D,Z)\\
+D & Z & C & Z\to D\to C & (Z,C)\\
+Z & A,C & B,D & A\to Z\to B,\ A\to Z\to D,\ C\to Z\to B,\ C\to Z\to D
+  & (A,B),\ (A,D),\ (C,B),\ (C,D)
+\end{array}
+$$
+
+Each triple in the table has distinct vertices. Let $D_2(s)$ denote the set of destinations of its two-paths starting at $s$, and let $O(s)$ denote the destinations of the direct edges from $s$. The row-by-row counts and intersections are
+
+$$
+\begin{array}{c|c|c|c|c}
+s & D_2(s) & \text{two-path count from }s & O(s) & D_2(s)\cap O(s)\\ \hline
+A & \{B,D\} & 2 & \{Z\}   & \varnothing\\
+B & \{Z\}   & 1 & \{A\}   & \varnothing\\
+C & \{B,D\} & 2 & \{Z\}   & \varnothing\\
+D & \{Z\}   & 1 & \{C\}   & \varnothing\\
+Z & \{A,C\} & 2 & \{B,D\} & \varnothing
+\end{array}
+$$
+
+In each row $|D_2(s)|$ equals the number of two-paths in that row. Thus each destination occurs once among the two-paths from $s$. The empty intersections exclude a direct edge with the same endpoints. Together with the two triangle cycles, this establishes the static diagnostic.
+
+**IV. Attainment of a Diagonal**
+
+The graph contains the two simple directed witnesses
+
+$$
+A\xrightarrow{1}Z\xrightarrow{2}D,\qquad
+D\xrightarrow{3}C\xrightarrow{4}Z\xrightarrow{5}B\xrightarrow{6}A.
+$$
+
+The first satisfies $1<2$, and the second satisfies $3<4<5<6$. The two paths yield $AR D$ and $DR A$, so
+
+$$
+(A,D),(D,A)\in R\ \Longrightarrow\ (A,A)\in R^2\subseteq R^+.
+$$
+
+The five-vertex example and the exclusion for graphs on at most four vertices establish the minimum.
+
+Q.E.D.
+
+**In Plain English:**  
+The proof excludes a mediated cycle on four vertices and verifies the five-vertex butterfly against every condition of the static diagnostic.
+
+---
+
+### 2.6.9 Proof: Inadequacy of Local Axioms {#2.6.9}
 
 :::tip[**Inadequacy of Local Axioms via Composition of Local Influence Witnesses**]
 :::
@@ -1860,7 +2227,9 @@ Every $R$ witness is a simple increasing spatial path (**Effective Influence** <
 
 **II. Closure Failure**
 
-A composite cycle gives a diagonal pair in $R^+$ (**Failure of Reflexivity** <Ref id="2.6.4" label="§2.6.4" />). In particular, the two increasing arcs of the directed perimeter yield $(a,b),(b,a)\in R$, and hence $(a,a)\in R^+$ (**Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />). The five-vertex accretion witness verifies the failure on a locally constructible input (**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />).
+A composite cycle gives a diagonal pair in $R^+$ (**Failure of Reflexivity** <Ref id="2.6.4" label="§2.6.4" />). In particular, the two increasing arcs of the directed perimeter yield $(a,b),(b,a)\in R$, and hence $(a,a)\in R^+$ (**Failure of Asymmetry** <Ref id="2.6.5" label="§2.6.5" />).
+
+The four-vertex accretion satisfies Axiom 1 and the constructive geometric predicate with a diagonal in $R^+$ (**Least Constructive Countermodel** <Ref id="2.6.7" label="§2.6.7" />). The five-vertex butterfly satisfies Axiom 1 and the static geometric diagnostic with a diagonal in $R^+$ (**Least Static Countermodel** <Ref id="2.6.8" label="§2.6.8" />).
 
 **III. Spatial Closure**
 
@@ -1869,11 +2238,11 @@ Spatial triangle closure can coexist with acyclic mediated closure (**Causal Acy
 Q.E.D.
 
 **In Plain English:**  
-Section 2.6.7 formalizes the properties of the QBD proof regarding inadequacy of local axioms.
+Section 2.6.9 formalizes the properties of the QBD proof regarding inadequacy of local axioms.
 
 ---
 
-### 2.6.7.1 Corollary: Global Constraint {#2.6.7.1}
+### 2.6.9.1 Corollary: Global Constraint {#2.6.9.1}
 
 :::info[**Necessity of an Explicit Global Constraint via Causal Unidirectionality**]
 :::
@@ -1883,7 +2252,7 @@ A physical theory requires a well-defined causal ordering (a "direction of time"
 Q.E.D.
 
 **In Plain English:**  
-Section 2.6.7.1 formalizes the properties of the QBD corollary regarding global constraint.
+Section 2.6.9.1 formalizes the properties of the QBD corollary regarding global constraint.
 
 ---
 
@@ -1905,15 +2274,15 @@ Causality is strictly acyclic: an event can never be its own cause. This prevent
 
 ---
 
-### 2.7.2 Theorem: Distributed Rollback Cost {#2.7.2}
+### 2.7.2 Theorem: Causal Admission of Chord Batches {#2.7.2}
 
-:::info[**Thermodynamic Enforcement via Conditional Distributed Rollback Cost**]
+:::info[**Validity of Causal Admission via Target Diagonals**]
 :::
 
-Let repairing a spatial perimeter $C$ require coordination over ambient graph distance $D_G(C)=\max_{u,v\in V(C)}d_G(u,v)$ and irreversible erasure of at least $b$ bits. Assume an additive cost of at least $\epsilon_{\mathrm{hop}}>0$ per required hop and at least $k_BT_{\mathrm{bath}}\log 2$ per irreversibly erased bit. The resulting lower bound is $W_{\mathrm{repair}}\ge\epsilon_{\mathrm{hop}}D_G(C)+b k_BT_{\mathrm{bath}}\log 2$.
+Let $R_0$ and $R_f$ denote the mediated relations before and after a chord batch, with $R_0^+$ irreflexive and each retained chord's height at least every old outgoing height at its target, and let $T$ denote the set of retained chord targets. Then $R_f^+$ is irreflexive if and only if $(t,t)\notin R_f^+$ for every $t\in T$, with irreflexivity in particular on a first tick with old edges of uniform height $h$ raising a vertex grading by one and elementary return chords of height $h+1$. Moreover, (i) occurrence-order acyclicity and the local geometric predicates are compatible with cyclic mediated closure, (ii) for every fixed radius $r\ge1$ there exists a pair of timestamped graphs with identical rooted radius-$r$ induced balls and opposite mediated acyclicity, and (iii) for elementary return-chord candidates between distinct vertices with no direct reverse edge on a fixed $N$-vertex support of maximum undirected degree three, the simple-path and walk reverse-witness tests are equivalent at a common cutoff, with the one-tick miss probability at $L_{\mathrm{cut}}=\lfloor\log_2 N\rfloor+3$ bounded by $18N(2p)^{L_{\mathrm{cut}}}/(1-2p)$ under a conditional height-comparison success bound $0<p<1/4$ given each exposed prefix.
 
 **In Plain English:**  
-Section 2.7.2 formalizes the properties of the QBD theorem regarding distributed rollback cost.
+For a height-dominant batch on an acyclic snapshot, checking closure for a return at each chord target is equivalent to checking the whole graph.
 
 ---
 
@@ -2317,7 +2686,129 @@ Section 2.7.8.1 formalizes the properties of the QBD proof regarding batch causa
 
 ---
 
-### 2.7.8.2 Calculation: Target Diagonals before and after Deletion {#2.7.8.2}
+### 2.7.9 Lemma: First-Tick Causality on Graded Graphs {#2.7.9}
+
+:::info[**First-Tick Causality on Graded Graphs via One-Tick Mediated Acyclicity on Uniform-Height Graded Inputs**]
+:::
+
+Let every old edge have height $h$ and raise a vertex grading by one, and let a batch of elementary return chords have height $h+1$. The mediated closure after the tick is acyclic.
+
+**In Plain English:**  
+Section 2.7.9 formalizes the properties of the QBD lemma regarding first-tick causality on graded graphs.
+
+---
+
+### 2.7.9.1 Proof: First-Tick Causality on Graded Graphs {#2.7.9.1}
+
+:::tip[**First-Tick Causality on Graded Graphs via Strict Decrease of Grading along Mediated Pairs**]
+:::
+
+**I. Height and Grading Changes**
+
+An elementary chord closes a directed two-path in the frozen graph (**First-Tick Causality on Graded Graphs** <Ref id="2.7.9" label="§2.7.9" />) (**Axiom 2 Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />).
+
+Every candidate chord $u\to v$ closes a two-path $v\to w\to u$ and has at least one old incoming edge at $u$. Its source maximum is $h$, so its height is $h+1$. For the grading $d$,
+
+$$
+d(u)=d(w)+1=d(v)+2,\qquad d(v)-d(u)=-2.
+$$
+
+**II. Mediated Witness**
+
+Every increasing witness of length at least two uses exactly the two heights $h<h+1$. Its first edge raises the grading by one and its second lowers it by two. Thus $aRb$ implies $d(b)=d(a)-1$ in the merged graph, and the same implication holds after deletions.
+
+**III. Exclusion of Closure Diagonals**
+
+A chain of $m\ge1$ mediated pairs from $a$ to $b$ has $d(b)=d(a)-m$. It cannot return to $a$. Hence the final $R^+$ is irreflexive.
+
+Q.E.D.
+
+**In Plain English:**  
+Section 2.7.9.1 formalizes the properties of the QBD proof regarding first-tick causality on graded graphs.
+
+---
+
+### 2.7.10 Proof: Causal Admission of Chord Batches {#2.7.10}
+
+:::tip[**Assembly of the Admission Criterion via Target Closure and Witness Comparison**]
+:::
+
+**I. Occurrence Order and Limits of Observation**
+
+Number the butterfly edges $e_1,\ldots,e_6$ in their displayed order (**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />). Assign births in that order. The first source has no incoming edge, so its birth height is $1+\max\{0\}=1$. For each $i\ge2$, $e_{i-1}$ enters the source of $e_i$, and every earlier height is at most $i-1$. The source-maximum rule yields $h(e_i)=1+(i-1)=i$. Strict increase along each dependency chain yields irreflexivity of $D^+$ (**Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />). The same butterfly satisfies the local geometric predicates and has $A R D$ and $D R A$, which yield $(A,A)\in R^+$.
+
+For any $r\ge1$, the open perimeter $P$ and the closed perimeter $C$ have identical rooted radius-$r$ induced balls, whereas $R_P^+$ is irreflexive and $R_C^+$ has a diagonal (**Finite-Radius Indistinguishability** <Ref id="2.7.3" label="§2.7.3" />). A decision determined by the rooted ball would assign the same value to $P$ and $C$, which have different acyclicity values.
+
+**II. Localization of Batch Diagonals**
+
+Height dominance yields $R_f\setminus R_0\subseteq V\times T$ (**Batch Causal Preservation under Dominance** <Ref id="2.7.8" label="§2.7.8" />). For any $(a,a)\in R_f^+$, a nonempty closed chain of $R_f$ pairs contains a pair outside $R_0$, since otherwise $(a,a)\in R_0^+$. Its endpoint $t$ belongs to $T$, and rotating the chain to begin at $t$ yields $(t,t)\in R_f^+$. Conversely, a target diagonal is a diagonal of $R_f^+$.
+
+For the graded first tick, uniform old heights imply $R_0=\varnothing$, and $h+1>h$ yields dominance. Each final mediated pair decreases the grading by one (**First-Tick Causality on Graded Graphs** <Ref id="2.7.9" label="§2.7.9" />). A closed chain of $m\ge1$ pairs at any target $t$ would imply $d(t)=d(t)-m$, so the target test yields irreflexivity.
+
+**III. Equivalence and Miss Probability for Bounded Witness Tests**
+
+For a candidate chord with source $u$, target $v$, and height $h$, let $S_L$ denote the event of a qualifying simple reverse path of length at most $L$ and let $W_L$ denote the event of a qualifying reverse walk at the same cutoff. Every simple path is a walk, so $S_L\subseteq W_L$, and loop erasure with $v\ne u$ and $(v,u)\notin E$ implies $W_L\subseteq S_L$ (**Loop Erasure of Reverse Witnesses** <Ref id="2.7.7" label="§2.7.7" />). The inclusions also hold without a cutoff, since each witness has finite length. Thus $W_\infty\setminus W_L=S_\infty\setminus S_L$, and the unions of these miss events over the candidates are equal. Under the elementary candidate, degree, and conditional comparison hypotheses the one-tick simple-path miss bound is $18N(2p)^{L_{\mathrm{cut}}}/(1-2p)$, which bounds the same walk-miss event (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />).
+
+Q.E.D.
+
+**In Plain English:**
+
+The proof identifies the limits of fixed-radius observation, reduces full closure to target diagonals under dominance, and derives a conditional bound for bounded reverse search.
+
+---
+
+### 2.7.13 Calculation: Verification of the Bounded Reverse-Path Guard {#2.7.13}
+
+:::note[**Verification of Candidate Rejection by an Increasing Reverse Witness**]
+:::
+
+Verification of the frozen-snapshot guard (**Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />) and its witness conditions (**Loop Erasure of Reverse Witnesses** <Ref id="2.7.7" label="§2.7.7" />) is based on the following protocols:
+
+1.  **Equal Heights:** Test the return chord with a two-edge reverse path of equal heights.
+2.  **Increasing Heights:** Raise the second path height and the candidate height, then repeat the check.
+
+```python
+from math import log2
+
+import networkx as nx
+
+
+def pre_check_aec(graph, source, target, candidate_height):
+    """Check a bounded reverse witness for an absent return chord."""
+    cutoff = int(log2(len(graph))) + 3 if len(graph) > 1 else 1
+    for path in nx.all_simple_paths(graph, target, source, cutoff=cutoff):
+        heights = [graph[a][b]["H"] for a, b in zip(path, path[1:])]
+        if (len(heights) >= 2 and heights[-1] < candidate_height
+                and all(a < b for a, b in zip(heights, heights[1:]))):
+            return False
+    return True
+
+
+snapshot = nx.DiGraph()
+snapshot.add_weighted_edges_from([(0, 1, 0), (1, 2, 0)], weight="H")
+assert pre_check_aec(snapshot, 2, 0, 1)
+snapshot[1][2]["H"] = 1
+assert not pre_check_aec(snapshot, 2, 0, 2)
+print("Equal-height path admitted; strictly increasing reverse witness rejected.")
+```
+
+**Simulation Results:**
+
+```text
+Equal-height path admitted; strictly increasing reverse witness rejected.
+```
+
+**Conclusion:**
+
+The guard admits the equal-height case and rejects the case with an increasing reverse witness below the candidate height.
+
+**In Plain English:**
+
+Section 2.7.13 checks the frozen-snapshot guard on equal-height and increasing reverse paths.
+
+---
+
+### 2.7.14 Calculation: Target Closure Verification {#2.7.14}
 
 :::note[**Target Diagonals before and after Deletion via Exact Evaluation of Mediated Closure for an Explicit Batch**]
 :::
@@ -2382,54 +2873,13 @@ final target diagonals: []
 
 The merged example has two target diagonals and the specified deletion removes both. This confirms the pre-deletion and final-state distinction in the fixture.
 
-**In Plain English:**  
-Section 2.7.8.2 formalizes the properties of the QBD calculation regarding target diagonals before and after deletion.
+**In Plain English:**
+
+Section 2.7.14 computes target diagonals before and after deleting an edge from the five-vertex batch.
 
 ---
 
-### 2.7.9 Lemma: First-Tick Causality on Graded Graphs {#2.7.9}
-
-:::info[**First-Tick Causality on Graded Graphs via One-Tick Mediated Acyclicity on Uniform-Height Graded Inputs**]
-:::
-
-Let every old edge have height $h$ and raise a vertex grading by one, and let a batch of elementary return chords have height $h+1$. The mediated closure after the tick is acyclic.
-
-**In Plain English:**  
-Section 2.7.9 formalizes the properties of the QBD lemma regarding first-tick causality on graded graphs.
-
----
-
-### 2.7.9.1 Proof: First-Tick Causality on Graded Graphs {#2.7.9.1}
-
-:::tip[**First-Tick Causality on Graded Graphs via Strict Decrease of Grading along Mediated Pairs**]
-:::
-
-**I. Height and Grading Changes**
-
-An elementary chord closes a directed two-path in the frozen graph (**First-Tick Causality on Graded Graphs** <Ref id="2.7.9" label="§2.7.9" />) (**Axiom 2 Geometric Constructibility** <Ref id="2.3.1" label="§2.3.1" />).
-
-Every candidate chord $u\to v$ closes a two-path $v\to w\to u$ and has at least one old incoming edge at $u$. Its source maximum is $h$, so its height is $h+1$. For the grading $d$,
-
-$$
-d(u)=d(w)+1=d(v)+2,\qquad d(v)-d(u)=-2.
-$$
-
-**II. Mediated Witness**
-
-Every increasing witness of length at least two uses exactly the two heights $h<h+1$. Its first edge raises the grading by one and its second lowers it by two. Thus $aRb$ implies $d(b)=d(a)-1$ in the merged graph, and the same implication holds after deletions.
-
-**III. Exclusion of Closure Diagonals**
-
-A chain of $m\ge1$ mediated pairs from $a$ to $b$ has $d(b)=d(a)-m$. It cannot return to $a$. Hence the final $R^+$ is irreflexive.
-
-Q.E.D.
-
-**In Plain English:**  
-Section 2.7.9.1 formalizes the properties of the QBD proof regarding first-tick causality on graded graphs.
-
----
-
-### 2.7.9.2 Calculation: Graded Inputs and Uniform-Height Cycle {#2.7.9.2}
+### 2.7.15 Calculation: First-Tick Grading Verification {#2.7.15}
 
 :::note[**Graded Inputs and Uniform-Height Cycle via Finite Grading Check and Six-Cycle Counterexample**]
 :::
@@ -2502,44 +2952,13 @@ Six-cycle mediated pairs: [(0, 5), (1, 0), (2, 1), (3, 2), (4, 3), (5, 4)]
 
 All tested graded batches satisfy the one-step decrease, and the six-cycle gives a cyclic relation. The outputs confirm the grading distinction on these finite inputs.
 
-**In Plain English:**  
-Section 2.7.9.2 formalizes the properties of the QBD calculation regarding graded inputs and uniform-height cycle.
+**In Plain English:**
+
+Section 2.7.15 compares graded outward-tree batches with a uniform-height six-cycle.
 
 ---
 
-### 2.7.10 Proof: Distributed Rollback Cost {#2.7.10}
-
-:::tip[**Thermodynamic Enforcement via Assembly of Conditional Coordination and Erasure Costs**]
-:::
-
-**I. Detection Scope**
-
-Local observation admits the indistinguishable pair (**Finite-Radius Indistinguishability** <Ref id="2.7.3" label="§2.7.3" />). The bounded missed-witness probability uses its separate extension law (**Bounded Reverse-Witness Misses** <Ref id="2.7.4" label="§2.7.4" />) and witness representation (**Loop Erasure of Reverse Witnesses** <Ref id="2.7.7" label="§2.7.7" />).
-
-Full closure uses the target-diagonal test under dominance (**Batch Causal Preservation under Dominance** <Ref id="2.7.8" label="§2.7.8" />) and the first-tick grading argument on its stated domain (**First-Tick Causality on Graded Graphs** <Ref id="2.7.9" label="§2.7.9" />).
-
-**II. Distinct Relations**
-
-Immutable occurrence dependencies have acyclic closure (**Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />). The butterfly has cyclic spatial mediated closure (**Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" />).
-
-**III. Stipulated Costs**
-
-Under the stated coordination premise the hop count $n_{\mathrm{hop}}$ is at least $D_G(C)$. Under the erasure premise the erased bits $n_{\mathrm{bit}}$ are at least $b$. Additivity and the assumed unit costs give
-
-$$
-W_{\mathrm{repair}}\ge\epsilon_{\mathrm{hop}}n_{\mathrm{hop}}
-+k_BT_{\mathrm{bath}}\log(2)n_{\mathrm{bit}}
-\ge\epsilon_{\mathrm{hop}}D_G(C)+b k_BT_{\mathrm{bath}}\log 2 .
-$$
-
-Q.E.D.
-
-**In Plain English:**  
-Section 2.7.10 formalizes the properties of the QBD proof regarding distributed rollback cost.
-
----
-
-### 2.7.11 Type-Theoretic Validation via Lean 4 Core {#2.7.11}
+### 2.7.16 Type-Theoretic Validation via Lean 4 Core {#2.7.16}
 
 :::note[**Lean 4 Encoding of Asymmetry's Algebraic Closure through Biconditional Decomposition**]
 :::
@@ -2666,7 +3085,8 @@ The definitions extend the vocabulary established in the **Type-Theoretic Valida
 
 The forward direction reuses the self-application trick for irreflexivity, then dispatches antisymmetry by supplying both directions of the mutual-edge hypothesis to `h_asym`, whose output `False` is eliminated by `False.elim`. The reverse direction unpacks `h_conj` into `h_conj.left` (irreflexivity) and `h_conj.right` (antisymmetry), applies antisymmetry to force `h_eq : u = v`, rewrites `h_fwd` under this equality to obtain a self-loop, then applies irreflexivity to close. The Lean kernel's acceptance of both closed proof terms certifies that the three-axiom system of Chapter 2 possesses complete algebraic closure: Asymmetry is not a separate postulate alongside Irreflexivity and Antisymmetry, but their exact logical conjunction, ensuring the tripartite foundation established by **Independence of Axiom 3** <Ref id="2.7.6" label="§2.7.6" /> is also algebraically minimal. In tandem with `edge_monotone_no_causal_cycle` establishing **Exact Poset Invariance** <Ref id="2.7.5" label="§2.7.5" />, the causal ordering of physical history is completely secured.
 
-**In Plain English:**  
-Section 2.7.11 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
+**In Plain English:**
+
+Section 2.7.16 formalizes the properties of the QBD type-theoretic regarding validation via lean 4 core.
 
 ---

@@ -1369,28 +1369,28 @@
         "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.5.4.2."
       },
       {
-        "name": "2.7.1.2.py",
-        "url": "/downloads/code/repo/python/2.7.1.2.py",
+        "name": "2.7.13.py",
+        "url": "/downloads/code/repo/python/2.7.13.py",
         "file_size_bytes": 848,
         "estimated_tokens": 314,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.7.1.2."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.7.13."
       },
       {
-        "name": "2.7.8.2.py",
-        "url": "/downloads/code/repo/python/2.7.8.2.py",
+        "name": "2.7.14.py",
+        "url": "/downloads/code/repo/python/2.7.14.py",
         "file_size_bytes": 1544,
         "estimated_tokens": 571,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.7.8.2."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.7.14."
       },
       {
-        "name": "2.7.9.2.py",
-        "url": "/downloads/code/repo/python/2.7.9.2.py",
+        "name": "2.7.15.py",
+        "url": "/downloads/code/repo/python/2.7.15.py",
         "file_size_bytes": 1734,
         "estimated_tokens": 642,
         "type": "code",
-        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.7.9.2."
+        "description": "Numerical simulation and algorithmic derivation verifying monograph section/equation 2.7.15."
       },
       {
         "name": "20.1.3.2.py",

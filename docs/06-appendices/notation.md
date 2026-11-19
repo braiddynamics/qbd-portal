@@ -95,11 +95,11 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\prec$ | Strict event-precedence relation on $G_{\mathrm{event}}$ | [§2.6.6](/monograph/rules/axioms/2.6/#2.6.6) |
 | $\neg$ | Logical negation | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
 | $R^+$ | Strict partial order transitive closure of $R$ | [§2.7.1](/monograph/rules/axioms/2.7/#2.7.1) |
-| $D_G(C)$ | Ambient graph diameter of the perimeter's vertices | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
-| $W_{\mathrm{repair}}$ | Thermodynamic lower-bound work cost for distributed cycle repair | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
-| $\epsilon_{\mathrm{hop}}$ | Minimum energy cost per coordination hop | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
-| $b$ | Minimum number of irreversibly erased bits in cycle repair | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
-| $T_{\mathrm{bath}}$ | Landauer thermal bath temperature | [§2.7.2](/monograph/rules/axioms/2.7/#2.7.2) |
+| $D_G(C)$ | Ambient graph diameter of the perimeter's vertices | [§2.7.12](/monograph/rules/axioms/2.7/#2.7.12) |
+| $W_{\mathrm{repair}}$ | Thermodynamic lower-bound work cost for distributed cycle repair | [§2.7.12](/monograph/rules/axioms/2.7/#2.7.12) |
+| $\epsilon_{\mathrm{hop}}$ | Minimum energy cost per coordination hop | [§2.7.12](/monograph/rules/axioms/2.7/#2.7.12) |
+| $b$ | Minimum number of irreversibly erased bits in cycle repair | [§2.7.12](/monograph/rules/axioms/2.7/#2.7.12) |
+| $T_{\mathrm{bath}}$ | Landauer thermal bath temperature | [§2.7.12](/monograph/rules/axioms/2.7/#2.7.12) |
 | $r_{\mathrm{obs}}$ | Local observation radius of rooted graph neighborhoods | [§2.7.3](/monograph/rules/axioms/2.7/#2.7.3) |
 | $B_C(0, r_{\mathrm{obs}})$ | Rooted ball of radius $r_{\mathrm{obs}}$ around vertex $0$ in $C$ | [§2.7.3.1](/monograph/rules/axioms/2.7/#2.7.3.1) |
 | $L_{\mathrm{cut}}$ | Logarithmic cutoff depth for bounded reverse-witness search | [§2.7.4](/monograph/rules/axioms/2.7/#2.7.4) |
