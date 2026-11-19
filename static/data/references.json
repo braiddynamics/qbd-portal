@@ -261,6 +261,14 @@
     "overview": "Hawking and Ellis present the definitive monograph on the large-scale global structure of spacetime in general relativity. They develop the apparatus of differential geometry and global analysis to prove the classic singularity theorems, demonstrating that singularities are inevitable occurrences in classical general relativity.",
     "relevance": "This seminal textbook is the direct reference for the classical Lorentzian geometry targeted in Chapter 11. To prove that the discrete causal graph converges to a physical spacetime, we must compare the discrete shortest-path metric to the continuous Lorentzian metric. Hawking and Ellis's treatment ensures that our definitions of causal order and light-cone structure align with established general relativity."
   },
+  "A.86": {
+    "author": "Henneaux, M., & Teitelboim, C. (1989).",
+    "title": "The Cosmological Constant and General Covariance",
+    "publication": "Physics Letters B",
+    "url": "https://www.sciencedirect.com/science/article/pii/0370269389912513",
+    "overview": "Henneaux and Teitelboim formulate generally covariant unimodular gravity, in which the cosmological constant is an integration constant canonically conjugate to a global time variable.",
+    "relevance": "The global variable provides a comparison for the role of an evolution parameter. The Global Sequencer indexes graph updates, while the unimodular variable belongs to the gravitational phase space."
+  },
   "A.37": {
     "author": "Hossenfelder, S. (2011).",
     "title": "Comments on and Comments on Comments on Verlinde's Entropic Gravity",

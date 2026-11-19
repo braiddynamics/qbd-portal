@@ -107,7 +107,7 @@
     "id": "1.2.6",
     "type": "Definition",
     "title": "Cycle",
-    "statement": ":::tip[**Cycle as the General Topological Expression of Causal Closure**]\n:::\n\nA **Cycle** (or directed cycle) is a non-trivial Directed Path $(v_0, v_1, \\dots, v_k)$ of length $k \\ge 1$ such that $v_0 = v_k$.",
+    "statement": ":::tip[**Cycle as the General Topological Expression of Causal Closure**]\n:::\n\nA **Cycle** (or directed cycle) is a non-trivial Directed Path $(v_0, v_1, \\dots, v_k)$ of length $k \\ge 1$ such that $v_0 = v_k$. The vertices $v_0,\\ldots,v_{k-1}$ are pairwise distinct.",
     "plainEnglish": "Section 1.2.6 formalizes the properties of the QBD definition regarding cycle.",
     "file": "01-rules/01-ontology/1.2.md"
   },

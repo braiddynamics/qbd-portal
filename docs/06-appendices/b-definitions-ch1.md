@@ -145,7 +145,7 @@ A 2-path consists of three events connected in sequence (A causes B, B causes C)
 :::tip[**Cycle as the General Topological Expression of Causal Closure**]
 :::
 
-A **Cycle** (or directed cycle) is a non-trivial Directed Path $(v_0, v_1, \dots, v_k)$ of length $k \ge 1$ such that $v_0 = v_k$.
+A **Cycle** (or directed cycle) is a non-trivial Directed Path $(v_0, v_1, \dots, v_k)$ of length $k \ge 1$ such that $v_0 = v_k$. The vertices $v_0,\ldots,v_{k-1}$ are pairwise distinct.
 
 **In Plain English:**  
 Section 1.2.6 formalizes the properties of the QBD definition regarding cycle.
