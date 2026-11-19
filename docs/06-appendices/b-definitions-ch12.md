@@ -143,7 +143,7 @@ $$
 
 The last two terms come from replacing $Q_u$ with $Q(x_u)$ at each vertex and then replacing the discrete measure by $\nu$. In the Laplace-Beltrami comparison the normalization of $Q$ and $\nu$ must give the intended continuum Dirichlet form. A variational resolvent comparison additionally needs interpolation, control of varying sequences of tests, and energy compactness.
 
-In the mesoscopic kernel route one instead compares an operator built with bandwidth $h_t$, which is distinct from the one-hop spacing. For example, the $\varepsilon$-graph comparison of <Cite id="A.17" label="(Calder & García Trillos, 2022)" /> uses independent samples with a smooth positive density bounded away from zero on a compact smooth manifold without boundary, and the small-bandwidth sampling regime $(\log N_t/N_t)^{1/d}\ll h_t\ll1$ for eigenvalue consistency. For the sampled points $x_i$ the operator and its continuum normalization are
+In the mesoscopic kernel route one instead compares an operator built with bandwidth $h_t$, which is distinct from the one-hop spacing. For example, the $\varepsilon$-graph comparison of <Cite id="A.19" label="(Calder & García Trillos, 2022)" /> uses independent samples with a smooth positive density bounded away from zero on a compact smooth manifold without boundary, and the small-bandwidth sampling regime $(\log N_t/N_t)^{1/d}\ll h_t\ll1$ for eigenvalue consistency. For the sampled points $x_i$ the operator and its continuum normalization are
 
 $$
 \begin{aligned}
@@ -695,7 +695,7 @@ $$
 
 A weak $L^2(U)$ limit of the uniformly bounded quotients therefore represents $\partial_j\partial_i u$. Summing the bounds over coordinate directions and using $F=\lambda_kbu$ yields $\|f_k\|_{H^2(U)}\le C(1+|\lambda_k|)\|f_k\|_{L^2(V)}$.
 
-At higher orders the interior elliptic estimate for smooth coefficients <Cite id="A.29" label="(Gilbarg & Trudinger, 2001)" /> gives the local gain
+At higher orders the interior elliptic estimate for smooth coefficients <Cite id="A.32" label="(Gilbarg & Trudinger, 2001)" /> gives the local gain
 
 $$
 \|f_k\|_{H^{m+2}(U)}
@@ -767,7 +767,7 @@ $$
 w\longmapsto \bigl(\exp_x w,\exp_y(\mathcal P_{x\to y}w)\bigr)
 $$
 
-is a coupling $\pi_{\mathrm{PT}}$ of the two tangent-ball push-forward laws, since parallel transport $\mathcal P_{x\to y}$ is an isometry. For the curvature convention $R(v,w,w,v)>0$ on positive sectional curvature planes, the distance expansion of Proposition 6 <Cite id="A.53" label="(Ollivier, 2009)" /> gives
+is a coupling $\pi_{\mathrm{PT}}$ of the two tangent-ball push-forward laws, since parallel transport $\mathcal P_{x\to y}$ is an isometry. For the curvature convention $R(v,w,w,v)>0$ on positive sectional curvature planes, the distance expansion of Proposition 6 <Cite id="A.58" label="(Ollivier, 2009)" /> gives
 
 $$
 d_g\bigl(\exp_x w,\exp_y(\mathcal P_{x\to y}w)\bigr)
@@ -818,7 +818,7 @@ $$
        {\operatorname{Vol}_g(B_h(x))}\,\mathrm dw .
 $$
 
-Example 7 <Cite id="A.53" label="(Ollivier, 2009)" /> uses the common part of the two volume-density corrections under parallel transport and bounds the remaining mismatch. It also provides the matching lower bound by testing a Lipschitz distance to an exponentiated transverse set. These two steps give the optimal cost and the corresponding curvature:
+Example 7 <Cite id="A.58" label="(Ollivier, 2009)" /> uses the common part of the two volume-density corrections under parallel transport and bounds the remaining mismatch. It also provides the matching lower bound by testing a Lipschitz distance to an exponentiated transverse set. These two steps give the optimal cost and the corresponding curvature:
 
 $$
 \begin{aligned}

@@ -16,7 +16,7 @@ The **Internal Causal Category**, denoted $\mathbf{Caus}_t$, is defined as the m
 1.  **Objects:** The set of objects $\text{Ob}(\mathbf{Caus}_t)$ is strictly identical to the vertex set $V$ of the causal graph $G_t$.
 2.  **Morphisms:** For any ordered pair of objects $(u, v)$, the set of morphisms $\text{Hom}(u, v)$ consists of all **Directed Path** <Ref id="1.2.3" label="§1.2.3" /> originating at $u$ and terminating at $v$. This set includes the **Trivial Path** of length $\ell=0$.
 3.  **Composition:** The composition operation $\circ: \text{Hom}(v, w) \times \text{Hom}(u, v) \to \text{Hom}(u, w)$ is defined as the concatenation of path sequences. For morphisms $p = (u, \dots, v)$ and $q = (v, \dots, w)$, the composition $q \circ p$ yields the sequence $(u, \dots, v, \dots, w)$.
-4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.8)
+4.  **Identity:** For each object $u$, the identity morphism $\text{id}_u$ is defined as the Trivial Path containing the single vertex sequence $(u)$. [**(Awodey, 2010)**](/monograph/appendices/a-references#A.9)
 
 **In Plain English:**  
 Section 4.1.1 formalizes the properties of the QBD definition regarding internal causal category.
@@ -2765,7 +2765,7 @@ Section 4.4.9 formalizes the properties of the QBD type-theoretic regarding vali
 :::tip[**Algorithmic Implementation of the Rewrite Rule $\mathcal{R}$ by Thermodynamic Modulation**]
 :::
 
-The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.30)
+The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.33)
 
 ```python
 def R(annotated_graph, T, mu, lambda_cat):

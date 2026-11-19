@@ -18,7 +18,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\models$ | Semantic entailment (truth) | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\Gamma$ | A set of premises | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
 | $\theta$ | A derived theorem | [§1.1.2](/monograph/rules/ontology/1.1/#1.1.2) |
-| $\mathfrak{F}$ | A consistent system capable of primitive recursive arithmetic | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
+| $\mathfrak{F}$ | A consistent, effectively axiomatized first-order theory extending Robinson arithmetic | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $\mathcal{G}_{\mathrm{G\ddot{o}del}}$ | The Gödel sentence (true but unprovable in $\mathfrak{F}$) | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $Con(\mathfrak{F})$ | The consistency statement of system $\mathfrak{F}$ | [§1.1.3](/monograph/rules/ontology/1.1/#1.1.3) |
 | $\perp$ | Logical contradiction | [§1.1.6](/monograph/rules/ontology/1.1/#1.1.6) |

@@ -54,7 +54,7 @@ The historical evolution of axiomatic justification, epitomized by the independe
 
 The adoption of an Axiomatic Basis $\mathcal{A}_{\mathrm{ax}}$ is governed exclusively by the satisfaction of four **Coherence Criteria**:
 
-1. **Consistency:** The absolute guarantee of formal non-contradiction, ensuring $\mathcal{A}_{\mathrm{ax}} \nvdash \perp$.
+1. **Consistency:** The absence of a derivation of contradiction from the axiomatic basis, expressed by $\mathcal{A}_{\mathrm{ax}} \nvdash \perp$.
 2. **Independence:** The minimality of the basis, such that for every $a \in \mathcal{A}_{\mathrm{ax}}$, $\mathcal{A}_{\mathrm{ax}} \setminus \{a\} \nvdash a$, ensuring no redundant assumptions are codified as axioms.
 3. **Parsimony:** The minimization of the cardinality $|\mathcal{A}_{\mathrm{ax}}|$ and structural complexity of postulates relative to the explanatory scope of the system (Occam's razor).
 4. **Fertility (Systemic Utility):** The capacity of $(\mathcal{L}, \mathcal{A}_{\mathrm{ax}}, \mathcal{I})$ to generate a rich, non-trivial body of theorems ($\mathcal{A}_{\mathrm{ax}} \vdash \theta$) that unifies disparate structures, resolves foundational paradoxes, and, in the construction of a physical theory, maps isomorphically to observable phenomena.
@@ -847,26 +847,26 @@ Causal Graph Substrate defines the universal configuration space of all valid st
 :::tip[**Formal Characterization of Event Vertices as Pre-Geometric Nodes**]
 :::
 
-Let $V = \{ v_1, v_2, \ldots, v_N \}$ be a finite set of vertices, where each element $v \in V$ is an **Abstract Event**. An abstract event is a structureless point representing the intersection of causal influences. It possesses no intrinsic coordinates, spatial volume, or physical attributes independent of its incidence relations within the edge set $E$.
+Let $V = \{ v_1, v_2, \ldots, v_N \}$ be a finite set of vertices, where each element $v \in V$ is an **Abstract Event**. An abstract event is a structureless vertex that persists across snapshots and represents the intersection of causal influences. It possesses no intrinsic coordinates, spatial volume, or physical attributes independent of its incidence relations within the edge set $E$.
 
 **In Plain English:**  
-Abstract Event defines the vertex set V where each element represents a structureless pre-geometric event whose identity is determined purely by relations.
+Abstract Event defines a structureless vertex that persists across snapshots and is characterized by its incident edges.
 
 ---
 
 ### 1.4.3 Definition: Causal Relation {#1.4.3}
 
-:::tip[**Formal Characterization of Causal Links as Directed Poset Edges**]
+:::tip[**Formal Characterization of Causal Links as Directed Edges in the Active Graph**]
 :::
 
-Let $E \subseteq V \times V$ be a set of directed edges, where each ordered pair $e = (u, v) \in E$ is a **Causal Relation**. An edge $e$ represents an irreducible causal link denoting the direct, unmediated logical proposition that event $u$ precedes and causally influences event $v$. The relation is strictly asymmetric, satisfying:
+Let $E \subseteq V \times V$ be a set of directed edges, where each ordered pair $e = (u, v) \in E$ is a **Causal Relation**. An edge $e$ represents a direct active link from source vertex $u$ to target vertex $v$. The relation is strictly asymmetric, satisfying:
 
 $$
 (u, v) \in E \implies (v, u) \notin E.
 $$
 
 **In Plain English:**  
-Causal Relation defines the edge set E of directed links representing irreducible, asymmetric causal influence between events.
+Causal Relation defines directed links between vertices in an active snapshot. Chronological precedence orders creation occurrences.
 
 ---
 
