@@ -614,7 +614,149 @@ Section 1.3.9.1 formalizes the properties of the QBD proof regarding finite capa
 
 ---
 
-### 1.3.10 Proof: Temporal Finitude {#1.3.10}
+### 1.3.10 Lemma: Departure After an Infinite Hold {#1.3.10}
+
+:::info[**Exclusion of Positive Probability for Departure from an Infinite Hold**]
+:::
+
+Let $(X_t)_{t\in\mathbb Z}$ be a time-homogeneous Markov chain on a countable state space.
+Then the probability of a departure from a state occupied at every preceding tick is zero.
+
+**In Plain English:**
+A time-homogeneous Markov chain on a countable state space has zero probability of leaving a state it has occupied at every preceding tick.
+
+---
+
+### 1.3.10.1 Proof: Departure After an Infinite Hold {#1.3.10.1}
+
+:::tip[**Exclusion of Departure via Geometric Holding Probabilities**]
+:::
+
+**I. Probability of a Finite Hold and Departure**
+
+Let $S$ denote the countable state space and let $K$ denote the one-step transition kernel (**Departure After an Infinite Hold** <Ref id="1.3.10" label="§1.3.10" />). Let $x$ denote an arbitrary state in $S$, and let $s$ denote an arbitrary integer serving as the last holding tick. The next tick is $s+1$ under unit-step indexing (**Global Logical Time** <Ref id="1.3.3" label="§1.3.3" />). Let $p$ denote the probability $K(x,x)\in[0,1]$.
+
+Let $m$ denote a positive integer. For $0\le j\le m+1$, define $B_{m,j}$ as the event that each listed state equals $x$.
+
+$$
+B_{m,j}=\bigcap_{i=0}^{j}\{X_{s-m+i}=x\},
+\qquad 0\le j\le m+1.
+$$
+
+For $0\le j\le m$, let $t$ denote $s-m+j$. The intersection through index $j+1$ yields
+
+$$
+B_{m,j+1}=B_{m,j}\cap\{X_{t+1}=x\}.
+$$
+
+If $\Pr(B_{m,j})>0$, the inclusion $B_{m,j}\subseteq\{X_t=x\}$ implies $\Pr(X_t=x)>0$. Conditioning on $B_{m,j}$ specifies the successive states from $s-m$ through $t$. The reduction to conditioning on $X_t=x$ follows from the Markov property. Time homogeneity implies that the resulting conditional probability is $K(x,x)$. The successive equalities are
+
+$$
+\begin{aligned}
+\Pr(B_{m,j+1})
+&=\Pr(B_{m,j})\Pr(X_{t+1}=x\mid B_{m,j})\\
+&=\Pr(B_{m,j})\Pr(X_{t+1}=x\mid X_t=x)\\
+&=\Pr(B_{m,j})K(x,x)\\
+&=p\Pr(B_{m,j}).
+\end{aligned}
+$$
+
+If $\Pr(B_{m,j})=0$, the inclusion $B_{m,j+1}\subseteq B_{m,j}$ implies $\Pr(B_{m,j+1})=0=p\Pr(B_{m,j})$. The two cases establish the recurrence for every $0\le j\le m$.
+
+At $j=0$, the one-term intersection $B_{m,0}=\{X_{s-m}=x\}$ and the convention $p^0=1$ yield $\Pr(B_{m,0})=\Pr(X_{s-m}=x)p^0$. For $0\le j\le m$, the recurrence and the induction hypothesis $\Pr(B_{m,j})=\Pr(X_{s-m}=x)p^j$ yield
+
+$$
+\Pr(B_{m,j+1})
+=p\Pr(B_{m,j})
+=p\Pr(X_{s-m}=x)p^j
+=\Pr(X_{s-m}=x)p^{j+1}.
+$$
+
+In particular, $B_{m,m}$ records a hold through tick $s$, and $B_{m,m+1}=B_{m,m}\cap\{X_{s+1}=x\}$ records a hold through the next tick as well. Define $C_m$ as the event of a finite hold followed by departure, namely $B_{m,m}\setminus B_{m,m+1}$. The disjoint decomposition of $B_{m,m}$ into $C_m$ and $B_{m,m+1}$ and the two induction values yield
+
+$$
+\begin{aligned}
+\Pr(C_m)
+&=\Pr(B_{m,m})-\Pr(B_{m,m+1})\\
+&=\Pr(X_{s-m}=x)p^m-\Pr(X_{s-m}=x)p^{m+1}\\
+&=\Pr(X_{s-m}=x)p^m(1-p)\\
+&\le p^m(1-p).
+\end{aligned}
+$$
+
+**II. Probability of an Infinite Hold for a Fixed State and Tick**
+
+Define $A_{x,s}$ as the event that the chain occupies $x$ through every tick up to $s$ and departs at $s+1$.
+
+$$
+A_{x,s}=\{X_{s+1}\ne x\}\cap\bigcap_{t\le s}\{X_t=x\}.
+$$
+
+The intersection is countable. For every $m\ge1$, the conditions defining $A_{x,s}$ include all $m+1$ holding conditions in $B_{m,m}$ and the departure condition at $s+1$. These conditions imply $A_{x,s}\subseteq C_m$. Consequently $\Pr(A_{x,s})$ is bounded by $\Pr(C_m)$ in the chain
+
+$$
+0\le\Pr(A_{x,s})\le\Pr(C_m)\le p^m(1-p).
+$$
+
+For $p=0$ and $m\ge1$, the factor $p^m$ is zero. For $p=1$, the factor $1-p$ is zero. The zero upper bound in each case implies $\Pr(A_{x,s})=0$.
+
+For $0<p<1$, define $\delta$ as $(1-p)/p$. Then $\delta>0$ and $1+\delta=(p+1-p)/p=1/p$. The binomial expansion yields
+
+$$
+(1+\delta)^m
+=1+m\delta+\sum_{k=2}^{m}\binom{m}{k}\delta^k
+\ge 1+m\delta ,
+$$
+
+with the sum empty at $m=1$. Taking reciprocals of the positive lower bound yields
+
+$$
+0\le\Pr(A_{x,s})
+\le (1-p)p^m
+=\frac{1-p}{(1+\delta)^m}
+\le\frac{1-p}{1+m\delta}.
+$$
+
+For any $\varepsilon>0$, the choice of an integer $m>(1-p)/(\varepsilon\delta)$ implies $1+m\delta>(1-p)/\varepsilon$. Dividing $1-p$ by this positive denominator yields a bound strictly less than $\varepsilon$. If $\Pr(A_{x,s})$ were positive, $\varepsilon=\Pr(A_{x,s})$ would imply $\Pr(A_{x,s})<\Pr(A_{x,s})$. This contradiction establishes $\Pr(A_{x,s})=0$ also for $0<p<1$.
+
+**III. Exhaustion by Finite Sets of States and Ticks**
+
+Let $i$ denote an injection from $S$ into $\mathbb N_0$. Its existence follows from countability of $S$. For $n\in\mathbb N_0$, define $F_n$ as the set of pairs satisfying both index bounds and define $U_n$ as the union of the corresponding events.
+
+$$
+F_n=\{(x,s)\in S\times\mathbb Z:i(x)\le n,\ |s|\le n\},
+\qquad U_n=\bigcup_{(x,s)\in F_n}A_{x,s}.
+$$
+
+The index condition selects at most $n+1$ states, and the ticks are among $-n,-n+1,\ldots,n$, a list of $2n+1$ integers. The number of pairs in $F_n$ is bounded by the product $(n+1)(2n+1)$. Finite subadditivity and the fixed-pair result yield
+
+$$
+0\le\Pr(U_n)
+\le\sum_{(x,s)\in F_n}\Pr(A_{x,s})
+=\sum_{(x,s)\in F_n}0
+=0.
+$$
+
+The sets $F_n$ are increasing. For any pair $(x,s)$, the integer $n=\max\{i(x),|s|\}$ satisfies both membership conditions, which implies $(x,s)\in F_n$. This establishes that every pair appears in the exhaustion.
+
+**IV. Probability of Departure at an Arbitrary Tick**
+
+Let $A$ denote the event of departure from a state held at every preceding tick. Every outcome in $A$ specifies a holding state $x$ and a last holding tick $s$, which implies membership in $A_{x,s}$ and in some $U_n$. Conversely, every outcome in a $U_n$ belongs to an $A_{x,s}$ and satisfies the defining conditions of $A$. The two inclusions establish $A=\bigcup_{n\ge0} U_n$.
+
+Define $D_0$ as $U_0$ and, for $n\ge1$, define $D_n$ as $U_n\setminus U_{n-1}$. For $j<n$, the inclusion $D_j\subseteq U_j\subseteq U_{n-1}$ implies $D_j\cap D_n=\varnothing$. Every outcome in some $U_n$ belongs to $D_j$ at its least such index $j$, and every $D_n$ lies in $U_n$. These inclusions and the pairwise disjointness establish that $A$ is the disjoint union of the $D_n$. The inequalities $0\le\Pr(D_n)\le\Pr(U_n)=0$ imply $\Pr(D_n)=0$ for each $n$. Countable additivity yields
+
+$$
+\Pr(A)=\sum_{n=0}^{\infty}\Pr(D_n)=\sum_{n=0}^{\infty}0=0.
+$$
+
+Q.E.D.
+
+**In Plain English:**
+Section 1.3.10.1 formalizes the properties of the QBD proof regarding departure after an infinite hold.
+
+---
+
+### 1.3.11 Proof: Temporal Finitude {#1.3.11}
 
 :::tip[**Temporal Finitude via Assembly of Conditional History Bounds**]
 :::
@@ -644,6 +786,8 @@ $$
 
 An unbounded sequence of past active ticks would contain a finite segment with more than $\binom N2+2B$ active ticks, contradicting the same bound on that segment.
 
+A time-homogeneous Markov chain assigns probability zero to departure after an infinite hold (**Departure After an Infinite Hold** <Ref id="1.3.10" label="§1.3.10" />).
+
 **III. Physical Execution**
 
 For an execution of $L$ complete sequential steps in a finite physical interval the separate duration premise gives (**Supertask Impossibility** <Ref id="1.3.8" label="§1.3.8" />)
@@ -655,7 +799,7 @@ $$
 Q.E.D.
 
 **In Plain English:**  
-Section 1.3.10 formalizes the properties of the QBD proof regarding temporal finitude.
+Section 1.3.11 formalizes the properties of the QBD proof regarding temporal finitude.
 
 ---
 
@@ -892,7 +1036,123 @@ Section 1.4.7.1 formalizes the properties of the QBD proof regarding transitive 
 
 ---
 
-### 1.4.8 Proof: Monotonicity of History {#1.4.8}
+### 1.4.8 Lemma: Least Admissible Causal Height {#1.4.8}
+
+:::info[**Existence of a Pointwise Least Admissible Labeling from the Source-Maximum Recurrence**]
+:::
+
+Let an integer labeling $c$ of the creation occurrences be admissible if its values are at least zero on initial occurrences and at least one on later occurrences, and $c(\eta)\ge c(\omega)+1$ whenever $\omega D\eta$.
+Then the source-maximum height with zero initialization is the pointwise least admissible labeling (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />).
+
+**In Plain English:**
+Every labeling that respects the birth-height bounds and increases by at least one across direct dependencies is at least as large as the source-maximum height at each occurrence.
+
+---
+
+### 1.4.8.1 Proof: Least Admissible Causal Height {#1.4.8.1}
+
+:::tip[**Pointwise Comparison by Induction on Birth Tick**]
+:::
+
+**I. Direct Predecessors and the Source-Maximum Formula**
+
+Let $P(\eta)$ denote the set $\{\omega:\omega D\eta\}$ of direct predecessors of an occurrence $\eta$. An initial occurrence has birth tick zero and height zero (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). A direct predecessor must be present in the input snapshot of the transition creating its successor. The initial snapshot is stipulated, which implies that no transition creates its initial occurrences. The dependency definition then yields $P(\eta)=\varnothing$ when $b(\eta)=0$.
+
+For a later occurrence $\eta=(u,v,n,h(\eta))$ with $n\ge1$, the transition creating it uses $G_{n-1}$. Let $I_\eta$ denote the set of incoming pairs of its source in that snapshot. By the definition of $D$, a predecessor of $\eta$ is precisely the active occurrence of one such pair. The active-occurrence map yields (**Causal Graph Substrate** <Ref id="1.4.1" label="§1.4.1" />)
+
+$$
+I_\eta=\{(x,u)\in E_{n-1}:x\in V\},
+\qquad
+P(\eta)=\{\alpha_{n-1}(x,u):(x,u)\in I_\eta\}.
+$$
+
+The common second coordinate $u$ implies that distinct pairs in $I_\eta$ have distinct first coordinates. Projection onto the first coordinate is injective into the finite set $V$. The image under $\alpha_{n-1}$ has at most one entry per pair in $I_\eta$, which implies $|P(\eta)|\le |I_\eta|\le |V|$. Activity of each $\omega\in P(\eta)$ at tick $n-1$ implies that it was born by that tick and yields
+
+$$
+b(\omega)\le n-1<n=b(\eta).
+$$
+
+For every $(x,u)\in I_\eta$, the equality $H_{n-1}(x,u)=h(\alpha_{n-1}(x,u))$ follows from the definition of the active height. Substitution into the source-maximum rule and use of the displayed description of $P(\eta)$ yield
+
+$$
+\begin{aligned}
+h(\eta)
+&=1+\max\bigl(\{0\}\cup\{H_{n-1}(x,u):(x,u)\in I_\eta\}\bigr)\\
+&=1+\max\bigl(\{0\}\cup\{h(\alpha_{n-1}(x,u)):(x,u)\in I_\eta\}\bigr)\\
+&=1+\max\bigl(\{0\}\cup\{h(\omega):\omega\in P(\eta)\}\bigr).
+\end{aligned}
+$$
+
+Let $S_\eta$ denote $\{0\}\cup\{h(\omega):\omega\in P(\eta)\}$, and let $M_\eta$ denote $\max S_\eta$. Finiteness of $S_\eta$ and membership of zero imply that $M_\eta$ belongs to $S_\eta$. For every $a\in S_\eta$, $a\le M_\eta$ implies $a+1\le M_\eta+1$. Membership of $M_\eta$ in $S_\eta$ implies membership of $M_\eta+1$ in the shifted set $\{a+1:a\in S_\eta\}$. The attained upper bound yields
+
+$$
+\begin{aligned}
+h(\eta)
+&=1+M_\eta\\
+&=\max\{a+1:a\in S_\eta\}\\
+&=\max\bigl(\{1\}\cup\{h(\omega)+1:\omega\in P(\eta)\}\bigr).
+\end{aligned}
+$$
+
+The last equality uses the shift of $0$ to $1$ and the shift of each predecessor height to $h(\omega)+1$.
+
+**II. Verification of the Admissibility Conditions**
+
+At birth tick zero, $h(\eta)=0$ and $0\ge0$ establish the initial floor $h(\eta)\ge0$. At every later tick, membership of $1$ in the set whose maximum equals $h(\eta)$ implies $h(\eta)\ge1$.
+
+If $\omega D\eta$, then $\omega\in P(\eta)$, and $\eta$ is a later occurrence. Membership of $h(\omega)+1$ in the same set yields
+
+$$
+h(\eta)=\max\bigl(\{1\}\cup\{h(\xi)+1:\xi\in P(\eta)\}\bigr)
+\ge h(\omega)+1.
+$$
+
+The initial floor, the later floor, and the direct-dependency inequality establish admissibility of $h$.
+
+**III. Pointwise Comparison by Strong Induction**
+
+Let $c$ denote an arbitrary admissible labeling. For each $n\in\mathbb N_0$, the induction assertion is
+
+$$
+\forall\eta\quad b(\eta)=n\ \Longrightarrow\ c(\eta)\ge h(\eta).
+$$
+
+At $n=0$, initialization implies $h(\eta)=0$ for every occurrence with $b(\eta)=0$. The initial floor for $c$ yields
+
+$$
+c(\eta)\ge0=h(\eta).
+$$
+
+Let $n$ denote a positive birth tick. Assume the assertion for every birth tick $j<n$. Let $\eta$ denote an arbitrary occurrence with $b(\eta)=n$. The later floor for $c$ implies $c(\eta)\ge1$. For any $\omega\in P(\eta)$, let $j$ denote $b(\omega)$. The comparison from Part I establishes $j<n$. The induction hypothesis at $j$ yields $c(\omega)\ge h(\omega)$. Adding one to both sides and using admissibility across $\omega D\eta$ yields
+
+$$
+c(\eta)\ge c(\omega)+1\ge h(\omega)+1 .
+$$
+
+Every member of $\{1\}\cup\{h(\omega)+1:\omega\in P(\eta)\}$ is bounded by $c(\eta)$ from above. Its maximum belongs to the set and equals $h(\eta)$. The bound on that member establishes $c(\eta)\ge h(\eta)$ at tick $n$. When there are no predecessors, the set is $\{1\}$ and the same bound yields $c(\eta)\ge1=h(\eta)$.
+
+If the assertion failed at any tick, its failing ticks would form a nonempty subset of $\mathbb N_0$ with a least element. The base case excludes zero. At any positive least failing tick, the assertion holds at every smaller tick. The induction step then implies that the assertion holds at the supposed failing tick. This contradiction establishes the assertion at every birth tick.
+
+**IV. Least Admissible Labeling**
+
+Let $\mathcal C$ denote the set of admissible labelings. Membership $h\in\mathcal C$ follows from Part II. Part III applies to each $c\in\mathcal C$, and every occurrence has a birth tick in $\mathbb N_0$. These facts yield
+
+$$
+h\in\mathcal C
+\qquad\text{and}\qquad
+\forall c\in\mathcal C\ \forall\eta,\quad h(\eta)\le c(\eta).
+$$
+
+These are the membership and comparison conditions for $h$ to be the pointwise least element of $\mathcal C$.
+
+Q.E.D.
+
+**In Plain English:**
+Section 1.4.8.1 formalizes the properties of the QBD proof regarding least admissible causal height.
+
+---
+
+### 1.4.9 Proof: Monotonicity of History {#1.4.9}
 
 :::tip[**Synthesis of Irreflexivity via Transitivity to Establish Global Acyclicity**]
 :::
@@ -906,6 +1166,8 @@ $$
 $$
 
 Stable self-loop assignment also has the independent obstruction $h\ge h+1$ (**Irreflexivity of Timestamps** <Ref id="1.4.6" label="§1.4.6" />). Physical self-loops are excluded directly by the irreflexive edge constraint.
+
+The source-maximum assignment is the pointwise least admissible labeling (**Least Admissible Causal Height** <Ref id="1.4.8" label="§1.4.8" />).
 
 **II. Finite Dependency Paths**
 
@@ -931,7 +1193,7 @@ A reversed dependency chain $\omega_{j+1}D^+\omega_j$ satisfies $h(\omega_{j+1})
 Q.E.D.
 
 **In Plain English:**  
-Section 1.4.8 formalizes the properties of the QBD proof regarding monotonicity of history.
+Section 1.4.9 formalizes the properties of the QBD proof regarding monotonicity of history.
 
 ---
 

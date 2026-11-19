@@ -57,7 +57,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\tau_0$ | Minimum step duration in the conditional sequential bound | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
 | $T_{\mathrm{phys}}$ | Finite physical time interval length | [§1.3.8](/monograph/rules/ontology/1.3/#1.3.8) |
 | $\mathcal{H}_{\mathrm{hist}}$ | Family of distinguishable occurrence histories | [§1.3.9](/monograph/rules/ontology/1.3/#1.3.9) |
-| $R_n$ | The $n$-th Grim Reaper entity | [§1.3.10.1](/monograph/rules/ontology/1.3/#1.3.10.1) |
+| $R_n$ | The $n$-th Grim Reaper entity | [§1.3.11.1](/monograph/rules/ontology/1.3/#1.3.11.1) |
 | $G_t, G$ | Causal Graph snapshot $(V, E_t, H_t)$ and static form $(V, E, H)$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
 | $H_t$ | Snapshot History Function assigning causal height $E_t \to \mathbb{N}_0$ | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
 | $\omega=(u,v,b,h)$ | Historical creation occurrence record (endpoints, birth tick, height) | [§1.4.1](/monograph/rules/ontology/1.4/#1.4.1) |
