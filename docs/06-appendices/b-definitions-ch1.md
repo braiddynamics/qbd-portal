@@ -835,7 +835,7 @@ Section 1.3.11 formalizes the properties of the QBD proof regarding temporal fin
 
 Let the **Causal Graph Substrate** at logical tick $t$ be the active spatial configuration $G_t=(V,E_t,H_t)$, where $V$ is a fixed finite vertex set, $E_t\subseteq V\times V$ is irreflexive and asymmetric, and $H_t:E_t\to\mathbb N_0$ records immutable causal heights of the active edge occurrences. Directed spatial cycles are permitted; the chronological order belongs to the distinct creation-event structure.
 
-A creation occurrence is a record $\omega=(u,v,b,h)$ with birth tick $b\in\mathbb N_0$ and causal height $h\in\mathbb N_0$. At most one occurrence of a given ordered pair is created per tick. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies the current record and satisfies $H_t(u,v)=h(\alpha_t(u,v))$. The cumulative creation record $\mathcal E_t$ retains past occurrences after active deletion (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
+A creation occurrence is a record $\omega=(u,v,b,h)$ with birth tick $b\in\mathbb N_0$ and causal height $h\in\mathbb N_0$. At most one occurrence of a given ordered pair is created per tick. The active-occurrence map $\alpha_t:E_t\to\mathcal E_t$ identifies the current record and satisfies $H_t(u,v)=h(\alpha_t(u,v))$. The creation ledger $\mathcal E_t$ retains past occurrences after active deletion (**Historical Category** <Ref id="4.1.2" label="§4.1.2" />).
 
 **In Plain English:**  
 Causal Graph Substrate defines the universal configuration space of all valid states as finite directed graphs represented by the triplet (V, E, H).
@@ -1227,12 +1227,12 @@ Section 1.4.9 formalizes the properties of the QBD proof regarding monotonicity 
 :::tip[**Mathematical Characterization of the Admissible Transformation Space as a Formal Architecture**]
 :::
 
-Let the **Elementary Task Space** $\mathfrak T(G)$ consist of guarded additions and deletions on a fixed spatial vertex set $V$. An addition changes one absent directed pair to present, preserves irreflexivity and asymmetry, assigns the source-side causal height, and satisfies the applicable candidate-relative PUC and causal-admission predicates; a deletion removes one present edge without erasing its historical occurrence (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). The uniqueness predicate is candidate-relative (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />).
+Let the **Elementary Task Space** $\mathfrak T(G)$ consist of elementary additions and deletions on a fixed spatial vertex set $V$. An addition inserts a directed pair between distinct vertices when both orientations are absent. It assigns the source-side causal height and records the new occurrence (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). A deletion removes a present edge from the active graph and retains its historical occurrence.
 
-Each primitive preserves $V$, changes at most one active edge, and leaves all surviving occurrence heights unchanged. Spatial triangle creation is permitted. The event dependency order, rather than all active spatial adjacency, is the chronological structure. A fixed-snapshot parallel merge and a sequential re-evaluation of guards are different task schedules.
+Each primitive preserves $V$, changes exactly one active edge, and leaves all surviving occurrence heights unchanged.
 
 **In Plain English:**  
-Elementary Task Space defines the set of all structurally possible graph transformations that preserve causality, timestamp monotonicity, and finite growth.
+Elementary Task Space defines the single-edge insertions and deletions permitted by the graph's incidence conditions.
 
 ---
 
@@ -1241,7 +1241,7 @@ Elementary Task Space defines the set of all structurally possible graph transfo
 :::tip[**Formal Specification of the Primitive Edge Insertion Operator via Edge Addition Task**]
 :::
 
-Let the **Edge Addition Task** $\mathfrak T_{add}(u,v)$ act on $G_t=(V,E_t,H_t)$ for an absent pair $(u,v)$ with $u\ne v$ and $(v,u)\notin E_t$. Its admitted candidate includes the required geometric and causal guard evidence. The updated components are
+Let the **Edge Addition Task** $\mathfrak T_{add}(u,v)$ act on $G_t=(V,E_t,H_t)$ for an absent pair $(u,v)$ with $u\ne v$ and $(v,u)\notin E_t$. The output snapshot $G'=(V',E',H')$ has the following vertex set, active edge set, and causal-height map.
 
 $$
 V'=V,\qquad E'=E_t\cup\{(u,v)\},\qquad
@@ -1249,10 +1249,10 @@ H'|_{E_t}=H_t,\qquad
 H'(u,v)=1+\max\bigl(\{H_t(x,u):(x,u)\in E_t\}\cup\{0\}\bigr).
 $$
 
-The transition from tick $t$ records the new occurrence $(u,v,t+1,H'(u,v))$. For a return chord across $v\to w\to u$, PUC is evaluated relative to that candidate (**Principle of Unique Causality (PUC)** <Ref id="2.3.4" label="§2.3.4" />). Passing PUC is one guard, not an assertion that every other guard holds. The target spatial graph can contain the newly closed triangle.
+The creation ledger at tick $t+1$ is $\mathcal E_{t+1}=\mathcal E_t\cup\{(u,v,t+1,H'(u,v))\}$.
 
 **In Plain English:**  
-Edge Addition Task defines the primitive operator that creates a directed causal link between two existing vertices with a new, monotonically increasing timestamp.
+Edge Addition Task defines the primitive that creates a directed link and gives it a causal height above the incoming heights at its source.
 
 ---
 
@@ -1261,16 +1261,13 @@ Edge Addition Task defines the primitive operator that creates a directed causal
 :::tip[**Formal Specification of the Primitive Edge Excision Operator via Edge Deletion Task**]
 :::
 
-Let $G = (V, E, H)$ be a causal graph. For any edge $e = (u, v) \in E$, the **Edge Deletion Task** $\mathfrak{T}_{del}(u, v)$ is the mapping:
+Let the **Edge Deletion Task** $\mathfrak T_{del}(u,v)$ act on $G_t=(V,E_t,H_t)$ for $(u,v)\in E_t$. The output snapshot $G'=(V',E',H')$ has the following vertex set, active edge set, and causal-height map.
 
 $$
-\mathfrak{T}_{del}(u, v): G \mapsto G' = (V', E', H')
+V'=V,\qquad E'=E_t\setminus\{(u,v)\},\qquad H'=H_t|_{E'}.
 $$
 
-where the target components are defined by:
-1.  **Vertex Set**: $V' = V$.
-2.  **Edge Set**: $E' = E \setminus \{(u, v)\}$.
-3.  **Timestamp Assignment**: $H'$ is the restriction of $H$ to $E'$, satisfying $H'(e') = H(e')$ for all $e' \in E'$.
+The creation ledger at tick $t+1$ is $\mathcal E_{t+1}=\mathcal E_t$.
 
 **In Plain English:**  
 Edge Deletion Task defines the primitive operator that removes an active directed causal link while preserving its historical timestamp in the sequence log.
@@ -1282,10 +1279,10 @@ Edge Deletion Task defines the primitive operator that removes an active directe
 :::info[**Vacuum Repertoire via Finite Composition and Recorded Rollback of Edge Tasks**]
 :::
 
-Let $\mathfrak T$ be the space of tasks witnessed by finite admissible sequences of guarded edge additions and deletions on a fixed vertex set $V$. Each task is a finite composition of the primitives, with active incidence determined by the edge set and rollback of each active update specified by the edited pair and its previous height.
+Let $\mathfrak T$ be the space of tasks witnessed by finite sequences of elementary edge additions and deletions on a fixed vertex set $V$. Each task is a finite composition of the primitives, with active incidence determined by the edge set and rollback of each active update specified by the edited pair and its previous height.
 
 **In Plain English:**  
-The Vacuum Repertoire Theorem proves that edge addition and deletion are sufficient to generate all valid graph transitions, are mutually inverse, and conserve state distinguishability.
+The Vacuum Repertoire Theorem shows how to compose elementary edge edits and use their records to restore the original active edges and heights.
 
 ---
 
@@ -1462,11 +1459,15 @@ A task in the space specifies an admissible trajectory of active snapshots (**Va
 
 **II. Finite Task Composition**
 
-An admissible task has a witness sequence $G_0\xrightarrow{T_1}G_1\to\cdots\xrightarrow{T_m}G_m$, with each $T_j$ a guarded primitive in its input snapshot. Thus $G_m=(T_m\circ\cdots\circ T_1)(G_0)$. Each step preserves $V$, and at index $j$ the active vertex set is $\{v\in V:\deg_{G_j}(v)>0\}$ (**Relational Vertex Emergence** <Ref id="1.5.5" label="§1.5.5" />).
+An admissible task has a witness sequence $G_0\xrightarrow{T_1}G_1\to\cdots\xrightarrow{T_m}G_m$, with each $T_j$ an elementary edit defined on its input snapshot. Thus $G_m=(T_m\circ\cdots\circ T_1)(G_0)$.
+
+For an insertion of $(u,v)$, the input conditions $u\ne v$ and $(u,v),(v,u)\notin E$ imply that the sole new edge is neither a self-loop nor the reverse of an existing edge (**Edge Addition Task** <Ref id="1.5.2" label="§1.5.2" />). Every other pair retains its incidence and height. The new record enters the ledger by union. For a deletion, $E'=E\setminus\{(u,v)\}\subseteq E$ implies that any self-loop or reciprocal pair in $E'$ already belongs to $E$. Restriction preserves the height at each surviving edge, and $\mathcal E'=\mathcal E$ (**Edge Deletion Task** <Ref id="1.5.3" label="§1.5.3" />).
+
+Each step preserves the vertex set, leaves the active edge set irreflexive and asymmetric, and retains the causal heights of surviving edges. At index $j$ the active vertex set is $\{v\in V:\deg_{G_j}(v)>0\}$ (**Relational Vertex Emergence** <Ref id="1.5.5" label="§1.5.5" />).
 
 **III. Recorded Rollback**
 
-Let $R_j$ be the restoration determined by the record for step $j$. The pointwise identities give $R_j(G_j)=G_{j-1}$ (**Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />). Substitution from the last index to the first gives
+Let $R_j$ denote the active-field restoration determined by the edited pair and its previous height for step $j$. The ledger is append-only along the forward sequence. The pointwise identities give $R_j(G_j)=G_{j-1}$ (**Reversibility of Primitives** <Ref id="1.5.6" label="§1.5.6" />). Substitution from the last index to the first gives
 
 $$
 (R_1\circ\cdots\circ R_m)(G_m)=
