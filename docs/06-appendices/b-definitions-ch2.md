@@ -785,8 +785,8 @@ both impossible for $k\ge4$. If $(i,x),(x,i+2)\in E_0$, the first condition give
 Every simple two-path beginning at $i$ must use $i+1$ and then $i+2$, since both outgoing sets are singletons. For the associated chord map,
 
 $$
-\Phi(i)=(i+2,i),\qquad
-\Phi(i)=\Phi(j)\Longrightarrow i=j
+c_i=(i+2,i),\qquad
+c_i=c_j\Longrightarrow i=j
 $$
 
 by equality of target coordinates. Therefore the full frozen list contains exactly $|V|=k$ distinct candidate chords (**Chordlessness of Maximal Cycles** <Ref id="2.4.3" label="§2.4.3" />).
@@ -1028,7 +1028,7 @@ Verification of finite isolated-cycle termination (**General Cycle Decomposition
 
 1.  **Defect Initialization:** The algorithm constructs isolated directed cycles of length $k \in [4, 12]$ to serve as standardized topological defects. This mapping represents the initialization of unstable macroscopic loops within the vacuum.
 2.  **Topological Reduction:** The protocol simulates an unweighted topological reduction by instantiating chords across open 2-paths and subsequently pruning macro-cycles ($L > 3$) via entropic deletion to resolve topological tension.
-3.  **Operation Counting:** The metric tracks the total additions and deletions required for the system to reach the simplicial ground state ($L_{\max} = 3$), verifying the monotonic descent of $\Phi(G)$ (**Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />).
+3.  **Operation Counting:** The metric tracks the total additions and deletions required for the system to reach the simplicial ground state ($L_{\max} = 3$), checking the benchmark’s terminal reduction in $\Phi(G)$ (**Lexicographic Potential** <Ref id="2.3.5" label="§2.3.5" />).
 
 *(Pedagogical Benchmark vs. Physical Dynamic Execution):*  
 The script below is a topological demonstrator of cycle-length reduction on unweighted defect graphs. In the physical QBD substrate, graph rewriting executes via the timestamp-aware atomic scheduler with the Symmetric Reciprocal Filter $\mathcal{M}(A)$ (shown in `atomic_cycle_reduction_step`), strictly preventing reciprocal 2-cycles during parallel collapse.
@@ -1672,7 +1672,7 @@ Section 2.6.3.1 formalizes the properties of the QBD proof regarding strict time
 
 ### 2.6.4 Lemma: Failure of Reflexivity {#2.6.4}
 
-:::info[**Violation of Irreflexivity through the Geometric Quantum**]
+:::info[**Violation of Irreflexivity through Closure of Four-Cycle Witnesses**]
 :::
 
 Let $R$ denote mediated simple-path influence on the timestamped directed four-cycle $A\xrightarrow1B\xrightarrow2C\xrightarrow3D\xrightarrow4A$. Then $AR^+A$ in the nonempty transitive closure, although the simple-path relation $R$ is itself irreflexive (**Axiom 3 Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />).
@@ -2965,7 +2965,7 @@ Section 2.7.15 compares graded outward-tree batches with a uniform-height six-cy
 
 Type-theoretic certification of the structural relationships between asymmetry, irreflexivity, and antisymmetry (the three properties now united under **Acyclic Effective Causality** <Ref id="2.7.1" label="§2.7.1" />) proceeds via the following verification strategy:
 
-1.  **Encoding:** The definitions `IsAsymmetric`, `IsIrreflexive`, and `IsAntisymmetric` encode the three relational predicates. `IsAsymmetric` is the formal expression of Axiom 3's Global Asymmetry requirement: if $u$ influences $v$, then $v$ cannot influence $u$.
+1.  **Encoding:** The definitions `IsAsymmetric`, `IsIrreflexive`, and `IsAntisymmetric` encode the three relational predicates. Here `IsAsymmetric` expresses Axiom 3's global condition on the mediated closure $R^+$ and quantifies over all pairs, including $u=v$. For direct links, Axiom 1 separates the cases. Its distinct-pair clause forbids reciprocal edges when $u\ne v$, and its irreflexivity clause excludes $(u,u)$ when $u=v$ (**Axiom 1 Directed Causal Link** <Ref id="2.1.1" label="§2.1.1" />). Together the two clauses yield the universally quantified predicate on direct edges.
 2.  **Theorem Statements:** The first theorem (`asymmetry_implies_irreflexivity`) certifies that asymmetry strictly subsumes irreflexivity by self-application; the second (`asymmetry_equiv`) certifies the full biconditional, proving that asymmetry is the exact algebraic conjunction of the two weaker conditions. Furthermore, strict poset acyclicity under edge timestamp monotonicity is formally certified by `edge_monotone_no_causal_cycle`.
 3.  **Proof Closure:** Both proofs are closed by `intro` and `exact` tactics; the biconditional uses `constructor` to split into two directions, with `False.elim` eliminating the mutual-edge contradiction in the antisymmetry branch and `rw` substituting the equality witness in the reverse direction.
 
