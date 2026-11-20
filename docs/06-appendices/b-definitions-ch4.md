@@ -2765,7 +2765,7 @@ Section 4.4.9 formalizes the properties of the QBD type-theoretic regarding vali
 :::tip[**Algorithmic Implementation of the Rewrite Rule $\mathcal{R}$ by Thermodynamic Modulation**]
 :::
 
-The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.33)
+The **Universal Constructor** $\mathcal{R}$ is defined as a stochastic map $\mathcal{R}: \mathbf{AnnCG} \to \mathcal{P}(\mathbf{CG})$ that transforms an annotated graph $(G, \sigma)$ into a probability distribution over potential successor states. The constructor operates via a strictly defined sequence of **Scanning**, **Validation**, and **Weighting**, formally implemented by the following algorithm: [**(Gillespie, 1977)**](/monograph/appendices/a-references#A.34)
 
 ```python
 def R(annotated_graph, T, mu, lambda_cat):

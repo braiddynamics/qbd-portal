@@ -47,7 +47,7 @@ Section 3.1.4 formalizes the properties of the QBD lemma regarding existence and
 
 ### 3.1.4.1 Proof: Existence and Finiteness {#3.1.4.1}
 
-:::tip[**Order-Theoretic Proof by Contradiction**]
+:::tip[**Finiteness via Induction on Root-Path Levels**]
 :::
 
 **I. Root-Path Levels**
@@ -149,7 +149,7 @@ Section 3.1.5.1 formalizes the properties of the QBD proof regarding exclusion o
 
 ### 3.1.6 Lemma: Exclusion of Cyclic Paths {#3.1.6}
 
-:::info[**Prohibition of Directed Cycles via Timestamp Monotonicity**]
+:::info[**Prohibition of Directed Cycles via Root Entry and the Indegree Bound**]
 :::
 
 Let every vertex be reachable from an indegree-zero root and let every non-root vertex have indegree at most one (**Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" />). Then $G_0$ contains no directed cycle.
@@ -161,7 +161,7 @@ Section 3.1.6 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 3.1.6.1 Proof: Exclusion of Cyclic Paths {#3.1.6.1}
 
-:::tip[**Order-Theoretic Derivation from Cycle Non-Existence**]
+:::tip[**Cycle Exclusion via the First Entry of a Root Path**]
 :::
 
 **I. A Hypothetical Cycle**
@@ -215,7 +215,7 @@ Section 3.1.7 formalizes the properties of the QBD lemma regarding global acycli
 
 **I. Initial Acyclicity Inputs**
 
-The preceding short-cycle exclusion supplies no cycles of lengths one and two (**Exclusion of Reflexivity and Reciprocity** <Ref id="3.1.5" label="§3.1.5" />). The preceding timestamp argument supplies no directed cycles of lengths at least three (**Exclusion of Cyclic Paths** <Ref id="3.1.6" label="§3.1.6" />). Since every positive integer length lies in one of these classes,
+The preceding short-cycle exclusion supplies no cycles of lengths one and two (**Exclusion of Reflexivity and Reciprocity** <Ref id="3.1.5" label="§3.1.5" />). The root-entry argument excludes directed cycles of lengths at least three (**Exclusion of Cyclic Paths** <Ref id="3.1.6" label="§3.1.6" />). Since every positive integer length lies in one of these classes,
 
 $$
 \operatorname{Cycles}(G_0)
@@ -805,7 +805,7 @@ Section 3.2.5 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 3.2.5.1 Proof: Exclusion of Disconnected States {#3.2.5.1}
 
-:::tip[**Demonstration of the Necessity of Weak Connectivity via Automorphism Analysis**]
+:::tip[**Demonstration of Weak Connectivity via Root Reachability**]
 :::
 
 **I. A Hypothetical Second Component**
@@ -841,7 +841,7 @@ Section 3.2.6 formalizes the properties of the QBD lemma regarding exclusion of 
 
 ### 3.2.6.1 Proof: Exclusion of Redundant DAGs {#3.2.6.1}
 
-:::tip[**Probabilistic Analysis via Compliant Site Reduction**]
+:::tip[**Derivation of the Tree Edge Count via Indegree Summation**]
 :::
 
 **I. Indegree Constraints**
@@ -2196,7 +2196,7 @@ $$
 n_{\mathrm{nonfull}}\le \sum_{t=0}^{T-1}(D_t-D_{t+1})=D_0-D_T=D .
 $$
 
-Consequently $T=n_{\mathrm{full}}+n_{\mathrm{nonfull}}\le\lfloor W/P\rfloor+D$.
+Consequently $T=n_{\mathrm{full}}+n_{\mathrm{nonfull}}\le\lfloor W/P\rfloor+D$ <Cite id="A.19" label="(Brent, 1974)" />.
 
 **III. Extension Probabilities and Prefix Counts**
 
@@ -3245,8 +3245,8 @@ Section 3.5.5.1 formalizes the properties of the QBD proof regarding syndrome cl
 
 Algorithmic generation of the diagnostic lookup tables established by **Syndrome Classification for Triplets** <Ref id="3.5.5.1" label="§3.5.5.1" /> is based on the following protocols:
 
-1.  **Commutation Logic:** A procedure is defined to test the commutation relations between Pauli error operators ($X, Y, Z$) and the stabilizer generators, conforming to the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Anti-commutation indicates error detection.
-2.  **Syndrome Mapping:** The simulation iterates through all single-qubit error channels for both the 5-qubit perfect code and the 7-qubit Steane code. For each error, it generates a syndrome bitstring based on the anti-commutation pattern.
+1.  **Commutation Logic:** A procedure is defined to test the commutation relations between Pauli error operators ($X, Y, Z$) and the stabilizer generators, conforming to the **Generalized Stabilizer Formulation** <Ref id="3.5.1" label="§3.5.1" />. Anti-commutation indicates error detection <Cite id="A.37" label="(Gottesman, 1997)" />.
+2.  **Syndrome Mapping:** The simulation iterates through all single-qubit error channels for both the 5-qubit perfect code and the 7-qubit Steane code <Cite id="A.52" label="(Laflamme et al., 1996)" /> <Cite id="A.83" label="(Steane, 1996)" />. For each error, it generates a syndrome bitstring based on the anti-commutation pattern.
 3.  **Injectivity Check:** The resulting table is aggregated to verify that every distinct single-qubit error maps to a unique syndrome signature, confirming the code's ability to uniquely identify local faults.
 
 ```python
