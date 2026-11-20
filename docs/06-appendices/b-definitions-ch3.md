@@ -676,7 +676,7 @@ Section 3.2.1 formalizes the properties of the QBD definition regarding regular 
 :::info[**Uniqueness of the Regular Bethe Fragment as the Maximally Compliant Initial State established by Sequential Exclusion**]
 :::
 
-Let the finite comparison class consist of the ten-vertex undirected trees whose non-leaf vertices all have degree three. Then the balanced Bethe fragment is the unique isomorphism class maximizing $\mathcal O(G;\lambda)=\lambda\log_2|\operatorname{Aut}(G)|+(1-\lambda)H_S(G)$ throughout $\lambda\in[0.4,0.6]$; the regular-fragment family at other sizes is an explicit initial-state model choice (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />).
+Let the finite comparison class consist of the ten-vertex undirected trees whose non-leaf vertices all have degree three. Then the balanced Bethe fragment is the unique isomorphism class maximizing $\mathcal O(G;\lambda)=\lambda\log_2|\operatorname{Aut}(G)|+(1-\lambda)H_S(G)$ throughout $\lambda\in[0.4,0.6]$ (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />).
 
 **In Plain English:**  
 Section 3.2.2 formalizes the properties of the QBD theorem regarding optimal vacuum.
@@ -1043,7 +1043,7 @@ Bethe (Reg)     | 48         | 1.2955
 ```
 
 **Conclusion:**
-The Star graph exhibits an automorphism group size of $362,880$ with an orbit entropy of $0.4690$. The Bethe fragment exhibits a group size of $48$ with an orbit entropy of $1.2955$. The data demonstrates that the Regular Bethe Fragment possesses a higher orbit entropy. This metric quantifies the "relational uniformity" of the graph, the higher entropy indicates that vertices in the regular structure are more structurally indistinguishable from one another than in the irregular structure.
+The Star graph exhibits an automorphism group size of $362,880$ with an orbit entropy of $0.4690$. The Bethe fragment exhibits a group size of $48$ with an orbit entropy of $1.2955$. The data demonstrates that the Regular Bethe Fragment possesses a higher orbit entropy. The star has orbit sizes $1,9$, and the Bethe fragment has orbit sizes $1,3,6$. Splitting the mass $9/10$ into $3/10$ and $6/10$ adds $-\tfrac3{10}\log_2(1/3)-\tfrac6{10}\log_2(2/3)>0$ to the entropy of the orbit label. This metric quantifies the "relational uniformity" of the orbit-size distribution. The higher entropy indicates a more even distribution of vertices across orbit classes in the regular structure.
 
 **In Plain English:**  
 Section 3.2.8.2 formalizes the properties of the QBD calculation regarding entropy comparison.
@@ -1071,7 +1071,16 @@ Section 3.2.9 formalizes the properties of the QBD lemma regarding orbit transit
 
 The proof uses the specified objects and conventions (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />).
 
-Represent the root by the empty word and a depth-$j$ vertex by $a_1\cdots a_j$, where $a_1\in\{0,1,2\}$ and $a_i\in\{0,1\}$ for $i>1$. An edge appends one child symbol. Equal leaf depth makes all descendant subtrees at a given level have the same shape.
+Let $d$ denote the common leaf depth. Label the root by the empty word, its children by $0,1,2$, and the children of each non-root internal vertex by appending $0$ or $1$ to its word. At depth one the three root children exhaust the one-symbol words. If every allowed word of length $j<d$ labels one vertex, that vertex has exactly the two prescribed children. Each length-$(j+1)$ word therefore labels one child of its unique length-$j$ prefix, and no vertex has two parents. No word extends beyond length $d$. Thus any two complete fragments of depth $d$ are isomorphic by mapping each vertex to the vertex with the same word, since their edges both append one symbol.
+
+For $j\ge1$, the first symbol has three choices and each of the other $j-1$ symbols has two. The level and total counts are
+
+$$
+|L_j|=3\cdot 2^{j-1},\qquad
+N=1+3\sum_{j=1}^d 2^{j-1}
+=1+3\sum_{j=1}^d(2^j-2^{j-1})
+=3\cdot2^d-2.
+$$
 
 **II. Local Child Permutations**
 
@@ -1287,6 +1296,17 @@ $$
 \left(\tfrac{19}{10}\lambda-\tfrac9{10}\right)a.
 \end{aligned}
 $$
+
+The affine score gap factors as
+
+$$
+10\,\Delta\mathcal O(\lambda)
+=8-9a+(2+19a)\lambda
+=(2+19a)(\lambda-\lambda_*),
+\qquad \lambda_*=\frac{9a-8}{2+19a}.
+$$
+
+Since $2+19a>0$, the sign of the score gap is the sign of $\lambda-\lambda_*$.
 
 Its derivative is $1/5+19a/10>0$. On the stated interval its minimum occurs at $\lambda=2/5$, where
 
@@ -1508,7 +1528,7 @@ Numerical quantification of the scaling behavior of the Bethe fragment establish
 
 1.  **Asymptotic Construction:** The algorithm generates regular Bethe fragments for a range of depths $d \in [3, 15]$ and coordination numbers $b \in [3, 6]$ to probe the behavior of the structure in the thermodynamic limit, verifying the **Vacuum Topology** <Ref id="3.1.2" label="§3.1.2" />.
 2.  **Regularity Analysis:** The metric calculates the ratio of "bulk" nodes (those satisfying the full degree condition $k=b$) relative to the total population of the graph.
-3.  **Limit Convergence:** The computed fractions are compared against the theoretical bulk-to-boundary limit $1/(b-1)$ to validate the efficiency of the vacuum structure at macroscopic scales.
+3.  **Limit Convergence:** The computed bulk fractions $I/N$ are compared with their limit $1/(b-1)$.
 
 ```python
 import networkx as nx
@@ -1592,7 +1612,7 @@ Bethe Fragment Regularity Scaling
 |       5 |                  6 |    4687 | 19.9915%             | 20.0000%            |
 
 **Conclusion:**
-The results demonstrate that as depth increases to 15, the regularity fraction converges precisely to the theoretical limit of $1/(b-1)$. For $b=3$, the fraction converges to 50% ($1/2$), while for $b=6$, it converges to 20% ($1/5$). This convergence highlights the Bethe fragment's efficient approximation of uniform local structure at lower coordination numbers, which contributes to its high $H_S$ and overall optimality, confirming the fragment's suitability as an optimal vacuum structure.
+The tabulated regularity fraction is the bulk share $I/N$. The exact law $I/N=(1-2/N)/(b-1)$ gives its finite-size correction $2/((b-1)N)$ and its limit $1/(b-1)$ (**Extensive Leaf Boundary of Bethe Fragments** <Ref id="3.2.14" label="§3.2.14" />). For $b=3$, the fraction converges to 50% ($1/2$), while for $b=6$, it converges to 20% ($1/5$). The corresponding bulk-to-boundary ratio is $I/L$, which tends to $1/(b-2)$. This convergence highlights the Bethe fragment's efficient approximation of uniform local structure at lower coordination numbers, which contributes to its high $H_S$ and overall optimality, confirming the fragment's suitability as an optimal vacuum structure.
 
 **In Plain English:**  
 Section 3.2.11.4 formalizes the properties of the QBD calculation regarding large depth scaling.
@@ -1653,10 +1673,10 @@ Section 3.2.13.1 formalizes the properties of the QBD proof regarding simplicial
 
 ### 3.2.14 Lemma: Extensive Leaf Boundary of Bethe Fragments {#3.2.14}
 
-:::info[**Extensive Leaf Boundary of Bethe Fragments via Leaf Count and Initial Routing on a Trivalent Tree**]
+:::info[**Extensive Leaf Boundary of Bethe Fragments via Exact Bulk and Leaf Counts**]
 :::
 
-Let a finite outward tree on $N$ vertices have a root of outdegree three and all other internal vertices of outdegree two. Its initial leaves have no outgoing routes and number $L=(N+2)/2$, so $L/N\to1/2$ along increasing fragments, with the initial spatial support given by the fixed vertex set and its maximum depth.
+Let a finite outward tree on $N=I+L$ vertices have $I$ internal vertices and $L$ leaves, with root outdegree $b\ge3$ and all other internal vertices of outdegree $b-1$. Then $L=(b-2)I+2$ and $L/N\to(b-2)/(b-1)$ as $N$ increases at fixed $b$, with no outgoing routes at the initial leaves and initial spatial support given by the fixed vertex set and its maximum depth.
 
 **In Plain English:**  
 Section 3.2.14 formalizes the properties of the QBD lemma regarding extensive leaf boundary of bethe fragments.
@@ -1679,7 +1699,7 @@ $$
 Counting the same edge set by its sources gives
 
 $$
-|E_0|=\sum_{v\in V_0}d_{\mathrm{out}}(v)=3+2(I-1)+0\cdot L=2I+1.
+|E_0|=\sum_{v\in V_0}d_{\mathrm{out}}(v)=b+(b-1)(I-1)+0\cdot L=(b-1)I+1.
 $$
 
 **II. Solving for the Leaf Count**
@@ -1687,11 +1707,19 @@ $$
 The two edge counts and $N=I+L$ imply
 
 $$
-N-1=2I+1,\qquad I=\frac{N-2}{2},\qquad
-L=N-\frac{N-2}{2}=\frac{N+2}{2}.
+N-1=(b-1)I+1,\qquad I=\frac{N-2}{b-1},\qquad
+L=N-I=(b-2)I+2=\frac{(b-2)N+2}{b-1}.
 $$
 
-In particular $\left|L/N-1/2\right|=1/N$. For any $\epsilon>0$, $N>1/\epsilon$ makes this error smaller than $\epsilon$.
+Dividing the counts by $N$ and then dividing $I$ by $L$ yields
+
+$$
+\frac{I}{N}=\frac{1}{b-1}-\frac{2}{(b-1)N},\qquad
+\frac{L}{N}=\frac{b-2}{b-1}+\frac{2}{(b-1)N},\qquad
+\frac{I}{L}=\frac{N-2}{(b-2)N+2}.
+$$
+
+At fixed $b$, for any $\epsilon>0$, $N>2/((b-1)\epsilon)$ makes the finite correction $2/((b-1)N)$ less than $\epsilon$, and division of the numerator and denominator of $I/L$ by $N$ establishes its limit $1/(b-2)$. For $b=3$, these identities give $L=I+2$, $L=(N+2)/2$ and $I/L=(N-2)/(N+2)$.
 
 **III. Initial Routing and Support**
 
@@ -1816,7 +1844,7 @@ Internal regularity is imposed through its variance condition (**Degree Regulari
 
 Complete level structure has the proved level-transitive automorphisms (**Orbit Transitivity** <Ref id="3.2.9" label="§3.2.9" />).
 
-Its leaf count is the separate finite-tree identity (**Extensive Leaf Boundary of Bethe Fragments** <Ref id="3.2.14" label="§3.2.14" />).
+For every size, the full trivalent fragment has $L=I+2$ (**Extensive Leaf Boundary of Bethe Fragments** <Ref id="3.2.14" label="§3.2.14" />).
 
 **III. Finite Score Theorem**
 
@@ -2340,7 +2368,11 @@ Section 3.3.10 formalizes the properties of the QBD type-theoretic regarding val
 :::info[**Necessary Ignition of the Geometric Phase Transition driven by Non-Perturbative Seed Injection**]
 :::
 
-Let the zero-height regular rooted tree be seeded by $u\to r$ where $r\to w_1\to u$, and let $r$ have two other children $w_2,w_3$. Then the seed forms a triangle and the next snapshot has two cross-branch addition candidates with positive probability of producing at least one surviving descendant triangle (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />).
+Let $G_0$ denote a zero-height regular rooted tree with a root two-path $r\to w_1\to u$ (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />). Then $u\to r$ is a minimal one-edge tunneling move that creates a directed triangle and two new cross-branch candidates. Moreover, under independent candidate selection with probability $0<p\le1$ and an independent uniform seed-edge deletion trial with probability $0\le q\le1$, the probability of a surviving descendant in the next tick is
+
+$$
+[1-(1-p)^2](1-q/3)>0.
+$$
 
 **In Plain English:**  
 Section 3.4.1 formalizes the properties of the QBD theorem regarding seeded geometrogenesis.
@@ -2349,10 +2381,10 @@ Section 3.4.1 formalizes the properties of the QBD theorem regarding seeded geom
 
 ### 3.4.2 Lemma: Topological Tunneling {#3.4.2}
 
-:::info[**Topological Tunneling via Same-Parity Seed Chord in the Outward Tree**]
+:::info[**Minimal Topological Tunneling via a Same-Parity Edge Insertion**]
 :::
 
-Let two distinct vertices of a rooted tree share their initial depth parity. Inserting a directed edge between them changes one adjacency entry and creates an undirected odd cycle, with the specific return on $r\to a\to u$ giving a directed triangle and with the chord endpoints at undirected distance one while the chord is active.
+Let $G_0$ denote a finite outward rooted tree with a directed two-path and parity given by initial depth. Then any directed triangle on the same vertex set requires a new same-parity edge, with the minimum of one directed edge edit attained exactly by inserting a return edge across an original directed two-path, while any insertion between distinct same-parity vertices creates an undirected odd cycle and gives its endpoints undirected distance one while active.
 
 **In Plain English:**  
 Section 3.4.2 formalizes the properties of the QBD lemma regarding topological tunneling.
@@ -2361,10 +2393,26 @@ Section 3.4.2 formalizes the properties of the QBD lemma regarding topological t
 
 ### 3.4.2.1 Proof: Topological Tunneling {#3.4.2.1}
 
-:::tip[**Topological Tunneling via Path Parity and the Grandchild Return**]
+:::tip[**Characterization of Minimal Tunneling via Parity and Directed Edit Distance**]
 :::
 
-**I. Parity of the Unique Tree Path**
+**I. Lower Bound for First-Triangle Creation**
+
+Let $E_0$ denote the initial edge set, $\pi_0$ the initial depth parity, and $\delta(E)=|E\triangle E_0|$ the number of directed edge edits from $E_0$ to $E$. Each original edge has opposite-parity endpoints (**Depth-Parity Bipartition** <Ref id="3.1.10" label="§3.1.10" />). For a directed triangle $(v_0,v_1,v_2,v_3=v_0)$ in $E$, let $c$ denote its number of parity-crossing edges. Summing the parity changes gives
+
+$$
+c=\sum_{i=0}^{2}\mathbf1_{\{\pi_0(v_i)\ne\pi_0(v_{i+1})\}}
+\equiv\sum_{i=0}^{2}\bigl(\pi_0(v_{i+1})-\pi_0(v_i)\bigr)
+=\pi_0(v_3)-\pi_0(v_0)=0\pmod2.
+$$
+
+Since $c\in\{0,1,2,3\}$, evenness gives $c\in\{0,2\}$. Each of the remaining $3-c$ edges joins vertices of the same initial parity and is absent from $E_0$. Consequently
+
+$$
+\delta(E)=|E\triangle E_0|\ge |E\setminus E_0|\ge 3-c\ge1 .
+$$
+
+**II. Parity of the Unique Tree Path**
 
 Let $d$ be the fixed depth function and $\pi_0(x)=d(x)\bmod 2$ (**Regular Bethe Fragment** <Ref id="3.2.1" label="§3.2.1" />). For distinct same-parity vertices $a,b$, let $(x_0,\ldots,x_\ell)$ be their unique undirected tree path. Each edge changes the depth by $1$ or $-1$, so
 
@@ -2375,7 +2423,7 @@ $$
 
 Since $a\ne b$, $\ell\ge1$, and evenness gives $\ell\ge2$. Thus there is no original adjacency between them in either direction.
 
-**II. Adjacency Change and Odd Cycle**
+**III. Adjacency Change and Odd Cycle**
 
 Insert the directed edge $e=(a,b)$, and let $A,A'$ be the directed adjacency indicators before and after insertion. For any ordered pair $(x,y)$,
 
@@ -2386,7 +2434,7 @@ $$
 
 In the underlying undirected graph the perimeter $(x_0,x_1,\ldots,x_\ell,x_0)$ has the $\ell$ original edges and the new closing edge $\{a,b\}$. Its vertices before the return are distinct, and $\ell+1\equiv1\pmod2$. A two-coloring would change color at each of the $\ell+1$ steps and assign the opposite color to the starting vertex at return, a contradiction.
 
-**III. Oriented Seed and Its Endpoints**
+**IV. Attainment and Classification of Minimum Edits**
 
 For the seed $u\to r$, the directed adjacency product in the new graph is
 
@@ -2395,7 +2443,7 @@ A'(r,w_1)A'(w_1,u)A'(u,r)=1\cdot1\cdot1=1,\qquad
 (d(r),d(w_1),d(u))=(0,1,2).
 $$
 
-Thus $(r,w_1,u,r)$ is a directed triangle. In a later graph retaining $(u,r)$, the two distinct endpoints have undirected distance at least one and the retained edge bounds that distance above by one. Consequently
+Thus $(r,w_1,u,r)$ is a directed triangle and $\delta(E_0\cup\{(u,r)\})=1$, attaining the lower bound. For any triangle-producing $E$ with $\delta(E)=1$, the edit must be an insertion because an edge deletion leaves a subgraph of the triangle-free tree. Every triangle of $E$ then contains the inserted edge $u\to v$, and its other two edges give an original directed two-path $v\to w\to u$. Conversely, the two old edges of any such path and the absent return edge give the same three factors $1\cdot1\cdot1$. Thus exactly these return insertions attain the minimum. In a later graph retaining $(u,r)$, the two distinct endpoints have undirected distance at least one and the retained edge bounds that distance above by one. Consequently
 
 $$
 d_{\mathrm{und}}(u,r)=1,\qquad
@@ -2456,7 +2504,7 @@ $$
 \{(u,r,w_1),(u,r,w_2),(u,r,w_3)\}.
 $$
 
-The first has return edge $(w_1,u)\in E_0$ and is excluded. The other two give distinct directed targets $(w_2,u)$ and $(w_3,u)$, both passing the preceding tests (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />).
+The first has return edge $(w_1,u)\in E_0$ and is excluded. The other two give distinct candidate edges $(w_2,u)$ and $(w_3,u)$, both passing the preceding tests (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />).
 
 Q.E.D.
 
@@ -2479,7 +2527,7 @@ Section 3.4.4 formalizes the properties of the QBD lemma regarding first geometr
 
 ### 3.4.4.1 Proof: First Geometric Quantum {#3.4.4.1}
 
-:::tip[**Demonstration of Supercritical Branching Process via Cycle Nucleation**]
+:::tip[**Construction of the First Triangle via Closure of a Root Two-Path**]
 :::
 
 **I. Initial Edges**
@@ -2503,10 +2551,10 @@ Section 3.4.4.1 formalizes the properties of the QBD proof regarding first geome
 
 ### 3.4.5 Lemma: Ignition Probability {#3.4.5}
 
-:::info[**Deterministic Parallel Ignition Probability via Zero-Stress 2-Path Multiplicity**]
+:::info[**Positive Descendant Survival via Independent Selection and Uniform Seed-Edge Deletion**]
 :::
 
-Let $p=e^{-2\mu}$ and $q=\min(1,\tfrac12(1+2\lambda)e^{-2\mu})$ in the seeded snapshot. Then the probability of at least one cross-branch descendant triangle surviving the next tick is $[1-(1-p)^2](1-q/3)$ under the independent selection and uniform seed-edge deletion law (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />).
+Let the two cross-branch additions in the seeded snapshot be selected independently with probability $0<p\le1$, and let the independent deletion trial of probability $0\le q\le1$ choose one of the three old seed edges uniformly. Then the probability of at least one cross-branch descendant surviving the next tick is $[1-(1-p)^2](1-q/3)>0$.
 
 **In Plain English:**  
 Section 3.4.5 formalizes the properties of the QBD lemma regarding ignition probability.
@@ -2515,21 +2563,16 @@ Section 3.4.5 formalizes the properties of the QBD lemma regarding ignition prob
 
 ### 3.4.5.1 Proof: Ignition Probability {#3.4.5.1}
 
-:::tip[**Derivation of Deterministic First-Tick Burst Ignition via Combinatorial 2-Path Multiplicity and Zero-Stress Kernels**]
+:::tip[**Derivation of Descendant Survival via Independent Selection and the Shared Return Edge**]
 :::
 
-**I. Cycle Incidence**
+**I. Snapshot Supports**
 
-The seed triangle is the only triangle before the next tick (**First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />). Its vertices $u,r,w_1$ have incidence one; the other branch vertices $w_2,w_3$ have incidence zero. Each of the two cross-branch candidates (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />) therefore has
-
-$$
-s_{\mathrm{add}}=s(u)+s(r)+s(w_j)=1+1+0=2,
-\qquad p=e^{-2\mu}.
-$$
+The seed triangle is the only old triangle (**First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />). The two new candidates are $(w_2,u)$ and $(w_3,u)$ (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />). They have distinct sources and the same target, so they cannot be reciprocal.
 
 **II. At Least One Accepted Addition**
 
-The two selection trials are independent, and their targets are distinct and survive the reciprocal filter. Thus
+Let $X_2,X_3$ denote the two independent inclusion indicators. The probability that neither chord is selected is $\Pr(X_2=0)\Pr(X_3=0)=(1-p)^2$. Thus
 
 $$
 \Pr(\text{at least one selected})=1-\Pr(X_2=0,X_3=0)=1-(1-p)^2.
@@ -2537,7 +2580,7 @@ $$
 
 **III. Seed Return-Edge Survival**
 
-The single old triangle has deletion stress $1+1+1-1=2$. Its deletion trial succeeds with probability $q$, then chooses each edge with probability one third. Therefore
+The independent deletion trial removes $u\to r$ with probability $q\cdot(1/3)=q/3$. Hence
 
 $$
 \Pr(u\to r\text{ survives})=1-q/3.
@@ -2554,7 +2597,7 @@ $$
 =[1-(1-p)^2](1-q/3)>0.}
 $$
 
-This proves the stated local probability (**Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />).
+The bounds $1-(1-p)^2=p(2-p)\ge p>0$ and $1-q/3\ge2/3$ establish strict positivity (**Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />).
 
 Q.E.D.
 
@@ -2677,26 +2720,32 @@ Section 3.4.6.2 formalizes the properties of the QBD calculation regarding exact
 
 ### 3.4.7 Proof: Seeded Geometrogenesis {#3.4.7}
 
-:::tip[**Synthesis of Topological Tunneling and Deterministic Burst Ignition via Scale-Invariant Barrier Crossing**]
+:::tip[**Assembly of Minimal Tunneling and Descendant Survival via Parity and Local Incidence**]
 :::
 
-**I. Seeded State**
+**I. Minimal Seed and Its Causal Consistency**
 
-The specified same-parity seed breaks the underlying tree bipartition (**Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />). Its root-to-grandchild return immediately forms the seed triangle (**First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />).
+A first directed triangle requires a new same-parity edge, and the one-edge tunneling return $u\to r$ attains this lower bound (**Topological Tunneling** <Ref id="3.4.2" label="§3.4.2" />). It closes the root-to-grandchild path to form the seed triangle (**First Geometric Quantum** <Ref id="3.4.4" label="§3.4.4" />).
 
-**II. Descendant Sites**
-
-The other two root branches supply two admitted addition sites (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />). Their stresses are two, rather than zero, and their independent selection and deletion-stage survival give
+The seed height is $1+\max\{0,H(w_1,u)\}=1$ (**Creation Timestamp** <Ref id="1.4.4" label="§1.4.4" />). A strictly increasing path of at least two edges in the seeded graph must have height sequence $(0,1)$, since those are the only heights present. Its second edge is the seed, and its first edge must enter $u$. The sole incoming edge at $u$ is $(w_1,u)$, so the only witness is $w_1\to u\to r$. Its endpoint pair gives
 
 $$
-\Pr(\text{surviving descendant})=[1-(1-e^{-2\mu})^2](1-q/3)>0
+R=\{(w_1,r)\},\qquad R^+=R,\qquad (x,x)\notin R^+\quad\text{for every }x,
 $$
 
-(**Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />).
+since $r\ne w_1$ and no pair starts at $r$ (**Effective Influence** <Ref id="2.6.2" label="§2.6.2" />).
 
-**III. Conclusion**
+**II. Descendant Sites and Survival**
 
-The local probability for survival of any named triangle is computed separately (**One-Tick Seed-Sector Survival** <Ref id="3.4.6" label="§3.4.6" />). The seed and positive local descendant probability are the asserted conclusions (**Seeded Geometrogenesis** <Ref id="3.4.1" label="§3.4.1" />). No macroscopic barrier-crossing conclusion is used in this deduction.
+The other two branches supply two new addition candidates (**Nucleation of Compliant Sites** <Ref id="3.4.3" label="§3.4.3" />). Their surviving descendant event has probability (**Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />)
+
+$$
+[1-(1-p)^2](1-q/3)=p(2-p)(1-q/3)\ge \tfrac23 p>0.
+$$
+
+**III. Survival of the Named Triangle Sector**
+
+The probability of survival of any named triangle also includes the outcome in which no old edge is deleted. With probability $q/3$ each of the two old legs can be removed while leaving the shared return intact. The probability is consequently $(1-q)+(2q/3)(2p-p^2)$ (**One-Tick Seed-Sector Survival** <Ref id="3.4.6" label="§3.4.6" />).
 
 Q.E.D.
 
@@ -2707,7 +2756,7 @@ Section 3.4.7 formalizes the properties of the QBD proof regarding seeded geomet
 
 ### 3.4.7.1 Calculation: Simulated Ignition Trajectories {#3.4.7.1}
 
-:::note[**Numerical Verification of Deterministic First-Tick Ignition and Burst Density Scaling via Parallel Graph Rewriting**]
+:::note[**Verification of One-Tick Descendant Survival via Snapshot Enumeration**]
 :::
 
 Verification of the finite local descendant survival estimate (**Seeded Geometrogenesis** <Ref id="3.4.7" label="§3.4.7" />) (**Ignition Probability** <Ref id="3.4.5" label="§3.4.5" />) is based on the following protocols:
@@ -2715,6 +2764,14 @@ Verification of the finite local descendant survival estimate (**Seeded Geometro
 1.  **Seed Snapshot:** The prescribed root-to-grandchild seed fixes two cross-branch candidates with stress two.
 2.  **Exact Finite Enumeration:** Two binary addition choices and four seed-cycle deletion outcomes enumerate the descendant event.
 3.  **Analytic Comparison:** The summed event probability is compared with the product expression, and the two-candidate expectation is recorded.
+
+The old triangle contributes incidence one at $u$, $r$, and $w_1$ and zero at $w_2,w_3$. Thus each addition stress is $s_{\mathrm{add}}=1+1+0=2$, and the deletion stress is $1+1+1-1=2$. Substituting these stresses into the snapshot weights (**Evolution Operator** <Ref id="4.6.1" label="§4.6.1" />) gives
+
+$$
+p=e^{-\mu(1+1+0)}=e^{-2\mu},\qquad
+q=\min\left(1,\tfrac12\bigl(1+\lambda(1+1+1-1)\bigr)e^{-\mu(1+1+1-1)}\right)
+=\min\left(1,\tfrac12(1+2\lambda)e^{-2\mu}\right).
+$$
 
 ```python
 import math

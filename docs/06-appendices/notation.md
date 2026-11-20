@@ -121,7 +121,7 @@ This table defines the standard notation used throughout the Quantum Braid Dynam
 | $\varphi$ | An automorphism mapping | [§3.3.1](/monograph/rules/architecture/3.3/#3.3.1) |
 | $\mathcal{S}(G)$ | Set of eligible candidate rewrite sites | [§3.3.2](/monograph/rules/architecture/3.3/#3.3.2) |
 | $\mathcal{S}_{\text{sites}}(G)$ | Equivariant candidate rewrite site set | [§3.3.4](/monograph/rules/architecture/3.3/#3.3.4) |
-| $s_{\mathrm{add}}$ | Addition stress score of a candidate 2-path site | [§3.4.5.1](/monograph/rules/architecture/3.4/#3.4.5.1) |
+| $s_{\mathrm{add}}$ | Addition stress score of a candidate 2-path site | [§3.4.7.1](/monograph/rules/architecture/3.4/#3.4.7.1) |
 | $\mathcal{H}$ | Configuration Hilbert Space $(\mathbb{C}^2)^{\otimes K}$ | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $F$ | Fixed forbidden-pair locality mask | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
 | $\mathcal{C}_F$ | QECC codespace for forbidden-pair mask $F$ (abbreviated $\mathcal{C}$ when $F$ is fixed) | [§3.5.1](/monograph/rules/architecture/3.5/#3.5.1) |
