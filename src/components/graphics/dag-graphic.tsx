@@ -3,24 +3,12 @@ import './dag-graphic.css';
 
 export default function DagGraphic() {
   const primaryColor = 'var(--ifm-color-primary)';
-  const gridColor = 'var(--ifm-color-emphasis-200)';
   const secondaryEdgeColor = 'var(--ifm-color-emphasis-300)';
 
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '1rem' }}>
       <svg viewBox="0 0 200 200" style={{ width: '100%', maxWidth: '200px', height: 'auto', overflow: 'visible' }}>
         <defs>
-          {/* Hexagonal Grid Pattern for the Background */}
-          <pattern id="hex-grid" width="40" height="34.64" patternUnits="userSpaceOnUse">
-            <path
-              d="M20 0 L40 11.55 L40 34.64 L20 46.19 L0 34.64 L0 11.55 Z"
-              fill="none"
-              stroke={gridColor}
-              strokeWidth="0.5"
-              opacity="0.5"
-            />
-          </pattern>
-
           {/* Arrowhead Markers */}
           <marker id="arrow-primary" viewBox="0 0 10 10" refX="24" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 0 L 10 5 L 0 10 z" fill={primaryColor} className="dag-arrow" />
@@ -29,9 +17,6 @@ export default function DagGraphic() {
             <path d="M 0 0 L 10 5 L 0 10 z" fill={secondaryEdgeColor} />
           </marker>
         </defs>
-
-        {/* Background Rect */}
-        <rect x="-20" y="-20" width="240" height="240" fill="url(#hex-grid)" />
 
         {/* --- The True Geometric Quantum (Closed 3-Cycle) --- */}
 

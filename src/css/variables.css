@@ -1,32 +1,106 @@
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* === QBD Unified Brand Palette — Light Mode (Deep Ocean Cyan / Teal) === */
+  --ifm-color-primary: #0e7490;
+  --ifm-color-primary-dark: #0c657e;
+  --ifm-color-primary-darker: #0b5f77;
+  --ifm-color-primary-darkest: #094e62;
+  --ifm-color-primary-light: #1083a2;
+  --ifm-color-primary-lighter: #128bad;
+  --ifm-color-primary-lightest: #159ec4;
+
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-card-background-color: #ffffff;
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --qbd-glow-color: rgba(46, 133, 85, 0.25);
-  
-  /* navy blue spine colors (light mode) */
-  --qbd-spine-color: #1A365D; 
-  --qbd-spine-glow: rgba(26, 54, 93, 0.5);
+  --docusaurus-highlighted-code-line-bg: rgba(14, 116, 144, 0.08);
+
+  /* QBD Semantic Tokens — Light Mode */
+  --qbd-glow-color: rgba(14, 116, 144, 0.22);
+  --qbd-glow-hover: rgba(14, 116, 144, 0.14);
+  --qbd-spine-color: #0e7490;
+  --qbd-spine-glow: rgba(14, 116, 144, 0.35);
+
+  --qbd-surface-muted: #f1f5f9;
+  --qbd-border-subtle: rgba(15, 23, 42, 0.12);
+  --qbd-border-strong: rgba(15, 23, 42, 0.22);
+  --qbd-text-strong: #0f172a;
+  --qbd-accent-soft: rgba(14, 116, 144, 0.08);
+  --qbd-accent-border: rgba(14, 116, 144, 0.25);
+  --qbd-on-primary: #ffffff;
+
+  /* Semantic Badge Tokens — Light Mode */
+  --qbd-badge-info-bg: rgba(14, 116, 144, 0.1);
+  --qbd-badge-info-text: #0e7490;
+  --qbd-badge-info-border: rgba(14, 116, 144, 0.28);
+
+  --qbd-badge-success-bg: rgba(5, 150, 105, 0.1);
+  --qbd-badge-success-text: #047857;
+  --qbd-badge-success-border: rgba(5, 150, 105, 0.28);
+
+  --qbd-badge-warn-bg: rgba(217, 119, 6, 0.12);
+  --qbd-badge-warn-text: #b45309;
+  --qbd-badge-warn-border: rgba(217, 119, 6, 0.32);
+
+  --qbd-badge-violet-bg: rgba(109, 40, 217, 0.08);
+  --qbd-badge-violet-text: #6d28d9;
+  --qbd-badge-violet-border: rgba(109, 40, 217, 0.25);
+
+  --qbd-badge-danger-bg: rgba(220, 38, 38, 0.1);
+  --qbd-badge-danger-text: #b91c1c;
+  --qbd-badge-danger-border: rgba(220, 38, 38, 0.26);
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --qbd-glow-color: rgba(37, 194, 160, 0.25);
-  
-  /* purple/blue spine colors (dark mode) */
-  --qbd-spine-color: #8b5cf6;
-  --qbd-spine-glow: rgba(139, 92, 246, 0.6);
+  /* === QBD Unified Brand Palette — Dark Mode (Cosmic Cyan on Deep Slate) === */
+  --ifm-color-primary: #22d3ee;
+  --ifm-color-primary-dark: #0fcbe9;
+  --ifm-color-primary-darker: #0ec0dc;
+  --ifm-color-primary-darkest: #0b9eb5;
+  --ifm-color-primary-light: #3cdaf1;
+  --ifm-color-primary-lighter: #49dcf2;
+  --ifm-color-primary-lightest: #71e5f5;
+
+  --ifm-background-color: #0b1120;
+  --ifm-background-surface-color: #111827;
+  --ifm-card-background-color: #111827;
+  --ifm-navbar-background-color: #0a0f1d;
+  --ifm-footer-background-color: #0a0f1d;
+
+  --docusaurus-highlighted-code-line-bg: rgba(34, 211, 238, 0.14);
+
+  /* QBD Semantic Tokens — Dark Mode */
+  --qbd-glow-color: rgba(34, 211, 238, 0.22);
+  --qbd-glow-hover: rgba(34, 211, 238, 0.18);
+  --qbd-spine-color: #22d3ee;
+  --qbd-spine-glow: rgba(34, 211, 238, 0.45);
+
+  --qbd-surface-muted: rgba(255, 255, 255, 0.05);
+  --qbd-border-subtle: rgba(148, 163, 184, 0.18);
+  --qbd-border-strong: rgba(148, 163, 184, 0.3);
+  --qbd-text-strong: #f1f5f9;
+  --qbd-accent-soft: rgba(34, 211, 238, 0.1);
+  --qbd-accent-border: rgba(34, 211, 238, 0.3);
+  --qbd-on-primary: #062133;
+
+  /* Semantic Badge Tokens — Dark Mode (High Contrast) */
+  --qbd-badge-info-bg: rgba(34, 211, 238, 0.12);
+  --qbd-badge-info-text: #67e8f9;
+  --qbd-badge-info-border: rgba(34, 211, 238, 0.3);
+
+  --qbd-badge-success-bg: rgba(52, 211, 153, 0.12);
+  --qbd-badge-success-text: #34d399;
+  --qbd-badge-success-border: rgba(52, 211, 153, 0.3);
+
+  --qbd-badge-warn-bg: rgba(251, 191, 36, 0.14);
+  --qbd-badge-warn-text: #fbbf24;
+  --qbd-badge-warn-border: rgba(251, 191, 36, 0.32);
+
+  --qbd-badge-violet-bg: rgba(192, 132, 252, 0.12);
+  --qbd-badge-violet-text: #d8b4fe;
+  --qbd-badge-violet-border: rgba(192, 132, 252, 0.32);
+
+  --qbd-badge-danger-bg: rgba(248, 113, 113, 0.14);
+  --qbd-badge-danger-text: #f87171;
+  --qbd-badge-danger-border: rgba(248, 113, 113, 0.32);
 }

@@ -33,8 +33,8 @@ export default function DownloadPage() {
         <meta name="twitter:title" content="Monograph Downloads | Quantum Braid Dynamics" />
       </Head>
 
-      <main style={{ minHeight: '90vh', padding: '4rem 0', position: 'relative', overflow: 'hidden' }}>
-        
+      <main className="downloads-page">
+
         {/* Glow Backdrop */}
         <div style={{
           position: 'absolute',
@@ -58,119 +58,53 @@ export default function DownloadPage() {
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1100px' }}>
-          
+
           {/* Header */}
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <span style={{ 
-              fontSize: '0.9rem', 
-              fontWeight: 'bold', 
-              textTransform: 'uppercase', 
-              color: 'var(--ifm-color-primary)', 
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{
+              fontSize: '0.88rem',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              color: 'var(--ifm-color-primary)',
               letterSpacing: '2px',
               display: 'inline-block',
               marginBottom: '0.5rem'
             }}>
               Quantum Braid Dynamics Portal
             </span>
-            <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1.25rem', letterSpacing: '-0.5px' }}>
+            <h1 className="downloads-header-title">
               Monograph Download Repository
             </h1>
-            <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-700)', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+            <p className="downloads-header-lead">
               Access the complete manuscript, theorem databases, and derivations. Available in copy-paste friendly Markdown, structured JSON, premium LaTeX-typeset PDF, or modular chapter slices.
             </p>
           </div>
 
           {/* Quick Selection Tab Bar */}
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            gap: '0.75rem', 
-            marginBottom: '3rem',
-            backgroundColor: 'rgba(0, 0, 0, 0.03)',
-            padding: '0.6rem',
-            borderRadius: '16px',
-            border: '1px solid var(--ifm-color-emphasis-200)',
-            maxWidth: '650px',
-            margin: '0 auto 3rem auto'
-          }}>
-            <button
-              onClick={() => setActiveTab('chapters')}
-              style={{
-                flex: 1,
-                border: 'none',
-                backgroundColor: activeTab === 'chapters' ? 'var(--ifm-color-primary)' : 'transparent',
-                color: activeTab === 'chapters' ? '#ffffff' : 'var(--ifm-color-emphasis-700)',
-                padding: '0.75rem 1.25rem',
-                borderRadius: '10px',
-                fontWeight: '700',
-                fontSize: '0.95rem',
-                cursor: 'pointer',
-                transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                boxShadow: activeTab === 'chapters' ? '0 4px 12px var(--qbd-glow-color)' : 'none'
-              }}
-            >
-              Chapters
-            </button>
-            <button
-              onClick={() => setActiveTab('parts')}
-              style={{
-                flex: 1,
-                border: 'none',
-                backgroundColor: activeTab === 'parts' ? 'var(--ifm-color-primary)' : 'transparent',
-                color: activeTab === 'parts' ? '#ffffff' : 'var(--ifm-color-emphasis-700)',
-                padding: '0.75rem 1.25rem',
-                borderRadius: '10px',
-                fontWeight: '700',
-                fontSize: '0.95rem',
-                cursor: 'pointer',
-                transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                boxShadow: activeTab === 'parts' ? '0 4px 12px var(--qbd-glow-color)' : 'none'
-              }}
-            >
-              Parts
-            </button>
-            <button
-              onClick={() => setActiveTab('full')}
-              style={{
-                flex: 1,
-                border: 'none',
-                backgroundColor: activeTab === 'full' ? 'var(--ifm-color-primary)' : 'transparent',
-                color: activeTab === 'full' ? '#ffffff' : 'var(--ifm-color-emphasis-700)',
-                padding: '0.75rem 1.25rem',
-                borderRadius: '10px',
-                fontWeight: '700',
-                fontSize: '0.95rem',
-                cursor: 'pointer',
-                transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                boxShadow: activeTab === 'full' ? '0 4px 12px var(--qbd-glow-color)' : 'none'
-              }}
-            >
-              Full Book
-            </button>
-            <button
-              onClick={() => setActiveTab('codebase')}
-              style={{
-                flex: 1,
-                border: 'none',
-                backgroundColor: activeTab === 'codebase' ? 'var(--ifm-color-primary)' : 'transparent',
-                color: activeTab === 'codebase' ? '#ffffff' : 'var(--ifm-color-emphasis-700)',
-                padding: '0.75rem 1.25rem',
-                borderRadius: '10px',
-                fontWeight: '700',
-                fontSize: '0.95rem',
-                cursor: 'pointer',
-                transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                boxShadow: activeTab === 'codebase' ? '0 4px 12px var(--qbd-glow-color)' : 'none'
-              }}
-            >
-              Codebase
-            </button>
+          <div className="downloads-tabs">
+            {(
+              [
+                { id: 'chapters', label: 'Chapters' },
+                { id: 'parts', label: 'Parts' },
+                { id: 'full', label: 'Full Book' },
+                { id: 'codebase', label: 'Codebase' },
+              ] as const
+            ).map((tab) => (
+              <button
+                type="button"
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`downloads-tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+              >
+                {tab.label}
+              </button>
+            ))}
           </div>
 
           {/* TAB 1: BY CHAPTER FORMATS */}
           {activeTab === 'chapters' && (
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              <div className="downloads-grid-chapters">
                 {downloadsInfo.chapters.map((ch, idx) => {
                   return (
                     <div key={idx} className="qbd-interactive-card" style={{ padding: '1.5rem' }}>
@@ -222,11 +156,11 @@ export default function DownloadPage() {
 
           {/* TAB 2: BY PART FORMATS */}
           {activeTab === 'parts' && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '2rem' }}>
+            <div className="downloads-grid-parts">
               {downloadsInfo.parts.map((part, idx) => (
-                <div key={idx} className="qbd-interactive-card" style={{ padding: '2rem' }}>
+                <div key={idx} className="qbd-interactive-card" style={{ padding: '1.75rem' }}>
                   <div className="qbd-interactive-card-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-                    <div style={{ flex: '1', minWidth: '280px' }}>
+                    <div style={{ flex: '1', minWidth: 'min(100%, 240px)' }}>
                       <span style={{ 
                         fontSize: '0.8rem', 
                         fontWeight: '800', 
@@ -260,7 +194,7 @@ export default function DownloadPage() {
                       </div>
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', width: '100%', maxWidth: '140px' }}>
+                    <div className="downloads-part-actions">
                       <a href={part.url} download className="button button--sm btn-download-md" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', width: '100%' }}>
                         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                         Get MD
@@ -286,19 +220,19 @@ export default function DownloadPage() {
 
           {/* TAB 3: FULL BOOK FORMATS */}
           {activeTab === 'full' && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+            <div className="downloads-grid-full">
               {downloadsInfo.full_book.map((file, idx) => (
-                <div key={idx} className="qbd-interactive-card" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <div key={idx} className="qbd-interactive-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <div className="qbd-interactive-card-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
                     <div>
                       {/* Format tag */}
-                      <span style={{ 
-                        fontSize: '0.75rem', 
-                        fontWeight: 'bold', 
-                        textTransform: 'uppercase', 
-                        backgroundColor: file.type === 'pdf' ? 'rgba(239, 68, 68, 0.1)' : file.type === 'json' ? 'rgba(59, 130, 246, 0.1)' : 'rgba(16, 185, 129, 0.1)', 
-                        color: file.type === 'pdf' ? '#ef4444' : file.type === 'json' ? '#3b82f6' : '#10b981',
-                        border: file.type === 'pdf' ? '1px solid rgba(239, 68, 68, 0.2)' : file.type === 'json' ? '1px solid rgba(59, 130, 246, 0.2)' : '1px solid rgba(16, 185, 129, 0.2)',
+                      <span style={{
+                        fontSize: '0.75rem',
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase',
+                        backgroundColor: file.type === 'pdf' ? 'var(--qbd-badge-danger-bg)' : file.type === 'json' ? 'var(--qbd-badge-info-bg)' : 'var(--qbd-badge-success-bg)',
+                        color: file.type === 'pdf' ? 'var(--qbd-badge-danger-text)' : file.type === 'json' ? 'var(--qbd-badge-info-text)' : 'var(--qbd-badge-success-text)',
+                        border: file.type === 'pdf' ? '1px solid var(--qbd-badge-danger-border)' : file.type === 'json' ? '1px solid var(--qbd-badge-info-border)' : '1px solid var(--qbd-badge-success-border)',
                         padding: '0.25rem 0.6rem',
                         borderRadius: '6px',
                         display: 'inline-block',
@@ -352,7 +286,7 @@ export default function DownloadPage() {
                 <p style={{ color: 'var(--ifm-color-emphasis-600)', fontSize: '1rem', marginBottom: '2rem', maxWidth: '800px' }}>
                   The core network simulation engine modeling topological braiding operations, causal set network setups, entanglement observables, and global error correcting codes.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+                <div className="downloads-grid-code">
                   {downloadsInfo.codebase.model.map((module, idx) => (
                     <div key={idx} className="qbd-interactive-card" style={{ padding: '1.5rem' }}>
                       <div className="qbd-interactive-card-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
@@ -405,7 +339,7 @@ export default function DownloadPage() {
                 <p style={{ color: 'var(--ifm-color-emphasis-600)', fontSize: '1rem', marginBottom: '2rem', maxWidth: '800px' }}>
                   Simulated annealing path solvers searching for stable cosmological vacuum structures and multi-thread statistical ensemble coordinators.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+                <div className="downloads-grid-code">
                   {downloadsInfo.codebase.simulations.map((module, idx) => (
                     <div key={idx} className="qbd-interactive-card" style={{ padding: '1.5rem' }}>
                       <div className="qbd-interactive-card-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
@@ -451,14 +385,14 @@ export default function DownloadPage() {
                   <h3 style={{ fontSize: '1.6rem', fontWeight: '800', margin: 0 }}>
                     Lean 4 Formal Proof Suite
                   </h3>
-                  <span style={{ fontSize: '0.8rem', fontWeight: 'bold', color: 'var(--ifm-color-primary)', backgroundColor: 'rgba(46, 133, 85, 0.1)', padding: '0.2rem 0.5rem', borderRadius: '6px' }}>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 'bold', color: 'var(--ifm-color-primary)', backgroundColor: 'var(--qbd-accent-soft)', padding: '0.2rem 0.5rem', borderRadius: '6px' }}>
                     {downloadsInfo.codebase.lean.length} Modules
                   </span>
                 </div>
                 <p style={{ color: 'var(--ifm-color-emphasis-600)', fontSize: '1rem', marginBottom: '2rem', maxWidth: '800px' }}>
                   Mathematical sanity audits formalizing the core axioms of spacetime primitives, comonadic background independence, and stabilizer code isomorphisms under causal consistency.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+                <div className="downloads-grid-code">
                   {downloadsInfo.codebase.lean.map((module, idx) => (
                     <div key={idx} className="qbd-interactive-card" style={{ padding: '1.5rem' }}>
                       <div className="qbd-interactive-card-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }}>
@@ -551,35 +485,29 @@ export default function DownloadPage() {
                   backgroundColor: 'var(--ifm-background-surface-color)', 
                   overflow: 'hidden' 
                 }}>
-                  <div style={{ 
-                    backgroundColor: 'rgba(0, 0, 0, 0.02)', 
-                    padding: '0.75rem 1.5rem', 
-                    borderBottom: '1px solid var(--ifm-color-emphasis-200)', 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center', 
-                    fontWeight: 'bold', 
+                  <div style={{
+                    backgroundColor: 'var(--qbd-surface-muted)',
+                    padding: '0.75rem 1.25rem',
+                    borderBottom: '1px solid var(--qbd-border-subtle)',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    fontWeight: 'bold',
                     fontSize: '0.9rem',
                     color: 'var(--ifm-color-emphasis-700)'
                   }}>
                     <span>Numerical Derivation Module</span>
                     <span>Actions</span>
                   </div>
-                  
+
                   <div style={{ maxHeight: '380px', overflowY: 'auto', padding: '0.5rem 0' }}>
                     {downloadsInfo.codebase.repo.map((module, idx) => (
-                      <div key={idx} style={{ 
-                        display: 'flex', 
-                        justifyContent: 'space-between', 
-                        alignItems: 'center', 
-                        padding: '0.75rem 1.5rem', 
-                        borderBottom: idx < downloadsInfo.codebase.repo.length - 1 ? '1px solid var(--ifm-color-emphasis-100)' : 'none',
-                        gap: '1rem',
-                        flexWrap: 'wrap'
+                      <div key={idx} className="downloads-repo-row" style={{
+                        borderBottom: idx < downloadsInfo.codebase.repo.length - 1 ? '1px solid var(--qbd-border-subtle)' : 'none',
                       }}>
-                        <div style={{ flex: 1, minWidth: '240px' }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem' }}>
-                            <span style={{ color: '#3b82f6', fontWeight: '800', fontFamily: 'monospace', fontSize: '0.95rem' }}>
+                        <div style={{ flex: 1, minWidth: 'min(100%, 220px)' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem', flexWrap: 'wrap' }}>
+                            <span style={{ color: 'var(--ifm-color-primary)', fontWeight: '800', fontFamily: 'monospace', fontSize: '0.95rem', wordBreak: 'break-all' }}>
                               {module.name}
                             </span>
                             <span style={{ fontSize: '0.75rem', color: 'var(--ifm-color-emphasis-450)' }}>

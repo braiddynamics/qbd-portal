@@ -10,57 +10,46 @@ export default function HeroNetworkCanvas() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
     let width = 0;
     let height = 0;
-    const particles: any[] = [];
-    const particleCount = 140; // High-density interactive network
+    let animationFrameId = 0;
+    let isCancelled = false;
 
-    class Particle {
-      x!: number;
-      y!: number;
-      size!: number;
-      speedX!: number;
-      speedY!: number;
-      opacity!: number;
-
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = Math.random() * 2.8 + 1.2;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
-        this.opacity = Math.random() * 0.7 + 0.3;
-      }
-
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        // Wrap around boundaries gracefully
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
-      }
-
-      draw() {
-        ctx!.save();
-        ctx!.globalAlpha = this.opacity;
-        ctx!.fillStyle = '#67e8f9'; // Brighter cyan particle cores
-        ctx!.beginPath();
-        ctx!.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx!.fill();
-        ctx!.restore();
-      }
+    interface Particle {
+      x: number;
+      y: number;
+      size: number;
+      speedX: number;
+      speedY: number;
+      opacity: number;
     }
 
+    const particles: Particle[] = [];
+
+    const createParticle = (): Particle => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 2.6 + 1.2,
+      speedX: (Math.random() - 0.5) * 0.5,
+      speedY: (Math.random() - 0.5) * 0.5,
+      opacity: Math.random() * 0.7 + 0.3,
+    });
+
+    const syncParticleCount = () => {
+      const targetCount = width < 640 ? 60 : width < 1024 ? 95 : 140;
+      while (particles.length < targetCount) {
+        particles.push(createParticle());
+      }
+      if (particles.length > targetCount) {
+        particles.length = targetCount;
+      }
+    };
+
     const resize = () => {
-      // Calculate coordinates against actual parent container dimensions, NOT window dimensions.
-      // This prevents the canvas from overflowing due to navbars, address bars, or margins.
       const parent = canvas.parentElement;
       if (parent) {
         width = canvas.width = parent.clientWidth;
@@ -69,31 +58,42 @@ export default function HeroNetworkCanvas() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
       }
+      syncParticleCount();
     };
 
     window.addEventListener('resize', resize);
     resize();
 
-    // Spawn network particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    const animate = () => {
-      ctx!.clearRect(0, 0, width, height);
+    const drawFrame = (advance: boolean) => {
+      ctx.clearRect(0, 0, width, height);
 
       // Deep celestial void base backdrop
-      ctx!.fillStyle = 'rgba(10, 15, 35, 0.55)';
-      ctx!.fillRect(0, 0, width, height);
+      ctx.fillStyle = 'rgba(10, 15, 35, 0.55)';
+      ctx.fillRect(0, 0, width, height);
 
-      particles.forEach((p) => {
-        p.update();
-        p.draw();
-      });
+      for (const p of particles) {
+        if (advance) {
+          p.x += p.speedX;
+          p.y += p.speedY;
+          if (p.x < 0) p.x = width;
+          if (p.x > width) p.x = 0;
+          if (p.y < 0) p.y = height;
+          if (p.y > height) p.y = 0;
+        }
 
-      // Render connection lines
-      ctx!.strokeStyle = 'rgba(103, 232, 249, 0.25)';
-      ctx!.lineWidth = 1.1;
+        ctx.save();
+        ctx.globalAlpha = p.opacity;
+        ctx.fillStyle = '#67e8f9';
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // Render causal connection lines
+      const maxDist = width < 640 ? 130 : 180;
+      ctx.strokeStyle = 'rgba(103, 232, 249, 0.25)';
+      ctx.lineWidth = 1.1;
 
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
@@ -101,23 +101,35 @@ export default function HeroNetworkCanvas() {
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 180) {
-            ctx!.globalAlpha = (1 - distance / 180) * 0.35;
-            ctx!.beginPath();
-            ctx!.moveTo(particles[i].x, particles[i].y);
-            ctx!.lineTo(particles[j].x, particles[j].y);
-            ctx!.stroke();
+          if (distance < maxDist) {
+            ctx.globalAlpha = (1 - distance / maxDist) * 0.35;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
           }
         }
       }
-      ctx!.globalAlpha = 1;
-
-      requestAnimationFrame(animate);
+      ctx.globalAlpha = 1;
     };
 
-    animate();
+    const animate = () => {
+      if (isCancelled) return;
+      drawFrame(true);
+      animationFrameId = requestAnimationFrame(animate);
+    };
 
-    return () => window.removeEventListener('resize', resize);
+    if (prefersReducedMotion) {
+      drawFrame(false);
+    } else {
+      animate();
+    }
+
+    return () => {
+      isCancelled = true;
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', resize);
+    };
   }, []);
 
   return (

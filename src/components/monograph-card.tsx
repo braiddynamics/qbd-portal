@@ -128,21 +128,7 @@ export default function MonographCard({ section }: MonographCardProps) {
             </div>
 
             {/* Column 2: Enhanced Graphic Layout Container */}
-            <div 
-                className="placeholder-box" 
-                style={{ 
-                    padding: 0, 
-                    backgroundColor: 'transparent', 
-                    border: 'none',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    transform: 'scale(1.15)',
-                    transition: 'transform 0.3s ease',
-                    minWidth: 0,
-                    width: '100%'
-                }}
-            >
+            <div className="placeholder-box qbd-part-graphic">
                 {section.part === "1" ? <DagGraphic /> : 
                  section.part === "2" ? <BraidGraphic /> : 
                  section.part === "3" ? <GeodesicGraphic /> : 
@@ -157,38 +143,33 @@ export default function MonographCard({ section }: MonographCardProps) {
     if (hasTabs) {
         return (
             <FadeInView>
-                <div 
-                    className="qbd-interactive-card section-row-margin"
+                <div
+                    className="qbd-interactive-card qbd-part-card section-row-margin"
                     onMouseEnter={() => setIsCardHovered(true)}
                     onMouseLeave={() => {
                         setIsCardHovered(false);
                         setActiveChapterNum(null); // Resets selection back to Part view on mouse exit
                     }}
-                    style={{ position: 'relative', display: 'block', padding: '3.5rem 2.5rem 2.5rem 2.5rem', maxWidth: '950px', width: '100%', marginLeft: 'auto', marginRight: 'auto' }}
                 >
                     {/* Hanging Folder Tabs with slant styling */}
-                    <div 
-                        className="qbd-folder-tabs-container"
-                        style={{
-                            opacity: isCardHovered || activeChapterNum !== null ? 1 : 0,
-                            pointerEvents: isCardHovered || activeChapterNum !== null ? 'auto' : 'none',
-                            transform: isCardHovered || activeChapterNum !== null ? 'translateY(0)' : 'translateY(-6px)',
-                            transition: 'opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-                        }}
+                    <div
+                        className={`qbd-folder-tabs-container ${isCardHovered || activeChapterNum !== null ? 'is-open' : ''}`}
                     >
                         {chapters.map(ch => (
-                            <div
+                            <button
+                                type="button"
                                 key={ch.num}
                                 onMouseEnter={() => setActiveChapterNum(ch.num)}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
-                                    setActiveChapterNum(ch.num);
+                                    setActiveChapterNum(prev => (prev === ch.num ? null : ch.num));
                                 }}
+                                aria-pressed={activeChapterNum === ch.num}
                                 className={`qbd-folder-tab ${activeChapterNum === ch.num ? 'active' : ''}`}
                             >
                                 <span>{ch.shortName}</span>
-                            </div>
+                            </button>
                         ))}
                     </div>
 

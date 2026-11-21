@@ -9,17 +9,23 @@ interface ParticleData {
   col: number;
   symbol: string;
   name: string;
-  charge: string;
+  charge: React.ReactNode;
+  modalCharge?: React.ReactNode;
+  chargeLabel?: React.ReactNode;
   param: React.ReactNode;
   complexity: React.ReactNode;
+  complexityLabel?: React.ReactNode;
   mass: string;
-  writheConfig: string;
+  massLabel?: React.ReactNode;
+  qbdMass?: React.ReactNode;
+  qbdMassLabel?: React.ReactNode;
+  writheConfig: React.ReactNode;
   description: React.ReactNode;
   colorType: 'blue' | 'green' | 'red' | 'gold' | 'amber';
 }
 
 const particles: ParticleData[] = [
-  // ROW 1: UP-TYPE QUARKS & SCALAR (Strong/Higgs/Scalar)
+  // ROW 1: UP-TYPE QUARKS & UNIFICATION
   {
     row: 1,
     col: 1,
@@ -29,8 +35,14 @@ const particles: ParticleData[] = [
     param: 'Writhe: +2/3',
     complexity: <span>1 (N<sub>3</sub>)</span>,
     mass: '2.2 MeV',
+    qbdMass: <span>0.170 MeV (bare, κ<sub>m</sub> · 1)</span>,
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(1, 1, 0)',
-    description: 'Chiral tripartite asymmetric braid configuration with writhe vector (1, 1, 0). The asymmetry accounts for its fractional electric charge (+2/3) and strong force color charges in the pre-geometric causal network.',
+    description: (
+      <span>
+        Chiral tripartite asymmetric braid configuration with writhe vector (1, 1, 0). Parallel ribbon sharing (k<sub>share</sub> = 1) reduces its bare complexity to N<sub>3</sub> = 1 (zeroth-order mass 0.170 MeV, degenerate with the down quark); matching to the 2 GeV MS-bar running mass (2.2 MeV) requires electroweak Yukawa splitting and strong RG running (§7.4.Z).
+      </span>
+    ),
     colorType: 'blue'
   },
   {
@@ -42,8 +54,14 @@ const particles: ParticleData[] = [
     param: 'C2 Crossing',
     complexity: <span>7,626 (N<sub>3</sub>)</span>,
     mass: '1,275.0 MeV',
+    qbdMass: '1,298.96 MeV (Δ 1.88%)',
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(62, 62, 0)',
-    description: 'Second-generation up-type quark mapped to the crossing-well boundary configuration in the causal network. Its twist state is wound to writhe vector (62, 62, 0), exhibiting intermediate complexity.',
+    description: (
+      <span>
+        Second-generation up-type quark with benchmark writhe vector (62, 62, 0). Under the up-type sharing rule N<sub>net</sub> = 2w<sup>2</sup> − w, its complexity reaches 7,626 3-cycles, giving a bare topological mass of 1,298.96 MeV (within 1.88% of the 1,275.0 MeV reference, §7.4.6.1).
+      </span>
+    ),
     colorType: 'blue'
   },
   {
@@ -55,8 +73,14 @@ const particles: ParticleData[] = [
     param: 'Torsion Peak',
     complexity: <span>1,013,176 (N<sub>3</sub>)</span>,
     mass: '172,900.0 MeV',
+    qbdMass: '172,577.65 MeV (Δ 0.19%)',
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(712, 712, 0)',
-    description: 'Third-generation up-type quark exhibiting massive torsion peak stress in the pre-geometric graph. Its extremely dense writhe configuration (712, 712, 0) yields over one million geometric 3-cycle quanta.',
+    description: (
+      <span>
+        Third-generation up-type quark exhibiting extreme torsional complexity with benchmark writhe vector (712, 712, 0). Yielding 1,013,176 geometric 3-cycle quanta, its bare topological mass of 172,577.65 MeV matches the observed 172,900.0 MeV mass within 0.19% (§7.4.6.1).
+      </span>
+    ),
     colorType: 'blue'
   },
   {
@@ -66,10 +90,17 @@ const particles: ParticleData[] = [
     name: 'Gluon',
     charge: '',
     param: 'su(3) Adjoint Swaps',
-    complexity: '8 (Adjoint)',
+    complexity: '8 su(3) Generators',
+    complexityLabel: 'Gauge Structure',
     mass: '0.0 MeV',
+    qbdMass: '0.0 MeV (Unbroken SU(3))',
+    qbdMassLabel: 'QBD Sector (§8.3)',
     writheConfig: 'SU(3) Adjoint Rewrite',
-    description: 'Emergent gauge boson representing logical graph rewrite swaps in the su(3) adjoint representation. Mediates color exchanges between quarks by dynamically swapping ribbon indices.',
+    description: (
+      <span>
+        Emergent massless gauge boson representing the eight independent color-sector generators (exchanges and diagonal imbalances) of su(3) acting on tripartite quark ribbons (§8.3).
+      </span>
+    ),
     colorType: 'red'
   },
   {
@@ -78,11 +109,21 @@ const particles: ParticleData[] = [
     symbol: 'β₅',
     name: 'Pentaribbon',
     charge: '',
+    chargeLabel: 'Symmetry Group',
+    modalCharge: 'SU(5) Unified',
     param: 'Unified State',
-    complexity: <span>5 (Strands)</span>,
+    complexity: <span>5 Strands (R<sub>1</sub>…R<sub>5</sub>)</span>,
+    complexityLabel: 'Braid Architecture',
     mass: 'GUT Scale',
-    writheConfig: 'SU(5) Unified Braid',
-    description: 'A five-strand composite Braid representing the unified pre-geometric state at grand unification energy scales. Local adjacent swap rewrites of this pentaribbon configuration generate the SU(5) Lie algebra, embedding both quarks and leptons as distinct topological phases.',
+    massLabel: 'Energy Scale',
+    qbdMass: '24 su(5) Generators (§9.2)',
+    qbdMassLabel: 'Algebraic Closure',
+    writheConfig: '5-Ribbon Unified Sector',
+    description: (
+      <span>
+        A five-strand composite braid representing the unified pre-geometric state at grand unification scales. Four adjacent exchanges and four diagonal imbalances generate the 24-dimensional su(5) algebra, with fragmentation tunneling into SU(3) × SU(2) × U(1) severing the 6 cross-sector color-weak links (§9.2, §9.4).
+      </span>
+    ),
     colorType: 'gold'
   },
 
@@ -96,8 +137,14 @@ const particles: ParticleData[] = [
     param: 'Writhe: -1/3',
     complexity: <span>1 (N<sub>3</sub>)</span>,
     mass: '4.7 MeV',
+    qbdMass: <span>0.170 MeV (bare, κ<sub>m</sub> · 1)</span>,
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(-1, 0, 0)',
-    description: 'Chiral tripartite asymmetric braid with writhe vector (-1, 0, 0), giving it an electric charge of -1/3. Its bare geometric mass is low, but QCD binding energy dominates its observed current mass.',
+    description: (
+      <span>
+        Chiral tripartite asymmetric braid with writhe vector (-1, 0, 0), giving electric charge −1/3 and bare complexity N<sub>3</sub> = 1 (zeroth-order mass 0.170 MeV). Matching to the 2 GeV MS-bar running mass (4.7 MeV) requires electroweak Yukawa splitting (y<sub>d</sub> &gt; y<sub>u</sub>) and strong RG running (§7.4.Z).
+      </span>
+    ),
     colorType: 'blue'
   },
   {
@@ -109,8 +156,14 @@ const particles: ParticleData[] = [
     param: 'S2 Crossing',
     complexity: <span>576 (N<sub>3</sub>)</span>,
     mass: '95.0 MeV',
+    qbdMass: '98.11 MeV (Δ 3.28%)',
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(-24, 0, 0)',
-    description: 'Second-generation down-type quark with writhe vector (-24, 0, 0). Exhibits intermediate complexity in the crossing well, resulting in an observed rest mass of approximately 95.0 MeV.',
+    description: (
+      <span>
+        Second-generation down-type quark with benchmark writhe vector (-24, 0, 0). Under N<sub>net</sub> = w<sup>2</sup>, its complexity of 576 3-cycles produces a bare topological mass of 98.11 MeV (within 3.28% of the 95.0 MeV reference, §7.4.6.1).
+      </span>
+    ),
     colorType: 'blue'
   },
   {
@@ -122,8 +175,14 @@ const particles: ParticleData[] = [
     param: 'B3 Crossing',
     complexity: <span>24,649 (N<sub>3</sub>)</span>,
     mass: '4,180.0 MeV',
+    qbdMass: '4,198.55 MeV (Δ 0.44%)',
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(-157, 0, 0)',
-    description: 'Third-generation down-type quark with writhe vector (-157, 0, 0). Its high complexity yields a rest mass of 4,180 MeV, validating the QBD mass functional scaling.',
+    description: (
+      <span>
+        Third-generation down-type quark with benchmark writhe vector (-157, 0, 0). Its complexity of 24,649 3-cycles yields a bare topological mass of 4,198.55 MeV, within 0.44% of the 4,180.0 MeV reference (§7.4.6.1).
+      </span>
+    ),
     colorType: 'blue'
   },
   {
@@ -133,10 +192,17 @@ const particles: ParticleData[] = [
     name: 'Photon',
     charge: '',
     param: 'U(1) Frame Twist',
-    complexity: '2 (Twist)',
+    complexity: '4-Cycle U(1) Transport',
+    complexityLabel: 'Gauge Structure',
     mass: '0.0 MeV',
-    writheConfig: 'U(1) Frame twist',
-    description: 'Massless gauge field representing a U(1) frame twist rewrite on the causal network. It corresponds to a topological twist action propagating along the vacuum substrate.',
+    qbdMass: <span>0.0 MeV (Unbroken Q = T<sup>3</sup> + Y)</span>,
+    qbdMassLabel: 'QBD Sector (§8.5, §8.7)',
+    writheConfig: 'U(1) Phase Transport',
+    description: (
+      <span>
+        Massless gauge field corresponding to the unbroken electromagnetic generator Q = T<sup>3</sup> + Y and enclosing 4-cycle U(1) phase transport along the causal substrate (§8.5.4, §8.7.7).
+      </span>
+    ),
     colorType: 'red'
   },
   {
@@ -145,11 +211,21 @@ const particles: ParticleData[] = [
     symbol: 'β₃',
     name: 'Tripartite Braid',
     charge: '',
+    chargeLabel: 'Admitted Charges',
+    modalCharge: '0, −1, −1/3, +2/3 e',
     param: 'Topological Quantum',
-    complexity: <span>3 (Strands)</span>,
+    complexity: '3 Framed Ribbons',
+    complexityLabel: 'Braid Architecture',
     mass: 'Ground State',
-    writheConfig: 'Unbraided base manifold',
-    description: 'The fundamental tripartite (three-strand) braid representing the stable topological ground state of the pre-geometric vacuum. Stable knotting configurations of this braid under deletions and noise give rise to the three generations of elementary leptons and quarks.',
+    massLabel: 'Sector Role',
+    qbdMass: 'Spin-1/2 Protected Sector (§6.2, §7.1)',
+    qbdMassLabel: 'Matter Statistics',
+    writheConfig: 'Framed 3-Ribbon Sector',
+    description: (
+      <span>
+        The fundamental tripartite (three-strand) framed ribbon braid forming the minimal topologically protected matter sector. Chiral twists and crossings of these three ribbons generate spin-1/2 statistics, fractional and integer charges, and the elementary fermion spectrum (Ch. 6–7).
+      </span>
+    ),
     colorType: 'gold'
   },
 
@@ -163,8 +239,14 @@ const particles: ParticleData[] = [
     param: 'Writhe: -1',
     complexity: <span>3 (N<sub>3</sub>)</span>,
     mass: '0.511 MeV',
+    qbdMass: <span>0.511 MeV (anchor, κ<sub>m</sub> = m<sub>e</sub>/3)</span>,
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(-1, -1, -1)',
-    description: 'Minimal stable symmetric 3-braid configuration with writhe vector (-1, -1, -1). Its charge permutation group acts symmetrically, yielding an electric charge of -1 and stable rest mass.',
+    description: (
+      <span>
+        Minimal stable color-singlet symmetric 3-braid with writhe vector (-1, -1, -1) and complexity N<sub>3</sub> = 3w<sup>2</sup> = 3. Anchors the universal mass-per-quantum scale κ<sub>m</sub> = 0.511 / 3 ≈ 0.170 MeV (§7.4.2, §7.4.6.1).
+      </span>
+    ),
     colorType: 'green'
   },
   {
@@ -176,8 +258,14 @@ const particles: ParticleData[] = [
     param: 'Symmetric C2',
     complexity: <span>588 (N<sub>3</sub>)</span>,
     mass: '105.66 MeV',
+    qbdMass: '100.16 MeV (Δ 5.21%)',
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(-14, -14, -14)',
-    description: 'Second-generation charged lepton defined as a symmetric braid with tighter twists (-14, -14, -14). It acts as a resonant isomer of the electron with identical symmetry but higher localized self-strain.',
+    description: (
+      <span>
+        Second-generation charged lepton modeled as a tighter symmetric color-singlet braid (-14, -14, -14) with complexity N<sub>3</sub> = 3(14<sup>2</sup>) = 588, giving a bare topological mass of 100.16 MeV (within 5.21% of 105.66 MeV, §7.4.6.1).
+      </span>
+    ),
     colorType: 'green'
   },
   {
@@ -188,9 +276,15 @@ const particles: ParticleData[] = [
     charge: '-1 e',
     param: 'Symmetric C3',
     complexity: <span>10,443 (N<sub>3</sub>)</span>,
-    mass: '1,776.86 MeV',
+    mass: '1,776.80 MeV',
+    qbdMass: '1,778.79 MeV (Δ 0.11%)',
+    qbdMassLabel: 'Bare Topo Mass (§7.4)',
     writheConfig: '(-59, -59, -59)',
-    description: 'Third-generation charged lepton representing a highly wound symmetric braid (-59, -59, -59). The quadratic energy barrier of its twist configuration matches the observed tau mass to within 0.2%.',
+    description: (
+      <span>
+        Third-generation charged lepton represented by a densely wound symmetric braid (-59, -59, -59) with complexity N<sub>3</sub> = 3(59<sup>2</sup>) = 10,443. Its quadratic torsion cost yields 1,778.79 MeV, matching the 1,776.80 MeV reference within 0.11% (§7.4.6.1).
+      </span>
+    ),
     colorType: 'green'
   },
   {
@@ -200,10 +294,17 @@ const particles: ParticleData[] = [
     name: 'Z Boson',
     charge: '',
     param: <span>su(2)<sub>L</sub> Neutrality</span>,
-    complexity: '12 (Fusion)',
+    complexity: '3-Cycle / 4-Cycle Mixing',
+    complexityLabel: 'Gauge Structure',
     mass: '91,187.6 MeV',
-    writheConfig: 'Neutral Weak Braid Fusion',
-    description: 'Neutral weak boson representing a loop fusion rewrite on the network. Operates as a short-range, massive force carrier through symmetric graph identification events.',
+    qbdMass: '93.2 ± 2.0 GeV (ensemble, §8.7.3)',
+    qbdMassLabel: 'QBD Ensemble Benchmark',
+    writheConfig: <span>Neutral Weak Mixing (θ<sub>W</sub>)</span>,
+    description: (
+      <span>
+        Neutral weak gauge boson emerging from electroweak mixing of 3-cycle SU(2)<sub>L</sub> bridges and 4-cycle U(1) transport (baseline sin<sup>2</sup>θ<sub>W</sub><sup>(0)</sup> = 0.25, benchmark 0.2457). Acquires mass m<sub>Z</sub> = m<sub>W</sub> / cos θ<sub>W</sub> from the 3-cycle geometric reservoir (§8.5, §8.7.3).
+      </span>
+    ),
     colorType: 'red'
   },
   {
@@ -213,10 +314,17 @@ const particles: ParticleData[] = [
     name: 'Higgs Boson',
     charge: '',
     param: '3-Cycle Condensate',
-    complexity: 'Vacuum Condensate Density',
+    complexity: <span>Geometric Reservoir (v ∝ √ρ<sub>3</sub>*)</span>,
+    complexityLabel: 'Condensate Order',
     mass: '125.09 GeV',
-    writheConfig: 'Unbroken Vacuum Stabilizer',
-    description: 'Within the QBD framework, the Higgs boson emerges as a coherent excitation of the pre-geometric vacuum\'s 3-cycle density (ρ*). Rather than postulating a fundamental scalar field, mass generation arises dynamically from this localized fluctuation in the geometric condensate, which exerts topological drag on propagating fermions and vector bosons.',
+    qbdMass: <span>v ≈ 246 GeV at ρ<sub>3</sub>* ≈ 0.0290 (§8.7.1)</span>,
+    qbdMassLabel: 'Vacuum Reservoir VEV',
+    writheConfig: <span>3-Cycle EW Condensate (Q = T<sup>3</sup> + Y unbroken)</span>,
+    description: (
+      <span>
+        Within QBD, no fundamental scalar field is postulated: the electroweak VEV (v ≈ 246 GeV) is the macroscopic order parameter of the discrete-ensemble 3-cycle density ρ<sub>3</sub>* ≈ 0.0290 (v ∝ √ρ<sub>3</sub>*). Fermion masses obey the Topological Yukawa Identity m<sub>f</sub> = y<sub>f</sub> v = κ<sub>m</sub> N<sub>3</sub> (§8.7.1, §8.7.5).
+      </span>
+    ),
     colorType: 'gold'
   },
 
@@ -228,10 +336,17 @@ const particles: ParticleData[] = [
     name: 'Electron Neutrino',
     charge: '0',
     param: 'Folded Gen I',
-    complexity: <span>0 (N<sub>3</sub>)</span>,
-    mass: '< 0.00012 MeV',
-    writheConfig: '(0, 0, 0) Folded',
-    description: 'Folded loop configuration representing the minimal color-neutral, charge-neutral vacuum topology. Exhibits zero bare writhe (0, 0, 0) and extremely low emergent mass via seesaw dynamics.',
+    complexity: <span>0 bare (+ N<sub>fold</sub>)</span>,
+    mass: '~meV (Seesaw)',
+    massLabel: 'Mass Regime',
+    qbdMass: '0.64–2.56 meV (benchmark, §9.6.9)',
+    qbdMassLabel: 'Two-State Seesaw (§9.6)',
+    writheConfig: <span>Folded: W<sub>+</sub> + W<sub>−</sub> = 0</span>,
+    description: (
+      <span>
+        Minimal folded braid joining a braid segment β<sub>+</sub> to its anti-braid β<sub>−</sub> at a fold vertex so global writhe cancels (W<sub>+</sub> + W<sub>−</sub> = 0, Q = 0) while retaining positive fold cost N<sub>fold</sub>. Light mass arises via topological seesaw m<sub>ν</sub> ≈ m<sub>D</sub><sup>2</sup> / M<sub>R</sub> (§7.4.Z, §9.6.1–9.6.9).
+      </span>
+    ),
     colorType: 'green'
   },
   {
@@ -241,10 +356,17 @@ const particles: ParticleData[] = [
     name: 'Muon Neutrino',
     charge: '0',
     param: 'Folded Gen II',
-    complexity: <span>18 (N<sub>3</sub>)</span>,
-    mass: '< 0.19 MeV',
-    writheConfig: 'Folded Gen II Twist',
-    description: 'Second-generation folded neutrino configuration. Has a double-twist folded geometry at its vertex, creating higher localized complexity than the first generation.',
+    complexity: <span>Folded Gen II (N<sub>fold</sub> &gt; 0)</span>,
+    mass: 'Sub-eV (Seesaw)',
+    massLabel: 'Mass Regime',
+    qbdMass: <span>√|Δm<sup>2</sup><sub>atm</sub>| ≈ 0.049 eV ref (§9.6.9)</span>,
+    qbdMassLabel: 'Oscillation Scale (§9.6)',
+    writheConfig: <span>Folded: W<sub>+</sub> + W<sub>−</sub> = 0</span>,
+    description: (
+      <span>
+        Second-generation color-singlet folded neutrino configuration. Opposing segment writhes cancel electric charge globally while higher fold topology mixes with the Planck-anchored heavy partner N<sub>R</sub> to yield sub-eV eigenstates (§9.6).
+      </span>
+    ),
     colorType: 'green'
   },
   {
@@ -254,10 +376,17 @@ const particles: ParticleData[] = [
     name: 'Tau Neutrino',
     charge: '0',
     param: 'Folded Gen III',
-    complexity: <span>36 (N<sub>3</sub>)</span>,
-    mass: '< 18.2 MeV',
-    writheConfig: 'Folded Gen III Twist',
-    description: 'Third-generation folded neutrino configuration. Features a triple-twist folded structure resulting in a heavier neutrino mass boundary while remaining color and charge neutral.',
+    complexity: <span>Folded Gen III (N<sub>fold</sub> &gt; 0)</span>,
+    mass: 'Sub-eV (Seesaw)',
+    massLabel: 'Mass Regime',
+    qbdMass: <span>M<sub>R</sub> ≈ 1.23–2.36×10<sup>16</sup> GeV (§9.6.8)</span>,
+    qbdMassLabel: 'Heavy Seesaw Anchor',
+    writheConfig: <span>Folded: W<sub>+</sub> + W<sub>−</sub> = 0</span>,
+    description: (
+      <span>
+        Third-generation folded neutrino configuration. Remains electrically and color neutral via opposite segment writhe cancellation, with its tiny active mass suppressed by the friction-limited heavy complexity scale M<sub>R</sub> ≈ 1.23–2.36 × 10<sup>16</sup> GeV (§9.6.8–9.6.9).
+      </span>
+    ),
     colorType: 'green'
   },
   {
@@ -267,10 +396,17 @@ const particles: ParticleData[] = [
     name: 'W Boson',
     charge: '±1 e',
     param: 'su(2) Charged Swaps',
-    complexity: '12 (Charged rewrite)',
+    complexity: <span>3-Cycle SU(2)<sub>L</sub> Bridge</span>,
+    complexityLabel: 'Gauge Structure',
     mass: '80,379.0 MeV',
-    writheConfig: 'SU(2) Chiral Rewrite',
-    description: 'Charged weak boson representing an active su(2) charged rewrite transition. Mediates flavor changes (e.g., Up to Down quark conversions) by altering the braid\'s chiral twists at local vertices.',
+    qbdMass: '81.7 ± 1.5 GeV (ensemble, §8.7.3)',
+    qbdMassLabel: 'QBD Ensemble Benchmark',
+    writheConfig: <span>SU(2)<sub>L</sub> Chiral Rewrite</span>,
+    description: (
+      <span>
+        Charged weak gauge boson mediating left-handed flavor transitions via chiral 3-cycle SU(2)<sub>L</sub> strand-swap bridges. Acquires mass m<sub>W</sub> = gv / 2 from the 3-cycle geometric reservoir (§8.4, §8.5.4, §8.7.3).
+      </span>
+    ),
     colorType: 'red'
   },
   {
@@ -278,17 +414,24 @@ const particles: ParticleData[] = [
     col: 5,
     symbol: 'ρ*',
     name: 'Vacuum Substrate',
-    charge: 'T = ln(2)',
+    charge: <span>β<sub>c</sub> = ln(2)</span>,
+    chargeLabel: <span>Info Modulus (β<sub>c</sub>)</span>,
     param: 'Calibration & Constants',
-    complexity: <span>ρ* ≈ 0.03699</span>,
-    mass: 'ρ* ≈ 0.03699',
+    complexity: <span>ρ* ≈ 0.037061 (MF) | ρ<sub>3</sub>* ≈ 0.0290 (Ens.)</span>,
+    complexityLabel: 'Equilibrium Density',
+    mass: 'ρ* ≈ 0.03706',
+    massLabel: 'Mean-Field Fixed Point',
+    qbdMass: <span>Λ<sub>0</sub> = 2<sup>−6</sup> | λ<sub>0</sub> = e − 1 | μ<sub>0</sub> = 1/√(2π)</span>,
+    qbdMassLabel: 'Constitutive Priors (§4.4)',
     writheConfig: 'Calibration Baseline',
-    description: <span>The pre-geometric vacuum substrate parameters define the fundamental constants of the topological network. These include the equilibrium 3-cycle density (ρ*), friction modulus (μ*), and the relaxation rate of local rewrites (Γ<sub>vac</sub>) which dictate the background dynamics and emergent mass scales.</span>,
+    description: (
+      <span>
+        The pre-geometric vacuum substrate is governed by constitutive informational constants rather than a heat bath (§4.4.2): base-conversion modulus β<sub>c</sub> = ln(2) (1 bit = ln 2 nats; physical temperature cancels), simplicial permittivity Λ<sub>0</sub> = 2<sup>−6</sup> = 0.015625, friction μ<sub>0</sub> = 1/√(2π) ≈ 0.3989, and catalytic generator λ<sub>0</sub> = e − 1 ≈ 1.7183. These fix the driven mean-field equilibrium ρ* ≈ 0.037061 and unpumped discrete-ensemble mean ρ<sub>3</sub>* ≈ 0.0290 (§5.2–5.4).
+      </span>
+    ),
     colorType: 'gold'
   }
 ];
-
-// Column sub-labels are now merged directly inside the combined header row.
 
 const rowLabels: React.ReactNode[] = [
   <span>UP-TYPE QUARKS<br /><span style={{ fontSize: '0.75rem', color: '#8b949e', fontWeight: 'normal' }}>(Asymmetric Braids)</span></span>,
@@ -338,7 +481,7 @@ export default function ParticleSpectrumPage() {
 
       <main className="spectrum-page-container">
         <div className="spectrum-content">
-          
+
           {/* Header */}
           <div className="spectrum-header">
             <HeroNetworkCanvas />
@@ -349,13 +492,18 @@ export default function ParticleSpectrumPage() {
             <div className="spectrum-header-corners" />
           </div>
 
+          {/* Mobile / Narrow Viewport Scroll Hint */}
+          <div className="spectrum-scroll-hint">
+            <span>⇄</span> Swipe horizontally to explore all generations &amp; vacuum states
+          </div>
+
           {/* Matrix Area */}
           <div className="spectrum-matrix-wrapper">
             <div className="spectrum-matrix-grid">
-              
+
               {/* Top Corner Empty Header */}
               <div style={{ borderBottom: '2px solid rgba(255,255,255,0.06)' }}></div>
-              
+
               <div className="spectrum-super-header matter-super combined-header">
                 <span className="spectrum-super-title">Three Generations of Matter (Fermions)</span>
                 <div className="spectrum-sub-labels">
@@ -364,11 +512,11 @@ export default function ParticleSpectrumPage() {
                   <div className="spectrum-sub-label">Generation III</div>
                 </div>
               </div>
-              
+
               <div className="spectrum-super-header gauge-super combined-header col-4-header single-title-header">
                 <span className="spectrum-super-title">Gauge Fields (Rewrites)</span>
               </div>
-              
+
               <div className="spectrum-super-header vacuum-super combined-header col-5-header single-title-header">
                 <span className="spectrum-super-title">Vacuum Substrate<br />(Topology)</span>
               </div>
@@ -376,7 +524,7 @@ export default function ParticleSpectrumPage() {
               {/* Grid Rows */}
               {[1, 2, 3, 4].map((r) => (
                 <React.Fragment key={r}>
-                  
+
                   {/* Row Header */}
                   <div className="spectrum-row-label-cell">
                     <div className="spectrum-row-label-text">{rowLabels[r - 1]}</div>
@@ -388,23 +536,21 @@ export default function ParticleSpectrumPage() {
 
                     if (!p) {
                       return (
-                        <div 
-                          key={c} 
-                          style={{ 
-                            backgroundColor: 'rgba(255,255,255,0.01)', 
+                        <div
+                          key={c}
+                          style={{
+                            backgroundColor: 'rgba(255,255,255,0.01)',
                             border: '1px dashed rgba(255,255,255,0.04)',
                             borderRadius: '8px',
                             minHeight: '240px'
-                          }} 
+                          }}
                         />
                       );
                     }
-                    
-                    const isAmber = p.colorType === 'amber';
-                    
+
                     return (
-                      <div 
-                        key={c} 
+                      <div
+                        key={c}
                         className={`spectrum-card ${p.colorType}-glow ${c === 5 ? `col-5-card row-${r}-card` : ''}`}
                         onClick={() => setSelectedParticle(p)}
                       >
@@ -431,8 +577,8 @@ export default function ParticleSpectrumPage() {
                           <div className="spectrum-card-name">{p.name}</div>
                           {p.symbol === 'ρ*' ? (
                             <div className="spectrum-card-constants-micro">
-                              <div>α<sub>vac</sub> ≈ 0.0073 | μ* ≈ 0.3989</div>
-                              <div>Λ<sub>L</sub> ≈ 1.61 × 10⁻³⁵ m</div>
+                              <div>Λ<sub>0</sub> = 2<sup>−6</sup> | μ<sub>0</sub> ≈ 0.3989</div>
+                              <div>λ<sub>0</sub> = e−1 | ℓ<sub>0</sub> ≈ 1.62×10<sup>−35</sup> m</div>
                             </div>
                           ) : (
                             <div className="spectrum-card-param">{p.param}</div>
@@ -455,18 +601,22 @@ export default function ParticleSpectrumPage() {
           <div className="spectrum-modal-overlay" onClick={() => setSelectedParticle(null)}>
             <div className="spectrum-modal-content" onClick={(e) => e.stopPropagation()}>
               <button className="spectrum-modal-close" onClick={() => setSelectedParticle(null)}>×</button>
-              
+
               <div className="spectrum-modal-header">
-                <h2 className="spectrum-modal-title">{selectedParticle.name}</h2>
-                <div className="spectrum-modal-subtitle">{selectedParticle.param}</div>
+                <div className={`spectrum-modal-symbol-badge ${selectedParticle.colorType}-badge`}>
+                  {selectedParticle.symbol}
+                </div>
+                <div>
+                  <h2 className="spectrum-modal-title">{selectedParticle.name}</h2>
+                  <div className="spectrum-modal-subtitle">{selectedParticle.param}</div>
+                </div>
               </div>
 
               <div className="spectrum-modal-body">
                 <div className="spectrum-modal-grid">
-                  
-                  {/* Left Column: Large Image */}
+
+                  {/* Left Column: Clean Unobstructed SVG Graphic */}
                   <div className={`spectrum-modal-left ${selectedParticle.colorType}-border`}>
-                    <div className="spectrum-modal-left-symbol">{selectedParticle.symbol}</div>
                     <div className="spectrum-modal-left-graphic">
                       <ParticleGraphic symbol={selectedParticle.symbol} />
                     </div>
@@ -474,35 +624,50 @@ export default function ParticleSpectrumPage() {
 
                   {/* Right Column: Descriptions & parameters */}
                   <div>
-                    <p style={{ margin: '0 0 1.5rem 0' }}>
+                    <p style={{ margin: '0 0 1.25rem 0' }}>
                       {selectedParticle.description}
                     </p>
 
                     <h4 style={{ margin: '0 0 0.5rem 0', color: '#ffffff', fontFamily: 'monospace' }}>TOPOLOGICAL INVARIANTS</h4>
                     <div className="spectrum-modal-parameters">
                       <div className="spectrum-modal-param-label">
-                        {selectedParticle.symbol === 'ρ*' ? 'Vacuum Temp (T)' : 'Electric Charge'}
+                        {selectedParticle.chargeLabel || 'Electric Charge'}
                       </div>
                       <div className={`spectrum-modal-param-value ${selectedParticle.colorType}-text`}>
-                        {selectedParticle.charge || '0'}
+                        {selectedParticle.modalCharge ?? (selectedParticle.charge || '0')}
                       </div>
 
-                      <div className="spectrum-modal-param-label">Writhe Config</div>
+                      <div className="spectrum-modal-param-label">Writhe / Topology</div>
                       <div className="spectrum-modal-param-value">{selectedParticle.writheConfig}</div>
 
-                      <div className="spectrum-modal-param-label">Net Complexity (N₃)</div>
+                      <div className="spectrum-modal-param-label">
+                        {selectedParticle.complexityLabel || <span>Net Complexity (N<sub>3</sub>)</span>}
+                      </div>
                       <div className="spectrum-modal-param-value">{selectedParticle.complexity}</div>
 
-                      <div className="spectrum-modal-param-label">Topological Mass</div>
+                      <div className="spectrum-modal-param-label">
+                        {selectedParticle.massLabel || 'Observed Mass (SM)'}
+                      </div>
                       <div className="spectrum-modal-param-value">{selectedParticle.mass}</div>
+
+                      {selectedParticle.qbdMass && (
+                        <>
+                          <div className="spectrum-modal-param-label">
+                            {selectedParticle.qbdMassLabel || 'QBD Prediction'}
+                          </div>
+                          <div className={`spectrum-modal-param-value ${selectedParticle.colorType}-text`}>
+                            {selectedParticle.qbdMass}
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
 
                 </div>
 
-                <div style={{ textAlign: 'right', marginTop: '1.5rem' }}>
-                  <button 
-                    className="button button--secondary button--sm" 
+                <div style={{ textAlign: 'right', marginTop: '1.25rem' }}>
+                  <button
+                    className="button button--secondary button--sm"
                     onClick={() => setSelectedParticle(null)}
                     style={{ border: '1px solid rgba(255,255,255,0.1)' }}
                   >

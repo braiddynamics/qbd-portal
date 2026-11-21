@@ -2,17 +2,40 @@
 /* layout.css - Hero + Global Layout Styles      */
 /* ============================================= */
 
+/* Ensure readable button text on bright cyan primary buttons in dark mode */
+[data-theme='dark'] .button--primary {
+  color: var(--qbd-on-primary);
+}
+[data-theme='dark'] .button--primary:hover {
+  color: var(--qbd-on-primary);
+}
+
+/* Prevent wide equations or tables in monograph docs from overflowing mobile viewports */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+  max-width: 100%;
+}
+
+.markdown table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* === HERO SECTION - Tier 3 Cinematic === */
 .hero-rn-style {
   position: relative;
   min-height: 100vh;
-  padding: 8rem 0 6rem;
+  padding: 8rem 1.25rem 6rem;
   display: flex;
   align-items: center;
-  justify-content: center; /* Guarantees perfect vertical and horizontal centering */
+  justify-content: center;
   box-sizing: border-box;
   overflow: hidden;
-  background-image: 
+  background-image:
     linear-gradient(rgba(10, 15, 35, 0.68), rgba(10, 15, 35, 0.82)),
     url('/img/hero-bg.png');
   background-size: cover;
@@ -24,17 +47,12 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 40% 60%, rgba(165, 243, 224, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle at 40% 60%, rgba(103, 232, 249, 0.14) 0%, transparent 70%);
   pointer-events: none;
   animation: quantum-breath 18s ease infinite;
   z-index: 1;
 }
 
-/* Unified Content Wrapper:
-  Strictly transparent layout block that keeps title, subtitle, and buttons 
-  grouped together in perfect vertical alignment with absolutely NO backing box, 
-  border, background colors, or backdrop blurs.
-*/
 .hero-content-wrapper {
   position: relative;
   z-index: 2;
@@ -53,28 +71,24 @@
   -webkit-backdrop-filter: none !important;
 }
 
-/* Big cinematic title with Cinematic Cyan Luster & Deep Volumetric Glow */
+/* Big cinematic title with Cyan Luster & Deep Volumetric Glow */
 .hero-rn-style .hero__title {
-  font-size: clamp(3.2rem, 7.5vw, 5.8rem);
+  font-size: clamp(2.4rem, 7.2vw, 5.6rem);
   font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 1.15;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
   padding-bottom: 0.15em;
   padding-right: 0.05em;
   margin-bottom: 1.2rem;
-  
-  /* Volumetric Deep Space Glow */
-  text-shadow: 
-    0 0 80px rgba(103, 232, 249, 0.7), 
-    0 0 40px rgba(0, 0, 0, 0.9), 
+  text-shadow:
+    0 0 80px rgba(103, 232, 249, 0.65),
+    0 0 40px rgba(0, 0, 0, 0.9),
     0 25px 50px rgba(0, 0, 0, 0.85);
-  
-  /* Original Cyan Gradient */
   background: linear-gradient(
-    90deg, 
-    #ffffff 0%,   
-    #67e8f9 50%,  
-    #ffffff 100%  
+    90deg,
+    #ffffff 0%,
+    #67e8f9 50%,
+    #ffffff 100%
   );
   background-size: 200% auto;
   background-clip: text;
@@ -85,12 +99,20 @@
 
 /* Subtitle */
 .hero-rn-style .hero__subtitle {
-  font-size: 1.65rem;
+  font-size: clamp(1.08rem, 2.4vw, 1.6rem);
   max-width: 720px;
   margin: 0 auto 2.5rem;
   font-weight: 500;
   color: #e0f2fe;
   text-shadow: 0 15px 35px rgba(0, 0, 0, 0.85);
+}
+
+.hero-cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 /* Chromatic shine sweep */
@@ -103,6 +125,31 @@
 @keyframes quantum-breath {
   0%, 100% { opacity: 0.7; }
   50% { opacity: 1; }
+}
+
+@media screen and (max-width: 996px) {
+  .hero-rn-style {
+    min-height: 82vh;
+    padding: 5.5rem 1rem 4.5rem;
+    background-attachment: scroll; /* Prevents jitter/clipping on mobile Safari & Android */
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .hero-rn-style {
+    min-height: 76vh;
+    padding: 4.5rem 0.75rem 3.5rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 280px;
+  }
+
+  .hero-cta-group .button {
+    width: 100%;
+  }
 }
 
 /* === CENTRAL SPINE CONNECTOR === */
@@ -119,14 +166,14 @@
   left: 50%;
   width: 4px;
   background: linear-gradient(
-    to bottom, 
-    transparent 0%, 
-    var(--qbd-spine-color) 15%, 
-    var(--qbd-spine-color) 85%, 
+    to bottom,
+    transparent 0%,
+    var(--qbd-spine-color) 15%,
+    var(--qbd-spine-color) 85%,
     transparent 100%
   );
   transform: translateX(-50%);
-  z-index: -1; 
+  z-index: -1;
   box-shadow: 0 0 20px var(--qbd-spine-glow);
   opacity: 1;
 }
@@ -139,18 +186,19 @@
 
 /* === FOOTER === */
 .footer {
-  padding: 1rem 0; 
+  padding: 1.25rem 1rem;
   text-align: center;
+  border-top: 1px solid var(--qbd-border-subtle);
 }
 
 .footer__copyright {
-  margin: 0; 
-  font-size: 0.9rem; 
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 /* Dark mode adjustment for hero border */
 [data-theme='dark'] .hero-rn-style {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--qbd-border-subtle);
 }
 
 /* Sidebar item hiding rule for autogenerated lists */

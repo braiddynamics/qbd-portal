@@ -13,7 +13,7 @@ const qbdMacros = {
   // Operators & State
   "\\ket": "\\left| #1 \\right\\rangle",           // Dirac Ket
   "\\bra": "\\left\\langle #1 \\right|",           // Dirac Bra
-  "\\braket": "\\langle #1 | #2 \rangle",          // Inner Product
+  "\\braket": "\\langle #1 | #2 \\rangle",          // Inner Product
   "\\Evol": "\\mathcal{U}",                        // Universal Evolution Operator
   "\\Hamiltonian": "\\hat{H}",
   "\\Perm": "\\hat{P}",                            // Permutation Operator

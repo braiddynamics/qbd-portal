@@ -9,16 +9,6 @@ export default function GeodesicGraphic() {
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '1rem' }}>
       <svg viewBox="0 0 200 200" style={{ width: '100%', maxWidth: '180px', height: 'auto', overflow: 'visible' }}>
-        <defs>
-           {/* Cartesian Grid to represent the background network */}
-           <pattern id="cartesian-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-             <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--ifm-color-emphasis-200)" strokeWidth="0.5" />
-           </pattern>
-        </defs>
-
-        {/* Background Grid */}
-        <rect x="0" y="0" width="200" height="200" fill="url(#cartesian-grid)" opacity="0.6" />
-
         {/* --- The Massive Object & Density Rings --- */}
         <g className="geo-mass-group">
           {/* Concentric rings representing computational density/gravity well */}

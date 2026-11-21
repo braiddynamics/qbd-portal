@@ -403,7 +403,7 @@ export default function AiPage() {
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Context Index" />
       </Head>
 
-      <div style={s.page}>
+      <div style={s.page} className="qbd-ai-page">
 
         {/* ── Header ── */}
         <h1 style={{ ...s.h1, marginTop: '1rem', fontSize: '1.6rem' }}>

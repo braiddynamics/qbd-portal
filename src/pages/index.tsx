@@ -70,7 +70,7 @@ const introTabs: IntroTabInfo[] = [
     shortName: 'The Threshold',
     title: 'The Threshold',
     subtitle: 'From physical laws to algorithm rules and causal connection primitives',
-    description: 'Presents the transition from classical physical laws to computational and algorithmic rules. Across the frontiers of modern physics, the physical stuff of the universe has vanished, replaced by four distinct pillars of information: qubits, error-correcting codes, and causal sets.\n\nTo cross the final boundary, physics must abandon the search for the ultimate "stuff" or "geometry" and search instead for the ultimate algorithmic rule. We reframe the search as "It from It", the drive of inequality and constraint physically manifest. We posit that the most primitive element of reality is the directed causal link ($A \\to B$) and the simplest stable geometric structure is the closed 3-cycle ($A \\to B \\to C \\to A$), the founding commitments of Quantum Braid Dynamics.',
+    description: 'Presents the transition from classical physical laws to computational and algorithmic rules. Across the frontiers of modern physics, the physical stuff of the universe has vanished, replaced by four distinct pillars of information: qubits, error-correcting codes, and causal sets.\n\nTo cross the final boundary, physics must abandon the search for the ultimate "stuff" or "geometry" and search instead for the ultimate algorithmic rule. We reframe the search as "It from It", the drive of inequality and constraint physically manifest. We posit that the most primitive element of reality is the directed causal link (A → B) and the simplest stable geometric structure is the closed 3-cycle (A → B → C → A), the founding commitments of Quantum Braid Dynamics.',
     linkUrl: '/monograph/intro/intro-e',
     buttonLabel: 'Read The Threshold →'
   }
@@ -116,16 +116,16 @@ export default function Home() {
 
       <HomepageHeader />
 
-      <main style={{ padding: '4rem 0', maxWidth: '1200px', margin: '0 auto' }}>
+      <main className="qbd-home-main">
         <div className="container">
 
           {/* Hero Content Split */}
-          <div className="row" style={{ alignItems: 'center', marginBottom: '4rem' }}>
+          <div className="row qbd-home-split">
             <div className="col col--5">
-              <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', fontWeight: 'bold', lineHeight: '1.2' }}>
+              <h2 className="qbd-home-split-title">
                 The universe is not a thing, it is relation.
               </h2>
-              <p style={{ fontSize: '1.15rem', lineHeight: '1.6', color: 'var(--ifm-color-emphasis-800)', marginBottom: '2rem' }}>
+              <p className="qbd-home-split-lead">
                 Our Aeon begins not with a bang but with a branch of structure, composed not of fundamental things but fundamental relations.
               </p>
 
@@ -133,17 +133,6 @@ export default function Home() {
               <a
                 href="#overview-video"
                 onClick={scrollToVideo}
-                style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 'bold',
-                  color: 'var(--ifm-color-primary)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
-                  transition: 'transform 0.2s ease, color 0.2s ease'
-                }}
                 className="qbd-video-cta"
               >
                 Watch QBD summed up in 90 seconds
@@ -160,61 +149,52 @@ export default function Home() {
           </div>
 
           {/* Elegant Section Divider */}
-          <div style={{ padding: '4rem 0', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ width: '50%', height: '2px', background: 'linear-gradient(90deg, transparent, var(--ifm-color-emphasis-300), transparent)' }}></div>
+          <div className="qbd-section-divider">
+            <div className="qbd-section-divider-line"></div>
           </div>
 
           {/* --- SPINE WRAPPER STARTS --- */}
           <div className="connecting-spine-wrapper">
 
             {/* Introductory Framework Abstract with slanted folder tabs */}
-            <div 
-              className="qbd-interactive-card"
+            <div
+              className="qbd-interactive-card qbd-intro-card"
               onMouseEnter={() => setIsCardHovered(true)}
               onMouseLeave={() => {
                 setIsCardHovered(false);
                 setActiveTabId(null);
               }}
-              style={{ 
-                position: 'relative', 
-                display: 'block', 
-                padding: '4.2rem 2.5rem 2.5rem 2.5rem', 
-                maxWidth: '950px', 
-                width: '100%', 
-                margin: '0 auto 6rem auto'
-              }}
             >
               {/* Hanging Folder Tabs with slant styling */}
-              <div 
-                className="qbd-folder-tabs-container"
-                style={{
-                  opacity: isCardHovered || activeTabId !== null ? 1 : 0,
-                  pointerEvents: isCardHovered || activeTabId !== null ? 'auto' : 'none',
-                  transform: isCardHovered || activeTabId !== null ? 'translateY(0)' : 'translateY(-6px)',
-                  transition: 'opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
-                }}
+              <div
+                className={`qbd-folder-tabs-container ${isCardHovered || activeTabId !== null ? 'is-open' : ''}`}
               >
                 {introTabs.map(tab => (
-                  <div
+                  <button
+                    type="button"
                     key={tab.id}
                     onMouseEnter={() => setActiveTabId(tab.id)}
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
-                      setActiveTabId(tab.id);
+                      setActiveTabId(prev => (prev === tab.id ? null : tab.id));
                     }}
+                    aria-pressed={activeTabId === tab.id}
                     className={`qbd-folder-tab ${activeTabId === tab.id ? 'active' : ''}`}
                   >
                     <span>{tab.shortName}</span>
-                  </div>
+                  </button>
                 ))}
               </div>
 
               {/* Link wrap surrounding content for direct clickthrough */}
               <Link to={displayLink} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
-                <div className="qbd-interactive-card-content" style={{ textAlign: 'center', padding: '0 1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '33.5rem' }}>
+                <div className="qbd-interactive-card-content qbd-intro-card-inner">
                   <div>
-                    <h2 style={{ fontSize: activeTab ? '1.9rem' : '2.5rem', fontWeight: '800', marginBottom: '0.8rem', lineHeight: '1.3', minHeight: '6.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <h2
+                      className="qbd-intro-card-title"
+                      style={{ fontSize: activeTab ? '1.9rem' : '2.5rem' }}
+                    >
                       {activeTab ? (
                         <>
                           {activeTab.title}
@@ -232,17 +212,16 @@ export default function Home() {
                       )}
                     </h2>
 
-                    <div style={{ minHeight: '23.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '1rem 0' }}>
+                    <div className="qbd-intro-card-body">
                       {activeTab ? (
                         activeTab.description.split('\n\n').map((para, idx, arr) => (
-                          <p 
-                            key={idx} 
-                            style={{ 
-                              fontSize: activeTabId === 'abstract' ? '0.88rem' : '1.02rem', 
-                              color: 'var(--ifm-color-emphasis-800)', 
-                              lineHeight: '1.6', 
-                              marginBottom: idx === arr.length - 1 ? 0 : '0.8rem', 
-                              textAlign: 'justify' 
+                          <p
+                            key={idx}
+                            style={{
+                              fontSize: activeTabId === 'abstract' ? '0.88rem' : '1.02rem',
+                              color: 'var(--ifm-color-emphasis-800)',
+                              lineHeight: '1.6',
+                              marginBottom: idx === arr.length - 1 ? 0 : '0.8rem',
                             }}
                           >
                             {para}
@@ -250,10 +229,10 @@ export default function Home() {
                         ))
                       ) : (
                         <>
-                          <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', marginBottom: '1.2rem', textAlign: 'justify' }}>
+                          <p style={{ fontSize: '1.18rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', marginBottom: '1.2rem' }}>
                             Quantum Braid Dynamics (QBD) is a background-independent formulation of quantum gravity anchored to discrete combinatorial symmetries and conservation principles. Using only discrete events and causal links, QBD bridges gaps between the Wolfram Physics Project, Causal Set Theory, and Causal Dynamical Triangulations.
                           </p>
-                          <p style={{ fontSize: '1.2rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', margin: 0, textAlign: 'justify' }}>
+                          <p style={{ fontSize: '1.18rem', color: 'var(--ifm-color-emphasis-800)', lineHeight: '1.7', margin: 0 }}>
                             By integrating formal mathematical proofs, Python simulations, and explicit Lean 4 validations directly in the text, QBD presents a mathematically modern theory of information constructed from discrete graph-theoretic foundations. This form was chosen for auditability, ensuring ideas become pure logic that can be parsed, while producing a physical theory that is unambiguous and well defined, whose meaning is fully determined by its internal logic.
                           </p>
                         </>
@@ -279,9 +258,9 @@ export default function Home() {
           </div> {/* --- SPINE WRAPPER ENDS --- */}
 
           {/* Support Section */}
-          <div style={{ marginTop: '8rem', backgroundColor: 'var(--ifm-color-emphasis-100)', padding: '3rem 2rem', borderRadius: '16px', textAlign: 'center', border: '1px solid var(--ifm-color-emphasis-200)' }}>
-            <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Support the Project</h3>
-            <p style={{ fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 2rem', color: 'var(--ifm-color-emphasis-700)' }}>
+          <div className="qbd-support-box">
+            <h3 style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', marginBottom: '1rem' }}>Support the Project</h3>
+            <p style={{ fontSize: '1.08rem', maxWidth: '600px', margin: '0 auto 2rem', color: 'var(--ifm-color-emphasis-700)' }}>
               Quantum Braid Dynamics is an independent research initiative. Your help directly enables computational validation and open-access publishing.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
@@ -292,17 +271,7 @@ export default function Home() {
           </div>
 
           {/* AI agent plain-text notice — visible in rendered body HTML for text-based crawlers */}
-          <div
-            id="ai-agent-notice"
-            style={{
-              marginTop: '3rem',
-              padding: '0.75rem 1rem',
-              borderTop: '1px solid var(--ifm-color-emphasis-200)',
-              fontSize: '0.8rem',
-              color: 'var(--ifm-color-emphasis-600)',
-              lineHeight: '1.6',
-            }}
-          >
+          <div id="ai-agent-notice" className="qbd-ai-notice">
             <strong>AI Agents &amp; Automated Systems:</strong>{' '}
             Structured entry point: <a href="/ai" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/ai</a> |{' '}
             LLM Index: <a href="/llms.txt" style={{ color: 'inherit', textDecoration: 'underline' }}>braiddynamics.com/llms.txt</a> |{' '}
